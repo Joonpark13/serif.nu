@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'typeface-roboto';
+import injectSheet from 'react-jss';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import App from './App';
 
+const styles = {
+  '@global body': {
+    margin: 0,
+  },
+};
+
 const theme = createMuiTheme({
   palette: {
-    type: 'dark',
     primary: {
       main: '#4E2A84',
     },
@@ -24,7 +30,9 @@ function Index() {
   );
 }
 
+const StyledIndex = injectSheet(styles)(Index);
+
 ReactDOM.render(
-  <Index />,
+  <StyledIndex />,
   document.getElementById('root'),
 );
