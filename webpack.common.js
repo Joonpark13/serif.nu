@@ -2,7 +2,6 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
   module: {
     rules: [{
       test: /\.js$/,
@@ -26,10 +25,4 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'bundle.js',
   },
-  devServer: {
-    contentBase: path.join(__dirname, 'public/'),
-    port: 3000,
-    publicPath: 'http://localhost:3000/dist/',
-  },
-  devtool: 'cheap-module-eval-source-map',
 };

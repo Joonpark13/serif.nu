@@ -4,10 +4,11 @@
   "description": "Simple. Fast. Visual. Course planning for Northwestern University.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
     "test": "eslint src/ --fix && jest",
     "lint": "eslint src/ --fix",
-    "coverage": "jest && open coverage/index.html"
+    "coverage": "jest && open coverage/index.html",
+    "build": "webpack --config webpack.prod.js"
   },
   "author": "Joon Park",
   "license": "ISC",
@@ -31,7 +32,8 @@
     "url-loader": "^1.1.1",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "webpack-dev-server": "^3.1.5",
+    "webpack-merge": "^4.1.4"
   },
   "dependencies": {
     "@material-ui/core": "^3.0.1",
