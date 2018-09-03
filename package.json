@@ -1,6 +1,6 @@
 {
   "name": "serif.nu",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "Simple. Fast. Visual. Course planning for Northwestern University.",
   "main": "index.js",
   "scripts": {
