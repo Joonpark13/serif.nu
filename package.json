@@ -41,7 +41,6 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-jss": "^8.6.1",
-    "typeface-roboto": "0.0.54"
+    "react-jss": "^8.6.1"
   }
 }
