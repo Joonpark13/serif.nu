@@ -6,4 +6,8 @@ module.exports = {
   "globals": {
     "document": true
   },
+  "plugins": ["jest"],
+  "env": {
+    "jest/globals": true
+  },
 };
