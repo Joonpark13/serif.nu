@@ -1,6 +1,12 @@
 module.exports = {
   collectCoverage: true,
-  collectCoverageFrom: ['src/**', '!src/index.js', '!src/util/env.js', '!**/__snapshots__/**'],
+  collectCoverageFrom: [
+    'src/**',
+    '!src/index.js',
+    '!src/util/env.js',
+    '!src/util/to-js.js',
+    '!**/__snapshots__/**',
+  ],
   coverageReporters: ['html', 'text'],
   coverageThreshold: {
     global: {
