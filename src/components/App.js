@@ -1,8 +1,8 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import TopBar from './TopBar';
-import CalendarView from './CalendarView';
-import SidebarView from './SidebarView';
+import CalendarView from './Calendar/CalendarView';
+import SidebarView from './Sidebar/SidebarView';
 
 function App() {
   return (

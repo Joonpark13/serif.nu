@@ -9,7 +9,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 const topBarTextColor = 'white';
 
-const styles = {
+export const styles = {
   title: {
     color: topBarTextColor,
   },
@@ -35,5 +35,7 @@ function TopBar({ classes }) {
 TopBar.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
+
+export { TopBar as UnstyledTopBar };
 
 export default withStyles(styles)(TopBar);

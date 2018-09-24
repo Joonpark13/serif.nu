@@ -20,14 +20,18 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.22.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
+    "fetch-mock": "^7.0.0-beta.2",
     "jest": "^23.5.0",
     "react-test-renderer": "^16.4.2",
+    "redux-mock-store": "^1.5.3",
     "style-loader": "^0.22.1",
     "url-loader": "^1.1.1",
     "webpack": "^4.16.5",
@@ -41,6 +45,10 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-jss": "^8.6.1"
+    "react-jss": "^8.6.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "whatwg-fetch": "^2.0.4"
   }
 }

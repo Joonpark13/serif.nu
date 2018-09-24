@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import injectSheet from 'react-jss';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { Provider } from 'react-redux';
+import thunkMiddleware from 'redux-thunk';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import App from './App';
+import App from './components/App';
+import rootReducer from './reducers';
 
 const styles = {
   '@global body': {
@@ -21,11 +25,27 @@ const theme = createMuiTheme({
   },
 });
 
+let composeEnhancers;
+if (process.env.NODE_ENV === 'production') {
+  composeEnhancers = compose;
+} else {
+/* eslint-disable no-underscore-dangle */
+  composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+/* eslint-enable */
+}
+
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunkMiddleware)),
+);
+
 function Index() {
   return (
-    <MuiThemeProvider theme={theme}>
-      <App />
-    </MuiThemeProvider>
+    <Provider store={store}>
+      <MuiThemeProvider theme={theme}>
+        <App />
+      </MuiThemeProvider>
+    </Provider>
   );
 }
 
