@@ -4,6 +4,7 @@ exports[`SearchBox doesn't call api through handler if search string <= 2 chars 
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SearchBox
+    clearSearchResults={[Function]}
     handleSearchInput={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -74,6 +75,7 @@ exports[`SearchBox renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SearchBox
+    clearSearchResults={[Function]}
     handleSearchInput={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -144,6 +146,7 @@ exports[`SearchBox renders text typed into the search box 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SearchBox
+    clearSearchResults={[Function]}
     handleSearchInput={
       [MockFunction] {
         "calls": Array [

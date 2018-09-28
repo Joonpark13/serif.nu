@@ -17,6 +17,8 @@ export const search = (state = initialSearchState, action) => {
     case actionTypes.GET_SEARCH_RESULTS_FAILURE:
       return state.set('isFetching', false)
         .set('results', initialSearchState.get('results'));
+    case actionTypes.CLEAR_SEARCH_RESULTS:
+      return state.set('results', fromJS([]));
     default:
       return state;
   }

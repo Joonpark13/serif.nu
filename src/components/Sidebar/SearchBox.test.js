@@ -9,14 +9,20 @@ describe('SearchBox', () => {
   }
 
   it('renders correctly', () => {
-    const wrapper = shallow(<SearchBox handleSearchInput={() => {}} />);
+    const wrapper = shallow(<SearchBox
+      handleSearchInput={() => {}}
+      clearSearchResults={() => {}}
+    />);
 
     expect(wrapper).toMatchSnapshot();
   });
 
   it('renders text typed into the search box', () => {
     const handleSearchInputMock = jest.fn();
-    const wrapper = shallow(<SearchBox handleSearchInput={handleSearchInputMock} />);
+    const wrapper = shallow(<SearchBox
+      handleSearchInput={handleSearchInputMock}
+      clearSearchResults={() => {}}
+    />);
 
     const testSearchInput = 'EECS';
     const eventObject = makeEventObject(testSearchInput);
@@ -27,7 +33,10 @@ describe('SearchBox', () => {
 
   it('doesn\'t call api through handler if search string <= 2 chars long', () => {
     const handleSearchInputMock = jest.fn();
-    const wrapper = shallow(<SearchBox handleSearchInput={handleSearchInputMock} />);
+    const wrapper = shallow(<SearchBox
+      handleSearchInput={handleSearchInputMock}
+      clearSearchResults={() => {}}
+    />);
 
     const shortTestSearchInput = 'EE';
     const eventObject = makeEventObject(shortTestSearchInput);

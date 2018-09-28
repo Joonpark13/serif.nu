@@ -19,7 +19,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Connect(SearchBox) />,
-        <SearchResults />,
+        <Connect(Component) />,
       ],
     },
     "ref": null,
@@ -36,7 +36,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {},
         "ref": null,
         "rendered": null,
@@ -53,7 +53,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Connect(SearchBox) />,
-          <SearchResults />,
+          <Connect(Component) />,
         ],
       },
       "ref": null,
@@ -70,7 +70,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {},
           "ref": null,
           "rendered": null,

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Iterable } from 'immutable';
 
-export default WrappedComponent => (wrappedComponentProps) => {
+const toJS = WrappedComponent => (wrappedComponentProps) => {
   const KEY = 0;
   const VALUE = 1;
 
@@ -19,3 +19,5 @@ export default WrappedComponent => (wrappedComponentProps) => {
 
   return <WrappedComponent {...propsJS} />;
 };
+
+export default toJS;

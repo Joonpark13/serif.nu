@@ -17,4 +17,5 @@ module.exports = {
     },
   },
   setupTestFrameworkScriptFile: '<rootDir>test-setup.js',
+  moduleDirectories: ['src', 'node_modules'],
 };
