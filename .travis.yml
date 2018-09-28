@@ -7,7 +7,8 @@ branch:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: gt
+  github-token:
+    secure: "RLZ38YFOM0dL3lqsjrWhGF2FzsxMbTNaReO1nemjxycG9s/Rdc/ide17iC4RJHlvs8BcpTwzRqY6wIadt82wbk6rejUJCd4jHH0cPo9qRBvIXmdJwHg9p210PAcqeZKewTxioM6ghD6lg6r6k8OiscDaa5lLH5P+j+JoywMscBWAPUJsf/rd6hGjU4dgFaIOk+50YMjFifQQLUotemgiCBHKFcn3DR7f3W3sYmXq9bWU7LZ2eGL3a7ccZgMf7m42Iws879cVBA9UMWaWzoaQlo0I0HqcGwvjarNEryDbrJNNQeq/IVLy82KNzRlv7qi9itUnam7s2WsmkiHaGu5xIzfc5DijzF0yUBHWdnp5ldy8nUu56FOeRxOPNYay+Rebx2hAMn9mwpAvrMesmg4qIOqxYjx8c/PWd7swjSOjoQ7iwS7/MUlC1XyhrT8e0gk7xR7WKobd5vpfc6tn5hoUW4DEms4SyQdcEgCavn1fKb2/OWBwlfXcf2/fsslL1iqU6t6EN8AtzKkoDw8b1t0PBYBV/NrnraCkbk7cMkyU/9kQbDawvDShtZpZMz+fK286GvVnrWqj5zXjunkbwWudxYPGWY8frH7yZpufEzD5w24Tmlzl/EXd9pGaVXL7cPJznLXUl/b+3S2vG5cz6BfRuHS0ZJB3sJt4LSjo9Cw5h+I="
   keep-history: true
   local-dir: dist
   on:
