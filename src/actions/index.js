@@ -27,3 +27,7 @@ export const fetchSearchResults = searchInput => (dispatch) => {
       dispatch(getSearchResultsFailure());
     });
 };
+
+export const clearSearchResults = () => ({
+  type: actionTypes.CLEAR_SEARCH_RESULTS,
+});

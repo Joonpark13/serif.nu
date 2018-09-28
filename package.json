@@ -6,8 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "test": "eslint src/ --fix && jest",
+    "unit-test": "jest",
     "lint": "eslint src/ --fix",
-    "coverage": "jest && open coverage/index.html",
+    "coverage": "jest; open coverage/index.html",
     "build": "webpack --config webpack.prod.js"
   },
   "author": "Joon Park",

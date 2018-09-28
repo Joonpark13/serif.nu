@@ -14,12 +14,14 @@ class SearchBox extends Component {
   }
 
   handleChange(value) {
-    const { handleSearchInput } = this.props;
+    const { handleSearchInput, clearSearchResults } = this.props;
 
     this.setState({ searchText: value });
 
     if (value.length > 2) {
       handleSearchInput(value);
+    } else {
+      clearSearchResults();
     }
   }
 
@@ -41,4 +43,5 @@ export default SearchBox;
 
 SearchBox.propTypes = {
   handleSearchInput: PropTypes.func.isRequired,
+  clearSearchResults: PropTypes.func.isRequired,
 };

@@ -1,11 +1,11 @@
 import React from 'react';
 import SearchBoxContainer from './SearchBoxContainer';
-import SearchResults from './SearchResults';
+import SearchResultsContainer from './SearchResultsContainer';
 
 const Search = () => (
   <div>
     <SearchBoxContainer />
-    <SearchResults />
+    <SearchResultsContainer />
   </div>
 );
 

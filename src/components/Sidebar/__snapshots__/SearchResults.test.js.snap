@@ -3,7 +3,30 @@
 exports[`SearchResults renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SearchResults />,
+  Symbol(enzyme.__unrendered__): <SearchResults
+    searchResults={
+      Array [
+        Object {
+          "abbv": "629",
+          "name": "Employment Law",
+          "school": "LAW",
+          "score": 0.75,
+          "subject": "BUSCOM",
+          "term": "4720",
+          "type": "course",
+        },
+        Object {
+          "abbv": "631",
+          "name": "Entrepreneurship Law",
+          "school": "LAW",
+          "score": 0.75,
+          "subject": "BUSCOM",
+          "term": "4720",
+          "type": "course",
+        },
+      ]
+    }
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -17,10 +40,40 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "Hello, World!",
+      "children": Array [
+        <div>
+          Employment Law
+        </div>,
+        <div>
+          Entrepreneurship Law
+        </div>,
+      ],
     },
     "ref": null,
-    "rendered": "Hello, World!",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "LAW BUSCOM 629",
+        "nodeType": "host",
+        "props": Object {
+          "children": "Employment Law",
+        },
+        "ref": null,
+        "rendered": "Employment Law",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "LAW BUSCOM 631",
+        "nodeType": "host",
+        "props": Object {
+          "children": "Entrepreneurship Law",
+        },
+        "ref": null,
+        "rendered": "Entrepreneurship Law",
+        "type": "div",
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -29,10 +82,40 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Hello, World!",
+        "children": Array [
+          <div>
+            Employment Law
+          </div>,
+          <div>
+            Entrepreneurship Law
+          </div>,
+        ],
       },
       "ref": null,
-      "rendered": "Hello, World!",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "LAW BUSCOM 629",
+          "nodeType": "host",
+          "props": Object {
+            "children": "Employment Law",
+          },
+          "ref": null,
+          "rendered": "Employment Law",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "LAW BUSCOM 631",
+          "nodeType": "host",
+          "props": Object {
+            "children": "Entrepreneurship Law",
+          },
+          "ref": null,
+          "rendered": "Entrepreneurship Law",
+          "type": "div",
+        },
+      ],
       "type": "div",
     },
   ],

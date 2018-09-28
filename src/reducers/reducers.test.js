@@ -38,4 +38,15 @@ describe('search', () => {
       results: [],
     }));
   });
+
+  it(`should handle ${actionTypes.CLEAR_SEARCH_RESULTS}`, () => {
+    const state = fromJS({
+      results: [{ name: 'My Course' }],
+    });
+    const action = actionCreators.clearSearchResults();
+
+    expect(searchReducer(state, action)).toEqual(fromJS({
+      results: [],
+    }));
+  });
 });

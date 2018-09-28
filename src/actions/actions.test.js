@@ -30,6 +30,13 @@ describe('action creators', () => {
         .toEqual({ type: actionTypes.GET_SEARCH_RESULTS_FAILURE });
     });
   });
+
+  describe('clearSearchResults', () => {
+    it('should create a getSearchResults', () => {
+      expect(actionCreators.clearSearchResults())
+        .toEqual({ type: actionTypes.CLEAR_SEARCH_RESULTS });
+    });
+  });
 });
 
 describe('async action creators', () => {
