@@ -1,2 +1,14 @@
 language: node_js
 node_js: node
+branch:
+  only:
+  - master
+  - production
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: gt
+  keep-history: true
+  local-dir: dist
+  on:
+    branch: production
