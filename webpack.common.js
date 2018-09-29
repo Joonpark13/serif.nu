@@ -1,6 +1,7 @@
 const path = require('path');
+const webpack = require('webpack');
 
-module.exports = {
+module.exports = env => ({
   entry: './src/index.js',
   module: {
     rules: [{
@@ -28,4 +29,11 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'bundle.js',
   },
-};
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        API_URL: JSON.stringify(env.API_URL),
+      },
+    }),
+  ],
+});
