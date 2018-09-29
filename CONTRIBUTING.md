@@ -62,10 +62,11 @@ You'll need two environment variables in your `.env` file: `API_URL_DEV` (which 
 4. Run `npm test` to lint and test your changes. Fix/add tests as necessary to ensure no linting errors, 100% code coverage, and that all tests pass. See the [reference document](REFERENCE.md) for scripts that may help.
 5. If applicable, make sure you update the documentation to match your changes.
 6. Push your branch: `git push -u origin b/fix-overlapping-schedule-bug`
-7. Open a pull request. Place a link to the trello ticket in the comments.
+7. Open a pull request. Using the Github power-up in the trello card, link the pull request on the ticket.
 8. If asked to make changes by the reviewer(s), make the relevant changes, and push the commits on the branch.
-9. Once the primary reviewer approves, rebase the branch onto master (make sure you **fully understand the rebase command**) and squash your work into one commit. Make sure the first line of the commit message is still the ticket title, and be sure to include a summary of the work done in the commit message body. If there are any conflicts, resolve them. Then (force) push one last time to your branch.
-10. At this point, your work is ready to be merged and deployed!
+9. Once the primary reviewer approves, rebase the branch onto master (make sure you **fully understand [the rebase command](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)**) and squash your work into one commit. Make sure the first line of the commit message is still the ticket title, and be sure to include a summary of the work done in the commit message body. If there are any conflicts, resolve them. Then (force) push one last time to your branch.
+10. At this point, your work is ready to be merged and deployed! Go ahead and hit the "Rebase and merge" button.
+11. Once it's merged, drag the ticket into "Completed."
 
 ## Sans-Serif
 
