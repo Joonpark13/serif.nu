@@ -50,6 +50,8 @@ Clone this repository, then
 npm install
 ```
 
+You'll need two environment variables in your `.env` file: `API_URL_DEV` (which should point to your local version of sans-serif) and `API_URL_PROD`.
+
 `npm start` will run the development environment. See the [reference document](REFERENCE.md) for more commands.
 
 ### Development
@@ -68,3 +70,9 @@ npm install
 ## Sans-Serif
 
 Sans-Serif is the backend service that provides the course data for Serif.nu.
+
+## Misc
+
+### prodMode checks
+
+In rare cases, you'll find code/need to write code that behaves differently depending on whether you're in prod or dev mode. You can `/* istanbul ignore next */` those conditionals since those are difficult to test.
