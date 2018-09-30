@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SearchBox from './SearchBox';
+import { mockStyles } from 'util/testing';
+import { UnstyledSearchBox, styles } from './SearchBox';
 
 describe('SearchBox', () => {
   function makeEventObject(value) {
@@ -9,7 +10,9 @@ describe('SearchBox', () => {
   }
 
   it('renders correctly', () => {
-    const wrapper = shallow(<SearchBox
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledSearchBox
+      classes={classes}
       handleSearchInput={() => {}}
       clearSearchResults={() => {}}
     />);
@@ -19,7 +22,9 @@ describe('SearchBox', () => {
 
   it('renders text typed into the search box', () => {
     const handleSearchInputMock = jest.fn();
-    const wrapper = shallow(<SearchBox
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledSearchBox
+      classes={classes}
       handleSearchInput={handleSearchInputMock}
       clearSearchResults={() => {}}
     />);
@@ -33,7 +38,9 @@ describe('SearchBox', () => {
 
   it('doesn\'t call api through handler if search string <= 2 chars long', () => {
     const handleSearchInputMock = jest.fn();
-    const wrapper = shallow(<SearchBox
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledSearchBox
+      classes={classes}
       handleSearchInput={handleSearchInputMock}
       clearSearchResults={() => {}}
     />);
