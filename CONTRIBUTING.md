@@ -4,7 +4,7 @@
 
 This document is mainly intended for student developers at Northwestern University who are part of the Serif.nu development group. If you are not a student at Northwestern, or if you are a student who is not a part of the Serif.nu development group, and are interested in working on Serif.nu, please reach out to Joon to get involved.
 
-This document assumes only knowledge of JavaScript (ES6), git, [React](https://reactjs.org/), and [Redux](https://redux.js.org/). The application also uses [npm](https://www.npmjs.com/), [webpack](https://webpack.js.org/), [babel](https://babeljs.io/), [eslint](https://eslint.org/), [material-ui](https://material-ui.com/), [jest](https://jestjs.io/), and [enzyme](http://airbnb.io/enzyme/). If you have never encountered some of the tools and/or packages on this list, that's okay - most of them have great official documentation. You should start by following the quickstart guides/tutorials for the tools/packages that you are unfamiliar with.
+This document assumes knowledge of JavaScript (ES6), git, [React](https://reactjs.org/), and [Redux](https://redux.js.org/). The application also uses [npm](https://www.npmjs.com/), [webpack](https://webpack.js.org/), [babel](https://babeljs.io/), [eslint](https://eslint.org/), [material-ui](https://material-ui.com/), [jest](https://jestjs.io/), and [enzyme](http://airbnb.io/enzyme/). If you have never encountered some of the tools and/or packages on this list, that's okay - most of them have great official documentation. You should start by following the quickstart guides/tutorials for the tools/packages that you are unfamiliar with.
 
 Our current async redux action solution is redux-thunk, and we use Immutable.js for our state tree. We follow the airbnb style guide with a few custom modifications, and recommend installing an eslint plugin for your IDE of choice.
 
@@ -50,7 +50,7 @@ Clone this repository, then
 npm install
 ```
 
-You'll need two environment variables in your `.env` file: `API_URL_DEV` (which should point to your local version of sans-serif) and `API_URL_PROD`.
+You'll need two environment variables: `API_URL_DEV` and `API_URL_PROD`. `API_URL_DEV` will be the api the app will call in dev mode, and `API_URL_PROD` is the api the app will call in prod mode. Unless you are working with a local version of Sans-Serif, you can point both of those to the production Sans-Serif URL. We recommend writing export statements for these variables in a `.env` file and sourcing the file teach time before you begin work.
 
 `npm start` will run the development environment. See the [reference document](REFERENCE.md) for more commands.
 
