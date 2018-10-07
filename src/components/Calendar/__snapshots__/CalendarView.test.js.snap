@@ -32,6 +32,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
+<<<<<<< HEAD
       "children": Array [
         <div
           className=""
@@ -2779,6 +2780,12 @@ ShallowWrapper {
         "type": "div",
       },
     ],
+=======
+      "children": "Hello world",
+    },
+    "ref": null,
+    "rendered": "Hello world",
+>>>>>>> f777df2... all tests pass (practicing workflow)`
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -2787,6 +2794,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
+<<<<<<< HEAD
         "children": Array [
           <div
             className=""
@@ -5534,6 +5542,12 @@ ShallowWrapper {
           "type": "div",
         },
       ],
+=======
+        "children": "Hello world",
+      },
+      "ref": null,
+      "rendered": "Hello world",
+>>>>>>> f777df2... all tests pass (practicing workflow)`
       "type": "div",
     },
   ],

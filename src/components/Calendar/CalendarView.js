@@ -4,9 +4,14 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { northwesternRichBlack10 } from 'util/colors';
 
+<<<<<<< HEAD
 const hours = [];
 for (let i = 8; i <= 22; i++) {
   hours.push(i);
+=======
+function CalendarView() {
+  return <div>Hello world</div>;
+>>>>>>> 4ebbbf4... Practicing workflow for Kevin
 }
 
 const columnBorderStyle = `1px solid ${northwesternRichBlack10}`;
