@@ -5,6 +5,7 @@ module.exports = {
     '!src/index.js',
     '!src/util/env.js',
     '!src/util/to-js.js',
+    '!src/util/colors.js',
     '!**/__snapshots__/**',
   ],
   coverageReporters: ['html', 'text'],

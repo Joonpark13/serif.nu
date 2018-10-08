@@ -5,8 +5,9 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import App from './components/App';
-import rootReducer from './reducers';
+import App from 'components/App';
+import rootReducer from 'reducers';
+import { northwesternPurple, northwesternBrightOrange } from 'util/colors';
 
 const styles = {
   '@global body': {
@@ -17,10 +18,10 @@ const styles = {
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#4E2A84',
+      main: northwesternPurple,
     },
     secondary: {
-      main: '#FFC520',
+      main: northwesternBrightOrange,
     },
   },
 });
