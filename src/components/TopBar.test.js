@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { mockStyles } from 'util/testing';
 import { UnstyledTopBar, styles } from './TopBar';
-import { mockStyles } from '../util/testing';
 
 describe('TopBar', () => {
   it('renders correctly', () => {

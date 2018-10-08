@@ -1,10 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import { mockStyles } from 'util/testing';
+import { UnstyledApp, styles } from './App';
 
 describe('App', () => {
   it('should render correctly', () => {
-    const wrapper = shallow(<App />);
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledApp classes={classes} />);
 
     expect(wrapper).toMatchSnapshot();
   });
