@@ -50,16 +50,21 @@ Clone this repository, then
 npm install
 ```
 
-You'll need two environment variables: `API_URL_DEV` and `API_URL_PROD`. `API_URL_DEV` will be the api the app will call in dev mode, and `API_URL_PROD` is the api the app will call in prod mode. Unless you are working with a local version of Sans-Serif, you can point both of those to the production Sans-Serif URL. We recommend writing export statements for these variables in a `.env` file and sourcing the file teach time before you begin work.
+You'll need two environment variables: `API_URL_DEV` and `API_URL_PROD`. `API_URL_DEV` will be the api the app will call in dev mode, and `API_URL_PROD` is the api the app will call in prod mode. Unless you are working with a local version of Sans-Serif, you can point both of those to the production Sans-Serif URL. We recommend writing export statements for these variables in a `.env` file and sourcing the file teach time before you begin work. An example of a `.env` file:
+
+```
+export API_URL_DEV="http://sans-serif.herokuapp.com"
+export API_URL_PROD="http://sans-serif.herokuapp.com"
+```
 
 `npm start` will run the development environment. See the [reference document](REFERENCE.md) for more commands.
 
 ### Development
 
 1. Move the ticket from "Current Sprint" to "In Progress" on the Trello board.
-2. Check out the `master` branch, `git pull` to make sure you are up to date, then checkout a new branch. Your branch name should follow the format of `{ticket type}/{ticket-title}` where ticket type is `f` for feature, `b` for bugfix, and `t` for tech debt. For example, `git checkout -b b/fix-overlapping-schedule-bug`
+2. Check out the `master` branch, `git pull` to make sure you are up to date, then checkout a new branch. Your branch name should follow the format of `{ticket type}/{ticket-title}` where ticket type is `f` for feature, `b` for bugfix, `t` for tech debt, `o` for toolchain, and `d` for documentation. For example, `git checkout -b b/fix-overlapping-schedule-bug`
 3. Make your changes, stage, and commit. Most tickets will require multiple commits. Make sure the first line of your first commit message is the ticket title.
-4. Run `npm test` to lint and test your changes. Fix/add tests as necessary to ensure no linting errors, 100% code coverage, and that all tests pass. See the [reference document](REFERENCE.md) for scripts that may help.
+4. Run `npm test` to lint and test your changes. Fix/add tests as necessary to ensure no linting errors, 100% code coverage, and that all tests pass. See the [reference document](REFERENCE.md) for scripts that may help. Running `npm test` generates a code coverage report, viewable by opening `/coverage/index.html`.
 5. If applicable, make sure you update the documentation to match your changes.
 6. Push your branch: `git push -u origin b/fix-overlapping-schedule-bug`
 7. Open a pull request. Using the Github power-up in the trello card, link the pull request on the ticket.
