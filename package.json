@@ -43,6 +43,7 @@
   "dependencies": {
     "@material-ui/core": "^3.0.1",
     "@material-ui/icons": "^2.0.3",
+    "debounce": "^1.2.0",
     "immutable": "^3.8.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",

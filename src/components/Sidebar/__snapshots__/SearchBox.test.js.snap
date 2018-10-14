@@ -242,21 +242,7 @@ ShallowWrapper {
       }
     }
     clearSearchResults={[Function]}
-    handleSearchInput={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            "EECS",
-          ],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
+    handleSearchInput={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

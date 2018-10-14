@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
+import { debounce } from 'debounce';
 
 export const styles = {
   container: {
@@ -18,18 +19,27 @@ class SearchBox extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeHelper = debounce(this.handleChangeHelper.bind(this), 300);
   }
 
   handleChange(value) {
-    const { handleSearchInput, clearSearchResults } = this.props;
+    const { clearSearchResults } = this.props;
 
     this.setState({ searchText: value });
 
     if (value.length > 2) {
-      handleSearchInput(value);
+      this.handleChangeHelper(value);
     } else {
       clearSearchResults();
     }
+  }
+
+  // Added because debouncing the handleChange function 
+  // delays the text showing in the textbox (setState)
+  handleChangeHelper(value) {
+    const { handleSearchInput } = this.props;
+
+    handleSearchInput(value);
   }
 
   render() {
