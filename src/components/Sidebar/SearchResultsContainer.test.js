@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import { searchResultsSelector } from './SearchResultsContainer';
+import { searchResultsSelector, isLoadingSelector } from './SearchResultsContainer';
 
 describe('searchResultsSelector', () => {
   it('should select search results from state', () => {
@@ -12,5 +12,16 @@ describe('searchResultsSelector', () => {
 
     expect(searchResultsSelector(testState))
       .toEqual(testSearchResults);
+  });
+  it('should select isFetching from state', () => {
+    const testIsFetchingResults = fromJS([{ isFetching: false }]);
+    const testState = fromJS({
+      search: {
+        isFetching: testIsFetchingResults,
+      },
+    });
+
+    expect(isLoadingSelector(testState))
+      .toEqual(testIsFetchingResults);
   });
 });
