@@ -34,7 +34,7 @@ class SearchBox extends Component {
     }
   }
 
-  // Added because debouncing the handleChange function 
+  // Added because debouncing the handleChange function
   // delays the text showing in the textbox (setState)
   handleChangeHelper(value) {
     const { handleSearchInput } = this.props;

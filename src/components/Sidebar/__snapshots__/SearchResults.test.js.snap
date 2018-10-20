@@ -7,6 +7,7 @@ ShallowWrapper {
     classes={
       Object {
         "loadingContainer": "",
+        "searchResults": "",
       }
     }
     isFetching={false}
@@ -44,80 +45,28 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "host",
     "props": Object {
-      "children": Array [
+      "children": <WithStyles(List)>
         <WithStyles(ListItem)
           button={true}
         >
           <WithStyles(ListItemText)
             primary="Employment Law"
           />
-        </WithStyles(ListItem)>,
+        </WithStyles(ListItem)>
         <WithStyles(ListItem)
           button={true}
         >
           <WithStyles(ListItemText)
             primary="Entrepreneurship Law"
           />
-        </WithStyles(ListItem)>,
-      ],
+        </WithStyles(ListItem)>
+      </WithStyles(List)>,
+      "className": "",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": "LAW BUSCOM 629",
-        "nodeType": "class",
-        "props": Object {
-          "button": true,
-          "children": <WithStyles(ListItemText)
-            primary="Employment Law"
-          />,
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "primary": "Employment Law",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": "LAW BUSCOM 631",
-        "nodeType": "class",
-        "props": Object {
-          "button": true,
-          "children": <WithStyles(ListItemText)
-            primary="Entrepreneurship Law"
-          />,
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "primary": "Entrepreneurship Law",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-    ],
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "class",
@@ -192,6 +141,110 @@ ShallowWrapper {
       ],
       "type": [Function],
     },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <WithStyles(List)>
+          <WithStyles(ListItem)
+            button={true}
+          >
+            <WithStyles(ListItemText)
+              primary="Employment Law"
+            />
+          </WithStyles(ListItem)>
+          <WithStyles(ListItem)
+            button={true}
+          >
+            <WithStyles(ListItemText)
+              primary="Entrepreneurship Law"
+            />
+          </WithStyles(ListItem)>
+        </WithStyles(List)>,
+        "className": "",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <WithStyles(ListItem)
+              button={true}
+            >
+              <WithStyles(ListItemText)
+                primary="Employment Law"
+              />
+            </WithStyles(ListItem)>,
+            <WithStyles(ListItem)
+              button={true}
+            >
+              <WithStyles(ListItemText)
+                primary="Entrepreneurship Law"
+              />
+            </WithStyles(ListItem)>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "LAW BUSCOM 629",
+            "nodeType": "class",
+            "props": Object {
+              "button": true,
+              "children": <WithStyles(ListItemText)
+                primary="Employment Law"
+              />,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "primary": "Employment Law",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "LAW BUSCOM 631",
+            "nodeType": "class",
+            "props": Object {
+              "button": true,
+              "children": <WithStyles(ListItemText)
+                primary="Entrepreneurship Law"
+              />,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "primary": "Entrepreneurship Law",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": "div",
+    },
   ],
   Symbol(enzyme.__options__): Object {
     "adapter": ReactSixteenAdapter {
@@ -222,6 +275,7 @@ ShallowWrapper {
     classes={
       Object {
         "loadingContainer": "",
+        "searchResults": "",
       }
     }
     isFetching={true}
