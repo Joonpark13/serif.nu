@@ -12,6 +12,10 @@ export const styles = {
     display: 'flex',
     justifyContent: 'center',
   },
+  searchResults: {
+    height: 'calc(100vh - 142px)', // 64px is height of TopBar, 48px is height of SearchBox, 30px margin
+    overflow: 'auto',
+  },
 };
 
 function SearchResults({ searchResults, isFetching, classes }) {
@@ -22,20 +26,21 @@ function SearchResults({ searchResults, isFetching, classes }) {
       </div>
     );
   }
-
   return (
-    <List>
-      {searchResults
-        && searchResults.map(course => (
-          <ListItem
-            key={`${course.school} ${course.subject} ${course.abbv}`}
-            button
-          >
-            <ListItemText primary={course.name} />
-          </ListItem>
-        ))
-      }
-    </List>
+    <div className={classes.searchResults}>
+      <List>
+        {searchResults
+          && searchResults.map(course => (
+            <ListItem
+              key={`${course.school} ${course.subject} ${course.abbv}`}
+              button
+            >
+              <ListItemText primary={course.name} />
+            </ListItem>
+          ))
+        }
+      </List>
+    </div>
   );
 }
 
