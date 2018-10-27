@@ -1,10 +1,24 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SidebarView from './SidebarView';
+import { mockStyles } from 'util/testing';
+import { UnstyledSidebarView, styles } from './SidebarView';
 
-describe('SearchResults', () => {
+describe('SidebarView', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<SidebarView />);
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledSidebarView
+      classes={classes}
+    />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('changes tabs correctly', () => {
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledSidebarView
+      classes={classes}
+    />);
+    wrapper.instance().handleChange('onChange', 'browse');
 
     expect(wrapper).toMatchSnapshot();
   });
