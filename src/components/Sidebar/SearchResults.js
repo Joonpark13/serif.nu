@@ -27,20 +27,18 @@ function SearchResults({ searchResults, isFetching, classes }) {
     );
   }
   return (
-    <div className={classes.searchResults}>
-      <List>
-        {searchResults
-          && searchResults.map(course => (
-            <ListItem
-              key={`${course.school} ${course.subject} ${course.abbv}`}
-              button
-            >
-              <ListItemText primary={course.name} />
-            </ListItem>
-          ))
-        }
-      </List>
-    </div>
+    <List>
+      {searchResults
+        && searchResults.map(course => (
+          <ListItem
+            key={`${course.school} ${course.subject} ${course.abbv}`}
+            button
+          >
+            <ListItemText primary={`${course.subject} ${course.abbv} ${course.name}`} />
+          </ListItem>
+        ))
+      }
+    </List>
   );
 }
 
