@@ -15,3 +15,4 @@ Upon graduating from Northwestern, I wanted Serif.nu to be maintained even after
 Are you a developer? Or a student at Northwestern with an interest in learning how to code and maintain a web application that gets used by over 7000 students each registration season? Reach out to Joon and take a look at [the contributing document](CONTRIBUTING.md).
 
 ## Testing Changes
+## More changes
