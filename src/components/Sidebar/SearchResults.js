@@ -13,7 +13,7 @@ export const styles = {
     justifyContent: 'center',
   },
   searchResults: {
-    height: 'calc(100vh - 142px)', // 64px is height of TopBar, 48px is height of SearchBox, 30px margin
+    height: 'calc(100vh - 190px)', // 64px is height of TopBar, 48px is height of SearchBox, 48px is height of tab, 30px margin
     overflow: 'auto',
   },
 };
