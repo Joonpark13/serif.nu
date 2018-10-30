@@ -1,5 +1,9 @@
 language: node_js
 node_js: node
+branches:
+  only:
+  - master
+  - production
 before_deploy: npm run build
 deploy:
   provider: pages
