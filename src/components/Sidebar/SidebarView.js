@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { withStyles } from '@material-ui/core/styles';
-import Search from './Search';
+import SearchContainer from './SearchContainer';
 
 export const styles = {
   tabWidth: {
@@ -42,7 +42,7 @@ class SidebarView extends Component {
           <Tab value="search" label="Search" className={classes.tabWidth} />
           <Tab value="browse" label="Browse" className={classes.tabWidth} />
         </Tabs>
-        {value === 'search' && <Search />}
+        {value === 'search' && <SearchContainer />}
         {value === 'browse' && <div>Todo: implement browse</div>}
       </div>
     );
