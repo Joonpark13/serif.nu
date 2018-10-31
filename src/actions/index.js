@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 import * as actionTypes from './action-types';
-import { searchURL } from '../util/api';
+import { searchURL, sectionsURL } from '../util/api';
 import prodMode from '../util/env';
 
 export const getSearchResultsRequest = () => ({
@@ -30,4 +30,38 @@ export const fetchSearchResults = searchInput => (dispatch) => {
 
 export const clearSearchResults = () => ({
   type: actionTypes.CLEAR_SEARCH_RESULTS,
+});
+
+export const getSectionsRequest = () => ({
+  type: actionTypes.GET_SECTIONS_REQUEST,
+});
+
+export const getSectionsSuccess = sections => ({
+  type: actionTypes.GET_SECTIONS_SUCCESS,
+  sections,
+});
+
+export const getSectionsFailure = () => ({
+  type: actionTypes.GET_SECTIONS_FAILURE,
+});
+
+export const fetchSections = (termId, schoolAbbv, subjectAbbv, courseAbbv) => (dispatch) => {
+  dispatch(getSectionsRequest());
+  return fetch(sectionsURL(termId, schoolAbbv, subjectAbbv, courseAbbv))
+    .then(response => response.json())
+    .then(json => dispatch(getSectionsSuccess(json)))
+    .catch((error) => {
+      /* istanbul ignore next */
+      if (!prodMode) console.log(error);
+      dispatch(getSectionsFailure());
+    });
+};
+
+export const setCurrentCourseName = courseName => ({
+  type: actionTypes.SET_CURRENT_COURSE_NAME,
+  courseName,
+});
+
+export const viewSearch = () => ({
+  type: actionTypes.VIEW_SEARCH,
 });

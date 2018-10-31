@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
+import { fetchSearchResults, clearSearchResults } from 'actions';
 import SearchBox from './SearchBox';
-import { fetchSearchResults, clearSearchResults } from '../../actions';
 
 /* istanbul ignore next */
 const mapDispatchToProps = {

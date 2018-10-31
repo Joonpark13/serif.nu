@@ -1,6 +1,5 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import { mockStyles } from 'util/testing';
+import ListItem from '@material-ui/core/ListItem';
+import { mockStyles, wrapperCreator } from 'util/testing';
 import { UnstyledSearchResults, styles } from './SearchResults';
 
 describe('SearchResults', () => {
@@ -23,19 +22,33 @@ describe('SearchResults', () => {
   }];
   const classes = mockStyles(styles);
 
+  const defaultProps = {
+    searchResults: testResults,
+    isFetching: false,
+    classes,
+    handleCourseClick: () => {},
+  };
+  const getComponent = wrapperCreator(UnstyledSearchResults, defaultProps);
+
   it('renders correctly', () => {
-    const wrapper = shallow(
-      <UnstyledSearchResults searchResults={testResults} isFetching={false} classes={classes} />,
-    );
+    const wrapper = getComponent();
 
     expect(wrapper).toMatchSnapshot();
   });
 
   it('renders loading correctly', () => {
-    const wrapper = shallow(
-      <UnstyledSearchResults searchResults={testResults} isFetching classes={classes} />,
-    );
+    const wrapper = getComponent({ isFetching: true });
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('handleCourseClick gets called correctly', () => {
+    const handleCourseClickMock = jest.fn();
+    const wrapper = getComponent({ handleCourseClick: handleCourseClickMock });
+
+    wrapper.find(ListItem).first().simulate('click');
+
+    expect(handleCourseClickMock)
+      .toHaveBeenCalledWith(testResults[0].school, testResults[0].subject, testResults[0].abbv);
   });
 });

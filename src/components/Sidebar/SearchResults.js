@@ -18,7 +18,12 @@ export const styles = {
   },
 };
 
-function SearchResults({ searchResults, isFetching, classes }) {
+function SearchResults({
+  searchResults,
+  isFetching,
+  handleCourseClick,
+  classes,
+}) {
   if (isFetching) {
     return (
       <div className={classes.loadingContainer}>
@@ -34,6 +39,7 @@ function SearchResults({ searchResults, isFetching, classes }) {
             <ListItem
               key={`${course.school} ${course.subject} ${course.abbv}`}
               button
+              onClick={() => handleCourseClick(course.school, course.subject, course.abbv)}
             >
               <ListItemText primary={`${course.subject} ${course.abbv} ${course.name}`} />
             </ListItem>
@@ -48,6 +54,7 @@ SearchResults.propTypes = {
   searchResults: PropTypes.arrayOf(PropTypes.object).isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   isFetching: PropTypes.bool.isRequired,
+  handleCourseClick: PropTypes.func.isRequired,
 };
 
 export { SearchResults as UnstyledSearchResults };

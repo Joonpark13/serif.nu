@@ -1,5 +1,8 @@
-/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/no-extraneous-dependencies */
+import React from 'react';
+import { shallow } from 'enzyme';
 
+// Helper function used to inject mock styles into a styled component for testing
 export function mockStyles(style) {
   const mockedClasses = {};
 
@@ -8,4 +11,9 @@ export function mockStyles(style) {
   });
 
   return mockedClasses;
+}
+
+// Helper function that returns a function which creates enzyme wrappers with default props
+export function wrapperCreator(Component, defaultProps) {
+  return props => shallow(<Component {...defaultProps} {...props} />);
 }

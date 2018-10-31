@@ -5,6 +5,9 @@ import * as actionTypes from '../actions/action-types';
 export const initialSearchState = fromJS({
   isFetching: false,
   results: [],
+  view: 'search',
+  currentCourseName: undefined,
+  currentSections: [],
 });
 
 export const search = (state = initialSearchState, action) => {
@@ -19,6 +22,20 @@ export const search = (state = initialSearchState, action) => {
         .set('results', initialSearchState.get('results'));
     case actionTypes.CLEAR_SEARCH_RESULTS:
       return state.set('results', fromJS([]));
+
+    case actionTypes.GET_SECTIONS_SUCCESS:
+      return state.set('view', 'sectionSelection')
+        .set('currentSections', fromJS(action.sections));
+    case actionTypes.GET_SECTIONS_FAILURE:
+      return state.set('currentSections', initialSearchState.get('currentSections'));
+    case actionTypes.SET_CURRENT_COURSE_NAME:
+      return state.set('currentCourseName', action.courseName);
+
+    case actionTypes.VIEW_SEARCH:
+      return state.set('view', 'search')
+        .set('results', initialSearchState.get('results'))
+        .set('currentSections', initialSearchState.get('currentSections'));
+
     default:
       return state;
   }

@@ -286,7 +286,7 @@ ShallowWrapper {
             value="browse"
           />
         </WithStyles(Tabs)>,
-        <Search />,
+        <Connect(Component) />,
         false,
       ],
     },
@@ -349,7 +349,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {},
         "ref": null,
         "rendered": null,
@@ -384,7 +384,7 @@ ShallowWrapper {
               value="browse"
             />
           </WithStyles(Tabs)>,
-          <Search />,
+          <Connect(Component) />,
           false,
         ],
       },
@@ -447,7 +447,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {},
           "ref": null,
           "rendered": null,
