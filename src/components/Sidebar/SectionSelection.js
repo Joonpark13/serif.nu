@@ -30,6 +30,7 @@ function SectionSelection({
   sections,
   back,
   classes,
+  addSection,
 }) {
   return (
     <div className={classes.sectionsRoot}>
@@ -43,6 +44,7 @@ function SectionSelection({
           <ListItem
             key={section.id}
             button
+            onClick={() => addSection(section)}
           >
             <ListItemText>
               <Typography variant="title" className={classes.sectionTitle}>{`Section ${section.section}`}</Typography>
@@ -67,6 +69,7 @@ SectionSelection.propTypes = {
   sections: PropTypes.arrayOf(PropTypes.object).isRequired,
   back: PropTypes.func.isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  addSection: PropTypes.func.isRequired,
 };
 
 export { SectionSelection as UnstyledSectionSelection };

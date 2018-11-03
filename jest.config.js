@@ -7,6 +7,7 @@ module.exports = {
     '!src/util/to-js.js',
     '!src/util/colors.js',
     '!**/__snapshots__/**',
+    '!src/reducers/index.js',
   ],
   coverageReporters: ['html', 'text'],
   coverageThreshold: {

@@ -4,7 +4,8 @@ module.exports = {
     "react/jsx-filename-extension": "off",
     "no-console": "off",
     "import/no-unresolved": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "object-curly-newline": "off"
   },
   "globals": {
     "document": true,

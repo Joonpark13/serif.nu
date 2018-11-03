@@ -65,3 +65,8 @@ export const setCurrentCourseName = courseName => ({
 export const viewSearch = () => ({
   type: actionTypes.VIEW_SEARCH,
 });
+
+export const addSection = section => ({
+  type: actionTypes.ADD_SECTION,
+  section,
+});

@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import { search as searchReducer, initialSearchState } from './index';
+import searchReducer, { initialSearchState } from './search';
 import * as actionTypes from '../actions/action-types';
 import * as actionCreators from '../actions/index';
 
@@ -10,7 +10,7 @@ describe('search reducer', () => {
 
   it(`should handle ${actionTypes.GET_SEARCH_RESULTS_REQUEST}`, () => {
     const state = fromJS({ isFetching: false });
-    const action = { type: actionTypes.GET_SEARCH_RESULTS_REQUEST };
+    const action = actionCreators.getSearchResultsRequest();
 
     expect(searchReducer(state, action)).toEqual(fromJS({ isFetching: true }));
   });

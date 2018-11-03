@@ -70,6 +70,16 @@ describe('action creators', () => {
       expect(actionCreators.viewSearch()).toEqual({ type: actionTypes.VIEW_SEARCH });
     });
   });
+
+  describe('addSection', () => {
+    it(`should create a ${actionTypes.ADD_SECTION}`, () => {
+      const section = { section: '20', id: 12345 };
+      expect(actionCreators.addSection(section)).toEqual({
+        type: actionTypes.ADD_SECTION,
+        section,
+      });
+    });
+  });
 });
 
 describe('async action creators', () => {
