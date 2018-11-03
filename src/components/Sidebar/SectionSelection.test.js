@@ -1,3 +1,4 @@
+import ListItem from '@material-ui/core/ListItem';
 import { mockStyles, wrapperCreator } from 'util/testing';
 import { UnstyledSectionSelection, styles } from './SectionSelection';
 
@@ -24,6 +25,7 @@ describe('SectionSelection', () => {
       instructor: ['Ian Horswill', 'Vincent St-Amour'],
     }],
     back: () => {},
+    addSection: () => {},
     classes,
   };
   const getComponent = wrapperCreator(UnstyledSectionSelection, defaultProps);
@@ -32,5 +34,14 @@ describe('SectionSelection', () => {
     const wrapper = getComponent();
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('calls addSection when section is clicked', () => {
+    const addSectionMock = jest.fn();
+    const wrapper = getComponent({ addSection: addSectionMock });
+
+    wrapper.find(ListItem).first().simulate('click');
+
+    expect(addSectionMock).toHaveBeenCalledWith(defaultProps.sections[0]);
   });
 });

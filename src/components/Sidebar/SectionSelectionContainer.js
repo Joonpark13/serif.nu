@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import toJS from 'util/to-js';
-import { viewSearch } from 'actions';
+import { viewSearch, addSection } from 'actions';
 import SectionSelection from './SectionSelection';
 
 export function currentCourseNameSelector(state) {
@@ -19,6 +19,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   back: viewSearch,
+  addSection,
 };
 
 const SectionSelectionContainer = connect(mapStateToProps, mapDispatchToProps)(
