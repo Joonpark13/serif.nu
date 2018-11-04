@@ -22,8 +22,4 @@ const mapDispatchToProps = {
   addSection,
 };
 
-const SectionSelectionContainer = connect(mapStateToProps, mapDispatchToProps)(
-  toJS(SectionSelection),
-);
-
-export default SectionSelectionContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(toJS(SectionSelection));

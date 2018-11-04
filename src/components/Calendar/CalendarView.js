@@ -1,117 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import { northwesternRichBlack10 } from 'util/colors';
-
-const hours = [];
-for (let i = 8; i <= 22; i++) {
-  hours.push(i);
-}
-
-const columnBorderStyle = `1px solid ${northwesternRichBlack10}`;
-const dowColumnHeaderHeight = 24;
-const cellMinHeight = 50;
-const columnHeight = `calc(100% - ${dowColumnHeaderHeight}px)`;
-// cellMinHeight + 1 for border height
-const columnMinHeight = (cellMinHeight + 1) * hours.length + dowColumnHeaderHeight;
+import { getHours, parseMeetingTime } from './calendar-helpers';
+import HoursColumn from './HoursColumn';
+import DowColumn from './DowColumn';
 
 export const styles = {
   calendarRoot: {
     height: 'calc(100vh - 64px)', // 64px is height of TopBar
     display: 'flex',
   },
-  hoursColumnContainer: {
-    minHeight: columnMinHeight,
-    borderRight: columnBorderStyle,
-  },
-  hoursColumn: {
-    width: 50,
-    height: columnHeight,
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  hoursSpacer: {
-    height: dowColumnHeaderHeight,
-  },
-  hours: {
-    flexGrow: 1,
-    minHeight: cellMinHeight,
-    borderBottom: '1px solid white',
-  },
   dowColumns: {
     display: 'flex',
     width: '100%',
   },
-  dowColumn: {
-    flexGrow: 1,
-    borderRight: columnBorderStyle,
-    minHeight: columnMinHeight,
-  },
-  dowHeader: {
-    borderBottom: columnBorderStyle,
-  },
-  calendarColumn: {
-    height: columnHeight,
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  calendarCell: {
-    flexGrow: 1,
-    borderBottom: columnBorderStyle,
-    minHeight: cellMinHeight,
-  },
 };
 
-/*
- * 0 is 12am
- * 1 - 11 gets 'am'
- * 12 gets 'pm'
- * 13 - 23 gets -12, then 'pm'
- */
-export function formatHour(hour) {
-  if (hour === 0 || hour === 24) {
-    return '12am';
-  }
-  if (hour <= 11) {
-    return `${hour}am`;
-  }
-  if (hour === 12) {
-    return '12pm';
-  }
-  if (hour <= 23) {
-    return `${hour - 12}pm`;
-  }
-  throw new RangeError('Invalid input. hour must be in the range [0, 24]');
+const hours = getHours();
+const dows = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+
+
+export function getSectionsForDow(dow, sections) {
+  // sections: [{
+  //   class_mtg_info: [{
+  //     meet_t: MoWe 11:00AM - 11:50AM
+  //   }]
+  // }]
+  return sections.filter(section => section.class_mtg_info.some((mtgInfo) => {
+    const mtgTime = parseMeetingTime(mtgInfo.meet_t);
+    if (mtgTime === 'TBA') return false; // TODO: Handle unscheduled courses
+    return mtgTime.dow.some(mtgTimeDow => dow.slice(0, 2) === mtgTimeDow);
+    // mtgTimeDow will be 'Mo' and the dow param of the function will be 'Mon'
+  }));
 }
 
-function CalendarView({ classes }) {
-  const dows = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
-
+function CalendarView({ sections, classes }) {
   return (
     <div className={classes.calendarRoot}>
-      <div className={classes.hoursColumnContainer}>
-        <div className={classes.hoursSpacer} />
-        <div className={classes.hoursColumn}>
-          {hours.map(hour => (
-            <Typography key={hour} align="right" className={classes.hours} variant="body1">
-              {formatHour(hour)}
-            </Typography>
-          ))}
-        </div>
-      </div>
+      <HoursColumn hours={hours} />
 
       <div className={classes.dowColumns}>
         {dows.map(dow => (
-          <div key={dow} className={classes.dowColumn}>
-            <Typography className={classes.dowHeader} align="center" variant="body2">
-              {dow}
-            </Typography>
-
-            <div className={classes.calendarColumn}>
-              {hours.map(hour => <div key={hour} className={classes.calendarCell} />)}
-            </div>
-          </div>
+          <DowColumn key={dow} dow={dow} sections={getSectionsForDow(dow, sections)} />
         ))}
       </div>
     </div>
@@ -120,6 +50,7 @@ function CalendarView({ classes }) {
 
 CalendarView.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  sections: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export { CalendarView as UnstyledCalendarView };

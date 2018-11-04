@@ -1,35 +1,49 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { mockStyles } from 'util/testing';
-import { UnstyledCalendarView, styles, formatHour } from './CalendarView';
+import * as calendarHelpers from './calendar-helpers';
+import { getSectionsForDow, UnstyledCalendarView, styles } from './CalendarView';
 
-describe('formatHour', () => {
-  it('returns 12am when given 0 or 24', () => {
-    expect(formatHour(0)).toBe('12am');
-    expect(formatHour(24)).toBe('12am');
+describe('getSectionsForDow', () => {
+  it('filters sections correctly given a dow', () => {
+    const parseMeetingTimeSpy = jest.spyOn(calendarHelpers, 'parseMeetingTime');
+    parseMeetingTimeSpy.mockReturnValue({
+      dow: ['Mo', 'We'],
+      start: {
+        hour: 11,
+        minute: 0,
+      },
+      end: {
+        hour: 11,
+        minute: 50,
+      },
+    });
+    const sections = [{
+      class_mtg_info: [{
+        meet_t: 'MoWe 11:00AM - 11:50AM',
+      }],
+    }];
+
+    expect(getSectionsForDow('Mon', sections)).toEqual(sections);
   });
 
-  it('returns correctly formatted hour when given an hour between 1 and 11', () => {
-    expect(formatHour(7)).toBe('7am');
-  });
+  it('filter unscheduled sections correctly', () => {
+    const parseMeetingTimeSpy = jest.spyOn(calendarHelpers, 'parseMeetingTime');
+    parseMeetingTimeSpy.mockReturnValue('TBA');
+    const sections = [{
+      class_mtg_info: [{
+        meet_t: 'TBA',
+      }],
+    }];
 
-  it('returns 12pm when given 12', () => {
-    expect(formatHour(12)).toBe('12pm');
-  });
-
-  it('returns correctly formatted hour when given an hour between 13 and 23', () => {
-    expect(formatHour(17)).toBe('5pm');
-  });
-
-  it('throws RangeError when given an invalid hour', () => {
-    expect(() => { formatHour(25); }).toThrowError(RangeError);
+    expect(getSectionsForDow('Mon', sections)).toEqual([]);
   });
 });
 
 describe('CalendarView', () => {
   it('renders correctly', () => {
     const classes = mockStyles(styles);
-    const wrapper = shallow(<UnstyledCalendarView classes={classes} />);
+    const wrapper = shallow(<UnstyledCalendarView sections={[]} classes={classes} />);
 
     expect(wrapper).toMatchSnapshot();
   });

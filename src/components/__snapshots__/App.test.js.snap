@@ -35,7 +35,7 @@ ShallowWrapper {
             sm={12}
             xs={12}
           >
-            <WithStyles(CalendarView) />
+            <Connect(Component) />
           </WithStyles(Grid)>
           <WithStyles(Grid)
             item={true}
@@ -72,7 +72,7 @@ ShallowWrapper {
               sm={12}
               xs={12}
             >
-              <WithStyles(CalendarView) />
+              <Connect(Component) />
             </WithStyles(Grid)>,
             <WithStyles(Grid)
               item={true}
@@ -92,7 +92,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": <WithStyles(CalendarView) />,
+              "children": <Connect(Component) />,
               "className": "",
               "item": true,
               "md": 9,
@@ -158,7 +158,7 @@ ShallowWrapper {
               sm={12}
               xs={12}
             >
-              <WithStyles(CalendarView) />
+              <Connect(Component) />
             </WithStyles(Grid)>
             <WithStyles(Grid)
               item={true}
@@ -195,7 +195,7 @@ ShallowWrapper {
                 sm={12}
                 xs={12}
               >
-                <WithStyles(CalendarView) />
+                <Connect(Component) />
               </WithStyles(Grid)>,
               <WithStyles(Grid)
                 item={true}
@@ -215,7 +215,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": <WithStyles(CalendarView) />,
+                "children": <Connect(Component) />,
                 "className": "",
                 "item": true,
                 "md": 9,

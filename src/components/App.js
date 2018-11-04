@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import TopBar from './TopBar';
-import CalendarView from './Calendar/CalendarView';
+import CalendarViewContainer from './Calendar/CalendarViewContainer';
 import SidebarView from './Sidebar/SidebarView';
 
 export const styles = {
@@ -18,7 +18,7 @@ function App({ classes }) {
       <TopBar />
       <Grid container>
         <Grid item md={9} sm={12} xs={12} className={classes.calendar}>
-          <CalendarView />
+          <CalendarViewContainer />
         </Grid>
 
         <Grid item md={3} sm={12} xs={12}>
