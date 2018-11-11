@@ -10,6 +10,7 @@ ShallowWrapper {
         "title": "",
       }
     }
+    menuAction={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -27,6 +28,7 @@ ShallowWrapper {
       "children": <WithStyles(Toolbar)>
         <WithStyles(IconButton)
           aria-label="Navigation"
+          onClick={[Function]}
         >
           <pure(Menu)
             className=""
@@ -50,6 +52,7 @@ ShallowWrapper {
         "children": Array [
           <WithStyles(IconButton)
             aria-label="Navigation"
+            onClick={[Function]}
           >
             <pure(Menu)
               className=""
@@ -74,6 +77,7 @@ ShallowWrapper {
             "children": <pure(Menu)
               className=""
             />,
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": Object {
@@ -116,6 +120,7 @@ ShallowWrapper {
         "children": <WithStyles(Toolbar)>
           <WithStyles(IconButton)
             aria-label="Navigation"
+            onClick={[Function]}
           >
             <pure(Menu)
               className=""
@@ -139,6 +144,7 @@ ShallowWrapper {
           "children": Array [
             <WithStyles(IconButton)
               aria-label="Navigation"
+              onClick={[Function]}
             >
               <pure(Menu)
                 className=""
@@ -163,6 +169,7 @@ ShallowWrapper {
               "children": <pure(Menu)
                 className=""
               />,
+              "onClick": [Function],
             },
             "ref": null,
             "rendered": Object {

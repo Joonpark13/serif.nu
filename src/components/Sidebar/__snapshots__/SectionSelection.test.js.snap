@@ -15,6 +15,7 @@ ShallowWrapper {
       }
     }
     currentCourseName="EECS 101-0"
+    scheduledSections={Array []}
     sections={
       Array [
         Object {

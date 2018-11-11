@@ -26,7 +26,13 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
-        <WithStyles(TopBar) />,
+        <WithStyles(TopBar)
+          menuAction={[Function]}
+        />,
+        <NavDrawer
+          closeFunc={[Function]}
+          isOpen={false}
+        />,
         <WithStyles(Grid)
           container={true}
         >
@@ -56,7 +62,21 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "menuAction": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "closeFunc": [Function],
+          "isOpen": false,
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -149,7 +169,13 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": Array [
-          <WithStyles(TopBar) />,
+          <WithStyles(TopBar)
+            menuAction={[Function]}
+          />,
+          <NavDrawer
+            closeFunc={[Function]}
+            isOpen={false}
+          />,
           <WithStyles(Grid)
             container={true}
           >
@@ -179,7 +205,21 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "menuAction": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "closeFunc": [Function],
+            "isOpen": false,
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -287,3 +327,5 @@ ShallowWrapper {
   },
 }
 `;
+
+exports[`App should toggle navigation 1`] = `[Function]`;

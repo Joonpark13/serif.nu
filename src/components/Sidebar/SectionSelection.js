@@ -85,10 +85,14 @@ function SectionSelection({
 SectionSelection.propTypes = {
   currentCourseName: PropTypes.string.isRequired,
   sections: PropTypes.arrayOf(PropTypes.object).isRequired,
-  scheduledSections: PropTypes.arrayOf(PropTypes.object).isRequired,
+  scheduledSections: PropTypes.arrayOf(PropTypes.object),
   back: PropTypes.func.isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   addSection: PropTypes.func.isRequired,
+};
+
+SectionSelection.defaultProps = {
+  scheduledSections: [],
 };
 
 export { SectionSelection as UnstyledSectionSelection };

@@ -18,11 +18,11 @@ export const styles = {
   },
 };
 
-function TopBar({ classes }) {
+function TopBar({ classes, menuAction }) {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton aria-label="Navigation">
+        <IconButton aria-label="Navigation" onClick={menuAction}>
           <MenuIcon className={classes.icon} />
         </IconButton>
 
@@ -34,6 +34,7 @@ function TopBar({ classes }) {
 
 TopBar.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  menuAction: PropTypes.func.isRequired,
 };
 
 export { TopBar as UnstyledTopBar };
