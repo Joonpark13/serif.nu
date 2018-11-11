@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
 import * as actionTypes from './action-types';
 import * as actionCreators from './index';
-import { searchURL, sectionsURL } from '../util/api';
+import { searchURL, sectionsURL, schoolsURL } from '../util/api';
 
 describe('action creators', () => {
   describe('getSearchResults', () => {
@@ -145,6 +145,46 @@ describe('async action creators', () => {
       expect(store.getActions()).toEqual([
         actionCreators.getSectionsRequest(),
         actionCreators.getSectionsFailure(),
+      ]);
+    });
+  });
+
+  describe('fetchSchools', () => {
+    let store;
+    const termId = '4720';
+
+    beforeEach(() => {
+      store = mockStore({ schools: [] });
+    });
+
+    it(`should create ${actionTypes.GET_SCHOOLS_SUCCESS} after fetching schools`, async () => {
+      const mockResponse = [
+        { _id: '5bab37ef1080c00004622388', id: 'MUSIC', name: 'Bienen School of Music', term: '4720', type: 'school' },
+        { _id: '5bab37ef1080c00004622389', id: 'LAW', name: 'Law School', term: '4720', type: 'school' },
+        { _id: '5bab37ef1080c0000462238a', id: 'MEAS', name: 'McCormick School of Engineering and Applied Science', term: '4720', type: 'school' },
+        { _id: '5bab37ef1080c0000462238b', id: 'JOUR', name: 'Medill School of Journalism', term: '4720', type: 'school' },
+        { _id: '5bab37ef1080c0000462238c', id: 'DOHA', name: 'Northwestern in Qatar', term: '4720', type: 'school' },
+        { _id: '5bab37ef1080c0000462238d', id: 'SoC', name: 'School of Communication', term: '4720', type: 'school' },
+        { _id: '5bab37ef1080c0000462238e', id: 'SESP', name: 'School of Educ & Social Policy', term: '4720', type: 'school' },
+        { _id: '5bab37ef1080c0000462238f', id: 'SCS', name: 'School of Professional Studies', term: '4720', type: 'school' },
+        { _id: '5bab37ef1080c00004622390', id: 'WCAS', name: 'Weinberg College of Arts and Sciences', term: '4720', type: 'school' },
+      ];
+      fetchMock.get(schoolsURL(termId), mockResponse);
+
+      await store.dispatch(actionCreators.fetchSchools(termId));
+      expect(store.getActions()).toEqual([
+        actionCreators.getSchoolsRequest(),
+        actionCreators.getSchoolsSuccess(mockResponse),
+      ]);
+    });
+
+    it(`should create ${actionTypes.GET_SCHOOLS_FAILURE} on fetching schools failure`, async () => {
+      fetchMock.get(schoolsURL(termId), { throws: new TypeError('Failed to fetch') });
+
+      await store.dispatch(actionCreators.fetchSchools(termId));
+      expect(store.getActions()).toEqual([
+        actionCreators.getSchoolsRequest(),
+        actionCreators.getSchoolsFailure(),
       ]);
     });
   });

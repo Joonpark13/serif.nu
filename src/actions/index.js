@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 import * as actionTypes from './action-types';
-import { searchURL, sectionsURL } from '../util/api';
+import { searchURL, sectionsURL, schoolsURL } from '../util/api';
 import prodMode from '../util/env';
 
 export const getSearchResultsRequest = () => ({
@@ -70,3 +70,28 @@ export const addSection = section => ({
   type: actionTypes.ADD_SECTION,
   section,
 });
+
+export const getSchoolsRequest = () => ({
+  type: actionTypes.GET_SCHOOLS_REQUEST,
+});
+
+export const getSchoolsSuccess = schools => ({
+  type: actionTypes.GET_SCHOOLS_SUCCESS,
+  schools,
+});
+
+export const getSchoolsFailure = () => ({
+  type: actionTypes.GET_SCHOOLS_FAILURE,
+});
+
+export const fetchSchools = termId => (dispatch) => {
+  dispatch(getSchoolsRequest());
+  return fetch(schoolsURL(termId))
+    .then(response => response.json())
+    .then(json => dispatch(getSchoolsSuccess(json)))
+    .catch((error) => {
+      /* istanbul ignore next */
+      if (!prodMode) console.log(error);
+      dispatch(getSchoolsFailure());
+    });
+};
