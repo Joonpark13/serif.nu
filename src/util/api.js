@@ -6,3 +6,7 @@ export function searchURL(query) {
 export function sectionsURL(termId, schoolAbbv, subjectAbbv, courseAbbv) {
   return `${process.env.API_URL}/sections?term_id=${termId}&school_abbv=${schoolAbbv}&subject_abbv=${subjectAbbv}&course_abbv=${courseAbbv}`;
 }
+
+export function schoolsURL(termId) {
+  return `${process.env.API_URL}/schools?term_id=${termId}`;
+}
