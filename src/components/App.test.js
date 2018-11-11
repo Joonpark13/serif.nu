@@ -49,4 +49,11 @@ describe('App', () => {
     expect(fetchSchoolsMock).not.toHaveBeenCalled();
     expect(fetchSearchIndexMock).not.toHaveBeenCalled();
   });
+
+  it('should toggle navigation', () => {
+    const wrapper = getWrapper();
+    wrapper.instance().toggleNav();
+
+    expect(getWrapper).toMatchSnapshot();
+  });
 });
