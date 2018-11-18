@@ -21,41 +21,46 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <WithStyles(List)>
-        <WithStyles(ListItem)
-          button={true}
+        <ListItemLink
+          onClick={[Function]}
+          to="/"
         >
           <WithStyles(ListItemText)
             primary="Serif.nu"
           />
-        </WithStyles(ListItem)>
-        <WithStyles(ListItem)
-          button={true}
+        </ListItemLink>
+        <ListItemLink
+          onClick={[Function]}
+          to="/about"
         >
           <WithStyles(ListItemText)
             primary="About"
           />
-        </WithStyles(ListItem)>
-        <WithStyles(ListItem)
-          button={true}
+        </ListItemLink>
+        <ListItemLink
+          onClick={[Function]}
+          to="/faq"
         >
           <WithStyles(ListItemText)
             primary="FAQ"
           />
-        </WithStyles(ListItem)>
-        <WithStyles(ListItem)
-          button={true}
+        </ListItemLink>
+        <ListItemLink
+          onClick={[Function]}
+          to="/report"
         >
           <WithStyles(ListItemText)
             primary="Report a Bug"
           />
-        </WithStyles(ListItem)>
-        <WithStyles(ListItem)
-          button={true}
+        </ListItemLink>
+        <ListItemLink
+          onClick={[Function]}
+          to="/contact"
         >
           <WithStyles(ListItemText)
             primary="Contact"
           />
-        </WithStyles(ListItem)>
+        </ListItemLink>
       </WithStyles(List)>,
       "onClose": [Function],
       "open": true,
@@ -67,41 +72,46 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <WithStyles(ListItem)
-            button={true}
+          <ListItemLink
+            onClick={[Function]}
+            to="/"
           >
             <WithStyles(ListItemText)
               primary="Serif.nu"
             />
-          </WithStyles(ListItem)>,
-          <WithStyles(ListItem)
-            button={true}
+          </ListItemLink>,
+          <ListItemLink
+            onClick={[Function]}
+            to="/about"
           >
             <WithStyles(ListItemText)
               primary="About"
             />
-          </WithStyles(ListItem)>,
-          <WithStyles(ListItem)
-            button={true}
+          </ListItemLink>,
+          <ListItemLink
+            onClick={[Function]}
+            to="/faq"
           >
             <WithStyles(ListItemText)
               primary="FAQ"
             />
-          </WithStyles(ListItem)>,
-          <WithStyles(ListItem)
-            button={true}
+          </ListItemLink>,
+          <ListItemLink
+            onClick={[Function]}
+            to="/report"
           >
             <WithStyles(ListItemText)
               primary="Report a Bug"
             />
-          </WithStyles(ListItem)>,
-          <WithStyles(ListItem)
-            button={true}
+          </ListItemLink>,
+          <ListItemLink
+            onClick={[Function]}
+            to="/contact"
           >
             <WithStyles(ListItemText)
               primary="Contact"
             />
-          </WithStyles(ListItem)>,
+          </ListItemLink>,
         ],
       },
       "ref": null,
@@ -109,12 +119,13 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "button": true,
             "children": <WithStyles(ListItemText)
               primary="Serif.nu"
             />,
+            "onClick": [Function],
+            "to": "/",
           },
           "ref": null,
           "rendered": Object {
@@ -133,12 +144,13 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "button": true,
             "children": <WithStyles(ListItemText)
               primary="About"
             />,
+            "onClick": [Function],
+            "to": "/about",
           },
           "ref": null,
           "rendered": Object {
@@ -157,12 +169,13 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "button": true,
             "children": <WithStyles(ListItemText)
               primary="FAQ"
             />,
+            "onClick": [Function],
+            "to": "/faq",
           },
           "ref": null,
           "rendered": Object {
@@ -181,12 +194,13 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "button": true,
             "children": <WithStyles(ListItemText)
               primary="Report a Bug"
             />,
+            "onClick": [Function],
+            "to": "/report",
           },
           "ref": null,
           "rendered": Object {
@@ -205,12 +219,13 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "button": true,
             "children": <WithStyles(ListItemText)
               primary="Contact"
             />,
+            "onClick": [Function],
+            "to": "/contact",
           },
           "ref": null,
           "rendered": Object {
@@ -238,41 +253,46 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <WithStyles(List)>
-          <WithStyles(ListItem)
-            button={true}
+          <ListItemLink
+            onClick={[Function]}
+            to="/"
           >
             <WithStyles(ListItemText)
               primary="Serif.nu"
             />
-          </WithStyles(ListItem)>
-          <WithStyles(ListItem)
-            button={true}
+          </ListItemLink>
+          <ListItemLink
+            onClick={[Function]}
+            to="/about"
           >
             <WithStyles(ListItemText)
               primary="About"
             />
-          </WithStyles(ListItem)>
-          <WithStyles(ListItem)
-            button={true}
+          </ListItemLink>
+          <ListItemLink
+            onClick={[Function]}
+            to="/faq"
           >
             <WithStyles(ListItemText)
               primary="FAQ"
             />
-          </WithStyles(ListItem)>
-          <WithStyles(ListItem)
-            button={true}
+          </ListItemLink>
+          <ListItemLink
+            onClick={[Function]}
+            to="/report"
           >
             <WithStyles(ListItemText)
               primary="Report a Bug"
             />
-          </WithStyles(ListItem)>
-          <WithStyles(ListItem)
-            button={true}
+          </ListItemLink>
+          <ListItemLink
+            onClick={[Function]}
+            to="/contact"
           >
             <WithStyles(ListItemText)
               primary="Contact"
             />
-          </WithStyles(ListItem)>
+          </ListItemLink>
         </WithStyles(List)>,
         "onClose": [Function],
         "open": true,
@@ -284,41 +304,46 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <WithStyles(ListItem)
-              button={true}
+            <ListItemLink
+              onClick={[Function]}
+              to="/"
             >
               <WithStyles(ListItemText)
                 primary="Serif.nu"
               />
-            </WithStyles(ListItem)>,
-            <WithStyles(ListItem)
-              button={true}
+            </ListItemLink>,
+            <ListItemLink
+              onClick={[Function]}
+              to="/about"
             >
               <WithStyles(ListItemText)
                 primary="About"
               />
-            </WithStyles(ListItem)>,
-            <WithStyles(ListItem)
-              button={true}
+            </ListItemLink>,
+            <ListItemLink
+              onClick={[Function]}
+              to="/faq"
             >
               <WithStyles(ListItemText)
                 primary="FAQ"
               />
-            </WithStyles(ListItem)>,
-            <WithStyles(ListItem)
-              button={true}
+            </ListItemLink>,
+            <ListItemLink
+              onClick={[Function]}
+              to="/report"
             >
               <WithStyles(ListItemText)
                 primary="Report a Bug"
               />
-            </WithStyles(ListItem)>,
-            <WithStyles(ListItem)
-              button={true}
+            </ListItemLink>,
+            <ListItemLink
+              onClick={[Function]}
+              to="/contact"
             >
               <WithStyles(ListItemText)
                 primary="Contact"
               />
-            </WithStyles(ListItem)>,
+            </ListItemLink>,
           ],
         },
         "ref": null,
@@ -326,12 +351,13 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
-              "button": true,
               "children": <WithStyles(ListItemText)
                 primary="Serif.nu"
               />,
+              "onClick": [Function],
+              "to": "/",
             },
             "ref": null,
             "rendered": Object {
@@ -350,12 +376,13 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
-              "button": true,
               "children": <WithStyles(ListItemText)
                 primary="About"
               />,
+              "onClick": [Function],
+              "to": "/about",
             },
             "ref": null,
             "rendered": Object {
@@ -374,12 +401,13 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
-              "button": true,
               "children": <WithStyles(ListItemText)
                 primary="FAQ"
               />,
+              "onClick": [Function],
+              "to": "/faq",
             },
             "ref": null,
             "rendered": Object {
@@ -398,12 +426,13 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
-              "button": true,
               "children": <WithStyles(ListItemText)
                 primary="Report a Bug"
               />,
+              "onClick": [Function],
+              "to": "/report",
             },
             "ref": null,
             "rendered": Object {
@@ -422,12 +451,13 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
-              "button": true,
               "children": <WithStyles(ListItemText)
                 primary="Contact"
               />,
+              "onClick": [Function],
+              "to": "/contact",
             },
             "ref": null,
             "rendered": Object {

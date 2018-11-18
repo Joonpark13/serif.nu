@@ -4,11 +4,7 @@ exports[`Schools renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Schools
-    classes={
-      Object {
-        "loadingContainer": "",
-      }
-    }
+    classes={Object {}}
     isFetching={false}
     schools={
       Array [
@@ -274,11 +270,7 @@ exports[`Schools renders loading correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Schools
-    classes={
-      Object {
-        "loadingContainer": "",
-      }
-    }
+    classes={Object {}}
     isFetching={true}
     schools={
       Array [
@@ -310,7 +302,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <WithStyles(CircularProgress) />,
-      "className": "",
+      "className": undefined,
     },
     "ref": null,
     "rendered": Object {
@@ -331,7 +323,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <WithStyles(CircularProgress) />,
-        "className": "",
+        "className": undefined,
       },
       "ref": null,
       "rendered": Object {

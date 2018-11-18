@@ -33,27 +33,27 @@ ShallowWrapper {
           closeFunc={[Function]}
           isOpen={false}
         />,
-        <WithStyles(Grid)
-          container={true}
-        >
-          <WithStyles(Grid)
-            className=""
-            item={true}
-            md={9}
-            sm={12}
-            xs={12}
-          >
-            <WithStyles(ClassesView) />
-          </WithStyles(Grid)>
-          <WithStyles(Grid)
-            item={true}
-            md={3}
-            sm={12}
-            xs={12}
-          >
-            <WithStyles(SidebarView) />
-          </WithStyles(Grid)>
-        </WithStyles(Grid)>,
+        <Route
+          exact={true}
+          path="/"
+          render={[Function]}
+        />,
+        <Route
+          component={[Function]}
+          path="/about"
+        />,
+        <Route
+          component={[Function]}
+          path="/faq"
+        />,
+        <Route
+          component={[Function]}
+          path="/report"
+        />,
+        <Route
+          component={[Function]}
+          path="/contact"
+        />,
       ],
     },
     "ref": null,
@@ -86,77 +86,60 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": Array [
-            <WithStyles(Grid)
-              className=""
-              item={true}
-              md={9}
-              sm={12}
-              xs={12}
-            >
-              <WithStyles(ClassesView) />
-            </WithStyles(Grid)>,
-            <WithStyles(Grid)
-              item={true}
-              md={3}
-              sm={12}
-              xs={12}
-            >
-              <WithStyles(SidebarView) />
-            </WithStyles(Grid)>,
-          ],
-          "container": true,
+          "exact": true,
+          "path": "/",
+          "render": [Function],
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <WithStyles(ClassesView) />,
-              "className": "",
-              "item": true,
-              "md": 9,
-              "sm": 12,
-              "xs": 12,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <WithStyles(SidebarView) />,
-              "item": true,
-              "md": 3,
-              "sm": 12,
-              "xs": 12,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {},
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": [Function],
-          },
-        ],
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/about",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/faq",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/report",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "path": "/contact",
+        },
+        "ref": null,
+        "rendered": null,
         "type": [Function],
       },
     ],
@@ -176,27 +159,27 @@ ShallowWrapper {
             closeFunc={[Function]}
             isOpen={false}
           />,
-          <WithStyles(Grid)
-            container={true}
-          >
-            <WithStyles(Grid)
-              className=""
-              item={true}
-              md={9}
-              sm={12}
-              xs={12}
-            >
-              <WithStyles(ClassesView) />
-            </WithStyles(Grid)>
-            <WithStyles(Grid)
-              item={true}
-              md={3}
-              sm={12}
-              xs={12}
-            >
-              <WithStyles(SidebarView) />
-            </WithStyles(Grid)>
-          </WithStyles(Grid)>,
+          <Route
+            exact={true}
+            path="/"
+            render={[Function]}
+          />,
+          <Route
+            component={[Function]}
+            path="/about"
+          />,
+          <Route
+            component={[Function]}
+            path="/faq"
+          />,
+          <Route
+            component={[Function]}
+            path="/report"
+          />,
+          <Route
+            component={[Function]}
+            path="/contact"
+          />,
         ],
       },
       "ref": null,
@@ -229,77 +212,60 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": Array [
-              <WithStyles(Grid)
-                className=""
-                item={true}
-                md={9}
-                sm={12}
-                xs={12}
-              >
-                <WithStyles(ClassesView) />
-              </WithStyles(Grid)>,
-              <WithStyles(Grid)
-                item={true}
-                md={3}
-                sm={12}
-                xs={12}
-              >
-                <WithStyles(SidebarView) />
-              </WithStyles(Grid)>,
-            ],
-            "container": true,
+            "exact": true,
+            "path": "/",
+            "render": [Function],
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <WithStyles(ClassesView) />,
-                "className": "",
-                "item": true,
-                "md": 9,
-                "sm": 12,
-                "xs": 12,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <WithStyles(SidebarView) />,
-                "item": true,
-                "md": 3,
-                "sm": 12,
-                "xs": 12,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": [Function],
-            },
-          ],
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/about",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/faq",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/report",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "path": "/contact",
+          },
+          "ref": null,
+          "rendered": null,
           "type": [Function],
         },
       ],

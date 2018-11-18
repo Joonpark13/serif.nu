@@ -8,12 +8,15 @@ import { auth } from 'util/firebase';
 import toJS from 'util/to-js';
 import { CURRENT_TERM } from 'util/constants';
 import PropTypes from 'prop-types';
-import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
+import { withRouter, Route } from 'react-router-dom';
 import TopBar from './TopBar';
-import ClassesView from './Calendar/ClassesView';
-import SidebarView from './Sidebar/SidebarView';
 import NavDrawer from './NavDrawer';
+import HomePage from './Pages/HomePage';
+import AboutPage from './Pages/AboutPage';
+import FAQPage from './Pages/FAQPage';
+import ReportPage from './Pages/ReportPage';
+import ContactPage from './Pages/ContactPage';
 
 export const styles = {
   calendar: {
@@ -59,14 +62,19 @@ class App extends Component {
       <React.Fragment>
         <TopBar menuAction={this.toggleNav} />
         <NavDrawer isOpen={navigationOpen} closeFunc={this.toggleNav} />
-        <Grid container>
-          <Grid item md={9} sm={12} xs={12} className={classes.calendar}>
-            <ClassesView />
-          </Grid>
-          <Grid item md={3} sm={12} xs={12}>
-            <SidebarView />
-          </Grid>
-        </Grid>
+        <Route
+          exact
+          path="/"
+          render={/* istanbul ignore next */ props => <HomePage {...props} classes={classes} />}
+        />
+        {/* istanbul ignore next */}
+        <Route path="/about" component={AboutPage} />
+        {/* istanbul ignore next */}
+        <Route path="/faq" component={FAQPage} />
+        {/* istanbul ignore next */}
+        <Route path="/report" component={ReportPage} />
+        {/* istanbul ignore next */}
+        <Route path="/contact" component={ContactPage} />
       </React.Fragment>
     );
   }
@@ -85,4 +93,4 @@ const mapDispatchToProps = {
 
 export { App as UnstyledApp };
 const AppWithStyles = toJS(withStyles(styles)(App));
-export default connect(null, mapDispatchToProps)(AppWithStyles);
+export default withRouter(connect(null, mapDispatchToProps)(AppWithStyles));
