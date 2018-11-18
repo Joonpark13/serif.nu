@@ -8,6 +8,7 @@ module.exports = env => merge(common(env), {
     contentBase: path.join(__dirname, 'dist/'),
     port: 3000,
     publicPath: 'http://localhost:3000/',
+    historyApiFallback: true,
   },
   devtool: 'cheap-module-eval-source-map',
 });

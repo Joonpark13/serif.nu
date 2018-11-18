@@ -16,6 +16,7 @@ describe('Schools', () => {
   }];
   const defaultProps = {
     schools: testSchools,
+    classes: {},
     isFetching: false,
     setBrowseLevel: () => {},
   };
