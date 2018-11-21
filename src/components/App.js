@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchSchools } from 'actions';
+import toJS from 'util/to-js';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
@@ -12,27 +15,45 @@ export const styles = {
   },
 };
 
-function App({ classes }) {
-  return (
-    <React.Fragment>
-      <TopBar />
-      <Grid container>
-        <Grid item md={9} sm={12} xs={12} className={classes.calendar}>
-          <CalendarViewContainer />
-        </Grid>
+class App extends Component {
+  componentDidMount() {
+    const { getSchools } = this.props;
+    getSchools('4720');
+  }
 
-        <Grid item md={3} sm={12} xs={12}>
-          <SidebarView />
+  render() {
+    const { classes } = this.props;
+    return (
+      <React.Fragment>
+        <TopBar />
+        <Grid container>
+          <Grid item md={9} sm={12} xs={12} className={classes.calendar}>
+            <CalendarViewContainer />
+          </Grid>
+          <Grid item md={3} sm={12} xs={12}>
+            <SidebarView />
+          </Grid>
         </Grid>
-      </Grid>
-    </React.Fragment>
-  );
+      </React.Fragment>
+    );
+  }
 }
 
 App.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  getSchools: PropTypes.func.isRequired,
 };
 
-export { App as UnstyledApp };
+const mapDispatchToProps = {
+  getSchools: fetchSchools,
+};
 
-export default withStyles(styles)(App);
+// export const mapDispatchToProps = dispatch => ({
+//   getSchools: (term) => {
+//     dispatch(fetchSchools(term));
+//   },
+// });
+
+export { App as UnstyledApp };
+const AppWithStyles = toJS(withStyles(styles)(App));
+export default connect(null, mapDispatchToProps)(AppWithStyles);

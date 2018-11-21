@@ -9,6 +9,7 @@ ShallowWrapper {
         "calendar": "",
       }
     }
+    getSchools={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

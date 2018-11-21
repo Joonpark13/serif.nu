@@ -43,9 +43,7 @@ ShallowWrapper {
           />
         </WithStyles(Tabs)>,
         false,
-        <div>
-          Todo: implement browse
-        </div>,
+        <Connect(Component) />,
       ],
     },
     "ref": null,
@@ -108,13 +106,11 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Todo: implement browse",
-        },
+        "nodeType": "class",
+        "props": Object {},
         "ref": null,
-        "rendered": "Todo: implement browse",
-        "type": "div",
+        "rendered": null,
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -145,9 +141,7 @@ ShallowWrapper {
             />
           </WithStyles(Tabs)>,
           false,
-          <div>
-            Todo: implement browse
-          </div>,
+          <Connect(Component) />,
         ],
       },
       "ref": null,
@@ -210,13 +204,11 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Todo: implement browse",
-          },
+          "nodeType": "class",
+          "props": Object {},
           "ref": null,
-          "rendered": "Todo: implement browse",
-          "type": "div",
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "div",

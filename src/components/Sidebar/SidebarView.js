@@ -4,6 +4,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { withStyles } from '@material-ui/core/styles';
 import SearchContainer from './SearchContainer';
+import SchoolsContainer from './SchoolsContainer';
 
 export const styles = {
   tabWidth: {
@@ -43,7 +44,7 @@ class SidebarView extends Component {
           <Tab value="browse" label="Browse" className={classes.tabWidth} />
         </Tabs>
         {value === 'search' && <SearchContainer />}
-        {value === 'browse' && <div>Todo: implement browse</div>}
+        {value === 'browse' && <SchoolsContainer />}
       </div>
     );
   }
