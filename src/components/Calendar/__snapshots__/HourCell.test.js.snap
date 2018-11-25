@@ -7,9 +7,9 @@ ShallowWrapper {
     classes={
       Object {
         "calendarCell": "",
-        "card": "",
       }
     }
+    hour={10}
     sections={
       Array [
         Object {
@@ -32,11 +32,14 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <WithStyles(Card)
-          className=""
-        >
-          <WithStyles(CardContent) />
-        </WithStyles(Card)>,
+        <ForwardRef
+          hour={10}
+          section={
+            Object {
+              "id": 12345,
+            }
+          }
+        />,
       ],
       "className": "",
     },
@@ -45,24 +48,27 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": "12345",
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
-          "children": <WithStyles(CardContent) />,
-          "className": "",
+          "hour": 10,
+          "section": Object {
+            "id": 12345,
+          },
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": undefined,
+        "rendered": null,
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "Naked": [Function],
+          "displayName": "WithStyles(Section)",
+          "options": Object {},
+          "propTypes": Object {
+            "classes": [Function],
+            "innerRef": [Function],
           },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "render": [Function],
+          Symbol(Symbol.hasInstance): [Function],
         },
-        "type": [Function],
       },
     ],
     "type": "div",
@@ -74,11 +80,14 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <WithStyles(Card)
-            className=""
-          >
-            <WithStyles(CardContent) />
-          </WithStyles(Card)>,
+          <ForwardRef
+            hour={10}
+            section={
+              Object {
+                "id": 12345,
+              }
+            }
+          />,
         ],
         "className": "",
       },
@@ -87,24 +96,27 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": "12345",
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "children": <WithStyles(CardContent) />,
-            "className": "",
+            "hour": 10,
+            "section": Object {
+              "id": 12345,
+            },
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": undefined,
+          "rendered": null,
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "Naked": [Function],
+            "displayName": "WithStyles(Section)",
+            "options": Object {},
+            "propTypes": Object {
+              "classes": [Function],
+              "innerRef": [Function],
             },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
+            "render": [Function],
+            Symbol(Symbol.hasInstance): [Function],
           },
-          "type": [Function],
         },
       ],
       "type": "div",

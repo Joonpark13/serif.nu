@@ -12,6 +12,7 @@ ShallowWrapper {
       }
     }
     dow="Mon"
+    hour={10}
     sections={Array []}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -38,49 +39,64 @@ ShallowWrapper {
         <div
           className=""
         >
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={8}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={9}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={10}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={11}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={12}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={13}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={14}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={15}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={16}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={17}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={18}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={19}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={20}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={21}
             sections={Array []}
           />
-          <WithStyles(HourCell)
+          <ForwardRef
+            hour={22}
             sections={Array []}
           />
         </div>,
@@ -109,49 +125,64 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={8}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={9}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={10}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={11}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={12}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={13}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={14}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={15}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={16}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={17}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={18}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={19}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={20}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={21}
               sections={Array []}
             />,
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={22}
               sections={Array []}
             />,
           ],
@@ -162,167 +193,347 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": "8",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 8,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "9",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 9,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "10",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 10,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "11",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 11,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "12",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 12,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "13",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 13,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "14",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 14,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "15",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 15,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "16",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 16,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "17",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 17,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "18",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 18,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "19",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 19,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "20",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 20,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "21",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 21,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
           Object {
             "instance": null,
             "key": "22",
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
+              "hour": 22,
               "sections": Array [],
             },
             "ref": null,
             "rendered": null,
-            "type": [Function],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(HourCell)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
           },
         ],
         "type": "div",
@@ -347,49 +558,64 @@ ShallowWrapper {
           <div
             className=""
           >
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={8}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={9}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={10}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={11}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={12}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={13}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={14}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={15}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={16}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={17}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={18}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={19}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={20}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={21}
               sections={Array []}
             />
-            <WithStyles(HourCell)
+            <ForwardRef
+              hour={22}
               sections={Array []}
             />
           </div>,
@@ -418,49 +644,64 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={8}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={9}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={10}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={11}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={12}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={13}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={14}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={15}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={16}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={17}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={18}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={19}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={20}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={21}
                 sections={Array []}
               />,
-              <WithStyles(HourCell)
+              <ForwardRef
+                hour={22}
                 sections={Array []}
               />,
             ],
@@ -471,167 +712,347 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": "8",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 8,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "9",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 9,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "10",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 10,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "11",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 11,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "12",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 12,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "13",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 13,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "14",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 14,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "15",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 15,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "16",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 16,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "17",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 17,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "18",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 18,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "19",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 19,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "20",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 20,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "21",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 21,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
             Object {
               "instance": null,
               "key": "22",
-              "nodeType": "class",
+              "nodeType": "function",
               "props": Object {
+                "hour": 22,
                 "sections": Array [],
               },
               "ref": null,
               "rendered": null,
-              "type": [Function],
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Naked": [Function],
+                "displayName": "WithStyles(HourCell)",
+                "options": Object {},
+                "propTypes": Object {
+                  "classes": [Function],
+                  "innerRef": [Function],
+                },
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
             },
           ],
           "type": "div",

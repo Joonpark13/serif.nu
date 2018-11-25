@@ -9,6 +9,11 @@ import App from 'components/App';
 import rootReducer from 'reducers';
 import { northwesternPurple, northwesternBrightOrange } from 'util/colors';
 
+// https://material-ui.com/css-in-js/basics/#migration-for--material-ui-core-users
+/* eslint-disable-next-line import/newline-after-import */
+import { install } from '@material-ui/styles';
+install();
+
 const styles = {
   '@global body': {
     margin: 0,

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { getHours, parseMeetingTime } from './calendar-helpers';
+import { getHours } from './calendar-helpers';
 import HoursColumn from './HoursColumn';
 import DowColumn from './DowColumn';
 
@@ -22,15 +22,22 @@ const dows = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
 
 export function getSectionsForDow(dow, sections) {
   // sections: [{
-  //   class_mtg_info: [{
-  //     meet_t: MoWe 11:00AM - 11:50AM
-  //   }]
+  //   schedule: [{
+  //     dow: ['Mo', 'We'],
+  //     start: {
+  //       hour: 13,
+  //       minute: 0,
+  //     },
+  //     end: {
+  //       hour: 13,
+  //       minute: 50,
+  //     },
+  //   }],
   // }]
-  return sections.filter(section => section.class_mtg_info.some((mtgInfo) => {
-    const mtgTime = parseMeetingTime(mtgInfo.meet_t);
-    if (mtgTime === 'TBA') return false; // TODO: Handle unscheduled courses
-    return mtgTime.dow.some(mtgTimeDow => dow.slice(0, 2) === mtgTimeDow);
-    // mtgTimeDow will be 'Mo' and the dow param of the function will be 'Mon'
+  return sections.filter(section => section.schedule.some((schedule) => {
+    if (schedule === 'TBA') return false; // TODO: Handle unscheduled courses
+    // scheduleDow will be 'Mo' and the dow param of the function will be 'Mon'
+    return schedule.dow.some(scheduleDow => dow.slice(0, 2) === scheduleDow);
   }));
 }
 

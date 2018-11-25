@@ -33,6 +33,7 @@ ShallowWrapper {
         select={false}
         type="search"
         value="EE"
+        variant="standard"
       />,
       "className": "",
     },
@@ -40,7 +41,7 @@ ShallowWrapper {
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
         "fullWidth": true,
         "label": "Search for classes",
@@ -49,6 +50,7 @@ ShallowWrapper {
         "select": false,
         "type": "search",
         "value": "EE",
+        "variant": "standard",
       },
       "ref": null,
       "rendered": null,
@@ -70,6 +72,7 @@ ShallowWrapper {
           select={false}
           type="search"
           value="EE"
+          variant="standard"
         />,
         "className": "",
       },
@@ -77,7 +80,7 @@ ShallowWrapper {
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "fullWidth": true,
           "label": "Search for classes",
@@ -86,6 +89,7 @@ ShallowWrapper {
           "select": false,
           "type": "search",
           "value": "EE",
+          "variant": "standard",
         },
         "ref": null,
         "rendered": null,
@@ -149,6 +153,7 @@ ShallowWrapper {
         select={false}
         type="search"
         value=""
+        variant="standard"
       />,
       "className": "",
     },
@@ -156,7 +161,7 @@ ShallowWrapper {
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
         "fullWidth": true,
         "label": "Search for classes",
@@ -165,6 +170,7 @@ ShallowWrapper {
         "select": false,
         "type": "search",
         "value": "",
+        "variant": "standard",
       },
       "ref": null,
       "rendered": null,
@@ -186,6 +192,7 @@ ShallowWrapper {
           select={false}
           type="search"
           value=""
+          variant="standard"
         />,
         "className": "",
       },
@@ -193,7 +200,7 @@ ShallowWrapper {
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "fullWidth": true,
           "label": "Search for classes",
@@ -202,6 +209,7 @@ ShallowWrapper {
           "select": false,
           "type": "search",
           "value": "",
+          "variant": "standard",
         },
         "ref": null,
         "rendered": null,
@@ -265,6 +273,7 @@ ShallowWrapper {
         select={false}
         type="search"
         value="EECS"
+        variant="standard"
       />,
       "className": "",
     },
@@ -272,7 +281,7 @@ ShallowWrapper {
     "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
         "fullWidth": true,
         "label": "Search for classes",
@@ -281,6 +290,7 @@ ShallowWrapper {
         "select": false,
         "type": "search",
         "value": "EECS",
+        "variant": "standard",
       },
       "ref": null,
       "rendered": null,
@@ -302,6 +312,7 @@ ShallowWrapper {
           select={false}
           type="search"
           value="EECS"
+          variant="standard"
         />,
         "className": "",
       },
@@ -309,7 +320,7 @@ ShallowWrapper {
       "rendered": Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "fullWidth": true,
           "label": "Search for classes",
@@ -318,6 +329,7 @@ ShallowWrapper {
           "select": false,
           "type": "search",
           "value": "EECS",
+          "variant": "standard",
         },
         "ref": null,
         "rendered": null,

@@ -7,7 +7,7 @@ import {
   columnMinHeight,
   columnHeight,
 } from './calendar-constants';
-import { getHours, parseMeetingTime } from './calendar-helpers';
+import { getHours } from './calendar-helpers';
 import HourCell from './HourCell';
 
 export const styles = {
@@ -30,13 +30,21 @@ const hours = getHours();
 
 export function getSectionsForHour(hour, sections) {
   // sections: [{
-  //   class_mtg_info: [{
-  //     meet_t: MoWe 11:00AM - 11:50AM
-  //   }]
+  //   schedule: [{
+  //     dow: ['Mo', 'We'],
+  //     start: {
+  //       hour: 13,
+  //       minute: 0,
+  //     },
+  //     end: {
+  //       hour: 13,
+  //       minute: 50,
+  //     },
+  //   }],
   // }]
   return sections.filter(
-    section => section.class_mtg_info.some(
-      mtgInfo => parseMeetingTime(mtgInfo.meet_t).start.hour === hour,
+    section => section.schedule.some(
+      schedule => schedule.start.hour === hour,
     ),
   );
 }
@@ -49,7 +57,9 @@ function DowColumn({ dow, sections, classes }) {
       </Typography>
 
       <div className={classes.calendarColumn}>
-        {hours.map(hour => <HourCell key={hour} sections={getSectionsForHour(hour, sections)} />)}
+        {hours.map(
+          hour => <HourCell key={hour} hour={hour} sections={getSectionsForHour(hour, sections)} />,
+        )}
       </div>
     </div>
   );
