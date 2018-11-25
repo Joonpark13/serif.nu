@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import { withStyles } from '@material-ui/styles';
 import { columnBorderStyle, cellMinHeight } from './calendar-constants';
+import Section from './Section';
 
 export const styles = {
   calendarCell: {
@@ -12,26 +11,20 @@ export const styles = {
     minHeight: cellMinHeight,
     position: 'relative',
   },
-  card: {
-    position: 'absolute',
-  },
 };
 
-function HourCell({ sections, classes }) {
+function HourCell({ hour, sections, classes }) {
   return (
     <div className={classes.calendarCell}>
       {sections.map(section => (
-        <Card key={section.id} className={classes.card}>
-          <CardContent>
-            {section.course}
-          </CardContent>
-        </Card>
+        <Section key={section.id} hour={hour} section={section} />
       ))}
     </div>
   );
 }
 
 HourCell.propTypes = {
+  hour: PropTypes.number.isRequired,
   sections: PropTypes.arrayOf(PropTypes.object).isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
