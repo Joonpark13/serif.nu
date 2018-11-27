@@ -10,7 +10,9 @@ ShallowWrapper {
       }
     }
     clearSearchResults={[Function]}
+    currentSearchInput="EECS"
     handleSearchInput={[MockFunction]}
+    updateSearchInput={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -32,7 +34,7 @@ ShallowWrapper {
         required={false}
         select={false}
         type="search"
-        value="EE"
+        value="EECS"
         variant="standard"
       />,
       "className": "",
@@ -49,7 +51,7 @@ ShallowWrapper {
         "required": false,
         "select": false,
         "type": "search",
-        "value": "EE",
+        "value": "EECS",
         "variant": "standard",
       },
       "ref": null,
@@ -71,7 +73,7 @@ ShallowWrapper {
           required={false}
           select={false}
           type="search"
-          value="EE"
+          value="EECS"
           variant="standard"
         />,
         "className": "",
@@ -88,7 +90,7 @@ ShallowWrapper {
           "required": false,
           "select": false,
           "type": "search",
-          "value": "EE",
+          "value": "EECS",
           "variant": "standard",
         },
         "ref": null,
@@ -130,7 +132,9 @@ ShallowWrapper {
       }
     }
     clearSearchResults={[Function]}
+    currentSearchInput="EECS"
     handleSearchInput={[Function]}
+    updateSearchInput={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -152,7 +156,7 @@ ShallowWrapper {
         required={false}
         select={false}
         type="search"
-        value=""
+        value="EECS"
         variant="standard"
       />,
       "className": "",
@@ -169,7 +173,7 @@ ShallowWrapper {
         "required": false,
         "select": false,
         "type": "search",
-        "value": "",
+        "value": "EECS",
         "variant": "standard",
       },
       "ref": null,
@@ -191,7 +195,7 @@ ShallowWrapper {
           required={false}
           select={false}
           type="search"
-          value=""
+          value="EECS"
           variant="standard"
         />,
         "className": "",
@@ -208,7 +212,7 @@ ShallowWrapper {
           "required": false,
           "select": false,
           "type": "search",
-          "value": "",
+          "value": "EECS",
           "variant": "standard",
         },
         "ref": null,
@@ -250,7 +254,9 @@ ShallowWrapper {
       }
     }
     clearSearchResults={[Function]}
+    currentSearchInput="EECS"
     handleSearchInput={[Function]}
+    updateSearchInput={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

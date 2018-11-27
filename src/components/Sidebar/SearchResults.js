@@ -5,10 +5,15 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Typography from '@material-ui/core/Typography';
 
 export const styles = {
   loadingContainer: {
     margin: 15,
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  inputHint: {
     display: 'flex',
     justifyContent: 'center',
   },
@@ -21,6 +26,7 @@ export const styles = {
 function SearchResults({
   searchResults,
   isFetching,
+  currentSearchInput,
   handleCourseClick,
   classes,
 }) {
@@ -31,8 +37,18 @@ function SearchResults({
       </div>
     );
   }
+  if (searchResults.length === 0 && currentSearchInput.length >= 3) {
+    return (
+      <Typography className={classes.inputHint} variant="body1">
+        No results
+      </Typography>
+    );
+  }
   return (
     <div className={classes.searchResults}>
+      {currentSearchInput.length > 0 && currentSearchInput.length <= 2
+        && <Typography className={classes.inputHint} variant="body1"> Keep typing! </Typography>
+      }
       <List>
         {searchResults
           && searchResults.map(course => (
@@ -55,6 +71,7 @@ SearchResults.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   isFetching: PropTypes.bool.isRequired,
   handleCourseClick: PropTypes.func.isRequired,
+  currentSearchInput: PropTypes.string.isRequired,
 };
 
 export { SearchResults as UnstyledSearchResults };

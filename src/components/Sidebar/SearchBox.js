@@ -13,19 +13,14 @@ export const styles = {
 class SearchBox extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      searchText: '',
-    };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeHelper = debounce(this.handleChangeHelper.bind(this), 300);
   }
 
   handleChange(value) {
-    const { clearSearchResults } = this.props;
+    const { clearSearchResults, updateSearchInput } = this.props;
 
-    this.setState({ searchText: value });
+    updateSearchInput(value);
 
     if (value.length > 2) {
       this.handleChangeHelper(value);
@@ -43,13 +38,12 @@ class SearchBox extends Component {
   }
 
   render() {
-    const { classes } = this.props;
-    const { searchText } = this.state;
+    const { classes, currentSearchInput } = this.props;
 
     return (
       <div className={classes.container}>
         <TextField
-          value={searchText}
+          value={currentSearchInput}
           onChange={event => this.handleChange(event.target.value)}
           label="Search for classes"
           type="search"
@@ -66,6 +60,8 @@ export default withStyles(styles)(SearchBox);
 
 SearchBox.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  currentSearchInput: PropTypes.string.isRequired,
+  updateSearchInput: PropTypes.func.isRequired,
   handleSearchInput: PropTypes.func.isRequired,
   clearSearchResults: PropTypes.func.isRequired,
 };

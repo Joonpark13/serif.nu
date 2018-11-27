@@ -80,6 +80,16 @@ describe('action creators', () => {
       });
     });
   });
+
+  describe('updateSearchInput', () => {
+    it(`should create a ${actionTypes.UPDATE_SEARCH_INPUT}`, () => {
+      const searchInput = 'EECS';
+      expect(actionCreators.updateSearchInput(searchInput)).toEqual({
+        type: actionTypes.UPDATE_SEARCH_INPUT,
+        searchInput,
+      });
+    });
+  });
 });
 
 describe('async action creators', () => {

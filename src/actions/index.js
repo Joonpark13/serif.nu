@@ -95,3 +95,8 @@ export const fetchSchools = termId => (dispatch) => {
       dispatch(getSchoolsFailure());
     });
 };
+
+export const updateSearchInput = searchInput => ({
+  type: actionTypes.UPDATE_SEARCH_INPUT,
+  searchInput,
+});

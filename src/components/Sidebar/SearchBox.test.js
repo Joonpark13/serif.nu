@@ -8,6 +8,7 @@ describe('SearchBox', () => {
     // This object gets passed to the onChange function of TextField
     return { target: { value } };
   }
+  const testSearchInput = 'EECS';
 
   it('renders correctly', () => {
     const classes = mockStyles(styles);
@@ -15,6 +16,8 @@ describe('SearchBox', () => {
       classes={classes}
       handleSearchInput={() => {}}
       clearSearchResults={() => {}}
+      updateSearchInput={() => {}}
+      currentSearchInput={testSearchInput}
     />);
 
     expect(wrapper).toMatchSnapshot();
@@ -26,9 +29,10 @@ describe('SearchBox', () => {
       classes={classes}
       handleSearchInput={() => {}}
       clearSearchResults={() => {}}
+      updateSearchInput={() => {}}
+      currentSearchInput={testSearchInput}
     />);
 
-    const testSearchInput = 'EECS';
     const eventObject = makeEventObject(testSearchInput);
     wrapper.find('TextField').simulate('change', eventObject);
 
@@ -43,11 +47,12 @@ describe('SearchBox', () => {
       classes={classes}
       handleSearchInput={handleSearchInputMock}
       clearSearchResults={() => {}}
+      updateSearchInput={() => {}}
+      currentSearchInput={testSearchInput}
     />);
 
     expect(handleSearchInputMock).not.toBeCalled();
 
-    const testSearchInput = 'EECS';
     const eventObject = makeEventObject(testSearchInput);
     wrapper.find('TextField').simulate('change', eventObject);
 
@@ -68,6 +73,8 @@ describe('SearchBox', () => {
       classes={classes}
       handleSearchInput={handleSearchInputMock}
       clearSearchResults={() => {}}
+      updateSearchInput={() => {}}
+      currentSearchInput={testSearchInput}
     />);
 
     const shortTestSearchInput = 'EE';

@@ -11,10 +11,15 @@ export function isFetchingSelector(state) {
   return state.getIn(['search', 'isFetching']);
 }
 
+export function currentSearchInputSelector(state) {
+  return state.getIn(['search', 'currentSearchInput']);
+}
+
 /* istanbul ignore next */
 const mapStateToProps = state => ({
   searchResults: searchResultsSelector(state),
   isFetching: isFetchingSelector(state),
+  currentSearchInput: currentSearchInputSelector(state),
 });
 
 export const mapDispatchToProps = dispatch => ({
