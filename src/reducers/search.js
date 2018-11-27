@@ -7,6 +7,7 @@ export const initialSearchState = fromJS({
   view: 'search',
   currentCourseName: undefined,
   currentSections: [],
+  currentSearchInput: '',
 });
 
 function search(state = initialSearchState, action) {
@@ -33,7 +34,11 @@ function search(state = initialSearchState, action) {
     case actionTypes.VIEW_SEARCH:
       return state.set('view', 'search')
         .set('results', initialSearchState.get('results'))
-        .set('currentSections', initialSearchState.get('currentSections'));
+        .set('currentSections', initialSearchState.get('currentSections'))
+        .set('currentSearchInput', '');
+
+    case actionTypes.UPDATE_SEARCH_INPUT:
+      return state.set('currentSearchInput', action.searchInput);
 
     default:
       return state;

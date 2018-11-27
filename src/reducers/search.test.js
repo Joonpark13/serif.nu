@@ -78,6 +78,7 @@ describe('search reducer', () => {
       view: 'search',
       results: [{ temp: 'temp data' }],
       currentSections: [],
+      currentSearchInput: 'EECS 101',
     });
     const action = actionCreators.viewSearch();
 
@@ -85,6 +86,15 @@ describe('search reducer', () => {
       view: 'search',
       results: [],
       currentSections: [],
+      currentSearchInput: '',
     }));
+  });
+
+  it(`should handle ${actionTypes.UPDATE_SEARCH_INPUT}`, () => {
+    const state = fromJS({ currentSearchInput: '' });
+    const searchInput = 'EECS';
+    const action = actionCreators.updateSearchInput('EECS');
+
+    expect(searchReducer(state, action)).toEqual(fromJS({ currentSearchInput: searchInput }));
   });
 });

@@ -1,6 +1,11 @@
 import { fromJS } from 'immutable';
 import { setCurrentCourseName } from 'actions';
-import { searchResultsSelector, isFetchingSelector, mapDispatchToProps } from './SearchResultsContainer';
+import {
+  searchResultsSelector,
+  isFetchingSelector,
+  currentSearchInputSelector,
+  mapDispatchToProps,
+} from './SearchResultsContainer';
 
 describe('SearchResultsContainer', () => {
   describe('searchResultsSelector', () => {
@@ -26,6 +31,19 @@ describe('SearchResultsContainer', () => {
       });
 
       expect(isFetchingSelector(testState)).toEqual(testIsFetchingResults);
+    });
+  });
+
+  describe('currentSearchInputSelector', () => {
+    it('should select current search input from state', () => {
+      const testSearchInput = 'EECS';
+      const testState = fromJS({
+        search: {
+          currentSearchInput: testSearchInput,
+        },
+      });
+
+      expect(currentSearchInputSelector(testState)).toEqual(testSearchInput);
     });
   });
 

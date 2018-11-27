@@ -21,12 +21,14 @@ describe('SearchResults', () => {
     type: 'course',
   }];
   const classes = mockStyles(styles);
+  const testSearchInput = 'EECS';
 
   const defaultProps = {
     searchResults: testResults,
     isFetching: false,
     classes,
     handleCourseClick: () => {},
+    currentSearchInput: testSearchInput,
   };
   const getComponent = wrapperCreator(UnstyledSearchResults, defaultProps);
 
@@ -38,6 +40,23 @@ describe('SearchResults', () => {
 
   it('renders loading correctly', () => {
     const wrapper = getComponent({ isFetching: true });
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders \'keep typing\' correctly', () => {
+    const wrapper = getComponent({
+      currentSearchInput: 'EE',
+    });
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders \'no results\' correctly', () => {
+    const wrapper = getComponent({
+      searchResults: [],
+      currentSearchInput: 'ABCD',
+    });
 
     expect(wrapper).toMatchSnapshot();
   });
