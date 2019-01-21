@@ -59,7 +59,7 @@ function HoursColumn({ hours, classes }) {
       <div className={classes.hoursSpacer} />
       <div className={classes.hoursColumn}>
         {hours.map(hour => (
-          <Typography key={hour} align="right" className={classes.hours} variant="body1">
+          <Typography key={hour} align="right" className={classes.hours}>
             {formatHour(hour)}
           </Typography>
         ))}

@@ -53,9 +53,8 @@ ShallowWrapper {
       "children": Array [
         <WithStyles(Typography)
           className=""
-          variant="body1"
         >
-           Keep typing! 
+           Keep typing!
         </WithStyles(Typography)>,
         <WithStyles(List)>
           <WithStyles(ListItem)
@@ -85,12 +84,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": " Keep typing! ",
+          "children": " Keep typing!",
           "className": "",
-          "variant": "body1",
         },
         "ref": null,
-        "rendered": " Keep typing! ",
+        "rendered": " Keep typing!",
         "type": [Function],
       },
       Object {
@@ -184,9 +182,8 @@ ShallowWrapper {
         "children": Array [
           <WithStyles(Typography)
             className=""
-            variant="body1"
           >
-             Keep typing! 
+             Keep typing!
           </WithStyles(Typography)>,
           <WithStyles(List)>
             <WithStyles(ListItem)
@@ -216,12 +213,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": " Keep typing! ",
+            "children": " Keep typing!",
             "className": "",
-            "variant": "body1",
           },
           "ref": null,
-          "rendered": " Keep typing! ",
+          "rendered": " Keep typing!",
           "type": [Function],
         },
         Object {
@@ -360,7 +356,6 @@ ShallowWrapper {
     "props": Object {
       "children": "No results",
       "className": "",
-      "variant": "body1",
     },
     "ref": null,
     "rendered": "No results",
@@ -374,7 +369,6 @@ ShallowWrapper {
       "props": Object {
         "children": "No results",
         "className": "",
-        "variant": "body1",
       },
       "ref": null,
       "rendered": "No results",

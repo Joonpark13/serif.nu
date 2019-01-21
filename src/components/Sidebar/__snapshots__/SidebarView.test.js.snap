@@ -25,11 +25,11 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <WithStyles(Tabs)
-          fullWidth={true}
           indicatorColor="primary"
           onChange={[Function]}
           textColor="primary"
           value="browse"
+          variant="fullWidth"
         >
           <WithStyles(Tab)
             className=""
@@ -65,11 +65,11 @@ ShallowWrapper {
               value="browse"
             />,
           ],
-          "fullWidth": true,
           "indicatorColor": "primary",
           "onChange": [Function],
           "textColor": "primary",
           "value": "browse",
+          "variant": "fullWidth",
         },
         "ref": null,
         "rendered": Array [
@@ -123,11 +123,11 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <WithStyles(Tabs)
-            fullWidth={true}
             indicatorColor="primary"
             onChange={[Function]}
             textColor="primary"
             value="browse"
+            variant="fullWidth"
           >
             <WithStyles(Tab)
               className=""
@@ -163,11 +163,11 @@ ShallowWrapper {
                 value="browse"
               />,
             ],
-            "fullWidth": true,
             "indicatorColor": "primary",
             "onChange": [Function],
             "textColor": "primary",
             "value": "browse",
+            "variant": "fullWidth",
           },
           "ref": null,
           "rendered": Array [
@@ -261,11 +261,11 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <WithStyles(Tabs)
-          fullWidth={true}
           indicatorColor="primary"
           onChange={[Function]}
           textColor="primary"
           value="search"
+          variant="fullWidth"
         >
           <WithStyles(Tab)
             className=""
@@ -301,11 +301,11 @@ ShallowWrapper {
               value="browse"
             />,
           ],
-          "fullWidth": true,
           "indicatorColor": "primary",
           "onChange": [Function],
           "textColor": "primary",
           "value": "search",
+          "variant": "fullWidth",
         },
         "ref": null,
         "rendered": Array [
@@ -359,11 +359,11 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <WithStyles(Tabs)
-            fullWidth={true}
             indicatorColor="primary"
             onChange={[Function]}
             textColor="primary"
             value="search"
+            variant="fullWidth"
           >
             <WithStyles(Tab)
               className=""
@@ -399,11 +399,11 @@ ShallowWrapper {
                 value="browse"
               />,
             ],
-            "fullWidth": true,
             "indicatorColor": "primary",
             "onChange": [Function],
             "textColor": "primary",
             "value": "search",
+            "variant": "fullWidth",
           },
           "ref": null,
           "rendered": Array [

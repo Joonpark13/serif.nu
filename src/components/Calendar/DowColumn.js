@@ -52,7 +52,7 @@ export function getSectionsForHour(hour, sections) {
 function DowColumn({ dow, sections, classes }) {
   return (
     <div className={classes.dowColumn}>
-      <Typography className={classes.dowHeader} align="center" variant="body2">
+      <Typography className={classes.dowHeader} align="center" variant="body1">
         {dow}
       </Typography>
 

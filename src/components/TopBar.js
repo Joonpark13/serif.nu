@@ -26,7 +26,7 @@ function TopBar({ classes }) {
           <MenuIcon className={classes.icon} />
         </IconButton>
 
-        <Typography className={classes.title} variant="title">Serif.nu</Typography>
+        <Typography className={classes.title} variant="h6">Serif.nu</Typography>
       </Toolbar>
     </AppBar>
   );
