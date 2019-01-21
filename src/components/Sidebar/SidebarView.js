@@ -38,7 +38,7 @@ class SidebarView extends Component {
           textColor="primary"
           indicatorColor="primary"
           onChange={this.handleChange}
-          fullWidth
+          variant="fullWidth"
         >
           <Tab value="search" label="Search" className={classes.tabWidth} />
           <Tab value="browse" label="Browse" className={classes.tabWidth} />

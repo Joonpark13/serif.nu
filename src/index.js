@@ -29,6 +29,11 @@ const theme = createMuiTheme({
       main: northwesternBrightOrange,
     },
   },
+  // https://material-ui.com/style/typography/#strategies
+  // Remove once Material-UI is upgraded to 4.0
+  typography: {
+    useNextVariants: true,
+  },
 });
 
 let composeEnhancers;

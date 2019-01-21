@@ -63,7 +63,7 @@ ShallowWrapper {
       "children": Array [
         <WithStyles(Typography)
           className=""
-          variant="headline"
+          variant="h5"
         >
           EECS 101-0
           <WithStyles(Button)
@@ -83,7 +83,7 @@ ShallowWrapper {
             <WithStyles(ListItemText)>
               <WithStyles(Typography)
                 className=""
-                variant="title"
+                variant="h6"
               >
                 Section 20
               </WithStyles(Typography)>
@@ -105,7 +105,7 @@ ShallowWrapper {
             <WithStyles(ListItemText)>
               <WithStyles(Typography)
                 className=""
-                variant="title"
+                variant="h6"
               >
                 Section 21
               </WithStyles(Typography)>
@@ -141,7 +141,7 @@ ShallowWrapper {
             </WithStyles(Button)>,
           ],
           "className": "",
-          "variant": "headline",
+          "variant": "h5",
         },
         "ref": null,
         "rendered": Array [
@@ -185,7 +185,7 @@ ShallowWrapper {
               <WithStyles(ListItemText)>
                 <WithStyles(Typography)
                   className=""
-                  variant="title"
+                  variant="h6"
                 >
                   Section 20
                 </WithStyles(Typography)>
@@ -207,7 +207,7 @@ ShallowWrapper {
               <WithStyles(ListItemText)>
                 <WithStyles(Typography)
                   className=""
-                  variant="title"
+                  variant="h6"
                 >
                   Section 21
                 </WithStyles(Typography)>
@@ -236,7 +236,7 @@ ShallowWrapper {
               "children": <WithStyles(ListItemText)>
                 <WithStyles(Typography)
                   className=""
-                  variant="title"
+                  variant="h6"
                 >
                   Section 20
                 </WithStyles(Typography)>
@@ -261,7 +261,7 @@ ShallowWrapper {
                 "children": Array [
                   <WithStyles(Typography)
                     className=""
-                    variant="title"
+                    variant="h6"
                   >
                     Section 20
                   </WithStyles(Typography)>,
@@ -285,7 +285,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Section 20",
                     "className": "",
-                    "variant": "title",
+                    "variant": "h6",
                   },
                   "ref": null,
                   "rendered": "Section 20",
@@ -342,7 +342,7 @@ ShallowWrapper {
               "children": <WithStyles(ListItemText)>
                 <WithStyles(Typography)
                   className=""
-                  variant="title"
+                  variant="h6"
                 >
                   Section 21
                 </WithStyles(Typography)>
@@ -368,7 +368,7 @@ ShallowWrapper {
                 "children": Array [
                   <WithStyles(Typography)
                     className=""
-                    variant="title"
+                    variant="h6"
                   >
                     Section 21
                   </WithStyles(Typography)>,
@@ -393,7 +393,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Section 21",
                     "className": "",
-                    "variant": "title",
+                    "variant": "h6",
                   },
                   "ref": null,
                   "rendered": "Section 21",
@@ -458,7 +458,7 @@ ShallowWrapper {
         "children": Array [
           <WithStyles(Typography)
             className=""
-            variant="headline"
+            variant="h5"
           >
             EECS 101-0
             <WithStyles(Button)
@@ -478,7 +478,7 @@ ShallowWrapper {
               <WithStyles(ListItemText)>
                 <WithStyles(Typography)
                   className=""
-                  variant="title"
+                  variant="h6"
                 >
                   Section 20
                 </WithStyles(Typography)>
@@ -500,7 +500,7 @@ ShallowWrapper {
               <WithStyles(ListItemText)>
                 <WithStyles(Typography)
                   className=""
-                  variant="title"
+                  variant="h6"
                 >
                   Section 21
                 </WithStyles(Typography)>
@@ -536,7 +536,7 @@ ShallowWrapper {
               </WithStyles(Button)>,
             ],
             "className": "",
-            "variant": "headline",
+            "variant": "h5",
           },
           "ref": null,
           "rendered": Array [
@@ -580,7 +580,7 @@ ShallowWrapper {
                 <WithStyles(ListItemText)>
                   <WithStyles(Typography)
                     className=""
-                    variant="title"
+                    variant="h6"
                   >
                     Section 20
                   </WithStyles(Typography)>
@@ -602,7 +602,7 @@ ShallowWrapper {
                 <WithStyles(ListItemText)>
                   <WithStyles(Typography)
                     className=""
-                    variant="title"
+                    variant="h6"
                   >
                     Section 21
                   </WithStyles(Typography)>
@@ -631,7 +631,7 @@ ShallowWrapper {
                 "children": <WithStyles(ListItemText)>
                   <WithStyles(Typography)
                     className=""
-                    variant="title"
+                    variant="h6"
                   >
                     Section 20
                   </WithStyles(Typography)>
@@ -656,7 +656,7 @@ ShallowWrapper {
                   "children": Array [
                     <WithStyles(Typography)
                       className=""
-                      variant="title"
+                      variant="h6"
                     >
                       Section 20
                     </WithStyles(Typography)>,
@@ -680,7 +680,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Section 20",
                       "className": "",
-                      "variant": "title",
+                      "variant": "h6",
                     },
                     "ref": null,
                     "rendered": "Section 20",
@@ -737,7 +737,7 @@ ShallowWrapper {
                 "children": <WithStyles(ListItemText)>
                   <WithStyles(Typography)
                     className=""
-                    variant="title"
+                    variant="h6"
                   >
                     Section 21
                   </WithStyles(Typography)>
@@ -763,7 +763,7 @@ ShallowWrapper {
                   "children": Array [
                     <WithStyles(Typography)
                       className=""
-                      variant="title"
+                      variant="h6"
                     >
                       Section 21
                     </WithStyles(Typography)>,
@@ -788,7 +788,7 @@ ShallowWrapper {
                     "props": Object {
                       "children": "Section 21",
                       "className": "",
-                      "variant": "title",
+                      "variant": "h6",
                     },
                     "ref": null,
                     "rendered": "Section 21",

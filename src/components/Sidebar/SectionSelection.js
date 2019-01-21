@@ -34,7 +34,7 @@ function SectionSelection({
 }) {
   return (
     <div className={classes.sectionsRoot}>
-      <Typography variant="headline" className={classes.title}>
+      <Typography variant="h5" className={classes.title}>
         {currentCourseName}
         <Button onClick={back}>Back</Button>
       </Typography>
@@ -47,7 +47,7 @@ function SectionSelection({
             onClick={() => addSection(section)}
           >
             <ListItemText>
-              <Typography variant="title" className={classes.sectionTitle}>{`Section ${section.section}`}</Typography>
+              <Typography variant="h6" className={classes.sectionTitle}>{`Section ${section.section}`}</Typography>
               <Typography>{`${section.class_mtg_info[0].meet_t}`}</Typography>
               <Typography>{`${section.class_mtg_info[0].meet_l}`}</Typography>
               <Typography>

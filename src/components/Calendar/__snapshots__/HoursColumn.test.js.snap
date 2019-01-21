@@ -42,14 +42,12 @@ ShallowWrapper {
           <WithStyles(Typography)
             align="right"
             className=""
-            variant="body1"
           >
             1am
           </WithStyles(Typography)>
           <WithStyles(Typography)
             align="right"
             className=""
-            variant="body1"
           >
             2am
           </WithStyles(Typography)>
@@ -79,14 +77,12 @@ ShallowWrapper {
             <WithStyles(Typography)
               align="right"
               className=""
-              variant="body1"
             >
               1am
             </WithStyles(Typography)>,
             <WithStyles(Typography)
               align="right"
               className=""
-              variant="body1"
             >
               2am
             </WithStyles(Typography)>,
@@ -103,7 +99,6 @@ ShallowWrapper {
               "align": "right",
               "children": "1am",
               "className": "",
-              "variant": "body1",
             },
             "ref": null,
             "rendered": "1am",
@@ -117,7 +112,6 @@ ShallowWrapper {
               "align": "right",
               "children": "2am",
               "className": "",
-              "variant": "body1",
             },
             "ref": null,
             "rendered": "2am",
@@ -145,14 +139,12 @@ ShallowWrapper {
             <WithStyles(Typography)
               align="right"
               className=""
-              variant="body1"
             >
               1am
             </WithStyles(Typography)>
             <WithStyles(Typography)
               align="right"
               className=""
-              variant="body1"
             >
               2am
             </WithStyles(Typography)>
@@ -182,14 +174,12 @@ ShallowWrapper {
               <WithStyles(Typography)
                 align="right"
                 className=""
-                variant="body1"
               >
                 1am
               </WithStyles(Typography)>,
               <WithStyles(Typography)
                 align="right"
                 className=""
-                variant="body1"
               >
                 2am
               </WithStyles(Typography)>,
@@ -206,7 +196,6 @@ ShallowWrapper {
                 "align": "right",
                 "children": "1am",
                 "className": "",
-                "variant": "body1",
               },
               "ref": null,
               "rendered": "1am",
@@ -220,7 +209,6 @@ ShallowWrapper {
                 "align": "right",
                 "children": "2am",
                 "className": "",
-                "variant": "body1",
               },
               "ref": null,
               "rendered": "2am",

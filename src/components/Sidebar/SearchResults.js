@@ -39,7 +39,7 @@ function SearchResults({
   }
   if (searchResults.length === 0 && currentSearchInput.length >= 3) {
     return (
-      <Typography className={classes.inputHint} variant="body1">
+      <Typography className={classes.inputHint}>
         No results
       </Typography>
     );
@@ -47,7 +47,7 @@ function SearchResults({
   return (
     <div className={classes.searchResults}>
       {currentSearchInput.length > 0 && currentSearchInput.length <= 2
-        && <Typography className={classes.inputHint} variant="body1"> Keep typing! </Typography>
+        && <Typography className={classes.inputHint}> Keep typing!</Typography>
       }
       <List>
         {searchResults
