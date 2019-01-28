@@ -22,4 +22,14 @@ describe('SidebarView', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('changes to cart correctly', () => {
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledSidebarView
+      classes={classes}
+    />);
+    wrapper.instance().handleChange('onChange', 'cart');
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
