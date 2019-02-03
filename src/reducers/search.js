@@ -33,9 +33,7 @@ function search(state = initialSearchState, action) {
 
     case actionTypes.VIEW_SEARCH:
       return state.set('view', 'search')
-        .set('results', initialSearchState.get('results'))
-        .set('currentSections', initialSearchState.get('currentSections'))
-        .set('currentSearchInput', '');
+        .set('currentSections', initialSearchState.get('currentSections'));
 
     case actionTypes.UPDATE_SEARCH_INPUT:
       return state.set('currentSearchInput', action.searchInput);
