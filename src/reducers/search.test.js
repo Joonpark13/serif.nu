@@ -76,9 +76,9 @@ describe('search reducer', () => {
   it(`should handle ${actionTypes.VIEW_SEARCH}`, () => {
     const state = fromJS({
       view: 'search',
-      results: [{ temp: 'temp data' }],
+      results: [],
       currentSections: [],
-      currentSearchInput: 'EECS 101',
+      currentSearchInput: '',
     });
     const action = actionCreators.viewSearch();
 
