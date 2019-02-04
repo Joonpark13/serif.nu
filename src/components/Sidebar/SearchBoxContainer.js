@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchSearchResults, clearSearchResults, updateSearchInput } from 'actions';
+import { getSearchResultsRequest, clearSearchResults, updateSearchInput } from 'actions';
 import SearchBox from './SearchBox';
 
 export function currentSearchInputSelector(state) {
@@ -7,12 +7,14 @@ export function currentSearchInputSelector(state) {
 }
 
 /* istanbul ignore next */
-const mapStateToProps = state => ({
-  currentSearchInput: currentSearchInputSelector(state),
-});
+function mapStateToProps(state) {
+  return {
+    currentSearchInput: currentSearchInputSelector(state),
+  };
+}
 
 const mapDispatchToProps = {
-  handleSearchInput: fetchSearchResults,
+  handleSearchInput: getSearchResultsRequest,
   clearSearchResults,
   updateSearchInput,
 };

@@ -6,7 +6,9 @@ import { UnstyledApp, styles } from './App';
 describe('App', () => {
   it('should render correctly', () => {
     const classes = mockStyles(styles);
-    const wrapper = shallow(<UnstyledApp classes={classes} getSchools={() => {}} />);
+    const wrapper = shallow(
+      <UnstyledApp classes={classes} fetchSchools={() => {}} fetchSearchIndex={() => {}} />,
+    );
 
     expect(wrapper).toMatchSnapshot();
   });

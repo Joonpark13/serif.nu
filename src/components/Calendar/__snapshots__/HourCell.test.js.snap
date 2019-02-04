@@ -9,6 +9,7 @@ ShallowWrapper {
         "calendarCell": "",
       }
     }
+    dow="Mo"
     hour={10}
     sections={
       Array [
@@ -33,6 +34,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <ForwardRef
+          dow="Mo"
           hour={10}
           section={
             Object {
@@ -50,6 +52,7 @@ ShallowWrapper {
         "key": "12345",
         "nodeType": "function",
         "props": Object {
+          "dow": "Mo",
           "hour": 10,
           "section": Object {
             "id": 12345,
@@ -81,6 +84,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <ForwardRef
+            dow="Mo"
             hour={10}
             section={
               Object {
@@ -98,6 +102,7 @@ ShallowWrapper {
           "key": "12345",
           "nodeType": "function",
           "props": Object {
+            "dow": "Mo",
             "hour": 10,
             "section": Object {
               "id": 12345,

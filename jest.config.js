@@ -3,6 +3,8 @@ module.exports = {
   collectCoverageFrom: [
     'src/**',
     '!src/index.js',
+    '!src/actions/**',
+    '!src/effects/**',
     '!src/util/env.js',
     '!src/util/to-js.js',
     '!src/util/colors.js',

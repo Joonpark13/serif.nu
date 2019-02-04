@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchSchools } from 'actions';
+import {
+  getSchoolsRequest,
+  fetchSearchIndex as fetchSearchIndexAction,
+} from 'actions';
 import toJS from 'util/to-js';
+import { CURRENT_TERM } from 'util/constants';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import TopBar from './TopBar';
-import CalendarViewContainer from './Calendar/CalendarViewContainer';
+import CalendarView from './Calendar/CalendarView';
 import SidebarView from './Sidebar/SidebarView';
 
 export const styles = {
@@ -17,8 +21,9 @@ export const styles = {
 
 class App extends Component {
   componentDidMount() {
-    const { getSchools } = this.props;
-    getSchools('4720');
+    const { fetchSchools, fetchSearchIndex } = this.props;
+    fetchSchools(CURRENT_TERM);
+    fetchSearchIndex(CURRENT_TERM);
   }
 
   render() {
@@ -28,7 +33,7 @@ class App extends Component {
         <TopBar />
         <Grid container>
           <Grid item md={9} sm={12} xs={12} className={classes.calendar}>
-            <CalendarViewContainer />
+            <CalendarView />
           </Grid>
           <Grid item md={3} sm={12} xs={12}>
             <SidebarView />
@@ -41,18 +46,14 @@ class App extends Component {
 
 App.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
-  getSchools: PropTypes.func.isRequired,
+  fetchSchools: PropTypes.func.isRequired,
+  fetchSearchIndex: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {
-  getSchools: fetchSchools,
+  fetchSchools: getSchoolsRequest,
+  fetchSearchIndex: fetchSearchIndexAction,
 };
-
-// export const mapDispatchToProps = dispatch => ({
-//   getSchools: (term) => {
-//     dispatch(fetchSchools(term));
-//   },
-// });
 
 export { App as UnstyledApp };
 const AppWithStyles = toJS(withStyles(styles)(App));

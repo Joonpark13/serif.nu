@@ -1,4 +1,7 @@
 import { fromJS } from 'immutable';
+import { loop, Cmd } from 'redux-loop';
+import { fetchSchools } from 'effects/browse';
+import { getSchoolsSuccess, getSchoolsFailure } from 'actions';
 import browseReducer, { initialBrowseState } from './browse';
 import * as actionTypes from '../actions/action-types';
 import * as actionCreators from '../actions/index';
@@ -12,7 +15,15 @@ describe('browse reducer', () => {
     const state = fromJS({ isFetching: false });
     const action = actionCreators.getSchoolsRequest();
 
-    expect(browseReducer(state, action)).toEqual(fromJS({ isFetching: true }));
+    expect(browseReducer(state, action)).toEqual(
+      loop(
+        fromJS({ isFetching: true }),
+        Cmd.run(fetchSchools, {
+          successActionCreator: getSchoolsSuccess,
+          failActionCreator: getSchoolsFailure,
+        }),
+      ),
+    );
   });
 
   it(`should handle ${actionTypes.GET_SCHOOLS_SUCCESS}`, () => {

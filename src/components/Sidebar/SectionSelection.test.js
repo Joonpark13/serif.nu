@@ -1,5 +1,6 @@
 import ListItem from '@material-ui/core/ListItem';
 import { mockStyles, wrapperCreator } from 'util/testing';
+import * as timeUtils from 'util/time';
 import { UnstyledSectionSelection, styles } from './SectionSelection';
 
 describe('SectionSelection', () => {
@@ -9,26 +10,29 @@ describe('SectionSelection', () => {
     currentCourseName: 'EECS 101-0',
     sections: [{
       id: '1',
-      section: 20,
-      class_mtg_info: [{
-        meet_t: 'MoWeFri 11:00AM - 11:50AM',
-        meet_l: 'Technological Institute AUD',
+      sectionNumber: 20,
+      schedule: [{
+        location: 'Some building',
       }],
-      instructor: ['Jason Hartline'],
+      instructors: ['Jason Hartline'],
     }, {
       id: '2',
-      section: 21,
-      class_mtg_info: [{
-        meet_t: 'TuTh 11:00AM - 11:50AM',
-        meet_l: 'Technological Institute AUD',
+      sectionNumber: 21,
+      schedule: [{
+        location: 'Some other building',
       }],
-      instructor: ['Ian Horswill', 'Vincent St-Amour'],
+      instructors: ['Ian Horswill', 'Vincent St-Amour'],
     }],
     back: () => {},
     addSection: () => {},
     classes,
   };
   const getComponent = wrapperCreator(UnstyledSectionSelection, defaultProps);
+
+  beforeEach(() => {
+    timeUtils.getFormattedClassSchedule = jest.fn();
+    timeUtils.getFormattedClassSchedule.mockReturnValue('schedule');
+  });
 
   it('renders correctly', () => {
     const wrapper = getComponent();

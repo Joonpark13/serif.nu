@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { fetchSections, setCurrentCourseName } from 'actions';
+import { getSectionsRequest, setCurrentCourseName } from 'actions';
 import toJS from 'util/to-js';
+import { CURRENT_TERM } from 'util/constants';
 import SearchResults from './SearchResults';
 
 export function searchResultsSelector(state) {
@@ -16,18 +17,22 @@ export function currentSearchInputSelector(state) {
 }
 
 /* istanbul ignore next */
-const mapStateToProps = state => ({
-  searchResults: searchResultsSelector(state),
-  isFetching: isFetchingSelector(state),
-  currentSearchInput: currentSearchInputSelector(state),
-});
+function mapStateToProps(state) {
+  return {
+    searchResults: searchResultsSelector(state),
+    isFetching: isFetchingSelector(state),
+    currentSearchInput: currentSearchInputSelector(state),
+  };
+}
 
-export const mapDispatchToProps = dispatch => ({
-  handleCourseClick: (school, subject, courseAbbv) => {
-    dispatch(fetchSections('4720', school, subject, courseAbbv));
-    dispatch(setCurrentCourseName(`${subject} ${courseAbbv}`));
-  },
-});
+export function mapDispatchToProps(dispatch) {
+  return {
+    handleCourseClick: (schoolId, subjectId, courseId) => {
+      dispatch(getSectionsRequest(CURRENT_TERM, schoolId, subjectId, courseId));
+      dispatch(setCurrentCourseName(`${subjectId} ${courseId}`));
+    },
+  };
+}
 
 const SearchResultsContainer = connect(mapStateToProps, mapDispatchToProps)(toJS(SearchResults));
 

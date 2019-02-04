@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
+import { getScheduleObjGivenHourAndDow } from './calendar-helpers';
 
 export const styles = {
   paper: {
     position: 'absolute',
-    top: ({ hour, section }) => {
-      const schedule = section.schedule.find(time => time.start.hour === hour);
-      /* eslint-disable-next-line prefer-destructuring */
+    top: ({ hour, dow, section }) => {
+      const schedule = getScheduleObjGivenHourAndDow(section.schedule, hour, dow);
       const minute = schedule.start.minute;
       const offset = Math.round(minute / 60 * 100);
       return `${offset}%`;
@@ -19,13 +19,16 @@ export const styles = {
 function Section({ classes, section }) {
   return (
     <Paper className={classes.paper}>
-      {section.course}
+      {section.courseId}
     </Paper>
   );
 }
 
 Section.propTypes = {
-  hour: PropTypes.number.isRequired, // eslint-disable-line react/no-unused-prop-types
+  /* eslint-disable react/no-unused-prop-types */
+  hour: PropTypes.number.isRequired,
+  dow: PropTypes.string.isRequired,
+  /* eslint-enable react/no-unused-prop-types */
   section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };

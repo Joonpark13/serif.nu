@@ -9,11 +9,12 @@ ShallowWrapper {
         "paper": "",
       }
     }
+    dow="Mo"
     hour={10}
     section={
       Object {
         "course": "101-1",
-        "id": 12345,
+        "id": "12345",
       }
     }
   />,
@@ -30,11 +31,11 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": "101-1",
+      "children": undefined,
       "className": "",
     },
     "ref": null,
-    "rendered": "101-1",
+    "rendered": null,
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -43,11 +44,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": "101-1",
+        "children": undefined,
         "className": "",
       },
       "ref": null,
-      "rendered": "101-1",
+      "rendered": null,
       "type": [Function],
     },
   ],
