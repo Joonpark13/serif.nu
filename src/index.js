@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import injectSheet from 'react-jss';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, compose } from 'redux';
+import { install as installReduxLoop } from 'redux-loop';
 import { Provider } from 'react-redux';
-import thunkMiddleware from 'redux-thunk';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import App from 'components/App';
 import rootReducer from 'reducers';
@@ -11,8 +11,8 @@ import { northwesternPurple, northwesternBrightOrange } from 'util/colors';
 
 // https://material-ui.com/css-in-js/basics/#migration-for--material-ui-core-users
 /* eslint-disable-next-line import/newline-after-import */
-import { install } from '@material-ui/styles';
-install();
+import { install as installMaterialUIStyles } from '@material-ui/styles';
+installMaterialUIStyles();
 
 const styles = {
   '@global body': {
@@ -47,7 +47,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const store = createStore(
   rootReducer,
-  composeEnhancers(applyMiddleware(thunkMiddleware)),
+  composeEnhancers(installReduxLoop()),
 );
 
 function Index() {

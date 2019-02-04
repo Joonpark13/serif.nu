@@ -1,10 +1,28 @@
-import 'whatwg-fetch';
 import * as actionTypes from './action-types';
-import { searchURL, sectionsURL, schoolsURL } from '../util/api';
-import prodMode from '../util/env';
 
-export const getSearchResultsRequest = () => ({
+export function fetchSearchIndex(termId) {
+  return {
+    type: actionTypes.FETCH_SEARCH_INDEX,
+    termId,
+  };
+}
+
+export function fetchSearchIndexSuccess(searchIndex) {
+  return {
+    type: actionTypes.FETCH_SEARCH_INDEX_SUCCESS,
+    searchIndex,
+  };
+}
+
+export function fetchSearchIndexFailure() {
+  return {
+    type: actionTypes.FETCH_SEARCH_INDEX_FAILURE,
+  };
+}
+
+export const getSearchResultsRequest = searchInput => ({
   type: actionTypes.GET_SEARCH_RESULTS_REQUEST,
+  searchInput,
 });
 
 export const getSearchResultsSuccess = searchResults => ({
@@ -16,25 +34,19 @@ export const getSearchResultsFailure = () => ({
   type: actionTypes.GET_SEARCH_RESULTS_FAILURE,
 });
 
-export const fetchSearchResults = searchInput => (dispatch) => {
-  dispatch(getSearchResultsRequest());
-  return fetch(searchURL(searchInput))
-    .then(response => response.json())
-    .then(json => dispatch(getSearchResultsSuccess(json)))
-    .catch((error) => {
-      /* istanbul ignore next */
-      if (!prodMode) console.log(error);
-      dispatch(getSearchResultsFailure());
-    });
-};
-
 export const clearSearchResults = () => ({
   type: actionTypes.CLEAR_SEARCH_RESULTS,
 });
 
-export const getSectionsRequest = () => ({
-  type: actionTypes.GET_SECTIONS_REQUEST,
-});
+export function getSectionsRequest(termId, schoolId, subjectId, courseId) {
+  return {
+    type: actionTypes.GET_SECTIONS_REQUEST,
+    termId,
+    schoolId,
+    subjectId,
+    courseId,
+  };
+}
 
 export const getSectionsSuccess = sections => ({
   type: actionTypes.GET_SECTIONS_SUCCESS,
@@ -44,18 +56,6 @@ export const getSectionsSuccess = sections => ({
 export const getSectionsFailure = () => ({
   type: actionTypes.GET_SECTIONS_FAILURE,
 });
-
-export const fetchSections = (termId, schoolAbbv, subjectAbbv, courseAbbv) => (dispatch) => {
-  dispatch(getSectionsRequest());
-  return fetch(sectionsURL(termId, schoolAbbv, subjectAbbv, courseAbbv))
-    .then(response => response.json())
-    .then(json => dispatch(getSectionsSuccess(json)))
-    .catch((error) => {
-      /* istanbul ignore next */
-      if (!prodMode) console.log(error);
-      dispatch(getSectionsFailure());
-    });
-};
 
 export const setCurrentCourseName = courseName => ({
   type: actionTypes.SET_CURRENT_COURSE_NAME,
@@ -83,18 +83,6 @@ export const getSchoolsSuccess = schools => ({
 export const getSchoolsFailure = () => ({
   type: actionTypes.GET_SCHOOLS_FAILURE,
 });
-
-export const fetchSchools = termId => (dispatch) => {
-  dispatch(getSchoolsRequest());
-  return fetch(schoolsURL(termId))
-    .then(response => response.json())
-    .then(json => dispatch(getSchoolsSuccess(json)))
-    .catch((error) => {
-      /* istanbul ignore next */
-      if (!prodMode) console.log(error);
-      dispatch(getSchoolsFailure());
-    });
-};
 
 export const updateSearchInput = searchInput => ({
   type: actionTypes.UPDATE_SEARCH_INPUT,

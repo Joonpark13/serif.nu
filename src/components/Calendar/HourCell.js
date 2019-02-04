@@ -13,11 +13,11 @@ export const styles = {
   },
 };
 
-function HourCell({ hour, sections, classes }) {
+function HourCell({ hour, dow, sections, classes }) {
   return (
     <div className={classes.calendarCell}>
       {sections.map(section => (
-        <Section key={section.id} hour={hour} section={section} />
+        <Section key={section.id} hour={hour} dow={dow} section={section} />
       ))}
     </div>
   );
@@ -25,6 +25,7 @@ function HourCell({ hour, sections, classes }) {
 
 HourCell.propTypes = {
   hour: PropTypes.number.isRequired,
+  dow: PropTypes.string.isRequired,
   sections: PropTypes.arrayOf(PropTypes.object).isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };

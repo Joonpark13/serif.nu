@@ -5,7 +5,8 @@ module.exports = {
     "no-console": "off",
     "import/no-unresolved": "off",
     "no-plusplus": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "prefer-destructuring": "off"
   },
   "globals": {
     "document": true,

@@ -4,21 +4,17 @@ import { UnstyledSearchResults, styles } from './SearchResults';
 
 describe('SearchResults', () => {
   const testResults = [{
-    abbv: '629',
+    id: '629',
     name: 'Employment Law',
-    school: 'LAW',
-    score: 0.75,
-    subject: 'BUSCOM',
-    term: '4720',
-    type: 'course',
+    schoolId: 'LAW',
+    subjectId: 'BUSCOM',
+    termId: '4720',
   }, {
-    abbv: '631',
+    id: '631',
     name: 'Entrepreneurship Law',
-    school: 'LAW',
-    score: 0.75,
-    subject: 'BUSCOM',
-    term: '4720',
-    type: 'course',
+    schoolId: 'LAW',
+    subjectId: 'BUSCOM',
+    termId: '4720',
   }];
   const classes = mockStyles(styles);
   const testSearchInput = 'EECS';
@@ -44,7 +40,7 @@ describe('SearchResults', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders \'keep typing\' correctly', () => {
+  it("renders 'keep typing' correctly", () => {
     const wrapper = getComponent({
       currentSearchInput: 'EE',
     });
@@ -52,7 +48,7 @@ describe('SearchResults', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders \'no results\' correctly', () => {
+  it("renders 'no results' correctly", () => {
     const wrapper = getComponent({
       searchResults: [],
       currentSearchInput: 'ABCD',
@@ -68,6 +64,6 @@ describe('SearchResults', () => {
     wrapper.find(ListItem).first().simulate('click');
 
     expect(handleCourseClickMock)
-      .toHaveBeenCalledWith(testResults[0].school, testResults[0].subject, testResults[0].abbv);
+      .toHaveBeenCalledWith(testResults[0].schoolId, testResults[0].subjectId, testResults[0].id);
   });
 });

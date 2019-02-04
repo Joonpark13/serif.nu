@@ -8,7 +8,7 @@ describe('HourCell', () => {
     const classes = mockStyles(styles);
     const testSections = [{ id: 12345 }];
     const wrapper = shallow(
-      <UnstyledHourCell hour={10} sections={testSections} classes={classes} />,
+      <UnstyledHourCell hour={10} dow="Mo" sections={testSections} classes={classes} />,
     );
 
     expect(wrapper).toMatchSnapshot();

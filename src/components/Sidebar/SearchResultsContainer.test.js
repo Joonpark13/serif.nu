@@ -1,5 +1,6 @@
 import { fromJS } from 'immutable';
-import { setCurrentCourseName } from 'actions';
+import { setCurrentCourseName, getSectionsRequest } from 'actions';
+import { CURRENT_TERM } from 'util/constants';
 import {
   searchResultsSelector,
   isFetchingSelector,
@@ -53,13 +54,14 @@ describe('SearchResultsContainer', () => {
     it('should dispatch correct actions for handleCourseClick', () => {
       const school = 'MEAS';
       const subject = 'EECS';
-      const courseAbbv = '101-0';
+      const courseId = '101-0';
 
-      mapDispatchToProps(dispatchMock).handleCourseClick(school, subject, courseAbbv);
+      mapDispatchToProps(dispatchMock).handleCourseClick(school, subject, courseId);
 
-      // async fetch action returns anonymous function
-      expect(dispatchMock.mock.calls[0][0]).toEqual(expect.any(Function));
-      expect(dispatchMock.mock.calls[1][0]).toEqual(setCurrentCourseName(`${subject} ${courseAbbv}`));
+      expect(dispatchMock.mock.calls[0][0]).toEqual(
+        getSectionsRequest(CURRENT_TERM, school, subject, courseId),
+      );
+      expect(dispatchMock.mock.calls[1][0]).toEqual(setCurrentCourseName(`${subject} ${courseId}`));
     });
   });
 });

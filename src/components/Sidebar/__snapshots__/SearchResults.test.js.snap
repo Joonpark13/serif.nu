@@ -17,22 +17,18 @@ ShallowWrapper {
     searchResults={
       Array [
         Object {
-          "abbv": "629",
+          "id": "629",
           "name": "Employment Law",
-          "school": "LAW",
-          "score": 0.75,
-          "subject": "BUSCOM",
-          "term": "4720",
-          "type": "course",
+          "schoolId": "LAW",
+          "subjectId": "BUSCOM",
+          "termId": "4720",
         },
         Object {
-          "abbv": "631",
+          "id": "631",
           "name": "Entrepreneurship Law",
-          "school": "LAW",
-          "score": 0.75,
-          "subject": "BUSCOM",
-          "term": "4720",
-          "type": "course",
+          "schoolId": "LAW",
+          "subjectId": "BUSCOM",
+          "termId": "4720",
         },
       ]
     }
@@ -414,22 +410,18 @@ ShallowWrapper {
     searchResults={
       Array [
         Object {
-          "abbv": "629",
+          "id": "629",
           "name": "Employment Law",
-          "school": "LAW",
-          "score": 0.75,
-          "subject": "BUSCOM",
-          "term": "4720",
-          "type": "course",
+          "schoolId": "LAW",
+          "subjectId": "BUSCOM",
+          "termId": "4720",
         },
         Object {
-          "abbv": "631",
+          "id": "631",
           "name": "Entrepreneurship Law",
-          "school": "LAW",
-          "score": 0.75,
-          "subject": "BUSCOM",
-          "term": "4720",
-          "type": "course",
+          "schoolId": "LAW",
+          "subjectId": "BUSCOM",
+          "termId": "4720",
         },
       ]
     }
@@ -709,22 +701,18 @@ ShallowWrapper {
     searchResults={
       Array [
         Object {
-          "abbv": "629",
+          "id": "629",
           "name": "Employment Law",
-          "school": "LAW",
-          "score": 0.75,
-          "subject": "BUSCOM",
-          "term": "4720",
-          "type": "course",
+          "schoolId": "LAW",
+          "subjectId": "BUSCOM",
+          "termId": "4720",
         },
         Object {
-          "abbv": "631",
+          "id": "631",
           "name": "Entrepreneurship Law",
-          "school": "LAW",
-          "score": 0.75,
-          "subject": "BUSCOM",
-          "term": "4720",
-          "type": "course",
+          "schoolId": "LAW",
+          "subjectId": "BUSCOM",
+          "termId": "4720",
         },
       ]
     }

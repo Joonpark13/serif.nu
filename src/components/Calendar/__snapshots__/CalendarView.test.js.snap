@@ -10,7 +10,6 @@ ShallowWrapper {
         "dowColumns": "",
       }
     }
-    sections={Array []}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -51,24 +50,19 @@ ShallowWrapper {
           className=""
         >
           <WithStyles(DowColumn)
-            dow="Mon"
-            sections={Array []}
+            dow="Mo"
           />
           <WithStyles(DowColumn)
-            dow="Tue"
-            sections={Array []}
+            dow="Tu"
           />
           <WithStyles(DowColumn)
-            dow="Wed"
-            sections={Array []}
+            dow="We"
           />
           <WithStyles(DowColumn)
-            dow="Thu"
-            sections={Array []}
+            dow="Th"
           />
           <WithStyles(DowColumn)
-            dow="Fri"
-            sections={Array []}
+            dow="Fr"
           />
         </div>,
       ],
@@ -110,24 +104,19 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <WithStyles(DowColumn)
-              dow="Mon"
-              sections={Array []}
+              dow="Mo"
             />,
             <WithStyles(DowColumn)
-              dow="Tue"
-              sections={Array []}
+              dow="Tu"
             />,
             <WithStyles(DowColumn)
-              dow="Wed"
-              sections={Array []}
+              dow="We"
             />,
             <WithStyles(DowColumn)
-              dow="Thu"
-              sections={Array []}
+              dow="Th"
             />,
             <WithStyles(DowColumn)
-              dow="Fri"
-              sections={Array []}
+              dow="Fr"
             />,
           ],
           "className": "",
@@ -136,11 +125,10 @@ ShallowWrapper {
         "rendered": Array [
           Object {
             "instance": null,
-            "key": "Mon",
+            "key": "Mo",
             "nodeType": "class",
             "props": Object {
-              "dow": "Mon",
-              "sections": Array [],
+              "dow": "Mo",
             },
             "ref": null,
             "rendered": null,
@@ -148,11 +136,10 @@ ShallowWrapper {
           },
           Object {
             "instance": null,
-            "key": "Tue",
+            "key": "Tu",
             "nodeType": "class",
             "props": Object {
-              "dow": "Tue",
-              "sections": Array [],
+              "dow": "Tu",
             },
             "ref": null,
             "rendered": null,
@@ -160,11 +147,10 @@ ShallowWrapper {
           },
           Object {
             "instance": null,
-            "key": "Wed",
+            "key": "We",
             "nodeType": "class",
             "props": Object {
-              "dow": "Wed",
-              "sections": Array [],
+              "dow": "We",
             },
             "ref": null,
             "rendered": null,
@@ -172,11 +158,10 @@ ShallowWrapper {
           },
           Object {
             "instance": null,
-            "key": "Thu",
+            "key": "Th",
             "nodeType": "class",
             "props": Object {
-              "dow": "Thu",
-              "sections": Array [],
+              "dow": "Th",
             },
             "ref": null,
             "rendered": null,
@@ -184,11 +169,10 @@ ShallowWrapper {
           },
           Object {
             "instance": null,
-            "key": "Fri",
+            "key": "Fr",
             "nodeType": "class",
             "props": Object {
-              "dow": "Fri",
-              "sections": Array [],
+              "dow": "Fr",
             },
             "ref": null,
             "rendered": null,
@@ -232,24 +216,19 @@ ShallowWrapper {
             className=""
           >
             <WithStyles(DowColumn)
-              dow="Mon"
-              sections={Array []}
+              dow="Mo"
             />
             <WithStyles(DowColumn)
-              dow="Tue"
-              sections={Array []}
+              dow="Tu"
             />
             <WithStyles(DowColumn)
-              dow="Wed"
-              sections={Array []}
+              dow="We"
             />
             <WithStyles(DowColumn)
-              dow="Thu"
-              sections={Array []}
+              dow="Th"
             />
             <WithStyles(DowColumn)
-              dow="Fri"
-              sections={Array []}
+              dow="Fr"
             />
           </div>,
         ],
@@ -291,24 +270,19 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <WithStyles(DowColumn)
-                dow="Mon"
-                sections={Array []}
+                dow="Mo"
               />,
               <WithStyles(DowColumn)
-                dow="Tue"
-                sections={Array []}
+                dow="Tu"
               />,
               <WithStyles(DowColumn)
-                dow="Wed"
-                sections={Array []}
+                dow="We"
               />,
               <WithStyles(DowColumn)
-                dow="Thu"
-                sections={Array []}
+                dow="Th"
               />,
               <WithStyles(DowColumn)
-                dow="Fri"
-                sections={Array []}
+                dow="Fr"
               />,
             ],
             "className": "",
@@ -317,11 +291,10 @@ ShallowWrapper {
           "rendered": Array [
             Object {
               "instance": null,
-              "key": "Mon",
+              "key": "Mo",
               "nodeType": "class",
               "props": Object {
-                "dow": "Mon",
-                "sections": Array [],
+                "dow": "Mo",
               },
               "ref": null,
               "rendered": null,
@@ -329,11 +302,10 @@ ShallowWrapper {
             },
             Object {
               "instance": null,
-              "key": "Tue",
+              "key": "Tu",
               "nodeType": "class",
               "props": Object {
-                "dow": "Tue",
-                "sections": Array [],
+                "dow": "Tu",
               },
               "ref": null,
               "rendered": null,
@@ -341,11 +313,10 @@ ShallowWrapper {
             },
             Object {
               "instance": null,
-              "key": "Wed",
+              "key": "We",
               "nodeType": "class",
               "props": Object {
-                "dow": "Wed",
-                "sections": Array [],
+                "dow": "We",
               },
               "ref": null,
               "rendered": null,
@@ -353,11 +324,10 @@ ShallowWrapper {
             },
             Object {
               "instance": null,
-              "key": "Thu",
+              "key": "Th",
               "nodeType": "class",
               "props": Object {
-                "dow": "Thu",
-                "sections": Array [],
+                "dow": "Th",
               },
               "ref": null,
               "rendered": null,
@@ -365,11 +335,10 @@ ShallowWrapper {
             },
             Object {
               "instance": null,
-              "key": "Fri",
+              "key": "Fr",
               "nodeType": "class",
               "props": Object {
-                "dow": "Fri",
-                "sections": Array [],
+                "dow": "Fr",
               },
               "ref": null,
               "rendered": null,

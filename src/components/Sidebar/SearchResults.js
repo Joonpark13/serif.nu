@@ -53,11 +53,11 @@ function SearchResults({
         {searchResults
           && searchResults.map(course => (
             <ListItem
-              key={`${course.school} ${course.subject} ${course.abbv}`}
+              key={`${course.schoolId} ${course.subjectId} ${course.id}`}
               button
-              onClick={() => handleCourseClick(course.school, course.subject, course.abbv)}
+              onClick={() => handleCourseClick(course.schoolId, course.subjectId, course.id)}
             >
-              <ListItemText primary={`${course.subject} ${course.abbv} ${course.name}`} />
+              <ListItemText primary={`${course.subjectId} ${course.id} ${course.name}`} />
             </ListItem>
           ))
         }

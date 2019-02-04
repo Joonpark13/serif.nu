@@ -1,4 +1,14 @@
 import { fromJS } from 'immutable';
+import { loop, Cmd } from 'redux-loop';
+import { fetchSearchResults, fetchSearchIndex, fetchSections } from 'effects/search';
+import {
+  getSearchResultsSuccess,
+  getSearchResultsFailure,
+  fetchSearchIndexSuccess,
+  fetchSearchIndexFailure,
+  getSectionsSuccess,
+  getSectionsFailure,
+} from 'actions';
 import searchReducer, { initialSearchState } from './search';
 import * as actionTypes from '../actions/action-types';
 import * as actionCreators from '../actions/index';
@@ -8,11 +18,48 @@ describe('search reducer', () => {
     expect(searchReducer(undefined, {})).toEqual(initialSearchState);
   });
 
+  it(`handles ${actionTypes.FETCH_SEARCH_INDEX}`, () => {
+    const termId = '4740';
+    const action = actionCreators.fetchSearchIndex(termId);
+    expect(searchReducer(initialSearchState, action)).toEqual(
+      loop(
+        initialSearchState.set('isFetching', true),
+        Cmd.run(fetchSearchIndex, {
+          args: [action.termId],
+          successActionCreator: fetchSearchIndexSuccess,
+          failActionCreator: fetchSearchIndexFailure,
+        }),
+      ),
+    );
+  });
+
+  it(`handles ${actionTypes.FETCH_SEARCH_INDEX_SUCCESS}`, () => {
+    const searchIndex = Symbol('searchIndex');
+    const action = actionCreators.fetchSearchIndexSuccess(searchIndex);
+    expect(searchReducer(initialSearchState, action)).toEqual(
+      initialSearchState.set('searchIndex', searchIndex),
+    );
+  });
+
+  it(`handles ${actionTypes.FETCH_SEARCH_INDEX_FAILURE}`, () => {
+    const action = actionCreators.fetchSearchIndexFailure();
+    expect(searchReducer(initialSearchState, action)).toEqual(initialSearchState);
+  });
+
   it(`should handle ${actionTypes.GET_SEARCH_RESULTS_REQUEST}`, () => {
     const state = fromJS({ isFetching: false });
     const action = actionCreators.getSearchResultsRequest();
 
-    expect(searchReducer(state, action)).toEqual(fromJS({ isFetching: true }));
+    expect(searchReducer(state, action)).toEqual(
+      loop(
+        fromJS({ isFetching: true }),
+        Cmd.run(fetchSearchResults, {
+          successActionCreator: getSearchResultsSuccess,
+          failActionCreator: getSearchResultsFailure,
+          args: [state.get('searchIndex'), action.searchInput],
+        }),
+      ),
+    );
   });
 
   it(`should handle ${actionTypes.GET_SEARCH_RESULTS_SUCCESS}`, () => {
@@ -50,6 +97,35 @@ describe('search reducer', () => {
     }));
   });
 
+  it(`should handle ${actionTypes.GET_SEARCH_RESULTS_REQUEST}`, () => {
+    const searchInput = 'EECS';
+    const action = actionCreators.getSearchResultsRequest(searchInput);
+    expect(searchReducer(initialSearchState, action)).toEqual(
+      loop(
+        initialSearchState.set('isFetching', true),
+        Cmd.run(fetchSearchResults, {
+          args: [initialSearchState.get('searchIndex'), action.searchInput],
+          successActionCreator: getSearchResultsSuccess,
+          failActionCreator: getSearchResultsFailure,
+        }),
+      ),
+    );
+  });
+
+  it(`handles ${actionTypes.GET_SECTIONS_REQUEST}`, () => {
+    const action = actionCreators.getSectionsRequest('4740', 'MEAS', 'EECS', '111-0');
+    expect(searchReducer(initialSearchState, action)).toEqual(
+      loop(
+        initialSearchState.set('isFetching', true),
+        Cmd.run(fetchSections, {
+          args: [action.termId, action.schoolId, action.subjectId, action.courseId],
+          successActionCreator: getSectionsSuccess,
+          failActionCreator: getSectionsFailure,
+        }),
+      ),
+    );
+  });
+
   it(`should handle ${actionTypes.GET_SECTIONS_SUCCESS}`, () => {
     const state = fromJS({ currentSections: [], view: 'search' });
     const testResults = [{ id: '12345', section: '20' }];
@@ -73,21 +149,26 @@ describe('search reducer', () => {
     expect(searchReducer(state, action)).toEqual(fromJS({ currentCourseName: courseName }));
   });
 
-  it(`should handle ${actionTypes.VIEW_SEARCH}`, () => {
+  it(`should handle ${actionTypes.VIEW_SEARCH} and ${actionTypes.ADD_SECTION}`, () => {
     const state = fromJS({
       view: 'search',
       results: [],
       currentSections: [],
       currentSearchInput: '',
     });
-    const action = actionCreators.viewSearch();
-
-    expect(searchReducer(state, action)).toEqual(fromJS({
+    const expectedResult = fromJS({
       view: 'search',
       results: [],
       currentSections: [],
       currentSearchInput: '',
-    }));
+      isFetching: false,
+    });
+
+    let action = actionCreators.viewSearch();
+    expect(searchReducer(state, action)).toEqual(expectedResult);
+
+    action = actionCreators.addSection();
+    expect(searchReducer(state, action)).toEqual(expectedResult);
   });
 
   it(`should handle ${actionTypes.UPDATE_SEARCH_INPUT}`, () => {

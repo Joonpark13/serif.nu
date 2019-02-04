@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import {
+  HOURS,
   columnBorderStyle,
   columnMinHeight,
   columnHeight,
 } from './calendar-constants';
-import { getHours } from './calendar-helpers';
-import HourCell from './HourCell';
+import HourCellContainer from './HourCellContainer';
 
 export const styles = {
   dowColumn: {
@@ -26,39 +26,34 @@ export const styles = {
   },
 };
 
-const hours = getHours();
-
-export function getSectionsForHour(hour, sections) {
-  // sections: [{
-  //   schedule: [{
-  //     dow: ['Mo', 'We'],
-  //     start: {
-  //       hour: 13,
-  //       minute: 0,
-  //     },
-  //     end: {
-  //       hour: 13,
-  //       minute: 50,
-  //     },
-  //   }],
-  // }]
-  return sections.filter(
-    section => section.schedule.some(
-      schedule => schedule.start.hour === hour,
-    ),
-  );
+/* istanbul ignore next */
+function getDisplayDow(dow) {
+  switch (dow) {
+    case 'Mo':
+      return 'Mon';
+    case 'Tu':
+      return 'Tue';
+    case 'We':
+      return 'Wed';
+    case 'Th':
+      return 'Thu';
+    case 'Fr':
+      return 'Fri';
+    default:
+      return '';
+  }
 }
 
-function DowColumn({ dow, sections, classes }) {
+function DowColumn({ dow, classes }) {
   return (
     <div className={classes.dowColumn}>
       <Typography className={classes.dowHeader} align="center" variant="body1">
-        {dow}
+        {getDisplayDow(dow)}
       </Typography>
 
       <div className={classes.calendarColumn}>
-        {hours.map(
-          hour => <HourCell key={hour} hour={hour} sections={getSectionsForHour(hour, sections)} />,
+        {HOURS.map(
+          hour => <HourCellContainer key={hour} hour={hour} dow={dow} />,
         )}
       </div>
     </div>
@@ -68,7 +63,6 @@ function DowColumn({ dow, sections, classes }) {
 DowColumn.propTypes = {
   dow: PropTypes.string.isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
-  sections: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export { DowColumn as UnstyledDowColumn };

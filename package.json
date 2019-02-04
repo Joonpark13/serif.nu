@@ -4,12 +4,12 @@
   "description": "Simple. Fast. Visual. Course planning for Northwestern University.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js --env.API_URL=$API_URL_DEV",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
     "test": "eslint src/ --fix && jest",
     "unit-test": "jest",
     "lint": "eslint src/ --fix",
     "coverage": "jest; open coverage/index.html",
-    "build": "webpack --config webpack.prod.js --env.API_URL=$API_URL_PROD"
+    "build": "webpack --config webpack.prod.js"
   },
   "author": "Joon Park",
   "license": "ISC",
@@ -45,6 +45,8 @@
     "@material-ui/icons": "^2.0.3",
     "@material-ui/styles": "^3.0.0-alpha.0",
     "debounce": "^1.2.0",
+    "elasticlunr": "^0.9.5",
+    "firebase": "^5.8.1",
     "immutable": "^3.8.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
@@ -53,7 +55,8 @@
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "redux-immutable": "^4.0.0",
-    "redux-thunk": "^2.3.0",
+    "redux-loop": "^4.5.4",
+    "redux-loop-immutable": "^1.0.1",
     "whatwg-fetch": "^2.0.4"
   }
 }

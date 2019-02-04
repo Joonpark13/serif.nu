@@ -9,7 +9,8 @@ ShallowWrapper {
         "calendar": "",
       }
     }
-    getSchools={[Function]}
+    fetchSchools={[Function]}
+    fetchSearchIndex={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -36,7 +37,7 @@ ShallowWrapper {
             sm={12}
             xs={12}
           >
-            <Connect(Component) />
+            <WithStyles(CalendarView) />
           </WithStyles(Grid)>
           <WithStyles(Grid)
             item={true}
@@ -73,7 +74,7 @@ ShallowWrapper {
               sm={12}
               xs={12}
             >
-              <Connect(Component) />
+              <WithStyles(CalendarView) />
             </WithStyles(Grid)>,
             <WithStyles(Grid)
               item={true}
@@ -93,7 +94,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": <Connect(Component) />,
+              "children": <WithStyles(CalendarView) />,
               "className": "",
               "item": true,
               "md": 9,
@@ -159,7 +160,7 @@ ShallowWrapper {
               sm={12}
               xs={12}
             >
-              <Connect(Component) />
+              <WithStyles(CalendarView) />
             </WithStyles(Grid)>
             <WithStyles(Grid)
               item={true}
@@ -196,7 +197,7 @@ ShallowWrapper {
                 sm={12}
                 xs={12}
               >
-                <Connect(Component) />
+                <WithStyles(CalendarView) />
               </WithStyles(Grid)>,
               <WithStyles(Grid)
                 item={true}
@@ -216,7 +217,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": <Connect(Component) />,
+                "children": <WithStyles(CalendarView) />,
                 "className": "",
                 "item": true,
                 "md": 9,

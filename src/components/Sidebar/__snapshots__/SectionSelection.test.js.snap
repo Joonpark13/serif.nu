@@ -18,31 +18,29 @@ ShallowWrapper {
     sections={
       Array [
         Object {
-          "class_mtg_info": Array [
-            Object {
-              "meet_l": "Technological Institute AUD",
-              "meet_t": "MoWeFri 11:00AM - 11:50AM",
-            },
-          ],
           "id": "1",
-          "instructor": Array [
+          "instructors": Array [
             "Jason Hartline",
           ],
-          "section": 20,
-        },
-        Object {
-          "class_mtg_info": Array [
+          "schedule": Array [
             Object {
-              "meet_l": "Technological Institute AUD",
-              "meet_t": "TuTh 11:00AM - 11:50AM",
+              "location": "Some building",
             },
           ],
+          "sectionNumber": 20,
+        },
+        Object {
           "id": "2",
-          "instructor": Array [
+          "instructors": Array [
             "Ian Horswill",
             "Vincent St-Amour",
           ],
-          "section": 21,
+          "schedule": Array [
+            Object {
+              "location": "Some other building",
+            },
+          ],
+          "sectionNumber": 21,
         },
       ]
     }
@@ -88,10 +86,10 @@ ShallowWrapper {
                 Section 20
               </WithStyles(Typography)>
               <WithStyles(Typography)>
-                MoWeFri 11:00AM - 11:50AM
+                schedule
               </WithStyles(Typography)>
               <WithStyles(Typography)>
-                Technological Institute AUD
+                Some building
               </WithStyles(Typography)>
               <WithStyles(Typography)>
                 Jason Hartline
@@ -110,10 +108,10 @@ ShallowWrapper {
                 Section 21
               </WithStyles(Typography)>
               <WithStyles(Typography)>
-                TuTh 11:00AM - 11:50AM
+                schedule
               </WithStyles(Typography)>
               <WithStyles(Typography)>
-                Technological Institute AUD
+                Some other building
               </WithStyles(Typography)>
               <WithStyles(Typography)>
                 Ian Horswill, 
@@ -190,10 +188,10 @@ ShallowWrapper {
                   Section 20
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
-                  MoWeFri 11:00AM - 11:50AM
+                  schedule
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
-                  Technological Institute AUD
+                  Some building
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
                   Jason Hartline
@@ -212,10 +210,10 @@ ShallowWrapper {
                   Section 21
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
-                  TuTh 11:00AM - 11:50AM
+                  schedule
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
-                  Technological Institute AUD
+                  Some other building
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
                   Ian Horswill, 
@@ -241,10 +239,10 @@ ShallowWrapper {
                   Section 20
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
-                  MoWeFri 11:00AM - 11:50AM
+                  schedule
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
-                  Technological Institute AUD
+                  Some building
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
                   Jason Hartline
@@ -266,10 +264,10 @@ ShallowWrapper {
                     Section 20
                   </WithStyles(Typography)>,
                   <WithStyles(Typography)>
-                    MoWeFri 11:00AM - 11:50AM
+                    schedule
                   </WithStyles(Typography)>,
                   <WithStyles(Typography)>
-                    Technological Institute AUD
+                    Some building
                   </WithStyles(Typography)>,
                   <WithStyles(Typography)>
                     Jason Hartline
@@ -296,10 +294,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "MoWeFri 11:00AM - 11:50AM",
+                    "children": "schedule",
                   },
                   "ref": null,
-                  "rendered": "MoWeFri 11:00AM - 11:50AM",
+                  "rendered": "schedule",
                   "type": [Function],
                 },
                 Object {
@@ -307,10 +305,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "Technological Institute AUD",
+                    "children": "Some building",
                   },
                   "ref": null,
-                  "rendered": "Technological Institute AUD",
+                  "rendered": "Some building",
                   "type": [Function],
                 },
                 Object {
@@ -347,10 +345,10 @@ ShallowWrapper {
                   Section 21
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
-                  TuTh 11:00AM - 11:50AM
+                  schedule
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
-                  Technological Institute AUD
+                  Some other building
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
                   Ian Horswill, 
@@ -373,10 +371,10 @@ ShallowWrapper {
                     Section 21
                   </WithStyles(Typography)>,
                   <WithStyles(Typography)>
-                    TuTh 11:00AM - 11:50AM
+                    schedule
                   </WithStyles(Typography)>,
                   <WithStyles(Typography)>
-                    Technological Institute AUD
+                    Some other building
                   </WithStyles(Typography)>,
                   <WithStyles(Typography)>
                     Ian Horswill, 
@@ -404,10 +402,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "TuTh 11:00AM - 11:50AM",
+                    "children": "schedule",
                   },
                   "ref": null,
-                  "rendered": "TuTh 11:00AM - 11:50AM",
+                  "rendered": "schedule",
                   "type": [Function],
                 },
                 Object {
@@ -415,10 +413,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "Technological Institute AUD",
+                    "children": "Some other building",
                   },
                   "ref": null,
-                  "rendered": "Technological Institute AUD",
+                  "rendered": "Some other building",
                   "type": [Function],
                 },
                 Object {
@@ -483,10 +481,10 @@ ShallowWrapper {
                   Section 20
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
-                  MoWeFri 11:00AM - 11:50AM
+                  schedule
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
-                  Technological Institute AUD
+                  Some building
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
                   Jason Hartline
@@ -505,10 +503,10 @@ ShallowWrapper {
                   Section 21
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
-                  TuTh 11:00AM - 11:50AM
+                  schedule
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
-                  Technological Institute AUD
+                  Some other building
                 </WithStyles(Typography)>
                 <WithStyles(Typography)>
                   Ian Horswill, 
@@ -585,10 +583,10 @@ ShallowWrapper {
                     Section 20
                   </WithStyles(Typography)>
                   <WithStyles(Typography)>
-                    MoWeFri 11:00AM - 11:50AM
+                    schedule
                   </WithStyles(Typography)>
                   <WithStyles(Typography)>
-                    Technological Institute AUD
+                    Some building
                   </WithStyles(Typography)>
                   <WithStyles(Typography)>
                     Jason Hartline
@@ -607,10 +605,10 @@ ShallowWrapper {
                     Section 21
                   </WithStyles(Typography)>
                   <WithStyles(Typography)>
-                    TuTh 11:00AM - 11:50AM
+                    schedule
                   </WithStyles(Typography)>
                   <WithStyles(Typography)>
-                    Technological Institute AUD
+                    Some other building
                   </WithStyles(Typography)>
                   <WithStyles(Typography)>
                     Ian Horswill, 
@@ -636,10 +634,10 @@ ShallowWrapper {
                     Section 20
                   </WithStyles(Typography)>
                   <WithStyles(Typography)>
-                    MoWeFri 11:00AM - 11:50AM
+                    schedule
                   </WithStyles(Typography)>
                   <WithStyles(Typography)>
-                    Technological Institute AUD
+                    Some building
                   </WithStyles(Typography)>
                   <WithStyles(Typography)>
                     Jason Hartline
@@ -661,10 +659,10 @@ ShallowWrapper {
                       Section 20
                     </WithStyles(Typography)>,
                     <WithStyles(Typography)>
-                      MoWeFri 11:00AM - 11:50AM
+                      schedule
                     </WithStyles(Typography)>,
                     <WithStyles(Typography)>
-                      Technological Institute AUD
+                      Some building
                     </WithStyles(Typography)>,
                     <WithStyles(Typography)>
                       Jason Hartline
@@ -691,10 +689,10 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "MoWeFri 11:00AM - 11:50AM",
+                      "children": "schedule",
                     },
                     "ref": null,
-                    "rendered": "MoWeFri 11:00AM - 11:50AM",
+                    "rendered": "schedule",
                     "type": [Function],
                   },
                   Object {
@@ -702,10 +700,10 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "Technological Institute AUD",
+                      "children": "Some building",
                     },
                     "ref": null,
-                    "rendered": "Technological Institute AUD",
+                    "rendered": "Some building",
                     "type": [Function],
                   },
                   Object {
@@ -742,10 +740,10 @@ ShallowWrapper {
                     Section 21
                   </WithStyles(Typography)>
                   <WithStyles(Typography)>
-                    TuTh 11:00AM - 11:50AM
+                    schedule
                   </WithStyles(Typography)>
                   <WithStyles(Typography)>
-                    Technological Institute AUD
+                    Some other building
                   </WithStyles(Typography)>
                   <WithStyles(Typography)>
                     Ian Horswill, 
@@ -768,10 +766,10 @@ ShallowWrapper {
                       Section 21
                     </WithStyles(Typography)>,
                     <WithStyles(Typography)>
-                      TuTh 11:00AM - 11:50AM
+                      schedule
                     </WithStyles(Typography)>,
                     <WithStyles(Typography)>
-                      Technological Institute AUD
+                      Some other building
                     </WithStyles(Typography)>,
                     <WithStyles(Typography)>
                       Ian Horswill, 
@@ -799,10 +797,10 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "TuTh 11:00AM - 11:50AM",
+                      "children": "schedule",
                     },
                     "ref": null,
-                    "rendered": "TuTh 11:00AM - 11:50AM",
+                    "rendered": "schedule",
                     "type": [Function],
                   },
                   Object {
@@ -810,10 +808,10 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "Technological Institute AUD",
+                      "children": "Some other building",
                     },
                     "ref": null,
-                    "rendered": "Technological Institute AUD",
+                    "rendered": "Some other building",
                     "type": [Function],
                   },
                   Object {

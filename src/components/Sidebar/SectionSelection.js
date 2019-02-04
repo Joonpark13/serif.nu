@@ -7,6 +7,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
+import { getFormattedClassSchedule } from 'util/time';
 
 export const styles = {
   sectionsRoot: {
@@ -38,7 +39,9 @@ function SectionSelection({
         {currentCourseName}
         <Button onClick={back}>Back</Button>
       </Typography>
+
       <Divider className={classes.divider} />
+
       <List>
         {sections.map(section => (
           <ListItem
@@ -47,12 +50,14 @@ function SectionSelection({
             onClick={() => addSection(section)}
           >
             <ListItemText>
-              <Typography variant="h6" className={classes.sectionTitle}>{`Section ${section.section}`}</Typography>
-              <Typography>{`${section.class_mtg_info[0].meet_t}`}</Typography>
-              <Typography>{`${section.class_mtg_info[0].meet_l}`}</Typography>
+              <Typography variant="h6" className={classes.sectionTitle}>
+                {`Section ${section.sectionNumber}`}
+              </Typography>
+              <Typography>{`${getFormattedClassSchedule(section.schedule[0])}`}</Typography>
+              <Typography>{`${section.schedule[0].location}`}</Typography>
               <Typography>
-                {section.instructor.map((teacher, idx) => (
-                  `${teacher}${idx !== section.instructor.length - 1 ? ', ' : ''}`))
+                {section.instructors.map((teacher, idx) => (
+                  `${teacher}${idx !== section.instructors.length - 1 ? ', ' : ''}`))
                 }
               </Typography>
             </ListItemText>
