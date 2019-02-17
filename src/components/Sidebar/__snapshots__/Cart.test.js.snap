@@ -1,9 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TopBar renders correctly 1`] = `
+exports[`Cart renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Cart />,
+  Symbol(enzyme.__unrendered__): <Cart
+    classes={
+      Object {
+        "cartHeading": "",
+      }
+    }
+    sections={Array []}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -15,21 +22,134 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
-    "props": Object {},
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        0,
+        " ",
+        "Classes",
+      ],
+      "className": "",
+      "variant": "h5",
+    },
     "ref": null,
-    "rendered": null,
-    "type": "div",
+    "rendered": Array [
+      0,
+      " ",
+      "Classes",
+    ],
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
-      "props": Object {},
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          0,
+          " ",
+          "Classes",
+        ],
+        "className": "",
+        "variant": "h5",
+      },
       "ref": null,
-      "rendered": null,
-      "type": "div",
+      "rendered": Array [
+        0,
+        " ",
+        "Classes",
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`Cart renders correctly with one section 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Cart
+    classes={
+      Object {
+        "cartHeading": "",
+      }
+    }
+    sections={
+      Array [
+        Object {},
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        1,
+        " ",
+        "Class",
+      ],
+      "className": "",
+      "variant": "h5",
+    },
+    "ref": null,
+    "rendered": Array [
+      1,
+      " ",
+      "Class",
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          1,
+          " ",
+          "Class",
+        ],
+        "className": "",
+        "variant": "h5",
+      },
+      "ref": null,
+      "rendered": Array [
+        1,
+        " ",
+        "Class",
+      ],
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
