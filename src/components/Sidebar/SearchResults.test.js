@@ -1,5 +1,5 @@
 import ListItem from '@material-ui/core/ListItem';
-import { mockStyles, wrapperCreator } from 'util/testing';
+import { wrapperCreator } from 'util/testing';
 import { UnstyledSearchResults, styles } from './SearchResults';
 
 describe('SearchResults', () => {
@@ -16,17 +16,15 @@ describe('SearchResults', () => {
     subjectId: 'BUSCOM',
     termId: '4720',
   }];
-  const classes = mockStyles(styles);
   const testSearchInput = 'EECS';
 
   const defaultProps = {
     searchResults: testResults,
     isFetching: false,
-    classes,
     handleCourseClick: () => {},
     currentSearchInput: testSearchInput,
   };
-  const getComponent = wrapperCreator(UnstyledSearchResults, defaultProps);
+  const getComponent = wrapperCreator(UnstyledSearchResults, defaultProps, styles);
 
   it('renders correctly', () => {
     const wrapper = getComponent();

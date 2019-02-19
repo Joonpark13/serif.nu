@@ -14,6 +14,10 @@ export function mockStyles(style) {
 }
 
 // Helper function that returns a function which creates enzyme wrappers with default props
-export function wrapperCreator(Component, defaultProps) {
-  return props => shallow(<Component {...defaultProps} {...props} />);
+export function wrapperCreator(Component, defaultProps = {}, styles = undefined) {
+  let classes;
+  if (styles) {
+    classes = mockStyles(styles);
+  }
+  return props => shallow(<Component classes={classes} {...defaultProps} {...props} />);
 }

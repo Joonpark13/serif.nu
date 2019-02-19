@@ -1,4 +1,4 @@
-import { mockStyles, wrapperCreator } from 'util/testing';
+import { wrapperCreator } from 'util/testing';
 import { UnstyledSchools, styles } from './Schools';
 
 describe('Schools', () => {
@@ -11,15 +11,12 @@ describe('Schools', () => {
     name: 'McCormick School of Engineering and Applied Science',
     term: '4720',
   }];
-  const classes = mockStyles(styles);
-
   const defaultProps = {
     schools: testSchools,
     isFetching: false,
-    classes,
   };
 
-  const getComponent = wrapperCreator(UnstyledSchools, defaultProps);
+  const getComponent = wrapperCreator(UnstyledSchools, defaultProps, styles);
 
   it('renders correctly', () => {
     const wrapper = getComponent();

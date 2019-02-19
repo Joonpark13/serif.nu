@@ -1,4 +1,4 @@
-import db from 'util/firestore';
+import { db } from 'util/firebase';
 import { CURRENT_TERM } from 'util/constants';
 
 const currentTermDoc = db.collection('terms').doc(CURRENT_TERM);

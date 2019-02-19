@@ -1,11 +1,9 @@
 import ListItem from '@material-ui/core/ListItem';
-import { mockStyles, wrapperCreator } from 'util/testing';
+import { wrapperCreator } from 'util/testing';
 import * as timeUtils from 'util/time';
 import { UnstyledSectionSelection, styles } from './SectionSelection';
 
 describe('SectionSelection', () => {
-  const classes = mockStyles(styles);
-
   const defaultProps = {
     currentCourseName: 'EECS 101-0',
     sections: [{
@@ -25,9 +23,8 @@ describe('SectionSelection', () => {
     }],
     back: () => {},
     addSection: () => {},
-    classes,
   };
-  const getComponent = wrapperCreator(UnstyledSectionSelection, defaultProps);
+  const getComponent = wrapperCreator(UnstyledSectionSelection, defaultProps, styles);
 
   beforeEach(() => {
     timeUtils.getFormattedClassSchedule = jest.fn();

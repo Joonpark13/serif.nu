@@ -135,6 +135,10 @@ We use Immutable.js for state management as it prevents many bugs arising from s
 
 For the data structure of the course data from our cloud firestore that we use, see [the Sans-Serif documentation](https://github.com/Joonpark13/sans-serif).
 
+### Configuration vs. Initialization
+
+Code that "configures" or "sets up" the app (what you'd consider to be 'settings') should live in `index.js`. Code that "initializes" data or other parts of the application on first load should live in `components/App.js`, most likely in its `componentDidMount`.
+
 ## Sans-Serif
 
 Sans-Serif is the backend service that provides the course data for Serif.nu. See [the Sans-Serif documentation](https://github.com/Joonpark13/sans-serif) for more information.
