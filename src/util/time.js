@@ -11,6 +11,15 @@ export function formatTime(time) {
 }
 
 export function getFormattedClassSchedule(schedule) {
+  if (schedule.dow === 'TBA' || schedule.start === 'TBA' || schedule.end === 'TBA') {
+    return 'TBA';
+  }
   const dowStr = schedule.dow.join('');
   return `${dowStr} ${formatTime(schedule.start)} - ${formatTime(schedule.end)}`;
+}
+
+export function getDurationInHours(schedule) {
+  const hoursDiff = schedule.end.hour - schedule.start.hour;
+  const minutesDiff = schedule.end.minute - schedule.start.minute;
+  return hoursDiff + minutesDiff / 60;
 }

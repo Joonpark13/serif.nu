@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
+import { getDurationInHours } from 'util/time';
 import { getScheduleObjGivenHourAndDow } from './calendar-helpers';
 
 export const styles = {
@@ -13,6 +14,13 @@ export const styles = {
       const offset = Math.round(minute / 60 * 100);
       return `${offset}%`;
     },
+    height: ({ hour, dow, section }) => {
+      const schedule = getScheduleObjGivenHourAndDow(section.schedule, hour, dow);
+      const durationInHours = getDurationInHours(schedule);
+      const heightInPercent = Math.round(durationInHours * 100);
+      return `${heightInPercent}%`;
+    },
+    width: '100%',
   },
 };
 
