@@ -9,6 +9,6 @@
 * `npm run coverage` Runs code coverage analysis, then auto-opens coverage html file in browser.
 * `npm run build` Builds a production version of the app. Output can be found in `/dist`.
 
-## Sans-Serif Endpoints
+## Data Model
 
-TODO: Link to sans-serif docs
+See [the Sans-Serif docs](https://github.com/Joonpark13/sans-serif).

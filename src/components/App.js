@@ -4,6 +4,7 @@ import {
   getSchoolsRequest,
   fetchSearchIndex as fetchSearchIndexAction,
 } from 'actions';
+import { auth } from 'util/firebase';
 import toJS from 'util/to-js';
 import { CURRENT_TERM } from 'util/constants';
 import PropTypes from 'prop-types';
@@ -22,8 +23,15 @@ export const styles = {
 class App extends Component {
   componentDidMount() {
     const { fetchSchools, fetchSearchIndex } = this.props;
-    fetchSchools(CURRENT_TERM);
-    fetchSearchIndex(CURRENT_TERM);
+
+    auth.signInAnonymously(); // TODO handle sign in error using .catch()
+
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        fetchSchools(CURRENT_TERM);
+        fetchSearchIndex(CURRENT_TERM);
+      }
+    });
   }
 
   render() {

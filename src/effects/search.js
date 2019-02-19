@@ -1,5 +1,5 @@
 import elasticlunr from 'elasticlunr';
-import db from 'util/firestore';
+import { db } from 'util/firebase';
 import { CURRENT_TERM } from 'util/constants';
 
 const MAX_SEARCH_RESULTS = 30;
