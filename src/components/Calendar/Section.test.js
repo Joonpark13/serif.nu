@@ -6,26 +6,32 @@ import * as calendarHelpers from './calendar-helpers';
 
 describe('Section', () => {
   describe('dynamic styles', () => {
-    it('correctly calculates section card height', () => {
-      const hour = 10;
-      const dow = 'Mo';
-      const schedule = {
-        dow: [dow],
-        start: {
-          hour: 10,
-          minute: 30,
-        },
-        end: {
-          hour: 11,
-          minute: 50,
-        },
-      };
-      const section = { schedule: [schedule] };
+    const hour = 10;
+    const dow = 'Mo';
+    const schedule = {
+      dow: [dow],
+      start: {
+        hour: 10,
+        minute: 30,
+      },
+      end: {
+        hour: 12,
+        minute: 0,
+      },
+    };
+    const section = { schedule: [schedule] };
 
+    beforeEach(() => {
       calendarHelpers.getScheduleObjGivenHourAndDow = jest.fn();
       calendarHelpers.getScheduleObjGivenHourAndDow.mockReturnValue(schedule);
+    });
 
+    it('correctly calculates section card placement', () => {
       expect(styles.paper.top({ hour, dow, section })).toBe('50%');
+    });
+
+    it('correctly calculates section card height', () => {
+      expect(styles.paper.height({ hour, dow, section })).toBe('150%');
     });
   });
 

@@ -1,4 +1,4 @@
-import { getFormattedClassSchedule, formatMinute, formatTime } from './time';
+import { getFormattedClassSchedule, formatMinute, formatTime, getDurationInHours } from './time';
 
 describe('time utils', () => {
   describe('formatMinute', () => {
@@ -30,6 +30,27 @@ describe('time utils', () => {
           minute: 50,
         },
       })).toBe('MoWe 12:00 PM - 12:50 PM');
+    });
+
+    it('returns TBA for any undetermined schedules', () => {
+      expect(getFormattedClassSchedule({
+        dow: 'TBA',
+      })).toBe('TBA');
+    });
+  });
+
+  describe('getDurationInHours', () => {
+    it('calculates duration in hours', () => {
+      expect(getDurationInHours({
+        start: {
+          hour: 12,
+          minute: 0,
+        },
+        end: {
+          hour: 13,
+          minute: 30,
+        },
+      })).toBe(1.5);
     });
   });
 });

@@ -263,9 +263,11 @@ ShallowWrapper {
                   >
                     Section 20
                   </WithStyles(Typography)>,
-                  <WithStyles(Typography)>
-                    schedule
-                  </WithStyles(Typography)>,
+                  Array [
+                    <WithStyles(Typography)>
+                      schedule
+                    </WithStyles(Typography)>,
+                  ],
                   <WithStyles(Typography)>
                     Some building
                   </WithStyles(Typography)>,
@@ -291,7 +293,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": undefined,
+                  "key": "0",
                   "nodeType": "class",
                   "props": Object {
                     "children": "schedule",
@@ -370,9 +372,11 @@ ShallowWrapper {
                   >
                     Section 21
                   </WithStyles(Typography)>,
-                  <WithStyles(Typography)>
-                    schedule
-                  </WithStyles(Typography)>,
+                  Array [
+                    <WithStyles(Typography)>
+                      schedule
+                    </WithStyles(Typography)>,
+                  ],
                   <WithStyles(Typography)>
                     Some other building
                   </WithStyles(Typography)>,
@@ -399,7 +403,7 @@ ShallowWrapper {
                 },
                 Object {
                   "instance": null,
-                  "key": undefined,
+                  "key": "0",
                   "nodeType": "class",
                   "props": Object {
                     "children": "schedule",
@@ -658,9 +662,11 @@ ShallowWrapper {
                     >
                       Section 20
                     </WithStyles(Typography)>,
-                    <WithStyles(Typography)>
-                      schedule
-                    </WithStyles(Typography)>,
+                    Array [
+                      <WithStyles(Typography)>
+                        schedule
+                      </WithStyles(Typography)>,
+                    ],
                     <WithStyles(Typography)>
                       Some building
                     </WithStyles(Typography)>,
@@ -686,7 +692,7 @@ ShallowWrapper {
                   },
                   Object {
                     "instance": null,
-                    "key": undefined,
+                    "key": "0",
                     "nodeType": "class",
                     "props": Object {
                       "children": "schedule",
@@ -765,9 +771,11 @@ ShallowWrapper {
                     >
                       Section 21
                     </WithStyles(Typography)>,
-                    <WithStyles(Typography)>
-                      schedule
-                    </WithStyles(Typography)>,
+                    Array [
+                      <WithStyles(Typography)>
+                        schedule
+                      </WithStyles(Typography)>,
+                    ],
                     <WithStyles(Typography)>
                       Some other building
                     </WithStyles(Typography)>,
@@ -794,7 +802,7 @@ ShallowWrapper {
                   },
                   Object {
                     "instance": null,
-                    "key": undefined,
+                    "key": "0",
                     "nodeType": "class",
                     "props": Object {
                       "children": "schedule",

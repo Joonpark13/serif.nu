@@ -53,7 +53,13 @@ function SectionSelection({
               <Typography variant="h6" className={classes.sectionTitle}>
                 {`Section ${section.sectionNumber}`}
               </Typography>
-              <Typography>{`${getFormattedClassSchedule(section.schedule[0])}`}</Typography>
+              {section.schedule.map((scheduleObj, index) => (
+                /* eslint-disable react/no-array-index-key */
+                <Typography key={index}>
+                  {`${getFormattedClassSchedule(scheduleObj)}`}
+                </Typography>
+                /* eslint-enable react/no-array-index-key */
+              ))}
               <Typography>{`${section.schedule[0].location}`}</Typography>
               <Typography>
                 {section.instructors.map((teacher, idx) => (
