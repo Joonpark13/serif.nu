@@ -26,7 +26,6 @@ export function fetchSubjects(termId, subjectId) {
 export function fetchSubjects(termId, subjectId) {
   return currentTermDoc
     .collection('subjects')
-    .where('termId', '==', termId)
     .where('subjectId', '==', subjectId)
     .get()
     .then(
