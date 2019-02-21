@@ -3,19 +3,23 @@ export function formatMinute(minute) {
   return `${minute}`;
 }
 
-export function formatTime(time) {
-  if (time.hour === 0) return `12:${formatMinute(time.minute)} AM`;
-  if (time.hour < 12) return `${time.hour}:${formatMinute(time.minute)} AM`;
-  if (time.hour === 12) return `12:${formatMinute(time.minute)} PM`;
-  return `${time.hour - 12}:${formatMinute(time.minute)} PM`;
+export function formatTime(time, includeAmPm = true) {
+  if (time.hour === 0) return `12:${formatMinute(time.minute)}${includeAmPm ? ' AM' : ''}`;
+  if (time.hour < 12) return `${time.hour}:${formatMinute(time.minute)}${includeAmPm ? ' AM' : ''}`;
+  if (time.hour === 12) return `12:${formatMinute(time.minute)}${includeAmPm ? ' PM' : ''}`;
+  return `${time.hour - 12}:${formatMinute(time.minute)}${includeAmPm ? ' PM' : ''}`;
 }
 
-export function getFormattedClassSchedule(schedule) {
+export function getFormattedClassSchedule(schedule, includeDow = true, includeAmPm = true) {
   if (schedule.dow === 'TBA' || schedule.start === 'TBA' || schedule.end === 'TBA') {
     return 'TBA';
   }
-  const dowStr = schedule.dow.join('');
-  return `${dowStr} ${formatTime(schedule.start)} - ${formatTime(schedule.end)}`;
+  let result = '';
+  if (includeDow) {
+    const dowStr = schedule.dow.join('');
+    result += `${dowStr} `;
+  }
+  return `${result}${formatTime(schedule.start, includeAmPm)} - ${formatTime(schedule.end, includeAmPm)}`;
 }
 
 export function getDurationInHours(schedule) {

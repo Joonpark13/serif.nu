@@ -19,7 +19,8 @@ describe('Section', () => {
         minute: 0,
       },
     };
-    const section = { schedule: [schedule] };
+    const color = 'some color';
+    const section = { schedule: [schedule], color };
 
     beforeEach(() => {
       calendarHelpers.getScheduleObjGivenHourAndDow = jest.fn();
@@ -32,6 +33,10 @@ describe('Section', () => {
 
     it('correctly calculates section card height', () => {
       expect(styles.paper.height({ hour, dow, section })).toBe('150%');
+    });
+
+    it('correctly grabs the section background color', () => {
+      expect(styles.paper.backgroundColor({ section })).toBe(color);
     });
   });
 
