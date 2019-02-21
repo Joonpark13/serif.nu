@@ -6,7 +6,10 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Section
     classes={
       Object {
+        "container": "",
+        "header": "",
         "paper": "",
+        "text": "",
       }
     }
     dow="Mo"
@@ -31,11 +34,135 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": undefined,
+      "children": <div
+        className=""
+      >
+        <div
+          className=""
+        >
+          <WithStyles(Typography)
+            className=""
+            variant="caption"
+          >
+            10:30 - 12:00
+          </WithStyles(Typography)>
+          <WithStyles(Typography)
+            className=""
+            variant="caption"
+          >
+            undefined undefined
+          </WithStyles(Typography)>
+        </div>
+        <WithStyles(Typography)
+          className=" undefined"
+          noWrap={true}
+          variant="subtitle2"
+        />
+      </div>,
       "className": "",
     },
     "ref": null,
-    "rendered": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className=""
+          >
+            <WithStyles(Typography)
+              className=""
+              variant="caption"
+            >
+              10:30 - 12:00
+            </WithStyles(Typography)>
+            <WithStyles(Typography)
+              className=""
+              variant="caption"
+            >
+              undefined undefined
+            </WithStyles(Typography)>
+          </div>,
+          <WithStyles(Typography)
+            className=" undefined"
+            noWrap={true}
+            variant="subtitle2"
+          />,
+        ],
+        "className": "",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <WithStyles(Typography)
+                className=""
+                variant="caption"
+              >
+                10:30 - 12:00
+              </WithStyles(Typography)>,
+              <WithStyles(Typography)
+                className=""
+                variant="caption"
+              >
+                undefined undefined
+              </WithStyles(Typography)>,
+            ],
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "10:30 - 12:00",
+                "className": "",
+                "variant": "caption",
+              },
+              "ref": null,
+              "rendered": "10:30 - 12:00",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "undefined undefined",
+                "className": "",
+                "variant": "caption",
+              },
+              "ref": null,
+              "rendered": "undefined undefined",
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": undefined,
+            "className": " undefined",
+            "noWrap": true,
+            "variant": "subtitle2",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -44,11 +171,135 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": undefined,
+        "children": <div
+          className=""
+        >
+          <div
+            className=""
+          >
+            <WithStyles(Typography)
+              className=""
+              variant="caption"
+            >
+              10:30 - 12:00
+            </WithStyles(Typography)>
+            <WithStyles(Typography)
+              className=""
+              variant="caption"
+            >
+              undefined undefined
+            </WithStyles(Typography)>
+          </div>
+          <WithStyles(Typography)
+            className=" undefined"
+            noWrap={true}
+            variant="subtitle2"
+          />
+        </div>,
         "className": "",
       },
       "ref": null,
-      "rendered": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className=""
+            >
+              <WithStyles(Typography)
+                className=""
+                variant="caption"
+              >
+                10:30 - 12:00
+              </WithStyles(Typography)>
+              <WithStyles(Typography)
+                className=""
+                variant="caption"
+              >
+                undefined undefined
+              </WithStyles(Typography)>
+            </div>,
+            <WithStyles(Typography)
+              className=" undefined"
+              noWrap={true}
+              variant="subtitle2"
+            />,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <WithStyles(Typography)
+                  className=""
+                  variant="caption"
+                >
+                  10:30 - 12:00
+                </WithStyles(Typography)>,
+                <WithStyles(Typography)
+                  className=""
+                  variant="caption"
+                >
+                  undefined undefined
+                </WithStyles(Typography)>,
+              ],
+              "className": "",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "10:30 - 12:00",
+                  "className": "",
+                  "variant": "caption",
+                },
+                "ref": null,
+                "rendered": "10:30 - 12:00",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "undefined undefined",
+                  "className": "",
+                  "variant": "caption",
+                },
+                "ref": null,
+                "rendered": "undefined undefined",
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": undefined,
+              "className": " undefined",
+              "noWrap": true,
+              "variant": "subtitle2",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
       "type": [Function],
     },
   ],

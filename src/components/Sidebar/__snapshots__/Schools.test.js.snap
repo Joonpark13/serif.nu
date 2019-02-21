@@ -43,14 +43,14 @@ ShallowWrapper {
           button={true}
         >
           <WithStyles(ListItemText)
-            primary="MUSIC"
+            primary="Bienen School of Music"
           />
         </WithStyles(ListItem)>
         <WithStyles(ListItem)
           button={true}
         >
           <WithStyles(ListItemText)
-            primary="MEAS"
+            primary="McCormick School of Engineering and Applied Science"
           />
         </WithStyles(ListItem)>
       </WithStyles(List)>,
@@ -66,14 +66,14 @@ ShallowWrapper {
             button={true}
           >
             <WithStyles(ListItemText)
-              primary="MUSIC"
+              primary="Bienen School of Music"
             />
           </WithStyles(ListItem)>,
           <WithStyles(ListItem)
             button={true}
           >
             <WithStyles(ListItemText)
-              primary="MEAS"
+              primary="McCormick School of Engineering and Applied Science"
             />
           </WithStyles(ListItem)>,
         ],
@@ -87,7 +87,7 @@ ShallowWrapper {
           "props": Object {
             "button": true,
             "children": <WithStyles(ListItemText)
-              primary="MUSIC"
+              primary="Bienen School of Music"
             />,
           },
           "ref": null,
@@ -96,7 +96,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "primary": "MUSIC",
+              "primary": "Bienen School of Music",
             },
             "ref": null,
             "rendered": null,
@@ -111,7 +111,7 @@ ShallowWrapper {
           "props": Object {
             "button": true,
             "children": <WithStyles(ListItemText)
-              primary="MEAS"
+              primary="McCormick School of Engineering and Applied Science"
             />,
           },
           "ref": null,
@@ -120,7 +120,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "primary": "MEAS",
+              "primary": "McCormick School of Engineering and Applied Science",
             },
             "ref": null,
             "rendered": null,
@@ -144,14 +144,14 @@ ShallowWrapper {
             button={true}
           >
             <WithStyles(ListItemText)
-              primary="MUSIC"
+              primary="Bienen School of Music"
             />
           </WithStyles(ListItem)>
           <WithStyles(ListItem)
             button={true}
           >
             <WithStyles(ListItemText)
-              primary="MEAS"
+              primary="McCormick School of Engineering and Applied Science"
             />
           </WithStyles(ListItem)>
         </WithStyles(List)>,
@@ -167,14 +167,14 @@ ShallowWrapper {
               button={true}
             >
               <WithStyles(ListItemText)
-                primary="MUSIC"
+                primary="Bienen School of Music"
               />
             </WithStyles(ListItem)>,
             <WithStyles(ListItem)
               button={true}
             >
               <WithStyles(ListItemText)
-                primary="MEAS"
+                primary="McCormick School of Engineering and Applied Science"
               />
             </WithStyles(ListItem)>,
           ],
@@ -188,7 +188,7 @@ ShallowWrapper {
             "props": Object {
               "button": true,
               "children": <WithStyles(ListItemText)
-                primary="MUSIC"
+                primary="Bienen School of Music"
               />,
             },
             "ref": null,
@@ -197,7 +197,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "primary": "MUSIC",
+                "primary": "Bienen School of Music",
               },
               "ref": null,
               "rendered": null,
@@ -212,7 +212,7 @@ ShallowWrapper {
             "props": Object {
               "button": true,
               "children": <WithStyles(ListItemText)
-                primary="MEAS"
+                primary="McCormick School of Engineering and Applied Science"
               />,
             },
             "ref": null,
@@ -221,7 +221,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "primary": "MEAS",
+                "primary": "McCormick School of Engineering and Applied Science",
               },
               "ref": null,
               "rendered": null,

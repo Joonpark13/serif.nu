@@ -31,7 +31,7 @@ function Schools({ schools, isFetching, classes }) {
               key={`${school.id}`}
               button
             >
-              <ListItemText primary={`${school.id}`} />
+              <ListItemText primary={`${school.name}`} />
             </ListItem>
           ))
         }

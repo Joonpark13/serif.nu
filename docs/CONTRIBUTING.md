@@ -59,7 +59,7 @@ npm install
 1. Move the ticket from "Current Sprint" to "In Progress" on the Trello board.
 2. Check out the `master` branch, `git pull` to make sure you are up to date, then checkout a new branch. Your branch name should follow the format of `{ticket type}/{ticket-title}` where ticket type is `f` for feature, `b` for bugfix, `t` for tech debt, `o` for toolchain, and `d` for documentation. For example, `git checkout -b b/fix-overlapping-schedule-bug`
 3. Make your changes, stage, and commit. Most tickets will require multiple commits. Make sure the first line of your first commit message is the ticket title.
-4. Run `npm test` to lint and test your changes. Fix/add tests as necessary to ensure no linting errors, 100% code coverage, and that all tests pass. See the [reference document](REFERENCE.md) for scripts that may help. Running `npm test` generates a code coverage report, viewable by opening `/coverage/index.html`.
+4. Run `npm test` to lint and test your changes. Fix/add tests as necessary to ensure no linting errors, 100% code coverage, and that all tests pass. See the [reference document](REFERENCE.md) for scripts that may help. Running `npm test` generates a code coverage report, viewable by opening `/coverage/index.html`. To run specific test files, do `jest {path-to-file}` and to update a snapshot do `jest {path-to-file} -u` (you'll need jest installed globally). Make sure you read [the philosophy](#unit-testing) on snapshot testing.
 5. If applicable, make sure you update the documentation to match your changes.
 6. Push your branch: `git push -u origin b/fix-overlapping-schedule-bug`
 7. Open a pull request. Using the Github power-up in the trello card, link the pull request on the ticket. If the ticket contains a visual change, include a screenshot of the change on the PR.
@@ -130,6 +130,8 @@ We use [Material-UI](https://material-ui.com/) as our component library and adhe
 ### State Management
 
 We use Immutable.js for state management as it prevents many bugs arising from state mutation. Absolutely no part of the redux state should be vanilla JS objects.
+
+Many codebases that use redux write reducers using handlers, meaning every action simply calls a handler for that specific action, with the state and action passed in as parameters to the handler function. The standard for this codebase is to directly return the state right inside the switch statement of the reducer itself as long as you're only returning state or a loop (see [redux-loop](https://redux-loop.js.org/)). Any time you are doing more than that, you should use write a handler.
 
 ### Data Structure
 

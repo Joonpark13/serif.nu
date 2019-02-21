@@ -1,4 +1,5 @@
 import { fromJS } from 'immutable';
+import { classColors } from 'util/colors';
 import scheduleReducer, { initialScheduleState } from './schedule';
 import * as actionTypes from '../actions/action-types';
 import * as actionCreators from '../actions/index';
@@ -15,8 +16,9 @@ describe('schedule reducer', () => {
     };
     const action = actionCreators.addSection(section);
 
+    const sectionWithColor = Object.assign({}, section, { color: classColors[0] });
     expect(scheduleReducer(initialScheduleState, action)).toEqual(
-      initialScheduleState.update('sections', sections => sections.push(fromJS(section))),
+      initialScheduleState.update('sections', sections => sections.push(fromJS(sectionWithColor))),
     );
   });
 });
