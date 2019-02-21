@@ -26,7 +26,7 @@ export function fetchSubjects(termId, subjectId) {
 export function fetchSubjects(termId, subjectId) {
   return currentTermDoc
     .collection('subjects')
-    .where(id, '==', subjectId)
+    .where('id', '==', subjectId)
     .get()
     .then(
       querySnapshot => querySnapshot.docs.map(doc => doc.data()),
