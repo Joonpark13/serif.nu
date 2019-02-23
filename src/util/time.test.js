@@ -1,4 +1,4 @@
-import { getFormattedClassSchedule, formatMinute, formatTime, getDurationInHours } from './time';
+import { getFormattedClassSchedule, formatMinute, formatTime, getDurationInHours, isBefore, overlaps, getFormattedClassEvent } from './time';
 
 describe('time utils', () => {
   describe('formatMinute', () => {
@@ -24,6 +24,30 @@ describe('time utils', () => {
     });
   });
 
+  describe('getFormattedClassEvent', () => {
+    const testEvent = {
+      dow: 'Mo',
+      start: {
+        hour: 12,
+        minute: 0,
+      },
+      end: {
+        hour: 12,
+        minute: 50,
+      },
+    };
+
+    it('formats events correctly', () => {
+      expect(getFormattedClassEvent(testEvent)).toBe('12:00 - 12:50');
+    });
+
+    it('returns TBA for any undetermined events', () => {
+      expect(getFormattedClassEvent({
+        dow: 'TBA',
+      })).toBe('TBA');
+    });
+  });
+
   describe('getFormattedClassSchedule', () => {
     const testSchedule = {
       dow: ['Mo', 'We'],
@@ -46,14 +70,6 @@ describe('time utils', () => {
         dow: 'TBA',
       })).toBe('TBA');
     });
-
-    it('formats schedules correctly without dow', () => {
-      expect(getFormattedClassSchedule(testSchedule, false)).toBe('12:00 PM - 12:50 PM');
-    });
-
-    it('formats schedules correctly without AM/PM', () => {
-      expect(getFormattedClassSchedule(testSchedule, true, false)).toBe('MoWe 12:00 - 12:50');
-    });
   });
 
   describe('getDurationInHours', () => {
@@ -69,5 +85,83 @@ describe('time utils', () => {
         },
       })).toBe(1.5);
     });
+  });
+
+  describe('isBefore', () => {
+    it('determines if the first time is before the second', () => {
+      expect(isBefore({
+        hour: 10,
+        minute: 30,
+      }, {
+        hour: 11,
+        minute: 0,
+      })).toBe(true);
+
+      expect(isBefore({
+        hour: 12,
+        minute: 0,
+      }, {
+        hour: 11,
+        minute: 30,
+      })).toBe(false);
+    });
+
+    it('handles isBefore or equal to', () => {
+      expect(isBefore({
+        hour: 10,
+        minute: 30,
+      }, {
+        hour: 10,
+        minute: 30,
+      }, true)).toBe(true);
+    });
+  });
+
+  describe('overlaps', () => {
+    it('determines if two events overlap', () => {
+      expect(overlaps({
+        start: {
+          hour: 10,
+          minute: 30,
+        },
+        end: {
+          hour: 11,
+          minute: 0,
+        },
+      }, {
+        start: {
+          hour: 11,
+          minute: 0,
+        },
+        end: {
+          hour: 12,
+          minute: 0,
+        },
+      })).toBe(true);
+
+      expect(overlaps({
+        start: {
+          hour: 10,
+          minute: 30,
+        },
+        end: {
+          hour: 11,
+          minute: 0,
+        },
+      }, {
+        start: {
+          hour: 11,
+          minute: 30,
+        },
+        end: {
+          hour: 12,
+          minute: 0,
+        },
+      })).toBe(false);
+    });
+  });
+
+  it('short circuits if the events\'s dows don\'t match', () => {
+    expect(overlaps({ dow: 'Mo' }, { dow: 'Tu' })).toBe(false);
   });
 });

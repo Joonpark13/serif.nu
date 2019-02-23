@@ -1,31 +1,26 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { mockStyles } from 'util/testing';
-import { UnstyledSection, styles } from './Section';
-import * as calendarHelpers from './calendar-helpers';
+import { UnstyledSection, styles, MAX_WIDTH_PERCENT } from './Section';
 
 describe('Section', () => {
+  const dow = 'Mo';
+  const event = {
+    dow,
+    start: {
+      hour: 10,
+      minute: 30,
+    },
+    end: {
+      hour: 12,
+      minute: 0,
+    },
+  };
+
   describe('dynamic styles', () => {
     const hour = 10;
-    const dow = 'Mo';
-    const schedule = {
-      dow: [dow],
-      start: {
-        hour: 10,
-        minute: 30,
-      },
-      end: {
-        hour: 12,
-        minute: 0,
-      },
-    };
     const color = 'some color';
-    const section = { schedule: [schedule], color };
-
-    beforeEach(() => {
-      calendarHelpers.getScheduleObjGivenHourAndDow = jest.fn();
-      calendarHelpers.getScheduleObjGivenHourAndDow.mockReturnValue(schedule);
-    });
+    const section = { event, color, column: 0, columnWidth: 1 };
 
     it('correctly calculates section card placement', () => {
       expect(styles.paper.top({ hour, dow, section })).toBe('50%');
@@ -38,13 +33,21 @@ describe('Section', () => {
     it('correctly grabs the section background color', () => {
       expect(styles.paper.backgroundColor({ section })).toBe(color);
     });
+
+    it('correctly calculates left offset', () => {
+      expect(styles.paper.left({ section })).toBe('0%');
+    });
+
+    it('correctly calculates width', () => {
+      expect(styles.paper.width({ section })).toBe(`${MAX_WIDTH_PERCENT}%`);
+    });
   });
 
   it('renders correctly', () => {
     const classes = mockStyles(styles);
-    const testSection = { id: '12345', course: '101-1' };
+    const testSection = { id: '12345', course: '101-1', event };
     const wrapper = shallow(
-      <UnstyledSection hour={10} dow="Mo" section={testSection} classes={classes} />,
+      <UnstyledSection section={testSection} classes={classes} />,
     );
 
     expect(wrapper).toMatchSnapshot();

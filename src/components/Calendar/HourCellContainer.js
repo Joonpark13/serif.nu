@@ -6,10 +6,10 @@ import { meetsDuringDow, meetsDuringHour } from './calendar-helpers';
 export function sectionsForHourSelector(state, hour, dow) {
   const allSections = state.getIn(['schedule', 'sections']);
   return allSections.filter(
-    section => section.get('schedule').some(
-      scheduleObj => meetsDuringDow(scheduleObj.toJS(), dow)
-        && meetsDuringHour(scheduleObj.toJS(), hour),
-    ),
+    (section) => {
+      const eventObj = section.get('event').toJS();
+      return meetsDuringDow(eventObj, dow) && meetsDuringHour(eventObj, hour);
+    },
   );
 }
 

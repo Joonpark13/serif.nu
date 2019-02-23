@@ -1,4 +1,4 @@
-import { getHours, meetsDuringDow, meetsDuringHour, getScheduleObjGivenHourAndDow } from './calendar-helpers';
+import { getHours, meetsDuringDow, meetsDuringHour } from './calendar-helpers';
 
 describe('getHours', () => {
   it('returns hours 8AM through 10PM in 24hr format', () => {
@@ -7,17 +7,17 @@ describe('getHours', () => {
 });
 
 describe('meetsDuringDow', () => {
-  it('returns true if a schedule object meets during a certain day of week', () => {
-    const scheduleObj = {
+  it('returns true if an event object meets during a certain day of week', () => {
+    const eventObj = {
       dow: ['Mo'],
     };
-    expect(meetsDuringDow(scheduleObj, 'Mo')).toBe(true);
+    expect(meetsDuringDow(eventObj, 'Mo')).toBe(true);
   });
 });
 
 describe('meetsDuringHour', () => {
-  it('returns true if a schedule object meets during a certain hour', () => {
-    const scheduleObj = {
+  it('returns true if an event object meets during a certain hour', () => {
+    const eventObj = {
       start: {
         hour: 12,
         minute: 0,
@@ -27,24 +27,6 @@ describe('meetsDuringHour', () => {
         minute: 30,
       },
     };
-    expect(meetsDuringHour(scheduleObj, 12)).toBe(true);
-  });
-});
-
-describe('getScheduleObjGivenHourAndDow', () => {
-  it('returns a schedule object that is within a given dow and hour', () => {
-    const testSchedule = {
-      dow: ['Mo'],
-      start: {
-        hour: 10,
-        minute: 0,
-      },
-      end: {
-        hour: 11,
-        minute: 50,
-      },
-    };
-    const testSchedules = [testSchedule];
-    expect(getScheduleObjGivenHourAndDow(testSchedules, 10, 'Mo')).toEqual(testSchedule);
+    expect(meetsDuringHour(eventObj, 12)).toBe(true);
   });
 });
