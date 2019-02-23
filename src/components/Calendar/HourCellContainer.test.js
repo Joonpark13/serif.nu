@@ -4,7 +4,7 @@ import { sectionsForHourSelector } from './HourCellContainer';
 describe('sectionsForHourSelector', () => {
   it('should select all sections for a given hour and dow', () => {
     const testSection = fromJS({
-      schedule: [{
+      event: {
         dow: ['Mo'],
         start: {
           hour: 13,
@@ -14,7 +14,7 @@ describe('sectionsForHourSelector', () => {
           hour: 13,
           minute: 50,
         },
-      }],
+      },
     });
     const testState = fromJS({
       schedule: {

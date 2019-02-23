@@ -11,7 +11,7 @@ module.exports = {
     '!**/__snapshots__/**',
     '!src/reducers/index.js',
   ],
-  coverageReporters: ['html', 'text'],
+  coverageReporters: process.env.COVERAGE_REPORT === 'on' ? ['html', 'text'] : ['html'],
   coverageThreshold: {
     global: {
       branches: 100,

@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "test": "eslint src/ --fix && jest",
-    "unit-test": "jest",
+    "test": "eslint src/ --fix && COVERAGE_REPORT=\"on\" jest",
+    "unit-test": "COVERAGE_REPORT=\"off\" jest",
     "lint": "eslint src/ --fix",
-    "coverage": "jest; open coverage/index.html",
+    "coverage": "COVERAGE_REPORT=\"on\" jest --silent; open coverage/index.html",
     "build": "webpack --config webpack.prod.js"
   },
   "author": "Joon Park",

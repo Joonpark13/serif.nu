@@ -3,26 +3,27 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import { getDurationInHours, getFormattedClassSchedule } from 'util/time';
-import { getScheduleObjGivenHourAndDow } from './calendar-helpers';
+import { getDurationInHours, getFormattedClassEvent } from 'util/time';
+
+export const MAX_WIDTH_PERCENT = 97;
 
 export const styles = {
   paper: {
     position: 'absolute',
-    top: ({ hour, dow, section }) => {
-      const schedule = getScheduleObjGivenHourAndDow(section.schedule, hour, dow);
-      const minute = schedule.start.minute;
+    top: ({ section }) => {
+      const minute = section.event.start.minute;
       const offset = Math.round(minute / 60 * 100);
       return `${offset}%`;
     },
-    height: ({ hour, dow, section }) => {
-      const schedule = getScheduleObjGivenHourAndDow(section.schedule, hour, dow);
-      const durationInHours = getDurationInHours(schedule);
+    left: ({ section }) => `${MAX_WIDTH_PERCENT * section.columnWidth * section.column}%`,
+    height: ({ section }) => {
+      const durationInHours = getDurationInHours(section.event);
       const heightInPercent = Math.round(durationInHours * 100);
       return `${heightInPercent}%`;
     },
-    width: '97%',
+    width: ({ section }) => `${MAX_WIDTH_PERCENT * section.columnWidth}%`,
     backgroundColor: ({ section }) => section.color,
+    overflow: 'hidden',
   },
   container: {
     margin: '3px',
@@ -33,17 +34,17 @@ export const styles = {
   header: {
     display: 'flex',
     justifyContent: 'space-between',
+    flexWrap: 'wrap',
   },
 };
 
-function Section({ classes, hour, dow, section }) {
-  const schedule = getScheduleObjGivenHourAndDow(section.schedule, hour, dow);
+function Section({ classes, section }) {
   return (
     <Paper className={classes.paper}>
       <div className={classes.container}>
         <div className={classes.header}>
           <Typography variant="caption" className={classes.text}>
-            {getFormattedClassSchedule(schedule, false, false)}
+            {getFormattedClassEvent(section.event)}
           </Typography>
 
           <Typography variant="caption" className={classes.text}>
@@ -60,8 +61,6 @@ function Section({ classes, hour, dow, section }) {
 }
 
 Section.propTypes = {
-  hour: PropTypes.number.isRequired,
-  dow: PropTypes.string.isRequired,
   section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };

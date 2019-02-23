@@ -10,20 +10,41 @@ export function formatTime(time, includeAmPm = true) {
   return `${time.hour - 12}:${formatMinute(time.minute)}${includeAmPm ? ' PM' : ''}`;
 }
 
-export function getFormattedClassSchedule(schedule, includeDow = true, includeAmPm = true) {
-  if (schedule.dow === 'TBA' || schedule.start === 'TBA' || schedule.end === 'TBA') {
+export function getFormattedClassEvent(event) {
+  if (event.dow === 'TBA' || event.start === 'TBA' || event.end === 'TBA') {
     return 'TBA';
   }
-  let result = '';
-  if (includeDow) {
-    const dowStr = schedule.dow.join('');
-    result += `${dowStr} `;
-  }
-  return `${result}${formatTime(schedule.start, includeAmPm)} - ${formatTime(schedule.end, includeAmPm)}`;
+  return `${formatTime(event.start, false)} - ${formatTime(event.end, false)}`;
 }
 
-export function getDurationInHours(schedule) {
-  const hoursDiff = schedule.end.hour - schedule.start.hour;
-  const minutesDiff = schedule.end.minute - schedule.start.minute;
+export function getFormattedClassSchedule(event) {
+  if (event.dow === 'TBA' || event.start === 'TBA' || event.end === 'TBA') {
+    return 'TBA';
+  }
+  const dowStr = event.dow.join('');
+  return `${dowStr} ${formatTime(event.start, true)} - ${formatTime(event.end, true)}`;
+}
+
+export function getDurationInHours(event) {
+  const hoursDiff = event.end.hour - event.start.hour;
+  const minutesDiff = event.end.minute - event.start.minute;
   return hoursDiff + minutesDiff / 60;
+}
+
+export function isBefore(time1, time2, orEqual = false) {
+  if (time1.hour < time2.hour) {
+    return true;
+  }
+  if (time1.hour === time2.hour) {
+    if (orEqual) return time1.minute <= time2.minute;
+    return time1.minute < time2.minute;
+  }
+  return false;
+}
+
+export function overlaps(event1, event2) {
+  if (event1.dow !== event2.dow) {
+    return false;
+  }
+  return !(isBefore(event1.end, event2.start) || isBefore(event2.end, event1.start));
 }

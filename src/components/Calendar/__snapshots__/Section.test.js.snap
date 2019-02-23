@@ -12,11 +12,20 @@ ShallowWrapper {
         "text": "",
       }
     }
-    dow="Mo"
-    hour={10}
     section={
       Object {
         "course": "101-1",
+        "event": Object {
+          "dow": "Mo",
+          "end": Object {
+            "hour": 12,
+            "minute": 0,
+          },
+          "start": Object {
+            "hour": 10,
+            "minute": 30,
+          },
+        },
         "id": "12345",
       }
     }

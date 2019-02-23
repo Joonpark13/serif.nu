@@ -6,16 +6,10 @@ export function getHours() {
   return hours;
 }
 
-export function meetsDuringDow(scheduleObj, dow) {
-  return scheduleObj.dow.includes(dow);
+export function meetsDuringDow(eventObj, dow) {
+  return eventObj.dow.includes(dow);
 }
 
-export function meetsDuringHour(scheduleObj, hour) {
-  return hour === scheduleObj.start.hour;
-}
-
-export function getScheduleObjGivenHourAndDow(schedules, hour, dow) {
-  return schedules.find(
-    scheduleObj => meetsDuringDow(scheduleObj, dow) && meetsDuringHour(scheduleObj, hour),
-  );
+export function meetsDuringHour(eventObj, hour) {
+  return hour === eventObj.start.hour;
 }
