@@ -13,20 +13,11 @@ export function fetchSchools() {
     );
 }
 
-export function fetchSubjects(termId, subjectId) {
+export function fetchSubjects(termId, schoolId) {
   return currentTermDoc
     .collection('subjects')
-    .where('id', '==', subjectId)
-    .get()
-    .then(
-      querySnapshot => querySnapshot.docs.map(doc => doc.data()),
-    );
-}
-
-export function fetchSubjects(termId, subjectId) {
-  return currentTermDoc
-    .collection('subjects')
-    .where('id', '==', subjectId)
+    .where('termId', '==', termId)
+    .where('schoolId', '==', schoolId)
     .get()
     .then(
       querySnapshot => querySnapshot.docs.map(doc => doc.data()),
