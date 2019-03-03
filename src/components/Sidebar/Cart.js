@@ -2,6 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import CartSection from './CartSection';
 
 export const styles = {
   cartHeading: {
@@ -10,13 +11,29 @@ export const styles = {
 };
 
 function Cart({ classes, sections }) {
-  const label = sections.length === 1 ? 'Class' : 'Classes';
+  const uniqueSections = [];
+  const usedIDs = [];
+
+  sections.forEach(
+    (section) => {
+      if (!usedIDs.includes(section.id)) {
+        usedIDs.push(section.id);
+        uniqueSections.push(section);
+      }
+    },
+  );
+
+  const label = uniqueSections.length === 1 ? 'Class' : 'Classes';
+
   return (
-    <Typography variant="h5" className={classes.cartHeading}>
-      {sections.length}
-      {' '}
-      {label}
-    </Typography>
+    <React.Fragment>
+      <Typography variant="h5" className={classes.cartHeading}>
+        {uniqueSections.length}
+        {' '}
+        {label}
+      </Typography>
+      {uniqueSections.map(section => <CartSection key={section.id} section={section} />)}
+    </React.Fragment>
   );
 }
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { mockStyles } from 'util/testing';
-import { UnstyledSection, styles, MAX_WIDTH_PERCENT } from './Section';
+import { UnstyledCalendarSection, styles, MAX_WIDTH_PERCENT } from './CalendarSection';
 
-describe('Section', () => {
+describe('CalendarSection', () => {
   const dow = 'Mo';
   const event = {
     dow,
@@ -47,7 +47,7 @@ describe('Section', () => {
     const classes = mockStyles(styles);
     const testSection = { id: '12345', course: '101-1', event };
     const wrapper = shallow(
-      <UnstyledSection section={testSection} classes={classes} />,
+      <UnstyledCalendarSection section={testSection} classes={classes} />,
     );
 
     expect(wrapper).toMatchSnapshot();

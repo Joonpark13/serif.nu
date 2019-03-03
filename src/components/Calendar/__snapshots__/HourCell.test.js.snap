@@ -59,7 +59,7 @@ ShallowWrapper {
         "type": Object {
           "$$typeof": Symbol(react.forward_ref),
           "Naked": [Function],
-          "displayName": "WithStyles(Section)",
+          "displayName": "WithStyles(CalendarSection)",
           "options": Object {},
           "propTypes": Object {
             "classes": [Function],
@@ -105,7 +105,7 @@ ShallowWrapper {
           "type": Object {
             "$$typeof": Symbol(react.forward_ref),
             "Naked": [Function],
-            "displayName": "WithStyles(Section)",
+            "displayName": "WithStyles(CalendarSection)",
             "options": Object {},
             "propTypes": Object {
               "classes": [Function],

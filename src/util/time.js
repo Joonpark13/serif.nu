@@ -10,19 +10,19 @@ export function formatTime(time, includeAmPm = true) {
   return `${time.hour - 12}:${formatMinute(time.minute)}${includeAmPm ? ' PM' : ''}`;
 }
 
-export function getFormattedClassEvent(event) {
+export function getFormattedEventTime(event) {
   if (event.dow === 'TBA' || event.start === 'TBA' || event.end === 'TBA') {
     return 'TBA';
   }
   return `${formatTime(event.start, false)} - ${formatTime(event.end, false)}`;
 }
 
-export function getFormattedClassSchedule(event) {
-  if (event.dow === 'TBA' || event.start === 'TBA' || event.end === 'TBA') {
+export function getFormattedClassSchedule(schedule) {
+  if (schedule.dow === 'TBA' || schedule.start === 'TBA' || schedule.end === 'TBA') {
     return 'TBA';
   }
-  const dowStr = event.dow.join('');
-  return `${dowStr} ${formatTime(event.start, true)} - ${formatTime(event.end, true)}`;
+  const dowStr = schedule.dow.join('');
+  return `${dowStr} ${formatTime(schedule.start, true)} - ${formatTime(schedule.end, true)}`;
 }
 
 export function getDurationInHours(event) {

@@ -8,27 +8,14 @@ ShallowWrapper {
       Object {
         "container": "",
         "header": "",
+        "name": "",
         "paper": "",
         "text": "",
       }
     }
-    section={
-      Object {
-        "course": "101-1",
-        "event": Object {
-          "dow": "Mo",
-          "end": Object {
-            "hour": 12,
-            "minute": 0,
-          },
-          "start": Object {
-            "hour": 10,
-            "minute": 30,
-          },
-        },
-        "id": "12345",
-      }
-    }
+    leftHeaderContent="Left"
+    rightHeaderContent="Right"
+    sectionName="Intro to Whatever"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -53,20 +40,22 @@ ShallowWrapper {
             className=""
             variant="caption"
           >
-            10:30 - 12:00
+            Left
           </WithStyles(Typography)>
           <WithStyles(Typography)
             className=""
             variant="caption"
           >
-            undefined undefined
+            Right
           </WithStyles(Typography)>
         </div>
         <WithStyles(Typography)
-          className=" undefined"
+          className=" "
           noWrap={true}
           variant="subtitle2"
-        />
+        >
+          Intro to Whatever
+        </WithStyles(Typography)>
       </div>,
       "className": "",
     },
@@ -84,20 +73,22 @@ ShallowWrapper {
               className=""
               variant="caption"
             >
-              10:30 - 12:00
+              Left
             </WithStyles(Typography)>
             <WithStyles(Typography)
               className=""
               variant="caption"
             >
-              undefined undefined
+              Right
             </WithStyles(Typography)>
           </div>,
           <WithStyles(Typography)
-            className=" undefined"
+            className=" "
             noWrap={true}
             variant="subtitle2"
-          />,
+          >
+            Intro to Whatever
+          </WithStyles(Typography)>,
         ],
         "className": "",
       },
@@ -113,13 +104,13 @@ ShallowWrapper {
                 className=""
                 variant="caption"
               >
-                10:30 - 12:00
+                Left
               </WithStyles(Typography)>,
               <WithStyles(Typography)
                 className=""
                 variant="caption"
               >
-                undefined undefined
+                Right
               </WithStyles(Typography)>,
             ],
             "className": "",
@@ -131,12 +122,12 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "10:30 - 12:00",
+                "children": "Left",
                 "className": "",
                 "variant": "caption",
               },
               "ref": null,
-              "rendered": "10:30 - 12:00",
+              "rendered": "Left",
               "type": [Function],
             },
             Object {
@@ -144,12 +135,12 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "children": "undefined undefined",
+                "children": "Right",
                 "className": "",
                 "variant": "caption",
               },
               "ref": null,
-              "rendered": "undefined undefined",
+              "rendered": "Right",
               "type": [Function],
             },
           ],
@@ -160,13 +151,13 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": undefined,
-            "className": " undefined",
+            "children": "Intro to Whatever",
+            "className": " ",
             "noWrap": true,
             "variant": "subtitle2",
           },
           "ref": null,
-          "rendered": null,
+          "rendered": "Intro to Whatever",
           "type": [Function],
         },
       ],
@@ -190,20 +181,22 @@ ShallowWrapper {
               className=""
               variant="caption"
             >
-              10:30 - 12:00
+              Left
             </WithStyles(Typography)>
             <WithStyles(Typography)
               className=""
               variant="caption"
             >
-              undefined undefined
+              Right
             </WithStyles(Typography)>
           </div>
           <WithStyles(Typography)
-            className=" undefined"
+            className=" "
             noWrap={true}
             variant="subtitle2"
-          />
+          >
+            Intro to Whatever
+          </WithStyles(Typography)>
         </div>,
         "className": "",
       },
@@ -221,20 +214,22 @@ ShallowWrapper {
                 className=""
                 variant="caption"
               >
-                10:30 - 12:00
+                Left
               </WithStyles(Typography)>
               <WithStyles(Typography)
                 className=""
                 variant="caption"
               >
-                undefined undefined
+                Right
               </WithStyles(Typography)>
             </div>,
             <WithStyles(Typography)
-              className=" undefined"
+              className=" "
               noWrap={true}
               variant="subtitle2"
-            />,
+            >
+              Intro to Whatever
+            </WithStyles(Typography)>,
           ],
           "className": "",
         },
@@ -250,13 +245,13 @@ ShallowWrapper {
                   className=""
                   variant="caption"
                 >
-                  10:30 - 12:00
+                  Left
                 </WithStyles(Typography)>,
                 <WithStyles(Typography)
                   className=""
                   variant="caption"
                 >
-                  undefined undefined
+                  Right
                 </WithStyles(Typography)>,
               ],
               "className": "",
@@ -268,12 +263,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "10:30 - 12:00",
+                  "children": "Left",
                   "className": "",
                   "variant": "caption",
                 },
                 "ref": null,
-                "rendered": "10:30 - 12:00",
+                "rendered": "Left",
                 "type": [Function],
               },
               Object {
@@ -281,12 +276,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "undefined undefined",
+                  "children": "Right",
                   "className": "",
                   "variant": "caption",
                 },
                 "ref": null,
-                "rendered": "undefined undefined",
+                "rendered": "Right",
                 "type": [Function],
               },
             ],
@@ -297,13 +292,13 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": undefined,
-              "className": " undefined",
+              "children": "Intro to Whatever",
+              "className": " ",
               "noWrap": true,
               "variant": "subtitle2",
             },
             "ref": null,
-            "rendered": null,
+            "rendered": "Intro to Whatever",
             "type": [Function],
           },
         ],

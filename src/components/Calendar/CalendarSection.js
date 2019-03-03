@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import { getDurationInHours, getFormattedClassEvent } from 'util/time';
+import { getDurationInHours, getFormattedEventTime } from 'util/time';
+import Section from 'components/common/Section';
 
 export const MAX_WIDTH_PERCENT = 97;
 
@@ -38,32 +37,23 @@ export const styles = {
   },
 };
 
-function Section({ classes, section }) {
+function CalendarSection({ classes, section }) {
+  const leftHeaderContent = getFormattedEventTime(section.event);
+  const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
   return (
-    <Paper className={classes.paper}>
-      <div className={classes.container}>
-        <div className={classes.header}>
-          <Typography variant="caption" className={classes.text}>
-            {getFormattedClassEvent(section.event)}
-          </Typography>
-
-          <Typography variant="caption" className={classes.text}>
-            {`${section.subjectId} ${section.courseId}`}
-          </Typography>
-        </div>
-
-        <Typography variant="subtitle2" className={`${classes.text} ${classes.name}`} noWrap>
-          {section.name}
-        </Typography>
-      </div>
-    </Paper>
+    <Section
+      classes={classes}
+      leftHeaderContent={leftHeaderContent}
+      rightHeaderContent={rightHeaderContent}
+      sectionName={section.name}
+    />
   );
 }
 
-Section.propTypes = {
+CalendarSection.propTypes = {
   section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
-export { Section as UnstyledSection };
-export default withStyles(styles)(Section);
+export { CalendarSection as UnstyledCalendarSection };
+export default withStyles(styles)(CalendarSection);

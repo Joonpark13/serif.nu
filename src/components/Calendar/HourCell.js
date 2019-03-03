@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import { columnBorderStyle, cellMinHeight } from './calendar-constants';
-import Section from './Section';
+import CalendarSection from './CalendarSection';
 
 export const styles = {
   calendarCell: {
@@ -17,7 +17,7 @@ function HourCell({ sections, classes }) {
   return (
     <div className={classes.calendarCell}>
       {sections.map(section => (
-        <Section key={section.id} section={section} />
+        <CalendarSection key={section.id} section={section} />
       ))}
     </div>
   );
