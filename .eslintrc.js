@@ -1,6 +1,7 @@
 module.exports = {
-  "extends": "airbnb",
-  "rules": {
+  parser: 'babel-eslint',
+  extends: 'airbnb',
+  rules: {
     "react/jsx-filename-extension": "off",
     "no-console": "off",
     "import/no-unresolved": "off",
@@ -8,13 +9,13 @@ module.exports = {
     "object-curly-newline": "off",
     "prefer-destructuring": "off"
   },
-  "globals": {
+  globals: {
     "document": true,
     "window": true,
     "fetch": true
   },
-  "plugins": ["jest"],
-  "env": {
+  plugins: ['jest', 'react', 'jsx-a11y', 'import'],
+  env: {
     "jest/globals": true
   },
 };

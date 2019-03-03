@@ -1,4 +1,4 @@
-import { getFormattedClassSchedule, formatMinute, formatTime, getDurationInHours, isBefore, overlaps, getFormattedClassEvent } from './time';
+import { getFormattedClassSchedule, formatMinute, formatTime, getDurationInHours, isBefore, overlaps, getFormattedEventTime } from './time';
 
 describe('time utils', () => {
   describe('formatMinute', () => {
@@ -24,7 +24,7 @@ describe('time utils', () => {
     });
   });
 
-  describe('getFormattedClassEvent', () => {
+  describe('getFormattedEventTime', () => {
     const testEvent = {
       dow: 'Mo',
       start: {
@@ -38,11 +38,11 @@ describe('time utils', () => {
     };
 
     it('formats events correctly', () => {
-      expect(getFormattedClassEvent(testEvent)).toBe('12:00 - 12:50');
+      expect(getFormattedEventTime(testEvent)).toBe('12:00 - 12:50');
     });
 
     it('returns TBA for any undetermined events', () => {
-      expect(getFormattedClassEvent({
+      expect(getFormattedEventTime({
         dow: 'TBA',
       })).toBe('TBA');
     });
