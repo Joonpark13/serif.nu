@@ -5,7 +5,9 @@ const currentTermDoc = db.collection('terms').doc(CURRENT_TERM);
 
 export function fetchSchools() {
   return currentTermDoc
-    .collection('schools')
+    .collection('subjects')
+    .where('termId', '==', termId)
+    .where('schoolId', '==', schoolId)
     .get()
     .then(
       querySnapshot => querySnapshot.docs.map(doc => doc.data()),
