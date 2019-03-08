@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-function Section({ classes, leftHeaderContent, rightHeaderContent, sectionName }) {
+function Section({ classes, leftHeaderContent, rightHeaderContent, sectionName, onClickFn }) {
   return (
-    <Paper className={classes.paper}>
+    <Paper className={classes.paper} onClick={onClickFn}>
       <div className={classes.container}>
         <div className={classes.header}>
           <Typography variant="caption" className={classes.text}>
@@ -36,12 +36,14 @@ Section.propTypes = {
   leftHeaderContent: PropTypes.string,
   rightHeaderContent: PropTypes.string,
   sectionName: PropTypes.string,
+  onClickFn: PropTypes.func,
 };
 
 Section.defaultProps = {
   leftHeaderContent: '',
   rightHeaderContent: '',
   sectionName: '',
+  onClickFn: () => {},
 };
 
 export default Section;

@@ -52,4 +52,15 @@ describe('CalendarSection', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('renders modal correctly', () => {
+    const classes = mockStyles(styles);
+    const testSection = { id: '12345', course: '101-1', event };
+    const wrapper = shallow(
+      <UnstyledCalendarSection section={testSection} classes={classes} />,
+    );
+    wrapper.instance().toggleDialog();
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
