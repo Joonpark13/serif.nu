@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import { getDurationInHours, getFormattedEventTime } from 'util/time';
 import Section from 'components/common/Section';
+import ClassModal from 'components/Calendar/ClassModal';
 
 export const MAX_WIDTH_PERCENT = 97;
 
@@ -23,6 +24,7 @@ export const styles = {
     width: ({ section }) => `${MAX_WIDTH_PERCENT * section.columnWidth}%`,
     backgroundColor: ({ section }) => section.color,
     overflow: 'hidden',
+    cursor: 'pointer',
   },
   container: {
     margin: '3px',
@@ -37,17 +39,41 @@ export const styles = {
   },
 };
 
-function CalendarSection({ classes, section }) {
-  const leftHeaderContent = getFormattedEventTime(section.event);
-  const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
-  return (
-    <Section
-      classes={classes}
-      leftHeaderContent={leftHeaderContent}
-      rightHeaderContent={rightHeaderContent}
-      sectionName={section.name}
-    />
-  );
+class CalendarSection extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showDialog: false,
+    };
+    this.toggleDialog = this.toggleDialog.bind(this);
+  }
+
+  toggleDialog() {
+    this.setState(state => ({ showDialog: !state.showDialog }));
+  }
+
+  render() {
+    const { classes, section } = this.props;
+    const { showDialog } = this.state;
+    const leftHeaderContent = getFormattedEventTime(section.event);
+    const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
+    return (
+      <div>
+        <Section
+          onClickFn={this.toggleDialog}
+          classes={classes}
+          leftHeaderContent={leftHeaderContent}
+          rightHeaderContent={rightHeaderContent}
+          sectionName={section.name}
+        />
+        <ClassModal
+          section={section}
+          showDialog={showDialog}
+          toggleDialog={this.toggleDialog}
+        />
+      </div>
+    );
+  }
 }
 
 CalendarSection.propTypes = {

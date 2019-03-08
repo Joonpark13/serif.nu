@@ -14,6 +14,7 @@ ShallowWrapper {
       }
     }
     leftHeaderContent="Left"
+    onClickFn={[Function]}
     rightHeaderContent="Right"
     sectionName="Intro to Whatever"
   />,
@@ -58,6 +59,7 @@ ShallowWrapper {
         </WithStyles(Typography)>
       </div>,
       "className": "",
+      "onClick": [Function],
     },
     "ref": null,
     "rendered": Object {
@@ -199,6 +201,7 @@ ShallowWrapper {
           </WithStyles(Typography)>
         </div>,
         "className": "",
+        "onClick": [Function],
       },
       "ref": null,
       "rendered": Object {

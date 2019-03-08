@@ -23,4 +23,8 @@ describe('Section', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should verify onClickFn as a default prop', () => {
+    expect(Section.defaultProps.onClickFn()).not.toBeDefined();
+  });
 });
