@@ -9,10 +9,15 @@ export default function splitBySchedules(section) {
   // Then we want to create a new section for each dow
   let result = fromJS([]);
   splitByScheduleItem.forEach((sectionItem) => {
-    const splitByDow = sectionItem.getIn(['event', 'dow']).map(
-      dow => sectionItem.setIn(['event', 'dow'], dow),
-    );
-    result = result.concat(splitByDow);
+    const dows = sectionItem.getIn(['event', 'dow']);
+    if (dows === 'TBA') {
+      result = result.push(sectionItem);
+    } else {
+      const splitByDow = sectionItem.getIn(['event', 'dow']).map(
+        dow => sectionItem.setIn(['event', 'dow'], dow),
+      );
+      result = result.concat(splitByDow);
+    }
   });
   // The result will be a list of section objects, each with a event field formatted as:
   /*

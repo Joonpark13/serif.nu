@@ -102,4 +102,23 @@ describe('labelConflictGroups', () => {
       sections.map(section => section.set('group', 0)),
     );
   });
+
+  it('handles base case of 1 section', () => {
+    const sections = fromJS([
+      {
+        id: '1',
+        event: {
+          start: {
+            hour: 10,
+            minute: 0,
+          },
+          end: {
+            hour: 12,
+            minute: 50,
+          },
+        },
+      },
+    ]);
+    expect(labelConflictGroups(sections)).toEqual(sections.setIn([0, 'group'], 0));
+  });
 });

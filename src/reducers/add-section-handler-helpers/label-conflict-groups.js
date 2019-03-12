@@ -1,7 +1,11 @@
 import { conflicts } from './common-helpers';
 
 export default function labelConflictGroups(sections) {
-  // Base case
+  // Base cases
+  if (sections.size === 1) {
+    return sections.setIn([0, 'group'], 0);
+  }
+
   if (sections.size === 2) {
     if (conflicts(sections.get(0), sections.get(1))) {
       return sections.map(section => section.set('group', 0));

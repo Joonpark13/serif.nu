@@ -131,7 +131,8 @@ describe('search reducer', () => {
     const testResults = [{ id: '12345', section: '20' }];
     const action = actionCreators.getSectionsSuccess(testResults);
 
-    expect(searchReducer(state, action)).toEqual(fromJS({ currentSections: testResults, view: 'sectionSelection' }));
+    expect(searchReducer(state, action))
+      .toEqual(fromJS({ currentSections: testResults, view: 'sectionSelection' }));
   });
 
   it(`should handle ${actionTypes.GET_SECTIONS_FAILURE}`, () => {
@@ -149,7 +150,7 @@ describe('search reducer', () => {
     expect(searchReducer(state, action)).toEqual(fromJS({ currentCourseName: courseName }));
   });
 
-  it(`should handle ${actionTypes.VIEW_SEARCH} and ${actionTypes.ADD_SECTION}`, () => {
+  it(`should handle ${actionTypes.VIEW_SEARCH}`, () => {
     const state = fromJS({
       view: 'search',
       results: [],
@@ -164,12 +165,36 @@ describe('search reducer', () => {
       isFetching: false,
     });
 
-    let action = actionCreators.viewSearch();
-    expect(searchReducer(state, action)).toEqual(expectedResult);
-
-    action = actionCreators.addSection();
+    const action = actionCreators.viewSearch();
     expect(searchReducer(state, action)).toEqual(expectedResult);
   });
+
+  it(`should handle ${actionTypes.ADD_SECTION}`, () => {
+    const action = actionCreators.addSection({});
+    expect(searchReducer(initialSearchState, action)).toEqual(initialSearchState);
+  });
+
+  it(`should handle ${actionTypes.ADD_SECTION} if there are associated classes`, () => {
+    const section = { associatedClasses: [], sectionNumber: '12' };
+    const action = actionCreators.addSection(section);
+    expect(searchReducer(initialSearchState, action)).toEqual(initialSearchState.merge({
+      view: 'associatedClassesSelection',
+      currentSectionNumber: section.sectionNumber,
+      currentAssociatedClasses: section.associatedClasses,
+    }));
+  });
+
+  it(`should handle ${actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS}`, () => {
+    const action = actionCreators.addSectionWithAssociatedClass({});
+    expect(searchReducer(initialSearchState, action)).toEqual(initialSearchState);
+  });
+
+  it(`should handle ${actionTypes.VIEW_SECTION_SELECTION}`, () => {
+    const action = actionCreators.viewSectionSelection({});
+    expect(searchReducer(initialSearchState, action))
+      .toEqual(initialSearchState.set('view', 'sectionSelection'));
+  });
+
 
   it(`should handle ${actionTypes.UPDATE_SEARCH_INPUT}`, () => {
     const state = fromJS({ currentSearchInput: '' });

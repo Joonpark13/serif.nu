@@ -7,7 +7,9 @@ import DowColumn from './DowColumn';
 
 export const styles = {
   calendarRoot: {
-    height: 'calc(100vh - 64px)', // 64px is height of TopBar
+    height: 'calc(100vh - 64px - 48px)',
+    // 64px is height of TopBar
+    // 48 is height of Tabs
     display: 'flex',
   },
   dowColumns: {
