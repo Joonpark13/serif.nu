@@ -6,6 +6,10 @@ import * as actionCreators from '../actions/index';
 import * as getNextColor from './add-section-handler-helpers/get-next-color';
 import * as splitBySchedules from './add-section-handler-helpers/split-by-schedules';
 import * as assignConflictInfo from './add-section-handler-helpers/assign-conflict-info';
+import * as assignColor from './add-section-handler-helpers/assign-color';
+
+jest.mock('./add-section-handler-helpers/assign-conflict-info');
+jest.mock('./add-section-handler-helpers/assign-color');
 
 describe('schedule reducer', () => {
   it('should return initial state', () => {
@@ -16,14 +20,14 @@ describe('schedule reducer', () => {
     const color = classColors[0];
     getNextColor.default = jest.fn().mockReturnValue(color);
     splitBySchedules.default = jest.fn(section => fromJS([section]));
-    assignConflictInfo.default = jest.fn(sections => sections);
     const section = {
-      id: 12345,
+      id: '12345',
       section: '20',
     };
+    const sectionWithColor = Object.assign({}, section, { color });
+    assignColor.default.mockReturnValue(fromJS([sectionWithColor]));
     const action = actionCreators.addSection(section);
 
-    const sectionWithColor = Object.assign({}, section, { color });
     expect(
       scheduleReducer(initialScheduleState, action),
     ).toEqual(
@@ -61,5 +65,48 @@ describe('schedule reducer', () => {
           section => section.id !== 12345,
         )),
     );
+  });
+
+  it(`should handle ${actionTypes.ADD_SECTION} when section has associated classes`, () => {
+    const section = {
+      id: '12345',
+      section: '20',
+      associatedClasses: [{}],
+    };
+    const sections = fromJS([section]);
+    assignConflictInfo.default.mockReturnValue(sections);
+    const action = actionCreators.addSection(section);
+
+    expect(scheduleReducer(initialScheduleState, action))
+      .toEqual(initialScheduleState.merge({
+        sectionPreview: sections,
+        sections: [],
+      }));
+  });
+
+  it(`should handle ${actionTypes.VIEW_SECTION_SELECTION}`, () => {
+    const action = actionCreators.viewSectionSelection({});
+    expect(scheduleReducer(initialScheduleState, action)).toEqual(initialScheduleState);
+  });
+
+  it(`should handle ${actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS}`, () => {
+    const color = classColors[0];
+    const sections = fromJS([{ id: '12345' }]);
+    const associatedClass = {
+      schedule: {
+        dow: ['Mo'],
+      },
+    };
+    const associatedClasses = fromJS([associatedClass]);
+    assignColor.default.mockReturnValueOnce(sections).mockReturnValueOnce(associatedClasses);
+
+    const action = actionCreators.addSectionWithAssociatedClass(associatedClass);
+
+    expect(scheduleReducer(initialScheduleState, action))
+      .toEqual(initialScheduleState.merge({
+        sections,
+        associatedClasses,
+        colorUses: initialScheduleState.get('colorUses').set(color, 1),
+      }));
   });
 });

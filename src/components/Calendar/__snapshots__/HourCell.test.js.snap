@@ -4,6 +4,20 @@ exports[`HourCell renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <HourCell
+    allSections={
+      Array [
+        Object {
+          "id": 12345,
+        },
+      ]
+    }
+    associatedClasses={
+      Array [
+        Object {
+          "event": Object {},
+        },
+      ]
+    }
     classes={
       Object {
         "calendarCell": "",
@@ -33,13 +47,24 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <ForwardRef
-          section={
-            Object {
-              "id": 12345,
+        Array [
+          <ForwardRef
+            section={
+              Object {
+                "id": 12345,
+              }
             }
-          }
-        />,
+          />,
+        ],
+        Array [
+          <ForwardRef
+            associatedClass={
+              Object {
+                "event": Object {},
+              }
+            }
+          />,
+        ],
       ],
       "className": "",
     },
@@ -69,6 +94,31 @@ ShallowWrapper {
           Symbol(Symbol.hasInstance): [Function],
         },
       },
+      Object {
+        "instance": null,
+        "key": "{}",
+        "nodeType": "function",
+        "props": Object {
+          "associatedClass": Object {
+            "event": Object {},
+          },
+          "section": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "Naked": [Function],
+          "displayName": "WithStyles(AssociatedClass)",
+          "options": Object {},
+          "propTypes": Object {
+            "classes": [Function],
+            "innerRef": [Function],
+          },
+          "render": [Function],
+          Symbol(Symbol.hasInstance): [Function],
+        },
+      },
     ],
     "type": "div",
   },
@@ -79,13 +129,24 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <ForwardRef
-            section={
-              Object {
-                "id": 12345,
+          Array [
+            <ForwardRef
+              section={
+                Object {
+                  "id": 12345,
+                }
               }
-            }
-          />,
+            />,
+          ],
+          Array [
+            <ForwardRef
+              associatedClass={
+                Object {
+                  "event": Object {},
+                }
+              }
+            />,
+          ],
         ],
         "className": "",
       },
@@ -106,6 +167,31 @@ ShallowWrapper {
             "$$typeof": Symbol(react.forward_ref),
             "Naked": [Function],
             "displayName": "WithStyles(CalendarSection)",
+            "options": Object {},
+            "propTypes": Object {
+              "classes": [Function],
+              "innerRef": [Function],
+            },
+            "render": [Function],
+            Symbol(Symbol.hasInstance): [Function],
+          },
+        },
+        Object {
+          "instance": null,
+          "key": "{}",
+          "nodeType": "function",
+          "props": Object {
+            "associatedClass": Object {
+              "event": Object {},
+            },
+            "section": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "Naked": [Function],
+            "displayName": "WithStyles(AssociatedClass)",
             "options": Object {},
             "propTypes": Object {
               "classes": [Function],

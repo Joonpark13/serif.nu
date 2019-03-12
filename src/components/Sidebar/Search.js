@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import SearchBoxContainer from './SearchBoxContainer';
 import SearchResultsContainer from './SearchResultsContainer';
 import SectionSelectionContainer from './SectionSelectionContainer';
+import AssociatedClassesSelectionContainer from './AssociatedClassesSelectionContainer';
 
 const Search = ({ view }) => (
   <div>
@@ -13,6 +14,7 @@ const Search = ({ view }) => (
       </React.Fragment>
     )}
     {view === 'sectionSelection' && <SectionSelectionContainer />}
+    {view === 'associatedClassesSelection' && <AssociatedClassesSelectionContainer />}
   </div>
 );
 

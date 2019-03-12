@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarHeader renders correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SidebarHeader
+    back={[Function]}
+    classes={
+      Object {
+        "divider": "",
+        "sectionsRoot": "",
+        "title": "",
+      }
+    }
+    title="Title"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <WithStyles(Typography)
+          className=""
+          variant="h5"
+        >
+          Title
+          <WithStyles(Button)
+            onClick={[Function]}
+          >
+            Back
+          </WithStyles(Button)>
+        </WithStyles(Typography)>,
+        <WithStyles(Divider)
+          className=""
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            "Title",
+            <WithStyles(Button)
+              onClick={[Function]}
+            >
+              Back
+            </WithStyles(Button)>,
+          ],
+          "className": "",
+          "variant": "h5",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Title",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Back",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Back",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "className": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <WithStyles(Typography)
+            className=""
+            variant="h5"
+          >
+            Title
+            <WithStyles(Button)
+              onClick={[Function]}
+            >
+              Back
+            </WithStyles(Button)>
+          </WithStyles(Typography)>,
+          <WithStyles(Divider)
+            className=""
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              "Title",
+              <WithStyles(Button)
+                onClick={[Function]}
+              >
+                Back
+              </WithStyles(Button)>,
+            ],
+            "className": "",
+            "variant": "h5",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Title",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Back",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Back",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "className": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

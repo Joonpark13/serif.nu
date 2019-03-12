@@ -1,6 +1,98 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchResults renders correctly 1`] = `
+exports[`Search renders associatedClassesSelection view correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Search
+    view="associatedClassesSelection"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        false,
+        false,
+        <Connect(Component) />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      false,
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          false,
+          false,
+          <Connect(Component) />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        false,
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`Search renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Search
@@ -24,6 +116,7 @@ ShallowWrapper {
           <Connect(WithStyles(SearchBox)) />
           <Connect(Component) />
         </React.Fragment>,
+        false,
         false,
       ],
     },
@@ -63,6 +156,7 @@ ShallowWrapper {
         "type": Symbol(react.fragment),
       },
       false,
+      false,
     ],
     "type": "div",
   },
@@ -77,6 +171,7 @@ ShallowWrapper {
             <Connect(WithStyles(SearchBox)) />
             <Connect(Component) />
           </React.Fragment>,
+          false,
           false,
         ],
       },
@@ -116,6 +211,7 @@ ShallowWrapper {
           "type": Symbol(react.fragment),
         },
         false,
+        false,
       ],
       "type": "div",
     },
@@ -142,7 +238,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`SearchResults renders sectionSelection view correctly 1`] = `
+exports[`Search renders sectionSelection view correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Search
@@ -164,6 +260,7 @@ ShallowWrapper {
       "children": Array [
         false,
         <Connect(Component) />,
+        false,
       ],
     },
     "ref": null,
@@ -178,6 +275,7 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      false,
     ],
     "type": "div",
   },
@@ -190,6 +288,7 @@ ShallowWrapper {
         "children": Array [
           false,
           <Connect(Component) />,
+          false,
         ],
       },
       "ref": null,
@@ -204,6 +303,7 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        false,
       ],
       "type": "div",
     },

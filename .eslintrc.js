@@ -7,7 +7,8 @@ module.exports = {
     "import/no-unresolved": "off",
     "no-plusplus": "off",
     "object-curly-newline": "off",
-    "prefer-destructuring": "off"
+    "prefer-destructuring": "off",
+    "no-confusing-arrow": "off"
   },
   globals: {
     "document": true,

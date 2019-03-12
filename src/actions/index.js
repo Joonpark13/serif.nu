@@ -108,7 +108,22 @@ export const fetchSubjectsFailure = () => ({
   type: actionTypes.FETCH_SUBJECTS_FAILURE,
 });
 
-export const changeBrowseLevel = browseLevel => ({
-  type: actionTypes.CHANGE_BROWSE_LEVEL,
-  browseLevel,
-});
+export function changeBrowseLevel(browseLevel) {
+  return {
+    type: actionTypes.CHANGE_BROWSE_LEVEL,
+    browseLevel,
+  };
+}
+
+export function viewSectionSelection() {
+  return {
+    type: actionTypes.VIEW_SECTION_SELECTION,
+  };
+}
+
+export function addSectionWithAssociatedClass(associatedClass) {
+  return {
+    type: actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS,
+    associatedClass,
+  };
+}

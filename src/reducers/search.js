@@ -17,9 +17,29 @@ export const initialSearchState = fromJS({
   results: [],
   view: 'search',
   currentCourseName: undefined,
+  currentSectionNumber: undefined,
   currentSections: [],
+  currentAssociatedClasses: [],
   currentSearchInput: '',
 });
+
+function handleAddSection(state, { section }) {
+  if (section.associatedClasses) {
+    return state.merge({
+      view: 'associatedClassesSelection',
+      currentSectionNumber: section.sectionNumber,
+      currentAssociatedClasses: section.associatedClasses,
+    });
+  }
+  return state
+    .merge({
+      view: 'search',
+      results: initialSearchState.get('results'),
+      currentSections: initialSearchState.get('currentSections'),
+      currentSearchInput: initialSearchState.get('currentSearchInput'),
+      isFetching: initialSearchState.get('isFetching'),
+    });
+}
 
 function search(state = initialSearchState, action) {
   switch (action.type) {
@@ -79,7 +99,6 @@ function search(state = initialSearchState, action) {
       return state.set('currentCourseName', action.courseName);
 
     case actionTypes.VIEW_SEARCH:
-    case actionTypes.ADD_SECTION:
       return state
         .merge({
           view: 'search',
@@ -87,6 +106,28 @@ function search(state = initialSearchState, action) {
           currentSections: initialSearchState.get('currentSections'),
           currentSearchInput: initialSearchState.get('currentSearchInput'),
           isFetching: initialSearchState.get('isFetching'),
+        });
+
+    case actionTypes.ADD_SECTION:
+      return handleAddSection(state, action);
+    case actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS:
+      return state
+        .merge({
+          view: 'search',
+          results: initialSearchState.get('results'),
+          currentSections: initialSearchState.get('currentSections'),
+          currentSearchInput: initialSearchState.get('currentSearchInput'),
+          isFetching: initialSearchState.get('isFetching'),
+          currentSectionNumber: initialSearchState.get('currentSectionNumber'),
+          currentAssociatedClasses: initialSearchState.get('currentAssociatedClasses'),
+        });
+
+    case actionTypes.VIEW_SECTION_SELECTION:
+      return state
+        .merge({
+          view: 'sectionSelection',
+          currentSectionNumber: initialSearchState.get('currentSectionNumber'),
+          currentAssociatedClasses: initialSearchState.get('currentAssociatedClasses'),
         });
 
     case actionTypes.UPDATE_SEARCH_INPUT:

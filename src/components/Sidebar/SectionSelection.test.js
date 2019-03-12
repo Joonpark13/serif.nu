@@ -1,7 +1,7 @@
-import ListItem from '@material-ui/core/ListItem';
 import { wrapperCreator } from 'util/testing';
 import * as timeUtils from 'util/time';
 import { UnstyledSectionSelection, styles } from './SectionSelection';
+import SectionContainer from './SectionContainer';
 
 describe('SectionSelection', () => {
   const defaultProps = {
@@ -21,8 +21,8 @@ describe('SectionSelection', () => {
       }],
       instructors: ['Ian Horswill', 'Vincent St-Amour'],
     }],
+    scheduledSections: [],
     back: () => {},
-    addSection: () => {},
   };
   const scheduledSectionsTestData = [{
     id: '1',
@@ -45,21 +45,14 @@ describe('SectionSelection', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('calls addSection when section is clicked', () => {
-    const addSectionMock = jest.fn();
-    const wrapper = getComponent({ addSection: addSectionMock });
-
-    wrapper.find(ListItem).first().simulate('click');
-
-    expect(addSectionMock).toHaveBeenCalledWith(defaultProps.sections[0]);
-  });
-
   it('disables sections that are already scheduled', () => {
     const wrapper = getComponent({ scheduledSections: scheduledSectionsTestData });
     expect(
       wrapper
         .findWhere(
-          section => section.is(ListItem) && section.key() === scheduledSectionsTestData[0].id,
+          section => (
+            section.is(SectionContainer) && section.key() === scheduledSectionsTestData[0].id
+          ),
         )
         .prop('disabled'),
     ).toBe(true);

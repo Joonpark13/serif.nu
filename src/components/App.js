@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import {
   getSchoolsRequest,
@@ -59,7 +59,7 @@ class App extends Component {
     const { navigationOpen } = this.state;
 
     return (
-      <React.Fragment>
+      <Fragment>
         <TopBar menuAction={this.toggleNav} />
         <NavDrawer isOpen={navigationOpen} closeFunc={this.toggleNav} />
         <Route
@@ -75,7 +75,7 @@ class App extends Component {
         <Route path="/report" component={ReportPage} />
         {/* istanbul ignore next */}
         <Route path="/contact" component={ContactPage} />
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

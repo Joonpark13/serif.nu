@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
-import { getDurationInHours, getFormattedEventTime } from 'util/time';
+import { getFormattedEventTime, getDurationInHours } from 'util/time';
 import Section from 'components/common/Section';
 import ClassModal from 'components/Calendar/ClassModal';
 
@@ -25,6 +25,7 @@ export const styles = {
     backgroundColor: ({ section }) => section.color,
     overflow: 'hidden',
     cursor: 'pointer',
+    zIndex: 1,
   },
   container: {
     margin: '3px',

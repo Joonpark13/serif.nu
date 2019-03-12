@@ -24,7 +24,7 @@
     "css-loader": "^1.0.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
-    "eslint": "^5.4.0",
+    "eslint": "^5.14.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.22.0",
@@ -38,7 +38,7 @@
     "url-loader": "^1.1.1",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5",
+    "webpack-dev-server": "^3.2.0",
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
@@ -50,8 +50,8 @@
     "firebase": "^5.8.1",
     "immutable": "^3.8.2",
     "prop-types": "^15.6.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-jss": "^8.6.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",

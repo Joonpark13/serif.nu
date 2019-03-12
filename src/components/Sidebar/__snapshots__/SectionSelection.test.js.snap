@@ -4,12 +4,10 @@ exports[`SectionSelection renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SectionSelection
-    addSection={[Function]}
     back={[Function]}
     classes={
       Object {
         "divider": "",
-        "sectionTitle": "",
         "sectionsRoot": "",
         "title": "",
       }
@@ -60,68 +58,46 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <WithStyles(Typography)
-          className=""
-          variant="h5"
-        >
-          EECS 101-0
-          <WithStyles(Button)
-            onClick={[Function]}
-          >
-            Back
-          </WithStyles(Button)>
-        </WithStyles(Typography)>,
-        <WithStyles(Divider)
-          className=""
+        <WithStyles(SidebarHeader)
+          back={[Function]}
+          title="EECS 101-0"
         />,
         <WithStyles(List)>
-          <WithStyles(ListItem)
-            button={true}
+          <Connect(Component)
             disabled={false}
-            onClick={[Function]}
-          >
-            <WithStyles(ListItemText)>
-              <WithStyles(Typography)
-                className=""
-                variant="h6"
-              >
-                Section 20
-              </WithStyles(Typography)>
-              <WithStyles(Typography)>
-                schedule
-              </WithStyles(Typography)>
-              <WithStyles(Typography)>
-                Some building
-              </WithStyles(Typography)>
-              <WithStyles(Typography)>
-                Jason Hartline
-              </WithStyles(Typography)>
-            </WithStyles(ListItemText)>
-          </WithStyles(ListItem)>
-          <WithStyles(ListItem)
-            button={true}
+            section={
+              Object {
+                "id": "1",
+                "instructors": Array [
+                  "Jason Hartline",
+                ],
+                "schedule": Array [
+                  Object {
+                    "location": "Some building",
+                  },
+                ],
+                "sectionNumber": 20,
+              }
+            }
+          />
+          <Connect(Component)
             disabled={false}
-            onClick={[Function]}
-          >
-            <WithStyles(ListItemText)>
-              <WithStyles(Typography)
-                className=""
-                variant="h6"
-              >
-                Section 21
-              </WithStyles(Typography)>
-              <WithStyles(Typography)>
-                schedule
-              </WithStyles(Typography)>
-              <WithStyles(Typography)>
-                Some other building
-              </WithStyles(Typography)>
-              <WithStyles(Typography)>
-                Ian Horswill, 
-                Vincent St-Amour
-              </WithStyles(Typography)>
-            </WithStyles(ListItemText)>
-          </WithStyles(ListItem)>
+            section={
+              Object {
+                "id": "2",
+                "instructors": Array [
+                  "Ian Horswill",
+                  "Vincent St-Amour",
+                ],
+                "schedule": Array [
+                  Object {
+                    "location": "Some other building",
+                  },
+                ],
+                "sectionNumber": 21,
+              }
+            }
+          />
         </WithStyles(List)>,
       ],
       "className": "",
@@ -133,41 +109,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": Array [
-            "EECS 101-0",
-            <WithStyles(Button)
-              onClick={[Function]}
-            >
-              Back
-            </WithStyles(Button)>,
-          ],
-          "className": "",
-          "variant": "h5",
-        },
-        "ref": null,
-        "rendered": Array [
-          "EECS 101-0",
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": "Back",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Back",
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "className": "",
+          "back": [Function],
+          "title": "EECS 101-0",
         },
         "ref": null,
         "rendered": null,
@@ -179,53 +122,41 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <WithStyles(ListItem)
-              button={true}
+            <Connect(Component)
               disabled={false}
-              onClick={[Function]}
-            >
-              <WithStyles(ListItemText)>
-                <WithStyles(Typography)
-                  className=""
-                  variant="h6"
-                >
-                  Section 20
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  schedule
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  Some building
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  Jason Hartline
-                </WithStyles(Typography)>
-              </WithStyles(ListItemText)>
-            </WithStyles(ListItem)>,
-            <WithStyles(ListItem)
-              button={true}
+              section={
+                Object {
+                  "id": "1",
+                  "instructors": Array [
+                    "Jason Hartline",
+                  ],
+                  "schedule": Array [
+                    Object {
+                      "location": "Some building",
+                    },
+                  ],
+                  "sectionNumber": 20,
+                }
+              }
+            />,
+            <Connect(Component)
               disabled={false}
-              onClick={[Function]}
-            >
-              <WithStyles(ListItemText)>
-                <WithStyles(Typography)
-                  className=""
-                  variant="h6"
-                >
-                  Section 21
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  schedule
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  Some other building
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  Ian Horswill, 
-                  Vincent St-Amour
-                </WithStyles(Typography)>
-              </WithStyles(ListItemText)>
-            </WithStyles(ListItem)>,
+              section={
+                Object {
+                  "id": "2",
+                  "instructors": Array [
+                    "Ian Horswill",
+                    "Vincent St-Amour",
+                  ],
+                  "schedule": Array [
+                    Object {
+                      "location": "Some other building",
+                    },
+                  ],
+                  "sectionNumber": 21,
+                }
+              }
+            />,
           ],
         },
         "ref": null,
@@ -235,108 +166,22 @@ ShallowWrapper {
             "key": "1",
             "nodeType": "class",
             "props": Object {
-              "button": true,
-              "children": <WithStyles(ListItemText)>
-                <WithStyles(Typography)
-                  className=""
-                  variant="h6"
-                >
-                  Section 20
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  schedule
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  Some building
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  Jason Hartline
-                </WithStyles(Typography)>
-              </WithStyles(ListItemText)>,
               "disabled": false,
-              "onClick": [Function],
+              "section": Object {
+                "id": "1",
+                "instructors": Array [
+                  "Jason Hartline",
+                ],
+                "schedule": Array [
+                  Object {
+                    "location": "Some building",
+                  },
+                ],
+                "sectionNumber": 20,
+              },
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  <WithStyles(Typography)
-                    className=""
-                    variant="h6"
-                  >
-                    Section 20
-                  </WithStyles(Typography)>,
-                  Array [
-                    <WithStyles(Typography)>
-                      schedule
-                    </WithStyles(Typography)>,
-                  ],
-                  <WithStyles(Typography)>
-                    Some building
-                  </WithStyles(Typography)>,
-                  <WithStyles(Typography)>
-                    Jason Hartline
-                  </WithStyles(Typography)>,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "Section 20",
-                    "className": "",
-                    "variant": "h6",
-                  },
-                  "ref": null,
-                  "rendered": "Section 20",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": "0",
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "schedule",
-                  },
-                  "ref": null,
-                  "rendered": "schedule",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "Some building",
-                  },
-                  "ref": null,
-                  "rendered": "Some building",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": Array [
-                      "Jason Hartline",
-                    ],
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    "Jason Hartline",
-                  ],
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
+            "rendered": null,
             "type": [Function],
           },
           Object {
@@ -344,112 +189,23 @@ ShallowWrapper {
             "key": "2",
             "nodeType": "class",
             "props": Object {
-              "button": true,
-              "children": <WithStyles(ListItemText)>
-                <WithStyles(Typography)
-                  className=""
-                  variant="h6"
-                >
-                  Section 21
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  schedule
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  Some other building
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  Ian Horswill, 
-                  Vincent St-Amour
-                </WithStyles(Typography)>
-              </WithStyles(ListItemText)>,
               "disabled": false,
-              "onClick": [Function],
+              "section": Object {
+                "id": "2",
+                "instructors": Array [
+                  "Ian Horswill",
+                  "Vincent St-Amour",
+                ],
+                "schedule": Array [
+                  Object {
+                    "location": "Some other building",
+                  },
+                ],
+                "sectionNumber": 21,
+              },
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  <WithStyles(Typography)
-                    className=""
-                    variant="h6"
-                  >
-                    Section 21
-                  </WithStyles(Typography)>,
-                  Array [
-                    <WithStyles(Typography)>
-                      schedule
-                    </WithStyles(Typography)>,
-                  ],
-                  <WithStyles(Typography)>
-                    Some other building
-                  </WithStyles(Typography)>,
-                  <WithStyles(Typography)>
-                    Ian Horswill, 
-                    Vincent St-Amour
-                  </WithStyles(Typography)>,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "Section 21",
-                    "className": "",
-                    "variant": "h6",
-                  },
-                  "ref": null,
-                  "rendered": "Section 21",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": "0",
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "schedule",
-                  },
-                  "ref": null,
-                  "rendered": "schedule",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": "Some other building",
-                  },
-                  "ref": null,
-                  "rendered": "Some other building",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": Array [
-                      "Ian Horswill, ",
-                      "Vincent St-Amour",
-                    ],
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    "Ian Horswill, ",
-                    "Vincent St-Amour",
-                  ],
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
+            "rendered": null,
             "type": [Function],
           },
         ],
@@ -465,68 +221,46 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <WithStyles(Typography)
-            className=""
-            variant="h5"
-          >
-            EECS 101-0
-            <WithStyles(Button)
-              onClick={[Function]}
-            >
-              Back
-            </WithStyles(Button)>
-          </WithStyles(Typography)>,
-          <WithStyles(Divider)
-            className=""
+          <WithStyles(SidebarHeader)
+            back={[Function]}
+            title="EECS 101-0"
           />,
           <WithStyles(List)>
-            <WithStyles(ListItem)
-              button={true}
+            <Connect(Component)
               disabled={false}
-              onClick={[Function]}
-            >
-              <WithStyles(ListItemText)>
-                <WithStyles(Typography)
-                  className=""
-                  variant="h6"
-                >
-                  Section 20
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  schedule
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  Some building
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  Jason Hartline
-                </WithStyles(Typography)>
-              </WithStyles(ListItemText)>
-            </WithStyles(ListItem)>
-            <WithStyles(ListItem)
-              button={true}
+              section={
+                Object {
+                  "id": "1",
+                  "instructors": Array [
+                    "Jason Hartline",
+                  ],
+                  "schedule": Array [
+                    Object {
+                      "location": "Some building",
+                    },
+                  ],
+                  "sectionNumber": 20,
+                }
+              }
+            />
+            <Connect(Component)
               disabled={false}
-              onClick={[Function]}
-            >
-              <WithStyles(ListItemText)>
-                <WithStyles(Typography)
-                  className=""
-                  variant="h6"
-                >
-                  Section 21
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  schedule
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  Some other building
-                </WithStyles(Typography)>
-                <WithStyles(Typography)>
-                  Ian Horswill, 
-                  Vincent St-Amour
-                </WithStyles(Typography)>
-              </WithStyles(ListItemText)>
-            </WithStyles(ListItem)>
+              section={
+                Object {
+                  "id": "2",
+                  "instructors": Array [
+                    "Ian Horswill",
+                    "Vincent St-Amour",
+                  ],
+                  "schedule": Array [
+                    Object {
+                      "location": "Some other building",
+                    },
+                  ],
+                  "sectionNumber": 21,
+                }
+              }
+            />
           </WithStyles(List)>,
         ],
         "className": "",
@@ -538,41 +272,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": Array [
-              "EECS 101-0",
-              <WithStyles(Button)
-                onClick={[Function]}
-              >
-                Back
-              </WithStyles(Button)>,
-            ],
-            "className": "",
-            "variant": "h5",
-          },
-          "ref": null,
-          "rendered": Array [
-            "EECS 101-0",
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": "Back",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Back",
-              "type": [Function],
-            },
-          ],
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "className": "",
+            "back": [Function],
+            "title": "EECS 101-0",
           },
           "ref": null,
           "rendered": null,
@@ -584,53 +285,41 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <WithStyles(ListItem)
-                button={true}
+              <Connect(Component)
                 disabled={false}
-                onClick={[Function]}
-              >
-                <WithStyles(ListItemText)>
-                  <WithStyles(Typography)
-                    className=""
-                    variant="h6"
-                  >
-                    Section 20
-                  </WithStyles(Typography)>
-                  <WithStyles(Typography)>
-                    schedule
-                  </WithStyles(Typography)>
-                  <WithStyles(Typography)>
-                    Some building
-                  </WithStyles(Typography)>
-                  <WithStyles(Typography)>
-                    Jason Hartline
-                  </WithStyles(Typography)>
-                </WithStyles(ListItemText)>
-              </WithStyles(ListItem)>,
-              <WithStyles(ListItem)
-                button={true}
+                section={
+                  Object {
+                    "id": "1",
+                    "instructors": Array [
+                      "Jason Hartline",
+                    ],
+                    "schedule": Array [
+                      Object {
+                        "location": "Some building",
+                      },
+                    ],
+                    "sectionNumber": 20,
+                  }
+                }
+              />,
+              <Connect(Component)
                 disabled={false}
-                onClick={[Function]}
-              >
-                <WithStyles(ListItemText)>
-                  <WithStyles(Typography)
-                    className=""
-                    variant="h6"
-                  >
-                    Section 21
-                  </WithStyles(Typography)>
-                  <WithStyles(Typography)>
-                    schedule
-                  </WithStyles(Typography)>
-                  <WithStyles(Typography)>
-                    Some other building
-                  </WithStyles(Typography)>
-                  <WithStyles(Typography)>
-                    Ian Horswill, 
-                    Vincent St-Amour
-                  </WithStyles(Typography)>
-                </WithStyles(ListItemText)>
-              </WithStyles(ListItem)>,
+                section={
+                  Object {
+                    "id": "2",
+                    "instructors": Array [
+                      "Ian Horswill",
+                      "Vincent St-Amour",
+                    ],
+                    "schedule": Array [
+                      Object {
+                        "location": "Some other building",
+                      },
+                    ],
+                    "sectionNumber": 21,
+                  }
+                }
+              />,
             ],
           },
           "ref": null,
@@ -640,108 +329,22 @@ ShallowWrapper {
               "key": "1",
               "nodeType": "class",
               "props": Object {
-                "button": true,
-                "children": <WithStyles(ListItemText)>
-                  <WithStyles(Typography)
-                    className=""
-                    variant="h6"
-                  >
-                    Section 20
-                  </WithStyles(Typography)>
-                  <WithStyles(Typography)>
-                    schedule
-                  </WithStyles(Typography)>
-                  <WithStyles(Typography)>
-                    Some building
-                  </WithStyles(Typography)>
-                  <WithStyles(Typography)>
-                    Jason Hartline
-                  </WithStyles(Typography)>
-                </WithStyles(ListItemText)>,
                 "disabled": false,
-                "onClick": [Function],
+                "section": Object {
+                  "id": "1",
+                  "instructors": Array [
+                    "Jason Hartline",
+                  ],
+                  "schedule": Array [
+                    Object {
+                      "location": "Some building",
+                    },
+                  ],
+                  "sectionNumber": 20,
+                },
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": Array [
-                    <WithStyles(Typography)
-                      className=""
-                      variant="h6"
-                    >
-                      Section 20
-                    </WithStyles(Typography)>,
-                    Array [
-                      <WithStyles(Typography)>
-                        schedule
-                      </WithStyles(Typography)>,
-                    ],
-                    <WithStyles(Typography)>
-                      Some building
-                    </WithStyles(Typography)>,
-                    <WithStyles(Typography)>
-                      Jason Hartline
-                    </WithStyles(Typography)>,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "Section 20",
-                      "className": "",
-                      "variant": "h6",
-                    },
-                    "ref": null,
-                    "rendered": "Section 20",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "0",
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "schedule",
-                    },
-                    "ref": null,
-                    "rendered": "schedule",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "Some building",
-                    },
-                    "ref": null,
-                    "rendered": "Some building",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": Array [
-                        "Jason Hartline",
-                      ],
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      "Jason Hartline",
-                    ],
-                    "type": [Function],
-                  },
-                ],
-                "type": [Function],
-              },
+              "rendered": null,
               "type": [Function],
             },
             Object {
@@ -749,112 +352,23 @@ ShallowWrapper {
               "key": "2",
               "nodeType": "class",
               "props": Object {
-                "button": true,
-                "children": <WithStyles(ListItemText)>
-                  <WithStyles(Typography)
-                    className=""
-                    variant="h6"
-                  >
-                    Section 21
-                  </WithStyles(Typography)>
-                  <WithStyles(Typography)>
-                    schedule
-                  </WithStyles(Typography)>
-                  <WithStyles(Typography)>
-                    Some other building
-                  </WithStyles(Typography)>
-                  <WithStyles(Typography)>
-                    Ian Horswill, 
-                    Vincent St-Amour
-                  </WithStyles(Typography)>
-                </WithStyles(ListItemText)>,
                 "disabled": false,
-                "onClick": [Function],
+                "section": Object {
+                  "id": "2",
+                  "instructors": Array [
+                    "Ian Horswill",
+                    "Vincent St-Amour",
+                  ],
+                  "schedule": Array [
+                    Object {
+                      "location": "Some other building",
+                    },
+                  ],
+                  "sectionNumber": 21,
+                },
               },
               "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": Array [
-                    <WithStyles(Typography)
-                      className=""
-                      variant="h6"
-                    >
-                      Section 21
-                    </WithStyles(Typography)>,
-                    Array [
-                      <WithStyles(Typography)>
-                        schedule
-                      </WithStyles(Typography)>,
-                    ],
-                    <WithStyles(Typography)>
-                      Some other building
-                    </WithStyles(Typography)>,
-                    <WithStyles(Typography)>
-                      Ian Horswill, 
-                      Vincent St-Amour
-                    </WithStyles(Typography)>,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "Section 21",
-                      "className": "",
-                      "variant": "h6",
-                    },
-                    "ref": null,
-                    "rendered": "Section 21",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "0",
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "schedule",
-                    },
-                    "ref": null,
-                    "rendered": "schedule",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": "Some other building",
-                    },
-                    "ref": null,
-                    "rendered": "Some other building",
-                    "type": [Function],
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": Array [
-                        "Ian Horswill, ",
-                        "Vincent St-Amour",
-                      ],
-                    },
-                    "ref": null,
-                    "rendered": Array [
-                      "Ian Horswill, ",
-                      "Vincent St-Amour",
-                    ],
-                    "type": [Function],
-                  },
-                ],
-                "type": [Function],
-              },
+              "rendered": null,
               "type": [Function],
             },
           ],
