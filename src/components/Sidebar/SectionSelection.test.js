@@ -24,6 +24,14 @@ describe('SectionSelection', () => {
     back: () => {},
     addSection: () => {},
   };
+  const scheduledSectionsTestData = [{
+    id: '1',
+    sectionNumber: 20,
+    schedule: [{
+      location: 'Some building',
+    }],
+    instructors: ['Jason Hartline'],
+  }];
   const getComponent = wrapperCreator(UnstyledSectionSelection, defaultProps, styles);
 
   beforeEach(() => {
@@ -44,5 +52,16 @@ describe('SectionSelection', () => {
     wrapper.find(ListItem).first().simulate('click');
 
     expect(addSectionMock).toHaveBeenCalledWith(defaultProps.sections[0]);
+  });
+
+  it('disables sections that are already scheduled', () => {
+    const wrapper = getComponent({ scheduledSections: scheduledSectionsTestData });
+    expect(
+      wrapper
+        .findWhere(
+          section => section.is(ListItem) && section.key() === scheduledSectionsTestData[0].id,
+        )
+        .prop('disabled'),
+    ).toBe(true);
   });
 });

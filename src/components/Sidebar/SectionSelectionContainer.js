@@ -11,10 +11,15 @@ export function currentSectionsSelector(state) {
   return state.getIn(['search', 'currentSections']);
 }
 
+export function scheduledSectionsSelector(state) {
+  return state.getIn(['schedule', 'sections']);
+}
+
 /* istanbul ignore next */
 const mapStateToProps = state => ({
   currentCourseName: currentCourseNameSelector(state),
   sections: currentSectionsSelector(state),
+  scheduledSections: scheduledSectionsSelector(state),
 });
 
 const mapDispatchToProps = {

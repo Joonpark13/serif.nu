@@ -76,6 +76,7 @@ ShallowWrapper {
         <WithStyles(List)>
           <WithStyles(ListItem)
             button={true}
+            disabled={false}
             onClick={[Function]}
           >
             <WithStyles(ListItemText)>
@@ -98,6 +99,7 @@ ShallowWrapper {
           </WithStyles(ListItem)>
           <WithStyles(ListItem)
             button={true}
+            disabled={false}
             onClick={[Function]}
           >
             <WithStyles(ListItemText)>
@@ -178,6 +180,7 @@ ShallowWrapper {
           "children": Array [
             <WithStyles(ListItem)
               button={true}
+              disabled={false}
               onClick={[Function]}
             >
               <WithStyles(ListItemText)>
@@ -200,6 +203,7 @@ ShallowWrapper {
             </WithStyles(ListItem)>,
             <WithStyles(ListItem)
               button={true}
+              disabled={false}
               onClick={[Function]}
             >
               <WithStyles(ListItemText)>
@@ -248,6 +252,7 @@ ShallowWrapper {
                   Jason Hartline
                 </WithStyles(Typography)>
               </WithStyles(ListItemText)>,
+              "disabled": false,
               "onClick": [Function],
             },
             "ref": null,
@@ -357,6 +362,7 @@ ShallowWrapper {
                   Vincent St-Amour
                 </WithStyles(Typography)>
               </WithStyles(ListItemText)>,
+              "disabled": false,
               "onClick": [Function],
             },
             "ref": null,
@@ -475,6 +481,7 @@ ShallowWrapper {
           <WithStyles(List)>
             <WithStyles(ListItem)
               button={true}
+              disabled={false}
               onClick={[Function]}
             >
               <WithStyles(ListItemText)>
@@ -497,6 +504,7 @@ ShallowWrapper {
             </WithStyles(ListItem)>
             <WithStyles(ListItem)
               button={true}
+              disabled={false}
               onClick={[Function]}
             >
               <WithStyles(ListItemText)>
@@ -577,6 +585,7 @@ ShallowWrapper {
             "children": Array [
               <WithStyles(ListItem)
                 button={true}
+                disabled={false}
                 onClick={[Function]}
               >
                 <WithStyles(ListItemText)>
@@ -599,6 +608,7 @@ ShallowWrapper {
               </WithStyles(ListItem)>,
               <WithStyles(ListItem)
                 button={true}
+                disabled={false}
                 onClick={[Function]}
               >
                 <WithStyles(ListItemText)>
@@ -647,6 +657,7 @@ ShallowWrapper {
                     Jason Hartline
                   </WithStyles(Typography)>
                 </WithStyles(ListItemText)>,
+                "disabled": false,
                 "onClick": [Function],
               },
               "ref": null,
@@ -756,6 +767,7 @@ ShallowWrapper {
                     Vincent St-Amour
                   </WithStyles(Typography)>
                 </WithStyles(ListItemText)>,
+                "disabled": false,
                 "onClick": [Function],
               },
               "ref": null,
