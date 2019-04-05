@@ -29,6 +29,7 @@ export const styles = {
 function SectionSelection({
   currentCourseName,
   sections,
+  scheduledSections,
   back,
   classes,
   addSection,
@@ -43,32 +44,38 @@ function SectionSelection({
       <Divider className={classes.divider} />
 
       <List>
-        {sections.map(section => (
-          <ListItem
-            key={section.id}
-            button
-            onClick={() => addSection(section)}
-          >
-            <ListItemText>
-              <Typography variant="h6" className={classes.sectionTitle}>
-                {`Section ${section.sectionNumber}`}
-              </Typography>
-              {section.schedule.map((scheduleObj, index) => (
-                /* eslint-disable react/no-array-index-key */
-                <Typography key={index}>
-                  {`${getFormattedClassSchedule(scheduleObj)}`}
+        {sections.map((section) => {
+          const sectionAlreadyAdded = !!scheduledSections && scheduledSections.some(
+            scheduledSection => scheduledSection.id === section.id,
+          );
+          return (
+            <ListItem
+              key={section.id}
+              button
+              onClick={() => addSection(section)}
+              disabled={sectionAlreadyAdded}
+            >
+              <ListItemText>
+                <Typography variant="h6" className={classes.sectionTitle}>
+                  {`Section ${section.sectionNumber}`}
                 </Typography>
-                /* eslint-enable react/no-array-index-key */
-              ))}
-              <Typography>{`${section.schedule[0].location}`}</Typography>
-              <Typography>
-                {section.instructors.map((teacher, idx) => (
-                  `${teacher}${idx !== section.instructors.length - 1 ? ', ' : ''}`))
-                }
-              </Typography>
-            </ListItemText>
-          </ListItem>
-        ))
+                {section.schedule.map((scheduleObj, index) => (
+                  /* eslint-disable react/no-array-index-key */
+                  <Typography key={index}>
+                    {`${getFormattedClassSchedule(scheduleObj)}`}
+                  </Typography>
+                  /* eslint-enable react/no-array-index-key */
+                ))}
+                <Typography>{`${section.schedule[0].location}`}</Typography>
+                <Typography>
+                  {section.instructors.map((teacher, idx) => (
+                    `${teacher}${idx !== section.instructors.length - 1 ? ', ' : ''}`))
+                  }
+                </Typography>
+              </ListItemText>
+            </ListItem>
+          );
+        })
         }
       </List>
     </div>
@@ -78,6 +85,7 @@ function SectionSelection({
 SectionSelection.propTypes = {
   currentCourseName: PropTypes.string.isRequired,
   sections: PropTypes.arrayOf(PropTypes.object).isRequired,
+  scheduledSections: PropTypes.arrayOf(PropTypes.object).isRequired,
   back: PropTypes.func.isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   addSection: PropTypes.func.isRequired,

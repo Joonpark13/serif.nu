@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import { currentCourseNameSelector, currentSectionsSelector } from './SectionSelectionContainer';
+import { currentCourseNameSelector, currentSectionsSelector, scheduledSectionsSelector } from './SectionSelectionContainer';
 
 describe('SectionSelectionContainer', () => {
   describe('currentCourseNameSelector', () => {
@@ -25,6 +25,19 @@ describe('SectionSelectionContainer', () => {
       });
 
       expect(currentSectionsSelector(testState)).toEqual(testSections);
+    });
+  });
+
+  describe('scheduledSectionsSelector', () => {
+    it('should select scheduled sections from state', () => {
+      const testScheduledSections = fromJS([]);
+      const testState = fromJS({
+        schedule: {
+          sections: testScheduledSections,
+        },
+      });
+
+      expect(scheduledSectionsSelector(testState)).toEqual(testScheduledSections);
     });
   });
 });
