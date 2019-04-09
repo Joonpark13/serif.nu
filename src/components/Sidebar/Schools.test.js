@@ -1,4 +1,7 @@
 import { wrapperCreator } from 'util/testing';
+import { shallow } from 'enzyme';
+import ListItem from '@material-ui/core/ListItem';
+import React from 'react';
 import { UnstyledSchools, styles } from './Schools';
 
 describe('Schools', () => {
@@ -14,6 +17,7 @@ describe('Schools', () => {
   const defaultProps = {
     schools: testSchools,
     isFetching: false,
+    setBrowseLevel: () => {},
   };
 
   const getComponent = wrapperCreator(UnstyledSchools, defaultProps, styles);
@@ -28,5 +32,17 @@ describe('Schools', () => {
     const wrapper = getComponent({ isFetching: true });
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('setBrowseLevel gets called correctly', () => {
+    const setBrowseLevelMock = jest.fn();
+    const wrapper = shallow(
+      <UnstyledSchools {...defaultProps} setBrowseLevel={setBrowseLevelMock} />,
+    );
+
+    wrapper.find(ListItem).first().simulate('click');
+
+    expect(setBrowseLevelMock)
+      .toHaveBeenCalledWith('subjects');
   });
 });

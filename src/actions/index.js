@@ -107,3 +107,8 @@ export const fetchSubjectsSuccess = subjects => ({
 export const fetchSubjectsFailure = () => ({
   type: actionTypes.FETCH_SUBJECTS_FAILURE,
 });
+
+export const changeBrowseLevel = browseLevel => ({
+  type: actionTypes.CHANGE_BROWSE_LEVEL,
+  browseLevel,
+});

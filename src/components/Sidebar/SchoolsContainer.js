@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import toJS from 'util/to-js';
+import { changeBrowseLevel } from 'actions';
 import Schools from './Schools';
 
 export function schoolsSelector(state) {
@@ -16,6 +17,13 @@ const mapStateToProps = state => ({
   isFetching: isFetchingSelector(state),
 });
 
-const SchoolsContainer = connect(mapStateToProps)(toJS(Schools));
+/* istanbul ignore next */
+function mapDispatchToProps(dispatch) {
+  return {
+    setBrowseLevel: browseLevel => dispatch(changeBrowseLevel(browseLevel)),
+  };
+}
+
+const SchoolsContainer = connect(mapStateToProps, mapDispatchToProps)(toJS(Schools));
 
 export default SchoolsContainer;
