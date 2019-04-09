@@ -123,4 +123,17 @@ describe('browse reducer', () => {
 
     expect(browseReducer(state, action)).toEqual(state);
   });
+
+  it(`should handle ${actionTypes.CHANGE_BROWSE_LEVEL}`, () => {
+    const state = fromJS({
+      currentBrowseLevel: 'schools',
+    });
+    const action = actionCreators.changeBrowseLevel('subjects');
+
+    expect(browseReducer(state, action)).toEqual(
+      fromJS({
+        currentBrowseLevel: 'subjects',
+      }),
+    );
+  });
 });

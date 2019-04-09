@@ -14,7 +14,7 @@ export const styles = {
   },
 };
 
-function Schools({ schools, isFetching, classes }) {
+function Schools({ schools, isFetching, classes, setBrowseLevel }) {
   if (isFetching) {
     return (
       <div className={classes.loadingContainer}>
@@ -30,6 +30,7 @@ function Schools({ schools, isFetching, classes }) {
             <ListItem
               key={`${school.id}`}
               button
+              onClick={() => setBrowseLevel('subjects')}
             >
               <ListItemText primary={`${school.name}`} />
             </ListItem>
@@ -44,6 +45,7 @@ Schools.propTypes = {
   schools: PropTypes.arrayOf(PropTypes.object).isRequired,
   isFetching: PropTypes.bool.isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  setBrowseLevel: PropTypes.func.isRequired,
 };
 
 export { Schools as UnstyledSchools };

@@ -8,6 +8,7 @@ export const initialBrowseState = fromJS({
   isFetching: false,
   schools: [],
   subjects: [],
+  currentBrowseLevel: 'schools',
 });
 
 function browse(state = initialBrowseState, action) {
@@ -44,6 +45,9 @@ function browse(state = initialBrowseState, action) {
         .set('subjects', initialBrowseState.get('subjects'));
     default:
       return state;
+
+    case actionTypes.CHANGE_BROWSE_LEVEL:
+      return state.set('currentBrowseLevel', action.browseLevel);
   }
 }
 
