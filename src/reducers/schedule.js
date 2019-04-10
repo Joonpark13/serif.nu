@@ -31,10 +31,16 @@ function handleAddSection(state, { section }) {
   });
 }
 
+function handleRemoveSection(state, { sectionId }) {
+  return state.update('sections', sections => sections.filter(section => section.id !== sectionId));
+}
+
 function schedule(state = initialScheduleState, action) {
   switch (action.type) {
     case actionTypes.ADD_SECTION:
       return handleAddSection(state, action);
+    case actionTypes.REMOVE_SECTION:
+      return handleRemoveSection(state, action);
     default:
       return state;
   }

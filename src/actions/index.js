@@ -57,6 +57,11 @@ export const addSection = section => ({
   section,
 });
 
+export const removeSection = sectionId => ({
+  type: actionTypes.REMOVE_SECTION,
+  sectionId,
+});
+
 export const getSchoolsRequest = () => ({
   type: actionTypes.GET_SCHOOLS_REQUEST,
 });
