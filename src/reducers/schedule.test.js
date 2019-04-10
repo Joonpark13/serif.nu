@@ -32,4 +32,34 @@ describe('schedule reducer', () => {
         .update('colorUses', colorUses => colorUses.set(color, 1)),
     );
   });
+
+  it(`should handle ${actionTypes.REMOVE_SECTION}`, () => {
+    const scheduleWithSectionsState = fromJS({
+      sections: [
+        {
+          id: 12345,
+          section: '20',
+        },
+        {
+          id: 54321,
+          section: '40',
+        },
+        {
+          id: 12345,
+          section: '20',
+        },
+      ],
+      colorUses: {},
+    });
+    const action = actionCreators.removeSection(12345);
+
+    expect(
+      scheduleReducer(scheduleWithSectionsState, action),
+    ).toEqual(
+      scheduleWithSectionsState
+        .update('sections', sections => sections.filter(
+          section => section.id !== 12345,
+        )),
+    );
+  });
 });
