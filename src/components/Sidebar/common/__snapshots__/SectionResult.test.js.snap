@@ -125,6 +125,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": "MWF 10 - 12ish",
+            "color": undefined,
           },
           "ref": null,
           "rendered": "MWF 10 - 12ish",
@@ -252,6 +253,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": "MWF 10 - 12ish",
+              "color": undefined,
             },
             "ref": null,
             "rendered": "MWF 10 - 12ish",

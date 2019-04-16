@@ -15,7 +15,7 @@ import NavDrawer from './NavDrawer';
 import HomePage from './Pages/HomePage';
 import AboutPage from './Pages/AboutPage';
 import FAQPage from './Pages/FAQPage';
-import ReportPage from './Pages/ReportPage';
+import BugReportPage from './Pages/BugReportPage';
 import ContactPage from './Pages/ContactPage';
 
 export const styles = {
@@ -72,7 +72,7 @@ class App extends Component {
         {/* istanbul ignore next */}
         <Route path="/faq" component={FAQPage} />
         {/* istanbul ignore next */}
-        <Route path="/report" component={ReportPage} />
+        <Route path="/report" component={BugReportPage} />
         {/* istanbul ignore next */}
         <Route path="/contact" component={ContactPage} />
       </Fragment>

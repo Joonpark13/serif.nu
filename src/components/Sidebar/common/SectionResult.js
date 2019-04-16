@@ -13,12 +13,16 @@ export const styles = {
 };
 
 function SectionResult({ addSection, section, disabled, classes }) {
+  const isUnscheduled = section.schedule.some(
+    schedule => schedule.dow === 'TBA' || schedule.start === 'TBA' || schedule.end === 'TBA',
+  );
+
   return (
     <ListItem
       key={section.id}
       button
       onClick={() => addSection(section)}
-      disabled={disabled}
+      disabled={disabled || isUnscheduled}
     >
       <ListItemText>
         <Typography variant="h6" className={classes.sectionTitle}>
@@ -29,7 +33,7 @@ function SectionResult({ addSection, section, disabled, classes }) {
 
         {section.schedule.map((scheduleObj, index) => (
           /* eslint-disable react/no-array-index-key */
-          <Typography key={index}>
+          <Typography color={isUnscheduled ? 'error' : undefined} key={index}>
             {getFormattedClassSchedule(scheduleObj)}
           </Typography>
           /* eslint-enable react/no-array-index-key */
