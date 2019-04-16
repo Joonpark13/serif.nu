@@ -42,4 +42,24 @@ describe('SectionResult', () => {
 
     expect(addSectionMock).toHaveBeenCalledWith(section);
   });
+
+  it('turns scheduled text to red if section is unscheduled', () => {
+    timeUtils.getFormattedClassSchedule.mockReturnValue('TBA');
+    const unscheduledSection = {
+      id: '3',
+      sectionNumber: 21,
+      schedule: [{
+        location: 'Some other building',
+        dow: 'TBA',
+      }],
+      instructors: ['Ian Horswill', 'Vincent St-Amour'],
+    };
+    const wrapper = getWrapper({ section: unscheduledSection });
+    const colorProp = wrapper
+      .findWhere(
+        node => node.is(Typography) && node.prop('children') === 'TBA',
+      )
+      .prop('color');
+    expect(colorProp).toBe('error');
+  });
 });

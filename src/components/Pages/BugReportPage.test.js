@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ReportPage from './ReportPage';
+import BugReportPage from './BugReportPage';
 
-describe('ReportPage', () => {
+describe('BugReportPage', () => {
   it('should render correctly', () => {
-    const wrapper = shallow(<ReportPage />);
+    const wrapper = shallow(<BugReportPage />);
 
     expect(wrapper).toMatchSnapshot();
   });
