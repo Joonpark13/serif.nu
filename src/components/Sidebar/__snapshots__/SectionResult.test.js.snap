@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Section renders correctly 1`] = `
+exports[`SectionResult renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Section
+  Symbol(enzyme.__unrendered__): <SectionResult
     addSection={[Function]}
     classes={
       Object {

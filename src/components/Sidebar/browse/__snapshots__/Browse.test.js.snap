@@ -4,7 +4,7 @@ exports[`Browse renders schools correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Browse
-    currentBrowseLevel="schools"
+    currentBrowseLevel="school"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -20,12 +20,24 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
+        false,
+        <WithStyles(Divider) />,
         <Connect(Component) />,
         false,
       ],
     },
     "ref": null,
     "rendered": Array [
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -46,12 +58,24 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": Array [
+          false,
+          <WithStyles(Divider) />,
           <Connect(Component) />,
           false,
         ],
       },
       "ref": null,
       "rendered": Array [
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -92,7 +116,7 @@ exports[`Browse renders subjects correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Browse
-    currentBrowseLevel="subjects"
+    currentBrowseLevel="subject"
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -108,25 +132,41 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
+        <Connect(Component) />,
+        <WithStyles(Divider) />,
         false,
-        <p>
-          subjects
-        </p>,
+        <Connect(Component) />,
       ],
     },
     "ref": null,
     "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
       false,
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "subjects",
-        },
+        "nodeType": "class",
+        "props": Object {},
         "ref": null,
-        "rendered": "subjects",
-        "type": "p",
+        "rendered": null,
+        "type": [Function],
       },
     ],
     "type": Symbol(react.fragment),
@@ -138,25 +178,41 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": Array [
+          <Connect(Component) />,
+          <WithStyles(Divider) />,
           false,
-          <p>
-            subjects
-          </p>,
+          <Connect(Component) />,
         ],
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         false,
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "subjects",
-          },
+          "nodeType": "class",
+          "props": Object {},
           "ref": null,
-          "rendered": "subjects",
-          "type": "p",
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": Symbol(react.fragment),

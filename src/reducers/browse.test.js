@@ -126,14 +126,49 @@ describe('browse reducer', () => {
 
   it(`should handle ${actionTypes.CHANGE_BROWSE_LEVEL}`, () => {
     const state = fromJS({
-      currentBrowseLevel: 'schools',
+      currentBrowseLevel: 'school',
     });
-    const action = actionCreators.changeBrowseLevel('subjects');
+    const action = actionCreators.changeBrowseLevel('subject');
 
     expect(browseReducer(state, action)).toEqual(
       fromJS({
-        currentBrowseLevel: 'subjects',
+        currentBrowseLevel: 'subject',
       }),
     );
+  });
+
+  it(`should handle ${actionTypes.CHANGE_BROWSE_LEVEL} when going up levels`, () => {
+    const state = fromJS({
+      currentBrowseLevel: 'subject',
+      selected: {
+        school: {},
+        subject: null,
+      },
+    });
+    const action = actionCreators.changeBrowseLevel('school');
+
+    expect(browseReducer(state, action)).toEqual(
+      fromJS({
+        currentBrowseLevel: 'school',
+        selected: {
+          school: null,
+          subject: null,
+        },
+      }),
+    );
+  });
+
+  it(`should handle ${actionTypes.SELECT_SCHOOL_IN_BROWSE}`, () => {
+    const schoolId = '12345';
+    const school = fromJS({ id: schoolId });
+    const state = fromJS({
+      schools: [school],
+      selected: {
+        school: null,
+      },
+    });
+    const action = actionCreators.selectSchoolInBrowse(schoolId);
+
+    expect(browseReducer(state, action).getIn(['selected', 'school'])).toEqual(school);
   });
 });

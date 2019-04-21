@@ -17,7 +17,7 @@ export function fetchSubjects(schoolId) {
     .collection('subjects')
     .where('schoolId', '==', schoolId)
     .get()
-    .then(querySnapshot => querySnapshot.map(doc => doc.data()));
+    .then(querySnapshot => querySnapshot.docs.map(doc => doc.data()));
 }
 
 export function fetchCourses(schoolId, subjectId) {

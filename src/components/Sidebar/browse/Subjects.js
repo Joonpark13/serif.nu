@@ -14,7 +14,7 @@ export const styles = {
   },
 };
 
-function Schools({ schools, isFetching, classes, setBrowseLevel }) {
+function Subjects({ subjects, isFetching, classes }) {
   if (isFetching) {
     return (
       <div className={classes.loadingContainer}>
@@ -25,14 +25,13 @@ function Schools({ schools, isFetching, classes, setBrowseLevel }) {
   return (
     <div>
       <List>
-        {schools
-          && schools.map(school => (
+        {subjects
+          && subjects.map(subject => (
             <ListItem
-              key={`${school.id}`}
+              key={`${subject.id}`}
               button
-              onClick={() => setBrowseLevel('subjects')}
             >
-              <ListItemText primary={`${school.name}`} />
+              <ListItemText primary={`${subject.id}`} />
             </ListItem>
           ))
         }
@@ -41,12 +40,11 @@ function Schools({ schools, isFetching, classes, setBrowseLevel }) {
   );
 }
 
-Schools.propTypes = {
-  schools: PropTypes.arrayOf(PropTypes.object).isRequired,
+Subjects.propTypes = {
+  subjects: PropTypes.arrayOf(PropTypes.object).isRequired,
   isFetching: PropTypes.bool.isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
-  setBrowseLevel: PropTypes.func.isRequired,
 };
 
-export { Schools as UnstyledSchools };
-export default withStyles(styles)(Schools);
+export { Subjects as UnstyledSubjects };
+export default withStyles(styles)(Subjects);

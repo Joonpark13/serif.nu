@@ -8,7 +8,6 @@ ShallowWrapper {
       Object {
         "inputHint": "",
         "loadingContainer": "",
-        "searchResults": "",
       }
     }
     currentSearchInput="EE"
@@ -71,7 +70,6 @@ ShallowWrapper {
           </WithStyles(ListItem)>
         </WithStyles(List)>,
       ],
-      "className": "",
     },
     "ref": null,
     "rendered": Array [
@@ -200,7 +198,6 @@ ShallowWrapper {
             </WithStyles(ListItem)>
           </WithStyles(List)>,
         ],
-        "className": "",
       },
       "ref": null,
       "rendered": Array [
@@ -329,7 +326,6 @@ ShallowWrapper {
       Object {
         "inputHint": "",
         "loadingContainer": "",
-        "searchResults": "",
       }
     }
     currentSearchInput="ABCD"
@@ -401,7 +397,6 @@ ShallowWrapper {
       Object {
         "inputHint": "",
         "loadingContainer": "",
-        "searchResults": "",
       }
     }
     currentSearchInput="EECS"
@@ -460,7 +455,6 @@ ShallowWrapper {
           </WithStyles(ListItem)>
         </WithStyles(List)>,
       ],
-      "className": "",
     },
     "ref": null,
     "rendered": Array [
@@ -574,7 +568,6 @@ ShallowWrapper {
             </WithStyles(ListItem)>
           </WithStyles(List)>,
         ],
-        "className": "",
       },
       "ref": null,
       "rendered": Array [
@@ -692,7 +685,6 @@ ShallowWrapper {
       Object {
         "inputHint": "",
         "loadingContainer": "",
-        "searchResults": "",
       }
     }
     currentSearchInput="EECS"

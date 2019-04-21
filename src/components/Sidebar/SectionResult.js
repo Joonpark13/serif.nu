@@ -12,7 +12,7 @@ export const styles = {
   },
 };
 
-function Section({ addSection, section, disabled, classes }) {
+function SectionResult({ addSection, section, disabled, classes }) {
   return (
     <ListItem
       key={section.id}
@@ -47,16 +47,16 @@ function Section({ addSection, section, disabled, classes }) {
   );
 }
 
-Section.propTypes = {
+SectionResult.propTypes = {
   addSection: PropTypes.func.isRequired,
   section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   disabled: PropTypes.bool,
 };
 
-Section.defaultProps = {
+SectionResult.defaultProps = {
   disabled: false,
 };
 
-export { Section as UnstyledSection };
-export default withStyles(styles)(Section);
+export { SectionResult as UnstyledSectionResult };
+export default withStyles(styles)(SectionResult);

@@ -1,7 +1,7 @@
 import { wrapperCreator } from 'util/testing';
 import * as timeUtils from 'util/time';
 import { UnstyledSectionSelection, styles } from './SectionSelection';
-import SectionContainer from './SectionContainer';
+import SectionResultContainer from './SectionResultContainer';
 
 describe('SectionSelection', () => {
   const defaultProps = {
@@ -51,7 +51,7 @@ describe('SectionSelection', () => {
       wrapper
         .findWhere(
           section => (
-            section.is(SectionContainer) && section.key() === scheduledSectionsTestData[0].id
+            section.is(SectionResultContainer) && section.key() === scheduledSectionsTestData[0].id
           ),
         )
         .prop('disabled'),

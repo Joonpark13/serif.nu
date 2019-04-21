@@ -17,10 +17,6 @@ export const styles = {
     display: 'flex',
     justifyContent: 'center',
   },
-  searchResults: {
-    height: 'calc(100vh - 190px)', // 64px is height of TopBar, 48px is height of SearchBox, 48px is height of tab, 30px margin
-    overflow: 'auto',
-  },
 };
 
 function SearchResults({
@@ -45,7 +41,7 @@ function SearchResults({
     );
   }
   return (
-    <div className={classes.searchResults}>
+    <div>
       {currentSearchInput.length > 0 && currentSearchInput.length <= 2
         && <Typography className={classes.inputHint}> Keep typing!</Typography>
       }

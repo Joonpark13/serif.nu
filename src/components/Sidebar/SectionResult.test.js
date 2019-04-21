@@ -2,11 +2,11 @@ import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 import { wrapperCreator } from 'util/testing';
 import * as timeUtils from 'util/time';
-import { UnstyledSection, styles } from './Section';
+import { UnstyledSectionResult, styles } from './SectionResult';
 
 jest.mock('util/time');
 
-describe('Section', () => {
+describe('SectionResult', () => {
   const formattedSchedule = 'MWF 10 - 12ish';
   timeUtils.getFormattedClassSchedule.mockReturnValue(formattedSchedule);
 
@@ -21,7 +21,7 @@ describe('Section', () => {
     addSection: () => {},
     section,
   };
-  const getWrapper = wrapperCreator(UnstyledSection, defaultProps, styles);
+  const getWrapper = wrapperCreator(UnstyledSectionResult, defaultProps, styles);
 
   it('renders correctly', () => {
     const wrapper = getWrapper();
