@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import { getFormattedEventTime, getDurationInHours } from 'util/time';
 import Section from 'components/common/Section';
-import ClassModal from 'components/Calendar/ClassModal';
+import ClassModalContainer from 'components/Calendar/ClassModalContainer';
 
 export const MAX_WIDTH_PERCENT = 97;
 
@@ -67,7 +67,7 @@ class CalendarSection extends Component {
           rightHeaderContent={rightHeaderContent}
           sectionName={section.name}
         />
-        <ClassModal
+        <ClassModalContainer
           section={section}
           showDialog={showDialog}
           toggleDialog={this.toggleDialog}

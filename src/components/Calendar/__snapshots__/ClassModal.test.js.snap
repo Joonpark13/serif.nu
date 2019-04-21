@@ -9,10 +9,21 @@ ShallowWrapper {
         "dialog": "",
       }
     }
+    removeSection={[Function]}
     section={
       Object {
-        "course": "101-1",
-        "id": "12345",
+        "color": "#58B947",
+        "id": "198732",
+        "instructors": Array [
+          "A prof",
+        ],
+        "schedule": Array [
+          Object {
+            "location": "somewhere",
+          },
+        ],
+        "sectionNumber": 20,
+        "topic": "Section topic...",
       }
     }
     showDialog={true}
@@ -40,7 +51,7 @@ ShallowWrapper {
           <WithStyles(Typography)
             variant="h5"
           >
-            undefined undefined Section undefined
+            undefined undefined Section 20
           </WithStyles(Typography)>
         </div>,
         <WithStyles(DialogActions)>
@@ -69,7 +80,7 @@ ShallowWrapper {
           "children": <WithStyles(Typography)
             variant="h5"
           >
-            undefined undefined Section undefined
+            undefined undefined Section 20
           </WithStyles(Typography)>,
           "className": "",
         },
@@ -79,11 +90,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": "undefined undefined Section undefined",
+            "children": "undefined undefined Section 20",
             "variant": "h5",
           },
           "ref": null,
-          "rendered": "undefined undefined Section undefined",
+          "rendered": "undefined undefined Section 20",
           "type": [Function],
         },
         "type": "div",
@@ -153,7 +164,7 @@ ShallowWrapper {
             <WithStyles(Typography)
               variant="h5"
             >
-              undefined undefined Section undefined
+              undefined undefined Section 20
             </WithStyles(Typography)>
           </div>,
           <WithStyles(DialogActions)>
@@ -182,7 +193,7 @@ ShallowWrapper {
             "children": <WithStyles(Typography)
               variant="h5"
             >
-              undefined undefined Section undefined
+              undefined undefined Section 20
             </WithStyles(Typography)>,
             "className": "",
           },
@@ -192,11 +203,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": "undefined undefined Section undefined",
+              "children": "undefined undefined Section 20",
               "variant": "h5",
             },
             "ref": null,
-            "rendered": "undefined undefined Section undefined",
+            "rendered": "undefined undefined Section 20",
             "type": [Function],
           },
           "type": "div",

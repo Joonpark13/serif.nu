@@ -1,21 +1,36 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import { mockStyles } from 'util/testing';
+import Button from '@material-ui/core/Button';
+import { wrapperCreator } from 'util/testing';
 import { UnstyledClassModal, styles } from './ClassModal';
 
 describe('ClassModal', () => {
+  const section = {
+    id: '198732',
+    sectionNumber: 20,
+    topic: 'Section topic...',
+    schedule: [{ location: 'somewhere' }],
+    instructors: ['A prof'],
+    color: '#58B947',
+  };
+  const defaultProps = {
+    section,
+    showDialog: true,
+    toggleDialog: () => {},
+    removeSection: () => {},
+  };
+
+  const getWrapper = wrapperCreator(UnstyledClassModal, defaultProps, styles);
+
   it('renders correctly', () => {
-    const classes = mockStyles(styles);
-    const testSection = { id: '12345', course: '101-1' };
-    const wrapper = shallow(
-      <UnstyledClassModal
-        section={testSection}
-        classes={classes}
-        showDialog
-        toggleDialog={() => {}}
-      />,
-    );
+    const wrapper = getWrapper();
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('calls correct prop function when clicked', () => {
+    const removeSectionMock = jest.fn();
+    const wrapper = getWrapper({ removeSection: removeSectionMock });
+    wrapper.find(Button).first().simulate('click');
+
+    expect(removeSectionMock).toHaveBeenCalledWith(section.id, section.color);
   });
 });
