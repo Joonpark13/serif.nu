@@ -58,7 +58,7 @@ ShallowWrapper {
           rightHeaderContent="undefined undefined"
           sectionName=""
         />,
-        <ForwardRef
+        <Connect(Component)
           section={
             Object {
               "course": "101-1",
@@ -106,7 +106,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "section": Object {
             "course": "101-1",
@@ -128,18 +128,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": null,
-        "type": Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "Naked": [Function],
-          "displayName": "WithStyles(ClassModal)",
-          "options": Object {},
-          "propTypes": Object {
-            "classes": [Function],
-            "innerRef": [Function],
-          },
-          "render": [Function],
-          Symbol(Symbol.hasInstance): [Function],
-        },
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -165,7 +154,7 @@ ShallowWrapper {
             rightHeaderContent="undefined undefined"
             sectionName=""
           />,
-          <ForwardRef
+          <Connect(Component)
             section={
               Object {
                 "course": "101-1",
@@ -213,7 +202,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "section": Object {
               "course": "101-1",
@@ -235,18 +224,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": null,
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "Naked": [Function],
-            "displayName": "WithStyles(ClassModal)",
-            "options": Object {},
-            "propTypes": Object {
-              "classes": [Function],
-              "innerRef": [Function],
-            },
-            "render": [Function],
-            Symbol(Symbol.hasInstance): [Function],
-          },
+          "type": [Function],
         },
       ],
       "type": "div",
@@ -332,7 +310,7 @@ ShallowWrapper {
           rightHeaderContent="undefined undefined"
           sectionName=""
         />,
-        <ForwardRef
+        <Connect(Component)
           section={
             Object {
               "course": "101-1",
@@ -380,7 +358,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "section": Object {
             "course": "101-1",
@@ -402,18 +380,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": null,
-        "type": Object {
-          "$$typeof": Symbol(react.forward_ref),
-          "Naked": [Function],
-          "displayName": "WithStyles(ClassModal)",
-          "options": Object {},
-          "propTypes": Object {
-            "classes": [Function],
-            "innerRef": [Function],
-          },
-          "render": [Function],
-          Symbol(Symbol.hasInstance): [Function],
-        },
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -439,7 +406,7 @@ ShallowWrapper {
             rightHeaderContent="undefined undefined"
             sectionName=""
           />,
-          <ForwardRef
+          <Connect(Component)
             section={
               Object {
                 "course": "101-1",
@@ -487,7 +454,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "section": Object {
               "course": "101-1",
@@ -509,18 +476,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": null,
-          "type": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "Naked": [Function],
-            "displayName": "WithStyles(ClassModal)",
-            "options": Object {},
-            "propTypes": Object {
-              "classes": [Function],
-              "innerRef": [Function],
-            },
-            "render": [Function],
-            Symbol(Symbol.hasInstance): [Function],
-          },
+          "type": [Function],
         },
       ],
       "type": "div",

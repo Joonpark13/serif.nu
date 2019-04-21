@@ -17,8 +17,8 @@ export const initialScheduleState = fromJS({
   colorUses: colorUsesInitialState,
 });
 
-function updatedColorUses(color, colorUses) {
-  return colorUses.update(color, colorCount => colorCount + 1);
+function updatedColorUses(color, colorUses, dec = false) {
+  return colorUses.update(color, colorCount => colorCount + (dec ? -1 : 1));
 }
 
 function handleAddSection(state, { section }) {
@@ -98,8 +98,13 @@ function handleAddSectionWithAssociatedClass(state, { associatedClass }) {
   });
 }
 
-function handleRemoveSection(state, { sectionId }) {
-  return state.update('sections', sections => sections.filter(section => section.id !== sectionId));
+function handleRemoveSection(state, { sectionId, sectionColor }) {
+  const sections = state.get('sections');
+  const colorUses = state.get('colorUses');
+  return state.merge({
+    sections: sections.filter(section => section.get('id') !== sectionId),
+    colorUses: updatedColorUses(sectionColor, colorUses, true),
+  });
 }
 
 function schedule(state = initialScheduleState, action) {

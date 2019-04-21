@@ -14,7 +14,7 @@ export const styles = {
   },
 };
 
-function ClassModal({ showDialog, toggleDialog, classes, section }) {
+function ClassModal({ showDialog, toggleDialog, classes, section, removeSection }) {
   return (
     <Dialog
       open={showDialog}
@@ -28,7 +28,7 @@ function ClassModal({ showDialog, toggleDialog, classes, section }) {
         </Typography>
       </div>
       <DialogActions>
-        <Button onClick={toggleDialog}> Remove </Button>
+        <Button onClick={() => removeSection(section.id, section.color)}> Remove </Button>
         <Button onClick={toggleDialog}> Cancel </Button>
       </DialogActions>
     </Dialog>
@@ -40,6 +40,7 @@ ClassModal.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   showDialog: PropTypes.bool.isRequired,
   toggleDialog: PropTypes.func.isRequired,
+  removeSection: PropTypes.func.isRequired,
 };
 
 export { ClassModal as UnstyledClassModal };

@@ -38,32 +38,38 @@ describe('schedule reducer', () => {
   });
 
   it(`should handle ${actionTypes.REMOVE_SECTION}`, () => {
+    const colorOne = classColors[0];
+    const colorTwo = classColors[1];
     const scheduleWithSectionsState = fromJS({
       sections: [
         {
-          id: 12345,
+          id: '12345',
           section: '20',
+          color: colorOne,
         },
         {
-          id: 54321,
+          id: '12345',
+          section: '20',
+          color: colorOne,
+        },
+        {
+          id: '54321',
           section: '40',
-        },
-        {
-          id: 12345,
-          section: '20',
+          color: colorTwo,
         },
       ],
-      colorUses: {},
+      colorUses: { [colorOne]: 1, [colorTwo]: 1 },
     });
-    const action = actionCreators.removeSection(12345);
+    const action = actionCreators.removeSection('12345', colorOne);
 
     expect(
       scheduleReducer(scheduleWithSectionsState, action),
     ).toEqual(
       scheduleWithSectionsState
         .update('sections', sections => sections.filter(
-          section => section.id !== 12345,
-        )),
+          section => section.get('id') !== '12345',
+        ))
+        .update('colorUses', colorUses => colorUses.set(colorOne, 0)),
     );
   });
 
