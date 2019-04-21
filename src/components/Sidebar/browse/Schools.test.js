@@ -18,7 +18,7 @@ describe('Schools', () => {
     schools: testSchools,
     classes: {},
     isFetching: false,
-    setBrowseLevel: () => {},
+    showSubjects: () => {},
   };
 
   const getComponent = wrapperCreator(UnstyledSchools, defaultProps, styles);
@@ -35,15 +35,15 @@ describe('Schools', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('setBrowseLevel gets called correctly', () => {
-    const setBrowseLevelMock = jest.fn();
+  it('showSubjects gets called correctly', () => {
+    const showSubjectsMock = jest.fn();
     const wrapper = shallow(
-      <UnstyledSchools {...defaultProps} setBrowseLevel={setBrowseLevelMock} />,
+      <UnstyledSchools {...defaultProps} showSubjects={showSubjectsMock} />,
     );
 
     wrapper.find(ListItem).first().simulate('click');
 
-    expect(setBrowseLevelMock)
-      .toHaveBeenCalledWith('subjects');
+    expect(showSubjectsMock)
+      .toHaveBeenCalledWith(testSchools[0].id);
   });
 });

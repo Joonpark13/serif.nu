@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import toJS from 'util/to-js';
-import { changeBrowseLevel } from 'actions';
+import { changeBrowseLevel, fetchSubjectsRequest, selectSchoolInBrowse } from 'actions';
 import Schools from './Schools';
 
 export function schoolsSelector(state) {
@@ -20,7 +20,11 @@ const mapStateToProps = state => ({
 /* istanbul ignore next */
 function mapDispatchToProps(dispatch) {
   return {
-    setBrowseLevel: browseLevel => dispatch(changeBrowseLevel(browseLevel)),
+    showSubjects: (schoolId) => {
+      dispatch(fetchSubjectsRequest(schoolId));
+      dispatch(selectSchoolInBrowse(schoolId));
+      dispatch(changeBrowseLevel('subject'));
+    },
   };
 }
 

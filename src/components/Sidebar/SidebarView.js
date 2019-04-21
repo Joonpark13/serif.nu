@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { withStyles } from '@material-ui/core/styles';
-import SearchContainer from './SearchContainer';
-import CartContainer from './CartContainer';
-import BrowseContainer from './BrowseContainer';
+import SearchContainer from './search/SearchContainer';
+import CartContainer from './cart/CartContainer';
+import BrowseContainer from './browse/BrowseContainer';
 
 export const styles = {
+  wrapper: {
+    height: 'calc(100vh - 64px)', // 64px is height of TopBar
+    overflow: 'auto',
+  },
   tabWidth: {
     minWidth: 0,
   },
@@ -33,7 +37,7 @@ class SidebarView extends Component {
     const { value } = this.state;
 
     return (
-      <div>
+      <div className={classes.wrapper}>
         <Tabs
           value={value}
           textColor="primary"

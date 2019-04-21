@@ -128,3 +128,10 @@ export function addSectionWithAssociatedClass(associatedClass) {
     associatedClass,
   };
 }
+
+export function selectSchoolInBrowse(schoolId) {
+  return {
+    type: actionTypes.SELECT_SCHOOL_IN_BROWSE,
+    schoolId,
+  };
+}
