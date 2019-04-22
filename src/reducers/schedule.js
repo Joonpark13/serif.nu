@@ -100,9 +100,14 @@ function handleAddSectionWithAssociatedClass(state, { associatedClass }) {
 
 function handleRemoveSection(state, { sectionId, sectionColor }) {
   const sections = state.get('sections');
+  const associatedClasses = state.get('associatedClasses');
   const colorUses = state.get('colorUses');
   return state.merge({
     sections: sections.filter(section => section.get('id') !== sectionId),
+    associatedClasses:
+      associatedClasses.filter(
+        associatedClass => associatedClass.get('sectionId') !== sectionId,
+      ),
     colorUses: updatedColorUses(sectionColor, colorUses, true),
   });
 }
