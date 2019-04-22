@@ -58,6 +58,7 @@ describe('schedule reducer', () => {
           color: colorTwo,
         },
       ],
+      associatedClasses: [],
       colorUses: { [colorOne]: 1, [colorTwo]: 1 },
     });
     const action = actionCreators.removeSection('12345', colorOne);
@@ -71,6 +72,21 @@ describe('schedule reducer', () => {
         ))
         .update('colorUses', colorUses => colorUses.set(colorOne, 0)),
     );
+  });
+
+  it(`should handle ${actionTypes.REMOVE_SECTION} with associated classes`, () => {
+    const color = classColors[0];
+    const sectionId = '12345';
+    const state = fromJS({
+      sections: [{ id: sectionId }],
+      associatedClasses: [{ sectionId }],
+      colorUses: { [color]: 1 },
+    });
+    const action = actionCreators.removeSection(sectionId, color);
+
+    expect(
+      scheduleReducer(state, action).get('associatedClasses'),
+    ).toEqual(fromJS([]));
   });
 
   it(`should handle ${actionTypes.ADD_SECTION} when section has associated classes`, () => {
