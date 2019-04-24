@@ -5,3 +5,7 @@ export function sectionsSelector(state) {
 export function currentBrowseLevelSelector(state) {
   return state.getIn(['browse', 'currentBrowseLevel']);
 }
+
+export function isFetchingSelector(state) {
+  return state.getIn(['browse', 'isFetching']);
+}

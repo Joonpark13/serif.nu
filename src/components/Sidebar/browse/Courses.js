@@ -11,7 +11,7 @@ export const styles = {
   loadingContainer: loadingContainerStyles,
 };
 
-function Subjects({ subjects, isFetching, showCourses, classes }) {
+function Courses({ courses, isFetching, classes }) {
   if (isFetching) {
     return (
       <div className={classes.loadingContainer}>
@@ -22,28 +22,24 @@ function Subjects({ subjects, isFetching, showCourses, classes }) {
   return (
     <div>
       <List>
-        {subjects
-          && subjects.map(subject => (
-            <ListItem
-              key={`${subject.id}`}
-              button
-              onClick={() => showCourses(subject.schoolId, subject.id)}
-            >
-              <ListItemText primary={`${subject.id} - ${subject.name}`} />
-            </ListItem>
-          ))
-        }
+        {courses && courses.map(course => (
+          <ListItem
+            key={`${course.id}`}
+            button
+          >
+            <ListItemText primary={`${course.id} ${course.name}`} />
+          </ListItem>
+        ))}
       </List>
     </div>
   );
 }
 
-Subjects.propTypes = {
-  subjects: PropTypes.arrayOf(PropTypes.object).isRequired,
+Courses.propTypes = {
+  courses: PropTypes.arrayOf(PropTypes.object).isRequired,
   isFetching: PropTypes.bool.isRequired,
-  showCourses: PropTypes.func.isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
-export { Subjects as UnstyledSubjects };
-export default withStyles(styles)(Subjects);
+export { Courses as UnstyledCourses };
+export default withStyles(styles)(Courses);

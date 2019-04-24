@@ -1,6 +1,7 @@
 import { fromJS } from 'immutable';
 import { loop, Cmd } from 'redux-loop';
-import { fetchSearchResults, fetchSearchIndex, fetchSections } from 'effects/search';
+import { fetchSections } from 'effects/common';
+import { fetchSearchResults, fetchSearchIndex } from 'effects/search';
 import {
   getSearchResultsSuccess,
   getSearchResultsFailure,

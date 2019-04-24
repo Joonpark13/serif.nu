@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Subjects renders correctly 1`] = `
+exports[`Courses renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Subjects
+  Symbol(enzyme.__unrendered__): <Courses
     classes={
       Object {
         "loadingContainer": "",
       }
     }
-    isFetching={false}
-    showCourses={[Function]}
-    subjects={
+    courses={
       Array [
         Object {
-          "id": "EECS",
-          "schoolId": "MEAS",
+          "id": "101-0",
+          "name": "Intro to Serif",
         },
       ]
     }
+    isFetching={false}
+    showSubjects={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -36,10 +36,9 @@ ShallowWrapper {
       "children": <WithStyles(List)>
         <WithStyles(ListItem)
           button={true}
-          onClick={[Function]}
         >
           <WithStyles(ListItemText)
-            primary="EECS - undefined"
+            primary="101-0 Intro to Serif"
           />
         </WithStyles(ListItem)>
       </WithStyles(List)>,
@@ -53,10 +52,9 @@ ShallowWrapper {
         "children": Array [
           <WithStyles(ListItem)
             button={true}
-            onClick={[Function]}
           >
             <WithStyles(ListItemText)
-              primary="EECS - undefined"
+              primary="101-0 Intro to Serif"
             />
           </WithStyles(ListItem)>,
         ],
@@ -65,14 +63,13 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "EECS",
+          "key": "101-0",
           "nodeType": "class",
           "props": Object {
             "button": true,
             "children": <WithStyles(ListItemText)
-              primary="EECS - undefined"
+              primary="101-0 Intro to Serif"
             />,
-            "onClick": [Function],
           },
           "ref": null,
           "rendered": Object {
@@ -80,7 +77,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "primary": "EECS - undefined",
+              "primary": "101-0 Intro to Serif",
             },
             "ref": null,
             "rendered": null,
@@ -102,10 +99,9 @@ ShallowWrapper {
         "children": <WithStyles(List)>
           <WithStyles(ListItem)
             button={true}
-            onClick={[Function]}
           >
             <WithStyles(ListItemText)
-              primary="EECS - undefined"
+              primary="101-0 Intro to Serif"
             />
           </WithStyles(ListItem)>
         </WithStyles(List)>,
@@ -119,10 +115,9 @@ ShallowWrapper {
           "children": Array [
             <WithStyles(ListItem)
               button={true}
-              onClick={[Function]}
             >
               <WithStyles(ListItemText)
-                primary="EECS - undefined"
+                primary="101-0 Intro to Serif"
               />
             </WithStyles(ListItem)>,
           ],
@@ -131,14 +126,13 @@ ShallowWrapper {
         "rendered": Array [
           Object {
             "instance": null,
-            "key": "EECS",
+            "key": "101-0",
             "nodeType": "class",
             "props": Object {
               "button": true,
               "children": <WithStyles(ListItemText)
-                primary="EECS - undefined"
+                primary="101-0 Intro to Serif"
               />,
-              "onClick": [Function],
             },
             "ref": null,
             "rendered": Object {
@@ -146,7 +140,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "primary": "EECS - undefined",
+                "primary": "101-0 Intro to Serif",
               },
               "ref": null,
               "rendered": null,
@@ -182,25 +176,25 @@ ShallowWrapper {
 }
 `;
 
-exports[`Subjects renders correctly when fetching 1`] = `
+exports[`Courses renders loading correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Subjects
+  Symbol(enzyme.__unrendered__): <Courses
     classes={
       Object {
         "loadingContainer": "",
       }
     }
-    isFetching={true}
-    showCourses={[Function]}
-    subjects={
+    courses={
       Array [
         Object {
-          "id": "EECS",
-          "schoolId": "MEAS",
+          "id": "101-0",
+          "name": "Intro to Serif",
         },
       ]
     }
+    isFetching={true}
+    showSubjects={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

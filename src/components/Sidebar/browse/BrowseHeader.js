@@ -18,10 +18,24 @@ export const styles = {
   },
 };
 
-function BrowseHeader({ currentBrowseLevel, selectedSchoolId, classes, back }) {
+function BrowseHeader({ currentBrowseLevel, selectedSchoolId, selectedSubjectId, classes, back }) {
   let previousSelectionName;
-  if (currentBrowseLevel === 'subject') {
-    previousSelectionName = selectedSchoolId;
+  switch (currentBrowseLevel) {
+    case 'subject':
+      previousSelectionName = selectedSchoolId;
+      break;
+    case 'course':
+      previousSelectionName = selectedSubjectId;
+      break;
+    default:
+      break;
+  }
+
+  function goBackLevel() {
+    let backTo = 'school';
+    if (currentBrowseLevel === 'course') backTo = 'subject';
+
+    back(backTo);
   }
 
   return (
@@ -33,7 +47,7 @@ function BrowseHeader({ currentBrowseLevel, selectedSchoolId, classes, back }) {
       </div>
 
       <div className={classes.backButton}>
-        <Button onClick={back}>Back</Button>
+        <Button onClick={goBackLevel}>Back</Button>
       </div>
     </div>
   );
@@ -42,12 +56,14 @@ function BrowseHeader({ currentBrowseLevel, selectedSchoolId, classes, back }) {
 BrowseHeader.propTypes = {
   currentBrowseLevel: PropTypes.string.isRequired,
   selectedSchoolId: PropTypes.string,
+  selectedSubjectId: PropTypes.string,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   back: PropTypes.func.isRequired,
 };
 
 BrowseHeader.defaultProps = {
   selectedSchoolId: '',
+  selectedSubjectId: '',
 };
 
 export { BrowseHeader as UnstyledBrowseHeader };

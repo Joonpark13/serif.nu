@@ -5,13 +5,10 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { loadingContainer as loadingContainerStyles } from './common/styles';
 
 export const styles = {
-  loadingContainer: {
-    margin: 15,
-    display: 'flex',
-    justifyContent: 'center',
-  },
+  loadingContainer: loadingContainerStyles,
 };
 
 function Schools({ schools, isFetching, classes, showSubjects }) {
