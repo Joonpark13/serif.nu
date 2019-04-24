@@ -9,7 +9,8 @@ import {
   getSectionsSuccess,
   getSectionsFailure,
 } from 'actions';
-import { fetchSearchResults, fetchSearchIndex, fetchSections } from 'effects/search';
+import { fetchSections } from 'effects/common';
+import { fetchSearchResults, fetchSearchIndex } from 'effects/search';
 
 export const initialSearchState = fromJS({
   isFetching: false,

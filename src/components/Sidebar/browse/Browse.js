@@ -4,6 +4,7 @@ import Divider from '@material-ui/core/Divider';
 import BrowseHeaderContainer from './BrowseHeaderContainer';
 import SchoolsContainer from './SchoolsContainer';
 import SubjectsContainer from './SubjectsContainer';
+import CoursesContainer from './CoursesContainer';
 
 function Browse({ currentBrowseLevel }) {
   return (
@@ -12,6 +13,7 @@ function Browse({ currentBrowseLevel }) {
       <Divider />
       {currentBrowseLevel === 'school' && <SchoolsContainer />}
       {currentBrowseLevel === 'subject' && <SubjectsContainer />}
+      {currentBrowseLevel === 'course' && <CoursesContainer />}
     </Fragment>
   );
 }

@@ -109,6 +109,27 @@ export const fetchSubjectsFailure = () => ({
   type: actionTypes.FETCH_SUBJECTS_FAILURE,
 });
 
+export function fetchCoursesRequest(schoolId, subjectId) {
+  return {
+    type: actionTypes.FETCH_COURSES_REQUEST,
+    schoolId,
+    subjectId,
+  };
+}
+
+export function fetchCoursesSuccess(courses) {
+  return {
+    type: actionTypes.FETCH_COURSES_SUCCESS,
+    courses,
+  };
+}
+
+export function fetchCoursesFailure() {
+  return {
+    type: actionTypes.FETCH_COURSES_FAILURE,
+  };
+}
+
 export function changeBrowseLevel(browseLevel) {
   return {
     type: actionTypes.CHANGE_BROWSE_LEVEL,
@@ -133,5 +154,12 @@ export function selectSchoolInBrowse(schoolId) {
   return {
     type: actionTypes.SELECT_SCHOOL_IN_BROWSE,
     schoolId,
+  };
+}
+
+export function selectSubjectInBrowse(subjectId) {
+  return {
+    type: actionTypes.SELECT_SUBJECT_IN_BROWSE,
+    subjectId,
   };
 }

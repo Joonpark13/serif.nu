@@ -20,15 +20,3 @@ export function fetchSearchResults(searchIndex, searchInput) {
   );
   return Promise.all(searchResultsPromises).then(searchResults => searchResults);
 }
-
-export function fetchSections(termId, schoolId, subjectId, courseId) {
-  return currentTermDoc
-    .collection('sections')
-    .where('schoolId', '==', schoolId)
-    .where('subjectId', '==', subjectId)
-    .where('courseId', '==', courseId)
-    .get()
-    .then(querySnapshot => querySnapshot.docs.map(
-      doc => doc.data(),
-    ));
-}

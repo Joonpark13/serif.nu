@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import { sectionsSelector, currentBrowseLevelSelector } from './index';
+import { sectionsSelector, currentBrowseLevelSelector, isFetchingSelector } from './index';
 
 describe('sectionsSelctor', () => {
   it('should select sections from schedule state', () => {
@@ -24,5 +24,18 @@ describe('currentBrowseLevelSelector', () => {
     });
 
     expect(currentBrowseLevelSelector(testState)).toEqual(currentBrowseLevel);
+  });
+});
+
+describe('isFetchingSelector', () => {
+  it('should select isFetching from browse state', () => {
+    const testIsFetchingResults = fromJS([{ isFetching: false }]);
+    const testState = fromJS({
+      browse: {
+        isFetching: testIsFetchingResults,
+      },
+    });
+
+    expect(isFetchingSelector(testState)).toEqual(testIsFetchingResults);
   });
 });

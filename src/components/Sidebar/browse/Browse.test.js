@@ -14,4 +14,10 @@ describe('Browse', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('renders courses correctly', () => {
+    const wrapper = shallow(<Browse currentBrowseLevel="course" />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });

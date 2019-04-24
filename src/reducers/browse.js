@@ -1,15 +1,24 @@
 import { fromJS } from 'immutable';
 import { loop, Cmd } from 'redux-loop';
-import { getSchoolsSuccess, getSchoolsFailure, fetchSubjectsSuccess, fetchSubjectsFailure } from 'actions';
-import * as actionTypes from '../actions/action-types';
-import { fetchSubjects, fetchSchools } from '../effects/browse';
+import {
+  getSchoolsSuccess,
+  getSchoolsFailure,
+  fetchSubjectsSuccess,
+  fetchSubjectsFailure,
+  fetchCoursesSuccess,
+  fetchCoursesFailure,
+} from 'actions';
+import * as actionTypes from 'actions/action-types';
+import { fetchSubjects, fetchSchools, fetchCourses } from 'effects/browse';
 
 const BROWSE_LEVEL_HIERARCHY = ['school', 'subject', 'course', 'section', 'associatedClass'];
+const BROWSE_LEVEL_DATA_KEYS = ['schools', 'subjects', 'courses', 'sections', 'associatedClasses'];
 
 export const initialBrowseState = fromJS({
   isFetching: false,
   schools: [],
   subjects: [],
+  courses: [],
   currentBrowseLevel: 'school',
   selected: {
     school: null,
@@ -25,10 +34,14 @@ function handleChangeBrowseLevel(state, { browseLevel }) {
   const nextBrowseLevelIndex = BROWSE_LEVEL_HIERARCHY.indexOf(nextBrowseLevel);
   let newState = state;
 
-  // If a user goes "back", we should clear selected state
+  // If a user goes "back", we should clear selected state and data
   if (nextBrowseLevelIndex < currentBrowseLevelIndex) {
     for (let i = nextBrowseLevelIndex; i < currentBrowseLevelIndex; i++) {
       newState = newState.setIn(['selected', BROWSE_LEVEL_HIERARCHY[i]], null);
+    }
+
+    for (let i = nextBrowseLevelIndex + 1; i <= currentBrowseLevelIndex; i++) {
+      newState = newState.set(BROWSE_LEVEL_DATA_KEYS[i], fromJS([]));
     }
   }
   return newState.set('currentBrowseLevel', browseLevel);
@@ -74,8 +87,26 @@ function browse(state = initialBrowseState, action) {
         isFetching: false,
         subjects: initialBrowseState.get('subjects'),
       });
-    default:
-      return state;
+
+    case actionTypes.FETCH_COURSES_REQUEST:
+      return loop(
+        state.set('isFetching', true),
+        Cmd.run(fetchCourses, {
+          args: [action.schoolId, action.subjectId],
+          successActionCreator: fetchCoursesSuccess,
+          failActionCreator: fetchCoursesFailure,
+        }),
+      );
+    case actionTypes.FETCH_COURSES_SUCCESS:
+      return state.merge({
+        isFetching: false,
+        courses: fromJS(action.courses),
+      });
+    case actionTypes.FETCH_COURSES_FAILURE:
+      return state.merge({
+        isFetching: false,
+        courses: initialBrowseState.get('courses'),
+      });
 
     case actionTypes.CHANGE_BROWSE_LEVEL:
       return handleChangeBrowseLevel(state, action);
@@ -85,6 +116,14 @@ function browse(state = initialBrowseState, action) {
         ['selected', 'school'],
         state.get('schools').find(school => school.get('id') === action.schoolId),
       );
+    case actionTypes.SELECT_SUBJECT_IN_BROWSE:
+      return state.setIn(
+        ['selected', 'subject'],
+        state.get('subjects').find(subject => subject.get('id') === action.subjectId),
+      );
+
+    default:
+      return state;
   }
 }
 

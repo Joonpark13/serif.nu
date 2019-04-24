@@ -1,7 +1,14 @@
 import { fromJS } from 'immutable';
 import { loop, Cmd } from 'redux-loop';
-import { fetchSchools, fetchSubjects } from 'effects/browse';
-import { getSchoolsSuccess, getSchoolsFailure, fetchSubjectsSuccess, fetchSubjectsFailure } from 'actions';
+import { fetchSchools, fetchSubjects, fetchCourses } from 'effects/browse';
+import {
+  getSchoolsSuccess,
+  getSchoolsFailure,
+  fetchSubjectsSuccess,
+  fetchSubjectsFailure,
+  fetchCoursesSuccess,
+  fetchCoursesFailure,
+} from 'actions';
 import browseReducer, { initialBrowseState } from './browse';
 import * as actionTypes from '../actions/action-types';
 import * as actionCreators from '../actions/index';
@@ -66,7 +73,6 @@ describe('browse reducer', () => {
   it(`should handle ${actionTypes.FETCH_SUBJECTS_REQUEST}`, () => {
     const state = fromJS({
       isFetching: false,
-
     });
     const action = actionCreators.fetchSubjectsRequest();
 
@@ -137,8 +143,51 @@ describe('browse reducer', () => {
     );
   });
 
+  it(`should handle ${actionTypes.FETCH_COURSES_REQUEST}`, () => {
+    const state = fromJS({
+      isFetching: false,
+    });
+    const action = actionCreators.fetchCoursesRequest();
+
+    expect(browseReducer(state, action)).toEqual(
+      loop(
+        fromJS({
+          isFetching: true,
+        }),
+        Cmd.run(fetchCourses, {
+          args: [action.schoolId, action.subjectId],
+          successActionCreator: fetchCoursesSuccess,
+          failActionCreator: fetchCoursesFailure,
+        }),
+      ),
+    );
+  });
+
+  it(`should handle ${actionTypes.FETCH_COURSES_SUCCESS}`, () => {
+    const testState = initialBrowseState.set('isFetching', true);
+
+    const coursesResults = [{ id: '101-0' }];
+
+    const action = actionCreators.fetchCoursesSuccess(coursesResults);
+
+    expect(browseReducer(testState, action)).toEqual(
+      initialBrowseState.merge({
+        isFetching: false,
+        courses: fromJS(coursesResults),
+      }),
+    );
+  });
+
+  it(`should handle ${actionTypes.FETCH_COURSES_FAILURE}`, () => {
+    const testState = initialBrowseState.set('isFetching', true);
+    const action = actionCreators.fetchCoursesFailure();
+
+    expect(browseReducer(testState, action)).toEqual(initialBrowseState);
+  });
+
   it(`should handle ${actionTypes.CHANGE_BROWSE_LEVEL} when going up levels`, () => {
     const state = fromJS({
+      subjects: [{}],
       currentBrowseLevel: 'subject',
       selected: {
         school: {},
@@ -149,6 +198,7 @@ describe('browse reducer', () => {
 
     expect(browseReducer(state, action)).toEqual(
       fromJS({
+        subjects: [],
         currentBrowseLevel: 'school',
         selected: {
           school: null,
@@ -170,5 +220,19 @@ describe('browse reducer', () => {
     const action = actionCreators.selectSchoolInBrowse(schoolId);
 
     expect(browseReducer(state, action).getIn(['selected', 'school'])).toEqual(school);
+  });
+
+  it(`should handle ${actionTypes.SELECT_SUBJECT_IN_BROWSE}`, () => {
+    const subjectId = 'EECS';
+    const subject = fromJS({ id: subjectId });
+    const state = fromJS({
+      subjects: [subject],
+      selected: {
+        subject: null,
+      },
+    });
+    const action = actionCreators.selectSubjectInBrowse(subjectId);
+
+    expect(browseReducer(state, action).getIn(['selected', 'subject'])).toEqual(subject);
   });
 });
