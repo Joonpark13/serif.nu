@@ -7,9 +7,12 @@ import {
   fetchSubjectsFailure,
   fetchCoursesSuccess,
   fetchCoursesFailure,
+  fetchSectionsForBrowseSuccess,
+  fetchSectionsForBrowseFailure,
 } from 'actions';
 import * as actionTypes from 'actions/action-types';
 import { fetchSubjects, fetchSchools, fetchCourses } from 'effects/browse';
+import { fetchSections } from 'effects/common';
 
 const BROWSE_LEVEL_HIERARCHY = ['school', 'subject', 'course', 'section', 'associatedClass'];
 const BROWSE_LEVEL_DATA_KEYS = ['schools', 'subjects', 'courses', 'sections', 'associatedClasses'];
@@ -19,11 +22,13 @@ export const initialBrowseState = fromJS({
   schools: [],
   subjects: [],
   courses: [],
+  sections: [],
   currentBrowseLevel: 'school',
   selected: {
     school: null,
     subject: null,
     course: null,
+    section: null,
   },
 });
 
@@ -45,6 +50,15 @@ function handleChangeBrowseLevel(state, { browseLevel }) {
     }
   }
   return newState.set('currentBrowseLevel', browseLevel);
+}
+
+function handleAddSectionFromBrowse(state, { section }) {
+  if (section.associatedClasses) {
+    return state
+      .set('currentBrowseLevel', 'associatedClass')
+      .update('selected', selected => selected.set('section', fromJS(section)));
+  }
+  return initialBrowseState.set('schools', state.get('schools'));
 }
 
 function browse(state = initialBrowseState, action) {
@@ -108,6 +122,26 @@ function browse(state = initialBrowseState, action) {
         courses: initialBrowseState.get('courses'),
       });
 
+    case actionTypes.FETCH_SECTIONS_FOR_BROWSE_REQUEST:
+      return loop(
+        state.set('isFetching', true),
+        Cmd.run(fetchSections, {
+          args: [action.schoolId, action.subjectId, action.courseId],
+          successActionCreator: fetchSectionsForBrowseSuccess,
+          failActionCreator: fetchSectionsForBrowseFailure,
+        }),
+      );
+    case actionTypes.FETCH_SECTIONS_FOR_BROWSE_SUCCESS:
+      return state.merge({
+        isFetching: false,
+        sections: fromJS(action.sections),
+      });
+    case actionTypes.FETCH_SECTIONS_FOR_BROWSE_FAILURE:
+      return state.merge({
+        isFetching: false,
+        sections: initialBrowseState.get('sections'),
+      });
+
     case actionTypes.CHANGE_BROWSE_LEVEL:
       return handleChangeBrowseLevel(state, action);
 
@@ -121,6 +155,16 @@ function browse(state = initialBrowseState, action) {
         ['selected', 'subject'],
         state.get('subjects').find(subject => subject.get('id') === action.subjectId),
       );
+    case actionTypes.SELECT_COURSE_IN_BROWSE:
+      return state.setIn(
+        ['selected', 'course'],
+        state.get('courses').find(course => course.get('id') === action.courseId),
+      );
+
+    case actionTypes.ADD_SECTION_FROM_BROWSE:
+      return handleAddSectionFromBrowse(state, action);
+    case actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS_FROM_BROWSE:
+      return initialBrowseState.set('schools', state.get('schools'));
 
     default:
       return state;

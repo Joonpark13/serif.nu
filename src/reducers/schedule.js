@@ -114,7 +114,8 @@ function handleRemoveSection(state, { sectionId, sectionColor }) {
 
 function schedule(state = initialScheduleState, action) {
   switch (action.type) {
-    case actionTypes.ADD_SECTION:
+    case actionTypes.ADD_SECTION_FROM_SEARCH:
+    case actionTypes.ADD_SECTION_FROM_BROWSE:
       return handleAddSection(state, action);
 
     case actionTypes.REMOVE_SECTION:
@@ -123,7 +124,8 @@ function schedule(state = initialScheduleState, action) {
     case actionTypes.VIEW_SECTION_SELECTION:
       return state.set('sectionPreview', initialScheduleState.get('sectionPreview'));
 
-    case actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS:
+    case actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS_FROM_SEARCH:
+    case actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS_FROM_BROWSE:
       return handleAddSectionWithAssociatedClass(state, action);
 
     default:

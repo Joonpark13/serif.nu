@@ -16,7 +16,7 @@ describe('schedule reducer', () => {
     expect(scheduleReducer(undefined, {})).toEqual(initialScheduleState);
   });
 
-  it(`should handle ${actionTypes.ADD_SECTION}`, () => {
+  it(`should handle ${actionTypes.ADD_SECTION_FROM_SEARCH}`, () => {
     const color = classColors[0];
     getNextColor.default = jest.fn().mockReturnValue(color);
     splitBySchedules.default = jest.fn(section => fromJS([section]));
@@ -26,7 +26,7 @@ describe('schedule reducer', () => {
     };
     const sectionWithColor = Object.assign({}, section, { color });
     assignColor.default.mockReturnValue(fromJS([sectionWithColor]));
-    const action = actionCreators.addSection(section);
+    const action = actionCreators.addSectionFromSearch(section);
 
     expect(
       scheduleReducer(initialScheduleState, action),
@@ -89,7 +89,7 @@ describe('schedule reducer', () => {
     ).toEqual(fromJS([]));
   });
 
-  it(`should handle ${actionTypes.ADD_SECTION} when section has associated classes`, () => {
+  it(`should handle ${actionTypes.ADD_SECTION_FROM_SEARCH} when section has associated classes`, () => {
     const section = {
       id: '12345',
       section: '20',
@@ -97,7 +97,7 @@ describe('schedule reducer', () => {
     };
     const sections = fromJS([section]);
     assignConflictInfo.default.mockReturnValue(sections);
-    const action = actionCreators.addSection(section);
+    const action = actionCreators.addSectionFromSearch(section);
 
     expect(scheduleReducer(initialScheduleState, action))
       .toEqual(initialScheduleState.merge({
@@ -111,7 +111,7 @@ describe('schedule reducer', () => {
     expect(scheduleReducer(initialScheduleState, action)).toEqual(initialScheduleState);
   });
 
-  it(`should handle ${actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS}`, () => {
+  it(`should handle ${actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS_FROM_SEARCH}`, () => {
     const color = classColors[0];
     const sections = fromJS([{ id: '12345' }]);
     const associatedClass = {
@@ -122,7 +122,7 @@ describe('schedule reducer', () => {
     const associatedClasses = fromJS([associatedClass]);
     assignColor.default.mockReturnValueOnce(sections).mockReturnValueOnce(associatedClasses);
 
-    const action = actionCreators.addSectionWithAssociatedClass(associatedClass);
+    const action = actionCreators.addSectionWithAssociatedClassFromSearch(associatedClass);
 
     expect(scheduleReducer(initialScheduleState, action))
       .toEqual(initialScheduleState.merge({

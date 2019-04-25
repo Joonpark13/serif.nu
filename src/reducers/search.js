@@ -6,8 +6,8 @@ import {
   getSearchResultsFailure,
   fetchSearchIndexSuccess,
   fetchSearchIndexFailure,
-  getSectionsSuccess,
-  getSectionsFailure,
+  fetchSectionsForSearchSuccess,
+  fetchSectionsForSearchFailure,
 } from 'actions';
 import { fetchSections } from 'effects/common';
 import { fetchSearchResults, fetchSearchIndex } from 'effects/search';
@@ -80,20 +80,20 @@ function search(state = initialSearchState, action) {
     case actionTypes.CLEAR_SEARCH_RESULTS:
       return state.set('results', fromJS([]));
 
-    case actionTypes.GET_SECTIONS_REQUEST:
+    case actionTypes.FETCH_SECTIONS_FOR_SEARCH_REQUEST:
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchSections, {
-          args: [action.termId, action.schoolId, action.subjectId, action.courseId],
-          successActionCreator: getSectionsSuccess,
-          failActionCreator: getSectionsFailure,
+          args: [action.schoolId, action.subjectId, action.courseId],
+          successActionCreator: fetchSectionsForSearchSuccess,
+          failActionCreator: fetchSectionsForSearchFailure,
         }),
       );
-    case actionTypes.GET_SECTIONS_SUCCESS:
+    case actionTypes.FETCH_SECTIONS_FOR_SEARCH_SUCCESS:
       return state
         .set('view', 'sectionSelection')
         .set('currentSections', fromJS(action.sections));
-    case actionTypes.GET_SECTIONS_FAILURE:
+    case actionTypes.FETCH_SECTIONS_FOR_SEARCH_FAILURE:
       return state.set('currentSections', initialSearchState.get('currentSections'));
 
     case actionTypes.SET_CURRENT_COURSE_NAME:
@@ -109,9 +109,9 @@ function search(state = initialSearchState, action) {
           isFetching: initialSearchState.get('isFetching'),
         });
 
-    case actionTypes.ADD_SECTION:
+    case actionTypes.ADD_SECTION_FROM_SEARCH:
       return handleAddSection(state, action);
-    case actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS:
+    case actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS_FROM_SEARCH:
       return state
         .merge({
           view: 'search',

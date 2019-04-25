@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-import { getSectionsRequest, setCurrentCourseName } from 'actions';
+import { fetchSectionsForSearchRequest, setCurrentCourseName } from 'actions';
 import toJS from 'util/to-js';
-import { CURRENT_TERM } from 'util/constants';
 import SearchResults from './SearchResults';
 
 export function searchResultsSelector(state) {
@@ -28,7 +27,7 @@ function mapStateToProps(state) {
 export function mapDispatchToProps(dispatch) {
   return {
     handleCourseClick: (schoolId, subjectId, courseId) => {
-      dispatch(getSectionsRequest(CURRENT_TERM, schoolId, subjectId, courseId));
+      dispatch(fetchSectionsForSearchRequest(schoolId, subjectId, courseId));
       dispatch(setCurrentCourseName(`${subjectId} ${courseId}`));
     },
   };

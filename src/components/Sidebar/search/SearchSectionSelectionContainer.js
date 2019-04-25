@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import toJS from 'util/to-js';
-import { viewSearch, addSection } from 'actions';
-import SectionSelection from './SectionSelection';
+import { viewSearch, addSectionFromSearch } from 'actions';
+import { scheduledSectionsSelector } from 'selectors';
+import SectionSelection from '../common/SectionSelection';
 
 export function currentCourseNameSelector(state) {
   return state.getIn(['search', 'currentCourseName']);
@@ -9,10 +10,6 @@ export function currentCourseNameSelector(state) {
 
 export function currentSectionsSelector(state) {
   return state.getIn(['search', 'currentSections']);
-}
-
-export function scheduledSectionsSelector(state) {
-  return state.getIn(['schedule', 'sections']);
 }
 
 /* istanbul ignore next */
@@ -24,7 +21,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   back: viewSearch,
-  addSection,
+  addSection: addSectionFromSearch,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(toJS(SectionSelection));

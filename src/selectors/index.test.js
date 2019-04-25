@@ -1,5 +1,11 @@
 import { fromJS } from 'immutable';
-import { sectionsSelector, currentBrowseLevelSelector, isFetchingSelector } from './index';
+import {
+  sectionsSelector,
+  currentBrowseLevelSelector,
+  isFetchingSelector,
+  scheduledSectionsSelector,
+  selectedCourseNameSelector,
+} from './index';
 
 describe('sectionsSelctor', () => {
   it('should select sections from schedule state', () => {
@@ -37,5 +43,35 @@ describe('isFetchingSelector', () => {
     });
 
     expect(isFetchingSelector(testState)).toEqual(testIsFetchingResults);
+  });
+});
+
+describe('scheduledSectionsSelector', () => {
+  it('should select scheduled sections from state', () => {
+    const testScheduledSections = fromJS([]);
+    const testState = fromJS({
+      schedule: {
+        sections: testScheduledSections,
+      },
+    });
+
+    expect(scheduledSectionsSelector(testState)).toEqual(testScheduledSections);
+  });
+});
+
+describe('selectedCourseNameSelector', () => {
+  it('should select selected course name from browse state', () => {
+    const name = 'Introduction to Something';
+    const state = fromJS({
+      browse: {
+        selected: {
+          course: {
+            name,
+          },
+        },
+      },
+    });
+
+    expect(selectedCourseNameSelector(state)).toBe(name);
   });
 });

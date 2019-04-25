@@ -11,7 +11,7 @@ export const styles = {
   loadingContainer: loadingContainerStyles,
 };
 
-function Courses({ courses, isFetching, classes }) {
+function Courses({ courses, isFetching, classes, showSections }) {
   if (isFetching) {
     return (
       <div className={classes.loadingContainer}>
@@ -26,6 +26,7 @@ function Courses({ courses, isFetching, classes }) {
           <ListItem
             key={`${course.id}`}
             button
+            onClick={() => showSections(course.schoolId, course.subjectId, course.id)}
           >
             <ListItemText primary={`${course.id} ${course.name}`} />
           </ListItem>
@@ -38,6 +39,7 @@ function Courses({ courses, isFetching, classes }) {
 Courses.propTypes = {
   courses: PropTypes.arrayOf(PropTypes.object).isRequired,
   isFetching: PropTypes.bool.isRequired,
+  showSections: PropTypes.func.isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 

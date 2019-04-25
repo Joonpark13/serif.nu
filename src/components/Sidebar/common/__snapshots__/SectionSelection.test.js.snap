@@ -4,6 +4,7 @@ exports[`SectionSelection renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SectionSelection
+    addSection={[Function]}
     back={[Function]}
     classes={
       Object {
@@ -63,7 +64,8 @@ ShallowWrapper {
           title="EECS 101-0"
         />,
         <WithStyles(List)>
-          <Connect(Component)
+          <WithStyles(SectionResult)
+            addSection={[Function]}
             disabled={false}
             section={
               Object {
@@ -80,7 +82,8 @@ ShallowWrapper {
               }
             }
           />
-          <Connect(Component)
+          <WithStyles(SectionResult)
+            addSection={[Function]}
             disabled={false}
             section={
               Object {
@@ -122,7 +125,8 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <Connect(Component)
+            <WithStyles(SectionResult)
+              addSection={[Function]}
               disabled={false}
               section={
                 Object {
@@ -139,7 +143,8 @@ ShallowWrapper {
                 }
               }
             />,
-            <Connect(Component)
+            <WithStyles(SectionResult)
+              addSection={[Function]}
               disabled={false}
               section={
                 Object {
@@ -166,6 +171,7 @@ ShallowWrapper {
             "key": "1",
             "nodeType": "class",
             "props": Object {
+              "addSection": [Function],
               "disabled": false,
               "section": Object {
                 "id": "1",
@@ -189,6 +195,7 @@ ShallowWrapper {
             "key": "2",
             "nodeType": "class",
             "props": Object {
+              "addSection": [Function],
               "disabled": false,
               "section": Object {
                 "id": "2",
@@ -226,7 +233,8 @@ ShallowWrapper {
             title="EECS 101-0"
           />,
           <WithStyles(List)>
-            <Connect(Component)
+            <WithStyles(SectionResult)
+              addSection={[Function]}
               disabled={false}
               section={
                 Object {
@@ -243,7 +251,8 @@ ShallowWrapper {
                 }
               }
             />
-            <Connect(Component)
+            <WithStyles(SectionResult)
+              addSection={[Function]}
               disabled={false}
               section={
                 Object {
@@ -285,7 +294,8 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <Connect(Component)
+              <WithStyles(SectionResult)
+                addSection={[Function]}
                 disabled={false}
                 section={
                   Object {
@@ -302,7 +312,8 @@ ShallowWrapper {
                   }
                 }
               />,
-              <Connect(Component)
+              <WithStyles(SectionResult)
+                addSection={[Function]}
                 disabled={false}
                 section={
                   Object {
@@ -329,6 +340,7 @@ ShallowWrapper {
               "key": "1",
               "nodeType": "class",
               "props": Object {
+                "addSection": [Function],
                 "disabled": false,
                 "section": Object {
                   "id": "1",
@@ -352,6 +364,7 @@ ShallowWrapper {
               "key": "2",
               "nodeType": "class",
               "props": Object {
+                "addSection": [Function],
                 "disabled": false,
                 "section": Object {
                   "id": "2",

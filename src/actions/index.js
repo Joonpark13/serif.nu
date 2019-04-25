@@ -24,24 +24,27 @@ export const clearSearchResults = () => ({
   type: actionTypes.CLEAR_SEARCH_RESULTS,
 });
 
-export function getSectionsRequest(termId, schoolId, subjectId, courseId) {
+export function fetchSectionsForSearchRequest(schoolId, subjectId, courseId) {
   return {
-    type: actionTypes.GET_SECTIONS_REQUEST,
-    termId,
+    type: actionTypes.FETCH_SECTIONS_FOR_SEARCH_REQUEST,
     schoolId,
     subjectId,
     courseId,
   };
 }
 
-export const getSectionsSuccess = sections => ({
-  type: actionTypes.GET_SECTIONS_SUCCESS,
-  sections,
-});
+export function fetchSectionsForSearchSuccess(sections) {
+  return {
+    type: actionTypes.FETCH_SECTIONS_FOR_SEARCH_SUCCESS,
+    sections,
+  };
+}
 
-export const getSectionsFailure = () => ({
-  type: actionTypes.GET_SECTIONS_FAILURE,
-});
+export function fetchSectionsForSearchFailure() {
+  return {
+    type: actionTypes.FETCH_SECTIONS_FOR_SEARCH_FAILURE,
+  };
+}
 
 export const setCurrentCourseName = courseName => ({
   type: actionTypes.SET_CURRENT_COURSE_NAME,
@@ -52,10 +55,19 @@ export const viewSearch = () => ({
   type: actionTypes.VIEW_SEARCH,
 });
 
-export const addSection = section => ({
-  type: actionTypes.ADD_SECTION,
-  section,
-});
+export function addSectionFromSearch(section) {
+  return {
+    type: actionTypes.ADD_SECTION_FROM_SEARCH,
+    section,
+  };
+}
+
+export function addSectionWithAssociatedClassFromSearch(associatedClass) {
+  return {
+    type: actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS_FROM_SEARCH,
+    associatedClass,
+  };
+}
 
 export const removeSection = (sectionId, sectionColor) => ({
   type: actionTypes.REMOVE_SECTION,
@@ -130,6 +142,29 @@ export function fetchCoursesFailure() {
   };
 }
 
+export function fetchSectionsForBrowseRequest(schoolId, subjectId, courseId) {
+  return {
+    type: actionTypes.FETCH_SECTIONS_FOR_BROWSE_REQUEST,
+    schoolId,
+    subjectId,
+    courseId,
+  };
+}
+
+export function fetchSectionsForBrowseSuccess(sections) {
+  return {
+    type: actionTypes.FETCH_SECTIONS_FOR_BROWSE_SUCCESS,
+    sections,
+  };
+}
+
+export function fetchSectionsForBrowseFailure() {
+  return {
+    type: actionTypes.FETCH_SECTIONS_FOR_BROWSE_FAILURE,
+  };
+}
+
+
 export function changeBrowseLevel(browseLevel) {
   return {
     type: actionTypes.CHANGE_BROWSE_LEVEL,
@@ -140,13 +175,6 @@ export function changeBrowseLevel(browseLevel) {
 export function viewSectionSelection() {
   return {
     type: actionTypes.VIEW_SECTION_SELECTION,
-  };
-}
-
-export function addSectionWithAssociatedClass(associatedClass) {
-  return {
-    type: actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS,
-    associatedClass,
   };
 }
 
@@ -161,5 +189,26 @@ export function selectSubjectInBrowse(subjectId) {
   return {
     type: actionTypes.SELECT_SUBJECT_IN_BROWSE,
     subjectId,
+  };
+}
+
+export function selectCourseInBrowse(courseId) {
+  return {
+    type: actionTypes.SELECT_COURSE_IN_BROWSE,
+    courseId,
+  };
+}
+
+export function addSectionFromBrowse(section) {
+  return {
+    type: actionTypes.ADD_SECTION_FROM_BROWSE,
+    section,
+  };
+}
+
+export function addSectionWithAssociatedClassFromBrowse(associatedClass) {
+  return {
+    type: actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS_FROM_BROWSE,
+    associatedClass,
   };
 }

@@ -1,6 +1,5 @@
 import { fromJS } from 'immutable';
-import { setCurrentCourseName, getSectionsRequest } from 'actions';
-import { CURRENT_TERM } from 'util/constants';
+import { setCurrentCourseName, fetchSectionsForSearchRequest } from 'actions';
 import {
   searchResultsSelector,
   isFetchingSelector,
@@ -59,7 +58,7 @@ describe('SearchResultsContainer', () => {
       mapDispatchToProps(dispatchMock).handleCourseClick(school, subject, courseId);
 
       expect(dispatchMock.mock.calls[0][0]).toEqual(
-        getSectionsRequest(CURRENT_TERM, school, subject, courseId),
+        fetchSectionsForSearchRequest(school, subject, courseId),
       );
       expect(dispatchMock.mock.calls[1][0]).toEqual(setCurrentCourseName(`${subject} ${courseId}`));
     });
