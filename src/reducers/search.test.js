@@ -7,8 +7,8 @@ import {
   getSearchResultsFailure,
   fetchSearchIndexSuccess,
   fetchSearchIndexFailure,
-  getSectionsSuccess,
-  getSectionsFailure,
+  fetchSectionsForSearchSuccess,
+  fetchSectionsForSearchFailure,
 } from 'actions';
 import searchReducer, { initialSearchState } from './search';
 import * as actionTypes from '../actions/action-types';
@@ -113,32 +113,32 @@ describe('search reducer', () => {
     );
   });
 
-  it(`handles ${actionTypes.GET_SECTIONS_REQUEST}`, () => {
-    const action = actionCreators.getSectionsRequest('4740', 'MEAS', 'EECS', '111-0');
+  it(`handles ${actionTypes.FETCH_SECTIONS_FOR_SEARCH_REQUEST}`, () => {
+    const action = actionCreators.fetchSectionsForSearchRequest('MEAS', 'EECS', '111-0');
     expect(searchReducer(initialSearchState, action)).toEqual(
       loop(
         initialSearchState.set('isFetching', true),
         Cmd.run(fetchSections, {
-          args: [action.termId, action.schoolId, action.subjectId, action.courseId],
-          successActionCreator: getSectionsSuccess,
-          failActionCreator: getSectionsFailure,
+          args: [action.schoolId, action.subjectId, action.courseId],
+          successActionCreator: fetchSectionsForSearchSuccess,
+          failActionCreator: fetchSectionsForSearchFailure,
         }),
       ),
     );
   });
 
-  it(`should handle ${actionTypes.GET_SECTIONS_SUCCESS}`, () => {
+  it(`should handle ${actionTypes.FETCH_SECTIONS_FOR_SEARCH_SUCCESS}`, () => {
     const state = fromJS({ currentSections: [], view: 'search' });
     const testResults = [{ id: '12345', section: '20' }];
-    const action = actionCreators.getSectionsSuccess(testResults);
+    const action = actionCreators.fetchSectionsForSearchSuccess(testResults);
 
     expect(searchReducer(state, action))
       .toEqual(fromJS({ currentSections: testResults, view: 'sectionSelection' }));
   });
 
-  it(`should handle ${actionTypes.GET_SECTIONS_FAILURE}`, () => {
+  it(`should handle ${actionTypes.FETCH_SECTIONS_FOR_SEARCH_FAILURE}`, () => {
     const state = fromJS({ currentSections: [], view: 'search' });
-    const action = actionCreators.getSectionsFailure();
+    const action = actionCreators.fetchSectionsForSearchFailure();
 
     expect(searchReducer(state, action)).toEqual(state);
   });
@@ -170,14 +170,14 @@ describe('search reducer', () => {
     expect(searchReducer(state, action)).toEqual(expectedResult);
   });
 
-  it(`should handle ${actionTypes.ADD_SECTION}`, () => {
-    const action = actionCreators.addSection({});
+  it(`should handle ${actionTypes.ADD_SECTION_FROM_SEARCH}`, () => {
+    const action = actionCreators.addSectionFromSearch({});
     expect(searchReducer(initialSearchState, action)).toEqual(initialSearchState);
   });
 
-  it(`should handle ${actionTypes.ADD_SECTION} if there are associated classes`, () => {
+  it(`should handle ${actionTypes.ADD_SECTION_FROM_SEARCH} if there are associated classes`, () => {
     const section = { associatedClasses: [], sectionNumber: '12' };
-    const action = actionCreators.addSection(section);
+    const action = actionCreators.addSectionFromSearch(section);
     expect(searchReducer(initialSearchState, action)).toEqual(initialSearchState.merge({
       view: 'associatedClassesSelection',
       currentSectionNumber: section.sectionNumber,
@@ -185,8 +185,8 @@ describe('search reducer', () => {
     }));
   });
 
-  it(`should handle ${actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS}`, () => {
-    const action = actionCreators.addSectionWithAssociatedClass({});
+  it(`should handle ${actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS_FROM_SEARCH}`, () => {
+    const action = actionCreators.addSectionWithAssociatedClassFromSearch({});
     expect(searchReducer(initialSearchState, action)).toEqual(initialSearchState);
   });
 

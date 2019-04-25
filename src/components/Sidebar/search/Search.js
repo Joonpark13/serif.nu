@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SearchBoxContainer from './SearchBoxContainer';
 import SearchResultsContainer from './SearchResultsContainer';
-import SectionSelectionContainer from '../SectionSelectionContainer';
-import AssociatedClassesSelectionContainer from '../AssociatedClassesSelectionContainer';
+import SearchSectionSelectionContainer from './SearchSectionSelectionContainer';
+import SearchAssociatedClassesSelectionContainer from './SearchAssociatedClassesSelectionContainer';
 
 const Search = ({ view }) => (
   <div>
@@ -13,8 +13,8 @@ const Search = ({ view }) => (
         <SearchResultsContainer />
       </React.Fragment>
     )}
-    {view === 'sectionSelection' && <SectionSelectionContainer />}
-    {view === 'associatedClassesSelection' && <AssociatedClassesSelectionContainer />}
+    {view === 'sectionSelection' && <SearchSectionSelectionContainer />}
+    {view === 'associatedClassesSelection' && <SearchAssociatedClassesSelectionContainer />}
   </div>
 );
 

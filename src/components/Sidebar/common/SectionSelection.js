@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-import SectionResultContainer from './SectionResultContainer';
-import SidebarHeader from './SidebarHeader';
+import SectionResult from './SectionResult';
+import SidebarHeader from '../SidebarHeader';
 
 export const styles = {
   sectionsRoot: {
@@ -23,6 +23,7 @@ function SectionSelection({
   currentCourseName,
   sections,
   scheduledSections,
+  addSection,
   back,
   classes,
 }) {
@@ -35,10 +36,11 @@ function SectionSelection({
             scheduledSection => scheduledSection.id === section.id,
           );
           return (
-            <SectionResultContainer
+            <SectionResult
               key={section.id}
               section={section}
               disabled={sectionAlreadyAdded}
+              addSection={addSection}
             />
           );
         })
@@ -52,6 +54,7 @@ SectionSelection.propTypes = {
   currentCourseName: PropTypes.string.isRequired,
   sections: PropTypes.arrayOf(PropTypes.object).isRequired,
   scheduledSections: PropTypes.arrayOf(PropTypes.object),
+  addSection: PropTypes.func.isRequired,
   back: PropTypes.func.isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };

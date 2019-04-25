@@ -20,4 +20,16 @@ describe('Browse', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('renders sections correctly', () => {
+    const wrapper = shallow(<Browse currentBrowseLevel="section" />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('renders associated classes correctly', () => {
+    const wrapper = shallow(<Browse currentBrowseLevel="associatedClass" />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });

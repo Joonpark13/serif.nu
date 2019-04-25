@@ -14,11 +14,13 @@ ShallowWrapper {
         Object {
           "id": "101-0",
           "name": "Intro to Serif",
+          "schoolId": "WCAS",
+          "subjectId": "EECS",
         },
       ]
     }
     isFetching={false}
-    showSubjects={[Function]}
+    showSections={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -36,6 +38,7 @@ ShallowWrapper {
       "children": <WithStyles(List)>
         <WithStyles(ListItem)
           button={true}
+          onClick={[Function]}
         >
           <WithStyles(ListItemText)
             primary="101-0 Intro to Serif"
@@ -52,6 +55,7 @@ ShallowWrapper {
         "children": Array [
           <WithStyles(ListItem)
             button={true}
+            onClick={[Function]}
           >
             <WithStyles(ListItemText)
               primary="101-0 Intro to Serif"
@@ -70,6 +74,7 @@ ShallowWrapper {
             "children": <WithStyles(ListItemText)
               primary="101-0 Intro to Serif"
             />,
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": Object {
@@ -99,6 +104,7 @@ ShallowWrapper {
         "children": <WithStyles(List)>
           <WithStyles(ListItem)
             button={true}
+            onClick={[Function]}
           >
             <WithStyles(ListItemText)
               primary="101-0 Intro to Serif"
@@ -115,6 +121,7 @@ ShallowWrapper {
           "children": Array [
             <WithStyles(ListItem)
               button={true}
+              onClick={[Function]}
             >
               <WithStyles(ListItemText)
                 primary="101-0 Intro to Serif"
@@ -133,6 +140,7 @@ ShallowWrapper {
               "children": <WithStyles(ListItemText)
                 primary="101-0 Intro to Serif"
               />,
+              "onClick": [Function],
             },
             "ref": null,
             "rendered": Object {
@@ -190,11 +198,13 @@ ShallowWrapper {
         Object {
           "id": "101-0",
           "name": "Intro to Serif",
+          "schoolId": "WCAS",
+          "subjectId": "EECS",
         },
       ]
     }
     isFetching={true}
-    showSubjects={[Function]}
+    showSections={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

@@ -1,5 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Browse renders associated classes correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Browse
+    currentBrowseLevel="associatedClass"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        <Connect(Component) />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          <Connect(Component) />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
 exports[`Browse renders courses correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
@@ -25,6 +133,8 @@ ShallowWrapper {
         false,
         false,
         <Connect(Component) />,
+        false,
+        false,
       ],
     },
     "ref": null,
@@ -58,6 +168,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      false,
+      false,
     ],
     "type": Symbol(react.fragment),
   },
@@ -73,6 +185,8 @@ ShallowWrapper {
           false,
           false,
           <Connect(Component) />,
+          false,
+          false,
         ],
       },
       "ref": null,
@@ -106,6 +220,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        false,
+        false,
       ],
       "type": Symbol(react.fragment),
     },
@@ -153,14 +269,17 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         false,
-        <WithStyles(Divider) />,
+        false,
         <Connect(Component) />,
+        false,
+        false,
         false,
         false,
       ],
     },
     "ref": null,
     "rendered": Array [
+      false,
       false,
       Object {
         "instance": null,
@@ -171,15 +290,8 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
+      false,
+      false,
       false,
       false,
     ],
@@ -193,8 +305,10 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           false,
-          <WithStyles(Divider) />,
+          false,
           <Connect(Component) />,
+          false,
+          false,
           false,
           false,
         ],
@@ -202,15 +316,7 @@ ShallowWrapper {
       "ref": null,
       "rendered": Array [
         false,
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -221,6 +327,116 @@ ShallowWrapper {
           "type": [Function],
         },
         false,
+        false,
+        false,
+        false,
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`Browse renders sections correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Browse
+    currentBrowseLevel="section"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        false,
+        false,
+        false,
+        false,
+        false,
+        <Connect(Component) />,
+        false,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      false,
+      false,
+      false,
+      false,
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      false,
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          false,
+          false,
+          false,
+          false,
+          false,
+          <Connect(Component) />,
+          false,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        false,
+        false,
+        false,
+        false,
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         false,
       ],
       "type": Symbol(react.fragment),
@@ -273,6 +489,8 @@ ShallowWrapper {
         false,
         <Connect(Component) />,
         false,
+        false,
+        false,
       ],
     },
     "ref": null,
@@ -306,6 +524,8 @@ ShallowWrapper {
         "type": [Function],
       },
       false,
+      false,
+      false,
     ],
     "type": Symbol(react.fragment),
   },
@@ -320,6 +540,8 @@ ShallowWrapper {
           <WithStyles(Divider) />,
           false,
           <Connect(Component) />,
+          false,
+          false,
           false,
         ],
       },
@@ -353,6 +575,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        false,
+        false,
         false,
       ],
       "type": Symbol(react.fragment),
