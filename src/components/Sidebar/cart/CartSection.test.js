@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { mockStyles } from 'util/testing';
 import * as timeUtils from 'util/time';
 import Section from 'components/common/Section';
+import ClassModalContainer from 'components/Calendar/ClassModalContainer';
 import { UnstyledCartSection, styles } from './CartSection';
 
 describe('CartSection', () => {
@@ -37,5 +38,17 @@ describe('CartSection', () => {
     );
 
     expect(wrapper.find(Section).prop('leftHeaderContent')).toBe('schedule, schedule');
+  });
+
+  it('opens modal on click', () => {
+    const classes = mockStyles(styles);
+    const testSection = { schedule: [{}], subjectId: 'EECS', courseId: '111-0' };
+    const wrapper = shallow(
+      <UnstyledCartSection section={testSection} classes={classes} />,
+    );
+
+    wrapper.find(Section).simulate('click');
+
+    expect(wrapper.find(ClassModalContainer).prop('showDialog')).toBe(true);
   });
 });

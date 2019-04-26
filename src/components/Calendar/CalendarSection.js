@@ -56,12 +56,14 @@ class CalendarSection extends Component {
   render() {
     const { classes, section } = this.props;
     const { showDialog } = this.state;
+
     const leftHeaderContent = getFormattedEventTime(section.event);
     const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
+
     return (
       <div>
         <Section
-          onClickFn={this.toggleDialog}
+          onClick={this.toggleDialog}
           classes={classes}
           leftHeaderContent={leftHeaderContent}
           rightHeaderContent={rightHeaderContent}

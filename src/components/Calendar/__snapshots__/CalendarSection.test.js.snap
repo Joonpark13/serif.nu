@@ -54,7 +54,7 @@ ShallowWrapper {
             }
           }
           leftHeaderContent="10:30 - 12:00"
-          onClickFn={[Function]}
+          onClick={[Function]}
           rightHeaderContent="undefined undefined"
           sectionName=""
         />,
@@ -95,7 +95,7 @@ ShallowWrapper {
             "text": "",
           },
           "leftHeaderContent": "10:30 - 12:00",
-          "onClickFn": [Function],
+          "onClick": [Function],
           "rightHeaderContent": "undefined undefined",
           "sectionName": "",
         },
@@ -150,7 +150,7 @@ ShallowWrapper {
               }
             }
             leftHeaderContent="10:30 - 12:00"
-            onClickFn={[Function]}
+            onClick={[Function]}
             rightHeaderContent="undefined undefined"
             sectionName=""
           />,
@@ -191,7 +191,7 @@ ShallowWrapper {
               "text": "",
             },
             "leftHeaderContent": "10:30 - 12:00",
-            "onClickFn": [Function],
+            "onClick": [Function],
             "rightHeaderContent": "undefined undefined",
             "sectionName": "",
           },
@@ -306,7 +306,7 @@ ShallowWrapper {
             }
           }
           leftHeaderContent="10:30 - 12:00"
-          onClickFn={[Function]}
+          onClick={[Function]}
           rightHeaderContent="undefined undefined"
           sectionName=""
         />,
@@ -347,7 +347,7 @@ ShallowWrapper {
             "text": "",
           },
           "leftHeaderContent": "10:30 - 12:00",
-          "onClickFn": [Function],
+          "onClick": [Function],
           "rightHeaderContent": "undefined undefined",
           "sectionName": "",
         },
@@ -402,7 +402,7 @@ ShallowWrapper {
               }
             }
             leftHeaderContent="10:30 - 12:00"
-            onClickFn={[Function]}
+            onClick={[Function]}
             rightHeaderContent="undefined undefined"
             sectionName=""
           />,
@@ -443,7 +443,7 @@ ShallowWrapper {
               "text": "",
             },
             "leftHeaderContent": "10:30 - 12:00",
-            "onClickFn": [Function],
+            "onClick": [Function],
             "rightHeaderContent": "undefined undefined",
             "sectionName": "",
           },

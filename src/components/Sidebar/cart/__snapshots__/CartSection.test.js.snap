@@ -35,20 +35,79 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "classes": Object {
-        "container": "",
-        "header": "",
-        "paper": "",
-        "text": "",
-      },
-      "leftHeaderContent": "schedule",
-      "onClickFn": [Function],
-      "rightHeaderContent": "EECS 111-0",
-      "sectionName": "",
+      "children": Array [
+        <Section
+          classes={
+            Object {
+              "container": "",
+              "header": "",
+              "paper": "",
+              "text": "",
+            }
+          }
+          leftHeaderContent="schedule"
+          onClick={[Function]}
+          rightHeaderContent="EECS 111-0"
+          sectionName=""
+        />,
+        <Connect(Component)
+          section={
+            Object {
+              "courseId": "111-0",
+              "schedule": Array [
+                Object {},
+              ],
+              "subjectId": "EECS",
+            }
+          }
+          showDialog={false}
+          toggleDialog={[Function]}
+        />,
+      ],
     },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "classes": Object {
+            "container": "",
+            "header": "",
+            "paper": "",
+            "text": "",
+          },
+          "leftHeaderContent": "schedule",
+          "onClick": [Function],
+          "rightHeaderContent": "EECS 111-0",
+          "sectionName": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "section": Object {
+            "courseId": "111-0",
+            "schedule": Array [
+              Object {},
+            ],
+            "subjectId": "EECS",
+          },
+          "showDialog": false,
+          "toggleDialog": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": Symbol(react.fragment),
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -56,20 +115,79 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "classes": Object {
-          "container": "",
-          "header": "",
-          "paper": "",
-          "text": "",
-        },
-        "leftHeaderContent": "schedule",
-        "onClickFn": [Function],
-        "rightHeaderContent": "EECS 111-0",
-        "sectionName": "",
+        "children": Array [
+          <Section
+            classes={
+              Object {
+                "container": "",
+                "header": "",
+                "paper": "",
+                "text": "",
+              }
+            }
+            leftHeaderContent="schedule"
+            onClick={[Function]}
+            rightHeaderContent="EECS 111-0"
+            sectionName=""
+          />,
+          <Connect(Component)
+            section={
+              Object {
+                "courseId": "111-0",
+                "schedule": Array [
+                  Object {},
+                ],
+                "subjectId": "EECS",
+              }
+            }
+            showDialog={false}
+            toggleDialog={[Function]}
+          />,
+        ],
       },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "classes": Object {
+              "container": "",
+              "header": "",
+              "paper": "",
+              "text": "",
+            },
+            "leftHeaderContent": "schedule",
+            "onClick": [Function],
+            "rightHeaderContent": "EECS 111-0",
+            "sectionName": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "section": Object {
+              "courseId": "111-0",
+              "schedule": Array [
+                Object {},
+              ],
+              "subjectId": "EECS",
+            },
+            "showDialog": false,
+            "toggleDialog": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": Symbol(react.fragment),
     },
   ],
   Symbol(enzyme.__options__): Object {
