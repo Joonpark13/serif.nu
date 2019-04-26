@@ -14,7 +14,7 @@ ShallowWrapper {
       }
     }
     leftHeaderContent="Left"
-    onClickFn={[Function]}
+    onClick={[Function]}
     rightHeaderContent="Right"
     sectionName="Intro to Whatever"
   />,
