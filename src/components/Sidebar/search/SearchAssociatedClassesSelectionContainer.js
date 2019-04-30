@@ -1,6 +1,11 @@
 import { connect } from 'react-redux';
 import toJS from 'util/to-js';
-import { viewSectionSelection, addSectionWithAssociatedClassFromSearch } from 'actions';
+import {
+  viewSectionSelection,
+  addSectionWithAssociatedClassFromSearch,
+  associatedClassHover,
+  associatedClassHoverOff,
+} from 'actions';
 import AssociatedClassesSelection from '../common/AssociatedClassesSelection';
 
 export function currentCourseNameSelector(state) {
@@ -27,6 +32,8 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   back: viewSectionSelection,
   addSectionWithAssociatedClass: addSectionWithAssociatedClassFromSearch,
+  associatedClassHover,
+  associatedClassHoverOff,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(toJS(AssociatedClassesSelection));

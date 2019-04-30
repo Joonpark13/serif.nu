@@ -5,7 +5,7 @@ import { UnstyledAssociatedClassesSelection, styles } from './AssociatedClassesS
 
 jest.mock('util/time');
 
-describe('Cart', () => {
+describe('AssociatedClassesSelection', () => {
   const associatedClass = { schedule: { location: 'somewhere' } };
   const defaultProps = {
     currentCourseName: 'Introduction to Something',
@@ -13,6 +13,8 @@ describe('Cart', () => {
     associatedClasses: [associatedClass],
     back: () => {},
     addSectionWithAssociatedClass: () => {},
+    associatedClassHover: () => {},
+    associatedClassHoverOff: () => {},
   };
   const getWrapper = wrapperCreator(UnstyledAssociatedClassesSelection, defaultProps, styles);
 
@@ -25,7 +27,7 @@ describe('Cart', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('calls correct prop function when clicked', () => {
+  it('adds section with associated class when clicked', () => {
     const addSectionWithAssociatedClassMock = jest.fn();
     const wrapper = getWrapper({
       addSectionWithAssociatedClass: addSectionWithAssociatedClassMock,
@@ -33,5 +35,15 @@ describe('Cart', () => {
     wrapper.find(ListItem).simulate('click');
 
     expect(addSectionWithAssociatedClassMock).toHaveBeenCalledWith(associatedClass);
+  });
+
+  it('calls associatedClassHover when clicked', () => {
+    const associatedClassHoverMock = jest.fn();
+    const wrapper = getWrapper({
+      associatedClassHover: associatedClassHoverMock,
+    });
+    wrapper.find(ListItem).simulate('mouseEnter');
+
+    expect(associatedClassHoverMock).toHaveBeenCalledWith(associatedClass);
   });
 });

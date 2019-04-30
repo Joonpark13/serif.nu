@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cart renders correctly 1`] = `
+exports[`AssociatedClassesSelection renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <AssociatedClassesSelection
     addSectionWithAssociatedClass={[Function]}
+    associatedClassHover={[Function]}
+    associatedClassHoverOff={[Function]}
     associatedClasses={
       Array [
         Object {
@@ -47,6 +49,8 @@ ShallowWrapper {
           <WithStyles(ListItem)
             button={true}
             onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
           >
             <WithStyles(ListItemText)>
               <WithStyles(Typography)
@@ -87,6 +91,8 @@ ShallowWrapper {
             <WithStyles(ListItem)
               button={true}
               onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
             >
               <WithStyles(ListItemText)>
                 <WithStyles(Typography)
@@ -122,6 +128,8 @@ ShallowWrapper {
                 </WithStyles(Typography)>
               </WithStyles(ListItemText)>,
               "onClick": [Function],
+              "onMouseEnter": [Function],
+              "onMouseLeave": [Function],
             },
             "ref": null,
             "rendered": Object {
@@ -203,6 +211,8 @@ ShallowWrapper {
             <WithStyles(ListItem)
               button={true}
               onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
             >
               <WithStyles(ListItemText)>
                 <WithStyles(Typography)
@@ -243,6 +253,8 @@ ShallowWrapper {
               <WithStyles(ListItem)
                 button={true}
                 onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
               >
                 <WithStyles(ListItemText)>
                   <WithStyles(Typography)
@@ -278,6 +290,8 @@ ShallowWrapper {
                   </WithStyles(Typography)>
                 </WithStyles(ListItemText)>,
                 "onClick": [Function],
+                "onMouseEnter": [Function],
+                "onMouseLeave": [Function],
               },
               "ref": null,
               "rendered": Object {

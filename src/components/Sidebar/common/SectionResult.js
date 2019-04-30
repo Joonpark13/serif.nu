@@ -12,16 +12,17 @@ export const styles = {
   },
 };
 
-function SectionResult({ addSection, section, disabled, classes }) {
+function SectionResult({ addSection, sectionHover, sectionHoverOff, section, disabled, classes }) {
   const isUnscheduled = section.schedule.some(
     schedule => schedule.dow === 'TBA' || schedule.start === 'TBA' || schedule.end === 'TBA',
   );
-
   return (
     <ListItem
       key={section.id}
       button
       onClick={() => addSection(section)}
+      onMouseEnter={() => sectionHover(section)}
+      onMouseLeave={sectionHoverOff}
       disabled={disabled || isUnscheduled}
     >
       <ListItemText>
@@ -53,6 +54,8 @@ function SectionResult({ addSection, section, disabled, classes }) {
 
 SectionResult.propTypes = {
   addSection: PropTypes.func.isRequired,
+  sectionHover: PropTypes.func.isRequired,
+  sectionHoverOff: PropTypes.func.isRequired,
   section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   disabled: PropTypes.bool,

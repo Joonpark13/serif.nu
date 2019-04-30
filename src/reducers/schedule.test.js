@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import { classColors } from 'util/colors';
+import { classColors, northwesternPurple30 } from 'util/colors';
 import scheduleReducer, { initialScheduleState } from './schedule';
 import * as actionTypes from '../actions/action-types';
 import * as actionCreators from '../actions/index';
@@ -10,6 +10,7 @@ import * as assignColor from './add-section-handler-helpers/assign-color';
 
 jest.mock('./add-section-handler-helpers/assign-conflict-info');
 jest.mock('./add-section-handler-helpers/assign-color');
+jest.mock('./add-section-handler-helpers/split-by-schedules');
 
 describe('schedule reducer', () => {
   it('should return initial state', () => {
@@ -35,6 +36,23 @@ describe('schedule reducer', () => {
         .update('sections', sections => sections.push(fromJS(sectionWithColor)))
         .update('colorUses', colorUses => colorUses.set(color, 1)),
     );
+  });
+
+  it(`should handle ${actionTypes.ADD_SECTION_FROM_SEARCH} when section has associated classes`, () => {
+    const section = {
+      id: '12345',
+      section: '20',
+      associatedClasses: [{}],
+    };
+    const sections = fromJS([section]);
+    assignConflictInfo.default.mockReturnValue(sections);
+    const action = actionCreators.addSectionFromSearch(section);
+
+    expect(scheduleReducer(initialScheduleState, action))
+      .toEqual(initialScheduleState.merge({
+        sectionPreview: sections.setIn([0, 'color'], northwesternPurple30),
+        sections: [],
+      }));
   });
 
   it(`should handle ${actionTypes.REMOVE_SECTION}`, () => {
@@ -89,29 +107,15 @@ describe('schedule reducer', () => {
     ).toEqual(fromJS([]));
   });
 
-  it(`should handle ${actionTypes.ADD_SECTION_FROM_SEARCH} when section has associated classes`, () => {
-    const section = {
-      id: '12345',
-      section: '20',
-      associatedClasses: [{}],
-    };
-    const sections = fromJS([section]);
-    assignConflictInfo.default.mockReturnValue(sections);
-    const action = actionCreators.addSectionFromSearch(section);
-
-    expect(scheduleReducer(initialScheduleState, action))
-      .toEqual(initialScheduleState.merge({
-        sectionPreview: sections,
-        sections: [],
-      }));
-  });
-
   it(`should handle ${actionTypes.VIEW_SECTION_SELECTION}`, () => {
     const action = actionCreators.viewSectionSelection({});
     expect(scheduleReducer(initialScheduleState, action)).toEqual(initialScheduleState);
   });
 
   it(`should handle ${actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS_FROM_SEARCH}`, () => {
+    const state = initialScheduleState
+      .set('sectionPreview', fromJS([{ color: northwesternPurple30 }]));
+
     const color = classColors[0];
     const sections = fromJS([{ id: '12345' }]);
     const associatedClass = {
@@ -124,11 +128,61 @@ describe('schedule reducer', () => {
 
     const action = actionCreators.addSectionWithAssociatedClassFromSearch(associatedClass);
 
-    expect(scheduleReducer(initialScheduleState, action))
+    expect(scheduleReducer(state, action))
       .toEqual(initialScheduleState.merge({
         sections,
         associatedClasses,
         colorUses: initialScheduleState.get('colorUses').set(color, 1),
       }));
+  });
+
+  it(`handles ${actionTypes.SECTION_HOVER}`, () => {
+    const section = { id: '12345' };
+    const sections = fromJS([section]);
+    splitBySchedules.default.mockReturnValue(sections);
+    const action = actionCreators.sectionHover(section);
+
+    expect(scheduleReducer(initialScheduleState, action))
+      .toEqual(
+        initialScheduleState.set(
+          'sectionPreview',
+          sections.setIn([0, 'color'], northwesternPurple30),
+        ),
+      );
+  });
+
+  it(`handles ${actionTypes.SECTION_HOVER_OFF}`, () => {
+    const state = initialScheduleState.set('sectionPreview', fromJS([{}]));
+    const action = actionCreators.sectionHoverOff();
+    expect(scheduleReducer(state, action)).toEqual(initialScheduleState);
+  });
+
+  it(`handles ${actionTypes.ASSOCIATED_CLASS_HOVER}`, () => {
+    const sectionId = '12345';
+    const state = initialScheduleState.set('sectionPreview', fromJS([{ id: sectionId }]));
+    const associatedClass = {
+      schedule: {
+        dow: ['Mo'],
+      },
+    };
+    const action = actionCreators.associatedClassHover(associatedClass);
+
+    const expectedAssociatedClass = fromJS(associatedClass).merge({
+      color: northwesternPurple30,
+      sectionId,
+      event: {
+        dow: 'Mo',
+      },
+    });
+    expect(scheduleReducer(state, action))
+      .toEqual(
+        state.set('associatedClassPreview', fromJS([expectedAssociatedClass])),
+      );
+  });
+
+  it(`handles ${actionTypes.ASSOCIATED_CLASS_HOVER_OFF}`, () => {
+    const state = initialScheduleState.set('associatedClassPreview', fromJS([{}]));
+    const action = actionCreators.associatedClassHoverOff();
+    expect(scheduleReducer(state, action)).toEqual(initialScheduleState);
   });
 });

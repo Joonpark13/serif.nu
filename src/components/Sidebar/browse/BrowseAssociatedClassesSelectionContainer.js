@@ -1,6 +1,11 @@
 import { connect } from 'react-redux';
 import toJS from 'util/to-js';
-import { addSectionWithAssociatedClassFromBrowse, changeBrowseLevel } from 'actions';
+import {
+  addSectionWithAssociatedClassFromBrowse,
+  changeBrowseLevel,
+  associatedClassHover,
+  associatedClassHoverOff,
+} from 'actions';
 import { selectedCourseNameSelector } from 'selectors';
 import AssociatedClassesSelection from '../common/AssociatedClassesSelection';
 
@@ -25,6 +30,8 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   back: () => changeBrowseLevel('section'),
   addSectionWithAssociatedClass: addSectionWithAssociatedClassFromBrowse,
+  associatedClassHover,
+  associatedClassHoverOff,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(toJS(AssociatedClassesSelection));

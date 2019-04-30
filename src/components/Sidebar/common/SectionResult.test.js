@@ -20,6 +20,8 @@ describe('SectionResult', () => {
   const defaultProps = {
     addSection: () => {},
     section,
+    sectionHover: () => {},
+    sectionHoverOff: () => {},
   };
   const getWrapper = wrapperCreator(UnstyledSectionResult, defaultProps, styles);
 
@@ -35,7 +37,7 @@ describe('SectionResult', () => {
     expect(wrapper.find(Typography).at(4).prop('children')).toEqual(['Prof 1, ', 'Prof 2']);
   });
 
-  it('calls correct prop function when clicked', () => {
+  it('adds section when clicked', () => {
     const addSectionMock = jest.fn();
     const wrapper = getWrapper({ addSection: addSectionMock });
     wrapper.find(ListItem).simulate('click');
@@ -61,5 +63,13 @@ describe('SectionResult', () => {
       )
       .prop('color');
     expect(colorProp).toBe('error');
+  });
+
+  it('calls sectionHover when clicked', () => {
+    const sectionHoverMock = jest.fn();
+    const wrapper = getWrapper({ sectionHover: sectionHoverMock });
+    wrapper.find(ListItem).simulate('mouseEnter');
+
+    expect(sectionHoverMock).toHaveBeenCalledWith(section);
   });
 });
