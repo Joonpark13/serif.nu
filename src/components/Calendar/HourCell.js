@@ -14,7 +14,15 @@ export const styles = {
   },
 };
 
-function HourCell({ sections, associatedClasses, allSections, classes }) {
+function HourCell({
+  sections,
+  associatedClasses,
+  sectionPreview,
+  associatedClassPreview,
+  allSections,
+  allSectionPreviews,
+  classes,
+}) {
   return (
     <div className={classes.calendarCell}>
       {sections.map(section => (
@@ -24,13 +32,16 @@ function HourCell({ sections, associatedClasses, allSections, classes }) {
         <AssociatedClass
           key={JSON.stringify(associatedClass.event)}
           associatedClass={associatedClass}
-          section={
-            allSections.find(
-              section => section.id === associatedClass.sectionId,
-            )
-          }
+          section={allSections.find(section => section.id === associatedClass.sectionId)}
         />
       ))}
+      {sectionPreview && <CalendarSection section={sectionPreview} />}
+      {associatedClassPreview && (
+        <AssociatedClass
+          associatedClass={associatedClassPreview}
+          section={allSectionPreviews[0]}
+        />
+      )}
     </div>
   );
 }
@@ -38,8 +49,16 @@ function HourCell({ sections, associatedClasses, allSections, classes }) {
 HourCell.propTypes = {
   sections: PropTypes.arrayOf(PropTypes.object).isRequired,
   associatedClasses: PropTypes.arrayOf(PropTypes.object).isRequired,
+  sectionPreview: PropTypes.objectOf(PropTypes.any),
+  associatedClassPreview: PropTypes.objectOf(PropTypes.any),
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   allSections: PropTypes.arrayOf(PropTypes.object).isRequired,
+  allSectionPreviews: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+HourCell.defaultProps = {
+  sectionPreview: null,
+  associatedClassPreview: null,
 };
 
 export { HourCell as UnstyledHourCell };

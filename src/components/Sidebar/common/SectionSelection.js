@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-import SectionResult from './SectionResult';
+import SectionResultContainer from './SectionResultContainer';
 import SidebarHeader from '../SidebarHeader';
 
 export const styles = {
@@ -36,7 +36,7 @@ function SectionSelection({
             scheduledSection => scheduledSection.id === section.id,
           );
           return (
-            <SectionResult
+            <SectionResultContainer
               key={section.id}
               section={section}
               disabled={sectionAlreadyAdded}

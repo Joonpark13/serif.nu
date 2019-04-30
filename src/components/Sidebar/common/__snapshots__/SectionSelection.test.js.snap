@@ -64,7 +64,7 @@ ShallowWrapper {
           title="EECS 101-0"
         />,
         <WithStyles(List)>
-          <WithStyles(SectionResult)
+          <Connect(Component)
             addSection={[Function]}
             disabled={false}
             section={
@@ -82,7 +82,7 @@ ShallowWrapper {
               }
             }
           />
-          <WithStyles(SectionResult)
+          <Connect(Component)
             addSection={[Function]}
             disabled={false}
             section={
@@ -125,7 +125,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <WithStyles(SectionResult)
+            <Connect(Component)
               addSection={[Function]}
               disabled={false}
               section={
@@ -143,7 +143,7 @@ ShallowWrapper {
                 }
               }
             />,
-            <WithStyles(SectionResult)
+            <Connect(Component)
               addSection={[Function]}
               disabled={false}
               section={
@@ -233,7 +233,7 @@ ShallowWrapper {
             title="EECS 101-0"
           />,
           <WithStyles(List)>
-            <WithStyles(SectionResult)
+            <Connect(Component)
               addSection={[Function]}
               disabled={false}
               section={
@@ -251,7 +251,7 @@ ShallowWrapper {
                 }
               }
             />
-            <WithStyles(SectionResult)
+            <Connect(Component)
               addSection={[Function]}
               disabled={false}
               section={
@@ -294,7 +294,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": Array [
-              <WithStyles(SectionResult)
+              <Connect(Component)
                 addSection={[Function]}
                 disabled={false}
                 section={
@@ -312,7 +312,7 @@ ShallowWrapper {
                   }
                 }
               />,
-              <WithStyles(SectionResult)
+              <Connect(Component)
                 addSection={[Function]}
                 disabled={false}
                 section={

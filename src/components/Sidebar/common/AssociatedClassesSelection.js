@@ -28,6 +28,8 @@ function AssociatedClassesSelection({
   associatedClasses,
   back,
   addSectionWithAssociatedClass,
+  associatedClassHover,
+  associatedClassHoverOff,
   classes,
 }) {
   return (
@@ -40,6 +42,8 @@ function AssociatedClassesSelection({
             key={JSON.stringify(associatedClass.schedule)}
             button
             onClick={() => addSectionWithAssociatedClass(associatedClass)}
+            onMouseEnter={() => associatedClassHover(associatedClass)}
+            onMouseLeave={associatedClassHoverOff}
           >
             <ListItemText>
               <Typography variant="h6">
@@ -65,6 +69,8 @@ AssociatedClassesSelection.propTypes = {
   back: PropTypes.func.isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   addSectionWithAssociatedClass: PropTypes.func.isRequired,
+  associatedClassHover: PropTypes.func.isRequired,
+  associatedClassHoverOff: PropTypes.func.isRequired,
 };
 
 export { AssociatedClassesSelection as UnstyledAssociatedClassesSelection };

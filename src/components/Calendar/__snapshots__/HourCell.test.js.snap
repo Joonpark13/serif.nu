@@ -1,16 +1,278 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`HourCell renders associated class previews 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): ShallowWrapper {
+    Symbol(enzyme.__root__): [Circular],
+    Symbol(enzyme.__unrendered__): <HourCell
+      allSectionPreviews={
+        Array [
+          Object {
+            "id": "12345",
+          },
+        ]
+      }
+      allSections={Array []}
+      associatedClassPreview={
+        Object {
+          "type": "LAB",
+        }
+      }
+      associatedClasses={Array []}
+      classes={
+        Object {
+          "calendarCell": "",
+        }
+      }
+      dow="Mo"
+      hour={10}
+      sectionPreview={null}
+      sections={Array []}
+    />,
+    Symbol(enzyme.__renderer__): Object {
+      "batchedUpdates": [Function],
+      "getNode": [Function],
+      "render": [Function],
+      "simulateError": [Function],
+      "simulateEvent": [Function],
+      "unmount": [Function],
+    },
+    Symbol(enzyme.__node__): Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          Array [],
+          Array [],
+          null,
+          <ForwardRef
+            associatedClass={
+              Object {
+                "type": "LAB",
+              }
+            }
+            section={
+              Object {
+                "id": "12345",
+              }
+            }
+          />,
+        ],
+        "className": "",
+      },
+      "ref": null,
+      "rendered": Array [
+        null,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "associatedClass": Object {
+              "type": "LAB",
+            },
+            "section": Object {
+              "id": "12345",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "Naked": [Function],
+            "displayName": "WithStyles(AssociatedClass)",
+            "options": Object {},
+            "propTypes": Object {
+              "classes": [Function],
+              "innerRef": [Function],
+            },
+            "render": [Function],
+            Symbol(Symbol.hasInstance): [Function],
+          },
+        },
+      ],
+      "type": "div",
+    },
+    Symbol(enzyme.__nodes__): Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            Array [],
+            Array [],
+            null,
+            <ForwardRef
+              associatedClass={
+                Object {
+                  "type": "LAB",
+                }
+              }
+              section={
+                Object {
+                  "id": "12345",
+                }
+              }
+            />,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          null,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "associatedClass": Object {
+                "type": "LAB",
+              },
+              "section": Object {
+                "id": "12345",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(AssociatedClass)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    Symbol(enzyme.__options__): Object {
+      "adapter": ReactSixteenAdapter {
+        "options": Object {
+          "enableComponentDidUpdateOnSetState": true,
+          "lifecycles": Object {
+            "componentDidUpdate": Object {
+              "onSetState": true,
+            },
+            "getDerivedStateFromProps": true,
+            "getSnapshotBeforeUpdate": true,
+            "setState": Object {
+              "skipsComponentDidUpdateOnNullish": true,
+            },
+          },
+        },
+      },
+      "attachTo": undefined,
+      "hydrateIn": undefined,
+    },
+  },
+  Symbol(enzyme.__unrendered__): null,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "associatedClass": Object {
+        "type": "LAB",
+      },
+      "section": Object {
+        "id": "12345",
+      },
+    },
+    "ref": null,
+    "rendered": null,
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Naked": [Function],
+      "displayName": "WithStyles(AssociatedClass)",
+      "options": Object {},
+      "propTypes": Object {
+        "classes": [Function],
+        "innerRef": [Function],
+      },
+      "render": [Function],
+      Symbol(Symbol.hasInstance): [Function],
+    },
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "associatedClass": Object {
+          "type": "LAB",
+        },
+        "section": Object {
+          "id": "12345",
+        },
+      },
+      "ref": null,
+      "rendered": null,
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Naked": [Function],
+        "displayName": "WithStyles(AssociatedClass)",
+        "options": Object {},
+        "propTypes": Object {
+          "classes": [Function],
+          "innerRef": [Function],
+        },
+        "render": [Function],
+        Symbol(Symbol.hasInstance): [Function],
+      },
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
 exports[`HourCell renders correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <HourCell
+    allSectionPreviews={Array []}
     allSections={
       Array [
         Object {
-          "id": 12345,
+          "id": "12345",
         },
       ]
     }
+    associatedClassPreview={null}
     associatedClasses={
       Array [
         Object {
@@ -25,10 +287,11 @@ ShallowWrapper {
     }
     dow="Mo"
     hour={10}
+    sectionPreview={null}
     sections={
       Array [
         Object {
-          "id": 12345,
+          "id": "12345",
         },
       ]
     }
@@ -51,7 +314,7 @@ ShallowWrapper {
           <ForwardRef
             section={
               Object {
-                "id": 12345,
+                "id": "12345",
               }
             }
           />,
@@ -65,6 +328,8 @@ ShallowWrapper {
             }
           />,
         ],
+        null,
+        null,
       ],
       "className": "",
     },
@@ -76,7 +341,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "section": Object {
-            "id": 12345,
+            "id": "12345",
           },
         },
         "ref": null,
@@ -119,6 +384,8 @@ ShallowWrapper {
           Symbol(Symbol.hasInstance): [Function],
         },
       },
+      null,
+      null,
     ],
     "type": "div",
   },
@@ -133,7 +400,7 @@ ShallowWrapper {
             <ForwardRef
               section={
                 Object {
-                  "id": 12345,
+                  "id": "12345",
                 }
               }
             />,
@@ -147,6 +414,8 @@ ShallowWrapper {
               }
             />,
           ],
+          null,
+          null,
         ],
         "className": "",
       },
@@ -158,7 +427,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "section": Object {
-              "id": 12345,
+              "id": "12345",
             },
           },
           "ref": null,
@@ -201,8 +470,248 @@ ShallowWrapper {
             Symbol(Symbol.hasInstance): [Function],
           },
         },
+        null,
+        null,
       ],
       "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`HourCell renders section previews 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): ShallowWrapper {
+    Symbol(enzyme.__root__): [Circular],
+    Symbol(enzyme.__unrendered__): <HourCell
+      allSectionPreviews={
+        Array [
+          Object {
+            "id": "12345",
+          },
+        ]
+      }
+      allSections={Array []}
+      associatedClassPreview={null}
+      associatedClasses={Array []}
+      classes={
+        Object {
+          "calendarCell": "",
+        }
+      }
+      dow="Mo"
+      hour={10}
+      sectionPreview={
+        Object {
+          "id": "12345",
+        }
+      }
+      sections={Array []}
+    />,
+    Symbol(enzyme.__renderer__): Object {
+      "batchedUpdates": [Function],
+      "getNode": [Function],
+      "render": [Function],
+      "simulateError": [Function],
+      "simulateEvent": [Function],
+      "unmount": [Function],
+    },
+    Symbol(enzyme.__node__): Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          Array [],
+          Array [],
+          <ForwardRef
+            section={
+              Object {
+                "id": "12345",
+              }
+            }
+          />,
+          null,
+        ],
+        "className": "",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "section": Object {
+              "id": "12345",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "Naked": [Function],
+            "displayName": "WithStyles(CalendarSection)",
+            "options": Object {},
+            "propTypes": Object {
+              "classes": [Function],
+              "innerRef": [Function],
+            },
+            "render": [Function],
+            Symbol(Symbol.hasInstance): [Function],
+          },
+        },
+        null,
+      ],
+      "type": "div",
+    },
+    Symbol(enzyme.__nodes__): Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            Array [],
+            Array [],
+            <ForwardRef
+              section={
+                Object {
+                  "id": "12345",
+                }
+              }
+            />,
+            null,
+          ],
+          "className": "",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "section": Object {
+                "id": "12345",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "Naked": [Function],
+              "displayName": "WithStyles(CalendarSection)",
+              "options": Object {},
+              "propTypes": Object {
+                "classes": [Function],
+                "innerRef": [Function],
+              },
+              "render": [Function],
+              Symbol(Symbol.hasInstance): [Function],
+            },
+          },
+          null,
+        ],
+        "type": "div",
+      },
+    ],
+    Symbol(enzyme.__options__): Object {
+      "adapter": ReactSixteenAdapter {
+        "options": Object {
+          "enableComponentDidUpdateOnSetState": true,
+          "lifecycles": Object {
+            "componentDidUpdate": Object {
+              "onSetState": true,
+            },
+            "getDerivedStateFromProps": true,
+            "getSnapshotBeforeUpdate": true,
+            "setState": Object {
+              "skipsComponentDidUpdateOnNullish": true,
+            },
+          },
+        },
+      },
+      "attachTo": undefined,
+      "hydrateIn": undefined,
+    },
+  },
+  Symbol(enzyme.__unrendered__): null,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "section": Object {
+        "id": "12345",
+      },
+    },
+    "ref": null,
+    "rendered": null,
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Naked": [Function],
+      "displayName": "WithStyles(CalendarSection)",
+      "options": Object {},
+      "propTypes": Object {
+        "classes": [Function],
+        "innerRef": [Function],
+      },
+      "render": [Function],
+      Symbol(Symbol.hasInstance): [Function],
+    },
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "section": Object {
+          "id": "12345",
+        },
+      },
+      "ref": null,
+      "rendered": null,
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Naked": [Function],
+        "displayName": "WithStyles(CalendarSection)",
+        "options": Object {},
+        "propTypes": Object {
+          "classes": [Function],
+          "innerRef": [Function],
+        },
+        "render": [Function],
+        Symbol(Symbol.hasInstance): [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {

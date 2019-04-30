@@ -212,3 +212,29 @@ export function addSectionWithAssociatedClassFromBrowse(associatedClass) {
     associatedClass,
   };
 }
+
+export function sectionHover(section) {
+  return {
+    type: actionTypes.SECTION_HOVER,
+    section,
+  };
+}
+
+export function sectionHoverOff() {
+  return {
+    type: actionTypes.SECTION_HOVER_OFF,
+  };
+}
+
+export function associatedClassHover(associatedClass) {
+  return {
+    type: actionTypes.ASSOCIATED_CLASS_HOVER,
+    associatedClass,
+  };
+}
+
+export function associatedClassHoverOff() {
+  return {
+    type: actionTypes.ASSOCIATED_CLASS_HOVER_OFF,
+  };
+}
