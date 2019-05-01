@@ -4,20 +4,31 @@ exports[`TopBar renders correctly 1`] = `
 <WithStyles(AppBar)
   position="static"
 >
-  <WithStyles(Toolbar)>
-    <WithStyles(IconButton)
-      aria-label="Navigation"
-      onClick={[Function]}
+  <WithStyles(Toolbar)
+    className=""
+  >
+    <div
+      className=""
     >
-      <pure(Menu)
+      <WithStyles(IconButton)
+        aria-label="Navigation"
+        onClick={[Function]}
+      >
+        <pure(Menu)
+          className=""
+        />
+      </WithStyles(IconButton)>
+      <WithStyles(Typography)
         className=""
-      />
-    </WithStyles(IconButton)>
+        variant="h5"
+      >
+        Serif.nu
+      </WithStyles(Typography)>
+    </div>
     <WithStyles(Typography)
       className=""
-      variant="h6"
     >
-      Serif.nu
+      Term: Spring 2019
     </WithStyles(Typography)>
   </WithStyles(Toolbar)>
 </WithStyles(AppBar)>

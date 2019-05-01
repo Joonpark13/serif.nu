@@ -16,17 +16,28 @@ export const styles = {
   icon: {
     color: topBarTextColor,
   },
+  toolbar: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  topBarLeftSection: {
+    display: 'flex',
+    alignItems: 'center',
+  },
 };
 
 function TopBar({ classes, menuAction }) {
   return (
     <AppBar position="static">
-      <Toolbar>
-        <IconButton aria-label="Navigation" onClick={menuAction}>
-          <MenuIcon className={classes.icon} />
-        </IconButton>
+      <Toolbar className={classes.toolbar}>
+        <div className={classes.topBarLeftSection}>
+          <IconButton aria-label="Navigation" onClick={menuAction}>
+            <MenuIcon className={classes.icon} />
+          </IconButton>
+          <Typography className={classes.title} variant="h5">Serif.nu</Typography>
+        </div>
 
-        <Typography className={classes.title} variant="h6">Serif.nu</Typography>
+        <Typography className={classes.title}>Term: Spring 2019</Typography>
       </Toolbar>
     </AppBar>
   );
