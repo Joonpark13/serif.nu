@@ -54,6 +54,7 @@ if (persistedSchedule) {
   const persistedScheduleState = initialScheduleState.merge({
     sections: persistedSchedule.sections,
     associatedClasses: persistedSchedule.associatedClasses,
+    colorUses: persistedSchedule.colorUses,
   });
   persistedState = fromJS({ schedule: persistedScheduleState });
 }
@@ -70,10 +71,11 @@ store.subscribe(() => {
   const schedule = {
     sections: state.getIn(['schedule', 'sections']),
     associatedClasses: state.getIn(['schedule', 'associatedClasses']),
+    colorUses: state.getIn(['schedule', 'colorUses']),
   };
   const scheduleState = JSON.stringify(schedule);
 
-  // Only set to localStorage if state we care about has changed for performance
+  // Only set to localStorage if state we care about has changed, for performance
   if (scheduleState !== previousScheduleState) {
     window.localStorage.setItem('schedule', scheduleState);
     previousScheduleState = scheduleState;
