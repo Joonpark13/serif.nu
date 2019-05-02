@@ -64,7 +64,7 @@ npm install
 6. Push your branch: `git push -u origin b/fix-overlapping-schedule-bug`
 7. Open a pull request. Using the Github power-up in the trello card, link the pull request on the ticket. If the ticket contains a visual change, include a screenshot of the change on the PR.
 8. If asked to make changes by the reviewer(s), make the relevant changes, and push the commits on the branch.
-9. Once the primary reviewer approves, rebase the branch onto master (make sure you **fully understand [the rebase command](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase), as it rewrites history**) and squash your work into one commit. Make sure the first line of the commit message is still the ticket title, and be sure to include a summary of the work done in the commit message body. If there are any conflicts, resolve them. Then (force) push one last time to your branch.
+9. Once the primary reviewer approves, rebase the branch onto master (make sure you **fully understand [the rebase command](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase), as it rewrites history**) and squash your work into one commit. The preferred method is `git rebase -i master` (interactive rebase, which will allow you to fixup and/or squash your commits into one). Make sure the first line of the commit message is still the ticket title, and be sure to include a summary of the work done in the commit message body. If there are any conflicts, resolve them. Then (force) push one last time to your branch.
 10. At this point, your work is ready to be merged and deployed! Go ahead and hit the "Rebase and merge" button.
 11. Once it's merged, drag the ticket into "Completed."
 
