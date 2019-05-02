@@ -1,6 +1,6 @@
 # Onboarding
 
-This is a document designed to get you up to speed in Serif.nu's development stack & tooling. I will start with the very basics and work my way down the list of main concepts that a developer working on Serif.nu would need to know - if you already are familiar with some of these technologies, simply jump in where things start becoming unfamiliar to you.
+This is a document designed to get you up to speed in Serif.nu's development stack & tooling. I will start with the very basics and work my way down the list of main concepts that a developer working on Serif.nu would need to know. Give the *Basics* and *Modern Web Development* sections a read (probably don't need to worry about *Advanced* yet unless you are interested), then jump into the *Tutorials*. After completing the tutorials and gaining a basic understanding of the technologies, follow the *Practice Ticket* section to gain a sense of our workflow. Take a look at the [CONTRIBUTING](CONTRIBUTING.md) document as you do the practice ticket, and give that whole document a good read after you're done.
 
 ## Basics
 
@@ -61,3 +61,12 @@ You probably don't need to master these concepts before starting to contribute t
 ### Webpack
 
 [Webpack](https://webpack.js.org/) is one of the most popular web toolchain packages out there. Together with the [Babel](https://babeljs.io/) transpiler, it allows us to write React code in a way that makes the most sense to the developer, while still allowing us to deploy compiled code that makese the most sense to the browser.
+
+
+## Tutorials
+
+Coming soon...
+
+## Practice Ticket
+
+Coming soon...

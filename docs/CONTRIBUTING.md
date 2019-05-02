@@ -18,7 +18,7 @@ The following are the three Serif.nu development core values:
 
 There are two parts to this value: writing good documentation and following existing documentation.
 
-Writing detailed comments or a comprehensive README may take a long time, but it is critically important that you do it, since it will save time for other developers (including yourself in the future). If you ever feel like you are documenting in too much detail, you're probably doing it right. This contributing document is written in this spirit.
+Writing detailed pull request descriptions or a comprehensive README may take a long time, but it is critically important that you do it, since it will save time for other developers (including yourself in the future). If you ever feel like you are documenting in too much detail, you're probably doing it right. This contributing document is written in this spirit.
 
 Following existing documentation such as internal documentation (this doc), style guides, official package documentation, and community standards is crucial, since it'll provide a standardized answer to many of the questions you may have and save you a ton of time.
 
