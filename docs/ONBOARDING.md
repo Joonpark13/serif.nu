@@ -2,6 +2,8 @@
 
 This is a document designed to get you up to speed in Serif.nu's development stack & tooling. I will start with the very basics and work my way down the list of main concepts that a developer working on Serif.nu would need to know. Give the *Basics* and *Modern Web Development* sections a read (probably don't need to worry about *Advanced* yet unless you are interested), then jump into the *Tutorials*. After completing the tutorials and gaining a basic understanding of the technologies, follow the *Practice Ticket* section to gain a sense of our workflow. Take a look at the [CONTRIBUTING](CONTRIBUTING.md) document as you do the practice ticket, and give that whole document a good read after you're done.
 
+Don't be overwhelmed! I know there's a lot on this document but you'll pick them up as you go. You don't need to be an expert in any of these to start working on Serif.nu.
+
 ## Basics
 
 These are absolutely foundational concepts to web development that are core to every single web application. You should make yourself well versed in the following concepts.
@@ -65,7 +67,17 @@ You probably don't need to master these concepts before starting to contribute t
 
 ## Tutorials
 
-Coming soon...
+1. If you're not comfortable with JavaScript, start with [the Codecademy JS tutorial](https://www.codecademy.com/learn/introduction-to-javascript). Complete sections 1 through 8. If you're a CS student or are already familiar with a different programming language, you'll probably fly through this stuff.
+
+2. If you have worked with JavaScript before but haven't used React, start with [the official React guide](https://reactjs.org/docs/hello-world.html). Read through those "Main Concepts", then follow through the [official tutorial](https://reactjs.org/tutorial/tutorial.html). You should actually write the code as you follow, using the provided starter code. No need to do the final section ("Adding time travel").
+
+3. At this point, if you feel a bit shaky or still confused, you should touch base with Joon and go through a simple example React app together. If you're ready to move on...
+
+4. You should make sure you are familiar with git in some way. If you use a github GUI, that's fine - or maybe you've done basic git on the command line before. If you're unfamiliar with git, I *highly* recommend that you go through this [git tutorial](https://www.codecademy.com/learn/learn-git).
+
+5. If you feel good about all that, you can move on to the practice ticket below.
+
+6. At some point later down the line, you should come back and do the [Redux tutorial](https://redux.js.org/basics/basic-tutorial). Redux is our state management solution and it's a core part of how our app functions. It's a bit difficult of a concept to grasp at first, but you should try to understand it after you've gotten a bit of a look into the codebase.
 
 ## Practice Ticket
 
