@@ -35,9 +35,10 @@ function HourCell({
           section={allSections.find(section => section.id === associatedClass.sectionId)}
         />
       ))}
-      {sectionPreview && <CalendarSection section={sectionPreview} />}
+      {sectionPreview && <CalendarSection section={sectionPreview} isPreview />}
       {associatedClassPreview && (
         <AssociatedClass
+          isPreview
           associatedClass={associatedClassPreview}
           section={allSectionPreviews[0]}
         />
