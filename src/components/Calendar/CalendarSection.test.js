@@ -41,6 +41,14 @@ describe('CalendarSection', () => {
     it('correctly calculates width', () => {
       expect(styles.paper.width({ section })).toBe(`${MAX_WIDTH_PERCENT}%`);
     });
+
+    it('correctly sets zIndex to 1 when class is not preview', () => {
+      expect(styles.paper.zIndex({ isPreview: false })).toBe(1);
+    });
+
+    it('correctly sets zIndex to 2 when class is preview', () => {
+      expect(styles.paper.zIndex({ isPreview: true })).toBe(2);
+    });
   });
 
   it('renders correctly', () => {

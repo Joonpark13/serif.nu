@@ -23,7 +23,7 @@ export const styles = {
     width: ({ section }) => `${MAX_WIDTH_PERCENT * section.columnWidth}%`,
     backgroundColor: ({ section }) => section.color,
     overflow: 'hidden',
-    zIndex: 1,
+    zIndex: ({ isPreview }) => isPreview ? 2 : 1,
   },
   container: {
     margin: '3px',

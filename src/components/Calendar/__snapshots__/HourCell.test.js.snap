@@ -52,6 +52,7 @@ ShallowWrapper {
                 "type": "LAB",
               }
             }
+            isPreview={true}
             section={
               Object {
                 "id": "12345",
@@ -72,6 +73,7 @@ ShallowWrapper {
             "associatedClass": Object {
               "type": "LAB",
             },
+            "isPreview": true,
             "section": Object {
               "id": "12345",
             },
@@ -110,6 +112,7 @@ ShallowWrapper {
                   "type": "LAB",
                 }
               }
+              isPreview={true}
               section={
                 Object {
                   "id": "12345",
@@ -130,6 +133,7 @@ ShallowWrapper {
               "associatedClass": Object {
                 "type": "LAB",
               },
+              "isPreview": true,
               "section": Object {
                 "id": "12345",
               },
@@ -190,6 +194,7 @@ ShallowWrapper {
       "associatedClass": Object {
         "type": "LAB",
       },
+      "isPreview": true,
       "section": Object {
         "id": "12345",
       },
@@ -218,6 +223,7 @@ ShallowWrapper {
         "associatedClass": Object {
           "type": "LAB",
         },
+        "isPreview": true,
         "section": Object {
           "id": "12345",
         },
@@ -544,6 +550,7 @@ ShallowWrapper {
           Array [],
           Array [],
           <ForwardRef
+            isPreview={true}
             section={
               Object {
                 "id": "12345",
@@ -561,6 +568,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "isPreview": true,
             "section": Object {
               "id": "12345",
             },
@@ -594,6 +602,7 @@ ShallowWrapper {
             Array [],
             Array [],
             <ForwardRef
+              isPreview={true}
               section={
                 Object {
                   "id": "12345",
@@ -611,6 +620,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
+              "isPreview": true,
               "section": Object {
                 "id": "12345",
               },
@@ -669,6 +679,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
+      "isPreview": true,
       "section": Object {
         "id": "12345",
       },
@@ -694,6 +705,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
+        "isPreview": true,
         "section": Object {
           "id": "12345",
         },

@@ -25,7 +25,7 @@ export const styles = {
     backgroundColor: ({ section }) => section.color,
     overflow: 'hidden',
     cursor: 'pointer',
-    zIndex: 1,
+    zIndex: ({ isPreview }) => isPreview ? 2 : 1,
   },
   container: {
     margin: '3px',
