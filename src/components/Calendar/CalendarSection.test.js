@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { mockStyles } from 'util/testing';
+import Section from 'components/common/Section';
+import ClassModalContainer from 'components/Calendar/ClassModalContainer';
 import { UnstyledCalendarSection, styles, MAX_WIDTH_PERCENT } from './CalendarSection';
 
 describe('CalendarSection', () => {
@@ -49,6 +51,14 @@ describe('CalendarSection', () => {
     it('correctly sets zIndex to 2 when class is preview', () => {
       expect(styles.paper.zIndex({ isPreview: true })).toBe(2);
     });
+
+    it('correctly sets cursor to pointer when class is not preview', () => {
+      expect(styles.paper.cursor({ isPreview: false })).toBe('pointer');
+    });
+
+    it('correctly sets cursor to default when class is preview', () => {
+      expect(styles.paper.cursor({ isPreview: true })).toBe('default');
+    });
   });
 
   it('renders correctly', () => {
@@ -67,8 +77,21 @@ describe('CalendarSection', () => {
     const wrapper = shallow(
       <UnstyledCalendarSection section={testSection} classes={classes} />,
     );
-    wrapper.instance().toggleDialog();
 
-    expect(wrapper).toMatchSnapshot();
+    wrapper.find(Section).simulate('click');
+
+    expect(wrapper.find(ClassModalContainer).prop('showDialog')).toBe(true);
+  });
+
+  it('does nothing as a preview section when clicked', () => {
+    const classes = mockStyles(styles);
+    const testSection = { id: '12345', course: '101-1', event };
+    const wrapper = shallow(
+      <UnstyledCalendarSection section={testSection} classes={classes} isPreview />,
+    );
+
+    wrapper.find(Section).simulate('click');
+
+    expect(wrapper.find(ClassModalContainer).prop('showDialog')).toBe(false);
   });
 });

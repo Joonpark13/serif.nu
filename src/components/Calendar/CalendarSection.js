@@ -24,7 +24,7 @@ export const styles = {
     width: ({ section }) => `${MAX_WIDTH_PERCENT * section.columnWidth}%`,
     backgroundColor: ({ section }) => section.color,
     overflow: 'hidden',
-    cursor: 'pointer',
+    cursor: ({ isPreview }) => isPreview ? 'default' : 'pointer',
     zIndex: ({ isPreview }) => isPreview ? 2 : 1,
   },
   container: {
@@ -46,7 +46,15 @@ class CalendarSection extends Component {
     this.state = {
       showDialog: false,
     };
+    this.handleClick = this.handleClick.bind(this);
     this.toggleDialog = this.toggleDialog.bind(this);
+  }
+
+  handleClick() {
+    const { isPreview } = this.props;
+    if (!isPreview) {
+      this.toggleDialog();
+    }
   }
 
   toggleDialog() {
@@ -63,7 +71,7 @@ class CalendarSection extends Component {
     return (
       <div>
         <Section
-          onClick={this.toggleDialog}
+          onClick={this.handleClick}
           classes={classes}
           leftHeaderContent={leftHeaderContent}
           rightHeaderContent={rightHeaderContent}
@@ -82,6 +90,11 @@ class CalendarSection extends Component {
 CalendarSection.propTypes = {
   section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  isPreview: PropTypes.bool,
+};
+
+CalendarSection.defaultProps = {
+  isPreview: false,
 };
 
 export { CalendarSection as UnstyledCalendarSection };
