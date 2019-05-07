@@ -8,6 +8,6 @@ describe('TopBar', () => {
     const classes = mockStyles(styles);
     const wrapper = shallow(<UnstyledTopBar classes={classes} menuAction={() => {}} />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

@@ -1,367 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchBox doesn't call api through handler if search string <= 2 chars long 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SearchBox
-    classes={
-      Object {
-        "container": "",
-      }
-    }
-    clearSearchResults={[Function]}
-    currentSearchInput="EECS"
-    handleSearchInput={[MockFunction]}
-    updateSearchInput={[Function]}
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": <TextField
-        fullWidth={true}
-        label="Search for classes"
-        onChange={[Function]}
-        required={false}
-        select={false}
-        type="search"
-        value="EECS"
-        variant="standard"
-      />,
-      "className": "",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "fullWidth": true,
-        "label": "Search for classes",
-        "onChange": [Function],
-        "required": false,
-        "select": false,
-        "type": "search",
-        "value": "EECS",
-        "variant": "standard",
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <TextField
-          fullWidth={true}
-          label="Search for classes"
-          onChange={[Function]}
-          required={false}
-          select={false}
-          type="search"
-          value="EECS"
-          variant="standard"
-        />,
-        "className": "",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "fullWidth": true,
-          "label": "Search for classes",
-          "onChange": [Function],
-          "required": false,
-          "select": false,
-          "type": "search",
-          "value": "EECS",
-          "variant": "standard",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-    "attachTo": undefined,
-    "hydrateIn": undefined,
-  },
-}
+<div
+  className=""
+>
+  <TextField
+    fullWidth={true}
+    label="Search for classes"
+    onChange={[Function]}
+    required={false}
+    select={false}
+    type="search"
+    value="EECS"
+    variant="standard"
+  />
+</div>
 `;
 
 exports[`SearchBox renders correctly 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SearchBox
-    classes={
-      Object {
-        "container": "",
-      }
-    }
-    clearSearchResults={[Function]}
-    currentSearchInput="EECS"
-    handleSearchInput={[Function]}
-    updateSearchInput={[Function]}
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": <TextField
-        fullWidth={true}
-        label="Search for classes"
-        onChange={[Function]}
-        required={false}
-        select={false}
-        type="search"
-        value="EECS"
-        variant="standard"
-      />,
-      "className": "",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "fullWidth": true,
-        "label": "Search for classes",
-        "onChange": [Function],
-        "required": false,
-        "select": false,
-        "type": "search",
-        "value": "EECS",
-        "variant": "standard",
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <TextField
-          fullWidth={true}
-          label="Search for classes"
-          onChange={[Function]}
-          required={false}
-          select={false}
-          type="search"
-          value="EECS"
-          variant="standard"
-        />,
-        "className": "",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "fullWidth": true,
-          "label": "Search for classes",
-          "onChange": [Function],
-          "required": false,
-          "select": false,
-          "type": "search",
-          "value": "EECS",
-          "variant": "standard",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-    "attachTo": undefined,
-    "hydrateIn": undefined,
-  },
-}
+<div
+  className=""
+>
+  <TextField
+    fullWidth={true}
+    label="Search for classes"
+    onChange={[Function]}
+    required={false}
+    select={false}
+    type="search"
+    value="EECS"
+    variant="standard"
+  />
+</div>
 `;
 
 exports[`SearchBox renders text typed into the search box 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SearchBox
-    classes={
-      Object {
-        "container": "",
-      }
-    }
-    clearSearchResults={[Function]}
-    currentSearchInput="EECS"
-    handleSearchInput={[Function]}
-    updateSearchInput={[Function]}
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": <TextField
-        fullWidth={true}
-        label="Search for classes"
-        onChange={[Function]}
-        required={false}
-        select={false}
-        type="search"
-        value="EECS"
-        variant="standard"
-      />,
-      "className": "",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "fullWidth": true,
-        "label": "Search for classes",
-        "onChange": [Function],
-        "required": false,
-        "select": false,
-        "type": "search",
-        "value": "EECS",
-        "variant": "standard",
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <TextField
-          fullWidth={true}
-          label="Search for classes"
-          onChange={[Function]}
-          required={false}
-          select={false}
-          type="search"
-          value="EECS"
-          variant="standard"
-        />,
-        "className": "",
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "fullWidth": true,
-          "label": "Search for classes",
-          "onChange": [Function],
-          "required": false,
-          "select": false,
-          "type": "search",
-          "value": "EECS",
-          "variant": "standard",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-    "attachTo": undefined,
-    "hydrateIn": undefined,
-  },
-}
+<div
+  className=""
+>
+  <TextField
+    fullWidth={true}
+    label="Search for classes"
+    onChange={[Function]}
+    required={false}
+    select={false}
+    type="search"
+    value="EECS"
+    variant="standard"
+  />
+</div>
 `;

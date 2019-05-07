@@ -6,6 +6,6 @@ describe('AboutPage', () => {
   it('should render correctly', () => {
     const wrapper = shallow(<AboutPage />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

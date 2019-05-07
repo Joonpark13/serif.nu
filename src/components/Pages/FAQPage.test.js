@@ -6,6 +6,6 @@ describe('FAQPage', () => {
   it('should render correctly', () => {
     const wrapper = shallow(<FAQPage />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

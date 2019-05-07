@@ -6,6 +6,6 @@ describe('BugReportPage', () => {
   it('should render correctly', () => {
     const wrapper = shallow(<BugReportPage />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

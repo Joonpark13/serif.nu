@@ -20,7 +20,7 @@ describe('SearchBox', () => {
       currentSearchInput={testSearchInput}
     />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders text typed into the search box', () => {
@@ -36,7 +36,7 @@ describe('SearchBox', () => {
     const eventObject = makeEventObject(testSearchInput);
     wrapper.find('TextField').simulate('change', eventObject);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('doesn\'t call api unless it has been 300ms since last keystroke', (completed) => {
@@ -80,6 +80,6 @@ describe('SearchBox', () => {
     const shortTestSearchInput = 'EE';
     const eventObject = makeEventObject(shortTestSearchInput);
     wrapper.find('TextField').simulate('change', eventObject);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

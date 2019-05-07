@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CalendarSection renders correctly 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <CalendarSection
+<div>
+  <Section
     classes={
       Object {
         "container": "",
@@ -12,7 +11,12 @@ ShallowWrapper {
         "text": "",
       }
     }
-    isPreview={false}
+    leftHeaderContent="10:30 - 12:00"
+    onClick={[Function]}
+    rightHeaderContent="undefined undefined"
+    sectionName=""
+  />
+  <Connect(Component)
     section={
       Object {
         "course": "101-1",
@@ -30,225 +34,8 @@ ShallowWrapper {
         "id": "12345",
       }
     }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <Section
-          classes={
-            Object {
-              "container": "",
-              "header": "",
-              "paper": "",
-              "text": "",
-            }
-          }
-          leftHeaderContent="10:30 - 12:00"
-          onClick={[Function]}
-          rightHeaderContent="undefined undefined"
-          sectionName=""
-        />,
-        <Connect(Component)
-          section={
-            Object {
-              "course": "101-1",
-              "event": Object {
-                "dow": "Mo",
-                "end": Object {
-                  "hour": 12,
-                  "minute": 0,
-                },
-                "start": Object {
-                  "hour": 10,
-                  "minute": 30,
-                },
-              },
-              "id": "12345",
-            }
-          }
-          showDialog={false}
-          toggleDialog={[Function]}
-        />,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "classes": Object {
-            "container": "",
-            "header": "",
-            "paper": "",
-            "text": "",
-          },
-          "leftHeaderContent": "10:30 - 12:00",
-          "onClick": [Function],
-          "rightHeaderContent": "undefined undefined",
-          "sectionName": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "section": Object {
-            "course": "101-1",
-            "event": Object {
-              "dow": "Mo",
-              "end": Object {
-                "hour": 12,
-                "minute": 0,
-              },
-              "start": Object {
-                "hour": 10,
-                "minute": 30,
-              },
-            },
-            "id": "12345",
-          },
-          "showDialog": false,
-          "toggleDialog": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <Section
-            classes={
-              Object {
-                "container": "",
-                "header": "",
-                "paper": "",
-                "text": "",
-              }
-            }
-            leftHeaderContent="10:30 - 12:00"
-            onClick={[Function]}
-            rightHeaderContent="undefined undefined"
-            sectionName=""
-          />,
-          <Connect(Component)
-            section={
-              Object {
-                "course": "101-1",
-                "event": Object {
-                  "dow": "Mo",
-                  "end": Object {
-                    "hour": 12,
-                    "minute": 0,
-                  },
-                  "start": Object {
-                    "hour": 10,
-                    "minute": 30,
-                  },
-                },
-                "id": "12345",
-              }
-            }
-            showDialog={false}
-            toggleDialog={[Function]}
-          />,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "classes": Object {
-              "container": "",
-              "header": "",
-              "paper": "",
-              "text": "",
-            },
-            "leftHeaderContent": "10:30 - 12:00",
-            "onClick": [Function],
-            "rightHeaderContent": "undefined undefined",
-            "sectionName": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "section": Object {
-              "course": "101-1",
-              "event": Object {
-                "dow": "Mo",
-                "end": Object {
-                  "hour": 12,
-                  "minute": 0,
-                },
-                "start": Object {
-                  "hour": 10,
-                  "minute": 30,
-                },
-              },
-              "id": "12345",
-            },
-            "showDialog": false,
-            "toggleDialog": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-    "attachTo": undefined,
-    "hydrateIn": undefined,
-  },
-}
+    showDialog={false}
+    toggleDialog={[Function]}
+  />
+</div>
 `;

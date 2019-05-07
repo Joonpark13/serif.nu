@@ -8,6 +8,6 @@ describe('DowColumn', () => {
     const classes = mockStyles(styles);
     const wrapper = shallow(<UnstyledDowColumn dow="Mon" classes={classes} />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

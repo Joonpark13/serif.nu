@@ -24,7 +24,7 @@ describe('AssociatedClassesSelection', () => {
   it('renders correctly', () => {
     const wrapper = getWrapper();
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('adds section with associated class when clicked', () => {

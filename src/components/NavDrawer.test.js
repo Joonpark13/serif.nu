@@ -6,6 +6,6 @@ describe('NavDrawer', () => {
   it('should render correctly', () => {
     const wrapper = shallow(<NavDrawer isOpen closeFunc={() => {}} />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

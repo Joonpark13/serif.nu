@@ -27,7 +27,7 @@ describe('CartSection', () => {
       <UnstyledCartSection section={testSection} classes={classes} />,
     );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('formats left header content correctly when multiple schedules present', () => {

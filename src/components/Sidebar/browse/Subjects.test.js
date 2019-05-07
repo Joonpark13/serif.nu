@@ -17,13 +17,13 @@ describe('Subjects', () => {
   it('renders correctly', () => {
     const wrapper = getComponent();
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders correctly when fetching', () => {
     const wrapper = getComponent({ isFetching: true });
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('showCourses gets called correctly', () => {

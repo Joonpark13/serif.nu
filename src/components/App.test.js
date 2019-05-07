@@ -19,7 +19,7 @@ describe('App', () => {
   it('should render correctly', () => {
     const wrapper = getWrapper();
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('should sign in and fetch data correctly', () => {
@@ -54,6 +54,6 @@ describe('App', () => {
     const wrapper = getWrapper();
     wrapper.instance().toggleNav();
 
-    expect(getWrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

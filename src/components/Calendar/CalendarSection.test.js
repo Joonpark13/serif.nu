@@ -68,7 +68,7 @@ describe('CalendarSection', () => {
       <UnstyledCalendarSection section={testSection} classes={classes} />,
     );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders modal correctly', () => {

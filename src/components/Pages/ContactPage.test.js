@@ -6,6 +6,6 @@ describe('ContactPage', () => {
   it('should render correctly', () => {
     const wrapper = shallow(<ContactPage />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });
