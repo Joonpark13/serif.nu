@@ -62,6 +62,6 @@ describe('AssociatedClass', () => {
     timeUtils.getFormattedEventTime.mockReturnValue('left hand header content');
     const wrapper = getWrapper();
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

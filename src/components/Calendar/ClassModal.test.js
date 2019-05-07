@@ -23,7 +23,7 @@ describe('ClassModal', () => {
   it('renders correctly', () => {
     const wrapper = getWrapper();
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('calls correct prop function when clicked', () => {

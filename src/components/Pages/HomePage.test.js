@@ -9,6 +9,6 @@ describe('HomePage', () => {
     const classes = mockStyles(styles.calendar);
     const wrapper = shallow(<HomePage classes={classes} />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

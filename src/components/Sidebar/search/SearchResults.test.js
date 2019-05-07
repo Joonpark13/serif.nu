@@ -29,13 +29,13 @@ describe('SearchResults', () => {
   it('renders correctly', () => {
     const wrapper = getComponent();
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders loading correctly', () => {
     const wrapper = getComponent({ isFetching: true });
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it("renders 'keep typing' correctly", () => {
@@ -43,7 +43,7 @@ describe('SearchResults', () => {
       currentSearchInput: 'EE',
     });
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it("renders 'no results' correctly", () => {
@@ -52,7 +52,7 @@ describe('SearchResults', () => {
       currentSearchInput: 'ABCD',
     });
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('handleCourseClick gets called correctly', () => {

@@ -43,7 +43,7 @@ describe('SectionSelection', () => {
   it('renders correctly', () => {
     const wrapper = getComponent();
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('disables sections that are already scheduled', () => {

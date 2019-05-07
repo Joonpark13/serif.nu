@@ -31,6 +31,6 @@ describe('HoursColumn', () => {
     const classes = mockStyles(styles);
     const wrapper = shallow(<UnstyledHoursColumn hours={[1, 2]} classes={classes} />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

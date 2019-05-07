@@ -10,7 +10,7 @@ describe('SidebarView', () => {
       classes={classes}
     />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('changes tabs correctly', () => {
@@ -20,7 +20,7 @@ describe('SidebarView', () => {
     />);
     wrapper.instance().handleChange('onChange', 'browse');
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('changes to cart correctly', () => {
@@ -30,6 +30,6 @@ describe('SidebarView', () => {
     />);
     wrapper.instance().handleChange('onChange', 'cart');
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

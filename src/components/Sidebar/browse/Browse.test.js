@@ -6,30 +6,30 @@ describe('Browse', () => {
   it('renders schools correctly', () => {
     const wrapper = shallow(<Browse currentBrowseLevel="school" />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders subjects correctly', () => {
     const wrapper = shallow(<Browse currentBrowseLevel="subject" />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders courses correctly', () => {
     const wrapper = shallow(<Browse currentBrowseLevel="course" />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders sections correctly', () => {
     const wrapper = shallow(<Browse currentBrowseLevel="section" />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders associated classes correctly', () => {
     const wrapper = shallow(<Browse currentBrowseLevel="associatedClass" />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

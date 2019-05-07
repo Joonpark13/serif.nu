@@ -1,297 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should render correctly 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App
-    classes={
-      Object {
-        "calendar": "",
-      }
-    }
-    fetchSchools={[Function]}
-    fetchSearchIndex={[Function]}
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "children": Array [
-        <WithStyles(TopBar)
-          menuAction={[Function]}
-        />,
-        <NavDrawer
-          closeFunc={[Function]}
-          isOpen={false}
-        />,
-        <Route
-          exact={true}
-          path="/"
-          render={[Function]}
-        />,
-        <Route
-          component={[Function]}
-          path="/about"
-        />,
-        <Route
-          component={[Function]}
-          path="/faq"
-        />,
-        <Route
-          component={[Function]}
-          path="/report"
-        />,
-        <Route
-          component={[Function]}
-          path="/contact"
-        />,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "menuAction": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "closeFunc": [Function],
-          "isOpen": false,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "exact": true,
-          "path": "/",
-          "render": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "path": "/about",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "path": "/faq",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "path": "/report",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "component": [Function],
-          "path": "/contact",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": Symbol(react.fragment),
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": Array [
-          <WithStyles(TopBar)
-            menuAction={[Function]}
-          />,
-          <NavDrawer
-            closeFunc={[Function]}
-            isOpen={false}
-          />,
-          <Route
-            exact={true}
-            path="/"
-            render={[Function]}
-          />,
-          <Route
-            component={[Function]}
-            path="/about"
-          />,
-          <Route
-            component={[Function]}
-            path="/faq"
-          />,
-          <Route
-            component={[Function]}
-            path="/report"
-          />,
-          <Route
-            component={[Function]}
-            path="/contact"
-          />,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "menuAction": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "closeFunc": [Function],
-            "isOpen": false,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "exact": true,
-            "path": "/",
-            "render": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "path": "/about",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "path": "/faq",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "path": "/report",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "path": "/contact",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": Symbol(react.fragment),
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-    "attachTo": undefined,
-    "hydrateIn": undefined,
-  },
-}
+<React.Fragment>
+  <WithStyles(TopBar)
+    menuAction={[Function]}
+  />
+  <NavDrawer
+    closeFunc={[Function]}
+    isOpen={false}
+  />
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Route
+    component={[Function]}
+    path="/about"
+  />
+  <Route
+    component={[Function]}
+    path="/faq"
+  />
+  <Route
+    component={[Function]}
+    path="/report"
+  />
+  <Route
+    component={[Function]}
+    path="/contact"
+  />
+</React.Fragment>
 `;
 
-exports[`App should toggle navigation 1`] = `[Function]`;
+exports[`App should toggle navigation 1`] = `
+<React.Fragment>
+  <WithStyles(TopBar)
+    menuAction={[Function]}
+  />
+  <NavDrawer
+    closeFunc={[Function]}
+    isOpen={true}
+  />
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Route
+    component={[Function]}
+    path="/about"
+  />
+  <Route
+    component={[Function]}
+    path="/faq"
+  />
+  <Route
+    component={[Function]}
+    path="/report"
+  />
+  <Route
+    component={[Function]}
+    path="/contact"
+  />
+</React.Fragment>
+`;

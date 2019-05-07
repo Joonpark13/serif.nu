@@ -8,6 +8,6 @@ describe('CalendarView', () => {
     const classes = mockStyles(styles);
     const wrapper = shallow(<UnstyledCalendarView classes={classes} />);
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 });

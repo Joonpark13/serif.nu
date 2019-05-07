@@ -21,7 +21,7 @@ describe('Section', () => {
       />,
     );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('should verify onClick as a default prop', () => {

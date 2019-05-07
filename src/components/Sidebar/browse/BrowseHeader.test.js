@@ -13,7 +13,7 @@ describe('BrowseHeader', () => {
   it('renders correctly', () => {
     const wrapper = getComponent();
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders correctly for subject browse level', () => {

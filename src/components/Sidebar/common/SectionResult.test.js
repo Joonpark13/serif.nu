@@ -28,7 +28,7 @@ describe('SectionResult', () => {
   it('renders correctly', () => {
     const wrapper = getWrapper();
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders instructors correctly for multiple instructors', () => {

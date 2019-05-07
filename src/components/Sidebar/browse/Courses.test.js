@@ -21,13 +21,13 @@ describe('Courses', () => {
   it('renders correctly', () => {
     const wrapper = getComponent();
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders loading correctly', () => {
     const wrapper = getComponent({ isFetching: true });
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('showSections gets called correctly', () => {
