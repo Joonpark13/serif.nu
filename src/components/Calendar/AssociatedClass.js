@@ -9,19 +9,19 @@ export const MAX_WIDTH_PERCENT = 97;
 export const styles = {
   paper: {
     position: 'absolute',
-    top: ({ section }) => {
-      const minute = section.event.start.minute;
+    top: ({ associatedClass }) => {
+      const minute = associatedClass.event.start.minute;
       const offset = Math.round(minute / 60 * 100);
       return `${offset}%`;
     },
-    left: ({ section }) => `${MAX_WIDTH_PERCENT * section.columnWidth * section.column}%`,
-    height: ({ section }) => {
-      const durationInHours = getDurationInHours(section.event);
+    left: ({ associatedClass }) => `${MAX_WIDTH_PERCENT * associatedClass.columnWidth * associatedClass.column}%`,
+    height: ({ associatedClass }) => {
+      const durationInHours = getDurationInHours(associatedClass.event);
       const heightInPercent = Math.round(durationInHours * 100);
       return `${heightInPercent}%`;
     },
-    width: ({ section }) => `${MAX_WIDTH_PERCENT * section.columnWidth}%`,
-    backgroundColor: ({ section }) => section.color,
+    width: ({ associatedClass }) => `${MAX_WIDTH_PERCENT * associatedClass.columnWidth}%`,
+    backgroundColor: ({ associatedClass }) => associatedClass.color,
     overflow: 'hidden',
     zIndex: ({ isPreview }) => isPreview ? 2 : 1,
   },

@@ -5,12 +5,12 @@ import * as actionTypes from '../actions/action-types';
 import * as actionCreators from '../actions/index';
 import * as getNextColor from './add-section-handler-helpers/get-next-color';
 import * as splitBySchedules from './add-section-handler-helpers/split-by-schedules';
-import * as assignConflictInfo from './add-section-handler-helpers/assign-conflict-info';
-import * as assignColor from './add-section-handler-helpers/assign-color';
+import * as prepClassesForCalendar from './add-section-handler-helpers/prep-classes-for-calendar';
 
-jest.mock('./add-section-handler-helpers/assign-conflict-info');
 jest.mock('./add-section-handler-helpers/assign-color');
 jest.mock('./add-section-handler-helpers/split-by-schedules');
+jest.mock('./add-section-handler-helpers/prep-classes-for-calendar');
+jest.mock('./add-section-handler-helpers/get-next-color');
 
 describe('schedule reducer', () => {
   it('should return initial state', () => {
@@ -26,7 +26,10 @@ describe('schedule reducer', () => {
       section: '20',
     };
     const sectionWithColor = Object.assign({}, section, { color });
-    assignColor.default.mockReturnValue(fromJS([sectionWithColor]));
+    prepClassesForCalendar.default = jest.fn().mockReturnValue(
+      { sections: fromJS([sectionWithColor]) },
+    );
+
     const action = actionCreators.addSectionFromSearch(section);
 
     expect(
@@ -45,7 +48,10 @@ describe('schedule reducer', () => {
       associatedClasses: [{}],
     };
     const sections = fromJS([section]);
-    assignConflictInfo.default.mockReturnValue(sections);
+    prepClassesForCalendar.default = jest.fn().mockReturnValue(
+      { sections: fromJS([section]) },
+    );
+
     const action = actionCreators.addSectionFromSearch(section);
 
     expect(scheduleReducer(initialScheduleState, action))
@@ -79,6 +85,9 @@ describe('schedule reducer', () => {
       associatedClasses: [],
       colorUses: { [colorOne]: 1, [colorTwo]: 1 },
     });
+    prepClassesForCalendar.default = jest.fn().mockImplementation(
+      (sections, color, associatedClasses) => ({ sections, associatedClasses }),
+    );
     const action = actionCreators.removeSection('12345', colorOne);
 
     expect(
@@ -114,24 +123,31 @@ describe('schedule reducer', () => {
 
   it(`should handle ${actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS_FROM_SEARCH}`, () => {
     const state = initialScheduleState
-      .set('sectionPreview', fromJS([{ color: northwesternPurple30 }]));
+      .set('sectionPreview', fromJS([{ id: '12345', color: northwesternPurple30 }]));
 
     const color = classColors[0];
-    const sections = fromJS([{ id: '12345' }]);
+    getNextColor.default = jest.fn().mockReturnValue(color);
     const associatedClass = {
       schedule: {
         dow: ['Mo'],
       },
     };
     const associatedClasses = fromJS([associatedClass]);
-    assignColor.default.mockReturnValueOnce(sections).mockReturnValueOnce(associatedClasses);
+    prepClassesForCalendar.default = jest.fn().mockImplementation(
+      (mockSections, mockColor, mockAssociatedClasses) => ({
+        sections: mockSections,
+        associatedClasses: mockAssociatedClasses,
+      }),
+    );
 
     const action = actionCreators.addSectionWithAssociatedClassFromSearch(associatedClass);
 
     expect(scheduleReducer(state, action))
       .toEqual(initialScheduleState.merge({
-        sections,
-        associatedClasses,
+        sections: fromJS([{ id: '12345' }]),
+        associatedClasses: associatedClasses
+          .setIn([0, 'sectionId'], '12345')
+          .setIn([0, 'event'], fromJS({ dow: 'Mo' })),
         colorUses: initialScheduleState.get('colorUses').set(color, 1),
       }));
   });
