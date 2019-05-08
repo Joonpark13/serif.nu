@@ -19,27 +19,27 @@ describe('dynamic styles', () => {
   };
   const hour = 10;
   const color = 'some color';
-  const section = { event, color, column: 0, columnWidth: 1 };
+  const associatedClass = { event, color, column: 0, columnWidth: 1 };
 
   it('correctly calculates section card placement', () => {
-    expect(styles.paper.top({ hour, dow, section })).toBe('50%');
+    expect(styles.paper.top({ hour, dow, associatedClass })).toBe('50%');
   });
 
   it('correctly calculates section card height', () => {
     timeUtils.getDurationInHours.mockReturnValue(1);
-    expect(styles.paper.height({ section })).toBe('100%');
+    expect(styles.paper.height({ associatedClass })).toBe('100%');
   });
 
   it('correctly grabs the section background color', () => {
-    expect(styles.paper.backgroundColor({ section })).toBe(color);
+    expect(styles.paper.backgroundColor({ associatedClass })).toBe(color);
   });
 
   it('correctly calculates left offset', () => {
-    expect(styles.paper.left({ section })).toBe('0%');
+    expect(styles.paper.left({ associatedClass })).toBe('0%');
   });
 
   it('correctly calculates width', () => {
-    expect(styles.paper.width({ section })).toBe(`${MAX_WIDTH_PERCENT}%`);
+    expect(styles.paper.width({ associatedClass })).toBe(`${MAX_WIDTH_PERCENT}%`);
   });
 
   it('correctly sets zIndex to 1 when class is not preview', () => {

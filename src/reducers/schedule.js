@@ -1,10 +1,9 @@
 import { fromJS } from 'immutable';
 import { classColors, northwesternPurple30 } from 'util/colors';
 import * as actionTypes from 'actions/action-types';
-import getNextColor from './add-section-handler-helpers/get-next-color';
 import splitBySchedules from './add-section-handler-helpers/split-by-schedules';
-import assignConflictInfo from './add-section-handler-helpers/assign-conflict-info';
-import assignColor from './add-section-handler-helpers/assign-color';
+import prepClassesForCalendar from './add-section-handler-helpers/prep-classes-for-calendar';
+import getNextColor from './add-section-handler-helpers/get-next-color';
 
 const colorUsesInitialState = {};
 classColors.forEach((color) => {
@@ -23,35 +22,33 @@ function updatedColorUses(color, colorUses, dec = false) {
 }
 
 function handleAddSection(state, { section }) {
-  let sections = state.get('sections');
-  sections = sections.concat(splitBySchedules(fromJS(section)));
-  sections = assignConflictInfo(sections);
+  const existingSections = state.get('sections');
+  const newSections = splitBySchedules(fromJS(section));
+  const allSections = existingSections.concat(newSections);
+  const color = getNextColor(state.get('colorUses'));
+  const { sections } = prepClassesForCalendar(allSections, color);
 
   // TODO: Figure out what to do if all associated classes are unscheduled
   if (section.associatedClasses) {
-    const sectionsCurrentlyBeingAdded = sections.filter(
-      sectionWithConflictInfo => sectionWithConflictInfo.get('id') === section.id,
+    const parsedNewSections = sections.filter(
+      sectionWithCalendarInfo => sectionWithCalendarInfo.get('id') === section.id,
     );
-    const alreadyExistingSections = sections.filter(
-      sectionWithConflictInfo => sectionWithConflictInfo.get('id') !== section.id,
+    const parsedExistingSections = sections.filter(
+      sectionWithCalendarInfo => sectionWithCalendarInfo.get('id') !== section.id,
     );
     return state.merge({
+      sections: parsedExistingSections,
       sectionPreview:
-        sectionsCurrentlyBeingAdded.map(
-          sectionBeingAdded => sectionBeingAdded.set('color', northwesternPurple30),
+        parsedNewSections.map(
+          newSection => newSection.set('color', northwesternPurple30),
         ),
-      sections: alreadyExistingSections,
     });
   }
 
-  const colorUses = state.get('colorUses');
-  const color = getNextColor(colorUses);
-  sections = assignColor(color, sections);
-
   return state.merge({
     sections,
+    colorUses: updatedColorUses(color, state.get('colorUses')),
     sectionPreview: initialScheduleState.get('sectionPreview'),
-    colorUses: updatedColorUses(color, colorUses),
   });
 }
 
@@ -68,54 +65,57 @@ function formatAssociatedClass(associatedClass, sectionId) {
 }
 
 function handleAddSectionWithAssociatedClass(state, { associatedClass }) {
-  const sections = state.get('sectionPreview').map(section => section.delete('color'));
+  const existingSections = state.get('sections');
+  const newSections = state.get('sectionPreview').map(section => section.delete('color'));
+  const allSections = existingSections.concat(newSections);
 
-  const sectionId = sections.getIn([0, 'id']);
+  const existingAssociatedClasses = state.get('associatedClasses');
+  const sectionId = newSections.getIn([0, 'id']);
   const formattedAssociatedClass = formatAssociatedClass(associatedClass, sectionId);
+  const allAssociatedClasses = existingAssociatedClasses.push(formattedAssociatedClass);
 
-  const allSections = state.get('sections').concat(sections);
-  const allAssociatedClasses = state.get('associatedClasses').push(formattedAssociatedClass);
-  const sectionsAndAssociatedClasses = allSections.concat(allAssociatedClasses);
-  const sectionsAndAssociatedClassesWithConflictInfo = assignConflictInfo(
-    sectionsAndAssociatedClasses,
-  );
+  const color = getNextColor(state.get('colorUses'));
 
-  const sectionsWithConflictInfo = sectionsAndAssociatedClassesWithConflictInfo.filter(
-    sectionOrAssociatedClass => sectionOrAssociatedClass.get('id'),
-  );
-  // Associated classes do not have an id field
-  const associatedClassesWithConflictInfo = sectionsAndAssociatedClassesWithConflictInfo.filter(
-    sectionOrAssociatedClass => !sectionOrAssociatedClass.get('id'),
-  );
-
-  const colorUses = state.get('colorUses');
-  const color = getNextColor(colorUses);
-  const sectionsWithConflictInfoAndColor = assignColor(color, sectionsWithConflictInfo);
-  const associatedClassWithConfictInfoAndColor = assignColor(
+  const { sections, associatedClasses } = prepClassesForCalendar(
+    allSections,
     color,
-    associatedClassesWithConflictInfo,
+    allAssociatedClasses,
   );
 
   return state.merge({
-    sections: sectionsWithConflictInfoAndColor,
+    sections,
+    associatedClasses,
     sectionPreview: initialScheduleState.get('sectionPreview'),
-    associatedClasses: associatedClassWithConfictInfoAndColor,
     associatedClassPreview: initialScheduleState.get('associatedClassPreview'),
-    colorUses: updatedColorUses(color, colorUses),
+    colorUses: updatedColorUses(color, state.get('colorUses')),
   });
 }
 
 function handleRemoveSection(state, { sectionId, sectionColor }) {
-  const sections = state.get('sections');
-  const associatedClasses = state.get('associatedClasses');
-  const colorUses = state.get('colorUses');
+  const remainingSections = state
+    .get('sections')
+    .filter(section => section.get('id') !== sectionId);
+  const remainingAssociatedClasses = state.get('associatedClasses').filter(
+    associatedClass => associatedClass.get('sectionId') !== sectionId,
+  );
+
+  if (remainingSections.size === 0) {
+    return state.merge({
+      sections: initialScheduleState.get('sections'),
+      associatedClasses: initialScheduleState.get('associatedClasses'),
+      colorUses: initialScheduleState.get('colorUses'),
+    });
+  }
+
+  const { sections, associatedClasses } = prepClassesForCalendar(
+    remainingSections,
+    null,
+    remainingAssociatedClasses,
+  );
   return state.merge({
-    sections: sections.filter(section => section.get('id') !== sectionId),
-    associatedClasses:
-      associatedClasses.filter(
-        associatedClass => associatedClass.get('sectionId') !== sectionId,
-      ),
-    colorUses: updatedColorUses(sectionColor, colorUses, true),
+    sections,
+    associatedClasses,
+    colorUses: updatedColorUses(sectionColor, state.get('colorUses'), true),
   });
 }
 
