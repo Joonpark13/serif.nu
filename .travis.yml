@@ -5,16 +5,6 @@ branches:
   only:
   - master
   - production
-before_deploy: npm run build
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token:
-    secure: lwUyKDfXneC1MnWtJLA36a0555jONuQK7gAsTsipqr2n68rmnSdtw/I30RAVJZhduY8PRD6tbHTZhSWNGClrnTbqN/G1OIH1rm0raN1GCH9284IXnkvyFLQNsqT2oE6QmCg3Nlmi1KtkVhsksCe9pbMbfrKHIXz0CC3wjQlEoFLAt1sECFHYG7F4I7X8h17kS32ik2k3VMZF/937TyBMkQXPVmuh4ZTfbZ0C/R1Z590NgyhFAG25HTMfIob4P7hCYRZKGpGS4Wf1ktHbDVVchjaDOa+t6/6aRofOiES8plcwDk/gc4I1L37sM5QwkMAsi49q/VaQfnzjRl2iYkoV/qVF/AOEcsUO+DSMTYRKRFL3kwPl3LvXbiYDv6CJAB55mXFta+VtgmeEXlklsvuCuPH1wJiy9EPGpO5/PO88pjodc1a262eOZ7tMRYFs9Mf0NLFGT26a0lXdTQ1kqK5izUzuuX6sd3D9LhK7qpkuytcoK/Oz06ZXXitjnnVk0AjWDHCq/s4w4OkjWz+XhPcIkU9Vt/0Xyu32STrCcXA4uqNazXqrOPMxzENHqkKzyXXp9ph+FLYzD2hhlmmHg7TljIupdydK4z4cYV3pW6qydhWF2lhpJv8rnFrsS5EG5je0kiqAJzSU4MY/ocT3REF1ZbOC3xSsW9dUoUdqnBhPWEQ=
-  keep-history: true
-  local-dir: dist
-  on:
-    branch: master
 notifications:
   email: false
   slack:
