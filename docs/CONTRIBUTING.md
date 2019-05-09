@@ -1,5 +1,9 @@
 # Developing for Serif.nu
 
+Production: [https://serif.nu](https://serif.nu)
+
+Preproduction: [https://master--hungry-poitras-beebdb.netlify.com/](https://master--hungry-poitras-beebdb.netlify.com/)
+
 ## Introduction
 
 This document is mainly intended for student developers at Northwestern University who are part of the Serif.nu development group. If you are not a student at Northwestern, or if you are a student who is not a part of the Serif.nu development group, and are interested in working on Serif.nu, please reach out to Joon to get involved.
