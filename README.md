@@ -1,6 +1,8 @@
 # Serif.nu
 #### Simple. Fast. Visual. Course Planning for Northwestern University.
-[![Build Status](https://travis-ci.com/Joonpark13/serif.nu.svg?branch=master)](https://travis-ci.com/Joonpark13/serif.nu)
+master: [![Build Status](https://travis-ci.com/Joonpark13/serif.nu.svg?branch=master)](https://travis-ci.com/Joonpark13/serif.nu)
+
+production: [![Netlify Status](https://api.netlify.com/api/v1/badges/12007cbd-f6f2-4bbe-a2dc-b799de90f721/deploy-status)](https://app.netlify.com/sites/hungry-poitras-beebdb/deploys)
 
 ## About
 Serif.nu is a course scheduler for Northwestern University that allows students to quickly and easily visualize their schedules before registering for courses. No more drawing it out on paper, no more clunky spreadsheets. Draft up a dream schedule (or four) before you open CAESAR.
