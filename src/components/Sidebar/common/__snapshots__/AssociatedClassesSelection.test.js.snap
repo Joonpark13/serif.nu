@@ -4,7 +4,7 @@ exports[`AssociatedClassesSelection renders correctly 1`] = `
 <div
   className=""
 >
-  <WithStyles(SidebarHeader)
+  <ForwardRef
     back={[Function]}
     title="Introduction to Something-21"
   />

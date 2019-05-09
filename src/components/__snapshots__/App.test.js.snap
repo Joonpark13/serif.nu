@@ -2,7 +2,7 @@
 
 exports[`App should render correctly 1`] = `
 <React.Fragment>
-  <WithStyles(TopBar)
+  <ForwardRef
     menuAction={[Function]}
   />
   <NavDrawer
@@ -35,7 +35,7 @@ exports[`App should render correctly 1`] = `
 
 exports[`App should toggle navigation 1`] = `
 <React.Fragment>
-  <WithStyles(TopBar)
+  <ForwardRef
     menuAction={[Function]}
   />
   <NavDrawer
