@@ -10,7 +10,7 @@ exports[`HomePage should render correctly 1`] = `
     sm={12}
     xs={12}
   >
-    <WithStyles(CalendarView) />
+    <ForwardRef />
   </WithStyles(Grid)>
   <WithStyles(Grid)
     item={true}
@@ -18,7 +18,7 @@ exports[`HomePage should render correctly 1`] = `
     sm={12}
     xs={12}
   >
-    <WithStyles(SidebarView) />
+    <ForwardRef />
   </WithStyles(Grid)>
 </WithStyles(Grid)>
 `;

@@ -4,7 +4,7 @@ exports[`CalendarView renders correctly 1`] = `
 <div
   className=""
 >
-  <WithStyles(HoursColumn)
+  <ForwardRef
     hours={
       Array [
         8,
@@ -28,19 +28,19 @@ exports[`CalendarView renders correctly 1`] = `
   <div
     className=""
   >
-    <WithStyles(DowColumn)
+    <ForwardRef
       dow="Mo"
     />
-    <WithStyles(DowColumn)
+    <ForwardRef
       dow="Tu"
     />
-    <WithStyles(DowColumn)
+    <ForwardRef
       dow="We"
     />
-    <WithStyles(DowColumn)
+    <ForwardRef
       dow="Th"
     />
-    <WithStyles(DowColumn)
+    <ForwardRef
       dow="Fr"
     />
   </div>

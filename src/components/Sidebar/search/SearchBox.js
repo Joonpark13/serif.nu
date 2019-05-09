@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
-import { withStyles } from '@material-ui/core/styles';
 import { debounce } from 'debounce';
 
 export const styles = {
@@ -57,6 +57,7 @@ class SearchBox extends Component {
 export { SearchBox as UnstyledSearchBox };
 
 export default withStyles(styles)(SearchBox);
+// export default SearchBox;
 
 SearchBox.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/styles';
 import SearchContainer from './search/SearchContainer';
 import CartContainer from './cart/CartContainer';
 import BrowseContainer from './browse/BrowseContainer';

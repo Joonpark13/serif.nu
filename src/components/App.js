@@ -8,7 +8,7 @@ import { auth } from 'util/firebase';
 import toJS from 'util/to-js';
 import { CURRENT_TERM } from 'util/constants';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/styles';
 import { withRouter, Route } from 'react-router-dom';
 import TopBar from './TopBar';
 import NavDrawer from './NavDrawer';

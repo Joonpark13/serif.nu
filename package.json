@@ -44,7 +44,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.0",
     "@material-ui/icons": "^2.0.3",
-    "@material-ui/styles": "^3.0.0-alpha.0",
+    "@material-ui/styles": "^3.0.0-alpha.10",
     "debounce": "^1.2.0",
     "elasticlunr": "^0.9.5",
     "firebase": "^5.8.1",

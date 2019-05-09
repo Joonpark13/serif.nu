@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import toJS from 'util/to-js';
 import { getSearchResultsRequest, clearSearchResults, updateSearchInput } from 'actions';
 import SearchBox from './SearchBox';
 
@@ -19,6 +20,6 @@ const mapDispatchToProps = {
   updateSearchInput,
 };
 
-const SearchBoxContainer = connect(mapStateToProps, mapDispatchToProps)(SearchBox);
+const SearchBoxContainer = connect(mapStateToProps, mapDispatchToProps)(toJS(SearchBox));
 
 export default SearchBoxContainer;

@@ -1,3 +1,4 @@
+import './material-ui-style-install';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import injectSheet from 'react-jss';
@@ -11,11 +12,6 @@ import App from 'components/App';
 import rootReducer from 'reducers';
 import { initialScheduleState } from 'reducers/schedule';
 import { northwesternPurple, northwesternBrightOrange } from 'util/colors';
-
-// https://material-ui.com/css-in-js/basics/#migration-for--material-ui-core-users
-/* eslint-disable-next-line import/newline-after-import */
-import { install as installMaterialUIStyles } from '@material-ui/styles';
-installMaterialUIStyles();
 
 const styles = {
   '@global body': {

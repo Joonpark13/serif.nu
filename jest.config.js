@@ -3,6 +3,7 @@ module.exports = {
   collectCoverageFrom: [
     'src/**',
     '!src/index.js',
+    '!src/material-ui-style-install.js',
     '!src/actions/**',
     '!src/effects/**',
     '!src/util/env.js',
