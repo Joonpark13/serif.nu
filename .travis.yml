@@ -14,7 +14,7 @@ deploy:
   keep-history: true
   local-dir: dist
   on:
-    branch: production
+    branch: master
 notifications:
   email: false
   slack:
