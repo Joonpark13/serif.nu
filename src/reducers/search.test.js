@@ -10,9 +10,12 @@ import {
   fetchSectionsForSearchSuccess,
   fetchSectionsForSearchFailure,
 } from 'actions';
+import * as timeUtils from 'util/time';
 import searchReducer, { initialSearchState } from './search';
 import * as actionTypes from '../actions/action-types';
 import * as actionCreators from '../actions/index';
+
+jest.mock('util/time');
 
 describe('search reducer', () => {
   it('should return initial state', () => {
@@ -176,13 +179,51 @@ describe('search reducer', () => {
   });
 
   it(`should handle ${actionTypes.ADD_SECTION_FROM_SEARCH} if there are associated classes`, () => {
-    const section = { associatedClasses: [], sectionNumber: '12' };
+    timeUtils.isUnscheduled.mockReturnValue(false);
+    const section = {
+      associatedClasses: [{
+        schedule: {
+          dow: [
+            'Fr',
+          ],
+          end: {
+            hour: 13,
+            minute: 50,
+          },
+          location: 'Annenberg Hall G01',
+          start: {
+            hour: 13,
+            minute: 0,
+          },
+        },
+        type: 'LAB',
+      }],
+      sectionNumber: '12',
+    };
     const action = actionCreators.addSectionFromSearch(section);
     expect(searchReducer(initialSearchState, action)).toEqual(initialSearchState.merge({
       view: 'associatedClassesSelection',
       currentSectionNumber: section.sectionNumber,
       currentAssociatedClasses: section.associatedClasses,
     }));
+  });
+
+  it(`should handle ${actionTypes.ADD_SECTION_FROM_SEARCH} if there are associated classes that are all unscheduled`, () => {
+    timeUtils.isUnscheduled.mockReturnValue(true);
+    const section = {
+      associatedClasses: [{
+        schedule: {
+          dow: 'TBA',
+          end: 'TBA',
+          location: 'Annenberg Hall G01',
+          start: 'TBA',
+        },
+        type: 'LAB',
+      }],
+      sectionNumber: '12',
+    };
+    const action = actionCreators.addSectionFromSearch(section);
+    expect(searchReducer(initialSearchState, action)).toEqual(initialSearchState);
   });
 
   it(`should handle ${actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS_FROM_SEARCH}`, () => {

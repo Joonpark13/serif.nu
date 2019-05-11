@@ -47,12 +47,15 @@ describe('SectionResult', () => {
 
   it('turns scheduled text to red if section is unscheduled', () => {
     timeUtils.getFormattedClassSchedule.mockReturnValue('TBA');
+    timeUtils.isUnscheduled.mockReturnValue(true);
     const unscheduledSection = {
       id: '3',
       sectionNumber: 21,
       schedule: [{
         location: 'Some other building',
         dow: 'TBA',
+        start: 'TBA',
+        end: 'TBA',
       }],
       instructors: ['Ian Horswill', 'Vincent St-Amour'],
     };

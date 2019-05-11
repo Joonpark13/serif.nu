@@ -1,5 +1,6 @@
 import { fromJS } from 'immutable';
 import { classColors, northwesternPurple30 } from 'util/colors';
+import { isUnscheduled } from 'util/time';
 import * as actionTypes from 'actions/action-types';
 import splitBySchedules from './add-section-handler-helpers/split-by-schedules';
 import prepClassesForCalendar from './add-section-handler-helpers/prep-classes-for-calendar';
@@ -28,8 +29,12 @@ function handleAddSection(state, { section }) {
   const color = getNextColor(state.get('colorUses'));
   const { sections } = prepClassesForCalendar(allSections, color);
 
-  // TODO: Figure out what to do if all associated classes are unscheduled
-  if (section.associatedClasses) {
+  const canScheduleAnAssociatedClass = section.associatedClasses
+    && section.associatedClasses.some(
+      associatedClass => !isUnscheduled(associatedClass.schedule),
+    );
+
+  if (canScheduleAnAssociatedClass) {
     const parsedNewSections = sections.filter(
       sectionWithCalendarInfo => sectionWithCalendarInfo.get('id') === section.id,
     );

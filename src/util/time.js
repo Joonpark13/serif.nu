@@ -48,3 +48,7 @@ export function overlaps(event1, event2) {
   }
   return !(isBefore(event1.end, event2.start) || isBefore(event2.end, event1.start));
 }
+
+export function isUnscheduled(event) {
+  return event.dow === 'TBA' || event.start === 'TBA' || event.end === 'TBA';
+}
