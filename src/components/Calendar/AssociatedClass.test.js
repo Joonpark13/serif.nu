@@ -1,5 +1,9 @@
-import { wrapperCreator } from 'util/testing';
+import React from 'react';
+import { shallow } from 'enzyme';
+import { wrapperCreator, mockStyles } from 'util/testing';
 import * as timeUtils from 'util/time';
+import Section from 'components/common/Section';
+import ClassModalContainer from 'components/Calendar/ClassModalContainer';
 import { UnstyledAssociatedClass, styles, MAX_WIDTH_PERCENT } from './AssociatedClass';
 
 jest.mock('util/time');
@@ -63,5 +67,16 @@ describe('AssociatedClass', () => {
     const wrapper = getWrapper();
 
     expect(wrapper.get(0)).toMatchSnapshot();
+  });
+
+  it('renders modal correctly', () => {
+    const classes = mockStyles(styles);
+    const wrapper = shallow(
+      <UnstyledAssociatedClass {...defaultProps} classes={classes} />,
+    );
+
+    wrapper.find(Section).simulate('click');
+
+    expect(wrapper.find(ClassModalContainer).prop('showDialog')).toBe(true);
   });
 });

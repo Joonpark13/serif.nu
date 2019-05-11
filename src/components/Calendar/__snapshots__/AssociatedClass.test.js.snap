@@ -1,18 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AssociatedClass renders correctly 1`] = `
-<Section
-  classes={
-    Object {
-      "container": "",
-      "header": "",
-      "paper": "",
-      "text": "",
+<React.Fragment>
+  <Section
+    classes={
+      Object {
+        "container": "",
+        "header": "",
+        "paper": "",
+        "text": "",
+      }
     }
-  }
-  leftHeaderContent="left hand header content"
-  onClick={[Function]}
-  rightHeaderContent="EECS 111-0"
-  sectionName="DIS - undefined"
-/>
+    leftHeaderContent="left hand header content"
+    onClick={[Function]}
+    rightHeaderContent="EECS 111-0"
+    sectionName="DIS - undefined"
+  />
+  <Connect(Component)
+    section={
+      Object {
+        "courseId": "111-0",
+        "subjectId": "EECS",
+      }
+    }
+    showDialog={false}
+    toggleDialog={[Function]}
+  />
+</React.Fragment>
 `;

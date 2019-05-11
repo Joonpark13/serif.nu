@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import { getFormattedEventTime, getDurationInHours } from 'util/time';
 import Section from 'components/common/Section';
+import ClassModalContainer from './ClassModalContainer';
 
 export const MAX_WIDTH_PERCENT = 97;
 
@@ -22,6 +23,7 @@ export const styles = {
     },
     width: ({ associatedClass }) => `${MAX_WIDTH_PERCENT * associatedClass.columnWidth}%`,
     backgroundColor: ({ associatedClass }) => associatedClass.color,
+    cursor: 'pointer',
     overflow: 'hidden',
     zIndex: ({ isPreview }) => isPreview ? 2 : 1,
   },
@@ -38,18 +40,44 @@ export const styles = {
   },
 };
 
-function AssociatedClass({ classes, associatedClass, section }) {
-  const leftHeaderContent = getFormattedEventTime(associatedClass.event);
-  const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
-  const associatedClassTitle = `${associatedClass.type} - ${section.name}`;
-  return (
-    <Section
-      classes={classes}
-      leftHeaderContent={leftHeaderContent}
-      rightHeaderContent={rightHeaderContent}
-      sectionName={associatedClassTitle}
-    />
-  );
+class AssociatedClass extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showDialog: false,
+    };
+    this.toggleDialog = this.toggleDialog.bind(this);
+  }
+
+  toggleDialog() {
+    this.setState(state => ({ showDialog: !state.showDialog }));
+  }
+
+  render() {
+    const { classes, associatedClass, section } = this.props;
+    const { showDialog } = this.state;
+
+    const leftHeaderContent = getFormattedEventTime(associatedClass.event);
+    const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
+    const associatedClassTitle = `${associatedClass.type} - ${section.name}`;
+
+    return (
+      <Fragment>
+        <Section
+          onClick={this.toggleDialog}
+          classes={classes}
+          leftHeaderContent={leftHeaderContent}
+          rightHeaderContent={rightHeaderContent}
+          sectionName={associatedClassTitle}
+        />
+        <ClassModalContainer
+          section={section}
+          showDialog={showDialog}
+          toggleDialog={this.toggleDialog}
+        />
+      </Fragment>
+    );
+  }
 }
 
 AssociatedClass.propTypes = {
