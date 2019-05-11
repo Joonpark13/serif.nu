@@ -1,5 +1,6 @@
 import { fromJS } from 'immutable';
 import { loop, Cmd } from 'redux-loop';
+import { isUnscheduled } from 'util/time';
 import {
   getSchoolsSuccess,
   getSchoolsFailure,
@@ -53,7 +54,12 @@ function handleChangeBrowseLevel(state, { browseLevel }) {
 }
 
 function handleAddSectionFromBrowse(state, { section }) {
-  if (section.associatedClasses) {
+  const canScheduleAnAssociatedClass = section.associatedClasses
+    && section.associatedClasses.some(
+      associatedClass => !isUnscheduled(associatedClass.schedule),
+    );
+
+  if (canScheduleAnAssociatedClass) {
     return state
       .set('currentBrowseLevel', 'associatedClass')
       .update('selected', selected => selected.set('section', fromJS(section)));

@@ -1,4 +1,4 @@
-import { getFormattedClassSchedule, formatMinute, formatTime, getDurationInHours, isBefore, overlaps, getFormattedEventTime } from './time';
+import { getFormattedClassSchedule, formatMinute, formatTime, getDurationInHours, isBefore, overlaps, getFormattedEventTime, isUnscheduled } from './time';
 
 describe('time utils', () => {
   describe('formatMinute', () => {
@@ -163,5 +163,27 @@ describe('time utils', () => {
 
   it('short circuits if the events\'s dows don\'t match', () => {
     expect(overlaps({ dow: 'Mo' }, { dow: 'Tu' })).toBe(false);
+  });
+
+  describe('isUnscheduled', () => {
+    it('determines if the event is unscheduled', () => {
+      expect(isUnscheduled({
+        dow: 'TBA',
+        start: 'TBA',
+        end: 'TBA',
+      })).toBe(true);
+
+      expect(isUnscheduled({
+        dow: 'Mo',
+        start: {
+          hour: 10,
+          minute: 30,
+        },
+        end: {
+          hour: 11,
+          minute: 0,
+        },
+      })).toBe(false);
+    });
   });
 });

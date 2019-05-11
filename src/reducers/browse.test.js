@@ -12,9 +12,12 @@ import {
 } from 'actions';
 import { fetchSchools, fetchSubjects, fetchCourses } from 'effects/browse';
 import { fetchSections } from 'effects/common';
+import * as timeUtils from 'util/time';
 import browseReducer, { initialBrowseState } from './browse';
 import * as actionTypes from '../actions/action-types';
 import * as actionCreators from '../actions/index';
+
+jest.mock('util/time');
 
 describe('browse reducer', () => {
   it('should return initial state', () => {
@@ -296,6 +299,7 @@ describe('browse reducer', () => {
   });
 
   it(`should handle ${actionTypes.ADD_SECTION_FROM_BROWSE}`, () => {
+    timeUtils.isUnscheduled.mockReturnValue(false);
     const existingSchoolsData = fromJS([{ id: 'WCAS' }]);
     const state = initialBrowseState.set('schools', existingSchoolsData);
     const section = {};
@@ -304,16 +308,59 @@ describe('browse reducer', () => {
     expect(browseReducer(state, action)).toEqual(initialBrowseState.set('schools', existingSchoolsData));
   });
 
-  it(`should handle ${actionTypes.ADD_SECTION_FROM_BROWSE} when section has associated classes`, () => {
-    const section = { associatedClasses: [] };
+  it(`should handle ${actionTypes.ADD_SECTION_FROM_BROWSE} with associated classes`, () => {
+    timeUtils.isUnscheduled.mockReturnValue(false);
+    const existingSchoolsData = fromJS([{ id: 'WCAS' }]);
+    const state = initialBrowseState.set('schools', existingSchoolsData);
+    const section = {
+      associatedClasses: [{
+        schedule: {
+          dow: [
+            'Fr',
+          ],
+          end: {
+            hour: 13,
+            minute: 50,
+          },
+          location: 'Annenberg Hall G01',
+          start: {
+            hour: 13,
+            minute: 0,
+          },
+        },
+        type: 'LAB',
+      }],
+    };
     const action = actionCreators.addSectionFromBrowse(section);
 
-    const resultState = browseReducer(initialBrowseState, action);
-    expect(resultState.get('currentBrowseLevel')).toBe('associatedClass');
-    expect(resultState.getIn(['selected', 'section'])).toEqual(fromJS(section));
+    expect(browseReducer(state, action)).toEqual(initialBrowseState
+      .set('schools', existingSchoolsData)
+      .set('currentBrowseLevel', 'associatedClass')
+      .update('selected', selected => selected.set('section', fromJS(section))));
+  });
+
+  it(`should handle ${actionTypes.ADD_SECTION_FROM_BROWSE} with associated classes that are not scheduled`, () => {
+    timeUtils.isUnscheduled.mockReturnValue(true);
+    const existingSchoolsData = fromJS([{ id: 'WCAS' }]);
+    const state = initialBrowseState.set('schools', existingSchoolsData);
+    const section = {
+      associatedClasses: [{
+        schedule: {
+          dow: 'TBA',
+          end: 'TBA',
+          location: 'Annenberg Hall G01',
+          start: 'TBA',
+        },
+        type: 'LAB',
+      }],
+    };
+    const action = actionCreators.addSectionFromBrowse(section);
+
+    expect(browseReducer(state, action)).toEqual(initialBrowseState.set('schools', existingSchoolsData));
   });
 
   it(`should handle ${actionTypes.ADD_SECTION_WITH_ASSOCIATED_CLASS_FROM_BROWSE}`, () => {
+    timeUtils.isUnscheduled.mockReturnValue(false);
     const existingSchoolsData = fromJS([{ id: 'WCAS' }]);
     const state = initialBrowseState.set('schools', existingSchoolsData);
     const action = actionCreators.addSectionWithAssociatedClassFromBrowse();

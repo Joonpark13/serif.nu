@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
-import { getFormattedClassSchedule } from 'util/time';
+import { getFormattedClassSchedule, isUnscheduled } from 'util/time';
 
 export const styles = {
   sectionTitle: {
@@ -13,9 +13,8 @@ export const styles = {
 };
 
 function SectionResult({ addSection, sectionHover, sectionHoverOff, section, disabled, classes }) {
-  const isUnscheduled = section.schedule.some(
-    schedule => schedule.dow === 'TBA' || schedule.start === 'TBA' || schedule.end === 'TBA',
-  );
+  const sectionIsUnscheduled = section.schedule.some(isUnscheduled);
+
   return (
     <ListItem
       key={section.id}
@@ -23,7 +22,7 @@ function SectionResult({ addSection, sectionHover, sectionHoverOff, section, dis
       onClick={() => addSection(section)}
       onMouseEnter={() => sectionHover(section)}
       onMouseLeave={sectionHoverOff}
-      disabled={disabled || isUnscheduled}
+      disabled={disabled || sectionIsUnscheduled}
     >
       <ListItemText>
         <Typography variant="h6" className={classes.sectionTitle}>
@@ -34,7 +33,7 @@ function SectionResult({ addSection, sectionHover, sectionHoverOff, section, dis
 
         {section.schedule.map((scheduleObj, index) => (
           /* eslint-disable react/no-array-index-key */
-          <Typography color={isUnscheduled ? 'error' : undefined} key={index}>
+          <Typography color={sectionIsUnscheduled ? 'error' : undefined} key={index}>
             {getFormattedClassSchedule(scheduleObj)}
           </Typography>
           /* eslint-enable react/no-array-index-key */

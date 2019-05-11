@@ -1,5 +1,6 @@
 import { fromJS } from 'immutable';
 import { loop, Cmd } from 'redux-loop';
+import { isUnscheduled } from 'util/time';
 import * as actionTypes from 'actions/action-types';
 import {
   getSearchResultsSuccess,
@@ -25,7 +26,12 @@ export const initialSearchState = fromJS({
 });
 
 function handleAddSection(state, { section }) {
-  if (section.associatedClasses) {
+  const canScheduleAnAssociatedClass = section.associatedClasses
+    && section.associatedClasses.some(
+      associatedClass => !isUnscheduled(associatedClass.schedule),
+    );
+
+  if (canScheduleAnAssociatedClass) {
     return state.merge({
       view: 'associatedClassesSelection',
       currentSectionNumber: section.sectionNumber,
