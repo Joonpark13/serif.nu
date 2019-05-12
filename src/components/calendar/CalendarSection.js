@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import { getFormattedEventTime, getDurationInHours } from 'util/time';
 import Section from 'components/common/Section';
-import ClassModalContainer from 'components/Calendar/ClassModalContainer';
+import ClassModalContainer from './ClassModalContainer';
 
 export const MAX_WIDTH_PERCENT = 97;
 

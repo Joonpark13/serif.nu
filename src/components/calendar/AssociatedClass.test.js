@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { wrapperCreator, mockStyles } from 'util/testing';
 import * as timeUtils from 'util/time';
 import Section from 'components/common/Section';
-import ClassModalContainer from 'components/Calendar/ClassModalContainer';
+import ClassModalContainer from './ClassModalContainer';
 import { UnstyledAssociatedClass, styles, MAX_WIDTH_PERCENT } from './AssociatedClass';
 
 jest.mock('util/time');

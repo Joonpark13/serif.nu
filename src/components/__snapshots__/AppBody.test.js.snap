@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HomePage should render correctly 1`] = `
+exports[`AppBody should render correctly 1`] = `
 <WithStyles(Grid)
   container={true}
 >

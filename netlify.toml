@@ -1,0 +1,17 @@
+[build.environment]
+  FIREBASE_API_KEY="AIzaSyDluAG6bnqleqJ3yjPvGdlb3RyZP3U5JIQ"
+  FIREBASE_AUTH_DOMAIN="sans-serif-northwestern.firebaseapp.com"
+  FIREBASE_DATABASE_URL="https://sans-serif-northwestern.firebaseio.com"
+  FIREBASE_PROJECT_ID="sans-serif-northwestern"
+  FIREBASE_STORAGE_BUCKET="sans-serif-northwestern.appspot.com"
+  FIREBASE_MESSAGING_SENDER_ID="1078100635889"
+  FIREBASE_APP_ID="1:1078100635889:web:37d73cf26013ca2b"
+
+[context.production.environment]
+  FIREBASE_API_KEY="AIzaSyDsrNBeibXiHk6iXXQpn_qDs3zRqQNWRmw"
+  FIREBASE_AUTH_DOMAIN="sans-serif-prod.firebaseapp.com"
+  FIREBASE_DATABASE_URL="https://sans-serif-prod.firebaseio.com"
+  FIREBASE_PROJECT_ID="sans-serif-prod"
+  FIREBASE_STORAGE_BUCKET="sans-serif-prod.appspot.com"
+  FIREBASE_MESSAGING_SENDER_ID="82930465455"
+  FIREBASE_APP_ID="1:82930465455:web:fbd6656c15baab84"

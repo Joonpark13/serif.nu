@@ -8,21 +8,14 @@ import { auth } from 'util/firebase';
 import toJS from 'util/to-js';
 import { CURRENT_TERM } from 'util/constants';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/styles';
 import { withRouter, Route } from 'react-router-dom';
 import TopBar from './TopBar';
 import NavDrawer from './NavDrawer';
-import HomePage from './Pages/HomePage';
-import AboutPage from './Pages/AboutPage';
-import FAQPage from './Pages/FAQPage';
-import BugReportPage from './Pages/BugReportPage';
-import ContactPage from './Pages/ContactPage';
-
-export const styles = {
-  calendar: {
-    overflow: 'auto',
-  },
-};
+import AppBody from './AppBody';
+import AboutPage from './pages/AboutPage';
+import FAQPage from './pages/FAQPage';
+import BugReportPage from './pages/BugReportPage';
+import ContactPage from './pages/ContactPage';
 
 class App extends Component {
   constructor(props) {
@@ -65,7 +58,7 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={/* istanbul ignore next */ props => <HomePage {...props} classes={classes} />}
+          render={/* istanbul ignore next */ props => <AppBody {...props} classes={classes} />}
         />
         {/* istanbul ignore next */}
         <Route path="/about" component={AboutPage} />
@@ -81,7 +74,6 @@ class App extends Component {
 }
 
 App.propTypes = {
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
   fetchSchools: PropTypes.func.isRequired,
   fetchSearchIndex: PropTypes.func.isRequired,
 };
@@ -91,6 +83,6 @@ const mapDispatchToProps = {
   fetchSearchIndex: fetchSearchIndexAction,
 };
 
-export { App as UnstyledApp };
-const AppWithStyles = toJS(withStyles(styles)(App));
-export default withRouter(connect(null, mapDispatchToProps)(AppWithStyles));
+export { App as UnconnectedApp };
+const ConnectedApp = connect(null, mapDispatchToProps)(toJS(App));
+export default withRouter(connect(null, mapDispatchToProps)(ConnectedApp));

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { mockStyles } from 'util/testing';
 import Section from 'components/common/Section';
-import ClassModalContainer from 'components/Calendar/ClassModalContainer';
+import ClassModalContainer from './ClassModalContainer';
 import { UnstyledCalendarSection, styles, MAX_WIDTH_PERCENT } from './CalendarSection';
 
 describe('CalendarSection', () => {

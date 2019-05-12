@@ -37,7 +37,7 @@ function TopBar({ classes, menuAction }) {
           <Typography className={classes.title} variant="h5">Serif.nu</Typography>
         </div>
 
-        <Typography className={classes.title}>Term: Spring 2019</Typography>
+        <Typography className={classes.title}>Term: Fall 2019</Typography>
       </Toolbar>
     </AppBar>
   );
