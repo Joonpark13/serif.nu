@@ -5,7 +5,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
-import { getFormattedClassSchedule } from 'util/time';
+import { getFormattedClassSchedule, isUnscheduled } from 'util/time';
 import SidebarHeader from '../SidebarHeader';
 
 export const styles = {
@@ -37,26 +37,30 @@ function AssociatedClassesSelection({
       <SidebarHeader title={`${currentCourseName}-${currentSectionNumber}`} back={back} />
 
       <List>
-        {associatedClasses.map(associatedClass => (
-          <ListItem
-            key={JSON.stringify(associatedClass.schedule)}
-            button
-            onClick={() => addSectionWithAssociatedClass(associatedClass)}
-            onMouseEnter={() => associatedClassHover(associatedClass)}
-            onMouseLeave={associatedClassHoverOff}
-          >
-            <ListItemText>
-              <Typography variant="h6">
-                {associatedClass.type}
-              </Typography>
+        {associatedClasses.map((associatedClass) => {
+          const associatedClassIsUnscheduled = isUnscheduled(associatedClass.schedule);
+          return (
+            <ListItem
+              key={JSON.stringify(associatedClass.schedule)}
+              button
+              onClick={() => addSectionWithAssociatedClass(associatedClass)}
+              onMouseEnter={() => associatedClassHover(associatedClass)}
+              onMouseLeave={associatedClassHoverOff}
+              disabled={associatedClassIsUnscheduled}
+            >
+              <ListItemText>
+                <Typography variant="h6">
+                  {associatedClass.type}
+                </Typography>
 
-              <Typography>
-                {getFormattedClassSchedule(associatedClass.schedule)}
-              </Typography>
-              <Typography>{associatedClass.schedule.location}</Typography>
-            </ListItemText>
-          </ListItem>
-        ))}
+                <Typography color={associatedClassIsUnscheduled ? 'error' : undefined}>
+                  {getFormattedClassSchedule(associatedClass.schedule)}
+                </Typography>
+                <Typography>{associatedClass.schedule.location}</Typography>
+              </ListItemText>
+            </ListItem>
+          );
+        })}
       </List>
     </div>
   );
