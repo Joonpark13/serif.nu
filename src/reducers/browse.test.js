@@ -18,6 +18,8 @@ import * as actionTypes from '../actions/action-types';
 import * as actionCreators from '../actions/index';
 
 jest.mock('util/time');
+jest.mock('effects/common');
+jest.mock('effects/browse');
 
 describe('browse reducer', () => {
   it('should return initial state', () => {

@@ -81,7 +81,7 @@ You probably don't need to master these concepts before starting to contribute t
 
 ## Practice Ticket
 
-*I highly recommend that you read over [CONTRIBUTING.md](CONTRIBUTING.md) as you follow along. I'll also assume that you're using a bash terminal (aka not windows).*
+*I highly recommend that you read over [CONTRIBUTING.md](CONTRIBUTING.md) as you follow along. I'll also assume that you're using a bash terminal (native to mac, if you're on windows you'll either have to use git bash, the windows subsystem for linux, or a VM).*
 
 During our sprint meeting, we'll have groomed a practice ticket for you on the Trello board. Drag that ticket from the "Current Sprint" column to the "In Progress" column.
 
@@ -95,6 +95,12 @@ Let's install all of our dependencies by doing
 ```
 npm install
 ```
+
+We should also specify our environment variables that will allow us to connect with Firebase. Stick the environment variables (given to you by Joon) in a `.env` file at the root of the repository and save it. Then, from that directory do
+```
+source .env
+```
+to load the environment variables. Webpack, our compiler, will know to grab these environment variables when spinning up our code.
 
 The first thing we want to do before we start working is to make a branch.
 ```

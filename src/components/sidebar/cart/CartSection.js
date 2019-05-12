@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import { getFormattedClassSchedule } from 'util/time';
 import Section from 'components/common/Section';
-import ClassModalContainer from 'components/Calendar/ClassModalContainer';
+import ClassModalContainer from 'components/calendar/ClassModalContainer';
 
 export const styles = {
   paper: {

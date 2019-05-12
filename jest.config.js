@@ -9,6 +9,7 @@ module.exports = {
     '!src/util/env.js',
     '!src/util/to-js.js',
     '!src/util/colors.js',
+    '!src/util/firebase.js',
     '!**/__snapshots__/**',
     '!src/reducers/index.js',
   ],

@@ -1,6 +1,6 @@
 import { wrapperCreator } from 'util/testing';
 import { auth } from 'util/firebase';
-import { UnstyledApp, styles } from './App';
+import { UnconnectedApp } from './App';
 
 jest.mock('util/firebase');
 
@@ -9,10 +9,9 @@ describe('App', () => {
     fetchSchools: () => {},
     fetchSearchIndex: () => {},
   };
-  const getWrapper = wrapperCreator(UnstyledApp, defaultProps, styles);
+  const getWrapper = wrapperCreator(UnconnectedApp, defaultProps);
 
   beforeEach(() => {
-    auth.signInAnonymously = jest.fn();
     auth.onAuthStateChanged = jest.fn(callback => callback(true));
   });
 

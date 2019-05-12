@@ -28,7 +28,7 @@ exports[`TopBar renders correctly 1`] = `
     <WithStyles(Typography)
       className=""
     >
-      Term: Spring 2019
+      Term: Fall 2019
     </WithStyles(Typography)>
   </WithStyles(Toolbar)>
 </WithStyles(AppBar)>

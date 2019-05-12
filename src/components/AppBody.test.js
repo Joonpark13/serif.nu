@@ -1,13 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { mockStyles } from 'util/testing';
-import { styles } from '../App';
-import HomePage from './HomePage';
+import { UnstyledAppBody, styles } from './AppBody';
 
-describe('HomePage', () => {
+describe('AppBody', () => {
   it('should render correctly', () => {
     const classes = mockStyles(styles.calendar);
-    const wrapper = shallow(<HomePage classes={classes} />);
+    const wrapper = shallow(<UnstyledAppBody classes={classes} />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
