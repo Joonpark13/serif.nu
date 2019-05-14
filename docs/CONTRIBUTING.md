@@ -56,7 +56,7 @@ Clone this repository, then run
 npm install
 ```
 
-`npm start` will run the development environment. See the [reference document](REFERENCE.md) for more commands.
+Set the necessary environment variables, then `npm start` will run the development environment. See the [reference document](REFERENCE.md) for more commands.
 
 ### Development
 
