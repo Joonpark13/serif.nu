@@ -1,3 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContactPage should render correctly 1`] = `<div />`;
+exports[`ContactPage should render correctly 1`] = `
+<div
+  className=""
+>
+  <div
+    className=""
+  >
+    <WithStyles(Typography)
+      color="primary"
+      variant="h3"
+    >
+      Contact Us
+    </WithStyles(Typography)>
+  </div>
+</div>
+`;

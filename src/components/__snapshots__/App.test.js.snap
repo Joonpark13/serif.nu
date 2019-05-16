@@ -19,15 +19,51 @@ exports[`App should render correctly 1`] = `
     path="/about"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Naked": [Function],
+        "displayName": "WithStyles(FAQPage)",
+        "options": Object {},
+        "propTypes": Object {
+          "classes": [Function],
+          "innerRef": [Function],
+        },
+        "render": [Function],
+      }
+    }
     path="/faq"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Naked": [Function],
+        "displayName": "WithStyles(BugReportPage)",
+        "options": Object {},
+        "propTypes": Object {
+          "classes": [Function],
+          "innerRef": [Function],
+        },
+        "render": [Function],
+      }
+    }
     path="/report"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Naked": [Function],
+        "displayName": "WithStyles(ContactPage)",
+        "options": Object {},
+        "propTypes": Object {
+          "classes": [Function],
+          "innerRef": [Function],
+        },
+        "render": [Function],
+      }
+    }
     path="/contact"
   />
 </React.Fragment>
@@ -52,15 +88,51 @@ exports[`App should toggle navigation 1`] = `
     path="/about"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Naked": [Function],
+        "displayName": "WithStyles(FAQPage)",
+        "options": Object {},
+        "propTypes": Object {
+          "classes": [Function],
+          "innerRef": [Function],
+        },
+        "render": [Function],
+      }
+    }
     path="/faq"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Naked": [Function],
+        "displayName": "WithStyles(BugReportPage)",
+        "options": Object {},
+        "propTypes": Object {
+          "classes": [Function],
+          "innerRef": [Function],
+        },
+        "render": [Function],
+      }
+    }
     path="/report"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Naked": [Function],
+        "displayName": "WithStyles(ContactPage)",
+        "options": Object {},
+        "propTypes": Object {
+          "classes": [Function],
+          "innerRef": [Function],
+        },
+        "render": [Function],
+      }
+    }
     path="/contact"
   />
 </React.Fragment>

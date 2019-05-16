@@ -1,10 +1,11 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import BugReportPage from './BugReportPage';
+import { wrapperCreator } from 'util/testing';
+import { UnstyledBugReportPage, styles } from './BugReportPage';
 
 describe('BugReportPage', () => {
+  const getWrapper = wrapperCreator(UnstyledBugReportPage, undefined, styles);
+
   it('should render correctly', () => {
-    const wrapper = shallow(<BugReportPage />);
+    const wrapper = getWrapper();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

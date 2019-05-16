@@ -1,7 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/styles';
+import { pageContainer } from './common/styles';
 
-function FAQPage() {
-  return (<div />);
+export const styles = {
+  pageContainer,
+};
+
+function FAQPage({ classes }) {
+  return <div className={classes.pageContainer} />;
 }
 
-export default FAQPage;
+FAQPage.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+export { FAQPage as UnstyledFAQPage };
+export default withStyles(styles)(FAQPage);
