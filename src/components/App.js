@@ -48,7 +48,6 @@ class App extends Component {
   }
 
   render() {
-    const { classes } = this.props;
     const { navigationOpen } = this.state;
 
     return (
@@ -58,16 +57,12 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={/* istanbul ignore next */ props => <AppBody {...props} classes={classes} />}
+          render={/* istanbul ignore next */ props => <AppBody {...props} />}
         />
-        {/* istanbul ignore next */}
-        <Route path="/about" component={AboutPage} />
-        {/* istanbul ignore next */}
-        <Route path="/faq" component={FAQPage} />
-        {/* istanbul ignore next */}
-        <Route path="/report" component={BugReportPage} />
-        {/* istanbul ignore next */}
-        <Route path="/contact" component={ContactPage} />
+        <Route path="/about" render={/* istanbul ignore next */() => <AboutPage />} />
+        <Route path="/faq" render={/* istanbul ignore next */ () => <FAQPage />} />
+        <Route path="/report" render={/* istanbul ignore next */ () => <BugReportPage />} />
+        <Route path="/contact" render={/* istanbul ignore next */ () => <ContactPage />} />
       </Fragment>
     );
   }
