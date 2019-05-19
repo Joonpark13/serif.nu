@@ -9,11 +9,13 @@ export function sectionsSelector(state) {
 }
 
 /* istanbul ignore next */
-const mapStateToProps = state => ({
-  currentCourseName: selectedCourseNameSelector(state),
-  sections: sectionsSelector(state),
-  scheduledSections: scheduledSectionsSelector(state),
-});
+function mapStateToProps(state) {
+  return {
+    currentCourseName: selectedCourseNameSelector(state),
+    sections: sectionsSelector(state),
+    scheduledSections: scheduledSectionsSelector(state),
+  };
+}
 
 /* istanbul ignore next */
 const mapDispatchToProps = {

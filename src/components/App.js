@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { withRouter, Route } from 'react-router-dom';
 import {
   getSchoolsRequest,
   fetchSearchIndex as fetchSearchIndexAction,
@@ -7,8 +9,6 @@ import {
 import { auth } from 'util/firebase';
 import toJS from 'util/to-js';
 import { CURRENT_TERM } from 'util/constants';
-import PropTypes from 'prop-types';
-import { withRouter, Route } from 'react-router-dom';
 import TopBar from './TopBar';
 import NavDrawer from './NavDrawer';
 import AppBody from './AppBody';

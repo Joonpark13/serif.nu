@@ -12,6 +12,7 @@ import App from 'components/App';
 import rootReducer from 'reducers';
 import { initialScheduleState } from 'reducers/schedule';
 import { northwesternPurple, northwesternBrightOrange } from 'util/colors';
+import isProduction from 'util/env';
 
 const styles = {
   '@global body': {
@@ -36,7 +37,7 @@ const theme = createMuiTheme({
 });
 
 let composeEnhancers;
-if (process.env.NODE_ENV === 'production') {
+if (isProduction) {
   composeEnhancers = compose;
 } else {
 /* eslint-disable no-underscore-dangle */
