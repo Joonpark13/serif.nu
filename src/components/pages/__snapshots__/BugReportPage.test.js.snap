@@ -3,5 +3,9 @@
 exports[`BugReportPage should render correctly 1`] = `
 <div
   className=""
-/>
+>
+  <ForwardRef
+    title="Report a Bug"
+  />
+</div>
 `;

@@ -4,15 +4,8 @@ exports[`ContactPage should render correctly 1`] = `
 <div
   className=""
 >
-  <div
-    className=""
-  >
-    <WithStyles(Typography)
-      color="primary"
-      variant="h3"
-    >
-      Contact Us
-    </WithStyles(Typography)>
-  </div>
+  <ForwardRef
+    title="Contact Us"
+  />
 </div>
 `;
