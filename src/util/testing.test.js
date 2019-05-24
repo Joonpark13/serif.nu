@@ -21,7 +21,7 @@ describe('Testing Utils', () => {
     it('creates a wrapper creator function', () => {
       const TestComponent = () => <div />;
       const wrapper = wrapperCreator(TestComponent);
-      expect(wrapper()).toMatchSnapshot();
+      expect(wrapper().get(0)).toMatchSnapshot();
     });
   });
 });

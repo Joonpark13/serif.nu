@@ -7,9 +7,11 @@ module.exports = {
     "no-plusplus": "off",
     "object-curly-newline": "off",
     "prefer-destructuring": "off",
-    "no-confusing-arrow": "off"
+    "no-confusing-arrow": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
-  plugins: ['jest', 'react', 'jsx-a11y', 'import'],
+  plugins: ['jest', 'react', 'jsx-a11y', 'import', 'react-hooks'],
   env: {
     "jest/globals": true,
   },
