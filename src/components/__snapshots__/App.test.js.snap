@@ -5,7 +5,7 @@ exports[`App should render correctly 1`] = `
   <ForwardRef
     menuAction={[Function]}
   />
-  <NavDrawer
+  <ForwardRef
     closeFunc={[Function]}
     isOpen={false}
   />
@@ -23,11 +23,15 @@ exports[`App should render correctly 1`] = `
     render={[Function]}
   />
   <Route
-    path="/report"
+    path="/bugs"
     render={[Function]}
   />
   <Route
     path="/contact"
+    render={[Function]}
+  />
+  <Route
+    path="/legal"
     render={[Function]}
   />
 </React.Fragment>
@@ -38,7 +42,7 @@ exports[`App should toggle navigation 1`] = `
   <ForwardRef
     menuAction={[Function]}
   />
-  <NavDrawer
+  <ForwardRef
     closeFunc={[Function]}
     isOpen={true}
   />
@@ -56,11 +60,15 @@ exports[`App should toggle navigation 1`] = `
     render={[Function]}
   />
   <Route
-    path="/report"
+    path="/bugs"
     render={[Function]}
   />
   <Route
     path="/contact"
+    render={[Function]}
+  />
+  <Route
+    path="/legal"
     render={[Function]}
   />
 </React.Fragment>

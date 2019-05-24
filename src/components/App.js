@@ -16,6 +16,7 @@ import AboutPage from './pages/AboutPage';
 import FAQPage from './pages/FAQPage';
 import BugReportPage from './pages/BugReportPage';
 import ContactPage from './pages/ContactPage';
+import LegalPage from './pages/LegalPage';
 
 class App extends Component {
   constructor(props) {
@@ -61,8 +62,9 @@ class App extends Component {
         />
         <Route path="/about" render={/* istanbul ignore next */() => <AboutPage />} />
         <Route path="/faq" render={/* istanbul ignore next */ () => <FAQPage />} />
-        <Route path="/report" render={/* istanbul ignore next */ () => <BugReportPage />} />
+        <Route path="/bugs" render={/* istanbul ignore next */ () => <BugReportPage />} />
         <Route path="/contact" render={/* istanbul ignore next */ () => <ContactPage />} />
+        <Route path="/legal" render={/* istanbul ignore next */ () => <LegalPage />} />
       </Fragment>
     );
   }

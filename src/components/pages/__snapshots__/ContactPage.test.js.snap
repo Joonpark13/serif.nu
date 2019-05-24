@@ -7,5 +7,48 @@ exports[`ContactPage should render correctly 1`] = `
   <ForwardRef
     title="Contact Us"
   />
+  <div
+    className=""
+  >
+    <div
+      className=""
+    >
+      <a
+        className=""
+        href="mailto:serifnorthwestern@gmail.com"
+      >
+        <WithStyles(Icon)
+          color="primary"
+          fontSize="large"
+        >
+          email
+        </WithStyles(Icon)>
+      </a>
+      <WithStyles(Typography)
+        variant="h5"
+      >
+        Email
+      </WithStyles(Typography)>
+    </div>
+    <div
+      className=""
+    >
+      <a
+        className=""
+        href="https://www.facebook.com/serifnorthwestern"
+      >
+        <img
+          alt="Facebook logo"
+          className=""
+          src={Object {}}
+        />
+      </a>
+      <WithStyles(Typography)
+        variant="h5"
+      >
+        Facebook
+      </WithStyles(Typography)>
+    </div>
+  </div>
 </div>
 `;

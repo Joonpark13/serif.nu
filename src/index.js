@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { fromJS } from 'immutable';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import 'material-design-icons';
 import App from 'components/App';
 import rootReducer from 'reducers';
 import { initialScheduleState } from 'reducers/schedule';
@@ -17,6 +18,9 @@ import isProduction from 'util/env';
 const styles = {
   '@global body': {
     margin: 0,
+  },
+  '@global ol': {
+    fontFamily: 'Roboto, sans-serif',
   },
 };
 

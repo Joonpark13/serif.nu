@@ -5,47 +5,66 @@ exports[`NavDrawer should render correctly 1`] = `
   onClose={[Function]}
   open={true}
 >
-  <WithStyles(List)>
-    <ListItemLink
-      onClick={[Function]}
-      to="/"
+  <div
+    className=""
+  >
+    <WithStyles(List)>
+      <ListItemLink
+        onClick={[Function]}
+        to="/"
+      >
+        <WithStyles(ListItemText)
+          primary="Serif.nu"
+        />
+      </ListItemLink>
+      <ListItemLink
+        onClick={[Function]}
+        to="/about"
+      >
+        <WithStyles(ListItemText)
+          primary="About"
+        />
+      </ListItemLink>
+      <ListItemLink
+        onClick={[Function]}
+        to="/faq"
+      >
+        <WithStyles(ListItemText)
+          primary="FAQ"
+        />
+      </ListItemLink>
+      <ListItemLink
+        onClick={[Function]}
+        to="/bugs"
+      >
+        <WithStyles(ListItemText)
+          primary="Report a Bug"
+        />
+      </ListItemLink>
+      <ListItemLink
+        onClick={[Function]}
+        to="/contact"
+      >
+        <WithStyles(ListItemText)
+          primary="Contact"
+        />
+      </ListItemLink>
+    </WithStyles(List)>
+    <div
+      className=""
     >
-      <WithStyles(ListItemText)
-        primary="Serif.nu"
-      />
-    </ListItemLink>
-    <ListItemLink
-      onClick={[Function]}
-      to="/about"
-    >
-      <WithStyles(ListItemText)
-        primary="About"
-      />
-    </ListItemLink>
-    <ListItemLink
-      onClick={[Function]}
-      to="/faq"
-    >
-      <WithStyles(ListItemText)
-        primary="FAQ"
-      />
-    </ListItemLink>
-    <ListItemLink
-      onClick={[Function]}
-      to="/report"
-    >
-      <WithStyles(ListItemText)
-        primary="Report a Bug"
-      />
-    </ListItemLink>
-    <ListItemLink
-      onClick={[Function]}
-      to="/contact"
-    >
-      <WithStyles(ListItemText)
-        primary="Contact"
-      />
-    </ListItemLink>
-  </WithStyles(List)>
+      <Link
+        onClick={[Function]}
+        replace={false}
+        to="/legal"
+      >
+        <WithStyles(Typography)
+          variant="caption"
+        >
+          Legal notices
+        </WithStyles(Typography)>
+      </Link>
+    </div>
+  </div>
 </WithStyles(Drawer)>
 `;

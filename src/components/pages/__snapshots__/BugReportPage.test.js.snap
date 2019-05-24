@@ -1,11 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BugReportPage should render correctly 1`] = `
+exports[`BugReportPage should render correctly after user acknowledgement 1`] = `
 <div
   className=""
 >
   <ForwardRef
     title="Report a Bug"
   />
+  <div
+    className=""
+  >
+    <iframe
+      frameBorder="0"
+      height="1100"
+      marginHeight="0"
+      marginWidth="0"
+      src="https://docs.google.com/forms/d/e/1FAIpQLScaXXO7ySVcBk1g0FGdMQqLii0eFaNkh6sOzrTB9KmDe5XmTA/viewform?embedded=true"
+      title="Bug report google form"
+      width="100%"
+    >
+      Loading...
+    </iframe>
+  </div>
+</div>
+`;
+
+exports[`BugReportPage should render correctly before user acknowledgement 1`] = `
+<div
+  className=""
+>
+  <ForwardRef
+    title="Report a Bug"
+  />
+  <div
+    className=""
+  >
+    <div>
+      <WithStyles(Typography)
+        gutterBottom={true}
+        variant="h6"
+      >
+        I understand that any missing or inaccurate course data is NOT a bug and should not be reported.
+      </WithStyles(Typography)>
+      <WithStyles(Button)
+        color="primary"
+        onClick={[Function]}
+        variant="contained"
+      >
+        Acknowledge
+      </WithStyles(Button)>
+    </div>
+  </div>
 </div>
 `;
