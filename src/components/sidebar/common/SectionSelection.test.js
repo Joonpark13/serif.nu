@@ -9,14 +9,14 @@ describe('SectionSelection', () => {
     sections: [{
       id: '1',
       sectionNumber: 20,
-      schedule: [{
+      schedules: [{
         location: 'Some building',
       }],
       instructors: ['Jason Hartline'],
     }, {
       id: '2',
       sectionNumber: 21,
-      schedule: [{
+      schedules: [{
         location: 'Some other building',
       }],
       instructors: ['Ian Horswill', 'Vincent St-Amour'],
@@ -28,7 +28,7 @@ describe('SectionSelection', () => {
   const scheduledSectionsTestData = [{
     id: '1',
     sectionNumber: 20,
-    schedule: [{
+    schedules: [{
       location: 'Some building',
     }],
     instructors: ['Jason Hartline'],

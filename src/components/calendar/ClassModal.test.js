@@ -7,7 +7,7 @@ describe('ClassModal', () => {
     id: '198732',
     sectionNumber: 20,
     topic: 'Section topic...',
-    schedule: [{ location: 'somewhere' }],
+    schedules: [{ location: 'somewhere' }],
     instructors: ['A prof'],
     color: '#58B947',
   };

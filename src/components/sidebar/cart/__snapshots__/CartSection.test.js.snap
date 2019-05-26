@@ -11,7 +11,7 @@ exports[`CartSection renders correctly 1`] = `
         "text": "",
       }
     }
-    leftHeaderContent="schedule"
+    leftHeaderContent="schedules"
     onClick={[Function]}
     rightHeaderContent="EECS 111-0"
     sectionName=""
@@ -20,7 +20,7 @@ exports[`CartSection renders correctly 1`] = `
     section={
       Object {
         "courseId": "111-0",
-        "schedule": Array [
+        "schedules": Array [
           Object {},
         ],
         "subjectId": "EECS",
