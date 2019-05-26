@@ -43,14 +43,14 @@ class CartSection extends Component {
     const { showDialog } = this.state;
 
     let leftHeaderContent;
-    if (section.schedule.length > 1) {
-      leftHeaderContent = section.schedule
+    if (section.schedules.length > 1) {
+      leftHeaderContent = section.schedules
         .map(schedule => getFormattedClassSchedule(schedule))
         .reduce(
           (resultStr, formattedStr) => `${resultStr}, ${formattedStr}`,
         );
     } else {
-      leftHeaderContent = getFormattedClassSchedule(section.schedule[0]);
+      leftHeaderContent = getFormattedClassSchedule(section.schedules[0]);
     }
     const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
 

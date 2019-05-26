@@ -4,7 +4,7 @@ import splitBySchedules from './split-by-schedules';
 describe('splitBySchedules', () => {
   it('splits sections with schedules into sections with events', () => {
     const section = fromJS({
-      schedule: [{
+      schedules: [{
         dow: ['Mo', 'Tu'],
         start: {
           hour: 10,
@@ -35,7 +35,7 @@ describe('splitBySchedules', () => {
 
   it('handles TBA data', () => {
     const section = fromJS({
-      schedule: [{
+      schedules: [{
         dow: 'TBA',
         start: {
           hour: 10,

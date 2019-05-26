@@ -9,7 +9,7 @@ import { UnstyledCartSection, styles } from './CartSection';
 describe('CartSection', () => {
   beforeEach(() => {
     timeUtils.getFormattedClassSchedule = jest.fn();
-    timeUtils.getFormattedClassSchedule.mockReturnValue('schedule');
+    timeUtils.getFormattedClassSchedule.mockReturnValue('schedules');
   });
 
   describe('dynamic styles', () => {
@@ -22,7 +22,7 @@ describe('CartSection', () => {
 
   it('renders correctly', () => {
     const classes = mockStyles(styles);
-    const testSection = { schedule: [{}], subjectId: 'EECS', courseId: '111-0' };
+    const testSection = { schedules: [{}], subjectId: 'EECS', courseId: '111-0' };
     const wrapper = shallow(
       <UnstyledCartSection section={testSection} classes={classes} />,
     );
@@ -32,17 +32,17 @@ describe('CartSection', () => {
 
   it('formats left header content correctly when multiple schedules present', () => {
     const classes = mockStyles(styles);
-    const testSection = { schedule: [{}, {}], subjectId: 'EECS', courseId: '111-0' };
+    const testSection = { schedules: [{}, {}], subjectId: 'EECS', courseId: '111-0' };
     const wrapper = shallow(
       <UnstyledCartSection section={testSection} classes={classes} />,
     );
 
-    expect(wrapper.find(Section).prop('leftHeaderContent')).toBe('schedule, schedule');
+    expect(wrapper.find(Section).prop('leftHeaderContent')).toBe('schedules, schedules');
   });
 
   it('opens modal on click', () => {
     const classes = mockStyles(styles);
-    const testSection = { schedule: [{}], subjectId: 'EECS', courseId: '111-0' };
+    const testSection = { schedules: [{}], subjectId: 'EECS', courseId: '111-0' };
     const wrapper = shallow(
       <UnstyledCartSection section={testSection} classes={classes} />,
     );

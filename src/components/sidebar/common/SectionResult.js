@@ -13,7 +13,7 @@ export const styles = {
 };
 
 function SectionResult({ addSection, sectionHover, sectionHoverOff, section, disabled, classes }) {
-  const sectionIsUnscheduled = section.schedule.some(isUnscheduled);
+  const sectionIsUnscheduled = section.schedules.some(isUnscheduled);
 
   return (
     <ListItem
@@ -31,7 +31,7 @@ function SectionResult({ addSection, sectionHover, sectionHoverOff, section, dis
 
         {section.topic && <Typography>{section.topic}</Typography>}
 
-        {section.schedule.map((scheduleObj, index) => (
+        {section.schedules.map((scheduleObj, index) => (
           /* eslint-disable react/no-array-index-key */
           <Typography color={sectionIsUnscheduled ? 'error' : undefined} key={index}>
             {getFormattedClassSchedule(scheduleObj)}
@@ -39,7 +39,7 @@ function SectionResult({ addSection, sectionHover, sectionHoverOff, section, dis
           /* eslint-enable react/no-array-index-key */
         ))}
 
-        <Typography>{section.schedule[0].location}</Typography>
+        <Typography>{section.schedules[0].location}</Typography>
 
         <Typography>
           {section.instructors.map((teacher, idx) => (

@@ -1,9 +1,9 @@
 import { fromJS } from 'immutable';
 
 export default function splitBySchedules(section) {
-  // The schedule field in a section object is an array
+  // The schedules field in a section object is an array
   // So we want to deal with each item separately
-  const splitByScheduleItem = section.get('schedule').map(
+  const splitByScheduleItem = section.get('schedules').map(
     scheduleItem => section.set('event', scheduleItem),
   );
   // Then we want to create a new section for each dow
@@ -23,8 +23,8 @@ export default function splitBySchedules(section) {
   /*
     {
       dow: 'Mo', (notice how dow is now a string, not an array of strings)
-      start: (same as schedule),
-      end: (same as schedule),
+      start: (same as it was in schedules objects),
+      end: (same as it was in schedules objects),
     }
    */
   // (Notice how the event field now contains an object, not an array)

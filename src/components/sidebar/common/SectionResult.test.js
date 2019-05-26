@@ -14,7 +14,7 @@ describe('SectionResult', () => {
     id: '198732',
     sectionNumber: 20,
     topic: 'Section topic...',
-    schedule: [{ location: 'somewhere' }],
+    schedules: [{ location: 'somewhere' }],
     instructors: ['A prof'],
   };
   const defaultProps = {
@@ -51,7 +51,7 @@ describe('SectionResult', () => {
     const unscheduledSection = {
       id: '3',
       sectionNumber: 21,
-      schedule: [{
+      schedules: [{
         location: 'Some other building',
         dow: 'TBA',
         start: 'TBA',

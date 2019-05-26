@@ -18,7 +18,7 @@ exports[`SectionSelection renders correctly 1`] = `
           "instructors": Array [
             "Jason Hartline",
           ],
-          "schedule": Array [
+          "schedules": Array [
             Object {
               "location": "Some building",
             },
@@ -37,7 +37,7 @@ exports[`SectionSelection renders correctly 1`] = `
             "Ian Horswill",
             "Vincent St-Amour",
           ],
-          "schedule": Array [
+          "schedules": Array [
             Object {
               "location": "Some other building",
             },
