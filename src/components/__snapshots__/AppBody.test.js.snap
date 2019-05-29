@@ -5,6 +5,7 @@ exports[`AppBody should render correctly 1`] = `
   container={true}
 >
   <WithStyles(Grid)
+    className=""
     item={true}
     md={9}
     sm={12}

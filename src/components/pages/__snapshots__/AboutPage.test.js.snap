@@ -1,3 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AboutPage should render correctly 1`] = `<div />`;
+exports[`AboutPage should render correctly 1`] = `
+<div>
+  <div
+    className=""
+  />
+  <div
+    className=""
+  >
+    <WithStyles(Typography)
+      color="inherit"
+      variant="h3"
+    >
+      Simple. Fast. Visual.
+    </WithStyles(Typography)>
+    <WithStyles(Typography)
+      className=""
+      variant="h5"
+    >
+      Course planning for Northwestern University.
+    </WithStyles(Typography)>
+  </div>
+</div>
+`;

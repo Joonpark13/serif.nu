@@ -4,6 +4,7 @@ import { UnconnectedApp } from './App';
 
 jest.mock('util/firebase');
 jest.mock('images/facebook-logo.png');
+jest.mock('images/hero-image.jpg');
 
 describe('App', () => {
   const defaultProps = {
