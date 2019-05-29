@@ -16,7 +16,7 @@ module.exports = {
       test: /\.(woff|woff2|svg|jpe?g|gif|png)$/,
       loader: 'url-loader',
       options: {
-        limit: 50000,
+        limit: 100000,
       },
     }],
   },

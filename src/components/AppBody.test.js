@@ -1,12 +1,13 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import { mockStyles } from 'util/testing';
+import { wrapperCreator } from 'util/testing';
 import { UnstyledAppBody, styles } from './AppBody';
 
+jest.mock('images/hero-image.jpg');
+
 describe('AppBody', () => {
+  const getWrapper = wrapperCreator(UnstyledAppBody, undefined, styles);
+
   it('should render correctly', () => {
-    const classes = mockStyles(styles.calendar);
-    const wrapper = shallow(<UnstyledAppBody classes={classes} />);
+    const wrapper = getWrapper();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

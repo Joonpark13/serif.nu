@@ -1,10 +1,13 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import AboutPage from './AboutPage';
+import { wrapperCreator } from 'util/testing';
+import { UnstyledAboutPage, styles } from './AboutPage';
+
+jest.mock('images/hero-image.jpg');
 
 describe('AboutPage', () => {
+  const getWrapper = wrapperCreator(UnstyledAboutPage, undefined, styles);
+
   it('should render correctly', () => {
-    const wrapper = shallow(<AboutPage />);
+    const wrapper = getWrapper();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

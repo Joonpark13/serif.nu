@@ -19,6 +19,7 @@ export const styles = {
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
+    zIndex: '2',
   },
   topBarLeftSection: {
     display: 'flex',
