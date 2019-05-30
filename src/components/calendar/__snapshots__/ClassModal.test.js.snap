@@ -11,21 +11,49 @@ exports[`ClassModal renders correctly 1`] = `
     className=""
   >
     <WithStyles(Typography)
+      gutterBottom={true}
       variant="h5"
     >
       undefined undefined Section 20
     </WithStyles(Typography)>
+    <WithStyles(Divider) />
+    <br />
+    <div>
+      <WithStyles(Typography)>
+        Mo 10:30 AM - 12:00 PM
+      </WithStyles(Typography)>
+      <WithStyles(Typography)>
+        somewhere
+      </WithStyles(Typography)>
+    </div>
+    <WithStyles(Typography)>
+      A prof
+    </WithStyles(Typography)>
+    <br />
+    <div>
+      <WithStyles(Typography)
+        variant="h6"
+      >
+        
+      </WithStyles(Typography)>
+      <WithStyles(Typography)
+        gutterBottom={true}
+      >
+        
+      </WithStyles(Typography)>
+      <br />
+    </div>
   </div>
   <WithStyles(DialogActions)>
     <WithStyles(Button)
       onClick={[Function]}
     >
-       Remove 
+      Remove
     </WithStyles(Button)>
     <WithStyles(Button)
       onClick={[Function]}
     >
-       Cancel 
+      Cancel
     </WithStyles(Button)>
   </WithStyles(DialogActions)>
 </WithStyles(Dialog)>

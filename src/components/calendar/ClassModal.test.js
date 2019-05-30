@@ -7,9 +7,21 @@ describe('ClassModal', () => {
     id: '198732',
     sectionNumber: 20,
     topic: 'Section topic...',
-    schedules: [{ location: 'somewhere' }],
+    schedules: [{
+      location: 'somewhere',
+      dow: ['Mo'],
+      start: {
+        hour: 10,
+        minute: 30,
+      },
+      end: {
+        hour: 12,
+        minute: 0,
+      },
+    }],
     instructors: ['A prof'],
     color: '#58B947',
+    descriptions: [{ name: '', value: '' }],
   };
   const defaultProps = {
     section,
@@ -26,7 +38,7 @@ describe('ClassModal', () => {
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
-  it('calls correct prop function when clicked', () => {
+  it('closes the modal when clicked', () => {
     const removeSectionMock = jest.fn();
     const wrapper = getWrapper({ removeSection: removeSectionMock });
     wrapper.find(Button).first().simulate('click');
