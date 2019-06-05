@@ -72,6 +72,7 @@ class AssociatedClass extends Component {
         />
         <ClassModalContainer
           section={section}
+          associatedClass={associatedClass}
           showDialog={showDialog}
           toggleDialog={this.toggleDialog}
         />

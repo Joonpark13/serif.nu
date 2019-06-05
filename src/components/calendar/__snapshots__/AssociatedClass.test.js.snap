@@ -17,6 +17,12 @@ exports[`AssociatedClass renders correctly 1`] = `
     sectionName="DIS - undefined"
   />
   <Connect(Component)
+    associatedClass={
+      Object {
+        "name": "Some discussion",
+        "type": "DIS",
+      }
+    }
     section={
       Object {
         "courseId": "111-0",
