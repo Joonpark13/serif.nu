@@ -1,16 +1,13 @@
 import { connect } from 'react-redux';
-import { currentBrowseLevelSelector } from 'selectors';
+import {
+  currentBrowseLevelSelector,
+  selectedSchoolIdSelector,
+  selectedSubjectIdSelector,
+} from 'selectors';
 import { changeBrowseLevel } from 'actions';
 import toJS from 'util/to-js';
 import BrowseHeader from './BrowseHeader';
 
-export function selectedSchoolIdSelector(state) {
-  return state.getIn(['browse', 'selected', 'school', 'id']);
-}
-
-export function selectedSubjectIdSelector(state) {
-  return state.getIn(['browse', 'selected', 'subject', 'id']);
-}
 
 /* istanbul ignore next */
 function mapStateToProps(state) {

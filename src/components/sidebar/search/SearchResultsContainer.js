@@ -1,25 +1,14 @@
 import { connect } from 'react-redux';
 import { fetchSectionsForSearchRequest, setCurrentCourseName } from 'actions';
 import toJS from 'util/to-js';
+import { searchResultsSelector, searchIsFetchingSelector, currentSearchInputSelector } from 'selectors';
 import SearchResults from './SearchResults';
-
-export function searchResultsSelector(state) {
-  return state.getIn(['search', 'results']);
-}
-
-export function isFetchingSelector(state) {
-  return state.getIn(['search', 'isFetching']);
-}
-
-export function currentSearchInputSelector(state) {
-  return state.getIn(['search', 'currentSearchInput']);
-}
 
 /* istanbul ignore next */
 function mapStateToProps(state) {
   return {
     searchResults: searchResultsSelector(state),
-    isFetching: isFetchingSelector(state),
+    isFetching: searchIsFetchingSelector(state),
     currentSearchInput: currentSearchInputSelector(state),
   };
 }
