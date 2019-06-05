@@ -6,16 +6,13 @@ import {
   associatedClassHover,
   associatedClassHoverOff,
 } from 'actions';
-import { selectedCourseNameSelector } from 'selectors';
+import {
+  selectedCourseNameSelector,
+  selectedSectionNumberSelector,
+  selectedSectionAssociatedClassesSelector,
+} from 'selectors';
 import AssociatedClassesSelection from '../common/AssociatedClassesSelection';
 
-export function selectedSectionNumberSelector(state) {
-  return state.getIn(['browse', 'selected', 'section', 'sectionNumber']);
-}
-
-export function selectedSectionAssociatedClassesSelector(state) {
-  return state.getIn(['browse', 'selected', 'section', 'associatedClasses']);
-}
 
 /* istanbul ignore next */
 function mapStateToProps(state) {

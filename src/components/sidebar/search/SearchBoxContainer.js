@@ -1,11 +1,9 @@
 import { connect } from 'react-redux';
 import toJS from 'util/to-js';
 import { getSearchResultsRequest, clearSearchResults, updateSearchInput } from 'actions';
+import { currentSearchInputSelector } from 'selectors';
 import SearchBox from './SearchBox';
 
-export function currentSearchInputSelector(state) {
-  return state.getIn(['search', 'currentSearchInput']);
-}
 
 /* istanbul ignore next */
 function mapStateToProps(state) {

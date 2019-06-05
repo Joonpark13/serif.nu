@@ -2,9 +2,24 @@ import { fromJS } from 'immutable';
 import {
   sectionsSelector,
   currentBrowseLevelSelector,
-  isFetchingSelector,
-  scheduledSectionsSelector,
+  browseIsFetchingSelector,
   selectedCourseNameSelector,
+  selectedSectionNumberSelector,
+  selectedSectionAssociatedClassesSelector,
+  selectedSchoolIdSelector,
+  selectedSubjectIdSelector,
+  browseSectionsSelector,
+  coursesSelector,
+  schoolsSelector,
+  subjectsSelector,
+  currentCourseNameSelector,
+  currentSectionNumberSelector,
+  currentAssociatedClassesSelector,
+  currentSearchInputSelector,
+  searchViewSelector,
+  searchResultsSelector,
+  searchIsFetchingSelector,
+  currentSectionsSelector,
 } from './index';
 
 describe('sectionsSelctor', () => {
@@ -33,7 +48,7 @@ describe('currentBrowseLevelSelector', () => {
   });
 });
 
-describe('isFetchingSelector', () => {
+describe('browseIsFetchingSelector', () => {
   it('should select isFetching from browse state', () => {
     const testIsFetchingResults = fromJS([{ isFetching: false }]);
     const testState = fromJS({
@@ -42,20 +57,7 @@ describe('isFetchingSelector', () => {
       },
     });
 
-    expect(isFetchingSelector(testState)).toEqual(testIsFetchingResults);
-  });
-});
-
-describe('scheduledSectionsSelector', () => {
-  it('should select scheduled sections from state', () => {
-    const testScheduledSections = fromJS([]);
-    const testState = fromJS({
-      schedule: {
-        sections: testScheduledSections,
-      },
-    });
-
-    expect(scheduledSectionsSelector(testState)).toEqual(testScheduledSections);
+    expect(browseIsFetchingSelector(testState)).toEqual(testIsFetchingResults);
   });
 });
 
@@ -73,5 +75,235 @@ describe('selectedCourseNameSelector', () => {
     });
 
     expect(selectedCourseNameSelector(state)).toBe(name);
+  });
+});
+
+describe('selectedSectionNumberSelector', () => {
+  it('should select selected section number from browse state', () => {
+    const sectionNumber = '20';
+    const testState = fromJS({
+      browse: {
+        selected: {
+          section: {
+            sectionNumber,
+          },
+        },
+      },
+    });
+
+    expect(selectedSectionNumberSelector(testState)).toEqual(sectionNumber);
+  });
+});
+
+describe('selectedSectionAssociatedClassesSelector', () => {
+  it("should select selected section's associated classes from browse state", () => {
+    const associatedClasses = fromJS([]);
+    const testState = fromJS({
+      browse: {
+        selected: {
+          section: {
+            associatedClasses,
+          },
+        },
+      },
+    });
+
+    expect(selectedSectionAssociatedClassesSelector(testState)).toEqual(associatedClasses);
+  });
+});
+
+describe('selectedSchoolIdSelector', () => {
+  it('should select selected school id from browse state', () => {
+    const id = 'WCAS';
+    const testState = fromJS({
+      browse: {
+        selected: {
+          school: {
+            id,
+          },
+        },
+      },
+    });
+
+    expect(selectedSchoolIdSelector(testState)).toEqual(id);
+  });
+});
+
+describe('selectedSubjectIdSelector', () => {
+  it('should select selected subject id from browse state', () => {
+    const id = 'EECS';
+    const testState = fromJS({
+      browse: {
+        selected: {
+          subject: {
+            id,
+          },
+        },
+      },
+    });
+
+    expect(selectedSubjectIdSelector(testState)).toEqual(id);
+  });
+});
+
+describe('sectionsSelector', () => {
+  it('should select selected section number from browse state', () => {
+    const sections = fromJS([]);
+    const testState = fromJS({
+      browse: {
+        sections,
+      },
+    });
+
+    expect(browseSectionsSelector(testState)).toEqual(sections);
+  });
+});
+
+describe('coursesSelector', () => {
+  it('should select courses from browse state', () => {
+    const courses = fromJS([{ id: '101-0', name: 'Introduction to Something' }]);
+    const testState = fromJS({
+      browse: {
+        courses,
+      },
+    });
+
+    expect(coursesSelector(testState)).toEqual(courses);
+  });
+});
+
+describe('schoolsSelector', () => {
+  it('should select school results from state', () => {
+    const testSchoolResults = fromJS([{ name: 'Bienen School of Music' }]);
+    const testState = fromJS({
+      browse: {
+        schools: [
+          { name: 'Bienen School of Music' },
+        ],
+      },
+    });
+
+    expect(schoolsSelector(testState)).toEqual(testSchoolResults);
+  });
+});
+
+describe('subjectsSelector', () => {
+  it('should select subjects from browse state', () => {
+    const subjects = fromJS([{ id: 'EECS', schoolId: 'WCAS' }]);
+    const testState = fromJS({
+      browse: {
+        subjects,
+      },
+    });
+
+    expect(subjectsSelector(testState)).toEqual(subjects);
+  });
+});
+
+describe('currentCourseNameSelector', () => {
+  it('should select current course name from state', () => {
+    const currentCourseName = 'Some Course Name';
+    const testState = fromJS({
+      search: {
+        currentCourseName,
+      },
+    });
+
+    expect(currentCourseNameSelector(testState)).toEqual(currentCourseName);
+  });
+});
+
+describe('currentSectionNumberSelector', () => {
+  it('should select current section number from state', () => {
+    const currentSectionNumber = '78719';
+    const testState = fromJS({
+      search: {
+        currentSectionNumber,
+      },
+    });
+
+    expect(currentSectionNumberSelector(testState)).toEqual(currentSectionNumber);
+  });
+});
+
+describe('currentAssociatedClassesSelector', () => {
+  it('should select current section number from state', () => {
+    const currentAssociatedClasses = [];
+    const testState = fromJS({
+      search: {
+        currentAssociatedClasses,
+      },
+    });
+
+    expect(currentAssociatedClassesSelector(testState)).toEqual(fromJS(currentAssociatedClasses));
+  });
+});
+
+describe('SearchBoxContainer', () => {
+  describe('currentSearchInputSelector', () => {
+    it('should select current search input from state', () => {
+      const testSearchInput = 'EECS';
+      const testState = fromJS({
+        search: {
+          currentSearchInput: testSearchInput,
+        },
+      });
+
+      expect(currentSearchInputSelector(testState)).toEqual(testSearchInput);
+    });
+  });
+});
+
+describe('SearchContainer', () => {
+  describe('searchViewSelector', () => {
+    it('should select view of sidebar from state', () => {
+      const testSearchView = 'search';
+      const testState = fromJS({
+        search: {
+          view: testSearchView,
+        },
+      });
+
+      expect(searchViewSelector(testState)).toEqual(testSearchView);
+    });
+  });
+});
+
+describe('searchResultsSelector', () => {
+  it('should select search results from state', () => {
+    const testSearchResults = fromJS([{ name: 'My Course ' }]);
+    const testState = fromJS({
+      search: {
+        results: testSearchResults,
+      },
+    });
+
+    expect(searchResultsSelector(testState)).toEqual(testSearchResults);
+  });
+});
+
+describe('searchIsFetchingSelector', () => {
+  it('should select isFetching from state', () => {
+    const testIsFetchingResults = fromJS([{ isFetching: false }]);
+    const testState = fromJS({
+      search: {
+        isFetching: testIsFetchingResults,
+      },
+    });
+
+    expect(searchIsFetchingSelector(testState)).toEqual(testIsFetchingResults);
+  });
+});
+
+describe('currentSectionsSelector', () => {
+  it('should select current sections from state', () => {
+    const testSections = fromJS([]);
+    const testState = fromJS({
+      search: {
+        currentSections: testSections,
+      },
+    });
+
+    expect(currentSectionsSelector(testState)).toEqual(testSections);
   });
 });

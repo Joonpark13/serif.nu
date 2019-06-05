@@ -1,17 +1,14 @@
 import { connect } from 'react-redux';
 import toJS from 'util/to-js';
 import { changeBrowseLevel, fetchSubjectsRequest, selectSchoolInBrowse } from 'actions';
-import { isFetchingSelector } from 'selectors';
+import { schoolsSelector, browseIsFetchingSelector } from 'selectors';
 import Schools from './Schools';
 
-export function schoolsSelector(state) {
-  return state.getIn(['browse', 'schools']).sortBy(school => school.get('name'));
-}
 
 /* istanbul ignore next */
 const mapStateToProps = state => ({
   schools: schoolsSelector(state),
-  isFetching: isFetchingSelector(state),
+  isFetching: browseIsFetchingSelector(state),
 });
 
 /* istanbul ignore next */

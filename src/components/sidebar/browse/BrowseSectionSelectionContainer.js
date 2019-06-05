@@ -1,19 +1,20 @@
 import { connect } from 'react-redux';
 import toJS from 'util/to-js';
 import { addSectionFromBrowse, changeBrowseLevel } from 'actions';
-import { selectedCourseNameSelector, scheduledSectionsSelector } from 'selectors';
+import {
+  selectedCourseNameSelector,
+  browseSectionsSelector,
+  sectionsSelector,
+} from 'selectors';
 import SectionSelection from '../common/SectionSelection';
 
-export function sectionsSelector(state) {
-  return state.getIn(['browse', 'sections']);
-}
 
 /* istanbul ignore next */
 function mapStateToProps(state) {
   return {
     currentCourseName: selectedCourseNameSelector(state),
-    sections: sectionsSelector(state),
-    scheduledSections: scheduledSectionsSelector(state),
+    sections: browseSectionsSelector(state),
+    scheduledSections: sectionsSelector(state),
   };
 }
 
