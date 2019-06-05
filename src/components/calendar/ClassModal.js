@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import { getFormattedClassSchedule } from 'util/time';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
+import { Dialog, DialogActions, Typography, Button, Divider } from '@material-ui/core';
 
 export const styles = {
   dialog: {
@@ -17,7 +13,23 @@ export const styles = {
   },
 };
 
-function ClassModal({ showDialog, toggleDialog, classes, section, removeSection }) {
+function ClassModal({
+  showDialog, toggleDialog, classes, section, associatedClass, removeSection,
+}) {
+  const subtitle = `${section.subjectId} ${section.courseId} Section ${section.sectionNumber}`;
+  const associatedClassSchedule = associatedClass && (
+    <div>
+      <Typography>{getFormattedClassSchedule(associatedClass.schedule)}</Typography>
+      <Typography>{associatedClass.schedule.location}</Typography>
+    </div>
+  );
+  const sectionSchedules = section.schedules.map(schedule => (
+    <div key={JSON.stringify(schedule)}>
+      <Typography>{getFormattedClassSchedule(schedule)}</Typography>
+      <Typography>{schedule.location}</Typography>
+    </div>
+  ));
+
   return (
     <Dialog
       open={showDialog}
@@ -27,17 +39,19 @@ function ClassModal({ showDialog, toggleDialog, classes, section, removeSection 
     >
       <div className={classes.dialog}>
         <Typography gutterBottom variant="h5">
-          {`${section.subjectId} ${section.courseId} Section ${section.sectionNumber}`}
+          {associatedClass ? `${associatedClass.type} - ` : ''}
+          {section.name}
         </Typography>
         <Divider />
         <br />
 
-        {section.schedules.map(schedule => (
-          <div key={JSON.stringify(schedule)}>
-            <Typography>{getFormattedClassSchedule(schedule)}</Typography>
-            <Typography>{schedule.location}</Typography>
-          </div>
-        ))}
+        <Typography variant="subtitle1">
+          {subtitle}
+        </Typography>
+        <br />
+
+        {associatedClass ? associatedClassSchedule : sectionSchedules}
+
         {section.instructors.map(
           instructor => <Typography key={instructor}>{instructor}</Typography>,
         )}
@@ -61,10 +75,15 @@ function ClassModal({ showDialog, toggleDialog, classes, section, removeSection 
 
 ClassModal.propTypes = {
   section: PropTypes.objectOf(PropTypes.any).isRequired,
+  associatedClass: PropTypes.objectOf(PropTypes.any),
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   showDialog: PropTypes.bool.isRequired,
   toggleDialog: PropTypes.func.isRequired,
   removeSection: PropTypes.func.isRequired,
+};
+
+ClassModal.defaultProps = {
+  associatedClass: null,
 };
 
 export { ClassModal as UnstyledClassModal };

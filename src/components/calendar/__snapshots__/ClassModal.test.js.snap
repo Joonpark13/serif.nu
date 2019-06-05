@@ -14,9 +14,16 @@ exports[`ClassModal renders correctly 1`] = `
       gutterBottom={true}
       variant="h5"
     >
-      undefined undefined Section 20
+      
+      Introduction to Something
     </WithStyles(Typography)>
     <WithStyles(Divider) />
+    <br />
+    <WithStyles(Typography)
+      variant="subtitle1"
+    >
+      undefined undefined Section 20
+    </WithStyles(Typography)>
     <br />
     <div>
       <WithStyles(Typography)>
@@ -57,4 +64,13 @@ exports[`ClassModal renders correctly 1`] = `
     </WithStyles(Button)>
   </WithStyles(DialogActions)>
 </WithStyles(Dialog)>
+`;
+
+exports[`ClassModal renders correctly for associated class 1`] = `
+<div>
+  <WithStyles(Typography)>
+    Mo 10:30 AM - 12:00 PM
+  </WithStyles(Typography)>
+  <WithStyles(Typography) />
+</div>
 `;
