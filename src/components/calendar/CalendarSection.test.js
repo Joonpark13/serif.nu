@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { mockStyles } from 'util/testing';
 import Section from 'components/common/Section';
-import ClassModalContainer from './ClassModalContainer';
+import ClassModal from './ClassModal';
 import { UnstyledCalendarSection, styles, MAX_WIDTH_PERCENT } from './CalendarSection';
 
 describe('CalendarSection', () => {
@@ -80,7 +80,7 @@ describe('CalendarSection', () => {
 
     wrapper.find(Section).simulate('click');
 
-    expect(wrapper.find(ClassModalContainer).prop('showDialog')).toBe(true);
+    expect(wrapper.find(ClassModal).prop('showDialog')).toBe(true);
   });
 
   it('does nothing as a preview section when clicked', () => {
@@ -92,6 +92,6 @@ describe('CalendarSection', () => {
 
     wrapper.find(Section).simulate('click');
 
-    expect(wrapper.find(ClassModalContainer).prop('showDialog')).toBe(false);
+    expect(wrapper.find(ClassModal).prop('showDialog')).toBe(false);
   });
 });

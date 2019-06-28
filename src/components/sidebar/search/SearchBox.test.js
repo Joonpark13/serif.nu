@@ -1,5 +1,6 @@
 import { TextField } from '@material-ui/core';
-import { wrapperCreator } from 'util/testing';
+import { fetchSearchResultsRequest } from 'actions';
+import { wrapperCreator, mockUseSelector, mockUseDispatch } from 'util/testing';
 import { UnstyledSearchBox, styles } from './SearchBox';
 
 describe('SearchBox', () => {
@@ -15,6 +16,13 @@ describe('SearchBox', () => {
     currentSearchInput: '',
   };
   const getWrapper = wrapperCreator(UnstyledSearchBox, defaultProps, styles);
+
+  let dispatchMock;
+  beforeEach(() => {
+    mockUseSelector(testSearchInput);
+    dispatchMock = mockUseDispatch();
+  });
+
 
   it('renders correctly', () => {
     const wrapper = getWrapper();
@@ -36,17 +44,17 @@ describe('SearchBox', () => {
 
     const wrapper = getWrapper({ handleSearchInput: handleSearchInputMock });
 
-    expect(handleSearchInputMock).not.toBeCalled();
+    expect(dispatchMock).not.toBeCalled();
 
     const eventObject = makeEventObject(testSearchInput);
     wrapper.find(TextField).first().simulate('change', eventObject);
 
-    expect(handleSearchInputMock).not.toBeCalled();
+    expect(dispatchMock).not.toHaveBeenCalledWith(fetchSearchResultsRequest(''));
 
     // Async test, would end after this statement but then the expect wouldn't
     // contribute to test results
     setTimeout(((jestCompleted) => {
-      expect(handleSearchInputMock).toHaveBeenCalledWith(testSearchInput);
+      expect(dispatchMock).toHaveBeenCalledWith(fetchSearchResultsRequest(testSearchInput));
       jestCompleted();
     }).bind(null, completed), 300);
   });

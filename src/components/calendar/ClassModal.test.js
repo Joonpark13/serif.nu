@@ -1,10 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Button, DialogTitle } from '@material-ui/core';
 import * as notistack from 'notistack';
+import { Button, DialogTitle } from '@material-ui/core';
+import { mockUseDispatch } from 'util/testing';
+import { removeSection } from 'actions';
 import ClassModal from './ClassModal';
 
 jest.mock('notistack');
+jest.mock('react-redux');
 
 describe('ClassModal', () => {
   const section = {
@@ -71,13 +74,11 @@ describe('ClassModal', () => {
   });
 
   it('closes the modal when clicked', () => {
-    const removeSectionMock = jest.fn();
-    const wrapper = shallow(
-      <ClassModal {...defaultProps} removeSection={removeSectionMock} />,
-    );
+    const dispatchMock = mockUseDispatch();
+    const wrapper = shallow(<ClassModal {...defaultProps} />);
     wrapper.find(Button).first().simulate('click');
 
-    expect(removeSectionMock).toHaveBeenCalledWith(section.id, section.color);
+    expect(dispatchMock).toHaveBeenCalledWith(removeSection(section.id, section.color));
   });
 
 

@@ -1,6 +1,7 @@
 import { wrapperCreator } from 'util/testing';
 import { auth } from 'util/firebase';
 import { UnconnectedApp } from './App';
+import NavDrawer from './NavDrawer';
 
 jest.mock('util/firebase');
 jest.mock('images/facebook-logo.png');
@@ -54,8 +55,8 @@ describe('App', () => {
 
   it('should toggle navigation', () => {
     const wrapper = getWrapper();
-    wrapper.instance().toggleNav();
+    wrapper.find(NavDrawer).props().closeFunc();
 
-    expect(wrapper.get(0)).toMatchSnapshot();
+    expect(wrapper.find(NavDrawer).prop('isOpen')).toBe(true);
   });
 });

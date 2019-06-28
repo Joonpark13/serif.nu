@@ -2,34 +2,34 @@
 
 exports[`Browse renders associated classes correctly 1`] = `
 <React.Fragment>
-  <Connect(Component) />
+  <BrowseAssociatedClassesSelectionContainer />
 </React.Fragment>
 `;
 
 exports[`Browse renders courses correctly 1`] = `
 <React.Fragment>
-  <Connect(Component) />
   <ForwardRef(WithStyles) />
-  <Connect(Component) />
+  <ForwardRef(WithStyles) />
+  <ForwardRef(WithStyles) />
 </React.Fragment>
 `;
 
 exports[`Browse renders schools correctly 1`] = `
 <React.Fragment>
-  <Connect(Component) />
+  <ForwardRef(WithStyles) />
 </React.Fragment>
 `;
 
 exports[`Browse renders sections correctly 1`] = `
 <React.Fragment>
-  <Connect(Component) />
+  <SectionSelectionContainer />
 </React.Fragment>
 `;
 
 exports[`Browse renders subjects correctly 1`] = `
 <React.Fragment>
-  <Connect(Component) />
   <ForwardRef(WithStyles) />
-  <Connect(Component) />
+  <ForwardRef(WithStyles) />
+  <ForwardRef(WithStyles) />
 </React.Fragment>
 `;

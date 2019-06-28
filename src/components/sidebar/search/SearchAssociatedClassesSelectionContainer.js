@@ -1,5 +1,6 @@
-import { connect } from 'react-redux';
-import toJS from 'util/to-js';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import useSelector from 'util/use-selector';
 import {
   viewSectionSelection,
   addSectionWithAssociatedClassFromSearch,
@@ -13,20 +14,23 @@ import {
 } from 'selectors';
 import AssociatedClassesSelection from '../common/AssociatedClassesSelection';
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    currentCourseName: currentCourseNameSelector(state),
-    currentSectionNumber: currentSectionNumberSelector(state),
-    associatedClasses: currentAssociatedClassesSelector(state),
-  };
+export default function SearchAssociatedClassesSelectionContainer() {
+  const currentCourseName = useSelector(currentCourseNameSelector);
+  const currentSectionNumber = useSelector(currentSectionNumberSelector);
+  const associatedClasses = useSelector(currentAssociatedClassesSelector);
+  const dispatch = useDispatch();
+
+  return (
+    <AssociatedClassesSelection
+      currentCourseName={currentCourseName}
+      currentSectionNumber={currentSectionNumber}
+      associatedClasses={associatedClasses}
+      back={() => dispatch(viewSectionSelection())}
+      addSectionWithAssociatedClass={
+        associatedClass => dispatch(addSectionWithAssociatedClassFromSearch(associatedClass))
+      }
+      associatedClassHover={associatedClass => dispatch(associatedClassHover(associatedClass))}
+      associatedClassHoverOff={() => dispatch(associatedClassHoverOff())}
+    />
+  );
 }
-
-const mapDispatchToProps = {
-  back: viewSectionSelection,
-  addSectionWithAssociatedClass: addSectionWithAssociatedClassFromSearch,
-  associatedClassHover,
-  associatedClassHoverOff,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(toJS(AssociatedClassesSelection));

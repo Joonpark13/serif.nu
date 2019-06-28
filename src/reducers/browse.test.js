@@ -1,8 +1,8 @@
 import { fromJS } from 'immutable';
 import { loop, Cmd } from 'redux-loop';
 import {
-  getSchoolsSuccess,
-  getSchoolsFailure,
+  fetchSchoolsSuccess,
+  fetchSchoolsFailure,
   fetchSubjectsSuccess,
   fetchSubjectsFailure,
   fetchCoursesSuccess,
@@ -31,7 +31,7 @@ describe('browse reducer', () => {
     const state = fromJS({
       isFetching: false,
     });
-    const action = actionCreators.getSchoolsRequest(termId);
+    const action = actionCreators.fetchSchoolsRequest(termId);
 
     expect(browseReducer(state, action)).toEqual(
       loop(
@@ -40,14 +40,14 @@ describe('browse reducer', () => {
         }),
         Cmd.run(fetchSchools, {
           args: [action.currentTermId],
-          successActionCreator: getSchoolsSuccess,
-          failActionCreator: getSchoolsFailure,
+          successActionCreator: fetchSchoolsSuccess,
+          failActionCreator: fetchSchoolsFailure,
         }),
       ),
     );
   });
 
-  it(`should handle ${actionTypes.GET_SCHOOLS_SUCCESS}`, () => {
+  it(`should handle ${actionTypes.FETCH_SCHOOLS_SUCCESS}`, () => {
     const state = fromJS({
       isFetching: true,
       schools: [],
@@ -62,7 +62,7 @@ describe('browse reducer', () => {
         type: 'school',
       },
     ];
-    const action = actionCreators.getSchoolsSuccess(testResults);
+    const action = actionCreators.fetchSchoolsSuccess(testResults);
 
     expect(browseReducer(state, action)).toEqual(fromJS({
       isFetching: false,
@@ -70,12 +70,12 @@ describe('browse reducer', () => {
     }));
   });
 
-  it(`should handle ${actionTypes.GET_SCHOOLS_FAILURE}`, () => {
+  it(`should handle ${actionTypes.FETCH_SCHOOLS_FAILURE}`, () => {
     const state = fromJS({
       isFetching: false,
       schools: [],
     });
-    const action = actionCreators.getSchoolsFailure();
+    const action = actionCreators.fetchSchoolsFailure();
 
     expect(browseReducer(state, action)).toEqual(state);
   });

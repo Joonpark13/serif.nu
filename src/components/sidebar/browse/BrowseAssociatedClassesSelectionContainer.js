@@ -1,5 +1,6 @@
-import { connect } from 'react-redux';
-import toJS from 'util/to-js';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import useSelector from 'util/use-selector';
 import {
   addSectionWithAssociatedClassFromBrowse,
   changeBrowseLevel,
@@ -13,22 +14,25 @@ import {
 } from 'selectors';
 import AssociatedClassesSelection from '../common/AssociatedClassesSelection';
 
+function BrowseAssociatedClassesSelectionContainer() {
+  const currentCourseName = useSelector(selectedCourseNameSelector);
+  const currentSectionNumber = useSelector(selectedSectionNumberSelector);
+  const associatedClasses = useSelector(selectedSectionAssociatedClassesSelector);
+  const dispatch = useDispatch();
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    currentCourseName: selectedCourseNameSelector(state),
-    currentSectionNumber: selectedSectionNumberSelector(state),
-    associatedClasses: selectedSectionAssociatedClassesSelector(state),
-  };
+  return (
+    <AssociatedClassesSelection
+      currentCourseName={currentCourseName}
+      currentSectionNumber={currentSectionNumber}
+      associatedClasses={associatedClasses}
+      back={() => dispatch(changeBrowseLevel('section'))}
+      addSectionWithAssociatedClass={
+        associatedClass => dispatch(addSectionWithAssociatedClassFromBrowse(associatedClass))
+      }
+      associatedClassHover={associatedClass => dispatch(associatedClassHover(associatedClass))}
+      associatedClassHoverOff={() => dispatch(associatedClassHoverOff())}
+    />
+  );
 }
 
-/* istanbul ignore next */
-const mapDispatchToProps = {
-  back: () => changeBrowseLevel('section'),
-  addSectionWithAssociatedClass: addSectionWithAssociatedClassFromBrowse,
-  associatedClassHover,
-  associatedClassHoverOff,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(toJS(AssociatedClassesSelection));
+export default BrowseAssociatedClassesSelectionContainer;

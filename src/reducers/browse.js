@@ -2,8 +2,8 @@ import { fromJS } from 'immutable';
 import { loop, Cmd } from 'redux-loop';
 import { isUnscheduled } from 'util/time';
 import {
-  getSchoolsSuccess,
-  getSchoolsFailure,
+  fetchSchoolsSuccess,
+  fetchSchoolsFailure,
   fetchSubjectsSuccess,
   fetchSubjectsFailure,
   fetchCoursesSuccess,
@@ -69,22 +69,22 @@ function handleAddSectionFromBrowse(state, { section }) {
 
 function browse(state = initialBrowseState, action) {
   switch (action.type) {
-    case actionTypes.GET_SCHOOLS_REQUEST:
+    case actionTypes.FETCH_SCHOOLS_REQUEST:
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchSchools, {
           args: [action.currentTermId],
-          successActionCreator: getSchoolsSuccess,
-          failActionCreator: getSchoolsFailure,
+          successActionCreator: fetchSchoolsSuccess,
+          failActionCreator: fetchSchoolsFailure,
         }),
 
       );
-    case actionTypes.GET_SCHOOLS_SUCCESS:
+    case actionTypes.FETCH_SCHOOLS_SUCCESS:
       return state.merge({
         isFetching: false,
         schools: fromJS(action.schools),
       });
-    case actionTypes.GET_SCHOOLS_FAILURE:
+    case actionTypes.FETCH_SCHOOLS_FAILURE:
       return state.merge({
         isFetching: false,
         schools: initialBrowseState.get('schools'),

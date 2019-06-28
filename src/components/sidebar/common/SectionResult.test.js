@@ -1,9 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ListItem from '@material-ui/core/ListItem';
-import { Typography } from '@material-ui/core';
-import * as timeUtils from 'util/time';
 import * as notistack from 'notistack';
+import { ListItem, Typography } from '@material-ui/core';
+import * as timeUtils from 'util/time';
+import { mockUseDispatch } from 'util/testing';
+import { sectionHover, sectionHoverOff } from 'actions';
 import SectionResult from './SectionResult';
 
 jest.mock('util/time');
@@ -25,8 +26,6 @@ describe('SectionResult', () => {
   const defaultProps = {
     addSection: () => {},
     section,
-    sectionHover: () => {},
-    sectionHoverOff: () => {},
   };
   const message = 'Class successfully added';
 
@@ -81,14 +80,20 @@ describe('SectionResult', () => {
     expect(colorProp).toBe('error');
   });
 
-  it('calls sectionHover when clicked', () => {
-    const sectionHoverMock = jest.fn();
-    const wrapper = shallow(
-      <SectionResult {...defaultProps} sectionHover={sectionHoverMock} />,
-    );
+  it('dispatches sectionHover when hovered', () => {
+    const dispatchMock = mockUseDispatch();
+    const wrapper = shallow(<SectionResult {...defaultProps} />);
     wrapper.find(ListItem).simulate('mouseEnter');
 
-    expect(sectionHoverMock).toHaveBeenCalledWith(section);
+    expect(dispatchMock).toHaveBeenCalledWith(sectionHover(section));
+  });
+
+  it('dispatches sectionHoverOff on mouse leave', () => {
+    const dispatchMock = mockUseDispatch();
+    const wrapper = shallow(<SectionResult {...defaultProps} />);
+    wrapper.find(ListItem).simulate('mouseLeave');
+
+    expect(dispatchMock).toHaveBeenCalledWith(sectionHoverOff());
   });
 
   it('pops up snackbar when clicked', () => {

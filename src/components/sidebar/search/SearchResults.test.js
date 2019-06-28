@@ -1,5 +1,6 @@
-import ListItem from '@material-ui/core/ListItem';
-import { wrapperCreator } from 'util/testing';
+import { ListItem } from '@material-ui/core';
+import { wrapperCreator, mockUseSelector, mockUseDispatch } from 'util/testing';
+import { fetchSectionsForSearchRequest, setCurrentCourseName } from 'actions';
 import { UnstyledSearchResults, styles } from './SearchResults';
 
 describe('SearchResults', () => {
@@ -18,13 +19,11 @@ describe('SearchResults', () => {
   }];
   const testSearchInput = 'EECS';
 
-  const defaultProps = {
-    searchResults: testResults,
-    isFetching: false,
-    handleCourseClick: () => {},
-    currentSearchInput: testSearchInput,
-  };
-  const getComponent = wrapperCreator(UnstyledSearchResults, defaultProps, styles);
+  const getComponent = wrapperCreator(UnstyledSearchResults, undefined, styles);
+
+  beforeEach(() => {
+    mockUseSelector(testResults, false, testSearchInput);
+  });
 
   it('renders correctly', () => {
     const wrapper = getComponent();
@@ -33,35 +32,41 @@ describe('SearchResults', () => {
   });
 
   it('renders loading correctly', () => {
-    const wrapper = getComponent({ isFetching: true });
+    mockUseSelector(testResults, true, testSearchInput);
+    const wrapper = getComponent();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it("renders 'keep typing' correctly", () => {
-    const wrapper = getComponent({
-      currentSearchInput: 'EE',
-    });
+    mockUseSelector(testResults, false, 'EE');
+    const wrapper = getComponent();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it("renders 'no results' correctly", () => {
-    const wrapper = getComponent({
-      searchResults: [],
-      currentSearchInput: 'ABCD',
-    });
+    mockUseSelector([], false, 'ABCD');
+    const wrapper = getComponent();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('handleCourseClick gets called correctly', () => {
-    const handleCourseClickMock = jest.fn();
-    const wrapper = getComponent({ handleCourseClick: handleCourseClickMock });
+    const dispatchMock = mockUseDispatch();
+    const wrapper = getComponent();
 
     wrapper.find(ListItem).first().simulate('click');
 
-    expect(handleCourseClickMock)
-      .toHaveBeenCalledWith(testResults[0].schoolId, testResults[0].subjectId, testResults[0].id);
+    expect(dispatchMock).toHaveBeenCalledWith(
+      fetchSectionsForSearchRequest(
+        testResults[0].schoolId,
+        testResults[0].subjectId,
+        testResults[0].id,
+      ),
+    );
+    expect(dispatchMock).toHaveBeenCalledWith(
+      setCurrentCourseName(`${testResults[0].subjectId} ${testResults[0].id}`),
+    );
   });
 });

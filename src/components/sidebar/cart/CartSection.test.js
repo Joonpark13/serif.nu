@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { mockStyles } from 'util/testing';
 import * as timeUtils from 'util/time';
 import Section from 'components/common/Section';
-import ClassModalContainer from 'components/calendar/ClassModalContainer';
+import ClassModal from 'components/calendar/ClassModal';
 import { UnstyledCartSection, styles } from './CartSection';
 
 describe('CartSection', () => {
@@ -49,6 +49,6 @@ describe('CartSection', () => {
 
     wrapper.find(Section).simulate('click');
 
-    expect(wrapper.find(ClassModalContainer).prop('showDialog')).toBe(true);
+    expect(wrapper.find(ClassModal).prop('showDialog')).toBe(true);
   });
 });

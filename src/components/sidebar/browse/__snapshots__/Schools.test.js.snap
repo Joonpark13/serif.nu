@@ -24,7 +24,9 @@ exports[`Schools renders correctly 1`] = `
 `;
 
 exports[`Schools renders loading correctly 1`] = `
-<div>
+<div
+  className=""
+>
   <ForwardRef(WithStyles) />
 </div>
 `;

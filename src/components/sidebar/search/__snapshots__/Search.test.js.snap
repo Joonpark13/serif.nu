@@ -2,21 +2,21 @@
 
 exports[`Search renders associatedClassesSelection view correctly 1`] = `
 <div>
-  <Connect(Component) />
+  <SearchAssociatedClassesSelectionContainer />
 </div>
 `;
 
 exports[`Search renders correctly 1`] = `
 <div>
   <React.Fragment>
-    <Connect(Component) />
-    <Connect(Component) />
+    <ForwardRef(WithStyles) />
+    <ForwardRef(WithStyles) />
   </React.Fragment>
 </div>
 `;
 
 exports[`Search renders sectionSelection view correctly 1`] = `
 <div>
-  <Connect(Component) />
+  <SearchSectionSelectionContainer />
 </div>
 `;

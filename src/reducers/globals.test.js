@@ -3,7 +3,7 @@ import { loop, Cmd } from 'redux-loop';
 import {
   fetchCurrentTermSuccess,
   fetchCurrentTermFailure,
-  getSchoolsRequest,
+  fetchSchoolsRequest,
   fetchSearchIndex,
 } from 'actions';
 import { fetchCurrentTerm } from 'effects/globals';
@@ -60,7 +60,7 @@ describe('globals reducer', () => {
           },
         }),
         Cmd.list([
-          Cmd.action(getSchoolsRequest()),
+          Cmd.action(fetchSchoolsRequest()),
           Cmd.action(fetchSearchIndex()),
         ]),
       ),

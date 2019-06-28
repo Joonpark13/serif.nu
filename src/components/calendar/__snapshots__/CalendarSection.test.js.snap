@@ -16,7 +16,8 @@ exports[`CalendarSection renders correctly 1`] = `
     rightHeaderContent="undefined undefined"
     sectionName=""
   />
-  <Connect(Component)
+  <ClassModal
+    associatedClass={null}
     section={
       Object {
         "course": "101-1",

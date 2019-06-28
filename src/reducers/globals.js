@@ -4,7 +4,7 @@ import * as actionTypes from 'actions/action-types';
 import {
   fetchCurrentTermSuccess,
   fetchCurrentTermFailure,
-  getSchoolsRequest,
+  fetchSchoolsRequest,
   fetchSearchIndex,
 } from 'actions';
 import { fetchCurrentTerm } from 'effects/globals';
@@ -25,7 +25,6 @@ function globals(state = initialGlobalsState, action) {
         }),
       );
     case actionTypes.FETCH_CURRENT_TERM_SUCCESS:
-      console.log(action);
       return loop(
         state
           .set('isFetching', false)
@@ -34,7 +33,7 @@ function globals(state = initialGlobalsState, action) {
             name: action.term[0].name,
           })),
         Cmd.list([
-          Cmd.action(getSchoolsRequest()),
+          Cmd.action(fetchSchoolsRequest()),
           Cmd.action(fetchSearchIndex()),
         ]),
       );

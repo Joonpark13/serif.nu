@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { wrapperCreator, mockStyles } from 'util/testing';
 import * as timeUtils from 'util/time';
 import Section from 'components/common/Section';
-import ClassModalContainer from './ClassModalContainer';
+import ClassModal from './ClassModal';
 import { UnstyledAssociatedClass, styles, MAX_WIDTH_PERCENT } from './AssociatedClass';
 
 jest.mock('util/time');
@@ -77,6 +77,6 @@ describe('AssociatedClass', () => {
 
     wrapper.find(Section).simulate('click');
 
-    expect(wrapper.find(ClassModalContainer).prop('showDialog')).toBe(true);
+    expect(wrapper.find(ClassModal).prop('showDialog')).toBe(true);
   });
 });

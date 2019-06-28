@@ -52,3 +52,11 @@ export function overlaps(event1, event2) {
 export function isUnscheduled(event) {
   return event.dow === 'TBA' || event.start === 'TBA' || event.end === 'TBA';
 }
+
+export function meetsDuringDow(eventObj, dow) {
+  return eventObj.dow.includes(dow);
+}
+
+export function meetsDuringHour(eventObj, hour) {
+  return hour === eventObj.start.hour;
+}

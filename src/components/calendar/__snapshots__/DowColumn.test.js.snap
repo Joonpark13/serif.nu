@@ -14,63 +14,63 @@ exports[`DowColumn renders correctly 1`] = `
   <div
     className=""
   >
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={8}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={9}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={10}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={11}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={12}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={13}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={14}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={15}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={16}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={17}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={18}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={19}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={20}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={21}
     />
-    <Connect(Component)
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={22}
     />

@@ -1,34 +1,43 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { mockUseSelector } from 'util/testing';
 import Browse from './Browse';
 
 describe('Browse', () => {
+  beforeEach(() => {
+    mockUseSelector('school');
+  });
+
   it('renders schools correctly', () => {
-    const wrapper = shallow(<Browse currentBrowseLevel="school" />);
+    const wrapper = shallow(<Browse />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders subjects correctly', () => {
-    const wrapper = shallow(<Browse currentBrowseLevel="subject" />);
+    mockUseSelector('subject');
+    const wrapper = shallow(<Browse />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders courses correctly', () => {
-    const wrapper = shallow(<Browse currentBrowseLevel="course" />);
+    mockUseSelector('course');
+    const wrapper = shallow(<Browse />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders sections correctly', () => {
-    const wrapper = shallow(<Browse currentBrowseLevel="section" />);
+    mockUseSelector('section');
+    const wrapper = shallow(<Browse />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders associated classes correctly', () => {
-    const wrapper = shallow(<Browse currentBrowseLevel="associatedClass" />);
+    mockUseSelector('associatedClass');
+    const wrapper = shallow(<Browse />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

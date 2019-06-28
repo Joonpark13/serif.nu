@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import { getFormattedClassSchedule } from 'util/time';
 import Section from 'components/common/Section';
-import ClassModalContainer from 'components/calendar/ClassModalContainer';
+import ClassModal from 'components/calendar/ClassModal';
 
 export const styles = {
   paper: {
@@ -25,52 +25,41 @@ export const styles = {
   },
 };
 
-class CartSection extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showDialog: false,
-    };
-    this.toggleDialog = this.toggleDialog.bind(this);
+function CartSection({ classes, section }) {
+  const [showDialog, setShowDialog] = useState(false);
+
+  function toggleDialog() {
+    setShowDialog(!showDialog);
   }
 
-  toggleDialog() {
-    this.setState(state => ({ showDialog: !state.showDialog }));
+  let leftHeaderContent;
+  if (section.schedules.length > 1) {
+    leftHeaderContent = section.schedules
+      .map(schedule => getFormattedClassSchedule(schedule))
+      .reduce(
+        (resultStr, formattedStr) => `${resultStr}, ${formattedStr}`,
+      );
+  } else {
+    leftHeaderContent = getFormattedClassSchedule(section.schedules[0]);
   }
+  const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
 
-  render() {
-    const { classes, section } = this.props;
-    const { showDialog } = this.state;
-
-    let leftHeaderContent;
-    if (section.schedules.length > 1) {
-      leftHeaderContent = section.schedules
-        .map(schedule => getFormattedClassSchedule(schedule))
-        .reduce(
-          (resultStr, formattedStr) => `${resultStr}, ${formattedStr}`,
-        );
-    } else {
-      leftHeaderContent = getFormattedClassSchedule(section.schedules[0]);
-    }
-    const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
-
-    return (
-      <React.Fragment>
-        <Section
-          onClick={this.toggleDialog}
-          classes={classes}
-          leftHeaderContent={leftHeaderContent}
-          rightHeaderContent={rightHeaderContent}
-          sectionName={section.name}
-        />
-        <ClassModalContainer
-          section={section}
-          showDialog={showDialog}
-          toggleDialog={this.toggleDialog}
-        />
-      </React.Fragment>
-    );
-  }
+  return (
+    <React.Fragment>
+      <Section
+        onClick={toggleDialog}
+        classes={classes}
+        leftHeaderContent={leftHeaderContent}
+        rightHeaderContent={rightHeaderContent}
+        sectionName={section.name}
+      />
+      <ClassModal
+        section={section}
+        showDialog={showDialog}
+        toggleDialog={toggleDialog}
+      />
+    </React.Fragment>
+  );
 }
 
 CartSection.propTypes = {

@@ -1,20 +1,25 @@
-import { connect } from 'react-redux';
-import toJS from 'util/to-js';
-import { viewSearch, addSectionFromSearch } from 'actions';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import useSelector from 'util/use-selector';
 import { currentCourseNameSelector, currentSectionsSelector, sectionsSelector } from 'selectors';
+import { viewSearch, addSectionFromSearch } from 'actions';
 import SectionSelection from '../common/SectionSelection';
 
+function SearchSectionSelectionContainer() {
+  const currentCourseName = useSelector(currentCourseNameSelector);
+  const sections = useSelector(currentSectionsSelector);
+  const scheduledSections = useSelector(sectionsSelector);
+  const dispatch = useDispatch();
 
-/* istanbul ignore next */
-const mapStateToProps = state => ({
-  currentCourseName: currentCourseNameSelector(state),
-  sections: currentSectionsSelector(state),
-  scheduledSections: sectionsSelector(state),
-});
+  return (
+    <SectionSelection
+      currentCourseName={currentCourseName}
+      sections={sections}
+      scheduledSections={scheduledSections}
+      back={() => dispatch(viewSearch())}
+      addSection={section => dispatch(addSectionFromSearch(section))}
+    />
+  );
+}
 
-const mapDispatchToProps = {
-  back: viewSearch,
-  addSection: addSectionFromSearch,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(toJS(SectionSelection));
+export default SearchSectionSelectionContainer;

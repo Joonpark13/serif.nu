@@ -3,8 +3,8 @@ import { loop, Cmd } from 'redux-loop';
 import { fetchSections } from 'effects/common';
 import { fetchSearchResults, fetchSearchIndex } from 'effects/search';
 import {
-  getSearchResultsSuccess,
-  getSearchResultsFailure,
+  fetchSearchResultsSuccess,
+  fetchSearchResultsFailure,
   fetchSearchIndexSuccess,
   fetchSearchIndexFailure,
   fetchSectionsForSearchSuccess,
@@ -52,30 +52,30 @@ describe('search reducer', () => {
     expect(searchReducer(initialSearchState, action)).toEqual(initialSearchState);
   });
 
-  it(`should handle ${actionTypes.GET_SEARCH_RESULTS_REQUEST}`, () => {
+  it(`should handle ${actionTypes.FETCH_SEARCH_RESULTS_REQUEST}`, () => {
     const termId = '4740';
     const state = fromJS({ isFetching: false });
-    const action = actionCreators.getSearchResultsRequest(termId);
+    const action = actionCreators.fetchSearchResultsRequest(termId);
 
     expect(searchReducer(state, action)).toEqual(
       loop(
         fromJS({ isFetching: true }),
         Cmd.run(fetchSearchResults, {
-          successActionCreator: getSearchResultsSuccess,
-          failActionCreator: getSearchResultsFailure,
+          successActionCreator: fetchSearchResultsSuccess,
+          failActionCreator: fetchSearchResultsFailure,
           args: [action.currentTermId, state.get('searchIndex'), action.searchInput],
         }),
       ),
     );
   });
 
-  it(`should handle ${actionTypes.GET_SEARCH_RESULTS_SUCCESS}`, () => {
+  it(`should handle ${actionTypes.FETCH_SEARCH_RESULTS_SUCCESS}`, () => {
     const state = fromJS({
       isFetching: true,
       results: [],
     });
     const testResults = [{ subject: 'EECS' }];
-    const action = actionCreators.getSearchResultsSuccess(testResults);
+    const action = actionCreators.fetchSearchResultsSuccess(testResults);
 
     expect(searchReducer(state, action)).toEqual(fromJS({
       isFetching: false,
@@ -83,12 +83,12 @@ describe('search reducer', () => {
     }));
   });
 
-  it(`should handle ${actionTypes.GET_SEARCH_RESULTS_FAILURE}`, () => {
+  it(`should handle ${actionTypes.FETCH_SEARCH_RESULTS_FAILURE}`, () => {
     const state = fromJS({
       isFetching: false,
       results: [],
     });
-    const action = actionCreators.getSearchResultsFailure();
+    const action = actionCreators.fetchSearchResultsFailure();
 
     expect(searchReducer(state, action)).toEqual(state);
   });
@@ -104,17 +104,17 @@ describe('search reducer', () => {
     }));
   });
 
-  it(`should handle ${actionTypes.GET_SEARCH_RESULTS_REQUEST}`, () => {
+  it(`should handle ${actionTypes.FETCH_SEARCH_RESULTS_REQUEST}`, () => {
     const termId = '4740';
     const searchInput = 'EECS';
-    const action = actionCreators.getSearchResultsRequest(termId, searchInput);
+    const action = actionCreators.fetchSearchResultsRequest(termId, searchInput);
     expect(searchReducer(initialSearchState, action)).toEqual(
       loop(
         initialSearchState.set('isFetching', true),
         Cmd.run(fetchSearchResults, {
           args: [action.currentTermId, initialSearchState.get('searchIndex'), action.searchInput],
-          successActionCreator: getSearchResultsSuccess,
-          failActionCreator: getSearchResultsFailure,
+          successActionCreator: fetchSearchResultsSuccess,
+          failActionCreator: fetchSearchResultsFailure,
         }),
       ),
     );

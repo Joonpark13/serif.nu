@@ -27,7 +27,7 @@ exports[`SidebarView changes tabs correctly 1`] = `
       value="cart"
     />
   </ForwardRef(WithStyles)>
-  <Connect(Browse) />
+  <Browse />
 </div>
 `;
 
@@ -58,7 +58,7 @@ exports[`SidebarView changes to cart correctly 1`] = `
       value="cart"
     />
   </ForwardRef(WithStyles)>
-  <Connect(Component) />
+  <ForwardRef(WithStyles) />
 </div>
 `;
 
@@ -89,6 +89,6 @@ exports[`SidebarView renders correctly 1`] = `
       value="cart"
     />
   </ForwardRef(WithStyles)>
-  <Connect(Component) />
+  <Search />
 </div>
 `;

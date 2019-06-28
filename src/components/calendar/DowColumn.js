@@ -8,7 +8,7 @@ import {
   columnMinHeight,
   columnHeight,
 } from './calendar-constants';
-import HourCellContainer from './HourCellContainer';
+import HourCell from './HourCell';
 
 export const styles = {
   dowColumn: {
@@ -53,7 +53,7 @@ function DowColumn({ dow, classes }) {
 
       <div className={classes.calendarColumn}>
         {HOURS.map(
-          hour => <HourCellContainer key={hour} hour={hour} dow={dow} />,
+          hour => <HourCell key={hour} hour={hour} dow={dow} />,
         )}
       </div>
     </div>

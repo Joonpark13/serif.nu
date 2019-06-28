@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { withStyles } from '@material-ui/styles';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import { Typography, Button } from '@material-ui/core';
+import useSelector from 'util/use-selector';
+import {
+  currentBrowseLevelSelector,
+  selectedSchoolIdSelector,
+  selectedSubjectIdSelector,
+} from 'selectors';
+import { changeBrowseLevel } from 'actions';
 
 export const styles = {
   browseHeader: {
@@ -18,7 +25,12 @@ export const styles = {
   },
 };
 
-function BrowseHeader({ currentBrowseLevel, selectedSchoolId, selectedSubjectId, classes, back }) {
+function BrowseHeader({ classes }) {
+  const currentBrowseLevel = useSelector(currentBrowseLevelSelector);
+  const selectedSchoolId = useSelector(selectedSchoolIdSelector);
+  const selectedSubjectId = useSelector(selectedSubjectIdSelector);
+  const dispatch = useDispatch();
+
   let previousSelectionName;
   switch (currentBrowseLevel) {
     case 'subject':
@@ -35,7 +47,7 @@ function BrowseHeader({ currentBrowseLevel, selectedSchoolId, selectedSubjectId,
     let backTo = 'school';
     if (currentBrowseLevel === 'course') backTo = 'subject';
 
-    back(backTo);
+    dispatch(changeBrowseLevel(backTo));
   }
 
   return (
@@ -54,16 +66,7 @@ function BrowseHeader({ currentBrowseLevel, selectedSchoolId, selectedSubjectId,
 }
 
 BrowseHeader.propTypes = {
-  currentBrowseLevel: PropTypes.string.isRequired,
-  selectedSchoolId: PropTypes.string,
-  selectedSubjectId: PropTypes.string,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
-  back: PropTypes.func.isRequired,
-};
-
-BrowseHeader.defaultProps = {
-  selectedSchoolId: '',
-  selectedSubjectId: '',
 };
 
 export { BrowseHeader as UnstyledBrowseHeader };

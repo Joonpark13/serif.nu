@@ -3,8 +3,8 @@ import { loop, Cmd } from 'redux-loop';
 import { isUnscheduled } from 'util/time';
 import * as actionTypes from 'actions/action-types';
 import {
-  getSearchResultsSuccess,
-  getSearchResultsFailure,
+  fetchSearchResultsSuccess,
+  fetchSearchResultsFailure,
   fetchSearchIndexSuccess,
   fetchSearchIndexFailure,
   fetchSectionsForSearchSuccess,
@@ -66,20 +66,20 @@ function search(state = initialSearchState, action) {
     case actionTypes.FETCH_SEARCH_INDEX_FAILURE:
       return state.set('isFetching', false); // TODO: Handle error
 
-    case actionTypes.GET_SEARCH_RESULTS_REQUEST:
+    case actionTypes.FETCH_SEARCH_RESULTS_REQUEST:
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchSearchResults, {
           args: [action.currentTermId, state.get('searchIndex'), action.searchInput],
-          successActionCreator: getSearchResultsSuccess,
-          failActionCreator: getSearchResultsFailure,
+          successActionCreator: fetchSearchResultsSuccess,
+          failActionCreator: fetchSearchResultsFailure,
         }),
       );
-    case actionTypes.GET_SEARCH_RESULTS_SUCCESS:
+    case actionTypes.FETCH_SEARCH_RESULTS_SUCCESS:
       return state
         .set('isFetching', false)
         .set('results', fromJS(action.searchResults));
-    case actionTypes.GET_SEARCH_RESULTS_FAILURE:
+    case actionTypes.FETCH_SEARCH_RESULTS_FAILURE:
       return state
         .set('isFetching', false)
         .set('results', initialSearchState.get('results'));

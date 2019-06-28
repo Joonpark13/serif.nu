@@ -9,7 +9,7 @@ exports[`SearchBox renders correctly 1`] = `
     label="Search for classes"
     onChange={[Function]}
     type="search"
-    value=""
+    value="EECS"
   />
 </div>
 `;
@@ -23,7 +23,7 @@ exports[`SearchBox renders text typed into the search box 1`] = `
     label="Search for classes"
     onChange={[Function]}
     type="search"
-    value=""
+    value="EECS"
   />
 </div>
 `;

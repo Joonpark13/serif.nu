@@ -55,7 +55,6 @@ exports[`NavDrawer should render correctly 1`] = `
     >
       <Link
         onClick={[Function]}
-        replace={false}
         to="/legal"
       >
         <ForwardRef(WithStyles)

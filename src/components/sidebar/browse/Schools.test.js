@@ -1,7 +1,6 @@
-import { wrapperCreator } from 'util/testing';
-import { shallow } from 'enzyme';
-import ListItem from '@material-ui/core/ListItem';
-import React from 'react';
+import { ListItem } from '@material-ui/core';
+import { wrapperCreator, mockUseSelector, mockUseDispatch } from 'util/testing';
+import { changeBrowseLevel, fetchSubjectsRequest, selectSchoolInBrowse } from 'actions';
 import { UnstyledSchools, styles } from './Schools';
 
 describe('Schools', () => {
@@ -14,14 +13,12 @@ describe('Schools', () => {
     name: 'McCormick School of Engineering and Applied Science',
     term: '4720',
   }];
-  const defaultProps = {
-    schools: testSchools,
-    classes: {},
-    isFetching: false,
-    showSubjects: () => {},
-  };
 
-  const getComponent = wrapperCreator(UnstyledSchools, defaultProps, styles);
+  const getComponent = wrapperCreator(UnstyledSchools, undefined, styles);
+
+  beforeEach(() => {
+    mockUseSelector(testSchools, false);
+  });
 
   it('renders correctly', () => {
     const wrapper = getComponent();
@@ -30,20 +27,20 @@ describe('Schools', () => {
   });
 
   it('renders loading correctly', () => {
-    const wrapper = getComponent({ isFetching: true });
+    mockUseSelector(testSchools, true);
+    const wrapper = getComponent();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('showSubjects gets called correctly', () => {
-    const showSubjectsMock = jest.fn();
-    const wrapper = shallow(
-      <UnstyledSchools {...defaultProps} showSubjects={showSubjectsMock} />,
-    );
+    const mockDispatch = mockUseDispatch();
+    const wrapper = getComponent();
 
     wrapper.find(ListItem).first().simulate('click');
 
-    expect(showSubjectsMock)
-      .toHaveBeenCalledWith(testSchools[0].id);
+    expect(mockDispatch).toHaveBeenCalledWith(fetchSubjectsRequest(testSchools[0].id));
+    expect(mockDispatch).toHaveBeenCalledWith(selectSchoolInBrowse(testSchools[0].id));
+    expect(mockDispatch).toHaveBeenCalledWith(changeBrowseLevel('subject'));
   });
 });

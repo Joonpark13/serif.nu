@@ -1,20 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Typography from '@material-ui/core/Typography';
+import { ListItem, ListItemText, Typography } from '@material-ui/core';
+import { sectionHover, sectionHoverOff } from 'actions';
 import { getFormattedClassSchedule, isUnscheduled } from 'util/time';
 import { useSnackbar } from 'notistack';
 
-export const useStyles = makeStyles({
+const useStyles = makeStyles({
   sectionTitle: {
     fontWeight: 'bold',
   },
 });
 
-export default function SectionResult({
-  addSection, sectionHover, sectionHoverOff, section, disabled }) {
+export default function SectionResult({ addSection, section, disabled }) {
+  const dispatch = useDispatch();
+
   const sectionIsUnscheduled = section.schedules.some(isUnscheduled);
   const { enqueueSnackbar } = useSnackbar();
   const classes = useStyles();
@@ -32,8 +33,8 @@ export default function SectionResult({
       key={section.id}
       button
       onClick={handleClick}
-      onMouseEnter={() => sectionHover(section)}
-      onMouseLeave={sectionHoverOff}
+      onMouseEnter={() => dispatch(sectionHover(section))}
+      onMouseLeave={() => dispatch(sectionHoverOff())}
       disabled={disabled || sectionIsUnscheduled}
     >
       <ListItemText>
@@ -65,8 +66,6 @@ export default function SectionResult({
 
 SectionResult.propTypes = {
   addSection: PropTypes.func.isRequired,
-  sectionHover: PropTypes.func.isRequired,
-  sectionHoverOff: PropTypes.func.isRequired,
   section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
   disabled: PropTypes.bool,
 };

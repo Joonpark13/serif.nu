@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BrowseAssociatedClassesSelectionContainer renders correctly 1`] = `
+<ForwardRef(WithStyles)
+  addSectionWithAssociatedClass={[Function]}
+  associatedClassHover={[Function]}
+  associatedClassHoverOff={[Function]}
+  associatedClasses={Array []}
+  back={[Function]}
+  currentCourseName="101-0"
+  currentSectionNumber="12345"
+/>
+`;
