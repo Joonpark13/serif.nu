@@ -1,17 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { withStyles } from '@material-ui/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { List, ListItem, ListItemText, CircularProgress } from '@material-ui/core';
+import { subjectsSelector, browseIsFetchingSelector } from 'selectors';
+import { changeBrowseLevel, fetchCoursesRequest, selectSubjectInBrowse } from 'actions';
+import useSelector from 'util/use-selector';
 import { loadingContainer as loadingContainerStyles } from './common/styles';
 
 export const styles = {
   loadingContainer: loadingContainerStyles,
 };
 
-function Subjects({ subjects, isFetching, showCourses, classes }) {
+function Subjects({ classes }) {
+  const subjects = useSelector(subjectsSelector);
+  const isFetching = useSelector(browseIsFetchingSelector);
+  const dispatch = useDispatch();
+
+  function showCourses(schoolId, subjectId) {
+    dispatch(fetchCoursesRequest(schoolId, subjectId));
+    dispatch(selectSubjectInBrowse(subjectId));
+    dispatch(changeBrowseLevel('course'));
+  }
+
   if (isFetching) {
     return (
       <div className={classes.loadingContainer}>
@@ -19,6 +30,7 @@ function Subjects({ subjects, isFetching, showCourses, classes }) {
       </div>
     );
   }
+
   return (
     <div>
       <List>
@@ -39,9 +51,6 @@ function Subjects({ subjects, isFetching, showCourses, classes }) {
 }
 
 Subjects.propTypes = {
-  subjects: PropTypes.arrayOf(PropTypes.object).isRequired,
-  isFetching: PropTypes.bool.isRequired,
-  showCourses: PropTypes.func.isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 

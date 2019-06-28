@@ -9,7 +9,7 @@ exports[`SectionSelection renders correctly 1`] = `
     title="EECS 101-0"
   />
   <ForwardRef(WithStyles)>
-    <Connect(Component)
+    <SectionResult
       addSection={[Function]}
       disabled={false}
       section={
@@ -27,7 +27,7 @@ exports[`SectionSelection renders correctly 1`] = `
         }
       }
     />
-    <Connect(Component)
+    <SectionResult
       addSection={[Function]}
       disabled={false}
       section={

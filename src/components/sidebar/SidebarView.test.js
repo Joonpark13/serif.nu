@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Tabs } from '@material-ui/core';
 import { mockStyles } from 'util/testing';
 import { UnstyledSidebarView, styles } from './SidebarView';
 
@@ -18,7 +19,7 @@ describe('SidebarView', () => {
     const wrapper = shallow(<UnstyledSidebarView
       classes={classes}
     />);
-    wrapper.instance().handleChange('onChange', 'browse');
+    wrapper.find(Tabs).props().onChange('onChange', 'browse');
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
@@ -28,7 +29,7 @@ describe('SidebarView', () => {
     const wrapper = shallow(<UnstyledSidebarView
       classes={classes}
     />);
-    wrapper.instance().handleChange('onChange', 'cart');
+    wrapper.find(Tabs).props().onChange('onChange', 'cart');
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

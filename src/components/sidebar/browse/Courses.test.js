@@ -1,5 +1,6 @@
-import ListItem from '@material-ui/core/ListItem';
-import { wrapperCreator } from 'util/testing';
+import { ListItem } from '@material-ui/core';
+import { wrapperCreator, mockUseSelector, mockUseDispatch } from 'util/testing';
+import { changeBrowseLevel, fetchSectionsForBrowseRequest, selectCourseInBrowse } from 'actions';
 import { UnstyledCourses, styles } from './Courses';
 
 describe('Courses', () => {
@@ -10,13 +11,12 @@ describe('Courses', () => {
     subjectId: 'EECS',
   };
   const courses = [course];
-  const defaultProps = {
-    courses,
-    isFetching: false,
-    showSections: () => {},
-  };
 
-  const getComponent = wrapperCreator(UnstyledCourses, defaultProps, styles);
+  const getComponent = wrapperCreator(UnstyledCourses, undefined, styles);
+
+  beforeEach(() => {
+    mockUseSelector(courses, false);
+  });
 
   it('renders correctly', () => {
     const wrapper = getComponent();
@@ -25,17 +25,22 @@ describe('Courses', () => {
   });
 
   it('renders loading correctly', () => {
-    const wrapper = getComponent({ isFetching: true });
+    mockUseSelector(courses, true);
+    const wrapper = getComponent();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('showSections gets called correctly', () => {
-    const showSectionsMock = jest.fn();
-    const wrapper = getComponent({ showSections: showSectionsMock });
+    const dispatchMock = mockUseDispatch();
+    const wrapper = getComponent();
 
     wrapper.find(ListItem).first().simulate('click');
 
-    expect(showSectionsMock).toHaveBeenCalledWith(course.schoolId, course.subjectId, course.id);
+    expect(dispatchMock).toHaveBeenCalledWith(
+      fetchSectionsForBrowseRequest(course.schoolId, course.subjectId, course.id),
+    );
+    expect(dispatchMock).toHaveBeenCalledWith(selectCourseInBrowse(course.id));
+    expect(dispatchMock).toHaveBeenCalledWith(changeBrowseLevel('section'));
   });
 });

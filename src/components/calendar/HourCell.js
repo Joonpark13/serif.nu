@@ -1,6 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
+import {
+  sectionsSelector,
+  sectionsForHourSelector,
+  associatedClassesForHourSelector,
+  sectionPreviewSelector,
+  associatedClassPreviewSelector,
+  allSectionPreviewsSelector,
+} from 'selectors';
+import useSelector from 'util/use-selector';
 import { columnBorderStyle, cellMinHeight } from './calendar-constants';
 import CalendarSection from './CalendarSection';
 import AssociatedClass from './AssociatedClass';
@@ -14,15 +23,18 @@ export const styles = {
   },
 };
 
-function HourCell({
-  sections,
-  associatedClasses,
-  sectionPreview,
-  associatedClassPreview,
-  allSections,
-  allSectionPreviews,
-  classes,
-}) {
+function HourCell({ hour, dow, classes }) {
+  const sections = useSelector(state => sectionsForHourSelector(state, hour, dow));
+  const associatedClasses = useSelector(
+    state => associatedClassesForHourSelector(state, hour, dow),
+  );
+  const sectionPreview = useSelector(state => sectionPreviewSelector(state, hour, dow));
+  const associatedClassPreview = useSelector(
+    state => associatedClassPreviewSelector(state, hour, dow),
+  );
+  const allSections = useSelector(sectionsSelector);
+  const allSectionPreviews = useSelector(allSectionPreviewsSelector);
+
   return (
     <div className={classes.calendarCell}>
       {sections.map(section => (
@@ -48,18 +60,9 @@ function HourCell({
 }
 
 HourCell.propTypes = {
-  sections: PropTypes.arrayOf(PropTypes.object).isRequired,
-  associatedClasses: PropTypes.arrayOf(PropTypes.object).isRequired,
-  sectionPreview: PropTypes.objectOf(PropTypes.any),
-  associatedClassPreview: PropTypes.objectOf(PropTypes.any),
+  hour: PropTypes.number.isRequired,
+  dow: PropTypes.string.isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
-  allSections: PropTypes.arrayOf(PropTypes.object).isRequired,
-  allSectionPreviews: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
-HourCell.defaultProps = {
-  sectionPreview: null,
-  associatedClassPreview: null,
 };
 
 export { HourCell as UnstyledHourCell };

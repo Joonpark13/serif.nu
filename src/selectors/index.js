@@ -1,6 +1,50 @@
+import { meetsDuringDow, meetsDuringHour } from 'util/time';
+
+function getMatchingClasses(classes, hour, dow) {
+  return classes.filter(
+    (sectionOrAssociatedClass) => {
+      const eventObj = sectionOrAssociatedClass.get('event').toJS();
+      return meetsDuringDow(eventObj, dow) && meetsDuringHour(eventObj, hour);
+    },
+  );
+}
+
+function findMatchingClass(classes, hour, dow) {
+  return classes.find(
+    (sectionOrAssociatedClass) => {
+      const eventObj = sectionOrAssociatedClass.get('event').toJS();
+      return meetsDuringDow(eventObj, dow) && meetsDuringHour(eventObj, hour);
+    },
+  );
+}
+
 // Schedule
 export function sectionsSelector(state) {
   return state.getIn(['schedule', 'sections']);
+}
+
+export function sectionsForHourSelector(state, hour, dow) {
+  const allSections = state.getIn(['schedule', 'sections']);
+  return getMatchingClasses(allSections, hour, dow);
+}
+
+export function associatedClassesForHourSelector(state, hour, dow) {
+  const allAssociatedClasses = state.getIn(['schedule', 'associatedClasses']);
+  return getMatchingClasses(allAssociatedClasses, hour, dow);
+}
+
+export function sectionPreviewSelector(state, hour, dow) {
+  const allSections = state.getIn(['schedule', 'sectionPreview']);
+  return findMatchingClass(allSections, hour, dow);
+}
+
+export function associatedClassPreviewSelector(state, hour, dow) {
+  const allAssociatedClasses = state.getIn(['schedule', 'associatedClassPreview']);
+  return findMatchingClass(allAssociatedClasses, hour, dow);
+}
+
+export function allSectionPreviewsSelector(state) {
+  return state.getIn(['schedule', 'sectionPreview']);
 }
 
 // Browse

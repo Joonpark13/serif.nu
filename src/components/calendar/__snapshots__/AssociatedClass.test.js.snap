@@ -16,7 +16,7 @@ exports[`AssociatedClass renders correctly 1`] = `
     rightHeaderContent="EECS 111-0"
     sectionName="DIS - undefined"
   />
-  <Connect(Component)
+  <ClassModal
     associatedClass={
       Object {
         "name": "Some discussion",

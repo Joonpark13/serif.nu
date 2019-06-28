@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { withStyles } from '@material-ui/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Typography from '@material-ui/core/Typography';
+import { List, ListItem, ListItemText, CircularProgress, Typography } from '@material-ui/core';
+import useSelector from 'util/use-selector';
+import { searchResultsSelector, searchIsFetchingSelector, currentSearchInputSelector } from 'selectors';
+import { fetchSectionsForSearchRequest, setCurrentCourseName } from 'actions';
 
 export const styles = {
   loadingContainer: {
@@ -19,13 +19,17 @@ export const styles = {
   },
 };
 
-function SearchResults({
-  searchResults,
-  isFetching,
-  currentSearchInput,
-  handleCourseClick,
-  classes,
-}) {
+function SearchResults({ classes }) {
+  const searchResults = useSelector(searchResultsSelector);
+  const isFetching = useSelector(searchIsFetchingSelector);
+  const currentSearchInput = useSelector(currentSearchInputSelector);
+  const dispatch = useDispatch();
+
+  function handleCourseClick(schoolId, subjectId, courseId) {
+    dispatch(fetchSectionsForSearchRequest(schoolId, subjectId, courseId));
+    dispatch(setCurrentCourseName(`${subjectId} ${courseId}`));
+  }
+
   if (isFetching) {
     return (
       <div className={classes.loadingContainer}>
@@ -63,11 +67,7 @@ function SearchResults({
 }
 
 SearchResults.propTypes = {
-  searchResults: PropTypes.arrayOf(PropTypes.object).isRequired,
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
-  isFetching: PropTypes.bool.isRequired,
-  handleCourseClick: PropTypes.func.isRequired,
-  currentSearchInput: PropTypes.string.isRequired,
 };
 
 export { SearchResults as UnstyledSearchResults };

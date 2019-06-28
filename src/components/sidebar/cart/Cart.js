@@ -1,7 +1,9 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/styles';
 import PropTypes from 'prop-types';
+import { Typography } from '@material-ui/core';
+import { withStyles } from '@material-ui/styles';
+import { sectionsSelector } from 'selectors';
+import useSelector from 'util/use-selector';
 import CartSection from './CartSection';
 
 export const styles = {
@@ -10,7 +12,9 @@ export const styles = {
   },
 };
 
-function Cart({ classes, sections }) {
+function Cart({ classes }) {
+  const sections = useSelector(sectionsSelector);
+
   const uniqueSections = [];
   const usedIDs = [];
 
@@ -39,7 +43,6 @@ function Cart({ classes, sections }) {
 
 Cart.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
-  sections: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export { Cart as UnstyledCart };

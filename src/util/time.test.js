@@ -1,4 +1,15 @@
-import { getFormattedClassSchedule, formatMinute, formatTime, getDurationInHours, isBefore, overlaps, getFormattedEventTime, isUnscheduled } from './time';
+import {
+  getFormattedClassSchedule,
+  formatMinute,
+  formatTime,
+  getDurationInHours,
+  isBefore,
+  overlaps,
+  getFormattedEventTime,
+  isUnscheduled,
+  meetsDuringDow,
+  meetsDuringHour,
+} from './time';
 
 describe('time utils', () => {
   describe('formatMinute', () => {
@@ -184,6 +195,31 @@ describe('time utils', () => {
           minute: 0,
         },
       })).toBe(false);
+    });
+  });
+
+  describe('meetsDuringDow', () => {
+    it('returns true if an event object meets during a certain day of week', () => {
+      const eventObj = {
+        dow: ['Mo'],
+      };
+      expect(meetsDuringDow(eventObj, 'Mo')).toBe(true);
+    });
+  });
+
+  describe('meetsDuringHour', () => {
+    it('returns true if an event object meets during a certain hour', () => {
+      const eventObj = {
+        start: {
+          hour: 12,
+          minute: 0,
+        },
+        end: {
+          hour: 13,
+          minute: 30,
+        },
+      };
+      expect(meetsDuringHour(eventObj, 12)).toBe(true);
     });
   });
 });

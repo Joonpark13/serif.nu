@@ -2,7 +2,7 @@ import React from 'react';
 import { northwesternPurple10 } from 'util/colors';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
-import Typography from '@material-ui/core/Typography';
+import { Typography } from '@material-ui/core';
 
 export const styles = {
   page: {

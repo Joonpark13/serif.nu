@@ -1,14 +1,14 @@
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import { wrapperCreator } from 'util/testing';
+import { Typography, Button } from '@material-ui/core';
+import { wrapperCreator, mockUseSelector, mockUseDispatch } from 'util/testing';
+import { changeBrowseLevel } from 'actions';
 import { UnstyledBrowseHeader, styles } from './BrowseHeader';
 
 describe('BrowseHeader', () => {
-  const defaultProps = {
-    currentBrowseLevel: 'school',
-    back: () => {},
-  };
-  const getComponent = wrapperCreator(UnstyledBrowseHeader, defaultProps, styles);
+  const getComponent = wrapperCreator(UnstyledBrowseHeader, undefined, styles);
+
+  beforeEach(() => {
+    mockUseSelector('school', '', '');
+  });
 
   it('renders correctly', () => {
     const wrapper = getComponent();
@@ -18,41 +18,40 @@ describe('BrowseHeader', () => {
 
   it('renders correctly for subject browse level', () => {
     const selectedSchoolId = '1234';
-    const wrapper = getComponent({ currentBrowseLevel: 'subject', selectedSchoolId });
+    mockUseSelector('subject', selectedSchoolId, '');
+
+    const wrapper = getComponent();
 
     expect(wrapper.find(Typography).prop('children')).toBe(selectedSchoolId);
   });
 
   it('renders correctly for course browse level', () => {
     const selectedSubjectId = 'MEAS';
-    const wrapper = getComponent({ currentBrowseLevel: 'course', selectedSubjectId });
+    mockUseSelector('course', '', selectedSubjectId);
+    const wrapper = getComponent();
 
     expect(wrapper.find(Typography).prop('children')).toBe(selectedSubjectId);
   });
 
   it('goes back a level to schools from subjects', () => {
-    const backMock = jest.fn();
-    const wrapper = getComponent({
-      currentBrowseLevel: 'subject',
-      selectedSchoolId: 'WCAS',
-      back: backMock,
-    });
+    mockUseSelector('subject', 'WCAS', '');
+    const dispatchMock = mockUseDispatch();
+
+    const wrapper = getComponent();
 
     wrapper.find(Button).simulate('click');
 
-    expect(backMock).toHaveBeenCalledWith('school');
+    expect(dispatchMock).toHaveBeenCalledWith(changeBrowseLevel('school'));
   });
 
   it('goes back a level to subjects from courses', () => {
-    const backMock = jest.fn();
-    const wrapper = getComponent({
-      currentBrowseLevel: 'course',
-      selectedSubjectId: 'EECS',
-      back: backMock,
-    });
+    mockUseSelector('course', 'EECS', '');
+    const dispatchMock = mockUseDispatch();
+
+    const wrapper = getComponent();
 
     wrapper.find(Button).simulate('click');
 
-    expect(backMock).toHaveBeenCalledWith('subject');
+    expect(dispatchMock).toHaveBeenCalledWith(changeBrowseLevel('subject'));
   });
 });

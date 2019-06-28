@@ -1,27 +1,28 @@
-import { connect } from 'react-redux';
-import toJS from 'util/to-js';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { addSectionFromBrowse, changeBrowseLevel } from 'actions';
 import {
   selectedCourseNameSelector,
   browseSectionsSelector,
   sectionsSelector,
 } from 'selectors';
+import useSelector from 'util/use-selector';
 import SectionSelection from '../common/SectionSelection';
 
+export default function SectionSelectionContainer(props) {
+  const currentCourseName = useSelector(selectedCourseNameSelector);
+  const sections = useSelector(browseSectionsSelector);
+  const scheduledSections = useSelector(sectionsSelector);
+  const dispatch = useDispatch();
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    currentCourseName: selectedCourseNameSelector(state),
-    sections: browseSectionsSelector(state),
-    scheduledSections: sectionsSelector(state),
-  };
+  return (
+    <SectionSelection
+      {...props}
+      currentCourseName={currentCourseName}
+      sections={sections}
+      scheduledSections={scheduledSections}
+      back={() => dispatch(changeBrowseLevel('course'))}
+      addSection={section => dispatch(addSectionFromBrowse(section))}
+    />
+  );
 }
-
-/* istanbul ignore next */
-const mapDispatchToProps = {
-  back: () => changeBrowseLevel('course'),
-  addSection: addSectionFromBrowse,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(toJS(SectionSelection));

@@ -52,7 +52,6 @@ exports[`FAQPage should render correctly 1`] = `
         If you find bugs with the functionality of the site itself, please report it using
          
         <Link
-          replace={false}
           to="/bugs"
         >
           this form
@@ -90,7 +89,6 @@ exports[`FAQPage should render correctly 1`] = `
         Wonderful!
          
         <Link
-          replace={false}
           to="/contact"
         >
           Send us a message
@@ -121,7 +119,6 @@ exports[`FAQPage should render correctly 1`] = `
         Please
          
         <Link
-          replace={false}
           to="/contact"
         >
           reach out to us

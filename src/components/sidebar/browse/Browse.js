@@ -1,34 +1,34 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import Divider from '@material-ui/core/Divider';
-import BrowseHeaderContainer from './BrowseHeaderContainer';
-import SchoolsContainer from './SchoolsContainer';
-import SubjectsContainer from './SubjectsContainer';
-import CoursesContainer from './CoursesContainer';
+import { Divider } from '@material-ui/core';
+import useSelector from 'util/use-selector';
+import { currentBrowseLevelSelector } from 'selectors';
+import BrowseHeader from './BrowseHeader';
+import Schools from './Schools';
+import Subjects from './Subjects';
+import Courses from './Courses';
 import BrowseSectionSelectionContainer from './BrowseSectionSelectionContainer';
 import BrowseAssociatedClassSelectionContainer from './BrowseAssociatedClassesSelectionContainer';
 
-function Browse({ currentBrowseLevel }) {
+function Browse() {
+  const currentBrowseLevel = useSelector(currentBrowseLevelSelector);
+
   const shouldDisplayHeader = (
     currentBrowseLevel !== 'school'
     && currentBrowseLevel !== 'section'
     && currentBrowseLevel !== 'associatedClass'
   );
+
   return (
     <Fragment>
-      {shouldDisplayHeader && <BrowseHeaderContainer />}
+      {shouldDisplayHeader && <BrowseHeader />}
       {shouldDisplayHeader && <Divider />}
-      {currentBrowseLevel === 'school' && <SchoolsContainer />}
-      {currentBrowseLevel === 'subject' && <SubjectsContainer />}
-      {currentBrowseLevel === 'course' && <CoursesContainer />}
+      {currentBrowseLevel === 'school' && <Schools />}
+      {currentBrowseLevel === 'subject' && <Subjects />}
+      {currentBrowseLevel === 'course' && <Courses />}
       {currentBrowseLevel === 'section' && <BrowseSectionSelectionContainer />}
       {currentBrowseLevel === 'associatedClass' && <BrowseAssociatedClassSelectionContainer />}
     </Fragment>
   );
 }
-
-Browse.propTypes = {
-  currentBrowseLevel: PropTypes.string.isRequired,
-};
 
 export default Browse;

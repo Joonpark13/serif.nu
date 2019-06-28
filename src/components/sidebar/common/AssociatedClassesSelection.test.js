@@ -1,5 +1,4 @@
-import ListItem from '@material-ui/core/ListItem';
-import Typography from '@material-ui/core/Typography';
+import { ListItem, Typography } from '@material-ui/core';
 import { wrapperCreator } from 'util/testing';
 import * as timeUtils from 'util/time';
 import { UnstyledAssociatedClassesSelection, styles } from './AssociatedClassesSelection';

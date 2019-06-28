@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Typography from '@material-ui/core/Typography';
+import { List, ListItem, ListItemText, Typography } from '@material-ui/core';
 import { getFormattedClassSchedule, isUnscheduled } from 'util/time';
 import SidebarHeader from '../SidebarHeader';
 

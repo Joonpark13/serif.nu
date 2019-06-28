@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import { getFormattedEventTime, getDurationInHours } from 'util/time';
 import Section from 'components/common/Section';
-import ClassModalContainer from './ClassModalContainer';
+import ClassModal from './ClassModal';
 
 export const MAX_WIDTH_PERCENT = 97;
 
@@ -70,7 +70,7 @@ class AssociatedClass extends Component {
           rightHeaderContent={rightHeaderContent}
           sectionName={associatedClassTitle}
         />
-        <ClassModalContainer
+        <ClassModal
           section={section}
           associatedClass={associatedClass}
           showDialog={showDialog}

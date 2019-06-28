@@ -53,9 +53,11 @@ export const setCurrentCourseName = courseName => ({
   courseName,
 });
 
-export const viewSearch = () => ({
-  type: actionTypes.VIEW_SEARCH,
-});
+export function viewSearch() {
+  return {
+    type: actionTypes.VIEW_SEARCH,
+  };
+}
 
 export function addSectionFromSearch(section) {
   return {
@@ -77,54 +79,74 @@ export const removeSection = (sectionId, sectionColor) => ({
   sectionColor,
 });
 
-export const getSchoolsRequest = () => ({
-  type: actionTypes.GET_SCHOOLS_REQUEST,
-  [ENHANCE_WITH_CURRENT_TERM_ID]: true,
-});
+export function fetchSchoolsRequest() {
+  return {
+    type: actionTypes.FETCH_SCHOOLS_REQUEST,
+    [ENHANCE_WITH_CURRENT_TERM_ID]: true,
+  };
+}
 
-export const getSchoolsSuccess = schools => ({
-  type: actionTypes.GET_SCHOOLS_SUCCESS,
-  schools,
-});
+export function fetchSchoolsSuccess(schools) {
+  return {
+    type: actionTypes.FETCH_SCHOOLS_SUCCESS,
+    schools,
+  };
+}
 
-export const getSchoolsFailure = () => ({
-  type: actionTypes.GET_SCHOOLS_FAILURE,
-});
+export function fetchSchoolsFailure() {
+  return {
+    type: actionTypes.FETCH_SCHOOLS_FAILURE,
+  };
+}
 
-export const getSearchResultsRequest = searchInput => ({
-  type: actionTypes.GET_SEARCH_RESULTS_REQUEST,
-  searchInput,
-  [ENHANCE_WITH_CURRENT_TERM_ID]: true,
-});
+export function fetchSearchResultsRequest(searchInput) {
+  return {
+    type: actionTypes.FETCH_SEARCH_RESULTS_REQUEST,
+    searchInput,
+    [ENHANCE_WITH_CURRENT_TERM_ID]: true,
+  };
+}
 
-export const getSearchResultsSuccess = searchResults => ({
-  type: actionTypes.GET_SEARCH_RESULTS_SUCCESS,
-  searchResults,
-});
+export function fetchSearchResultsSuccess(searchResults) {
+  return {
+    type: actionTypes.FETCH_SEARCH_RESULTS_SUCCESS,
+    searchResults,
+  };
+}
 
-export const getSearchResultsFailure = () => ({
-  type: actionTypes.GET_SEARCH_RESULTS_FAILURE,
-});
+export function fetchSearchResultsFailure() {
+  return {
+    type: actionTypes.FETCH_SEARCH_RESULTS_FAILURE,
+  };
+}
 
-export const updateSearchInput = searchInput => ({
-  type: actionTypes.UPDATE_SEARCH_INPUT,
-  searchInput,
-});
+export function updateSearchInput(searchInput) {
+  return {
+    type: actionTypes.UPDATE_SEARCH_INPUT,
+    searchInput,
+  };
+}
 
-export const fetchSubjectsRequest = schoolId => ({
-  type: actionTypes.FETCH_SUBJECTS_REQUEST,
-  schoolId,
-  [ENHANCE_WITH_CURRENT_TERM_ID]: true,
-});
+export function fetchSubjectsRequest(schoolId) {
+  return {
+    type: actionTypes.FETCH_SUBJECTS_REQUEST,
+    schoolId,
+    [ENHANCE_WITH_CURRENT_TERM_ID]: true,
+  };
+}
 
-export const fetchSubjectsSuccess = subjects => ({
-  type: actionTypes.FETCH_SUBJECTS_SUCCESS,
-  subjects,
-});
+export function fetchSubjectsSuccess(subjects) {
+  return {
+    type: actionTypes.FETCH_SUBJECTS_SUCCESS,
+    subjects,
+  };
+}
 
-export const fetchSubjectsFailure = () => ({
-  type: actionTypes.FETCH_SUBJECTS_FAILURE,
-});
+export function fetchSubjectsFailure() {
+  return {
+    type: actionTypes.FETCH_SUBJECTS_FAILURE,
+  };
+}
 
 export function fetchCoursesRequest(schoolId, subjectId) {
   return {

@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
-import { getFormattedClassSchedule } from 'util/time';
-import { Dialog, DialogActions, DialogTitle, DialogContent, DialogContentText, Button } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
 import { useSnackbar } from 'notistack';
+import { makeStyles } from '@material-ui/styles';
+import { Dialog, DialogActions, DialogTitle, DialogContent, DialogContentText, Button } from '@material-ui/core';
+import { getFormattedClassSchedule } from 'util/time';
+import { removeSection } from 'actions';
 
 export const useStyles = makeStyles({
   dialog: {
@@ -17,10 +19,11 @@ export const useStyles = makeStyles({
   },
 });
 
-export default function ClassModal({
-  showDialog, toggleDialog, section, associatedClass, removeSection,
-}) {
+export default function ClassModal({ showDialog, toggleDialog, section, associatedClass }) {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const { enqueueSnackbar } = useSnackbar();
+
   const subtitle = `${section.subjectId} ${section.courseId} Section ${section.sectionNumber}`;
   const associatedClassSchedule = associatedClass && (
     <div>
@@ -39,11 +42,9 @@ export default function ClassModal({
     </div>
   ));
 
-  const { enqueueSnackbar } = useSnackbar();
-  const message = 'Class successfully removed';
   const handleClick = () => {
-    removeSection(section.id, section.color);
-    enqueueSnackbar(message, {
+    dispatch(removeSection(section.id, section.color));
+    enqueueSnackbar('Class successfully removed', {
       variant: 'success',
     });
   };
@@ -96,7 +97,6 @@ ClassModal.propTypes = {
   associatedClass: PropTypes.objectOf(PropTypes.any),
   showDialog: PropTypes.bool.isRequired,
   toggleDialog: PropTypes.func.isRequired,
-  removeSection: PropTypes.func.isRequired,
 };
 
 ClassModal.defaultProps = {
