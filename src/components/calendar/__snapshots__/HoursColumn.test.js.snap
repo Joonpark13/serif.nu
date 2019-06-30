@@ -10,18 +10,18 @@ exports[`HoursColumn renders correctly 1`] = `
   <div
     className=""
   >
-    <WithStyles(Typography)
+    <ForwardRef(WithStyles)
       align="right"
       className=""
     >
       1am
-    </WithStyles(Typography)>
-    <WithStyles(Typography)
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       align="right"
       className=""
     >
       2am
-    </WithStyles(Typography)>
+    </ForwardRef(WithStyles)>
   </div>
 </div>
 `;

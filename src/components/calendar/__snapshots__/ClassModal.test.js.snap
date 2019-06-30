@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ClassModal renders correctly 1`] = `
-<WithStyles(Dialog)
+<ForwardRef(WithStyles)
   aria-describedby="simple-dialog-description"
   aria-labelledby="simple"
   onClose={[Function]}
@@ -10,67 +10,67 @@ exports[`ClassModal renders correctly 1`] = `
   <div
     className=""
   >
-    <WithStyles(Typography)
+    <ForwardRef(WithStyles)
       gutterBottom={true}
       variant="h5"
     >
       
       Introduction to Something
-    </WithStyles(Typography)>
-    <WithStyles(Divider) />
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles) />
     <br />
-    <WithStyles(Typography)
+    <ForwardRef(WithStyles)
       variant="subtitle1"
     >
       undefined undefined Section 20
-    </WithStyles(Typography)>
+    </ForwardRef(WithStyles)>
     <br />
     <div>
-      <WithStyles(Typography)>
+      <ForwardRef(WithStyles)>
         Mo 10:30 AM - 12:00 PM
-      </WithStyles(Typography)>
-      <WithStyles(Typography)>
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)>
         somewhere
-      </WithStyles(Typography)>
+      </ForwardRef(WithStyles)>
     </div>
-    <WithStyles(Typography)>
+    <ForwardRef(WithStyles)>
       A prof
-    </WithStyles(Typography)>
+    </ForwardRef(WithStyles)>
     <br />
     <div>
-      <WithStyles(Typography)
+      <ForwardRef(WithStyles)
         variant="h6"
       >
         
-      </WithStyles(Typography)>
-      <WithStyles(Typography)
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)
         gutterBottom={true}
       >
         
-      </WithStyles(Typography)>
+      </ForwardRef(WithStyles)>
       <br />
     </div>
   </div>
-  <WithStyles(DialogActions)>
-    <WithStyles(Button)
+  <ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       onClick={[Function]}
     >
       Remove
-    </WithStyles(Button)>
-    <WithStyles(Button)
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       onClick={[Function]}
     >
       Cancel
-    </WithStyles(Button)>
-  </WithStyles(DialogActions)>
-</WithStyles(Dialog)>
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
+</ForwardRef(WithStyles)>
 `;
 
 exports[`ClassModal renders correctly for associated class 1`] = `
 <div>
-  <WithStyles(Typography)>
+  <ForwardRef(WithStyles)>
     Mo 10:30 AM - 12:00 PM
-  </WithStyles(Typography)>
-  <WithStyles(Typography) />
+  </ForwardRef(WithStyles)>
+  <ForwardRef(WithStyles) />
 </div>
 `;

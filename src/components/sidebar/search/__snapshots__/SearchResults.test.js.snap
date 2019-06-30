@@ -2,60 +2,60 @@
 
 exports[`SearchResults renders 'keep typing' correctly 1`] = `
 <div>
-  <WithStyles(Typography)
+  <ForwardRef(WithStyles)
     className=""
   >
      Keep typing!
-  </WithStyles(Typography)>
-  <WithStyles(List)>
-    <WithStyles(ListItem)
+  </ForwardRef(WithStyles)>
+  <ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       button={true}
       onClick={[Function]}
     >
-      <WithStyles(ListItemText)
+      <ForwardRef(WithStyles)
         primary="BUSCOM 629 Employment Law"
       />
-    </WithStyles(ListItem)>
-    <WithStyles(ListItem)
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       button={true}
       onClick={[Function]}
     >
-      <WithStyles(ListItemText)
+      <ForwardRef(WithStyles)
         primary="BUSCOM 631 Entrepreneurship Law"
       />
-    </WithStyles(ListItem)>
-  </WithStyles(List)>
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
 </div>
 `;
 
 exports[`SearchResults renders 'no results' correctly 1`] = `
-<WithStyles(Typography)
+<ForwardRef(WithStyles)
   className=""
 >
   No results
-</WithStyles(Typography)>
+</ForwardRef(WithStyles)>
 `;
 
 exports[`SearchResults renders correctly 1`] = `
 <div>
-  <WithStyles(List)>
-    <WithStyles(ListItem)
+  <ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       button={true}
       onClick={[Function]}
     >
-      <WithStyles(ListItemText)
+      <ForwardRef(WithStyles)
         primary="BUSCOM 629 Employment Law"
       />
-    </WithStyles(ListItem)>
-    <WithStyles(ListItem)
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       button={true}
       onClick={[Function]}
     >
-      <WithStyles(ListItemText)
+      <ForwardRef(WithStyles)
         primary="BUSCOM 631 Entrepreneurship Law"
       />
-    </WithStyles(ListItem)>
-  </WithStyles(List)>
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
 </div>
 `;
 
@@ -63,6 +63,6 @@ exports[`SearchResults renders loading correctly 1`] = `
 <div
   className=""
 >
-  <WithStyles(CircularProgress) />
+  <ForwardRef(WithStyles) />
 </div>
 `;

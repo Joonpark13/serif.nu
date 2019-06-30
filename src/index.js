@@ -1,4 +1,3 @@
-import './material-ui-style-install';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import injectSheet from 'react-jss';
@@ -32,11 +31,6 @@ const theme = createMuiTheme({
     secondary: {
       main: northwesternBrightOrange,
     },
-  },
-  // https://material-ui.com/style/typography/#strategies
-  // Remove once Material-UI is upgraded to 4.0
-  typography: {
-    useNextVariants: true,
   },
 });
 

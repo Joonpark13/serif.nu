@@ -2,16 +2,16 @@
 
 exports[`Courses renders correctly 1`] = `
 <div>
-  <WithStyles(List)>
-    <WithStyles(ListItem)
+  <ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       button={true}
       onClick={[Function]}
     >
-      <WithStyles(ListItemText)
+      <ForwardRef(WithStyles)
         primary="101-0 Intro to Serif"
       />
-    </WithStyles(ListItem)>
-  </WithStyles(List)>
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
 </div>
 `;
 
@@ -19,6 +19,6 @@ exports[`Courses renders loading correctly 1`] = `
 <div
   className=""
 >
-  <WithStyles(CircularProgress) />
+  <ForwardRef(WithStyles) />
 </div>
 `;

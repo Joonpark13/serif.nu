@@ -4,7 +4,7 @@ exports[`ContactPage should render correctly 1`] = `
 <div
   className=""
 >
-  <ForwardRef
+  <ForwardRef(WithStyles)
     title="Contact Us"
   />
   <div
@@ -17,18 +17,18 @@ exports[`ContactPage should render correctly 1`] = `
         className=""
         href="mailto:serifnorthwestern@gmail.com"
       >
-        <WithStyles(Icon)
+        <ForwardRef(WithStyles)
           color="primary"
           fontSize="large"
         >
           email
-        </WithStyles(Icon)>
+        </ForwardRef(WithStyles)>
       </a>
-      <WithStyles(Typography)
+      <ForwardRef(WithStyles)
         variant="h5"
       >
         Email
-      </WithStyles(Typography)>
+      </ForwardRef(WithStyles)>
     </div>
     <div
       className=""
@@ -43,11 +43,11 @@ exports[`ContactPage should render correctly 1`] = `
           src={Object {}}
         />
       </a>
-      <WithStyles(Typography)
+      <ForwardRef(WithStyles)
         variant="h5"
       >
         Facebook
-      </WithStyles(Typography)>
+      </ForwardRef(WithStyles)>
     </div>
   </div>
 </div>

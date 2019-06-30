@@ -4,7 +4,7 @@ exports[`BugReportPage should render correctly after user acknowledgement 1`] = 
 <div
   className=""
 >
-  <ForwardRef
+  <ForwardRef(WithStyles)
     title="Report a Bug"
   />
   <div
@@ -29,26 +29,26 @@ exports[`BugReportPage should render correctly before user acknowledgement 1`] =
 <div
   className=""
 >
-  <ForwardRef
+  <ForwardRef(WithStyles)
     title="Report a Bug"
   />
   <div
     className=""
   >
     <div>
-      <WithStyles(Typography)
+      <ForwardRef(WithStyles)
         gutterBottom={true}
         variant="h6"
       >
         I understand that any missing or inaccurate course data is NOT a bug and should not be reported.
-      </WithStyles(Typography)>
-      <WithStyles(Button)
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)
         color="primary"
         onClick={[Function]}
         variant="contained"
       >
         Acknowledge
-      </WithStyles(Button)>
+      </ForwardRef(WithStyles)>
     </div>
   </div>
 </div>

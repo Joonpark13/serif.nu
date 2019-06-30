@@ -4,29 +4,29 @@ exports[`SidebarView changes tabs correctly 1`] = `
 <div
   className=""
 >
-  <WithStyles(Tabs)
+  <ForwardRef(WithStyles)
     indicatorColor="primary"
     onChange={[Function]}
     textColor="primary"
     value="browse"
     variant="fullWidth"
   >
-    <WithStyles(Tab)
+    <ForwardRef(WithStyles)
       className=""
       label="Search"
       value="search"
     />
-    <WithStyles(Tab)
+    <ForwardRef(WithStyles)
       className=""
       label="Browse"
       value="browse"
     />
-    <WithStyles(Tab)
+    <ForwardRef(WithStyles)
       className=""
       label="Cart"
       value="cart"
     />
-  </WithStyles(Tabs)>
+  </ForwardRef(WithStyles)>
   <Connect(Browse) />
 </div>
 `;
@@ -35,29 +35,29 @@ exports[`SidebarView changes to cart correctly 1`] = `
 <div
   className=""
 >
-  <WithStyles(Tabs)
+  <ForwardRef(WithStyles)
     indicatorColor="primary"
     onChange={[Function]}
     textColor="primary"
     value="cart"
     variant="fullWidth"
   >
-    <WithStyles(Tab)
+    <ForwardRef(WithStyles)
       className=""
       label="Search"
       value="search"
     />
-    <WithStyles(Tab)
+    <ForwardRef(WithStyles)
       className=""
       label="Browse"
       value="browse"
     />
-    <WithStyles(Tab)
+    <ForwardRef(WithStyles)
       className=""
       label="Cart"
       value="cart"
     />
-  </WithStyles(Tabs)>
+  </ForwardRef(WithStyles)>
   <Connect(Component) />
 </div>
 `;
@@ -66,29 +66,29 @@ exports[`SidebarView renders correctly 1`] = `
 <div
   className=""
 >
-  <WithStyles(Tabs)
+  <ForwardRef(WithStyles)
     indicatorColor="primary"
     onChange={[Function]}
     textColor="primary"
     value="search"
     variant="fullWidth"
   >
-    <WithStyles(Tab)
+    <ForwardRef(WithStyles)
       className=""
       label="Search"
       value="search"
     />
-    <WithStyles(Tab)
+    <ForwardRef(WithStyles)
       className=""
       label="Browse"
       value="browse"
     />
-    <WithStyles(Tab)
+    <ForwardRef(WithStyles)
       className=""
       label="Cart"
       value="cart"
     />
-  </WithStyles(Tabs)>
+  </ForwardRef(WithStyles)>
   <Connect(Component) />
 </div>
 `;

@@ -2,16 +2,16 @@
 
 exports[`Subjects renders correctly 1`] = `
 <div>
-  <WithStyles(List)>
-    <WithStyles(ListItem)
+  <ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       button={true}
       onClick={[Function]}
     >
-      <WithStyles(ListItemText)
+      <ForwardRef(WithStyles)
         primary="EECS - undefined"
       />
-    </WithStyles(ListItem)>
-  </WithStyles(List)>
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
 </div>
 `;
 
@@ -19,6 +19,6 @@ exports[`Subjects renders correctly when fetching 1`] = `
 <div
   className=""
 >
-  <WithStyles(CircularProgress) />
+  <ForwardRef(WithStyles) />
 </div>
 `;

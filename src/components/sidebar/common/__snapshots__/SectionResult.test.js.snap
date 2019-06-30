@@ -1,32 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SectionResult renders correctly 1`] = `
-<WithStyles(ListItem)
+<ForwardRef(WithStyles)
   button={true}
   disabled={false}
   onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <WithStyles(ListItemText)>
-    <WithStyles(Typography)
+  <ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       className=""
       variant="h6"
     >
       Section 20
-    </WithStyles(Typography)>
-    <WithStyles(Typography)>
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)>
       Section topic...
-    </WithStyles(Typography)>
-    <WithStyles(Typography)>
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)>
       MWF 10 - 12ish
-    </WithStyles(Typography)>
-    <WithStyles(Typography)>
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)>
       somewhere
-    </WithStyles(Typography)>
-    <WithStyles(Typography)>
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)>
       A prof
-    </WithStyles(Typography)>
-  </WithStyles(ListItemText)>
-</WithStyles(ListItem)>
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
+</ForwardRef(WithStyles)>
 `;

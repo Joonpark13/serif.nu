@@ -4,14 +4,14 @@ exports[`HourCell renders correctly 1`] = `
 <div
   className=""
 >
-  <ForwardRef
+  <ForwardRef(WithStyles)
     section={
       Object {
         "id": "12345",
       }
     }
   />
-  <ForwardRef
+  <ForwardRef(WithStyles)
     associatedClass={
       Object {
         "event": Object {},

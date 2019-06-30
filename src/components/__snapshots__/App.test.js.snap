@@ -2,10 +2,10 @@
 
 exports[`App should render correctly 1`] = `
 <React.Fragment>
-  <ForwardRef
+  <ForwardRef(WithStyles)
     menuAction={[Function]}
   />
-  <ForwardRef
+  <ForwardRef(WithStyles)
     closeFunc={[Function]}
     isOpen={false}
   />
@@ -39,10 +39,10 @@ exports[`App should render correctly 1`] = `
 
 exports[`App should toggle navigation 1`] = `
 <React.Fragment>
-  <ForwardRef
+  <ForwardRef(WithStyles)
     menuAction={[Function]}
   />
-  <ForwardRef
+  <ForwardRef(WithStyles)
     closeFunc={[Function]}
     isOpen={true}
   />

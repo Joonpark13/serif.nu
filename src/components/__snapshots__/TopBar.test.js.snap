@@ -1,35 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TopBar renders correctly 1`] = `
-<WithStyles(AppBar)
+<ForwardRef(WithStyles)
   position="static"
 >
-  <WithStyles(Toolbar)
+  <ForwardRef(WithStyles)
     className=""
   >
     <div
       className=""
     >
-      <WithStyles(IconButton)
+      <ForwardRef(WithStyles)
         aria-label="Navigation"
         onClick={[Function]}
       >
         <pure(Menu)
           className=""
         />
-      </WithStyles(IconButton)>
-      <WithStyles(Typography)
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)
         className=""
         variant="h5"
       >
         Serif.nu
-      </WithStyles(Typography)>
+      </ForwardRef(WithStyles)>
     </div>
-    <WithStyles(Typography)
+    <ForwardRef(WithStyles)
       className=""
     >
       Term: Fall 2019
-    </WithStyles(Typography)>
-  </WithStyles(Toolbar)>
-</WithStyles(AppBar)>
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
+</ForwardRef(WithStyles)>
 `;

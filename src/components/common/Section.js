@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 
 function Section({ classes, leftHeaderContent, rightHeaderContent, sectionName, onClick }) {
   return (
-    <Paper className={classes.paper} onClick={onClick}>
+    <Paper elevation={2} className={classes.paper} onClick={onClick}>
       <div className={classes.container}>
         <div className={classes.header}>
           <Typography variant="caption" className={classes.text}>

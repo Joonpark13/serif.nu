@@ -4,13 +4,13 @@ exports[`DowColumn renders correctly 1`] = `
 <div
   className=""
 >
-  <WithStyles(Typography)
+  <ForwardRef(WithStyles)
     align="center"
     className=""
     variant="body1"
   >
     
-  </WithStyles(Typography)>
+  </ForwardRef(WithStyles)>
   <div
     className=""
   >

@@ -63,8 +63,8 @@ export const styles = {
   },
   studentCard: {
     textAlign: 'center',
-    width: '300px',
-    height: '550px',
+    width: '325px',
+    height: '575px',
     margin: '10px',
   },
   profileImage: {
@@ -101,25 +101,31 @@ function AboutPage({ classes }) {
 
         <Typography variant="h5" className={classes.blurbs}>Serif.nu is run by a team of previous and current Northwestern students dedicated to providing the best scheduling experience.</Typography>
         <div className={classes.multipleColumns}>
-          <Paper className={classes.studentCard}>
+          <Paper elevation={2} className={classes.studentCard}>
             <img src={joonProfile} alt="Joon Park" className={classes.profileImage} />
             <Typography variant="h6">Joon Park</Typography>
             <Typography variant="subtitle1">Creator & Team Lead</Typography>
-            <Typography variant="body2" className={classes.blurbs}>Software engineer at Grubhub, film composer in another life. Big fan of taking pictures that make me look like I&apos;m falling off of things.</Typography>
+            <Typography className={classes.blurbs}>
+              Software engineer at Grubhub, film composer in another life.
+              Big fan of taking pictures that make me look like I&apos;m falling off of things.
+            </Typography>
           </Paper>
 
-          <Paper className={classes.studentCard}>
+          <Paper elevation={2} className={classes.studentCard}>
             <img src={kevinProfile} alt="Kevin Lee" className={classes.profileImage} />
             <Typography variant="h6">Kevin Lee</Typography>
             <Typography variant="subtitle1">Lead Student Developer</Typography>
-            <Typography variant="body2" className={classes.blurbs}>Senior studying computer science...and nothing else! Strong enthusiast of deep dish pizza, the color turquoise, and Korean music. </Typography>
+            <Typography className={classes.blurbs}>
+              Senior studying computer science...and nothing else!
+              Strong enthusiast of deep dish pizza, the color turquoise, and Korean music.
+            </Typography>
           </Paper>
 
-          <Paper className={classes.studentCard}>
+          <Paper elevation={2} className={classes.studentCard}>
             <img src={madisonProfile} alt="Madison Dong" className={classes.profileImage} />
             <Typography variant="h6">Madison Dong</Typography>
             <Typography variant="subtitle1">Student Developer</Typography>
-            <Typography variant="body2" className={classes.blurbs}>
+            <Typography className={classes.blurbs}>
               Madison Dong is a (soon-to-be) junior studying journalism,
               computer science, and design,
               so she thinks art and tech go well together.
@@ -129,11 +135,11 @@ function AboutPage({ classes }) {
             </Typography>
           </Paper>
 
-          <Paper className={classes.studentCard}>
+          <Paper elevation={2} className={classes.studentCard}>
             <img src={juliaProfile} alt="Julia Tournant" className={classes.profileImage} />
             <Typography variant="h6">Julia Tournant</Typography>
             <Typography variant="subtitle1">Student Developer</Typography>
-            <Typography variant="body2" className={classes.blurbs}>
+            <Typography className={classes.blurbs}>
               Hi! I’m Julia. I’m French, currently 19 years old, and will graduate in June 2021.
               I study computer science and enjoy learning foreign languages.
               I’m also a member of the varsity golf team here at NU!
@@ -141,22 +147,22 @@ function AboutPage({ classes }) {
             </Typography>
           </Paper>
 
-          <Paper className={classes.studentCard}>
+          <Paper elevation={2} className={classes.studentCard}>
             <img src={helenProfile} alt="Helen Zhao" className={classes.profileImage} />
             <Typography variant="h6">Helen Zhao</Typography>
             <Typography variant="subtitle1">Student Developer</Typography>
-            <Typography variant="body2" className={classes.blurbs}>
+            <Typography className={classes.blurbs}>
               I am Helen, a Northwestern sophomore.
               Love cooking, love taekwondo and especially love watching dogs sneeze
               <span role="img" aria-label="sneezing face"> 🤧</span>
             </Typography>
           </Paper>
 
-          <Paper className={classes.studentCard}>
+          <Paper elevation={2} className={classes.studentCard}>
             <img src={amyProfile} alt="Amy Chen" className={classes.profileImage} />
             <Typography variant="h6">Amy Chen</Typography>
             <Typography variant="subtitle1">Student Developer</Typography>
-            <Typography variant="body2" className={classes.blurbs}>
+            <Typography className={classes.blurbs}>
               My name is Amy and I&apos;m majoring in Statistics, Economics, and MMSS.
               I&apos;m pursuing a career in software engineering.
               Outside of school, I love tennis and photography!
