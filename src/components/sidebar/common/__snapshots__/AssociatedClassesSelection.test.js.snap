@@ -4,29 +4,29 @@ exports[`AssociatedClassesSelection renders correctly 1`] = `
 <div
   className=""
 >
-  <ForwardRef
+  <ForwardRef(WithStyles)
     back={[Function]}
     title="Introduction to Something-21"
   />
-  <WithStyles(List)>
-    <WithStyles(ListItem)
+  <ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       button={true}
       onClick={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
-      <WithStyles(ListItemText)>
-        <WithStyles(Typography)
+      <ForwardRef(WithStyles)>
+        <ForwardRef(WithStyles)
           variant="h6"
         />
-        <WithStyles(Typography)>
+        <ForwardRef(WithStyles)>
           MWF 10 - 12ish
-        </WithStyles(Typography)>
-        <WithStyles(Typography)>
+        </ForwardRef(WithStyles)>
+        <ForwardRef(WithStyles)>
           somewhere
-        </WithStyles(Typography)>
-      </WithStyles(ListItemText)>
-    </WithStyles(ListItem)>
-  </WithStyles(List)>
+        </ForwardRef(WithStyles)>
+      </ForwardRef(WithStyles)>
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
 </div>
 `;

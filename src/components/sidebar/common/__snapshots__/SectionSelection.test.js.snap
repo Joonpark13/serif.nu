@@ -4,11 +4,11 @@ exports[`SectionSelection renders correctly 1`] = `
 <div
   className=""
 >
-  <ForwardRef
+  <ForwardRef(WithStyles)
     back={[Function]}
     title="EECS 101-0"
   />
-  <WithStyles(List)>
+  <ForwardRef(WithStyles)>
     <Connect(Component)
       addSection={[Function]}
       disabled={false}
@@ -46,6 +46,6 @@ exports[`SectionSelection renders correctly 1`] = `
         }
       }
     />
-  </WithStyles(List)>
+  </ForwardRef(WithStyles)>
 </div>
 `;

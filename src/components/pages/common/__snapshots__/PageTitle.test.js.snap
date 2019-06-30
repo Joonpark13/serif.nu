@@ -4,11 +4,11 @@ exports[`PageTitle renders correctly 1`] = `
 <div
   className=""
 >
-  <WithStyles(Typography)
+  <ForwardRef(WithStyles)
     color="primary"
     variant="h3"
   >
     Title
-  </WithStyles(Typography)>
+  </ForwardRef(WithStyles)>
 </div>
 `;

@@ -2,29 +2,29 @@
 
 exports[`Schools renders correctly 1`] = `
 <div>
-  <WithStyles(List)>
-    <WithStyles(ListItem)
+  <ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       button={true}
       onClick={[Function]}
     >
-      <WithStyles(ListItemText)
+      <ForwardRef(WithStyles)
         primary="Bienen School of Music"
       />
-    </WithStyles(ListItem)>
-    <WithStyles(ListItem)
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
       button={true}
       onClick={[Function]}
     >
-      <WithStyles(ListItemText)
+      <ForwardRef(WithStyles)
         primary="McCormick School of Engineering and Applied Science"
       />
-    </WithStyles(ListItem)>
-  </WithStyles(List)>
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
 </div>
 `;
 
 exports[`Schools renders loading correctly 1`] = `
 <div>
-  <WithStyles(CircularProgress) />
+  <ForwardRef(WithStyles) />
 </div>
 `;

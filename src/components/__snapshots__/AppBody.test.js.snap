@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AppBody should render correctly 1`] = `
-<WithStyles(Grid)
+<ForwardRef(WithStyles)
   container={true}
 >
-  <WithStyles(Grid)
+  <ForwardRef(WithStyles)
     className=""
     item={true}
     md={9}
     sm={12}
     xs={12}
   >
-    <ForwardRef />
-  </WithStyles(Grid)>
-  <WithStyles(Grid)
+    <ForwardRef(WithStyles) />
+  </ForwardRef(WithStyles)>
+  <ForwardRef(WithStyles)
     item={true}
     md={3}
     sm={12}
     xs={12}
   >
-    <ForwardRef />
-  </WithStyles(Grid)>
-</WithStyles(Grid)>
+    <ForwardRef(WithStyles) />
+  </ForwardRef(WithStyles)>
+</ForwardRef(WithStyles)>
 `;

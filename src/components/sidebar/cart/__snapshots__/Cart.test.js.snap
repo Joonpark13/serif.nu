@@ -2,28 +2,28 @@
 
 exports[`Cart renders correctly 1`] = `
 <React.Fragment>
-  <WithStyles(Typography)
+  <ForwardRef(WithStyles)
     className=""
     variant="h5"
   >
     0
      
     Classes
-  </WithStyles(Typography)>
+  </ForwardRef(WithStyles)>
 </React.Fragment>
 `;
 
 exports[`Cart renders correctly with multiple sections with the same id 1`] = `
 <React.Fragment>
-  <WithStyles(Typography)
+  <ForwardRef(WithStyles)
     className=""
     variant="h5"
   >
     1
      
     Class
-  </WithStyles(Typography)>
-  <ForwardRef
+  </ForwardRef(WithStyles)>
+  <ForwardRef(WithStyles)
     section={
       Object {
         "id": "123",
@@ -35,15 +35,15 @@ exports[`Cart renders correctly with multiple sections with the same id 1`] = `
 
 exports[`Cart renders correctly with one section 1`] = `
 <React.Fragment>
-  <WithStyles(Typography)
+  <ForwardRef(WithStyles)
     className=""
     variant="h5"
   >
     1
      
     Class
-  </WithStyles(Typography)>
-  <ForwardRef
+  </ForwardRef(WithStyles)>
+  <ForwardRef(WithStyles)
     section={
       Object {
         "id": "12345",

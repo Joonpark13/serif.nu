@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Section renders correctly 1`] = `
-<WithStyles(Paper)
+<ForwardRef(WithStyles)
   className=""
+  elevation={2}
   onClick={[Function]}
 >
   <div
@@ -11,26 +12,26 @@ exports[`Section renders correctly 1`] = `
     <div
       className=""
     >
-      <WithStyles(Typography)
+      <ForwardRef(WithStyles)
         className=""
         variant="caption"
       >
         Left
-      </WithStyles(Typography)>
-      <WithStyles(Typography)
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)
         className=""
         variant="caption"
       >
         Right
-      </WithStyles(Typography)>
+      </ForwardRef(WithStyles)>
     </div>
-    <WithStyles(Typography)
+    <ForwardRef(WithStyles)
       className=" "
       noWrap={true}
       variant="subtitle2"
     >
       Intro to Whatever
-    </WithStyles(Typography)>
+    </ForwardRef(WithStyles)>
   </div>
-</WithStyles(Paper)>
+</ForwardRef(WithStyles)>
 `;

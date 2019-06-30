@@ -4,7 +4,7 @@ exports[`FAQPage should render correctly 1`] = `
 <div
   className=""
 >
-  <ForwardRef
+  <ForwardRef(WithStyles)
     title="Frequently Asked Questions"
   />
   <div
@@ -13,13 +13,13 @@ exports[`FAQPage should render correctly 1`] = `
     <div
       className=""
     >
-      <WithStyles(Typography)
+      <ForwardRef(WithStyles)
         gutterBottom={true}
         variant="h5"
       >
         Is the site still maintained? Can I expect updates?
-      </WithStyles(Typography)>
-      <WithStyles(Typography)
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)
         variant="body1"
       >
         Yes, and yes! Serif.nu is actively being updated to include new features to better serve the Northwestern student experience. You can expect course data to be updated regularly during registration season. If you're interested in the technical details of what we're working on, check out our
@@ -30,23 +30,23 @@ exports[`FAQPage should render correctly 1`] = `
           Github
         </a>
         .
-      </WithStyles(Typography)>
+      </ForwardRef(WithStyles)>
     </div>
     <div
       className=""
     >
-      <WithStyles(Typography)
+      <ForwardRef(WithStyles)
         gutterBottom={true}
         variant="h5"
       >
         I found a bug. What should I do?
-      </WithStyles(Typography)>
-      <WithStyles(Typography)
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)
         variant="body1"
       >
         Please be aware that Serif.nu cannot guarantee the correctness of the data that we display. We simply use the course data that is available to us - we have no control over whether every single class time matches up with what is on CAESAR. Submissions such as "Why don't I see SESP courses on Serif.nu?" or "The bio lab times are different than what's on CAESAR" will be ignored.
-      </WithStyles(Typography)>
-      <WithStyles(Typography)
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)
         variant="body1"
       >
         If you find bugs with the functionality of the site itself, please report it using
@@ -58,33 +58,33 @@ exports[`FAQPage should render correctly 1`] = `
           this form
         </Link>
         .
-      </WithStyles(Typography)>
+      </ForwardRef(WithStyles)>
     </div>
     <div
       className=""
     >
-      <WithStyles(Typography)
+      <ForwardRef(WithStyles)
         gutterBottom={true}
         variant="h5"
       >
         Is there a mobile version?
-      </WithStyles(Typography)>
-      <WithStyles(Typography)
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)
         variant="body1"
       >
         Currently, Serif.nu is best viewed on a laptop or desktop screen. However, enhancements for mobile screens are in the works!
-      </WithStyles(Typography)>
+      </ForwardRef(WithStyles)>
     </div>
     <div
       className=""
     >
-      <WithStyles(Typography)
+      <ForwardRef(WithStyles)
         gutterBottom={true}
         variant="h5"
       >
         I'm a developer. I'd like to contribute.
-      </WithStyles(Typography)>
-      <WithStyles(Typography)
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)
         variant="body1"
       >
         Wonderful!
@@ -104,18 +104,18 @@ exports[`FAQPage should render correctly 1`] = `
           Github
         </a>
         .
-      </WithStyles(Typography)>
+      </ForwardRef(WithStyles)>
     </div>
     <div
       className=""
     >
-      <WithStyles(Typography)
+      <ForwardRef(WithStyles)
         gutterBottom={true}
         variant="h5"
       >
         I'd like to adapt Serif.nu for scheduling courses at another university. How can I do that?
-      </WithStyles(Typography)>
-      <WithStyles(Typography)
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)
         variant="body1"
       >
         Please
@@ -127,7 +127,7 @@ exports[`FAQPage should render correctly 1`] = `
           reach out to us
         </Link>
         .
-      </WithStyles(Typography)>
+      </ForwardRef(WithStyles)>
     </div>
   </div>
 </div>

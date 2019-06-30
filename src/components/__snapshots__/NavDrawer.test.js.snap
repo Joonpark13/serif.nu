@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NavDrawer should render correctly 1`] = `
-<WithStyles(Drawer)
+<ForwardRef(WithStyles)
   onClose={[Function]}
   open={true}
 >
   <div
     className=""
   >
-    <WithStyles(List)>
+    <ForwardRef(WithStyles)>
       <ListItemLink
         onClick={[Function]}
         to="/"
       >
-        <WithStyles(ListItemText)
+        <ForwardRef(WithStyles)
           primary="Serif.nu"
         />
       </ListItemLink>
@@ -21,7 +21,7 @@ exports[`NavDrawer should render correctly 1`] = `
         onClick={[Function]}
         to="/about"
       >
-        <WithStyles(ListItemText)
+        <ForwardRef(WithStyles)
           primary="About"
         />
       </ListItemLink>
@@ -29,7 +29,7 @@ exports[`NavDrawer should render correctly 1`] = `
         onClick={[Function]}
         to="/faq"
       >
-        <WithStyles(ListItemText)
+        <ForwardRef(WithStyles)
           primary="FAQ"
         />
       </ListItemLink>
@@ -37,7 +37,7 @@ exports[`NavDrawer should render correctly 1`] = `
         onClick={[Function]}
         to="/bugs"
       >
-        <WithStyles(ListItemText)
+        <ForwardRef(WithStyles)
           primary="Report a Bug"
         />
       </ListItemLink>
@@ -45,11 +45,11 @@ exports[`NavDrawer should render correctly 1`] = `
         onClick={[Function]}
         to="/contact"
       >
-        <WithStyles(ListItemText)
+        <ForwardRef(WithStyles)
           primary="Contact"
         />
       </ListItemLink>
-    </WithStyles(List)>
+    </ForwardRef(WithStyles)>
     <div
       className=""
     >
@@ -58,13 +58,13 @@ exports[`NavDrawer should render correctly 1`] = `
         replace={false}
         to="/legal"
       >
-        <WithStyles(Typography)
+        <ForwardRef(WithStyles)
           variant="caption"
         >
           Legal notices
-        </WithStyles(Typography)>
+        </ForwardRef(WithStyles)>
       </Link>
     </div>
   </div>
-</WithStyles(Drawer)>
+</ForwardRef(WithStyles)>
 `;

@@ -1,35 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchBox doesn't call api through handler if search string <= 2 chars long 1`] = `
-<div
-  className=""
->
-  <TextField
-    fullWidth={true}
-    label="Search for classes"
-    onChange={[Function]}
-    required={false}
-    select={false}
-    type="search"
-    value="EECS"
-    variant="standard"
-  />
-</div>
-`;
-
 exports[`SearchBox renders correctly 1`] = `
 <div
   className=""
 >
-  <TextField
+  <ForwardRef(WithStyles)
     fullWidth={true}
     label="Search for classes"
     onChange={[Function]}
-    required={false}
-    select={false}
     type="search"
-    value="EECS"
-    variant="standard"
+    value=""
   />
 </div>
 `;
@@ -38,15 +18,12 @@ exports[`SearchBox renders text typed into the search box 1`] = `
 <div
   className=""
 >
-  <TextField
+  <ForwardRef(WithStyles)
     fullWidth={true}
     label="Search for classes"
     onChange={[Function]}
-    required={false}
-    select={false}
     type="search"
-    value="EECS"
-    variant="standard"
+    value=""
   />
 </div>
 `;

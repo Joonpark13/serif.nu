@@ -2,18 +2,18 @@
 
 exports[`SidebarHeader renders correctly 1`] = `
 <React.Fragment>
-  <WithStyles(Typography)
+  <ForwardRef(WithStyles)
     className=""
     variant="h5"
   >
     Title
-    <WithStyles(Button)
+    <ForwardRef(WithStyles)
       onClick={[Function]}
     >
       Back
-    </WithStyles(Button)>
-  </WithStyles(Typography)>
-  <WithStyles(Divider)
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
+  <ForwardRef(WithStyles)
     className=""
   />
 </React.Fragment>
