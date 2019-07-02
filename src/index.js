@@ -13,6 +13,7 @@ import rootReducer from 'reducers';
 import { initialScheduleState } from 'reducers/schedule';
 import { northwesternPurple, northwesternBrightOrange } from 'util/colors';
 import isProduction from 'util/env';
+import { SnackbarProvider } from 'notistack';
 
 const styles = {
   '@global body': {
@@ -82,7 +83,14 @@ function Index() {
     <Provider store={store}>
       <MuiThemeProvider theme={theme}>
         <Router>
-          <App />
+          <SnackbarProvider
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'center',
+            }}
+          >
+            <App />
+          </SnackbarProvider>
         </Router>
       </MuiThemeProvider>
     </Provider>
