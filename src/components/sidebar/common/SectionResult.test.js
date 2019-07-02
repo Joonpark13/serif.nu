@@ -1,14 +1,19 @@
+import React from 'react';
+import { shallow } from 'enzyme';
 import ListItem from '@material-ui/core/ListItem';
-import Typography from '@material-ui/core/Typography';
-import { wrapperCreator } from 'util/testing';
+import { Typography } from '@material-ui/core';
 import * as timeUtils from 'util/time';
-import { UnstyledSectionResult, styles } from './SectionResult';
+import * as notistack from 'notistack';
+import SectionResult from './SectionResult';
 
 jest.mock('util/time');
+jest.mock('notistack');
 
 describe('SectionResult', () => {
   const formattedSchedule = 'MWF 10 - 12ish';
   timeUtils.getFormattedClassSchedule.mockReturnValue(formattedSchedule);
+  const enqueueSnackbarMock = jest.fn();
+  notistack.useSnackbar.mockReturnValue({ enqueueSnackbar: enqueueSnackbarMock });
 
   const section = {
     id: '198732',
@@ -23,23 +28,29 @@ describe('SectionResult', () => {
     sectionHover: () => {},
     sectionHoverOff: () => {},
   };
-  const getWrapper = wrapperCreator(UnstyledSectionResult, defaultProps, styles);
+  const message = 'Class successfully added';
 
   it('renders correctly', () => {
-    const wrapper = getWrapper();
+    const wrapper = shallow(
+      <SectionResult {...defaultProps} />,
+    );
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders instructors correctly for multiple instructors', () => {
-    const wrapper = getWrapper({ section: { ...section, instructors: ['Prof 1', 'Prof 2'] } });
+    const wrapper = shallow(
+      <SectionResult {...defaultProps} section={{ ...section, instructors: ['Prof 1', 'Prof 2'] }} />,
+    );
 
     expect(wrapper.find(Typography).at(4).prop('children')).toEqual(['Prof 1, ', 'Prof 2']);
   });
 
   it('adds section when clicked', () => {
     const addSectionMock = jest.fn();
-    const wrapper = getWrapper({ addSection: addSectionMock });
+    const wrapper = shallow(
+      <SectionResult {...defaultProps} addSection={addSectionMock} />,
+    );
     wrapper.find(ListItem).simulate('click');
 
     expect(addSectionMock).toHaveBeenCalledWith(section);
@@ -59,7 +70,9 @@ describe('SectionResult', () => {
       }],
       instructors: ['Ian Horswill', 'Vincent St-Amour'],
     };
-    const wrapper = getWrapper({ section: unscheduledSection });
+    const wrapper = shallow(
+      <SectionResult {...defaultProps} section={unscheduledSection} />,
+    );
     const colorProp = wrapper
       .findWhere(
         node => node.is(Typography) && node.prop('children') === 'TBA',
@@ -70,9 +83,22 @@ describe('SectionResult', () => {
 
   it('calls sectionHover when clicked', () => {
     const sectionHoverMock = jest.fn();
-    const wrapper = getWrapper({ sectionHover: sectionHoverMock });
+    const wrapper = shallow(
+      <SectionResult {...defaultProps} sectionHover={sectionHoverMock} />,
+    );
     wrapper.find(ListItem).simulate('mouseEnter');
 
     expect(sectionHoverMock).toHaveBeenCalledWith(section);
+  });
+
+  it('pops up snackbar when clicked', () => {
+    const wrapper = shallow(
+      <SectionResult {...defaultProps} handleClick={enqueueSnackbarMock} />,
+    );
+    wrapper.find(ListItem).simulate('click');
+
+    expect(enqueueSnackbarMock).toHaveBeenCalledWith(message, {
+      variant: 'success',
+    });
   });
 });

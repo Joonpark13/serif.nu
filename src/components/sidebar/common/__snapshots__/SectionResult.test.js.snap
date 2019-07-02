@@ -10,7 +10,7 @@ exports[`SectionResult renders correctly 1`] = `
 >
   <ForwardRef(WithStyles)>
     <ForwardRef(WithStyles)
-      className=""
+      className="makeStyles-sectionTitle-1"
       variant="h6"
     >
       Section 20
