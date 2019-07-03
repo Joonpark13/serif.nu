@@ -1,12 +1,17 @@
-// import { wrapperCreator } from 'util/testing';
-// import { NotFoundPage, useStyles } from './NotFoundPage';
+import React from 'react';
+import { shallow } from 'enzyme';
+import { makeStyles } from '@material-ui/styles';
+import NotFoundPage from './NotFoundPage';
 
-// describe('FAQPage', () => {
-//   const getWrapper = wrapperCreator(NotFoundPage, undefined, useStyles);
+jest.mock('@material-ui/styles');
+jest.mock(makeStyles);
 
-//   it('should render correctly', () => {
-//     const wrapper = getWrapper();
+describe('FAQPage', () => {
+  it('should render correctly', () => {
+    const wrapper = shallow(
+      <NotFoundPage />,
+    );
 
-//     expect(wrapper.get(0)).toMatchSnapshot();
-//   });
-// });
+    expect(wrapper.get(0)).toMatchSnapshot();
+  });
+});
