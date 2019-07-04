@@ -34,6 +34,9 @@ exports[`App should render correctly 1`] = `
     path="/legal"
     render={[Function]}
   />
+  <Route
+    render={[Function]}
+  />
 </React.Fragment>
 `;
 
@@ -69,6 +72,9 @@ exports[`App should toggle navigation 1`] = `
   />
   <Route
     path="/legal"
+    render={[Function]}
+  />
+  <Route
     render={[Function]}
   />
 </React.Fragment>
