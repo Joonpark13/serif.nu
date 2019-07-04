@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FAQPage should render correctly 1`] = `
+<div
+  className="makeStyles-pageContainer-1"
+>
+  <ForwardRef(WithStyles)
+    title="404 Page Not Found"
+  />
+  <div
+    className="makeStyles-pageBody-2"
+  >
+    <ForwardRef(WithStyles)
+      variant="h5"
+    >
+      The requested URL was not found on this server.
+    </ForwardRef(WithStyles)>
+  </div>
+</div>
+`;
