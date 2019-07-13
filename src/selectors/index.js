@@ -84,3 +84,8 @@ export function searchResultsSelector(state) {
 export function currentSectionsSelector(state) {
   return state.getIn(['search', 'currentSections']);
 }
+
+// Globals
+export function currentTermSelector(state) {
+  return state.getIn(['globals', 'currentTerm']);
+}

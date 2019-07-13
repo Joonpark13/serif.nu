@@ -54,7 +54,7 @@ function search(state = initialSearchState, action) {
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchSearchIndex, {
-          args: [action.termId],
+          args: [action.currentTermId],
           successActionCreator: fetchSearchIndexSuccess,
           failActionCreator: fetchSearchIndexFailure,
         }),
@@ -70,7 +70,7 @@ function search(state = initialSearchState, action) {
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchSearchResults, {
-          args: [state.get('searchIndex'), action.searchInput],
+          args: [action.currentTermId, state.get('searchIndex'), action.searchInput],
           successActionCreator: getSearchResultsSuccess,
           failActionCreator: getSearchResultsFailure,
         }),
@@ -90,7 +90,7 @@ function search(state = initialSearchState, action) {
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchSections, {
-          args: [action.schoolId, action.subjectId, action.courseId],
+          args: [action.currentTermId, action.schoolId, action.subjectId, action.courseId],
           successActionCreator: fetchSectionsForSearchSuccess,
           failActionCreator: fetchSectionsForSearchFailure,
         }),

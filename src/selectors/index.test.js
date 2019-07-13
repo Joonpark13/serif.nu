@@ -20,6 +20,7 @@ import {
   searchResultsSelector,
   searchIsFetchingSelector,
   currentSectionsSelector,
+  currentTermSelector,
 } from './index';
 
 describe('sectionsSelctor', () => {
@@ -305,5 +306,18 @@ describe('currentSectionsSelector', () => {
     });
 
     expect(currentSectionsSelector(testState)).toEqual(testSections);
+  });
+});
+
+describe('currentTermSelector', () => {
+  it('should select current term from state', () => {
+    const testCurrentTerm = fromJS({});
+    const testState = fromJS({
+      globals: {
+        currentTerm: testCurrentTerm,
+      },
+    });
+
+    expect(currentTermSelector(testState)).toEqual(testCurrentTerm);
   });
 });

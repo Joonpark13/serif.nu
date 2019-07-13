@@ -1,9 +1,9 @@
 import { db } from 'util/firebase';
-import { CURRENT_TERM } from 'util/constants';
 
-const currentTermDoc = db.collection('terms').doc(CURRENT_TERM);
+const getTermDocument = documentName => db.collection('terms').doc(documentName);
 
-export function fetchSchools() {
+export function fetchSchools(currentTerm) {
+  const currentTermDoc = getTermDocument(currentTerm);
   return currentTermDoc
     .collection('schools')
     .get()
@@ -12,7 +12,8 @@ export function fetchSchools() {
     );
 }
 
-export function fetchSubjects(schoolId) {
+export function fetchSubjects(currentTerm, schoolId) {
+  const currentTermDoc = getTermDocument(currentTerm);
   return currentTermDoc
     .collection('subjects')
     .where('schoolId', '==', schoolId)
@@ -20,7 +21,8 @@ export function fetchSubjects(schoolId) {
     .then(querySnapshot => querySnapshot.docs.map(doc => doc.data()));
 }
 
-export function fetchCourses(schoolId, subjectId) {
+export function fetchCourses(currentTerm, schoolId, subjectId) {
+  const currentTermDoc = getTermDocument(currentTerm);
   return currentTermDoc
     .collection('courses')
     .where('schoolId', '==', schoolId)
