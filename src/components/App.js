@@ -3,12 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withRouter, Route } from 'react-router-dom';
 import {
-  getSchoolsRequest,
-  fetchSearchIndex as fetchSearchIndexAction,
+  fetchCurrentTermRequest,
 } from 'actions';
 import { auth } from 'util/firebase';
 import toJS from 'util/to-js';
-import { CURRENT_TERM } from 'util/constants';
 import TopBar from './TopBar';
 import NavDrawer from './NavDrawer';
 import AppBody from './AppBody';
@@ -31,14 +29,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const { fetchSchools, fetchSearchIndex } = this.props;
+    const { fetchCurrentTerm } = this.props;
 
     auth.signInAnonymously(); // TODO handle sign in error using .catch()
 
     auth.onAuthStateChanged((user) => {
       if (user) {
-        fetchSchools(CURRENT_TERM);
-        fetchSearchIndex(CURRENT_TERM);
+        fetchCurrentTerm();
       }
     });
   }
@@ -73,14 +70,13 @@ class App extends Component {
 }
 
 App.propTypes = {
-  fetchSchools: PropTypes.func.isRequired,
-  fetchSearchIndex: PropTypes.func.isRequired,
+  fetchCurrentTerm: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {
-  fetchSchools: getSchoolsRequest,
-  fetchSearchIndex: fetchSearchIndexAction,
+  fetchCurrentTerm: fetchCurrentTermRequest,
 };
+
 
 export { App as UnconnectedApp };
 const ConnectedApp = connect(null, mapDispatchToProps)(toJS(App));

@@ -27,10 +27,11 @@ describe('browse reducer', () => {
   });
 
   it(`should handle ${actionTypes.GET_SCHOOLS_REQUEST}`, () => {
+    const termId = '4740';
     const state = fromJS({
       isFetching: false,
     });
-    const action = actionCreators.getSchoolsRequest();
+    const action = actionCreators.getSchoolsRequest(termId);
 
     expect(browseReducer(state, action)).toEqual(
       loop(
@@ -38,6 +39,7 @@ describe('browse reducer', () => {
           isFetching: true,
         }),
         Cmd.run(fetchSchools, {
+          args: [action.currentTermId],
           successActionCreator: getSchoolsSuccess,
           failActionCreator: getSchoolsFailure,
         }),
@@ -79,10 +81,11 @@ describe('browse reducer', () => {
   });
 
   it(`should handle ${actionTypes.FETCH_SUBJECTS_REQUEST}`, () => {
+    const termId = '4740';
     const state = fromJS({
       isFetching: false,
     });
-    const action = actionCreators.fetchSubjectsRequest();
+    const action = actionCreators.fetchSubjectsRequest(termId);
 
     expect(browseReducer(state, action)).toEqual(
       loop(
@@ -90,7 +93,7 @@ describe('browse reducer', () => {
           isFetching: true,
         }),
         Cmd.run(fetchSubjects, {
-          args: [action.schoolId],
+          args: [action.currentTermId, action.schoolId],
           successActionCreator: fetchSubjectsSuccess,
           failActionCreator: fetchSubjectsFailure,
         }),
@@ -139,10 +142,11 @@ describe('browse reducer', () => {
   });
 
   it(`should handle ${actionTypes.FETCH_COURSES_REQUEST}`, () => {
+    const termId = '4740';
     const state = fromJS({
       isFetching: false,
     });
-    const action = actionCreators.fetchCoursesRequest();
+    const action = actionCreators.fetchCoursesRequest(termId);
 
     expect(browseReducer(state, action)).toEqual(
       loop(
@@ -150,7 +154,7 @@ describe('browse reducer', () => {
           isFetching: true,
         }),
         Cmd.run(fetchCourses, {
-          args: [action.schoolId, action.subjectId],
+          args: [action.currentTermId, action.schoolId, action.subjectId],
           successActionCreator: fetchCoursesSuccess,
           failActionCreator: fetchCoursesFailure,
         }),
@@ -181,10 +185,11 @@ describe('browse reducer', () => {
   });
 
   it(`should handle ${actionTypes.FETCH_SECTIONS_FOR_BROWSE_REQUEST}`, () => {
+    const termId = '4740';
     const state = fromJS({
       isFetching: false,
     });
-    const action = actionCreators.fetchSectionsForBrowseRequest();
+    const action = actionCreators.fetchSectionsForBrowseRequest(termId);
 
     expect(browseReducer(state, action)).toEqual(
       loop(
@@ -192,7 +197,7 @@ describe('browse reducer', () => {
           isFetching: true,
         }),
         Cmd.run(fetchSections, {
-          args: [action.schoolId, action.subjectId, action.courseId],
+          args: [action.currentTermId, action.schoolId, action.subjectId, action.courseId],
           successActionCreator: fetchSectionsForBrowseSuccess,
           failActionCreator: fetchSectionsForBrowseFailure,
         }),

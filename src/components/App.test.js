@@ -16,8 +16,7 @@ jest.mock('images/surprised_student.svg');
 
 describe('App', () => {
   const defaultProps = {
-    fetchSchools: () => {},
-    fetchSearchIndex: () => {},
+    fetchCurrentTerm: () => {},
   };
   const getWrapper = wrapperCreator(UnconnectedApp, defaultProps);
 
@@ -32,31 +31,25 @@ describe('App', () => {
   });
 
   it('should sign in and fetch data correctly', () => {
-    const fetchSchoolsMock = jest.fn();
-    const fetchSearchIndexMock = jest.fn();
+    const fetchCurrentTermMock = jest.fn();
 
     getWrapper({
-      fetchSchools: fetchSchoolsMock,
-      fetchSearchIndex: fetchSearchIndexMock,
+      fetchCurrentTerm: fetchCurrentTermMock,
     });
 
     expect(auth.signInAnonymously).toHaveBeenCalled();
-    expect(fetchSchoolsMock).toHaveBeenCalled();
-    expect(fetchSearchIndexMock).toHaveBeenCalled();
+    expect(fetchCurrentTermMock).toHaveBeenCalled();
   });
 
   it('does not fetch data if signed out', () => {
     auth.onAuthStateChanged = jest.fn(callback => callback(false));
-    const fetchSchoolsMock = jest.fn();
-    const fetchSearchIndexMock = jest.fn();
+    const fetchCurrentTermMock = jest.fn();
 
     getWrapper({
-      fetchSchools: fetchSchoolsMock,
-      fetchSearchIndex: fetchSearchIndexMock,
+      fetchCurrentTerm: fetchCurrentTermMock,
     });
 
-    expect(fetchSchoolsMock).not.toHaveBeenCalled();
-    expect(fetchSearchIndexMock).not.toHaveBeenCalled();
+    expect(fetchCurrentTermMock).not.toHaveBeenCalled();
   });
 
   it('should toggle navigation', () => {
