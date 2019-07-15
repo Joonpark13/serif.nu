@@ -1,20 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { getFormattedClassSchedule } from 'util/time';
 import { Dialog, DialogActions, Typography, Button, Divider } from '@material-ui/core';
+import { useSnackbar } from 'notistack';
 
-export const styles = {
+export const useStyles = makeStyles({
   dialog: {
     top: '12.5%',
     left: '12.5%',
     width: '500px',
     padding: '10px',
   },
-};
+});
 
-function ClassModal({
-  showDialog, toggleDialog, classes, section, associatedClass, removeSection,
+export default function ClassModal({
+  showDialog, toggleDialog, section, associatedClass, removeSection,
 }) {
   const subtitle = `${section.subjectId} ${section.courseId} Section ${section.sectionNumber}`;
   const associatedClassSchedule = associatedClass && (
@@ -29,6 +30,16 @@ function ClassModal({
       <Typography>{schedule.location}</Typography>
     </div>
   ));
+
+  const { enqueueSnackbar } = useSnackbar();
+  const classes = useStyles();
+  const message = 'Class successfully removed';
+  const handleClick = () => {
+    removeSection(section.id, section.color);
+    enqueueSnackbar(message, {
+      variant: 'success',
+    });
+  };
 
   return (
     <Dialog
@@ -66,7 +77,7 @@ function ClassModal({
         ))}
       </div>
       <DialogActions>
-        <Button onClick={() => removeSection(section.id, section.color)}>Remove</Button>
+        <Button onClick={handleClick}>Remove</Button>
         <Button onClick={toggleDialog}>Cancel</Button>
       </DialogActions>
     </Dialog>
@@ -76,7 +87,6 @@ function ClassModal({
 ClassModal.propTypes = {
   section: PropTypes.objectOf(PropTypes.any).isRequired,
   associatedClass: PropTypes.objectOf(PropTypes.any),
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
   showDialog: PropTypes.bool.isRequired,
   toggleDialog: PropTypes.func.isRequired,
   removeSection: PropTypes.func.isRequired,
@@ -85,6 +95,3 @@ ClassModal.propTypes = {
 ClassModal.defaultProps = {
   associatedClass: null,
 };
-
-export { ClassModal as UnstyledClassModal };
-export default withStyles(styles)(ClassModal);

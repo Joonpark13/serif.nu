@@ -8,7 +8,7 @@ exports[`ClassModal renders correctly 1`] = `
   open={true}
 >
   <div
-    className=""
+    className="makeStyles-dialog-1"
   >
     <ForwardRef(WithStyles)
       gutterBottom={true}

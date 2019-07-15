@@ -82,16 +82,16 @@ function Index() {
   return (
     <Provider store={store}>
       <MuiThemeProvider theme={theme}>
-        <Router>
-          <SnackbarProvider
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'center',
-            }}
-          >
+        <SnackbarProvider
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center',
+          }}
+        >
+          <Router>
             <App />
-          </SnackbarProvider>
-        </Router>
+          </Router>
+        </SnackbarProvider>
       </MuiThemeProvider>
     </Provider>
   );
