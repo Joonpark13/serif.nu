@@ -1,6 +1,10 @@
+import React from 'react';
+import { shallow } from 'enzyme';
 import { Button, Typography } from '@material-ui/core';
-import { wrapperCreator } from 'util/testing';
-import { UnstyledClassModal, styles } from './ClassModal';
+import * as notistack from 'notistack';
+import ClassModal from './ClassModal';
+
+jest.mock('notistack');
 
 describe('ClassModal', () => {
   const section = {
@@ -30,11 +34,14 @@ describe('ClassModal', () => {
     toggleDialog: () => {},
     removeSection: () => {},
   };
-
-  const getWrapper = wrapperCreator(UnstyledClassModal, defaultProps, styles);
+  const enqueueSnackbarMock = jest.fn();
+  notistack.useSnackbar.mockReturnValue({ enqueueSnackbar: enqueueSnackbarMock });
+  const message = 'Class successfully removed';
 
   it('renders correctly', () => {
-    const wrapper = getWrapper();
+    const wrapper = shallow(
+      <ClassModal {...defaultProps} />,
+    );
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
@@ -54,7 +61,9 @@ describe('ClassModal', () => {
         },
       },
     };
-    const wrapper = getWrapper({ associatedClass });
+    const wrapper = shallow(
+      <ClassModal {...defaultProps} associatedClass={associatedClass} />,
+    );
 
     expect(wrapper.find(Typography).at(0).prop('children'))
       .toEqual([`${associatedClass.type} - `, section.name]);
@@ -63,9 +72,23 @@ describe('ClassModal', () => {
 
   it('closes the modal when clicked', () => {
     const removeSectionMock = jest.fn();
-    const wrapper = getWrapper({ removeSection: removeSectionMock });
+    const wrapper = shallow(
+      <ClassModal {...defaultProps} removeSection={removeSectionMock} />,
+    );
     wrapper.find(Button).first().simulate('click');
 
     expect(removeSectionMock).toHaveBeenCalledWith(section.id, section.color);
+  });
+
+
+  it('pops up snackbar when clicked', () => {
+    const wrapper = shallow(
+      <ClassModal {...defaultProps} handleClick={enqueueSnackbarMock} />,
+    );
+    wrapper.find(Button).first().simulate('click');
+
+    expect(enqueueSnackbarMock).toHaveBeenCalledWith(message, {
+      variant: 'success',
+    });
   });
 });
