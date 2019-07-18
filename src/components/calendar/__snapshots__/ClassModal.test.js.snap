@@ -11,45 +11,45 @@ exports[`ClassModal renders correctly 1`] = `
     className="makeStyles-dialog-1"
   >
     <ForwardRef(WithStyles)
-      gutterBottom={true}
       variant="h5"
     >
       
       Introduction to Something
     </ForwardRef(WithStyles)>
-    <ForwardRef(WithStyles) />
-    <br />
-    <ForwardRef(WithStyles)
-      variant="subtitle1"
-    >
-      undefined undefined Section 20
-    </ForwardRef(WithStyles)>
-    <br />
-    <div>
-      <ForwardRef(WithStyles)>
-        Mo 10:30 AM - 12:00 PM
-      </ForwardRef(WithStyles)>
-      <ForwardRef(WithStyles)>
-        somewhere
-      </ForwardRef(WithStyles)>
-    </div>
     <ForwardRef(WithStyles)>
-      A prof
-    </ForwardRef(WithStyles)>
-    <br />
-    <div>
       <ForwardRef(WithStyles)
-        variant="h6"
+        variant="subtitle1"
       >
-        
+        undefined undefined Section 20
       </ForwardRef(WithStyles)>
+      <div>
+        <ForwardRef(WithStyles)
+          className="makeStyles-noBorder-2"
+        >
+          Mo 10:30 AM - 12:00 PM
+        </ForwardRef(WithStyles)>
+        <ForwardRef(WithStyles)>
+          somewhere
+        </ForwardRef(WithStyles)>
+      </div>
       <ForwardRef(WithStyles)
-        gutterBottom={true}
+        className="makeStyles-noBorder-2"
       >
-        
+        A prof
       </ForwardRef(WithStyles)>
       <br />
-    </div>
+      <div>
+        <ForwardRef(WithStyles)
+          className="makeStyles-noBorder-2"
+          variant="h6"
+        >
+          
+        </ForwardRef(WithStyles)>
+        <ForwardRef(WithStyles)>
+          
+        </ForwardRef(WithStyles)>
+      </div>
+    </ForwardRef(WithStyles)>
   </div>
   <ForwardRef(WithStyles)>
     <ForwardRef(WithStyles)
@@ -68,7 +68,9 @@ exports[`ClassModal renders correctly 1`] = `
 
 exports[`ClassModal renders correctly for associated class 1`] = `
 <div>
-  <ForwardRef(WithStyles)>
+  <ForwardRef(WithStyles)
+    className="makeStyles-noBorder-2"
+  >
     Mo 10:30 AM - 12:00 PM
   </ForwardRef(WithStyles)>
   <ForwardRef(WithStyles) />
