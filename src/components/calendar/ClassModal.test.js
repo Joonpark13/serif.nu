@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Button, Typography } from '@material-ui/core';
+import { Button, DialogTitle } from '@material-ui/core';
 import * as notistack from 'notistack';
 import ClassModal from './ClassModal';
 
@@ -65,7 +65,7 @@ describe('ClassModal', () => {
       <ClassModal {...defaultProps} associatedClass={associatedClass} />,
     );
 
-    expect(wrapper.find(Typography).at(0).prop('children'))
+    expect(wrapper.find(DialogTitle).at(0).prop('children'))
       .toEqual([`${associatedClass.type} - `, section.name]);
     expect(wrapper.find('div').at(1).get(0)).toMatchSnapshot();
   });

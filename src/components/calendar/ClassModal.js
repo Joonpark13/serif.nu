@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { getFormattedClassSchedule } from 'util/time';
-import { Dialog, DialogActions, Typography, Button, Divider } from '@material-ui/core';
+import { Dialog, DialogActions, DialogTitle, DialogContent, DialogContentText, Button } from '@material-ui/core';
 import { useSnackbar } from 'notistack';
 
 export const useStyles = makeStyles({
@@ -12,27 +12,34 @@ export const useStyles = makeStyles({
     width: '500px',
     padding: '10px',
   },
+  noBorder: {
+    margin: '0px',
+  },
 });
 
 export default function ClassModal({
   showDialog, toggleDialog, section, associatedClass, removeSection,
 }) {
+  const classes = useStyles();
   const subtitle = `${section.subjectId} ${section.courseId} Section ${section.sectionNumber}`;
   const associatedClassSchedule = associatedClass && (
     <div>
-      <Typography>{getFormattedClassSchedule(associatedClass.schedule)}</Typography>
-      <Typography>{associatedClass.schedule.location}</Typography>
+      <DialogContentText className={classes.noBorder}>
+        {getFormattedClassSchedule(associatedClass.schedule)}
+      </DialogContentText>
+      <DialogContentText>{associatedClass.schedule.location}</DialogContentText>
     </div>
   );
   const sectionSchedules = section.schedules.map(schedule => (
     <div key={JSON.stringify(schedule)}>
-      <Typography>{getFormattedClassSchedule(schedule)}</Typography>
-      <Typography>{schedule.location}</Typography>
+      <DialogContentText className={classes.noBorder}>
+        {getFormattedClassSchedule(schedule)}
+      </DialogContentText>
+      <DialogContentText>{schedule.location}</DialogContentText>
     </div>
   ));
 
   const { enqueueSnackbar } = useSnackbar();
-  const classes = useStyles();
   const message = 'Class successfully removed';
   const handleClick = () => {
     removeSection(section.id, section.color);
@@ -49,32 +56,32 @@ export default function ClassModal({
       aria-describedby="simple-dialog-description"
     >
       <div className={classes.dialog}>
-        <Typography gutterBottom variant="h5">
+        <DialogTitle variant="h5">
           {associatedClass ? `${associatedClass.type} - ` : ''}
           {section.name}
-        </Typography>
-        <Divider />
-        <br />
+        </DialogTitle>
 
-        <Typography variant="subtitle1">
-          {subtitle}
-        </Typography>
-        <br />
+        <DialogContent>
+          <DialogContentText variant="subtitle1">
+            {subtitle}
+          </DialogContentText>
+          {associatedClass ? associatedClassSchedule : sectionSchedules}
 
-        {associatedClass ? associatedClassSchedule : sectionSchedules}
 
-        {section.instructors.map(
-          instructor => <Typography key={instructor}>{instructor}</Typography>,
-        )}
-        <br />
+          {section.instructors.map(instructor => (
+            <DialogContentText className={classes.noBorder} key={instructor}>
+              {instructor}
+            </DialogContentText>
+          ))}
+          <br />
 
-        {section.descriptions.map(description => (
-          <div key={JSON.stringify(description)}>
-            <Typography variant="h6">{description.name}</Typography>
-            <Typography gutterBottom>{description.value}</Typography>
-            <br />
-          </div>
-        ))}
+          {section.descriptions.map(description => (
+            <div key={JSON.stringify(description)}>
+              <DialogContentText className={classes.noBorder} variant="h6">{description.name}</DialogContentText>
+              <DialogContentText>{description.value}</DialogContentText>
+            </div>
+          ))}
+        </DialogContent>
       </div>
       <DialogActions>
         <Button onClick={handleClick}>Remove</Button>
