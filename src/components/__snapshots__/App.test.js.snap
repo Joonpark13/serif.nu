@@ -9,34 +9,36 @@ exports[`App should render correctly 1`] = `
     closeFunc={[Function]}
     isOpen={false}
   />
-  <Route
-    exact={true}
-    path="/"
-    render={[Function]}
-  />
-  <Route
-    path="/about"
-    render={[Function]}
-  />
-  <Route
-    path="/faq"
-    render={[Function]}
-  />
-  <Route
-    path="/bugs"
-    render={[Function]}
-  />
-  <Route
-    path="/contact"
-    render={[Function]}
-  />
-  <Route
-    path="/legal"
-    render={[Function]}
-  />
-  <Route
-    render={[Function]}
-  />
+  <Switch>
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      path="/about"
+      render={[Function]}
+    />
+    <Route
+      path="/faq"
+      render={[Function]}
+    />
+    <Route
+      path="/bugs"
+      render={[Function]}
+    />
+    <Route
+      path="/contact"
+      render={[Function]}
+    />
+    <Route
+      path="/legal"
+      render={[Function]}
+    />
+    <Route
+      render={[Function]}
+    />
+  </Switch>
 </React.Fragment>
 `;
 
@@ -49,33 +51,35 @@ exports[`App should toggle navigation 1`] = `
     closeFunc={[Function]}
     isOpen={true}
   />
-  <Route
-    exact={true}
-    path="/"
-    render={[Function]}
-  />
-  <Route
-    path="/about"
-    render={[Function]}
-  />
-  <Route
-    path="/faq"
-    render={[Function]}
-  />
-  <Route
-    path="/bugs"
-    render={[Function]}
-  />
-  <Route
-    path="/contact"
-    render={[Function]}
-  />
-  <Route
-    path="/legal"
-    render={[Function]}
-  />
-  <Route
-    render={[Function]}
-  />
+  <Switch>
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      path="/about"
+      render={[Function]}
+    />
+    <Route
+      path="/faq"
+      render={[Function]}
+    />
+    <Route
+      path="/bugs"
+      render={[Function]}
+    />
+    <Route
+      path="/contact"
+      render={[Function]}
+    />
+    <Route
+      path="/legal"
+      render={[Function]}
+    />
+    <Route
+      render={[Function]}
+    />
+  </Switch>
 </React.Fragment>
 `;

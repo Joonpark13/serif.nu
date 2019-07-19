@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { withRouter, Route } from 'react-router-dom';
+import { withRouter, Route, Switch } from 'react-router-dom';
 import {
   fetchCurrentTermRequest,
 } from 'actions';
@@ -53,17 +53,19 @@ class App extends Component {
       <Fragment>
         <TopBar menuAction={this.toggleNav} />
         <NavDrawer isOpen={navigationOpen} closeFunc={this.toggleNav} />
-        <Route
-          exact
-          path="/"
-          render={/* istanbul ignore next */ props => <AppBody {...props} />}
-        />
-        <Route path="/about" render={/* istanbul ignore next */() => <AboutPage />} />
-        <Route path="/faq" render={/* istanbul ignore next */ () => <FAQPage />} />
-        <Route path="/bugs" render={/* istanbul ignore next */ () => <BugReportPage />} />
-        <Route path="/contact" render={/* istanbul ignore next */ () => <ContactPage />} />
-        <Route path="/legal" render={/* istanbul ignore next */ () => <LegalPage />} />
-        <Route render={/* istanbul ignore next */ () => <NotFoundPage />} />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={/* istanbul ignore next */ props => <AppBody {...props} />}
+          />
+          <Route path="/about" render={/* istanbul ignore next */() => <AboutPage />} />
+          <Route path="/faq" render={/* istanbul ignore next */ () => <FAQPage />} />
+          <Route path="/bugs" render={/* istanbul ignore next */ () => <BugReportPage />} />
+          <Route path="/contact" render={/* istanbul ignore next */ () => <ContactPage />} />
+          <Route path="/legal" render={/* istanbul ignore next */ () => <LegalPage />} />
+          <Route render={/* istanbul ignore next */ () => <NotFoundPage />} />
+        </Switch>
       </Fragment>
     );
   }
