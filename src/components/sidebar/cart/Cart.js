@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import { Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
@@ -31,11 +33,14 @@ function Cart({ classes }) {
 
   return (
     <React.Fragment>
-      <Typography variant="h5" className={classes.cartHeading}>
-        {uniqueSections.length}
-        {' '}
-        {label}
-      </Typography>
+      <Grid container direction="row" justify="space-between">
+        <Typography variant="h5" className={classes.cartHeading}>
+          {uniqueSections.length}
+          {' '}
+          {label}
+        </Typography>
+        {!!uniqueSections.length && <Button> Remove All </Button>}
+      </Grid>
       {uniqueSections.map(section => <CartSection key={section.id} section={section} />)}
     </React.Fragment>
   );
