@@ -27,7 +27,6 @@ function Cart({ classes, sections }) {
 
   const label = uniqueSections.length === 1 ? 'Class' : 'Classes';
 
-
   return (
     <React.Fragment>
       <Grid container direction="row" justify="space-between">
