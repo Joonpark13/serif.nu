@@ -26,16 +26,7 @@ function Cart({ classes, sections }) {
   );
 
   const label = uniqueSections.length === 1 ? 'Class' : 'Classes';
-  function displayButton(length) {
-    if (length !== 0) {
-      return (
-        <Button>
-           Remove All
-        </Button>
-      );
-    }
-    return (null);
-  }
+
 
   return (
     <React.Fragment>
@@ -45,7 +36,7 @@ function Cart({ classes, sections }) {
           {' '}
           {label}
         </Typography>
-        {displayButton(uniqueSections.length)}
+        {uniqueSections.length !== 0 ? <Button> Remove All </Button> : null}
       </Grid>
       {uniqueSections.map(section => <CartSection key={section.id} section={section} />)}
     </React.Fragment>
