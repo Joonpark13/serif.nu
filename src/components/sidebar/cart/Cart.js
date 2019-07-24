@@ -36,7 +36,7 @@ function Cart({ classes, sections }) {
           {' '}
           {label}
         </Typography>
-        {uniqueSections.length !== 0 ? <Button> Remove All </Button> : null}
+        {!!uniqueSections.length && <Button> Remove All </Button>}
       </Grid>
       {uniqueSections.map(section => <CartSection key={section.id} section={section} />)}
     </React.Fragment>
