@@ -3,12 +3,18 @@
 exports[`Cart renders correctly 1`] = `
 <React.Fragment>
   <ForwardRef(WithStyles)
-    className=""
-    variant="h5"
+    container={true}
+    direction="row"
+    justify="space-between"
   >
-    0
-     
-    Classes
+    <ForwardRef(WithStyles)
+      className=""
+      variant="h5"
+    >
+      0
+       
+      Classes
+    </ForwardRef(WithStyles)>
   </ForwardRef(WithStyles)>
 </React.Fragment>
 `;
@@ -16,12 +22,21 @@ exports[`Cart renders correctly 1`] = `
 exports[`Cart renders correctly with multiple sections with the same id 1`] = `
 <React.Fragment>
   <ForwardRef(WithStyles)
-    className=""
-    variant="h5"
+    container={true}
+    direction="row"
+    justify="space-between"
   >
-    1
-     
-    Class
+    <ForwardRef(WithStyles)
+      className=""
+      variant="h5"
+    >
+      1
+       
+      Class
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)>
+      Remove All
+    </ForwardRef(WithStyles)>
   </ForwardRef(WithStyles)>
   <ForwardRef(WithStyles)
     section={
@@ -36,12 +51,21 @@ exports[`Cart renders correctly with multiple sections with the same id 1`] = `
 exports[`Cart renders correctly with one section 1`] = `
 <React.Fragment>
   <ForwardRef(WithStyles)
-    className=""
-    variant="h5"
+    container={true}
+    direction="row"
+    justify="space-between"
   >
-    1
-     
-    Class
+    <ForwardRef(WithStyles)
+      className=""
+      variant="h5"
+    >
+      1
+       
+      Class
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)>
+      Remove All
+    </ForwardRef(WithStyles)>
   </ForwardRef(WithStyles)>
   <ForwardRef(WithStyles)
     section={
