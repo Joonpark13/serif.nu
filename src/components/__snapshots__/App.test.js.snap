@@ -23,7 +23,6 @@ exports[`App should render correctly 1`] = `
           },
           "render": [Function],
           "useStyles": [Function],
-          Symbol(Symbol.hasInstance): [Function],
         }
       }
       exact={true}
@@ -42,7 +41,6 @@ exports[`App should render correctly 1`] = `
           },
           "render": [Function],
           "useStyles": [Function],
-          Symbol(Symbol.hasInstance): [Function],
         }
       }
       path="/about"
@@ -60,7 +58,6 @@ exports[`App should render correctly 1`] = `
           },
           "render": [Function],
           "useStyles": [Function],
-          Symbol(Symbol.hasInstance): [Function],
         }
       }
       path="/faq"
@@ -78,7 +75,6 @@ exports[`App should render correctly 1`] = `
           },
           "render": [Function],
           "useStyles": [Function],
-          Symbol(Symbol.hasInstance): [Function],
         }
       }
       path="/bugs"
@@ -96,7 +92,6 @@ exports[`App should render correctly 1`] = `
           },
           "render": [Function],
           "useStyles": [Function],
-          Symbol(Symbol.hasInstance): [Function],
         }
       }
       path="/contact"
@@ -114,7 +109,6 @@ exports[`App should render correctly 1`] = `
           },
           "render": [Function],
           "useStyles": [Function],
-          Symbol(Symbol.hasInstance): [Function],
         }
       }
       path="/legal"

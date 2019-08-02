@@ -8,7 +8,7 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
-      options: { presets: ['env'] },
+      options: { presets: ['@babel/preset-env'] },
     }, {
       test: /\.css$/,
       use: ['style-loader', 'css-loader'],
