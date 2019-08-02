@@ -123,6 +123,13 @@ function handleRemoveSection(state, { sectionId, sectionColor }) {
     colorUses: updatedColorUses(sectionColor, state.get('colorUses'), true),
   });
 }
+function handleRemoveAllClasses(state) {
+  return state.merge({
+    sections: initialScheduleState.get('sections'),
+    associatedClasses: initialScheduleState.get('associatedClasses'),
+    colorUses: initialScheduleState.get('colorUses'),
+  });
+}
 
 function handleSectionHover(state, { section }) {
   const sections = splitBySchedules(fromJS(section));
@@ -158,6 +165,9 @@ function schedule(state = initialScheduleState, action) {
 
     case actionTypes.REMOVE_SECTION:
       return handleRemoveSection(state, action);
+
+    case actionTypes.REMOVE_ALL_CLASSES:
+      return handleRemoveAllClasses(state, action);
 
     case actionTypes.VIEW_SECTION_SELECTION:
       return state.set('sectionPreview', initialScheduleState.get('sectionPreview'));

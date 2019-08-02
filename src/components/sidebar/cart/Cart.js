@@ -12,7 +12,7 @@ export const styles = {
   },
 };
 
-function Cart({ classes, sections }) {
+function Cart({ classes, sections, removeAllClasses }) {
   const uniqueSections = [];
   const usedIDs = [];
 
@@ -35,7 +35,7 @@ function Cart({ classes, sections }) {
           {' '}
           {label}
         </Typography>
-        {!!uniqueSections.length && <Button> Remove All </Button>}
+        {!!uniqueSections.length && <Button onClick={removeAllClasses}> Remove All </Button>}
       </Grid>
       {uniqueSections.map(section => <CartSection key={section.id} section={section} />)}
     </React.Fragment>
@@ -45,6 +45,7 @@ function Cart({ classes, sections }) {
 Cart.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   sections: PropTypes.arrayOf(PropTypes.object).isRequired,
+  removeAllClasses: PropTypes.func.isRequired,
 };
 
 export { Cart as UnstyledCart };
