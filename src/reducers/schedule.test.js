@@ -168,6 +168,40 @@ describe('schedule reducer', () => {
     ).toEqual(fromJS([]));
   });
 
+  it(`should handle ${actionTypes.REMOVE_ALL_CLASSES}`, () => {
+    const colorOne = classColors[0];
+    const colorTwo = classColors[1];
+    const scheduleWithSectionsState = fromJS({
+      sections: [
+        {
+          id: '12345',
+          section: '20',
+          color: colorOne,
+        },
+        {
+          id: '12345',
+          section: '20',
+          color: colorOne,
+        },
+        {
+          id: '54321',
+          section: '40',
+          color: colorTwo,
+        },
+      ],
+      associatedClasses: [],
+      colorUses: { [colorOne]: 1, [colorTwo]: 1 },
+    });
+    prepClassesForCalendar.default = jest.fn().mockImplementation(
+      (sections, color, associatedClasses) => ({ sections, associatedClasses }),
+    );
+    const action = actionCreators.removeAllClasses();
+
+    expect(
+      scheduleReducer(scheduleWithSectionsState, action).get('sections'),
+    ).toEqual(fromJS([]));
+  });
+
   it(`should handle ${actionTypes.VIEW_SECTION_SELECTION}`, () => {
     const action = actionCreators.viewSectionSelection({});
     expect(scheduleReducer(initialScheduleState, action)).toEqual(initialScheduleState);

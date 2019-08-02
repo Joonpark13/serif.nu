@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { mockStyles, mockUseSelector } from 'util/testing';
+import { mockStyles, mockUseSelector, mockUseDispatch } from 'util/testing';
+import { Button } from '@material-ui/core';
+import { removeAllClasses } from 'actions';
 import { UnstyledCart, styles } from './Cart';
 
 describe('Cart', () => {
@@ -31,5 +33,15 @@ describe('Cart', () => {
     const wrapper = shallow(<UnstyledCart classes={classes} />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
+  });
+
+  it('closes removes all classes when clicked', () => {
+    mockUseSelector([{ id: '123' }, { id: '123' }]);
+    const dispatchMock = mockUseDispatch();
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledCart classes={classes} />);
+    wrapper.find(Button).simulate('click');
+
+    expect(dispatchMock).toHaveBeenCalledWith(removeAllClasses());
   });
 });

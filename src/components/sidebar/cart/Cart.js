@@ -5,8 +5,11 @@ import PropTypes from 'prop-types';
 import { Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
 import { sectionsSelector } from 'selectors';
+import { useDispatch } from 'react-redux';
 import useSelector from 'util/use-selector';
+import { removeAllClasses } from 'actions';
 import CartSection from './CartSection';
+
 
 export const styles = {
   cartHeading: {
@@ -16,7 +19,11 @@ export const styles = {
 
 function Cart({ classes }) {
   const sections = useSelector(sectionsSelector);
+  const dispatch = useDispatch();
 
+  const handleClick = () => {
+    dispatch(removeAllClasses());
+  };
   const uniqueSections = [];
   const usedIDs = [];
 
@@ -39,7 +46,7 @@ function Cart({ classes }) {
           {' '}
           {label}
         </Typography>
-        {!!uniqueSections.length && <Button> Remove All </Button>}
+        {!!uniqueSections.length && <Button onClick={handleClick}> Remove All </Button>}
       </Grid>
       {uniqueSections.map(section => <CartSection key={section.id} section={section} />)}
     </React.Fragment>
