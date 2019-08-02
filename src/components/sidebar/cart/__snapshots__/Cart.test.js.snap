@@ -34,7 +34,9 @@ exports[`Cart renders correctly with multiple sections with the same id 1`] = `
        
       Class
     </ForwardRef(WithStyles)>
-    <ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
+      onClick={[Function]}
+    >
        Remove All 
     </ForwardRef(WithStyles)>
   </ForwardRef(WithStyles)>
@@ -63,7 +65,9 @@ exports[`Cart renders correctly with one section 1`] = `
        
       Class
     </ForwardRef(WithStyles)>
-    <ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
+      onClick={[Function]}
+    >
        Remove All 
     </ForwardRef(WithStyles)>
   </ForwardRef(WithStyles)>

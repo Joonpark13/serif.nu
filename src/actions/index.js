@@ -79,6 +79,10 @@ export const removeSection = (sectionId, sectionColor) => ({
   sectionColor,
 });
 
+export const removeAllClasses = () => ({
+  type: actionTypes.REMOVE_ALL_CLASSES,
+});
+
 export function fetchSchoolsRequest() {
   return {
     type: actionTypes.FETCH_SCHOOLS_REQUEST,
