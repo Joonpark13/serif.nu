@@ -22,6 +22,8 @@ module.exports = {
       statements: 100,
     },
   },
-  setupTestFrameworkScriptFile: '<rootDir>test-setup.js',
+  setupFilesAfterEnv: [
+    '<rootDir>test-setup.js'
+  ],
   moduleDirectories: ['src', 'node_modules'],
 };
