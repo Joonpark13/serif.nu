@@ -1,13 +1,11 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import { Typography, Button } from '@material-ui/core';
 import { sectionsSelector } from 'selectors';
-import { useDispatch } from 'react-redux';
 import useSelector from 'util/use-selector';
-import { removeAllClasses } from 'actions';
 import CartSection from './CartSection';
+import CartDialog from './CartDialog';
 
 
 const useStyles = makeStyles({
@@ -19,11 +17,7 @@ const useStyles = makeStyles({
 export default function Cart() {
   const classes = useStyles();
   const sections = useSelector(sectionsSelector);
-  const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(removeAllClasses());
-  };
   const uniqueSections = [];
   const usedIDs = [];
 
@@ -37,6 +31,10 @@ export default function Cart() {
   );
 
   const label = uniqueSections.length === 1 ? 'Class' : 'Classes';
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
   return (
     <React.Fragment>
@@ -46,7 +44,8 @@ export default function Cart() {
           {' '}
           {label}
         </Typography>
-        {!!uniqueSections.length && <Button onClick={handleClick}> Remove All </Button>}
+        {!!uniqueSections.length && <Button onClick={handleClickOpen}> Remove All </Button>}
+        {open && <CartDialog />}
       </Grid>
       {uniqueSections.map(section => <CartSection key={section.id} section={section} />)}
     </React.Fragment>
