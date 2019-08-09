@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { mockUseSelector, mockUseDispatch } from 'util/testing';
+import { mockUseSelector } from 'util/testing';
 import { Button } from '@material-ui/core';
-import { removeAllClasses } from 'actions';
 import Cart from './Cart';
+import CartDialog from './CartDialog';
 
 describe('Cart', () => {
   beforeEach(() => {
@@ -32,12 +32,12 @@ describe('Cart', () => {
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
-  it('closes removes all classes when clicked', () => {
+  it('opens the modal when clicked', () => {
     mockUseSelector([{ id: '123' }, { id: '123' }]);
-    const dispatchMock = mockUseDispatch();
-    const wrapper = shallow(<Cart />);
-    wrapper.find(Button).simulate('click');
 
-    expect(dispatchMock).toHaveBeenCalledWith(removeAllClasses());
+    const wrapper = shallow(<Cart />);
+    wrapper.find(Button).first().simulate('click');
+
+    expect(wrapper.find(CartDialog)).toHaveLength(1);
   });
 });

@@ -15,7 +15,12 @@ export function wrapperCreator(Component, defaultProps = {}) {
 /* istanbul ignore next */
 export function mockUseSelector(...args) {
   useSelector.default.mockReset();
-  args.forEach(arg => useSelector.default.mockReturnValueOnce(arg));
+  let callCounter = 0;
+  useSelector.default.mockImplementation(() => {
+    const mockValue = args[callCounter % args.length];
+    callCounter += 1;
+    return mockValue;
+  });
 
   return useSelector.default;
 }
