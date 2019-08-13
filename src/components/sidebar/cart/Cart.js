@@ -1,13 +1,12 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
-import { Typography, Dialog, DialogActions, DialogTitle, Button } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
 import { sectionsSelector } from 'selectors';
-import { useDispatch } from 'react-redux';
 import useSelector from 'util/use-selector';
-import { removeAllClasses } from 'actions';
 import CartSection from './CartSection';
+import CartDialog from './CartDialog';
 
 
 export const styles = {
@@ -18,7 +17,6 @@ export const styles = {
 
 function Cart({ classes }) {
   const sections = useSelector(sectionsSelector);
-  const dispatch = useDispatch();
 
   const uniqueSections = [];
   const usedIDs = [];
@@ -37,13 +35,6 @@ function Cart({ classes }) {
   const handleClickOpen = () => {
     setOpen(true);
   };
-  const handleRemoveAll = () => {
-    dispatch(removeAllClasses());
-    setOpen(false);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <React.Fragment>
@@ -54,22 +45,7 @@ function Cart({ classes }) {
           {label}
         </Typography>
         {!!uniqueSections.length && <Button onClick={handleClickOpen}> Remove All </Button>}
-        <Dialog
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
-          <DialogTitle>Are you sure you want to remove all classes?</DialogTitle>
-          <DialogActions>
-            <Button onClick={handleRemoveAll}>
-              Remove
-            </Button>
-            <Button onClick={handleClose}>
-              Cancel
-            </Button>
-          </DialogActions>
-        </Dialog>
+        {open && <CartDialog />}
       </Grid>
       {uniqueSections.map(section => <CartSection key={section.id} section={section} />)}
     </React.Fragment>
