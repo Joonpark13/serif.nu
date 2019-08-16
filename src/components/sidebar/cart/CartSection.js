@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { getFormattedClassSchedule } from 'util/time';
 import Section from 'components/common/Section';
 import ClassModal from 'components/calendar/ClassModal';
@@ -25,7 +25,10 @@ export const styles = {
   },
 };
 
-function CartSection({ classes, section }) {
+const useStyles = makeStyles(styles);
+
+export default function CartSection({ section }) {
+  const classes = useStyles({ section });
   const [showDialog, setShowDialog] = useState(false);
 
   function toggleDialog() {
@@ -64,8 +67,4 @@ function CartSection({ classes, section }) {
 
 CartSection.propTypes = {
   section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
-
-export { CartSection as UnstyledCartSection };
-export default withStyles(styles)(CartSection);

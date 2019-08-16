@@ -1,17 +1,17 @@
+import React from 'react';
+import { shallow } from 'enzyme';
 import { Typography, Button } from '@material-ui/core';
-import { wrapperCreator, mockUseSelector, mockUseDispatch } from 'util/testing';
+import { mockUseSelector, mockUseDispatch } from 'util/testing';
 import { changeBrowseLevel } from 'actions';
-import { UnstyledBrowseHeader, styles } from './BrowseHeader';
+import BrowseHeader from './BrowseHeader';
 
 describe('BrowseHeader', () => {
-  const getComponent = wrapperCreator(UnstyledBrowseHeader, undefined, styles);
-
   beforeEach(() => {
     mockUseSelector('school', '', '');
   });
 
   it('renders correctly', () => {
-    const wrapper = getComponent();
+    const wrapper = shallow(<BrowseHeader />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
@@ -20,7 +20,7 @@ describe('BrowseHeader', () => {
     const selectedSchoolId = '1234';
     mockUseSelector('subject', selectedSchoolId, '');
 
-    const wrapper = getComponent();
+    const wrapper = shallow(<BrowseHeader />);
 
     expect(wrapper.find(Typography).prop('children')).toBe(selectedSchoolId);
   });
@@ -28,7 +28,7 @@ describe('BrowseHeader', () => {
   it('renders correctly for course browse level', () => {
     const selectedSubjectId = 'MEAS';
     mockUseSelector('course', '', selectedSubjectId);
-    const wrapper = getComponent();
+    const wrapper = shallow(<BrowseHeader />);
 
     expect(wrapper.find(Typography).prop('children')).toBe(selectedSubjectId);
   });
@@ -37,7 +37,7 @@ describe('BrowseHeader', () => {
     mockUseSelector('subject', 'WCAS', '');
     const dispatchMock = mockUseDispatch();
 
-    const wrapper = getComponent();
+    const wrapper = shallow(<BrowseHeader />);
 
     wrapper.find(Button).simulate('click');
 
@@ -48,7 +48,7 @@ describe('BrowseHeader', () => {
     mockUseSelector('course', 'EECS', '');
     const dispatchMock = mockUseDispatch();
 
-    const wrapper = getComponent();
+    const wrapper = shallow(<BrowseHeader />);
 
     wrapper.find(Button).simulate('click');
 

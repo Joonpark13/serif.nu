@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { Typography, Button } from '@material-ui/core';
 import useSelector from 'util/use-selector';
 import {
@@ -11,7 +10,7 @@ import {
 } from 'selectors';
 import { changeBrowseLevel } from 'actions';
 
-export const styles = {
+const useStyles = makeStyles({
   browseHeader: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -23,9 +22,10 @@ export const styles = {
   backButton: {
     padding: '10px 16px',
   },
-};
+});
 
-function BrowseHeader({ classes }) {
+export default function BrowseHeader() {
+  const classes = useStyles();
   const currentBrowseLevel = useSelector(currentBrowseLevelSelector);
   const selectedSchoolId = useSelector(selectedSchoolIdSelector);
   const selectedSubjectId = useSelector(selectedSubjectIdSelector);
@@ -64,10 +64,3 @@ function BrowseHeader({ classes }) {
     </div>
   );
 }
-
-BrowseHeader.propTypes = {
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
-};
-
-export { BrowseHeader as UnstyledBrowseHeader };
-export default withStyles(styles)(BrowseHeader);

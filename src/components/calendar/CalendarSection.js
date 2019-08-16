@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { getFormattedEventTime, getDurationInHours } from 'util/time';
 import Section from 'components/common/Section';
 import ClassModal from './ClassModal';
@@ -40,62 +40,49 @@ export const styles = {
   },
 };
 
-class CalendarSection extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showDialog: false,
-    };
-    this.handleClick = this.handleClick.bind(this);
-    this.toggleDialog = this.toggleDialog.bind(this);
+const useStyles = makeStyles(styles);
+
+export default function CalendarSection({ section, isPreview }) {
+  const [showDialog, setShowDialog] = useState(false);
+
+  const classes = useStyles({ section, isPreview });
+
+  function toggleDialog() {
+    setShowDialog(!showDialog);
   }
 
-  handleClick() {
-    const { isPreview } = this.props;
+  const handleClick = () => {
     if (!isPreview) {
-      this.toggleDialog();
+      toggleDialog();
     }
-  }
+  };
 
-  toggleDialog() {
-    this.setState(state => ({ showDialog: !state.showDialog }));
-  }
+  const leftHeaderContent = getFormattedEventTime(section.event);
+  const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
 
-  render() {
-    const { classes, section } = this.props;
-    const { showDialog } = this.state;
-
-    const leftHeaderContent = getFormattedEventTime(section.event);
-    const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
-
-    return (
-      <div>
-        <Section
-          onClick={this.handleClick}
-          classes={classes}
-          leftHeaderContent={leftHeaderContent}
-          rightHeaderContent={rightHeaderContent}
-          sectionName={section.name}
-        />
-        <ClassModal
-          section={section}
-          showDialog={showDialog}
-          toggleDialog={this.toggleDialog}
-        />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Section
+        onClick={handleClick}
+        classes={classes}
+        leftHeaderContent={leftHeaderContent}
+        rightHeaderContent={rightHeaderContent}
+        sectionName={section.name}
+      />
+      <ClassModal
+        section={section}
+        showDialog={showDialog}
+        toggleDialog={toggleDialog}
+      />
+    </div>
+  );
 }
 
 CalendarSection.propTypes = {
   section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
   isPreview: PropTypes.bool,
 };
 
 CalendarSection.defaultProps = {
   isPreview: false,
 };
-
-export { CalendarSection as UnstyledCalendarSection };
-export default withStyles(styles)(CalendarSection);

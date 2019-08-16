@@ -1,7 +1,9 @@
+import React from 'react';
+import { shallow } from 'enzyme';
 import { ListItem } from '@material-ui/core';
-import { wrapperCreator, mockUseSelector, mockUseDispatch } from 'util/testing';
+import { mockUseSelector, mockUseDispatch } from 'util/testing';
 import { changeBrowseLevel, fetchSectionsForBrowseRequest, selectCourseInBrowse } from 'actions';
-import { UnstyledCourses, styles } from './Courses';
+import Courses from './Courses';
 
 describe('Courses', () => {
   const course = {
@@ -12,28 +14,26 @@ describe('Courses', () => {
   };
   const courses = [course];
 
-  const getComponent = wrapperCreator(UnstyledCourses, undefined, styles);
-
   beforeEach(() => {
     mockUseSelector(courses, false);
   });
 
   it('renders correctly', () => {
-    const wrapper = getComponent();
+    const wrapper = shallow(<Courses />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders loading correctly', () => {
     mockUseSelector(courses, true);
-    const wrapper = getComponent();
+    const wrapper = shallow(<Courses />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('showSections gets called correctly', () => {
     const dispatchMock = mockUseDispatch();
-    const wrapper = getComponent();
+    const wrapper = shallow(<Courses />);
 
     wrapper.find(ListItem).first().simulate('click');
 

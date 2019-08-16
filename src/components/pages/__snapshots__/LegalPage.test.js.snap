@@ -2,13 +2,13 @@
 
 exports[`LegalPage should render correctly 1`] = `
 <div
-  className=""
+  className="makeStyles-pageContainer-1"
 >
-  <ForwardRef(WithStyles)
+  <PageTitle
     title="Serif.nu - Legal"
   />
   <div
-    className=""
+    className="makeStyles-pageBody-2"
   >
     <ForwardRef(WithStyles)
       variant="body1"
@@ -27,7 +27,7 @@ exports[`LegalPage should render correctly 1`] = `
       Serif.nu is not created by Northwestern University.
     </ForwardRef(WithStyles)>
     <div
-      className=""
+      className="makeStyles-section-3"
     >
       <ForwardRef(WithStyles)
         variant="h4"
@@ -122,7 +122,7 @@ exports[`LegalPage should render correctly 1`] = `
       </ol>
     </div>
     <div
-      className=""
+      className="makeStyles-section-3"
     >
       <ForwardRef(WithStyles)
         gutterBottom={true}

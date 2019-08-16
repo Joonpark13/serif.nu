@@ -1,9 +1,8 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import PropTypes from 'prop-types';
 import { Typography } from '@material-ui/core';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { sectionsSelector } from 'selectors';
 import { useDispatch } from 'react-redux';
 import useSelector from 'util/use-selector';
@@ -11,13 +10,14 @@ import { removeAllClasses } from 'actions';
 import CartSection from './CartSection';
 
 
-export const styles = {
+const useStyles = makeStyles({
   cartHeading: {
     padding: '16px',
   },
-};
+});
 
-function Cart({ classes }) {
+export default function Cart() {
+  const classes = useStyles();
   const sections = useSelector(sectionsSelector);
   const dispatch = useDispatch();
 
@@ -52,10 +52,3 @@ function Cart({ classes }) {
     </React.Fragment>
   );
 }
-
-Cart.propTypes = {
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
-};
-
-export { Cart as UnstyledCart };
-export default withStyles(styles)(Cart);

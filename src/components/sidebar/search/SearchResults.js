@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { List, ListItem, ListItemText, CircularProgress, Typography } from '@material-ui/core';
 import useSelector from 'util/use-selector';
 import { searchResultsSelector, searchIsFetchingSelector, currentSearchInputSelector } from 'selectors';
 import { fetchSectionsForSearchRequest, setCurrentCourseName } from 'actions';
 
-export const styles = {
+const useStyles = makeStyles({
   loadingContainer: {
     margin: 15,
     display: 'flex',
@@ -17,9 +16,10 @@ export const styles = {
     display: 'flex',
     justifyContent: 'center',
   },
-};
+});
 
-function SearchResults({ classes }) {
+export default function SearchResults() {
+  const classes = useStyles();
   const searchResults = useSelector(searchResultsSelector);
   const isFetching = useSelector(searchIsFetchingSelector);
   const currentSearchInput = useSelector(currentSearchInputSelector);
@@ -65,10 +65,3 @@ function SearchResults({ classes }) {
     </div>
   );
 }
-
-SearchResults.propTypes = {
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
-};
-
-export { SearchResults as UnstyledSearchResults };
-export default withStyles(styles)(SearchResults);

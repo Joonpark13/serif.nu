@@ -5,22 +5,34 @@ exports[`AssociatedClass renders correctly 1`] = `
   <Section
     classes={
       Object {
-        "container": "",
-        "header": "",
-        "paper": "",
-        "text": "",
+        "container": "makeStyles-container-2",
+        "header": "makeStyles-header-4",
+        "paper": "makeStyles-paper-1 makeStyles-paper-5",
+        "text": "makeStyles-text-3",
       }
     }
     leftHeaderContent="left hand header content"
     onClick={[Function]}
     rightHeaderContent="EECS 111-0"
-    sectionName="DIS - undefined"
+    sectionName="undefined - undefined"
   />
   <ClassModal
     associatedClass={
       Object {
-        "name": "Some discussion",
-        "type": "DIS",
+        "color": "some color",
+        "column": 0,
+        "columnWidth": 1,
+        "event": Object {
+          "dow": "Mo",
+          "end": Object {
+            "hour": 12,
+            "minute": 0,
+          },
+          "start": Object {
+            "hour": 10,
+            "minute": 30,
+          },
+        },
       }
     }
     section={

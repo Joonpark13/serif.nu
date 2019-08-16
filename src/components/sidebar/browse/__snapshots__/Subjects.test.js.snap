@@ -17,7 +17,7 @@ exports[`Subjects renders correctly 1`] = `
 
 exports[`Subjects renders correctly when fetching 1`] = `
 <div
-  className=""
+  className="makeStyles-loadingContainer-1"
 >
   <ForwardRef(WithStyles) />
 </div>

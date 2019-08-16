@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { mockStyles } from 'util/testing';
-import { formatHour, UnstyledHoursColumn, styles } from './HoursColumn';
+import HoursColumn, { formatHour } from './HoursColumn';
 
 describe('formatHour', () => {
   it('returns 12am when given 0 or 24', () => {
@@ -28,8 +27,7 @@ describe('formatHour', () => {
 
 describe('HoursColumn', () => {
   it('renders correctly', () => {
-    const classes = mockStyles(styles);
-    const wrapper = shallow(<UnstyledHoursColumn hours={[1, 2]} classes={classes} />);
+    const wrapper = shallow(<HoursColumn hours={[1, 2]} />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

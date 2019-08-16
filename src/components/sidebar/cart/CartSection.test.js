@@ -1,10 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { mockStyles } from 'util/testing';
 import * as timeUtils from 'util/time';
 import Section from 'components/common/Section';
 import ClassModal from 'components/calendar/ClassModal';
-import { UnstyledCartSection, styles } from './CartSection';
+import CartSection, { styles } from './CartSection';
 
 describe('CartSection', () => {
   beforeEach(() => {
@@ -21,30 +20,27 @@ describe('CartSection', () => {
   });
 
   it('renders correctly', () => {
-    const classes = mockStyles(styles);
     const testSection = { schedules: [{}], subjectId: 'EECS', courseId: '111-0' };
     const wrapper = shallow(
-      <UnstyledCartSection section={testSection} classes={classes} />,
+      <CartSection section={testSection} />,
     );
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('formats left header content correctly when multiple schedules present', () => {
-    const classes = mockStyles(styles);
     const testSection = { schedules: [{}, {}], subjectId: 'EECS', courseId: '111-0' };
     const wrapper = shallow(
-      <UnstyledCartSection section={testSection} classes={classes} />,
+      <CartSection section={testSection} />,
     );
 
     expect(wrapper.find(Section).prop('leftHeaderContent')).toBe('schedules, schedules');
   });
 
   it('opens modal on click', () => {
-    const classes = mockStyles(styles);
     const testSection = { schedules: [{}], subjectId: 'EECS', courseId: '111-0' };
     const wrapper = shallow(
-      <UnstyledCartSection section={testSection} classes={classes} />,
+      <CartSection section={testSection} />,
     );
 
     wrapper.find(Section).simulate('click');

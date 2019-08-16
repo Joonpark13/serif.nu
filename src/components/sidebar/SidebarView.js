@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Tabs, Tab } from '@material-ui/core';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import Search from './search/Search';
 import Cart from './cart/Cart';
 import Browse from './browse/Browse';
 
-export const styles = {
+const useStyles = makeStyles({
   wrapper: {
     height: 'calc(100vh - 64px)', // 64px is height of TopBar
     overflow: 'auto',
@@ -14,9 +13,10 @@ export const styles = {
   tabWidth: {
     minWidth: 0,
   },
-};
+});
 
-function SidebarView({ classes }) {
+export default function SidebarView() {
+  const classes = useStyles();
   const [value, setValue] = useState('search');
 
   return (
@@ -38,10 +38,3 @@ function SidebarView({ classes }) {
     </div>
   );
 }
-
-SidebarView.propTypes = {
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
-};
-
-export { SidebarView as UnstyledSidebarView };
-export default withStyles(styles)(SidebarView);
