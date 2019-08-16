@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
 import {
   columnBorderStyle,
@@ -10,7 +10,7 @@ import {
   columnHeight,
 } from './calendar-constants';
 
-export const styles = {
+const useStyles = makeStyles({
   hoursColumnContainer: {
     minHeight: columnMinHeight,
     borderRight: columnBorderStyle,
@@ -29,7 +29,7 @@ export const styles = {
     minHeight: cellMinHeight,
     borderBottom: '1px solid white',
   },
-};
+});
 
 /*
  * 0 is 12am
@@ -53,7 +53,8 @@ export function formatHour(hour) {
   throw new RangeError('Invalid input. hour must be in the range [0, 24]');
 }
 
-function HoursColumn({ hours, classes }) {
+export default function HoursColumn({ hours }) {
+  const classes = useStyles();
   return (
     <div className={classes.hoursColumnContainer}>
       <div className={classes.hoursSpacer} />
@@ -70,9 +71,4 @@ function HoursColumn({ hours, classes }) {
 
 HoursColumn.propTypes = {
   hours: PropTypes.arrayOf(PropTypes.number).isRequired,
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
-
-export { HoursColumn as UnstyledHoursColumn };
-
-export default withStyles(styles)(HoursColumn);

@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { mockStyles } from 'util/testing';
 import Section from 'components/common/Section';
 import ClassModal from './ClassModal';
-import { UnstyledCalendarSection, styles, MAX_WIDTH_PERCENT } from './CalendarSection';
+import CalendarSection, { styles, MAX_WIDTH_PERCENT } from './CalendarSection';
 
 describe('CalendarSection', () => {
   const dow = 'Mo';
@@ -18,6 +17,8 @@ describe('CalendarSection', () => {
       minute: 0,
     },
   };
+
+  const testSection = { id: '12345', course: '101-1', event };
 
   describe('dynamic styles', () => {
     const hour = 10;
@@ -62,20 +63,16 @@ describe('CalendarSection', () => {
   });
 
   it('renders correctly', () => {
-    const classes = mockStyles(styles);
-    const testSection = { id: '12345', course: '101-1', event };
     const wrapper = shallow(
-      <UnstyledCalendarSection section={testSection} classes={classes} />,
+      <CalendarSection section={testSection} />,
     );
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders modal correctly', () => {
-    const classes = mockStyles(styles);
-    const testSection = { id: '12345', course: '101-1', event };
     const wrapper = shallow(
-      <UnstyledCalendarSection section={testSection} classes={classes} />,
+      <CalendarSection section={testSection} />,
     );
 
     wrapper.find(Section).simulate('click');
@@ -84,10 +81,8 @@ describe('CalendarSection', () => {
   });
 
   it('does nothing as a preview section when clicked', () => {
-    const classes = mockStyles(styles);
-    const testSection = { id: '12345', course: '101-1', event };
     const wrapper = shallow(
-      <UnstyledCalendarSection section={testSection} classes={classes} isPreview />,
+      <CalendarSection section={testSection} isPreview />,
     );
 
     wrapper.find(Section).simulate('click');

@@ -2,13 +2,13 @@
 
 exports[`BugReportPage should render correctly after user acknowledgement 1`] = `
 <div
-  className=""
+  className="makeStyles-pageContainer-1"
 >
-  <ForwardRef(WithStyles)
+  <PageTitle
     title="Report a Bug"
   />
   <div
-    className=""
+    className="makeStyles-pageBody-2"
   >
     <iframe
       frameBorder="0"
@@ -27,13 +27,13 @@ exports[`BugReportPage should render correctly after user acknowledgement 1`] = 
 
 exports[`BugReportPage should render correctly before user acknowledgement 1`] = `
 <div
-  className=""
+  className="makeStyles-pageContainer-1"
 >
-  <ForwardRef(WithStyles)
+  <PageTitle
     title="Report a Bug"
   />
   <div
-    className=""
+    className="makeStyles-pageBody-2"
   >
     <div>
       <ForwardRef(WithStyles)

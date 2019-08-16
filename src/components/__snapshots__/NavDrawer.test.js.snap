@@ -6,7 +6,7 @@ exports[`NavDrawer should render correctly 1`] = `
   open={true}
 >
   <div
-    className=""
+    className="makeStyles-drawer-1"
   >
     <ForwardRef(WithStyles)>
       <ListItemLink
@@ -51,7 +51,7 @@ exports[`NavDrawer should render correctly 1`] = `
       </ListItemLink>
     </ForwardRef(WithStyles)>
     <div
-      className=""
+      className="makeStyles-legalLink-2"
     >
       <Link
         onClick={[Function]}

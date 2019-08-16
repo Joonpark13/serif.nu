@@ -1,11 +1,10 @@
-import { wrapperCreator } from 'util/testing';
-import { UnstyledLegalPage, styles } from './LegalPage';
+import React from 'react';
+import { shallow } from 'enzyme';
+import LegalPage from './LegalPage';
 
 describe('LegalPage', () => {
-  const getWrapper = wrapperCreator(UnstyledLegalPage, undefined, styles);
-
   it('should render correctly', () => {
-    const wrapper = getWrapper();
+    const wrapper = shallow(<LegalPage />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

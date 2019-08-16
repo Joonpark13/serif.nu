@@ -1,14 +1,14 @@
-import { wrapperCreator } from 'util/testing';
-import { UnstyledPageTitle, styles } from './PageTitle';
+import React from 'react';
+import { shallow } from 'enzyme';
+import PageTitle from './PageTitle';
 
 describe('PageTitle', () => {
   const defaultProps = {
     title: 'Title',
   };
-  const getComponent = wrapperCreator(UnstyledPageTitle, defaultProps, styles);
 
   it('renders correctly', () => {
-    const wrapper = getComponent();
+    const wrapper = shallow(<PageTitle {...defaultProps} />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

@@ -1,15 +1,15 @@
-import { wrapperCreator } from 'util/testing';
-import { UnstyledSidebarHeader, styles } from './SidebarHeader';
+import React from 'react';
+import { shallow } from 'enzyme';
+import SidebarHeader from './SidebarHeader';
 
 describe('SidebarHeader', () => {
   const defaultProps = {
     title: 'Title',
     back: () => {},
   };
-  const getComponent = wrapperCreator(UnstyledSidebarHeader, defaultProps, styles);
 
   it('renders correctly', () => {
-    const wrapper = getComponent();
+    const wrapper = shallow(<SidebarHeader {...defaultProps} />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

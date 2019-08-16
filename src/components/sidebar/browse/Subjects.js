@@ -1,18 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { List, ListItem, ListItemText, CircularProgress } from '@material-ui/core';
 import { subjectsSelector, browseIsFetchingSelector } from 'selectors';
 import { changeBrowseLevel, fetchCoursesRequest, selectSubjectInBrowse } from 'actions';
 import useSelector from 'util/use-selector';
 import { loadingContainer as loadingContainerStyles } from './common/styles';
 
-export const styles = {
+const useStyles = makeStyles({
   loadingContainer: loadingContainerStyles,
-};
+});
 
-function Subjects({ classes }) {
+export default function Subjects() {
+  const classes = useStyles();
   const subjects = useSelector(subjectsSelector);
   const isFetching = useSelector(browseIsFetchingSelector);
   const dispatch = useDispatch();
@@ -49,10 +49,3 @@ function Subjects({ classes }) {
     </div>
   );
 }
-
-Subjects.propTypes = {
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
-};
-
-export { Subjects as UnstyledSubjects };
-export default withStyles(styles)(Subjects);

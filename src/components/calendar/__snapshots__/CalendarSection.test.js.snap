@@ -5,10 +5,10 @@ exports[`CalendarSection renders correctly 1`] = `
   <Section
     classes={
       Object {
-        "container": "",
-        "header": "",
-        "paper": "",
-        "text": "",
+        "container": "makeStyles-container-2",
+        "header": "makeStyles-header-4",
+        "paper": "makeStyles-paper-1 makeStyles-paper-5",
+        "text": "makeStyles-text-3",
       }
     }
     leftHeaderContent="10:30 - 12:00"
