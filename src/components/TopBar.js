@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
+import { currentTerm } from 'util/data';
 
 const topBarTextColor = 'white';
 
@@ -27,6 +28,8 @@ const useStyles = makeStyles({
   },
 });
 
+const termName = currentTerm.name;
+
 export default function TopBar({ menuAction }) {
   const classes = useStyles();
   return (
@@ -39,7 +42,11 @@ export default function TopBar({ menuAction }) {
           <Typography className={classes.title} variant="h5">Serif.nu</Typography>
         </div>
 
-        <Typography className={classes.title}>Term: Fall 2019</Typography>
+        <Typography className={classes.title}>
+          Term:
+          {' '}
+          {termName}
+        </Typography>
       </Toolbar>
     </AppBar>
   );

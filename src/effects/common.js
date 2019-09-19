@@ -1,15 +1,14 @@
-import { db } from 'util/firebase';
+import { currentTerm } from 'util/data';
 
 /* eslint-disable import/prefer-default-export */
-export function fetchSections(currentTerm, schoolId, subjectId, courseId) {
-  const currentTermDoc = db.collection('terms').doc(currentTerm);
-  return currentTermDoc
-    .collection('sections')
-    .where('schoolId', '==', schoolId)
-    .where('subjectId', '==', subjectId)
-    .where('courseId', '==', courseId)
-    .get()
-    .then(querySnapshot => querySnapshot.docs.map(
-      doc => doc.data(),
-    ));
+export function fetchSections(schoolId, subjectId, courseId) {
+  const termId = currentTerm.id;
+  return import(`data/${termId}/sections.json`)
+    .then(
+      data => data.default.filter(
+        section => section.schoolId === schoolId
+          && section.subjectId === subjectId
+          && section.courseId === courseId,
+      ),
+    );
 }

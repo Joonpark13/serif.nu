@@ -1,22 +1,19 @@
-import elasticlunr from 'elasticlunr';
-import { db } from 'util/firebase';
+import { currentTerm } from 'util/data';
+import getSearchResultDisplayString from 'util/get-search-result-display-string';
 
 const MAX_SEARCH_RESULTS = 30;
 
-export function fetchSearchIndex(currentTerm) {
-  const currentTermDoc = db.collection('terms').doc(currentTerm);
-  return currentTermDoc.get().then(
-    doc => elasticlunr.Index.load(JSON.parse(doc.data().searchIndex)),
-  );
+/* eslint-disable import/prefer-default-export */
+export function fetchSearchResults(searchInput) {
+  const termId = currentTerm.id;
+  return import(`data/${termId}/courses.json`)
+    .then(
+      data => data.default.filter(
+        (course) => {
+          const displayString = getSearchResultDisplayString(course);
+          return displayString.toLowerCase().includes(searchInput.toLowerCase());
+        },
+      ).slice(0, MAX_SEARCH_RESULTS),
+    );
 }
-
-export function fetchSearchResults(currentTerm, searchIndex, searchInput) {
-  const currentTermDoc = db.collection('terms').doc(currentTerm);
-  const indexResults = searchIndex.search(searchInput).slice(0, MAX_SEARCH_RESULTS);
-  const searchResultsPromises = indexResults.map(
-    indexResult => currentTermDoc.collection('courses').doc(indexResult.ref).get().then(
-      doc => Object.assign({}, doc.data(), { score: indexResult.score }),
-    ),
-  );
-  return Promise.all(searchResultsPromises).then(searchResults => searchResults);
-}
+/* eslint-enable import/prefer-default-export */
