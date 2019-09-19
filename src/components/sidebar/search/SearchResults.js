@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
 import { List, ListItem, ListItemText, CircularProgress, Typography } from '@material-ui/core';
 import useSelector from 'util/use-selector';
+import getSearchResultDisplayString from 'util/get-search-result-display-string';
 import { searchResultsSelector, searchIsFetchingSelector, currentSearchInputSelector } from 'selectors';
 import { fetchSectionsForSearchRequest, setCurrentCourseName } from 'actions';
 
@@ -57,7 +58,7 @@ export default function SearchResults() {
               button
               onClick={() => handleCourseClick(course.schoolId, course.subjectId, course.id)}
             >
-              <ListItemText primary={`${course.subjectId} ${course.id} ${course.name}`} />
+              <ListItemText primary={getSearchResultDisplayString(course)} />
             </ListItem>
           ))
         }

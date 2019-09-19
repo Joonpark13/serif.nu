@@ -28,7 +28,9 @@ exports[`TopBar renders correctly 1`] = `
     <ForwardRef(WithStyles)
       className="makeStyles-title-1"
     >
-      Term: Fall 2019
+      Term:
+       
+      Fall 2019
     </ForwardRef(WithStyles)>
   </ForwardRef(WithStyles)>
 </ForwardRef(WithStyles)>

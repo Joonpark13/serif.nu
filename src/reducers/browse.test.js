@@ -39,7 +39,6 @@ describe('browse reducer', () => {
           isFetching: true,
         }),
         Cmd.run(fetchSchools, {
-          args: [action.currentTermId],
           successActionCreator: fetchSchoolsSuccess,
           failActionCreator: fetchSchoolsFailure,
         }),
@@ -93,7 +92,7 @@ describe('browse reducer', () => {
           isFetching: true,
         }),
         Cmd.run(fetchSubjects, {
-          args: [action.currentTermId, action.schoolId],
+          args: [action.schoolId],
           successActionCreator: fetchSubjectsSuccess,
           failActionCreator: fetchSubjectsFailure,
         }),
@@ -154,7 +153,7 @@ describe('browse reducer', () => {
           isFetching: true,
         }),
         Cmd.run(fetchCourses, {
-          args: [action.currentTermId, action.schoolId, action.subjectId],
+          args: [action.schoolId, action.subjectId],
           successActionCreator: fetchCoursesSuccess,
           failActionCreator: fetchCoursesFailure,
         }),
@@ -197,7 +196,7 @@ describe('browse reducer', () => {
           isFetching: true,
         }),
         Cmd.run(fetchSections, {
-          args: [action.currentTermId, action.schoolId, action.subjectId, action.courseId],
+          args: [action.schoolId, action.subjectId, action.courseId],
           successActionCreator: fetchSectionsForBrowseSuccess,
           failActionCreator: fetchSectionsForBrowseFailure,
         }),

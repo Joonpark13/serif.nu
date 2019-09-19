@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import injectSheet from 'react-jss';
-import { createStore, compose, applyMiddleware } from 'redux';
+import { createStore, compose } from 'redux';
 import { install as installReduxLoop } from 'redux-loop';
-import createActionEnhancerMiddleware from 'redux-action-enhancer';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { fromJS } from 'immutable';
@@ -15,7 +14,6 @@ import { initialScheduleState } from 'reducers/schedule';
 import { northwesternPurple, northwesternBrightOrange } from 'util/colors';
 import isProduction from 'util/env';
 import { SnackbarProvider } from 'notistack';
-import enhancers from 'actions/action-enhancers';
 
 const styles = {
   '@global body': {
@@ -60,10 +58,7 @@ if (persistedSchedule) {
 const store = createStore(
   rootReducer,
   persistedState,
-  composeEnhancers(
-    installReduxLoop(),
-    applyMiddleware(createActionEnhancerMiddleware(() => enhancers)),
-  ),
+  composeEnhancers(installReduxLoop()),
 );
 
 let previousScheduleState;
