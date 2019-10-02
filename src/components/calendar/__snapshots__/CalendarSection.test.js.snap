@@ -14,7 +14,7 @@ exports[`CalendarSection renders correctly 1`] = `
     leftHeaderContent="10:30 - 12:00"
     onClick={[Function]}
     rightHeaderContent="undefined undefined"
-    sectionName=""
+    sectionName="Seminar"
   />
   <ClassModal
     associatedClass={null}
@@ -33,6 +33,8 @@ exports[`CalendarSection renders correctly 1`] = `
           },
         },
         "id": "12345",
+        "name": "Seminar",
+        "topic": "",
       }
     }
     showDialog={false}
