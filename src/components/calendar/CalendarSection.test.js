@@ -17,8 +17,11 @@ describe('CalendarSection', () => {
       minute: 0,
     },
   };
+  const name = 'Seminar';
+  const topic = 'Propaganda';
 
-  const testSection = { id: '12345', course: '101-1', event };
+  const testSection = { id: '12345', course: '101-1', event, name, topic: '' };
+  const testSectionWithTopic = { id: '12345', course: '101-1', event, name, topic };
 
   describe('dynamic styles', () => {
     const hour = 10;
@@ -88,5 +91,12 @@ describe('CalendarSection', () => {
     wrapper.find(Section).simulate('click');
 
     expect(wrapper.find(ClassModal).prop('showDialog')).toBe(false);
+  });
+
+  it('shows topic as section title if it exists', () => {
+    const wrapper = shallow(
+      <CalendarSection section={testSectionWithTopic} />,
+    );
+    expect(wrapper.find(Section).prop('sectionName')).toBe(topic);
   });
 });

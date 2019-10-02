@@ -67,7 +67,7 @@ export default function CalendarSection({ section, isPreview }) {
         classes={classes}
         leftHeaderContent={leftHeaderContent}
         rightHeaderContent={rightHeaderContent}
-        sectionName={section.name}
+        sectionName={section.topic === '' ? section.name : section.topic}
       />
       <ClassModal
         section={section}
