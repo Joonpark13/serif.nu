@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
+import { Link } from 'react-router-dom';
 import { currentTerm } from 'util/data';
 
 const topBarTextColor = 'white';
@@ -13,6 +14,9 @@ const topBarTextColor = 'white';
 const useStyles = makeStyles({
   title: {
     color: topBarTextColor,
+  },
+  titleLink: {
+    textDecoration: 'none',
   },
   icon: {
     color: topBarTextColor,
@@ -39,7 +43,9 @@ export default function TopBar({ menuAction }) {
           <IconButton aria-label="Navigation" onClick={menuAction}>
             <MenuIcon className={classes.icon} />
           </IconButton>
-          <Typography className={classes.title} variant="h5">Serif.nu</Typography>
+          <Link to="/" className={classes.titleLink}>
+            <Typography className={classes.title} variant="h5">Serif.nu</Typography>
+          </Link>
         </div>
 
         <Typography className={classes.title}>

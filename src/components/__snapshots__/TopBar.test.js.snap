@@ -5,25 +5,30 @@ exports[`TopBar renders correctly 1`] = `
   position="static"
 >
   <ForwardRef(WithStyles)
-    className="makeStyles-toolbar-3"
+    className="makeStyles-toolbar-4"
   >
     <div
-      className="makeStyles-topBarLeftSection-4"
+      className="makeStyles-topBarLeftSection-5"
     >
       <ForwardRef(WithStyles)
         aria-label="Navigation"
         onClick={[Function]}
       >
         <pure(Menu)
-          className="makeStyles-icon-2"
+          className="makeStyles-icon-3"
         />
       </ForwardRef(WithStyles)>
-      <ForwardRef(WithStyles)
-        className="makeStyles-title-1"
-        variant="h5"
+      <Link
+        className="makeStyles-titleLink-2"
+        to="/"
       >
-        Serif.nu
-      </ForwardRef(WithStyles)>
+        <ForwardRef(WithStyles)
+          className="makeStyles-title-1"
+          variant="h5"
+        >
+          Serif.nu
+        </ForwardRef(WithStyles)>
+      </Link>
     </div>
     <ForwardRef(WithStyles)
       className="makeStyles-title-1"
