@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartDialog renders correctly 1`] = `
+<ForwardRef(WithStyles)
+  onClose={[Function]}
+  open={true}
+>
+  <ForwardRef(WithStyles)>
+    Are you sure you want to remove all classes?
+  </ForwardRef(WithStyles)>
+  <ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
+      onClick={[Function]}
+    >
+      Remove
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
+      onClick={[Function]}
+    >
+      Cancel
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
+</ForwardRef(WithStyles)>
+`;
