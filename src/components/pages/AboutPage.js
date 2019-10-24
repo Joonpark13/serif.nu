@@ -11,7 +11,7 @@ import helenProfile from 'images/helen.jpg';
 import kevinProfile from 'images/kevin.jpg';
 import albertaProfile from 'images/alberta.jpg';
 
-const heroHeight = 600;
+const heroHeight = 700;
 
 const useStyles = makeStyles({
   hero: {
@@ -30,11 +30,13 @@ const useStyles = makeStyles({
     width: '100%',
     textAlign: 'center',
     color: 'white',
-    paddingTop: '280px',
+    paddingTop: '120px',
   },
   heroSubtitle: {
     color: 'inherit',
     paddingTop: '20px',
+    maxWidth: '600px',
+    textAlign: 'left',
   },
   header: {
     textAlign: 'center',
@@ -80,18 +82,38 @@ export default function AboutPage() {
     <div>
       <div className={classes.hero} />
       <div className={classes.heroText}>
-        <Typography variant="h3" color="inherit">Simple. Fast. Visual.</Typography>
-        <Typography variant="h5" className={classes.heroSubtitle}>Course planning for Northwestern University.</Typography>
+        <Typography variant="h3" color="inherit">About Serif</Typography>
+        <div className={classes.multipleColumns}>
+          <div>
+            <Typography variant="h5" className={classes.heroSubtitle}>
+                Serif.nu originated as a personal project created by Joon Park (WCAS/MUSIC &apos;18)
+                during the fall of 2015. The first version was a simple solution
+                to the frustration of not being able to view your course shopping cart in a calendar
+                layout - a frustration that was shared by many at Northwestern. While the first
+                version was mainly for self-teaching web development technologies,
+                popularity of the app quickly increased. Subsequent versions were rearchitected
+                and redesigned for a simple, fast, and visual experience.
+            </Typography>
+            <Typography variant="h5" className={classes.heroSubtitle}>
+                The current version is now used by a majority of Northwestern students during
+                registration season and is actively maintained by a team of current students
+                mentored by Joon, with the same spirit that began the entire venture - one of
+                constant learning and making great user experiences.
+            </Typography>
+          </div>
+        </div>
       </div>
 
       <div className={classes.section}>
-        <Typography variant="h3" color="primary" className={classes.header}>Serif.nu redefines your scheduling experience.</Typography>
+        <Typography variant="h3" color="primary" className={classes.header}>How It Works</Typography>
 
         <div className={classes.multipleColumns}>
           <div>
-            <Typography variant="h5" className={classes.blurbs}>No more drawing out your schedules on paper.</Typography>
-            <Typography variant="h5" className={classes.blurbs}>No more clunkly Excel spreadsheets.</Typography>
-            <Typography variant="h5" className={classes.blurbs}>Plan out your next quarter at Northwestern with ease and speed.</Typography>
+            <Typography variant="h5" className={classes.heroSubtitle}>
+            When registration rolls around, the Serif team loads classes for the coming
+            quarter (noted in the top right corner). You can search for classes, and then
+            select them to place on the calendar.
+            </Typography>
           </div>
           <img src={studentImage} alt="Student with a laptop" className={classes.studentImage} />
         </div>

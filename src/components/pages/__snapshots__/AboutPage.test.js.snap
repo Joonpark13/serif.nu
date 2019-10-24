@@ -12,14 +12,26 @@ exports[`AboutPage should render correctly 1`] = `
       color="inherit"
       variant="h3"
     >
-      Simple. Fast. Visual.
+      About Serif
     </ForwardRef(WithStyles)>
-    <ForwardRef(WithStyles)
-      className="makeStyles-heroSubtitle-3"
-      variant="h5"
+    <div
+      className="makeStyles-multipleColumns-8"
     >
-      Course planning for Northwestern University.
-    </ForwardRef(WithStyles)>
+      <div>
+        <ForwardRef(WithStyles)
+          className="makeStyles-heroSubtitle-3"
+          variant="h5"
+        >
+          Serif.nu originated as a personal project created by Joon Park (WCAS/MUSIC '18) during the fall of 2015. The first version was a simple solution to the frustration of not being able to view your course shopping cart in a calendar layout - a frustration that was shared by many at Northwestern. While the first version was mainly for self-teaching web development technologies, popularity of the app quickly increased. Subsequent versions were rearchitected and redesigned for a simple, fast, and visual experience.
+        </ForwardRef(WithStyles)>
+        <ForwardRef(WithStyles)
+          className="makeStyles-heroSubtitle-3"
+          variant="h5"
+        >
+          The current version is now used by a majority of Northwestern students during registration season and is actively maintained by a team of current students mentored by Joon, with the same spirit that began the entire venture - one of constant learning and making great user experiences.
+        </ForwardRef(WithStyles)>
+      </div>
+    </div>
   </div>
   <div
     className="makeStyles-section-6"
@@ -29,29 +41,17 @@ exports[`AboutPage should render correctly 1`] = `
       color="primary"
       variant="h3"
     >
-      Serif.nu redefines your scheduling experience.
+      How It Works
     </ForwardRef(WithStyles)>
     <div
       className="makeStyles-multipleColumns-8"
     >
       <div>
         <ForwardRef(WithStyles)
-          className="makeStyles-blurbs-5"
+          className="makeStyles-heroSubtitle-3"
           variant="h5"
         >
-          No more drawing out your schedules on paper.
-        </ForwardRef(WithStyles)>
-        <ForwardRef(WithStyles)
-          className="makeStyles-blurbs-5"
-          variant="h5"
-        >
-          No more clunkly Excel spreadsheets.
-        </ForwardRef(WithStyles)>
-        <ForwardRef(WithStyles)
-          className="makeStyles-blurbs-5"
-          variant="h5"
-        >
-          Plan out your next quarter at Northwestern with ease and speed.
+          When registration rolls around, the Serif team loads classes for the coming quarter (noted in the top right corner). You can search for classes, and then select them to place on the calendar.
         </ForwardRef(WithStyles)>
       </div>
       <img
