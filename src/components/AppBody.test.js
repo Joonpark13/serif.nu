@@ -1,13 +1,12 @@
-import { wrapperCreator } from 'util/testing';
-import { UnstyledAppBody, styles } from './AppBody';
+import React from 'react';
+import { shallow } from 'enzyme';
+import AppBody from './AppBody';
 
 jest.mock('images/hero-image.jpg');
 
 describe('AppBody', () => {
-  const getWrapper = wrapperCreator(UnstyledAppBody, undefined, styles);
-
   it('should render correctly', () => {
-    const wrapper = getWrapper();
+    const wrapper = shallow(<AppBody />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

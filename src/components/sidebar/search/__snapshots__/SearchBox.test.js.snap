@@ -2,7 +2,7 @@
 
 exports[`SearchBox renders correctly 1`] = `
 <div
-  className=""
+  className="makeStyles-container-1"
 >
   <ForwardRef(WithStyles)
     fullWidth={true}
@@ -16,7 +16,7 @@ exports[`SearchBox renders correctly 1`] = `
 
 exports[`SearchBox renders text typed into the search box 1`] = `
 <div
-  className=""
+  className="makeStyles-container-1"
 >
   <ForwardRef(WithStyles)
     fullWidth={true}

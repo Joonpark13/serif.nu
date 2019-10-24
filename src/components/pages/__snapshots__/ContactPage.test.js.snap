@@ -2,19 +2,19 @@
 
 exports[`ContactPage should render correctly 1`] = `
 <div
-  className=""
+  className="makeStyles-pageContainer-1"
 >
-  <ForwardRef(WithStyles)
+  <PageTitle
     title="Contact Us"
   />
   <div
-    className=""
+    className="makeStyles-pageBody-2"
   >
     <div
-      className=""
+      className="makeStyles-contactMethod-3"
     >
       <a
-        className=""
+        className="makeStyles-contactLink-4"
         href="mailto:serifnorthwestern@gmail.com"
       >
         <ForwardRef(WithStyles)
@@ -31,15 +31,15 @@ exports[`ContactPage should render correctly 1`] = `
       </ForwardRef(WithStyles)>
     </div>
     <div
-      className=""
+      className="makeStyles-contactMethod-3"
     >
       <a
-        className=""
+        className="makeStyles-contactLink-4"
         href="https://www.facebook.com/serifnorthwestern"
       >
         <img
           alt="Facebook logo"
-          className=""
+          className="makeStyles-facebookLogo-5"
           src={Object {}}
         />
       </a>

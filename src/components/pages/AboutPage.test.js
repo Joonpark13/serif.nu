@@ -1,8 +1,9 @@
-import { wrapperCreator } from 'util/testing';
-import { UnstyledAboutPage, styles } from './AboutPage';
+import React from 'react';
+import { shallow } from 'enzyme';
+import AboutPage from './AboutPage';
 
 jest.mock('images/hero-image.jpg');
-jest.mock('images/amy.jpg');
+jest.mock('images/alberta.jpg');
 jest.mock('images/helen.jpg');
 jest.mock('images/facebook-logo.png');
 jest.mock('images/joon.jpeg');
@@ -12,10 +13,8 @@ jest.mock('images/madison.jpg');
 jest.mock('images/surprised_student.svg');
 
 describe('AboutPage', () => {
-  const getWrapper = wrapperCreator(UnstyledAboutPage, undefined, styles);
-
   it('should render correctly', () => {
-    const wrapper = getWrapper();
+    const wrapper = shallow(<AboutPage />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

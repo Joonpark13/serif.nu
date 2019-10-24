@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { withRouter, Route, Switch } from 'react-router-dom';
-import { fetchCurrentTermRequest } from 'actions';
-import { auth } from 'util/firebase';
+import { fetchSchoolsRequest } from 'actions';
 import toJS from 'util/to-js';
 import TopBar from './TopBar';
 import NavDrawer from './NavDrawer';
@@ -27,15 +26,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const { fetchCurrentTerm } = this.props;
-
-    auth.signInAnonymously(); // TODO handle sign in error using .catch()
-
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        fetchCurrentTerm();
-      }
-    });
+    const { fetchSchools } = this.props;
+    fetchSchools();
   }
 
   toggleNav() {
@@ -70,13 +62,12 @@ class App extends Component {
 }
 
 App.propTypes = {
-  fetchCurrentTerm: PropTypes.func.isRequired,
+  fetchSchools: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {
-  fetchCurrentTerm: fetchCurrentTermRequest,
+  fetchSchools: fetchSchoolsRequest,
 };
-
 
 export { App as UnconnectedApp };
 const ConnectedApp = connect(null, mapDispatchToProps)(toJS(App));

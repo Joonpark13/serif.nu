@@ -1,7 +1,8 @@
+import React from 'react';
+import { shallow } from 'enzyme';
 import { ListItem, Typography } from '@material-ui/core';
-import { wrapperCreator } from 'util/testing';
 import * as timeUtils from 'util/time';
-import { UnstyledAssociatedClassesSelection, styles } from './AssociatedClassesSelection';
+import AssociatedClassesSelection from './AssociatedClassesSelection';
 
 jest.mock('util/time');
 
@@ -29,22 +30,24 @@ describe('AssociatedClassesSelection', () => {
     associatedClassHover: () => {},
     associatedClassHoverOff: () => {},
   };
-  const getWrapper = wrapperCreator(UnstyledAssociatedClassesSelection, defaultProps, styles);
 
   const formattedSchedule = 'MWF 10 - 12ish';
   timeUtils.getFormattedClassSchedule.mockReturnValue(formattedSchedule);
 
   it('renders correctly', () => {
-    const wrapper = getWrapper();
+    const wrapper = shallow(<AssociatedClassesSelection {...defaultProps} />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('adds section with associated class when clicked', () => {
     const addSectionWithAssociatedClassMock = jest.fn();
-    const wrapper = getWrapper({
-      addSectionWithAssociatedClass: addSectionWithAssociatedClassMock,
-    });
+    const wrapper = shallow(
+      <AssociatedClassesSelection
+        {...defaultProps}
+        addSectionWithAssociatedClass={addSectionWithAssociatedClassMock}
+      />,
+    );
     wrapper.find(ListItem).simulate('click');
 
     expect(addSectionWithAssociatedClassMock).toHaveBeenCalledWith(associatedClass);
@@ -52,9 +55,13 @@ describe('AssociatedClassesSelection', () => {
 
   it('calls associatedClassHover when clicked', () => {
     const associatedClassHoverMock = jest.fn();
-    const wrapper = getWrapper({
-      associatedClassHover: associatedClassHoverMock,
-    });
+    const wrapper = shallow(
+      <AssociatedClassesSelection
+        {...defaultProps}
+        associatedClassHover={associatedClassHoverMock}
+      />,
+    );
+
     wrapper.find(ListItem).simulate('mouseEnter');
 
     expect(associatedClassHoverMock).toHaveBeenCalledWith(associatedClass);
@@ -62,16 +69,19 @@ describe('AssociatedClassesSelection', () => {
 
   it('turns scheduled text to red and disables associatedclass if unscheduled', () => {
     timeUtils.isUnscheduled.mockReturnValue(true);
-    const wrapper = getWrapper({
-      associatedClasses: [{
-        type: 'LAB',
-        schedule: {
-          dow: 'TBA',
-          start: 'TBA',
-          end: 'TBA',
-        },
-      }],
-    });
+    const wrapper = shallow(
+      <AssociatedClassesSelection
+        {...defaultProps}
+        associatedClasses={[{
+          type: 'LAB',
+          schedule: {
+            dow: 'TBA',
+            start: 'TBA',
+            end: 'TBA',
+          },
+        }]}
+      />,
+    );
 
     expect(wrapper.find(ListItem).prop('disabled')).toBe(true);
     expect(wrapper.find(Typography).at(1).prop('color')).toBe('error');

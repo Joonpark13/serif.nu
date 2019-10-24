@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
 import {
   HOURS,
@@ -10,7 +10,7 @@ import {
 } from './calendar-constants';
 import HourCell from './HourCell';
 
-export const styles = {
+const useStyles = makeStyles({
   dowColumn: {
     flexGrow: 1,
     borderRight: columnBorderStyle,
@@ -24,7 +24,7 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
   },
-};
+});
 
 /* istanbul ignore next */
 function getDisplayDow(dow) {
@@ -44,7 +44,8 @@ function getDisplayDow(dow) {
   }
 }
 
-function DowColumn({ dow, classes }) {
+export default function DowColumn({ dow }) {
+  const classes = useStyles();
   return (
     <div className={classes.dowColumn}>
       <Typography className={classes.dowHeader} align="center" variant="body1">
@@ -62,9 +63,4 @@ function DowColumn({ dow, classes }) {
 
 DowColumn.propTypes = {
   dow: PropTypes.string.isRequired,
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
-
-export { DowColumn as UnstyledDowColumn };
-
-export default withStyles(styles)(DowColumn);

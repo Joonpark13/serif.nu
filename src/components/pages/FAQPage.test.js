@@ -1,11 +1,10 @@
-import { wrapperCreator } from 'util/testing';
-import { UnstyledFAQPage, styles } from './FAQPage';
+import React from 'react';
+import { shallow } from 'enzyme';
+import FAQPage from './FAQPage';
 
 describe('FAQPage', () => {
-  const getWrapper = wrapperCreator(UnstyledFAQPage, undefined, styles);
-
   it('should render correctly', () => {
-    const wrapper = getWrapper();
+    const wrapper = shallow(<FAQPage />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

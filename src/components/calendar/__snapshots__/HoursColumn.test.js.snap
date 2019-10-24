@@ -2,23 +2,23 @@
 
 exports[`HoursColumn renders correctly 1`] = `
 <div
-  className=""
+  className="makeStyles-hoursColumnContainer-1"
 >
   <div
-    className=""
+    className="makeStyles-hoursSpacer-2"
   />
   <div
-    className=""
+    className="makeStyles-hoursColumn-3"
   >
     <ForwardRef(WithStyles)
       align="right"
-      className=""
+      className="makeStyles-hours-4"
     >
       1am
     </ForwardRef(WithStyles)>
     <ForwardRef(WithStyles)
       align="right"
-      className=""
+      className="makeStyles-hours-4"
     >
       2am
     </ForwardRef(WithStyles)>

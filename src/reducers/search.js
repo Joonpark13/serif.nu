@@ -5,17 +5,14 @@ import * as actionTypes from 'actions/action-types';
 import {
   fetchSearchResultsSuccess,
   fetchSearchResultsFailure,
-  fetchSearchIndexSuccess,
-  fetchSearchIndexFailure,
   fetchSectionsForSearchSuccess,
   fetchSectionsForSearchFailure,
 } from 'actions';
 import { fetchSections } from 'effects/common';
-import { fetchSearchResults, fetchSearchIndex } from 'effects/search';
+import { fetchSearchResults } from 'effects/search';
 
 export const initialSearchState = fromJS({
   isFetching: false,
-  searchIndex: undefined,
   results: [],
   view: 'search',
   currentCourseName: undefined,
@@ -50,27 +47,11 @@ function handleAddSection(state, { section }) {
 
 function search(state = initialSearchState, action) {
   switch (action.type) {
-    case actionTypes.FETCH_SEARCH_INDEX:
-      return loop(
-        state.set('isFetching', true),
-        Cmd.run(fetchSearchIndex, {
-          args: [action.currentTermId],
-          successActionCreator: fetchSearchIndexSuccess,
-          failActionCreator: fetchSearchIndexFailure,
-        }),
-      );
-    case actionTypes.FETCH_SEARCH_INDEX_SUCCESS:
-      return state
-        .set('isFetching', false)
-        .set('searchIndex', action.searchIndex);
-    case actionTypes.FETCH_SEARCH_INDEX_FAILURE:
-      return state.set('isFetching', false); // TODO: Handle error
-
     case actionTypes.FETCH_SEARCH_RESULTS_REQUEST:
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchSearchResults, {
-          args: [action.currentTermId, state.get('searchIndex'), action.searchInput],
+          args: [action.searchInput],
           successActionCreator: fetchSearchResultsSuccess,
           failActionCreator: fetchSearchResultsFailure,
         }),
@@ -90,7 +71,7 @@ function search(state = initialSearchState, action) {
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchSections, {
-          args: [action.currentTermId, action.schoolId, action.subjectId, action.courseId],
+          args: [action.schoolId, action.subjectId, action.courseId],
           successActionCreator: fetchSectionsForSearchSuccess,
           failActionCreator: fetchSectionsForSearchFailure,
         }),

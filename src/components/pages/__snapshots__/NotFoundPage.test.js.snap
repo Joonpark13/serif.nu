@@ -4,7 +4,7 @@ exports[`FAQPage should render correctly 1`] = `
 <div
   className="makeStyles-pageContainer-1"
 >
-  <ForwardRef(WithStyles)
+  <PageTitle
     title="404 Page Not Found"
   />
   <div

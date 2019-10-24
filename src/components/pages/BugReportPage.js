@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Typography, Button } from '@material-ui/core';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import { pageContainer, pageBody } from './common/styles';
 import PageTitle from './common/PageTitle';
 
-export const styles = {
+const useStyles = makeStyles({
   pageContainer,
   pageBody,
-};
+});
 
-function BugReportPage({ classes }) {
+export default function BugReportPage() {
   const [userHasAcknowledgedMessage, setUserHasAcknowledgeMessage] = useState(false);
+  const classes = useStyles();
   return (
     <div className={classes.pageContainer}>
       <PageTitle title="Report a Bug" />
@@ -44,10 +44,3 @@ function BugReportPage({ classes }) {
     </div>
   );
 }
-
-BugReportPage.propTypes = {
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
-};
-
-export { BugReportPage as UnstyledBugReportPage };
-export default withStyles(styles)(BugReportPage);

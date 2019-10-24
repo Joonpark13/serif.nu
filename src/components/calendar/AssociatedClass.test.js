@@ -1,10 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { wrapperCreator, mockStyles } from 'util/testing';
 import * as timeUtils from 'util/time';
 import Section from 'components/common/Section';
 import ClassModal from './ClassModal';
-import { UnstyledAssociatedClass, styles, MAX_WIDTH_PERCENT } from './AssociatedClass';
+import AssociatedClass, { styles, MAX_WIDTH_PERCENT } from './AssociatedClass';
 
 jest.mock('util/time');
 
@@ -56,23 +55,39 @@ describe('dynamic styles', () => {
 });
 
 describe('AssociatedClass', () => {
-  const defaultProps = {
-    associatedClass: { type: 'DIS', name: 'Some discussion' },
-    section: { subjectId: 'EECS', courseId: '111-0' },
+  const dow = 'Mo';
+  const event = {
+    dow,
+    start: {
+      hour: 10,
+      minute: 30,
+    },
+    end: {
+      hour: 12,
+      minute: 0,
+    },
   };
-  const getWrapper = wrapperCreator(UnstyledAssociatedClass, defaultProps, styles);
+  const color = 'some color';
+  const associatedClass = { event, color, column: 0, columnWidth: 1 };
+
+  const defaultProps = {
+    associatedClass,
+    section: { subjectId: 'EECS', courseId: '111-0' },
+    isPreview: false,
+  };
 
   it('renders correctly', () => {
     timeUtils.getFormattedEventTime.mockReturnValue('left hand header content');
-    const wrapper = getWrapper();
+    const wrapper = shallow(
+      <AssociatedClass {...defaultProps} />,
+    );
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders modal correctly', () => {
-    const classes = mockStyles(styles);
     const wrapper = shallow(
-      <UnstyledAssociatedClass {...defaultProps} classes={classes} />,
+      <AssociatedClass {...defaultProps} />,
     );
 
     wrapper.find(Section).simulate('click');

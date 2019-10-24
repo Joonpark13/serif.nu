@@ -11,8 +11,7 @@ describe('Cart', () => {
   });
 
   it('renders correctly', () => {
-    const classes = mockStyles(styles);
-    const wrapper = shallow(<UnstyledCart classes={classes} />);
+    const wrapper = shallow(<Cart />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
@@ -20,8 +19,7 @@ describe('Cart', () => {
   it('renders correctly with one section', () => {
     mockUseSelector([{ id: '12345' }]);
 
-    const classes = mockStyles(styles);
-    const wrapper = shallow(<UnstyledCart classes={classes} />);
+    const wrapper = shallow(<Cart />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
@@ -29,14 +27,14 @@ describe('Cart', () => {
   it('renders correctly with multiple sections with the same id', () => {
     mockUseSelector([{ id: '123' }, { id: '123' }]);
 
-    const classes = mockStyles(styles);
-    const wrapper = shallow(<UnstyledCart classes={classes} />);
+    const wrapper = shallow(<Cart />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('opens the modal when clicked', () => {
     mockUseSelector([{ id: '123' }, { id: '123' }]);
+
 
     const classes = mockStyles(styles);
     const wrapper = shallow(<UnstyledCart classes={classes} />);

@@ -9,8 +9,8 @@ exports[`Search renders associatedClassesSelection view correctly 1`] = `
 exports[`Search renders correctly 1`] = `
 <div>
   <React.Fragment>
-    <ForwardRef(WithStyles) />
-    <ForwardRef(WithStyles) />
+    <SearchBox />
+    <SearchResults />
   </React.Fragment>
 </div>
 `;

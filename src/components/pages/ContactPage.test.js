@@ -1,13 +1,12 @@
-import { wrapperCreator } from 'util/testing';
-import { UnstyledContactPage, styles } from './ContactPage';
+import React from 'react';
+import { shallow } from 'enzyme';
+import ContactPage from './ContactPage';
 
 jest.mock('images/facebook-logo.png');
 
 describe('ContactPage', () => {
-  const getWrapper = wrapperCreator(UnstyledContactPage, undefined, styles);
-
   it('should render correctly', () => {
-    const wrapper = getWrapper();
+    const wrapper = shallow(<ContactPage />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

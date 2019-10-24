@@ -1,12 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { mockStyles } from 'util/testing';
-import { UnstyledTopBar, styles } from './TopBar';
+import TopBar from './TopBar';
 
 describe('TopBar', () => {
   it('renders correctly', () => {
-    const classes = mockStyles(styles);
-    const wrapper = shallow(<UnstyledTopBar classes={classes} menuAction={() => {}} />);
+    const wrapper = shallow(<TopBar menuAction={() => {}} />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

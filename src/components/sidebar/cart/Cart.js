@@ -9,13 +9,14 @@ import CartSection from './CartSection';
 import CartDialog from './CartDialog';
 
 
-export const styles = {
+const useStyles = makeStyles({
   cartHeading: {
     padding: '16px',
   },
-};
+});
 
-function Cart({ classes }) {
+export default function Cart() {
+  const classes = useStyles();
   const sections = useSelector(sectionsSelector);
 
   const uniqueSections = [];
@@ -51,10 +52,3 @@ function Cart({ classes }) {
     </React.Fragment>
   );
 }
-
-Cart.propTypes = {
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
-};
-
-export { Cart as UnstyledCart };
-export default withStyles(styles)(Cart);

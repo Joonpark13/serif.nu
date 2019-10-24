@@ -1,14 +1,15 @@
-import { wrapperCreator } from 'util/testing';
-import { UnstyledNavDrawer, styles } from './NavDrawer';
+import React from 'react';
+import { shallow } from 'enzyme';
+import NavDrawer from './NavDrawer';
 
 describe('NavDrawer', () => {
   const defaultProps = {
     isOpen: true,
     closeFunc: () => {},
   };
-  const getWrapper = wrapperCreator(UnstyledNavDrawer, defaultProps, styles);
+
   it('should render correctly', () => {
-    const wrapper = getWrapper();
+    const wrapper = shallow(<NavDrawer {...defaultProps} />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
