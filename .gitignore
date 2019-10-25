@@ -2,5 +2,5 @@ node_modules/
 coverage/
 .vscode
 .env
-build
+dist/bundle.js
 *.DS_Store

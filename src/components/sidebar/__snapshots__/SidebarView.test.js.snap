@@ -2,7 +2,7 @@
 
 exports[`SidebarView changes tabs correctly 1`] = `
 <div
-  className="makeStyles-wrapper-1"
+  className=""
 >
   <ForwardRef(WithStyles)
     indicatorColor="primary"
@@ -12,17 +12,17 @@ exports[`SidebarView changes tabs correctly 1`] = `
     variant="fullWidth"
   >
     <ForwardRef(WithStyles)
-      className="makeStyles-tabWidth-2"
+      className=""
       label="Search"
       value="search"
     />
     <ForwardRef(WithStyles)
-      className="makeStyles-tabWidth-2"
+      className=""
       label="Browse"
       value="browse"
     />
     <ForwardRef(WithStyles)
-      className="makeStyles-tabWidth-2"
+      className=""
       label="Cart"
       value="cart"
     />
@@ -33,7 +33,7 @@ exports[`SidebarView changes tabs correctly 1`] = `
 
 exports[`SidebarView changes to cart correctly 1`] = `
 <div
-  className="makeStyles-wrapper-1"
+  className=""
 >
   <ForwardRef(WithStyles)
     indicatorColor="primary"
@@ -43,28 +43,28 @@ exports[`SidebarView changes to cart correctly 1`] = `
     variant="fullWidth"
   >
     <ForwardRef(WithStyles)
-      className="makeStyles-tabWidth-2"
+      className=""
       label="Search"
       value="search"
     />
     <ForwardRef(WithStyles)
-      className="makeStyles-tabWidth-2"
+      className=""
       label="Browse"
       value="browse"
     />
     <ForwardRef(WithStyles)
-      className="makeStyles-tabWidth-2"
+      className=""
       label="Cart"
       value="cart"
     />
   </ForwardRef(WithStyles)>
-  <Cart />
+  <ForwardRef(WithStyles) />
 </div>
 `;
 
 exports[`SidebarView renders correctly 1`] = `
 <div
-  className="makeStyles-wrapper-1"
+  className=""
 >
   <ForwardRef(WithStyles)
     indicatorColor="primary"
@@ -74,17 +74,17 @@ exports[`SidebarView renders correctly 1`] = `
     variant="fullWidth"
   >
     <ForwardRef(WithStyles)
-      className="makeStyles-tabWidth-2"
+      className=""
       label="Search"
       value="search"
     />
     <ForwardRef(WithStyles)
-      className="makeStyles-tabWidth-2"
+      className=""
       label="Browse"
       value="browse"
     />
     <ForwardRef(WithStyles)
-      className="makeStyles-tabWidth-2"
+      className=""
       label="Cart"
       value="cart"
     />

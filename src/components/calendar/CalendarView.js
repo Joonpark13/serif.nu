@@ -1,10 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/styles';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/styles';
 import { HOURS, DOWS } from './calendar-constants';
 import HoursColumn from './HoursColumn';
 import DowColumn from './DowColumn';
 
-const useStyles = makeStyles({
+export const styles = {
   calendarRoot: {
     height: 'calc(100vh - 64px)',
     // 64px is height of TopBar
@@ -14,10 +15,9 @@ const useStyles = makeStyles({
     display: 'flex',
     width: '100%',
   },
-});
+};
 
-export default function CalendarView() {
-  const classes = useStyles();
+function CalendarView({ classes }) {
   return (
     <div className={classes.calendarRoot}>
       <HoursColumn hours={HOURS} />
@@ -30,3 +30,11 @@ export default function CalendarView() {
     </div>
   );
 }
+
+CalendarView.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+export { CalendarView as UnstyledCalendarView };
+
+export default withStyles(styles)(CalendarView);

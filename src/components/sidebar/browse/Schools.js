@@ -1,18 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import { List, ListItem, ListItemText, CircularProgress } from '@material-ui/core';
 import { schoolsSelector, browseIsFetchingSelector } from 'selectors';
 import { changeBrowseLevel, fetchSubjectsRequest, selectSchoolInBrowse } from 'actions';
 import useSelector from 'util/use-selector';
 import { loadingContainer as loadingContainerStyles } from './common/styles';
 
-const useStyles = makeStyles({
+export const styles = {
   loadingContainer: loadingContainerStyles,
-});
+};
 
-export default function Schools() {
-  const classes = useStyles();
+function Schools({ classes }) {
   const schools = useSelector(schoolsSelector);
   const isFetching = useSelector(browseIsFetchingSelector);
   const dispatch = useDispatch();
@@ -48,3 +48,10 @@ export default function Schools() {
     </div>
   );
 }
+
+Schools.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+export { Schools as UnstyledSchools };
+export default withStyles(styles)(Schools);

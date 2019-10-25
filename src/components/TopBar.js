@@ -5,18 +5,13 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/styles';
-import { Link } from 'react-router-dom';
-import { currentTerm } from 'util/data';
+import { withStyles } from '@material-ui/styles';
 
 const topBarTextColor = 'white';
 
-const useStyles = makeStyles({
+export const styles = {
   title: {
     color: topBarTextColor,
-  },
-  titleLink: {
-    textDecoration: 'none',
   },
   icon: {
     color: topBarTextColor,
@@ -30,12 +25,9 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
   },
-});
+};
 
-const termName = currentTerm.name;
-
-export default function TopBar({ menuAction }) {
-  const classes = useStyles();
+function TopBar({ classes, menuAction }) {
   return (
     <AppBar position="static">
       <Toolbar className={classes.toolbar}>
@@ -43,21 +35,20 @@ export default function TopBar({ menuAction }) {
           <IconButton aria-label="Navigation" onClick={menuAction}>
             <MenuIcon className={classes.icon} />
           </IconButton>
-          <Link to="/" className={classes.titleLink}>
-            <Typography className={classes.title} variant="h5">Serif.nu</Typography>
-          </Link>
+          <Typography className={classes.title} variant="h5">Serif.nu</Typography>
         </div>
 
-        <Typography className={classes.title}>
-          Term:
-          {' '}
-          {termName}
-        </Typography>
+        <Typography className={classes.title}>Term: Fall 2019</Typography>
       </Toolbar>
     </AppBar>
   );
 }
 
 TopBar.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
   menuAction: PropTypes.func.isRequired,
 };
+
+export { TopBar as UnstyledTopBar };
+
+export default withStyles(styles)(TopBar);

@@ -1,36 +1,35 @@
-import React from 'react';
-import { shallow } from 'enzyme';
 import { ListItem } from '@material-ui/core';
-import { mockUseSelector, mockUseDispatch } from 'util/testing';
+import { wrapperCreator, mockUseSelector, mockUseDispatch } from 'util/testing';
 import { changeBrowseLevel, fetchCoursesRequest, selectSubjectInBrowse } from 'actions';
-import Subjects from './Subjects';
+import { UnstyledSubjects, styles } from './Subjects';
 
 describe('Subjects', () => {
   const subject = {
     id: 'EECS',
     schoolId: 'MEAS',
   };
+  const getComponent = wrapperCreator(UnstyledSubjects, undefined, styles);
 
   beforeEach(() => {
     mockUseSelector([subject], false);
   });
 
   it('renders correctly', () => {
-    const wrapper = shallow(<Subjects />);
+    const wrapper = getComponent();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders correctly when fetching', () => {
     mockUseSelector([subject], true);
-    const wrapper = shallow(<Subjects />);
+    const wrapper = getComponent();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('showCourses gets called correctly', () => {
     const mockDispatch = mockUseDispatch();
-    const wrapper = shallow(<Subjects />);
+    const wrapper = getComponent();
 
     wrapper.find(ListItem).first().simulate('click');
 

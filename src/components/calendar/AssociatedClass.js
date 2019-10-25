@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import { getFormattedEventTime, getDurationInHours } from 'util/time';
 import Section from 'components/common/Section';
 import ClassModal from './ClassModal';
@@ -40,45 +40,52 @@ export const styles = {
   },
 };
 
-const useStyles = makeStyles(styles);
-
-export default function AssociatedClass({ associatedClass, section, isPreview }) {
-  const classes = useStyles({ associatedClass, isPreview });
-  const [showDialog, setShowDialog] = useState(false);
-
-  function toggleDialog() {
-    setShowDialog(!showDialog);
+class AssociatedClass extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showDialog: false,
+    };
+    this.toggleDialog = this.toggleDialog.bind(this);
   }
 
-  const leftHeaderContent = getFormattedEventTime(associatedClass.event);
-  const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
-  const associatedClassTitle = `${associatedClass.type} - ${section.name}`;
+  toggleDialog() {
+    this.setState(state => ({ showDialog: !state.showDialog }));
+  }
 
-  return (
-    <Fragment>
-      <Section
-        onClick={toggleDialog}
-        classes={classes}
-        leftHeaderContent={leftHeaderContent}
-        rightHeaderContent={rightHeaderContent}
-        sectionName={associatedClassTitle}
-      />
-      <ClassModal
-        section={section}
-        associatedClass={associatedClass}
-        showDialog={showDialog}
-        toggleDialog={toggleDialog}
-      />
-    </Fragment>
-  );
+  render() {
+    const { classes, associatedClass, section } = this.props;
+    const { showDialog } = this.state;
+
+    const leftHeaderContent = getFormattedEventTime(associatedClass.event);
+    const rightHeaderContent = `${section.subjectId} ${section.courseId}`;
+    const associatedClassTitle = `${associatedClass.type} - ${section.name}`;
+
+    return (
+      <Fragment>
+        <Section
+          onClick={this.toggleDialog}
+          classes={classes}
+          leftHeaderContent={leftHeaderContent}
+          rightHeaderContent={rightHeaderContent}
+          sectionName={associatedClassTitle}
+        />
+        <ClassModal
+          section={section}
+          associatedClass={associatedClass}
+          showDialog={showDialog}
+          toggleDialog={this.toggleDialog}
+        />
+      </Fragment>
+    );
+  }
 }
 
 AssociatedClass.propTypes = {
   associatedClass: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
   section: PropTypes.objectOf(PropTypes.any).isRequired,
-  isPreview: PropTypes.bool,
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
-AssociatedClass.defaultProps = {
-  isPreview: false,
-};
+export { AssociatedClass as UnstyledAssociatedClass };
+export default withStyles(styles)(AssociatedClass);

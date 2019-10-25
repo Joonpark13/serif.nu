@@ -1,10 +1,12 @@
 import { fromJS } from 'immutable';
 import { loop, Cmd } from 'redux-loop';
 import { fetchSections } from 'effects/common';
-import { fetchSearchResults } from 'effects/search';
+import { fetchSearchResults, fetchSearchIndex } from 'effects/search';
 import {
   fetchSearchResultsSuccess,
   fetchSearchResultsFailure,
+  fetchSearchIndexSuccess,
+  fetchSearchIndexFailure,
   fetchSectionsForSearchSuccess,
   fetchSectionsForSearchFailure,
 } from 'actions';
@@ -22,17 +24,46 @@ describe('search reducer', () => {
     expect(searchReducer(undefined, {})).toEqual(initialSearchState);
   });
 
+  it(`handles ${actionTypes.FETCH_SEARCH_INDEX}`, () => {
+    const termId = '4740';
+    const action = actionCreators.fetchSearchIndex(termId);
+    expect(searchReducer(initialSearchState, action)).toEqual(
+      loop(
+        initialSearchState.set('isFetching', true),
+        Cmd.run(fetchSearchIndex, {
+          args: [action.currentTermId],
+          successActionCreator: fetchSearchIndexSuccess,
+          failActionCreator: fetchSearchIndexFailure,
+        }),
+      ),
+    );
+  });
+
+  it(`handles ${actionTypes.FETCH_SEARCH_INDEX_SUCCESS}`, () => {
+    const searchIndex = Symbol('searchIndex');
+    const action = actionCreators.fetchSearchIndexSuccess(searchIndex);
+    expect(searchReducer(initialSearchState, action)).toEqual(
+      initialSearchState.set('searchIndex', searchIndex),
+    );
+  });
+
+  it(`handles ${actionTypes.FETCH_SEARCH_INDEX_FAILURE}`, () => {
+    const action = actionCreators.fetchSearchIndexFailure();
+    expect(searchReducer(initialSearchState, action)).toEqual(initialSearchState);
+  });
+
   it(`should handle ${actionTypes.FETCH_SEARCH_RESULTS_REQUEST}`, () => {
+    const termId = '4740';
     const state = fromJS({ isFetching: false });
-    const action = actionCreators.fetchSearchResultsRequest();
+    const action = actionCreators.fetchSearchResultsRequest(termId);
 
     expect(searchReducer(state, action)).toEqual(
       loop(
         fromJS({ isFetching: true }),
         Cmd.run(fetchSearchResults, {
-          args: [action.searchInput],
           successActionCreator: fetchSearchResultsSuccess,
           failActionCreator: fetchSearchResultsFailure,
+          args: [action.currentTermId, state.get('searchIndex'), action.searchInput],
         }),
       ),
     );
@@ -81,7 +112,7 @@ describe('search reducer', () => {
       loop(
         initialSearchState.set('isFetching', true),
         Cmd.run(fetchSearchResults, {
-          args: [action.searchInput],
+          args: [action.currentTermId, initialSearchState.get('searchIndex'), action.searchInput],
           successActionCreator: fetchSearchResultsSuccess,
           failActionCreator: fetchSearchResultsFailure,
         }),
@@ -96,7 +127,7 @@ describe('search reducer', () => {
       loop(
         initialSearchState.set('isFetching', true),
         Cmd.run(fetchSections, {
-          args: [action.schoolId, action.subjectId, action.courseId],
+          args: [action.currentTermId, action.schoolId, action.subjectId, action.courseId],
           successActionCreator: fetchSectionsForSearchSuccess,
           failActionCreator: fetchSectionsForSearchFailure,
         }),

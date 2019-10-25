@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import {
   sectionsSelector,
   sectionsForHourSelector,
@@ -14,18 +14,16 @@ import { columnBorderStyle, cellMinHeight } from './calendar-constants';
 import CalendarSection from './CalendarSection';
 import AssociatedClass from './AssociatedClass';
 
-const useStyles = makeStyles({
+export const styles = {
   calendarCell: {
     flexGrow: 1,
     borderBottom: columnBorderStyle,
     minHeight: cellMinHeight,
     position: 'relative',
   },
-});
+};
 
-export default function HourCell({ hour, dow }) {
-  const classes = useStyles();
-
+function HourCell({ hour, dow, classes }) {
   const sections = useSelector(state => sectionsForHourSelector(state, hour, dow));
   const associatedClasses = useSelector(
     state => associatedClassesForHourSelector(state, hour, dow),
@@ -64,4 +62,9 @@ export default function HourCell({ hour, dow }) {
 HourCell.propTypes = {
   hour: PropTypes.number.isRequired,
   dow: PropTypes.string.isRequired,
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
+
+export { HourCell as UnstyledHourCell };
+
+export default withStyles(styles)(HourCell);

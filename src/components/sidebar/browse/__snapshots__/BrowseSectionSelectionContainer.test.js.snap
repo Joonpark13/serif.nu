@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BrowseSectionSelectionContainer renders correctly 1`] = `
-<SectionSelection
+<ForwardRef(WithStyles)
   addSection={[Function]}
   back={[Function]}
   currentCourseName="course name"

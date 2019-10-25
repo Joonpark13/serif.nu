@@ -3,7 +3,7 @@
 exports[`SearchResults renders 'keep typing' correctly 1`] = `
 <div>
   <ForwardRef(WithStyles)
-    className="makeStyles-inputHint-2"
+    className=""
   >
      Keep typing!
   </ForwardRef(WithStyles)>
@@ -30,7 +30,7 @@ exports[`SearchResults renders 'keep typing' correctly 1`] = `
 
 exports[`SearchResults renders 'no results' correctly 1`] = `
 <ForwardRef(WithStyles)
-  className="makeStyles-inputHint-2"
+  className=""
 >
   No results
 </ForwardRef(WithStyles)>
@@ -61,7 +61,7 @@ exports[`SearchResults renders correctly 1`] = `
 
 exports[`SearchResults renders loading correctly 1`] = `
 <div
-  className="makeStyles-loadingContainer-1"
+  className=""
 >
   <ForwardRef(WithStyles) />
 </div>

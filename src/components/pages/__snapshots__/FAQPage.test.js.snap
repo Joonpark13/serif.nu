@@ -2,16 +2,16 @@
 
 exports[`FAQPage should render correctly 1`] = `
 <div
-  className="makeStyles-pageContainer-1"
+  className=""
 >
-  <PageTitle
+  <ForwardRef(WithStyles)
     title="Frequently Asked Questions"
   />
   <div
-    className="makeStyles-pageBody-2"
+    className=""
   >
     <div
-      className="makeStyles-question-3"
+      className=""
     >
       <ForwardRef(WithStyles)
         gutterBottom={true}
@@ -33,7 +33,7 @@ exports[`FAQPage should render correctly 1`] = `
       </ForwardRef(WithStyles)>
     </div>
     <div
-      className="makeStyles-question-3"
+      className=""
     >
       <ForwardRef(WithStyles)
         gutterBottom={true}
@@ -60,7 +60,7 @@ exports[`FAQPage should render correctly 1`] = `
       </ForwardRef(WithStyles)>
     </div>
     <div
-      className="makeStyles-question-3"
+      className=""
     >
       <ForwardRef(WithStyles)
         gutterBottom={true}
@@ -75,7 +75,7 @@ exports[`FAQPage should render correctly 1`] = `
       </ForwardRef(WithStyles)>
     </div>
     <div
-      className="makeStyles-question-3"
+      className=""
     >
       <ForwardRef(WithStyles)
         gutterBottom={true}
@@ -105,7 +105,7 @@ exports[`FAQPage should render correctly 1`] = `
       </ForwardRef(WithStyles)>
     </div>
     <div
-      className="makeStyles-question-3"
+      className=""
     >
       <ForwardRef(WithStyles)
         gutterBottom={true}

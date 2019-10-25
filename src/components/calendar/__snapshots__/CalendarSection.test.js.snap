@@ -5,16 +5,16 @@ exports[`CalendarSection renders correctly 1`] = `
   <Section
     classes={
       Object {
-        "container": "makeStyles-container-2",
-        "header": "makeStyles-header-4",
-        "paper": "makeStyles-paper-1 makeStyles-paper-5",
-        "text": "makeStyles-text-3",
+        "container": "",
+        "header": "",
+        "paper": "",
+        "text": "",
       }
     }
     leftHeaderContent="10:30 - 12:00"
     onClick={[Function]}
     rightHeaderContent="undefined undefined"
-    sectionName="Seminar"
+    sectionName=""
   />
   <ClassModal
     associatedClass={null}
@@ -33,8 +33,6 @@ exports[`CalendarSection renders correctly 1`] = `
           },
         },
         "id": "12345",
-        "name": "Seminar",
-        "topic": "",
       }
     }
     showDialog={false}

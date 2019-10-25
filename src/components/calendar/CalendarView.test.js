@@ -1,10 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CalendarView from './CalendarView';
+import { mockStyles } from 'util/testing';
+import { UnstyledCalendarView, styles } from './CalendarView';
 
 describe('CalendarView', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<CalendarView />);
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledCalendarView classes={classes} />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });

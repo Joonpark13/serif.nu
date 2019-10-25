@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { mockUseSelector } from 'util/testing';
+import { mockStyles, mockUseSelector } from 'util/testing';
 import * as selectors from 'selectors';
-import HourCell from './HourCell';
+import { UnstyledHourCell, styles } from './HourCell';
 import CalendarSection from './CalendarSection';
 import AssociatedClass from './AssociatedClass';
 
@@ -12,7 +12,7 @@ describe('HourCell', () => {
   const testSections = [{ id: '12345' }];
   const allSections = [{ id: '12345' }];
   const allSectionPreviews = [];
-  const associatedClasses = [{ sectionId: '12345', event: {} }];
+  const associatedClasses = [{ event: {} }];
 
   let useSelectorMock;
 
@@ -23,10 +23,12 @@ describe('HourCell', () => {
   });
 
   it('renders correctly', () => {
+    const classes = mockStyles(styles);
     const wrapper = shallow(
-      <HourCell
+      <UnstyledHourCell
         hour={10}
         dow="Mo"
+        classes={classes}
       />,
     );
 
@@ -34,10 +36,12 @@ describe('HourCell', () => {
   });
 
   it('calls sectionsForHourSelector correctly', () => {
+    const classes = mockStyles(styles);
     shallow(
-      <HourCell
+      <UnstyledHourCell
         hour={10}
         dow="Mo"
+        classes={classes}
       />,
     );
 
@@ -47,10 +51,12 @@ describe('HourCell', () => {
   });
 
   it('calls associatedClassesForHourSelector correctly', () => {
+    const classes = mockStyles(styles);
     shallow(
-      <HourCell
+      <UnstyledHourCell
         hour={10}
         dow="Mo"
+        classes={classes}
       />,
     );
 
@@ -60,10 +66,12 @@ describe('HourCell', () => {
   });
 
   it('calls sectionPreviewSelector correctly', () => {
+    const classes = mockStyles(styles);
     shallow(
-      <HourCell
+      <UnstyledHourCell
         hour={10}
         dow="Mo"
+        classes={classes}
       />,
     );
 
@@ -73,10 +81,12 @@ describe('HourCell', () => {
   });
 
   it('calls associatedClassPreviewSelector correctly', () => {
+    const classes = mockStyles(styles);
     shallow(
-      <HourCell
+      <UnstyledHourCell
         hour={10}
         dow="Mo"
+        classes={classes}
       />,
     );
 
@@ -86,6 +96,7 @@ describe('HourCell', () => {
   });
 
   it('renders section previews', () => {
+    const classes = mockStyles(styles);
     const sectionPreview = { id: '12345' };
 
     mockUseSelector(
@@ -93,9 +104,10 @@ describe('HourCell', () => {
     );
 
     const wrapper = shallow(
-      <HourCell
+      <UnstyledHourCell
         hour={10}
         dow="Mo"
+        classes={classes}
       />,
     );
 
@@ -103,6 +115,7 @@ describe('HourCell', () => {
   });
 
   it('renders associated class previews', () => {
+    const classes = mockStyles(styles);
     const associatedClassPreview = { type: 'LAB' };
 
     mockUseSelector(
@@ -110,9 +123,10 @@ describe('HourCell', () => {
     );
 
     const wrapper = shallow(
-      <HourCell
+      <UnstyledHourCell
         hour={10}
         dow="Mo"
+        classes={classes}
       />,
     );
 

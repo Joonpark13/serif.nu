@@ -12,7 +12,6 @@ module.exports = {
     '!src/util/firebase.js',
     '!**/__snapshots__/**',
     '!src/reducers/index.js',
-    '!src/data/**',
   ],
   coverageReporters: process.env.COVERAGE_REPORT === 'on' ? ['html', 'text'] : ['html'],
   coverageThreshold: {

@@ -2,27 +2,19 @@
 
 exports[`HourCell renders correctly 1`] = `
 <div
-  className="makeStyles-calendarCell-1"
+  className=""
 >
-  <CalendarSection
-    isPreview={false}
+  <ForwardRef(WithStyles)
     section={
       Object {
         "id": "12345",
       }
     }
   />
-  <AssociatedClass
+  <ForwardRef(WithStyles)
     associatedClass={
       Object {
         "event": Object {},
-        "sectionId": "12345",
-      }
-    }
-    isPreview={false}
-    section={
-      Object {
-        "id": "12345",
       }
     }
   />

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import { List } from '@material-ui/core';
 import SectionResult from './SectionResult';
 import SidebarHeader from '../SidebarHeader';
 
-const useStyles = makeStyles({
+export const styles = {
   sectionsRoot: {
     padding: 16,
   },
@@ -17,16 +17,16 @@ const useStyles = makeStyles({
   divider: {
     marginTop: 5,
   },
-});
+};
 
-export default function SectionSelection({
+function SectionSelection({
   currentCourseName,
   sections,
   scheduledSections,
   addSection,
   back,
+  classes,
 }) {
-  const classes = useStyles();
   return (
     <div className={classes.sectionsRoot}>
       <SidebarHeader title={currentCourseName} back={back} />
@@ -56,8 +56,12 @@ SectionSelection.propTypes = {
   scheduledSections: PropTypes.arrayOf(PropTypes.object),
   addSection: PropTypes.func.isRequired,
   back: PropTypes.func.isRequired,
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 SectionSelection.defaultProps = {
   scheduledSections: [],
 };
+
+export { SectionSelection as UnstyledSectionSelection };
+export default withStyles(styles)(SectionSelection);

@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import { Typography, Button, Divider } from '@material-ui/core';
 
-const useStyles = makeStyles({
+export const styles = {
   sectionsRoot: {
     padding: 16,
   },
@@ -15,10 +15,9 @@ const useStyles = makeStyles({
   divider: {
     marginTop: 5,
   },
-});
+};
 
-export default function SidebarHeader({ title, back }) {
-  const classes = useStyles();
+function SidebarHeader({ classes, title, back }) {
   return (
     <Fragment>
       <Typography variant="h5" className={classes.title}>
@@ -32,6 +31,10 @@ export default function SidebarHeader({ title, back }) {
 }
 
 SidebarHeader.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
   title: PropTypes.string.isRequired,
   back: PropTypes.func.isRequired,
 };
+
+export { SidebarHeader as UnstyledSidebarHeader };
+export default withStyles(styles)(SidebarHeader);

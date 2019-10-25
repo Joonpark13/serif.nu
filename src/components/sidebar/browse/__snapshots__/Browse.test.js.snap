@@ -8,15 +8,15 @@ exports[`Browse renders associated classes correctly 1`] = `
 
 exports[`Browse renders courses correctly 1`] = `
 <React.Fragment>
-  <BrowseHeader />
   <ForwardRef(WithStyles) />
-  <Courses />
+  <ForwardRef(WithStyles) />
+  <ForwardRef(WithStyles) />
 </React.Fragment>
 `;
 
 exports[`Browse renders schools correctly 1`] = `
 <React.Fragment>
-  <Schools />
+  <ForwardRef(WithStyles) />
 </React.Fragment>
 `;
 
@@ -28,8 +28,8 @@ exports[`Browse renders sections correctly 1`] = `
 
 exports[`Browse renders subjects correctly 1`] = `
 <React.Fragment>
-  <BrowseHeader />
   <ForwardRef(WithStyles) />
-  <Subjects />
+  <ForwardRef(WithStyles) />
+  <ForwardRef(WithStyles) />
 </React.Fragment>
 `;

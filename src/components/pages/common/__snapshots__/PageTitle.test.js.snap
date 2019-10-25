@@ -2,7 +2,7 @@
 
 exports[`PageTitle renders correctly 1`] = `
 <div
-  className="makeStyles-page-1"
+  className=""
 >
   <ForwardRef(WithStyles)
     color="primary"

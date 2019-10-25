@@ -1,20 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import { pageContainer, pageBody } from './common/styles';
 import PageTitle from './common/PageTitle';
 
-const useStyles = makeStyles({
+export const styles = {
   pageContainer,
   pageBody,
   question: {
     marginBottom: 30,
   },
-});
+};
 
-export default function FAQPage() {
-  const classes = useStyles();
+function FAQPage({ classes }) {
   return (
     <div className={classes.pageContainer}>
       <PageTitle title="Frequently Asked Questions" />
@@ -96,3 +96,10 @@ export default function FAQPage() {
     </div>
   );
 }
+
+FAQPage.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+export { FAQPage as UnstyledFAQPage };
+export default withStyles(styles)(FAQPage);

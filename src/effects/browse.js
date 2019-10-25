@@ -1,22 +1,34 @@
-import { currentTerm } from 'util/data';
+import { db } from 'util/firebase';
 
-export function fetchSchools() {
-  const termId = currentTerm.id;
-  return import(`data/${termId}/schools.json`).then(data => data.default);
-}
+const getTermDocument = documentName => db.collection('terms').doc(documentName);
 
-export function fetchSubjects(schoolId) {
-  const termId = currentTerm.id;
-  return import(`data/${termId}/subjects.json`)
-    .then(data => data.default.filter(subject => subject.schoolId === schoolId));
-}
-
-export function fetchCourses(schoolId, subjectId) {
-  const termId = currentTerm.id;
-  return import(`data/${termId}/courses.json`)
+export function fetchSchools(currentTerm) {
+  const currentTermDoc = getTermDocument(currentTerm);
+  return currentTermDoc
+    .collection('schools')
+    .get()
     .then(
-      data => data.default.filter(
-        course => course.schoolId === schoolId && course.subjectId === subjectId,
-      ),
+      querySnapshot => querySnapshot.docs.map(doc => doc.data()),
+    );
+}
+
+export function fetchSubjects(currentTerm, schoolId) {
+  const currentTermDoc = getTermDocument(currentTerm);
+  return currentTermDoc
+    .collection('subjects')
+    .where('schoolId', '==', schoolId)
+    .get()
+    .then(querySnapshot => querySnapshot.docs.map(doc => doc.data()));
+}
+
+export function fetchCourses(currentTerm, schoolId, subjectId) {
+  const currentTermDoc = getTermDocument(currentTerm);
+  return currentTermDoc
+    .collection('courses')
+    .where('schoolId', '==', schoolId)
+    .where('subjectId', '==', subjectId)
+    .get()
+    .then(
+      querySnapshot => querySnapshot.docs.map(doc => doc.data()),
     );
 }

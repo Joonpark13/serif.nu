@@ -1,9 +1,7 @@
-import React from 'react';
-import { shallow } from 'enzyme';
 import { ListItem } from '@material-ui/core';
-import { mockUseSelector, mockUseDispatch } from 'util/testing';
+import { wrapperCreator, mockUseSelector, mockUseDispatch } from 'util/testing';
 import { fetchSectionsForSearchRequest, setCurrentCourseName } from 'actions';
-import SearchResults from './SearchResults';
+import { UnstyledSearchResults, styles } from './SearchResults';
 
 describe('SearchResults', () => {
   const testResults = [{
@@ -21,40 +19,42 @@ describe('SearchResults', () => {
   }];
   const testSearchInput = 'EECS';
 
+  const getComponent = wrapperCreator(UnstyledSearchResults, undefined, styles);
+
   beforeEach(() => {
     mockUseSelector(testResults, false, testSearchInput);
   });
 
   it('renders correctly', () => {
-    const wrapper = shallow(<SearchResults />);
+    const wrapper = getComponent();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders loading correctly', () => {
     mockUseSelector(testResults, true, testSearchInput);
-    const wrapper = shallow(<SearchResults />);
+    const wrapper = getComponent();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it("renders 'keep typing' correctly", () => {
     mockUseSelector(testResults, false, 'EE');
-    const wrapper = shallow(<SearchResults />);
+    const wrapper = getComponent();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it("renders 'no results' correctly", () => {
     mockUseSelector([], false, 'ABCD');
-    const wrapper = shallow(<SearchResults />);
+    const wrapper = getComponent();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('handleCourseClick gets called correctly', () => {
     const dispatchMock = mockUseDispatch();
-    const wrapper = shallow(<SearchResults />);
+    const wrapper = getComponent();
 
     wrapper.find(ListItem).first().simulate('click');
 

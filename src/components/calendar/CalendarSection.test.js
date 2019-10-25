@@ -1,8 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { mockStyles } from 'util/testing';
 import Section from 'components/common/Section';
 import ClassModal from './ClassModal';
-import CalendarSection, { styles, MAX_WIDTH_PERCENT } from './CalendarSection';
+import { UnstyledCalendarSection, styles, MAX_WIDTH_PERCENT } from './CalendarSection';
 
 describe('CalendarSection', () => {
   const dow = 'Mo';
@@ -17,11 +18,6 @@ describe('CalendarSection', () => {
       minute: 0,
     },
   };
-  const name = 'Seminar';
-  const topic = 'Propaganda';
-
-  const testSection = { id: '12345', course: '101-1', event, name, topic: '' };
-  const testSectionWithTopic = { id: '12345', course: '101-1', event, name, topic };
 
   describe('dynamic styles', () => {
     const hour = 10;
@@ -66,16 +62,20 @@ describe('CalendarSection', () => {
   });
 
   it('renders correctly', () => {
+    const classes = mockStyles(styles);
+    const testSection = { id: '12345', course: '101-1', event };
     const wrapper = shallow(
-      <CalendarSection section={testSection} />,
+      <UnstyledCalendarSection section={testSection} classes={classes} />,
     );
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders modal correctly', () => {
+    const classes = mockStyles(styles);
+    const testSection = { id: '12345', course: '101-1', event };
     const wrapper = shallow(
-      <CalendarSection section={testSection} />,
+      <UnstyledCalendarSection section={testSection} classes={classes} />,
     );
 
     wrapper.find(Section).simulate('click');
@@ -84,19 +84,14 @@ describe('CalendarSection', () => {
   });
 
   it('does nothing as a preview section when clicked', () => {
+    const classes = mockStyles(styles);
+    const testSection = { id: '12345', course: '101-1', event };
     const wrapper = shallow(
-      <CalendarSection section={testSection} isPreview />,
+      <UnstyledCalendarSection section={testSection} classes={classes} isPreview />,
     );
 
     wrapper.find(Section).simulate('click');
 
     expect(wrapper.find(ClassModal).prop('showDialog')).toBe(false);
-  });
-
-  it('shows topic as section title if it exists', () => {
-    const wrapper = shallow(
-      <CalendarSection section={testSectionWithTopic} />,
-    );
-    expect(wrapper.find(Section).prop('sectionName')).toBe(topic);
   });
 });

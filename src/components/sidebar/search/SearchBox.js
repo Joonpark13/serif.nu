@@ -1,20 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { debounce } from 'debounce';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import { TextField } from '@material-ui/core';
 import { currentSearchInputSelector } from 'selectors';
 import { fetchSearchResultsRequest, clearSearchResults, updateSearchInput } from 'actions';
 import useSelector from 'util/use-selector';
 
-const useStyles = makeStyles({
+export const styles = {
   container: {
     margin: 15,
   },
-});
+};
 
-export default function SearchBox() {
-  const classes = useStyles();
+function SearchBox({ classes }) {
   const currentSearchInput = useSelector(currentSearchInputSelector);
   const dispatch = useDispatch();
 
@@ -40,3 +40,11 @@ export default function SearchBox() {
     </div>
   );
 }
+
+export { SearchBox as UnstyledSearchBox };
+
+export default withStyles(styles)(SearchBox);
+
+SearchBox.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+};

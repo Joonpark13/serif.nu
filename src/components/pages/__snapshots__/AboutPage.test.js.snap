@@ -3,10 +3,10 @@
 exports[`AboutPage should render correctly 1`] = `
 <div>
   <div
-    className="makeStyles-hero-1"
+    className=""
   />
   <div
-    className="makeStyles-heroText-2"
+    className=""
   >
     <ForwardRef(WithStyles)
       color="inherit"
@@ -15,40 +15,40 @@ exports[`AboutPage should render correctly 1`] = `
       Simple. Fast. Visual.
     </ForwardRef(WithStyles)>
     <ForwardRef(WithStyles)
-      className="makeStyles-heroSubtitle-3"
+      className=""
       variant="h5"
     >
       Course planning for Northwestern University.
     </ForwardRef(WithStyles)>
   </div>
   <div
-    className="makeStyles-section-6"
+    className=""
   >
     <ForwardRef(WithStyles)
-      className="makeStyles-header-4"
+      className=""
       color="primary"
       variant="h3"
     >
       Serif.nu redefines your scheduling experience.
     </ForwardRef(WithStyles)>
     <div
-      className="makeStyles-multipleColumns-8"
+      className=""
     >
       <div>
         <ForwardRef(WithStyles)
-          className="makeStyles-blurbs-5"
+          className=""
           variant="h5"
         >
           No more drawing out your schedules on paper.
         </ForwardRef(WithStyles)>
         <ForwardRef(WithStyles)
-          className="makeStyles-blurbs-5"
+          className=""
           variant="h5"
         >
           No more clunkly Excel spreadsheets.
         </ForwardRef(WithStyles)>
         <ForwardRef(WithStyles)
-          className="makeStyles-blurbs-5"
+          className=""
           variant="h5"
         >
           Plan out your next quarter at Northwestern with ease and speed.
@@ -56,37 +56,37 @@ exports[`AboutPage should render correctly 1`] = `
       </div>
       <img
         alt="Student with a laptop"
-        className="makeStyles-studentImage-9"
+        className=""
         src={Object {}}
       />
     </div>
   </div>
   <div
-    className="makeStyles-sectionWithColor-7"
+    className=""
   >
     <ForwardRef(WithStyles)
-      className="makeStyles-header-4"
+      className=""
       color="primary"
       variant="h3"
     >
       The Team
     </ForwardRef(WithStyles)>
     <ForwardRef(WithStyles)
-      className="makeStyles-blurbs-5"
+      className=""
       variant="h5"
     >
       Serif.nu is run by a team of previous and current Northwestern students dedicated to providing the best scheduling experience.
     </ForwardRef(WithStyles)>
     <div
-      className="makeStyles-multipleColumns-8"
+      className=""
     >
       <ForwardRef(WithStyles)
-        className="makeStyles-studentCard-10"
+        className=""
         elevation={2}
       >
         <img
           alt="Joon Park"
-          className="makeStyles-profileImage-11"
+          className=""
           src={Object {}}
         />
         <ForwardRef(WithStyles)
@@ -100,18 +100,18 @@ exports[`AboutPage should render correctly 1`] = `
           Creator & Team Lead
         </ForwardRef(WithStyles)>
         <ForwardRef(WithStyles)
-          className="makeStyles-blurbs-5"
+          className=""
         >
           Software engineer at Grubhub, film composer in another life. Big fan of taking pictures that make me look like I'm falling off of things.
         </ForwardRef(WithStyles)>
       </ForwardRef(WithStyles)>
       <ForwardRef(WithStyles)
-        className="makeStyles-studentCard-10"
+        className=""
         elevation={2}
       >
         <img
           alt="Kevin Lee"
-          className="makeStyles-profileImage-11"
+          className=""
           src={Object {}}
         />
         <ForwardRef(WithStyles)
@@ -125,18 +125,18 @@ exports[`AboutPage should render correctly 1`] = `
           Lead Student Developer
         </ForwardRef(WithStyles)>
         <ForwardRef(WithStyles)
-          className="makeStyles-blurbs-5"
+          className=""
         >
           Senior studying computer science...and nothing else! Strong enthusiast of deep dish pizza, the color turquoise, and Korean music.
         </ForwardRef(WithStyles)>
       </ForwardRef(WithStyles)>
       <ForwardRef(WithStyles)
-        className="makeStyles-studentCard-10"
+        className=""
         elevation={2}
       >
         <img
           alt="Madison Dong"
-          className="makeStyles-profileImage-11"
+          className=""
           src={Object {}}
         />
         <ForwardRef(WithStyles)
@@ -150,50 +150,18 @@ exports[`AboutPage should render correctly 1`] = `
           Student Developer
         </ForwardRef(WithStyles)>
         <ForwardRef(WithStyles)
-          className="makeStyles-blurbs-5"
+          className=""
         >
-          I’m a junior studying journalism, computer science, and design. My three pillars of life are: adventures with friends, 7-Eleven Big Bite hot dogs, and Frank Ocean. Send me funny emails and/or articles: madisonfdong@gmail.com
+          Madison Dong is a (soon-to-be) junior studying journalism, computer science, and design, so she thinks art and tech go well together. Her three pillars of life are: adventures with friends, 7-Eleven Big Bite hot dogs, and Frank Ocean. Send her funny emails and/or articles: madisonfdong@gmail.com
         </ForwardRef(WithStyles)>
       </ForwardRef(WithStyles)>
       <ForwardRef(WithStyles)
-        className="makeStyles-studentCard-10"
-        elevation={2}
-      >
-        <img
-          alt="Alberta Yoo"
-          className="makeStyles-profileImage-11"
-          src={Object {}}
-        />
-        <ForwardRef(WithStyles)
-          variant="h6"
-        >
-          Alberta Yoo
-        </ForwardRef(WithStyles)>
-        <ForwardRef(WithStyles)
-          variant="subtitle1"
-        >
-          Student Developer
-        </ForwardRef(WithStyles)>
-        <ForwardRef(WithStyles)
-          className="makeStyles-blurbs-5"
-        >
-          Hi, I’m Alberta! I’m a junior and currently studying computer science. Enthusiastic about the environment, love hot cheetos and just chillin
-           
-          <span
-            aria-label="sunglasses face"
-            role="img"
-          >
-             😎
-          </span>
-        </ForwardRef(WithStyles)>
-      </ForwardRef(WithStyles)>
-      <ForwardRef(WithStyles)
-        className="makeStyles-studentCard-10"
+        className=""
         elevation={2}
       >
         <img
           alt="Julia Tournant"
-          className="makeStyles-profileImage-11"
+          className=""
           src={Object {}}
         />
         <ForwardRef(WithStyles)
@@ -207,18 +175,18 @@ exports[`AboutPage should render correctly 1`] = `
           Student Developer
         </ForwardRef(WithStyles)>
         <ForwardRef(WithStyles)
-          className="makeStyles-blurbs-5"
+          className=""
         >
           Hi! I’m Julia. I’m French, currently 19 years old, and will graduate in June 2021. I study computer science and enjoy learning foreign languages. I’m also a member of the varsity golf team here at NU! You can reach out to me at juliatournant2021@u.northwestern.edu.
         </ForwardRef(WithStyles)>
       </ForwardRef(WithStyles)>
       <ForwardRef(WithStyles)
-        className="makeStyles-studentCard-10"
+        className=""
         elevation={2}
       >
         <img
           alt="Helen Zhao"
-          className="makeStyles-profileImage-11"
+          className=""
           src={Object {}}
         />
         <ForwardRef(WithStyles)
@@ -232,15 +200,40 @@ exports[`AboutPage should render correctly 1`] = `
           Student Developer
         </ForwardRef(WithStyles)>
         <ForwardRef(WithStyles)
-          className="makeStyles-blurbs-5"
+          className=""
         >
-          I am Helen, a Northwestern junior. Love cooking, love taekwondo and especially love watching dogs sneeze
+          I am Helen, a Northwestern sophomore. Love cooking, love taekwondo and especially love watching dogs sneeze
           <span
             aria-label="sneezing face"
             role="img"
           >
              🤧
           </span>
+        </ForwardRef(WithStyles)>
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)
+        className=""
+        elevation={2}
+      >
+        <img
+          alt="Amy Chen"
+          className=""
+          src={Object {}}
+        />
+        <ForwardRef(WithStyles)
+          variant="h6"
+        >
+          Amy Chen
+        </ForwardRef(WithStyles)>
+        <ForwardRef(WithStyles)
+          variant="subtitle1"
+        >
+          Student Developer
+        </ForwardRef(WithStyles)>
+        <ForwardRef(WithStyles)
+          className=""
+        >
+          My name is Amy and I'm majoring in Statistics, Economics, and MMSS. I'm pursuing a career in software engineering. Outside of school, I love tennis and photography!
         </ForwardRef(WithStyles)>
       </ForwardRef(WithStyles)>
     </div>

@@ -1,13 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import { List, ListItem, ListItemText, CircularProgress, Typography } from '@material-ui/core';
 import useSelector from 'util/use-selector';
-import getSearchResultDisplayString from 'util/get-search-result-display-string';
 import { searchResultsSelector, searchIsFetchingSelector, currentSearchInputSelector } from 'selectors';
 import { fetchSectionsForSearchRequest, setCurrentCourseName } from 'actions';
 
-const useStyles = makeStyles({
+export const styles = {
   loadingContainer: {
     margin: 15,
     display: 'flex',
@@ -17,10 +17,9 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
   },
-});
+};
 
-export default function SearchResults() {
-  const classes = useStyles();
+function SearchResults({ classes }) {
   const searchResults = useSelector(searchResultsSelector);
   const isFetching = useSelector(searchIsFetchingSelector);
   const currentSearchInput = useSelector(currentSearchInputSelector);
@@ -58,7 +57,7 @@ export default function SearchResults() {
               button
               onClick={() => handleCourseClick(course.schoolId, course.subjectId, course.id)}
             >
-              <ListItemText primary={getSearchResultDisplayString(course)} />
+              <ListItemText primary={`${course.subjectId} ${course.id} ${course.name}`} />
             </ListItem>
           ))
         }
@@ -66,3 +65,10 @@ export default function SearchResults() {
     </div>
   );
 }
+
+SearchResults.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+export { SearchResults as UnstyledSearchResults };
+export default withStyles(styles)(SearchResults);

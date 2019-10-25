@@ -1,4 +1,25 @@
 import * as actionTypes from './action-types';
+import { ENHANCE_WITH_CURRENT_TERM_ID } from './action-enhancers';
+
+export function fetchSearchIndex() {
+  return {
+    type: actionTypes.FETCH_SEARCH_INDEX,
+    [ENHANCE_WITH_CURRENT_TERM_ID]: true,
+  };
+}
+
+export function fetchSearchIndexSuccess(searchIndex) {
+  return {
+    type: actionTypes.FETCH_SEARCH_INDEX_SUCCESS,
+    searchIndex,
+  };
+}
+
+export function fetchSearchIndexFailure() {
+  return {
+    type: actionTypes.FETCH_SEARCH_INDEX_FAILURE,
+  };
+}
 
 export const clearSearchResults = () => ({
   type: actionTypes.CLEAR_SEARCH_RESULTS,
@@ -10,6 +31,7 @@ export function fetchSectionsForSearchRequest(schoolId, subjectId, courseId) {
     schoolId,
     subjectId,
     courseId,
+    [ENHANCE_WITH_CURRENT_TERM_ID]: true,
   };
 }
 
@@ -64,6 +86,7 @@ export const removeAllClasses = () => ({
 export function fetchSchoolsRequest() {
   return {
     type: actionTypes.FETCH_SCHOOLS_REQUEST,
+    [ENHANCE_WITH_CURRENT_TERM_ID]: true,
   };
 }
 
@@ -84,6 +107,7 @@ export function fetchSearchResultsRequest(searchInput) {
   return {
     type: actionTypes.FETCH_SEARCH_RESULTS_REQUEST,
     searchInput,
+    [ENHANCE_WITH_CURRENT_TERM_ID]: true,
   };
 }
 
@@ -111,6 +135,7 @@ export function fetchSubjectsRequest(schoolId) {
   return {
     type: actionTypes.FETCH_SUBJECTS_REQUEST,
     schoolId,
+    [ENHANCE_WITH_CURRENT_TERM_ID]: true,
   };
 }
 
@@ -132,6 +157,7 @@ export function fetchCoursesRequest(schoolId, subjectId) {
     type: actionTypes.FETCH_COURSES_REQUEST,
     schoolId,
     subjectId,
+    [ENHANCE_WITH_CURRENT_TERM_ID]: true,
   };
 }
 
@@ -154,6 +180,7 @@ export function fetchSectionsForBrowseRequest(schoolId, subjectId, courseId) {
     schoolId,
     subjectId,
     courseId,
+    [ENHANCE_WITH_CURRENT_TERM_ID]: true,
   };
 }
 
@@ -242,5 +269,24 @@ export function associatedClassHover(associatedClass) {
 export function associatedClassHoverOff() {
   return {
     type: actionTypes.ASSOCIATED_CLASS_HOVER_OFF,
+  };
+}
+
+export function fetchCurrentTermRequest() {
+  return {
+    type: actionTypes.FETCH_CURRENT_TERM_REQUEST,
+  };
+}
+
+export function fetchCurrentTermSuccess(term) {
+  return {
+    type: actionTypes.FETCH_CURRENT_TERM_SUCCESS,
+    term,
+  };
+}
+
+export function fetchCurrentTermFailure() {
+  return {
+    type: actionTypes.FETCH_CURRENT_TERM_FAILURE,
   };
 }

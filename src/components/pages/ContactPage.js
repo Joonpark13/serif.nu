@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Typography, Icon } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import facebookLogo from 'images/facebook-logo.png';
 import { pageContainer, pageBody } from './common/styles';
 import PageTitle from './common/PageTitle';
 
-const useStyles = makeStyles({
+export const styles = {
   pageContainer,
   pageBody,
   contactMethod: {
@@ -19,10 +20,9 @@ const useStyles = makeStyles({
   facebookLogo: {
     width: 36, // width of large icon (email)
   },
-});
+};
 
-export default function ContactPage() {
-  const classes = useStyles();
+function ContactPage({ classes }) {
   return (
     <div className={classes.pageContainer}>
       <PageTitle title="Contact Us" />
@@ -49,3 +49,10 @@ export default function ContactPage() {
     </div>
   );
 }
+
+ContactPage.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+export { ContactPage as UnstyledContactPage };
+export default withStyles(styles)(ContactPage);

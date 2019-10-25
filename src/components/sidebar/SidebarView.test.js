@@ -1,26 +1,34 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Tabs } from '@material-ui/core';
-import SidebarView from './SidebarView';
+import { mockStyles } from 'util/testing';
+import { UnstyledSidebarView, styles } from './SidebarView';
 
 describe('SidebarView', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<SidebarView />);
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledSidebarView
+      classes={classes}
+    />);
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('changes tabs correctly', () => {
-    const wrapper = shallow(<SidebarView />);
-
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledSidebarView
+      classes={classes}
+    />);
     wrapper.find(Tabs).props().onChange('onChange', 'browse');
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('changes to cart correctly', () => {
-    const wrapper = shallow(<SidebarView />);
-
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledSidebarView
+      classes={classes}
+    />);
     wrapper.find(Tabs).props().onChange('onChange', 'cart');
 
     expect(wrapper.get(0)).toMatchSnapshot();

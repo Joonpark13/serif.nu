@@ -2,75 +2,75 @@
 
 exports[`DowColumn renders correctly 1`] = `
 <div
-  className="makeStyles-dowColumn-1"
+  className=""
 >
   <ForwardRef(WithStyles)
     align="center"
-    className="makeStyles-dowHeader-2"
+    className=""
     variant="body1"
   >
     
   </ForwardRef(WithStyles)>
   <div
-    className="makeStyles-calendarColumn-3"
+    className=""
   >
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={8}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={9}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={10}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={11}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={12}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={13}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={14}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={15}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={16}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={17}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={18}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={19}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={20}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={21}
     />
-    <HourCell
+    <ForwardRef(WithStyles)
       dow="Mon"
       hour={22}
     />

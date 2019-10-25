@@ -1,7 +1,8 @@
 import React from 'react';
 import { northwesternPurple10 } from 'util/colors';
+import PropTypes from 'prop-types';
 import { Typography, Paper } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import heroImage from 'images/hero-image.jpg';
 import studentImage from 'images/surprised_student.svg';
 import joonProfile from 'images/joon.jpeg';
@@ -9,11 +10,11 @@ import juliaProfile from 'images/julia.jpg';
 import madisonProfile from 'images/madison.jpg';
 import helenProfile from 'images/helen.jpg';
 import kevinProfile from 'images/kevin.jpg';
-import albertaProfile from 'images/alberta.jpg';
+import amyProfile from 'images/amy.jpg';
 
 const heroHeight = 600;
 
-const useStyles = makeStyles({
+export const styles = {
   hero: {
     backgroundImage: `url(${heroImage})`,
     minHeight: heroHeight,
@@ -71,11 +72,9 @@ const useStyles = makeStyles({
     width: '250px',
     margin: '10px',
   },
-});
+};
 
-export default function AboutPage() {
-  const classes = useStyles();
-
+function AboutPage({ classes }) {
   return (
     <div>
       <div className={classes.hero} />
@@ -127,25 +126,12 @@ export default function AboutPage() {
             <Typography variant="h6">Madison Dong</Typography>
             <Typography variant="subtitle1">Student Developer</Typography>
             <Typography className={classes.blurbs}>
-              I’m a junior studying journalism,
-              computer science, and design.
-              My three pillars of life are: adventures with friends,
+              Madison Dong is a (soon-to-be) junior studying journalism,
+              computer science, and design,
+              so she thinks art and tech go well together.
+              Her three pillars of life are: adventures with friends,
               7-Eleven Big Bite hot dogs, and Frank Ocean.
-              Send me funny emails and/or articles: madisonfdong@gmail.com
-            </Typography>
-          </Paper>
-
-          <Paper elevation={2} className={classes.studentCard}>
-            <img src={albertaProfile} alt="Alberta Yoo" className={classes.profileImage} />
-            <Typography variant="h6">Alberta Yoo</Typography>
-            <Typography variant="subtitle1">Student Developer</Typography>
-            <Typography className={classes.blurbs}>
-              Hi, I’m Alberta! I’m a junior and currently
-              studying computer science. Enthusiastic about
-              the environment, love hot cheetos and
-              just chillin
-              {' '}
-              <span role="img" aria-label="sunglasses face"> 😎</span>
+              Send her funny emails and/or articles: madisonfdong@gmail.com
             </Typography>
           </Paper>
 
@@ -166,9 +152,20 @@ export default function AboutPage() {
             <Typography variant="h6">Helen Zhao</Typography>
             <Typography variant="subtitle1">Student Developer</Typography>
             <Typography className={classes.blurbs}>
-              I am Helen, a Northwestern junior.
+              I am Helen, a Northwestern sophomore.
               Love cooking, love taekwondo and especially love watching dogs sneeze
               <span role="img" aria-label="sneezing face"> 🤧</span>
+            </Typography>
+          </Paper>
+
+          <Paper elevation={2} className={classes.studentCard}>
+            <img src={amyProfile} alt="Amy Chen" className={classes.profileImage} />
+            <Typography variant="h6">Amy Chen</Typography>
+            <Typography variant="subtitle1">Student Developer</Typography>
+            <Typography className={classes.blurbs}>
+              My name is Amy and I&apos;m majoring in Statistics, Economics, and MMSS.
+              I&apos;m pursuing a career in software engineering.
+              Outside of school, I love tennis and photography!
             </Typography>
           </Paper>
         </div>
@@ -176,3 +173,10 @@ export default function AboutPage() {
     </div>
   );
 }
+
+AboutPage.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+export { AboutPage as UnstyledAboutPage };
+export default withStyles(styles)(AboutPage);

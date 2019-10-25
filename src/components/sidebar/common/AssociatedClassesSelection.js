@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import { List, ListItem, ListItemText, Typography } from '@material-ui/core';
 import { getFormattedClassSchedule, isUnscheduled } from 'util/time';
 import SidebarHeader from '../SidebarHeader';
 
-const useStyles = makeStyles({
+export const styles = {
   sectionsRoot: {
     padding: 16,
   },
@@ -17,9 +17,9 @@ const useStyles = makeStyles({
   divider: {
     marginTop: 5,
   },
-});
+};
 
-export default function AssociatedClassesSelection({
+function AssociatedClassesSelection({
   currentCourseName,
   currentSectionNumber,
   associatedClasses,
@@ -27,8 +27,8 @@ export default function AssociatedClassesSelection({
   addSectionWithAssociatedClass,
   associatedClassHover,
   associatedClassHoverOff,
+  classes,
 }) {
-  const classes = useStyles();
   return (
     <div className={classes.sectionsRoot}>
       <SidebarHeader title={`${currentCourseName}-${currentSectionNumber}`} back={back} />
@@ -68,7 +68,11 @@ AssociatedClassesSelection.propTypes = {
   currentSectionNumber: PropTypes.string.isRequired,
   associatedClasses: PropTypes.arrayOf(PropTypes.object).isRequired,
   back: PropTypes.func.isRequired,
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
   addSectionWithAssociatedClass: PropTypes.func.isRequired,
   associatedClassHover: PropTypes.func.isRequired,
   associatedClassHoverOff: PropTypes.func.isRequired,
 };
+
+export { AssociatedClassesSelection as UnstyledAssociatedClassesSelection };
+export default withStyles(styles)(AssociatedClassesSelection);

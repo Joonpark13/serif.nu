@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Drawer, List, ListItem, ListItemText, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 
-const useStyles = makeStyles({
+export const styles = {
   drawer: {
     display: 'flex',
     flexDirection: 'column',
@@ -14,15 +14,14 @@ const useStyles = makeStyles({
   legalLink: {
     margin: '5px auto',
   },
-});
+};
 
 /* istanbul ignore next */
 function ListItemLink(props) {
   return <ListItem button component={Link} {...props} />;
 }
 
-export default function NavDrawer({ isOpen, closeFunc }) {
-  const classes = useStyles();
+function NavDrawer({ isOpen, closeFunc, classes }) {
   return (
     <Drawer onClose={closeFunc} open={isOpen}>
       <div className={classes.drawer}>
@@ -59,4 +58,8 @@ export default function NavDrawer({ isOpen, closeFunc }) {
 NavDrawer.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   closeFunc: PropTypes.func.isRequired,
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
 };
+
+export { NavDrawer as UnstyledNavDrawer };
+export default withStyles(styles)(NavDrawer);

@@ -2,9 +2,9 @@
 
 exports[`AssociatedClassesSelection renders correctly 1`] = `
 <div
-  className="makeStyles-sectionsRoot-1"
+  className=""
 >
-  <SidebarHeader
+  <ForwardRef(WithStyles)
     back={[Function]}
     title="Introduction to Something-21"
   />

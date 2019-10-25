@@ -2,17 +2,17 @@
 
 exports[`BrowseHeader renders correctly 1`] = `
 <div
-  className="makeStyles-browseHeader-1"
+  className=""
 >
   <div
-    className="makeStyles-selectionName-2"
+    className=""
   >
     <ForwardRef(WithStyles)
       variant="h5"
     />
   </div>
   <div
-    className="makeStyles-backButton-3"
+    className=""
   >
     <ForwardRef(WithStyles)
       onClick={[Function]}

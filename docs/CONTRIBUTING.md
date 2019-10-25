@@ -98,16 +98,18 @@ When writing new test files, we recommend writing tests for leaf components firs
 
 We use snapshot testing. This can be dangerous if a developer blindly updates the snapshots after any and every change. The design and functionality of the component should always be manually tested and confirmed before handling any of the snapshots. The existing snapshots should always be manually compared with the changes made to confirm that the differences are as expected before updating the snapshot. This way, we gain the speed benefits of snapshot testing as well as the bug-catching benefits.
 
-When testing styled components, we use shallow rendering with Enzyme. 
+When testing styled components, export an unstyled version of the component (the component not wrapped with the `withStyles` higher order component) and test this unstyled component. This prevents the snapshots from snapshotting the higher order component. Export the styles from the component as well, and use it with the `mockStyles` util function to provide the component with the `classes` prop that it is expecting.
 
 ```javascript
 import React from 'react';
 import { shallow } from 'enzyme';
-import SearchBox from './SearchBox';
+import { mockStyles } from 'util/testing';
+import { UnstyledSearchBox, styles } from './SearchBox';
 
 describe('SearchBox', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<SearchBox />);
+    const classes = mockStyles(styles);
+    const wrapper = shallow(<UnstyledSearchBox classes={classes} />);
     // The rest of the test...
   });
 

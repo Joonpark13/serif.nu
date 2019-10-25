@@ -1,7 +1,6 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import { wrapperCreator } from 'util/testing';
 import * as timeUtils from 'util/time';
-import SectionSelection from './SectionSelection';
+import { UnstyledSectionSelection, styles } from './SectionSelection';
 import SectionResult from './SectionResult';
 
 describe('SectionSelection', () => {
@@ -34,6 +33,7 @@ describe('SectionSelection', () => {
     }],
     instructors: ['Jason Hartline'],
   }];
+  const getComponent = wrapperCreator(UnstyledSectionSelection, defaultProps, styles);
 
   beforeEach(() => {
     timeUtils.getFormattedClassSchedule = jest.fn();
@@ -41,18 +41,13 @@ describe('SectionSelection', () => {
   });
 
   it('renders correctly', () => {
-    const wrapper = shallow(<SectionSelection {...defaultProps} />);
+    const wrapper = getComponent();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('disables sections that are already scheduled', () => {
-    const wrapper = shallow(
-      <SectionSelection
-        {...defaultProps}
-        scheduledSections={scheduledSectionsTestData}
-      />,
-    );
+    const wrapper = getComponent({ scheduledSections: scheduledSectionsTestData });
     expect(
       wrapper
         .findWhere(

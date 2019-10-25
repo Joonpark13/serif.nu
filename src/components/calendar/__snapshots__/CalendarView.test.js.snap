@@ -2,9 +2,9 @@
 
 exports[`CalendarView renders correctly 1`] = `
 <div
-  className="makeStyles-calendarRoot-1"
+  className=""
 >
-  <HoursColumn
+  <ForwardRef(WithStyles)
     hours={
       Array [
         8,
@@ -26,21 +26,21 @@ exports[`CalendarView renders correctly 1`] = `
     }
   />
   <div
-    className="makeStyles-dowColumns-2"
+    className=""
   >
-    <DowColumn
+    <ForwardRef(WithStyles)
       dow="Mo"
     />
-    <DowColumn
+    <ForwardRef(WithStyles)
       dow="Tu"
     />
-    <DowColumn
+    <ForwardRef(WithStyles)
       dow="We"
     />
-    <DowColumn
+    <ForwardRef(WithStyles)
       dow="Th"
     />
-    <DowColumn
+    <ForwardRef(WithStyles)
       dow="Fr"
     />
   </div>

@@ -1,19 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import { pageContainer, pageBody } from './common/styles';
 import PageTitle from './common/PageTitle';
 
-const useStyles = makeStyles({
+export const styles = {
   pageContainer,
   pageBody,
   section: {
     margin: '30px 0',
   },
-});
+};
 
-export default function LegalPage() {
-  const classes = useStyles();
+function LegalPage({ classes }) {
   return (
     <div className={classes.pageContainer}>
       <PageTitle title="Serif.nu - Legal" />
@@ -153,3 +153,10 @@ export default function LegalPage() {
     </div>
   );
 }
+
+LegalPage.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+export { LegalPage as UnstyledLegalPage };
+export default withStyles(styles)(LegalPage);

@@ -73,6 +73,7 @@ function browse(state = initialBrowseState, action) {
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchSchools, {
+          args: [action.currentTermId],
           successActionCreator: fetchSchoolsSuccess,
           failActionCreator: fetchSchoolsFailure,
         }),
@@ -93,7 +94,7 @@ function browse(state = initialBrowseState, action) {
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchSubjects, {
-          args: [action.schoolId],
+          args: [action.currentTermId, action.schoolId],
           successActionCreator: fetchSubjectsSuccess,
           failActionCreator: fetchSubjectsFailure,
         }),
@@ -113,7 +114,7 @@ function browse(state = initialBrowseState, action) {
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchCourses, {
-          args: [action.schoolId, action.subjectId],
+          args: [action.currentTermId, action.schoolId, action.subjectId],
           successActionCreator: fetchCoursesSuccess,
           failActionCreator: fetchCoursesFailure,
         }),
@@ -133,7 +134,7 @@ function browse(state = initialBrowseState, action) {
       return loop(
         state.set('isFetching', true),
         Cmd.run(fetchSections, {
-          args: [action.schoolId, action.subjectId, action.courseId],
+          args: [action.currentTermId, action.schoolId, action.subjectId, action.courseId],
           successActionCreator: fetchSectionsForBrowseSuccess,
           failActionCreator: fetchSectionsForBrowseFailure,
         }),

@@ -1,19 +1,19 @@
 import React from 'react';
 import { northwesternPurple10 } from 'util/colors';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles';
 import { Typography } from '@material-ui/core';
 
-const useStyles = makeStyles({
+export const styles = {
   page: {
     margin: 20,
     padding: 5,
     borderBottom: `2px solid ${northwesternPurple10}`,
   },
-});
+};
 
-export default function PageTitle({ title }) {
-  const classes = useStyles();
+
+function PageTitle({ classes, title }) {
   return (
     <div className={classes.page}>
       <Typography variant="h3" color="primary">
@@ -24,5 +24,9 @@ export default function PageTitle({ title }) {
 }
 
 PageTitle.propTypes = {
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
   title: PropTypes.string.isRequired,
 };
+
+export { PageTitle as UnstyledPageTitle };
+export default withStyles(styles)(PageTitle);

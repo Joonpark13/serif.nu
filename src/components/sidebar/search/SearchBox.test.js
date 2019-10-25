@@ -1,9 +1,7 @@
-import React from 'react';
-import { shallow } from 'enzyme';
 import { TextField } from '@material-ui/core';
 import { fetchSearchResultsRequest } from 'actions';
-import { mockUseSelector, mockUseDispatch } from 'util/testing';
-import SearchBox from './SearchBox';
+import { wrapperCreator, mockUseSelector, mockUseDispatch } from 'util/testing';
+import { UnstyledSearchBox, styles } from './SearchBox';
 
 describe('SearchBox', () => {
   function makeEventObject(value) {
@@ -17,6 +15,7 @@ describe('SearchBox', () => {
     updateSearchInput: () => {},
     currentSearchInput: '',
   };
+  const getWrapper = wrapperCreator(UnstyledSearchBox, defaultProps, styles);
 
   let dispatchMock;
   beforeEach(() => {
@@ -26,13 +25,13 @@ describe('SearchBox', () => {
 
 
   it('renders correctly', () => {
-    const wrapper = shallow(<SearchBox {...defaultProps} />);
+    const wrapper = getWrapper();
 
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
   it('renders text typed into the search box', () => {
-    const wrapper = shallow(<SearchBox {...defaultProps} />);
+    const wrapper = getWrapper();
 
     const eventObject = makeEventObject(testSearchInput);
     wrapper.find(TextField).first().simulate('change', eventObject);
@@ -43,12 +42,7 @@ describe('SearchBox', () => {
   it('doesn\'t call api unless it has been 300ms since last keystroke', (completed) => {
     const handleSearchInputMock = jest.fn();
 
-    const wrapper = shallow(
-      <SearchBox
-        {...defaultProps}
-        handleSearchInput={handleSearchInputMock}
-      />,
-    );
+    const wrapper = getWrapper({ handleSearchInput: handleSearchInputMock });
 
     expect(dispatchMock).not.toBeCalled();
 
@@ -67,12 +61,7 @@ describe('SearchBox', () => {
 
   it('doesn\'t call api through handler if search string <= 2 chars long', () => {
     const handleSearchInputMock = jest.fn();
-    const wrapper = shallow(
-      <SearchBox
-        {...defaultProps}
-        handleSearchInput={handleSearchInputMock}
-      />,
-    );
+    const wrapper = getWrapper({ handleSearchInput: handleSearchInputMock });
 
     const shortTestSearchInput = 'EE';
     const eventObject = makeEventObject(shortTestSearchInput);

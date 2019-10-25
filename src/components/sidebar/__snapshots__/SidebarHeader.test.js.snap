@@ -3,7 +3,7 @@
 exports[`SidebarHeader renders correctly 1`] = `
 <React.Fragment>
   <ForwardRef(WithStyles)
-    className="makeStyles-title-2"
+    className=""
     variant="h5"
   >
     Title
@@ -14,7 +14,7 @@ exports[`SidebarHeader renders correctly 1`] = `
     </ForwardRef(WithStyles)>
   </ForwardRef(WithStyles)>
   <ForwardRef(WithStyles)
-    className="makeStyles-divider-3"
+    className=""
   />
 </React.Fragment>
 `;

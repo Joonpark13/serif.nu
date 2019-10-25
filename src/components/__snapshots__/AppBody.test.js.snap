@@ -5,13 +5,13 @@ exports[`AppBody should render correctly 1`] = `
   container={true}
 >
   <ForwardRef(WithStyles)
-    className="makeStyles-calendar-1"
+    className=""
     item={true}
     md={9}
     sm={12}
     xs={12}
   >
-    <CalendarView />
+    <ForwardRef(WithStyles) />
   </ForwardRef(WithStyles)>
   <ForwardRef(WithStyles)
     item={true}
@@ -19,7 +19,7 @@ exports[`AppBody should render correctly 1`] = `
     sm={12}
     xs={12}
   >
-    <SidebarView />
+    <ForwardRef(WithStyles) />
   </ForwardRef(WithStyles)>
 </ForwardRef(WithStyles)>
 `;

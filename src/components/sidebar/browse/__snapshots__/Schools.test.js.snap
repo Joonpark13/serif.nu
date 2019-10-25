@@ -25,7 +25,7 @@ exports[`Schools renders correctly 1`] = `
 
 exports[`Schools renders loading correctly 1`] = `
 <div
-  className="makeStyles-loadingContainer-1"
+  className=""
 >
   <ForwardRef(WithStyles) />
 </div>
