@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GoogleCalendarButton renders correctly 1`] = `
+<div>
+  <ForwardRef(WithStyles)
+    title="Export to Google Calendar"
+  >
+    <ForwardRef(WithStyles)
+      aria-label="GoogleCalendar"
+    >
+      <pure(Event)
+        className="makeStyles-icon-1"
+      />
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
+</div>
+`;
