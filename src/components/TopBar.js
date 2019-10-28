@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
 import { Link } from 'react-router-dom';
 import { currentTerm } from 'util/data';
+import GoogleCalendarButton from './GoogleCalendarButton';
 
 const topBarTextColor = 'white';
 
@@ -24,9 +25,9 @@ const useStyles = makeStyles({
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
-    zIndex: '2',
+    zIndex: '3',
   },
-  topBarLeftSection: {
+  topBarSideSections: {
     display: 'flex',
     alignItems: 'center',
   },
@@ -39,7 +40,7 @@ export default function TopBar({ menuAction }) {
   return (
     <AppBar position="static">
       <Toolbar className={classes.toolbar}>
-        <div className={classes.topBarLeftSection}>
+        <div className={classes.topBarSideSections}>
           <IconButton aria-label="Navigation" onClick={menuAction}>
             <MenuIcon className={classes.icon} />
           </IconButton>
@@ -48,11 +49,14 @@ export default function TopBar({ menuAction }) {
           </Link>
         </div>
 
-        <Typography className={classes.title}>
-          Term:
-          {' '}
-          {termName}
-        </Typography>
+        <div className={classes.topBarSideSections}>
+          <GoogleCalendarButton />
+          <Typography className={classes.title}>
+            Term:
+            {' '}
+            {termName}
+          </Typography>
+        </div>
       </Toolbar>
     </AppBar>
   );

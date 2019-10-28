@@ -8,7 +8,7 @@ exports[`TopBar renders correctly 1`] = `
     className="makeStyles-toolbar-4"
   >
     <div
-      className="makeStyles-topBarLeftSection-5"
+      className="makeStyles-topBarSideSections-5"
     >
       <ForwardRef(WithStyles)
         aria-label="Navigation"
@@ -30,13 +30,18 @@ exports[`TopBar renders correctly 1`] = `
         </ForwardRef(WithStyles)>
       </Link>
     </div>
-    <ForwardRef(WithStyles)
-      className="makeStyles-title-1"
+    <div
+      className="makeStyles-topBarSideSections-5"
     >
-      Term:
-       
-      Fall 2019
-    </ForwardRef(WithStyles)>
+      <GoogleCalendarButton />
+      <ForwardRef(WithStyles)
+        className="makeStyles-title-1"
+      >
+        Term:
+         
+        Fall 2019
+      </ForwardRef(WithStyles)>
+    </div>
   </ForwardRef(WithStyles)>
 </ForwardRef(WithStyles)>
 `;
