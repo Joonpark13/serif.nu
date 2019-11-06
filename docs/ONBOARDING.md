@@ -12,7 +12,7 @@ For those who learn best by doing, I highly recommend [CodeCademy](https://www.c
 
 ### HTML
 
-Hyper Text Markup Language is the backbone of every web page. There are an ocean of resources out there to help you learn HTML - try googling and take your pick.
+HyperText Markup Language is the backbone of every web page. There are an ocean of resources out there to help you learn HTML - try Googling and take your pick.
 
 ### CSS
 
@@ -20,7 +20,7 @@ Cascading Style Sheets allow web pages to be styled with various colors, layouts
 
 ### JavaScript
 
-Javascript is _the_ language of the web. This language is what allows website to become dynamic web applciations and is the language in which most of your development time will be spent. The [Mozilla Developer Network (better known as MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) is considered one of the go-to sources of all things JavaScript and is a great place to start.
+JavaScript is _the_ language of the web. This language is what allows website to become dynamic web applciations and is the language in which most of your development time will be spent. The [Mozilla Developer Network (better known as MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) is considered one of the go-to sources of all things JavaScript and is a great place to start.
 
 ### Git
 
@@ -44,9 +44,9 @@ React is one of the most popular JavaScript frameworks out there today. This is 
 
 [Jest](https://jestjs.io/) is the JavaScript unit testing framework that we use. Together with [Enzyme](https://airbnb.io/enzyme/), this framework allows us to test our React components and maintain coverage so that we can iterate with confidence.
 
-### Eslint
+### ESlint
 
-[Eslint](https://eslint.org/) is _the_ linting tool for JavaScript. We use a slightly modified version of the [Airbnb Style Guide](https://github.com/airbnb/javascript) linting rules.
+[ESlint](https://eslint.org/) is _the_ linting tool for JavaScript. We use a slightly modified version of the [Airbnb Style Guide](https://github.com/airbnb/javascript) linting rules.
 
 ## Advanced
 
@@ -95,12 +95,6 @@ Let's install all of our dependencies by doing
 ```
 npm install
 ```
-
-We should also specify our environment variables that will allow us to connect with Firebase. Stick the environment variables (given to you by Joon) in a `.env` file at the root of the repository and save it. Then, from that directory do
-```
-source .env
-```
-to load the environment variables. Webpack, our compiler, will know to grab these environment variables when spinning up our code.
 
 The first thing we want to do before we start working is to make a branch.
 ```
@@ -192,10 +186,10 @@ Let's now push our local branch to the remote repository (Github).
 git push -u origin your-name-practice-ticket
 ```
 
-Now, navigate to the [Serif.nu Github repo](https://github.com/Joonpark13/serif.nu) and click the "Pull Requests" tab. You should see a yellow bar containing your branch name, with a green button on the right. This allows you to create a Pull Request.
+Now, navigate to the [Serif.nu GitHub repo](https://github.com/Joonpark13/serif.nu) and click the "Pull Requests" tab. You should see a yellow bar containing your branch name, with a green button on the right. This allows you to create a Pull Request.
 
 A Pull Request is just a way of asking others to review the changes that you've made. When you and the reviewers agree that the changes you've made are good to go, you can then merge the changes into the `master` branch, which completes your ticket.
 
 Fill out the Pull Request form with a succinct title and description of your changes. Create the Pull Request, and request review from Joon (right sidebar).
 
-For a normal ticket, at this point your reviewer would review your code, make some comments, and you'll go back and likely make more changes to your code. You'll stage, commit, and push up those new changes to your branch until you and your reviewer are satisfied and all reviewers approve the Pull Request. But since this is a practice ticket, this is as far as you'll go. Drag the trello ticket into "Completed" - you're now ready to dive right into the Serif.nu codebase!
+For a normal ticket, at this point your reviewer would review your code, make some comments, and you'll go back and likely make more changes to your code. You'll stage, commit, and push up those new changes to your branch until you and your reviewer are satisfied and all reviewers approve the Pull Request. But since this is a practice ticket, this is as far as you'll go. Drag the Trello ticket into "Completed" - you're now ready to dive right into the Serif.nu codebase!

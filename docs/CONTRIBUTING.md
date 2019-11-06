@@ -56,7 +56,7 @@ Clone this repository, then run
 npm install
 ```
 
-Set the necessary environment variables, then `npm start` will run the development environment. See the [reference document](REFERENCE.md) for more commands.
+`npm start` will run the development environment. See the [reference document](REFERENCE.md) for more commands.
 
 ### Development
 
@@ -66,7 +66,7 @@ Set the necessary environment variables, then `npm start` will run the developme
 4. Run `npm test` to lint and test your changes. Fix/add tests as necessary to ensure no linting errors, 100% code coverage, and that all tests pass. See the [reference document](REFERENCE.md) for scripts that may help. Running `npm test` generates a code coverage report, viewable by opening `/coverage/index.html`. To run specific test files, do `jest {path-to-file}` and to update a snapshot do `jest {path-to-file} -u` (you'll need jest installed globally). Make sure you read [the philosophy](#unit-testing) on snapshot testing.
 5. If applicable, make sure you update the documentation to match your changes.
 6. Push your branch: `git push -u origin b/fix-overlapping-schedule-bug`
-7. Open a pull request. Using the Github power-up in the trello card, link the pull request on the ticket. If the ticket contains a visual change, include a screenshot of the change on the PR.
+7. Open a pull request. Using the GitHub power-up in the Trello card, link the pull request on the ticket. If the ticket contains a visual change, include a screenshot of the change on the PR.
 8. If asked to make changes by the reviewer(s), make the relevant changes, and push the commits on the branch.
 9. Once the primary reviewer approves, rebase the branch onto master (make sure you **fully understand [the rebase command](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase), as it rewrites history**) and squash your work into one commit. The preferred method is `git rebase -i master` (interactive rebase, which will allow you to fixup and/or squash your commits into one). Make sure the first line of the commit message is still the ticket title, and be sure to include a summary of the work done in the commit message body. If there are any conflicts, resolve them. Then (force) push one last time to your branch.
 10. At this point, your work is ready to be merged and deployed! Go ahead and hit the "Rebase and merge" button.
@@ -90,9 +90,7 @@ Set the necessary environment variables, then `npm start` will run the developme
 
 We enforce 100% unit test coverage. We believe that unit testing should test every piece of code at its lowest atomic level (meaning every React component, every helper function, every selector, etc), and each piece of functionality being tested should be tested in isoluation (meaning each dependency should be mocked).
 
-There are some notable exceptions in the codebase to 100% coverage. Most of the Container components contain `mapStateToProps` and `mapDispatchToProps` functions that do nothing more than assign the returned value of selectors to props (in the case of `mapStateToProps`) or assign an action to props (in the case of `mapDispatchToProps`). These do not need to be tested as they are react-redux's functionality (selectors should still be tested). In rare cases, `mapStateToProps` will contain custom logic, in which case it should be tested.
-
-We also do not test some utils (since they are trivial or hard to test) and action creators (all they do are return objects). We also do not test effects since most of them are simply calling third party functions.
+There are some notable exceptions in the codebase to 100% coverage. We do not test some utils (since they are trivial or hard to test) and action creators (all they do are return objects). We also do not test effects since most of them are simply calling third party functions.
 
 When writing new test files, we recommend writing tests for leaf components first, then working upwards. This makes certain that seeing 100% test coverage actually means 100% of the atomic units of code are tested.
 
@@ -123,7 +121,7 @@ We use End to End (E2E) testing to replicate user interaction. While it is never
 
 We use JSS for styling our components. This allows for no unintended style collisions and allows us to use values from component props to generate dynamic styles (Ex. using a class's length to generate the height of the class card on the calendar).
 
-See [the Material-UI docs](https://material-ui.com/css-in-js/basics/) for details. Note that we use the higher order component API, but may later switch to the Hooks API.
+See [the Material-UI docs](https://material-ui.com/css-in-js/basics/) for details. We now use the Hooks API, not the higher component API. 
 
 ### Component Design
 
