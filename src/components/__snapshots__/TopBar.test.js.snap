@@ -33,6 +33,7 @@ exports[`TopBar renders correctly 1`] = `
     <div
       className="makeStyles-topBarSideSections-5"
     >
+<<<<<<< HEAD
       <GoogleCalendarButton />
       <ForwardRef(WithStyles)
         className="makeStyles-title-1"
@@ -42,6 +43,19 @@ exports[`TopBar renders correctly 1`] = `
         Fall 2019
       </ForwardRef(WithStyles)>
     </div>
+=======
+      <ForwardRef(WithStyles)
+        className="makeStyles-customEvent-6"
+        color="primary"
+        variant="contained"
+      >
+        Add Custom Event
+      </ForwardRef(WithStyles)>
+      Term:
+       
+      Fall 2019
+    </ForwardRef(WithStyles)>
+>>>>>>> 35d1dae... add custom event button and bottom bar
   </ForwardRef(WithStyles)>
 </ForwardRef(WithStyles)>
 `;

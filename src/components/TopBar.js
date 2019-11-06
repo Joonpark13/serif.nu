@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
+import { AppBar, Toolbar, IconButton, Button, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { currentTerm } from 'util/data';
 import GoogleCalendarButton from './GoogleCalendarButton';
@@ -31,6 +28,9 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
   },
+  customEvent: {
+    marginRight: '20px',
+  },
 });
 
 const termName = currentTerm.name;
@@ -52,6 +52,7 @@ export default function TopBar({ menuAction }) {
         <div className={classes.topBarSideSections}>
           <GoogleCalendarButton />
           <Typography className={classes.title}>
+            <Button variant="contained" color="primary" className={classes.customEvent}>Add Custom Event</Button>
             Term:
             {' '}
             {termName}
