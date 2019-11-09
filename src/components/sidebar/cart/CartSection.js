@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { getFormattedClassSchedule } from 'util/time';
+import { sectionPropType } from 'util/prop-types';
 import Section from 'components/common/Section';
 import ClassModal from 'components/calendar/ClassModal';
 
@@ -66,5 +67,5 @@ export default function CartSection({ section }) {
 }
 
 CartSection.propTypes = {
-  section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
+  section: PropTypes.shape(sectionPropType).isRequired,
 };

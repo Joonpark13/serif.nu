@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import * as notistack from 'notistack';
 import { Button, DialogTitle } from '@material-ui/core';
-import { mockUseDispatch } from 'util/testing';
+import { mockUseDispatch, testSection } from 'util/testing';
 import { removeSection } from 'actions';
 import ClassModal from './ClassModal';
 
@@ -10,27 +10,7 @@ jest.mock('notistack');
 jest.mock('react-redux');
 
 describe('ClassModal', () => {
-  const section = {
-    id: '198732',
-    name: 'Introduction to Something',
-    sectionNumber: 20,
-    topic: 'Section topic...',
-    schedules: [{
-      location: 'somewhere',
-      dow: ['Mo'],
-      start: {
-        hour: 10,
-        minute: 30,
-      },
-      end: {
-        hour: 12,
-        minute: 0,
-      },
-    }],
-    instructors: ['A prof'],
-    color: '#58B947',
-    descriptions: [{ name: '', value: '' }],
-  };
+  const section = { ...testSection, color: '#58B947' };
   const defaultProps = {
     section,
     showDialog: true,
@@ -62,6 +42,7 @@ describe('ClassModal', () => {
           hour: 12,
           minute: 0,
         },
+        location: 'somewhere',
       },
     };
     const wrapper = shallow(

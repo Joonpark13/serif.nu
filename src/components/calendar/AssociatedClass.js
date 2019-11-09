@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { getFormattedEventTime, getDurationInHours } from 'util/time';
+import { sectionPropType, associatedClassPropType } from 'util/prop-types';
 import Section from 'components/common/Section';
 import ClassModal from './ClassModal';
 
@@ -74,8 +75,8 @@ export default function AssociatedClass({ associatedClass, section, isPreview })
 }
 
 AssociatedClass.propTypes = {
-  associatedClass: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
-  section: PropTypes.objectOf(PropTypes.any).isRequired,
+  associatedClass: PropTypes.shape(associatedClassPropType).isRequired,
+  section: PropTypes.shape(sectionPropType).isRequired,
   isPreview: PropTypes.bool,
 };
 

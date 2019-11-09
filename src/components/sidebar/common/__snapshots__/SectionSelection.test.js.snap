@@ -14,16 +14,39 @@ exports[`SectionSelection renders correctly 1`] = `
       disabled={false}
       section={
         Object {
-          "id": "1",
-          "instructors": Array [
-            "Jason Hartline",
-          ],
-          "schedules": Array [
+          "courseId": "101-1",
+          "descriptions": Array [
             Object {
-              "location": "Some building",
+              "name": "",
+              "value": "",
             },
           ],
-          "sectionNumber": 20,
+          "id": "1",
+          "instructors": Array [
+            "",
+          ],
+          "name": "Introduction to Something",
+          "schedules": Array [
+            Object {
+              "dow": Array [
+                "Mo",
+              ],
+              "end": Object {
+                "hour": 12,
+                "minute": 0,
+              },
+              "location": "Somewhere",
+              "start": Object {
+                "hour": 10,
+                "minute": 30,
+              },
+            },
+          ],
+          "schoolId": "MEAS",
+          "sectionNumber": "1",
+          "subjectId": "COMP_SCI",
+          "termId": "111111",
+          "topic": "Section topic...",
         }
       }
     />
@@ -32,17 +55,39 @@ exports[`SectionSelection renders correctly 1`] = `
       disabled={false}
       section={
         Object {
-          "id": "2",
-          "instructors": Array [
-            "Ian Horswill",
-            "Vincent St-Amour",
-          ],
-          "schedules": Array [
+          "courseId": "101-1",
+          "descriptions": Array [
             Object {
-              "location": "Some other building",
+              "name": "",
+              "value": "",
             },
           ],
-          "sectionNumber": 21,
+          "id": "2",
+          "instructors": Array [
+            "",
+          ],
+          "name": "Introduction to Something",
+          "schedules": Array [
+            Object {
+              "dow": Array [
+                "Tu",
+              ],
+              "end": Object {
+                "hour": 12,
+                "minute": 0,
+              },
+              "location": "Somewhere",
+              "start": Object {
+                "hour": 10,
+                "minute": 30,
+              },
+            },
+          ],
+          "schoolId": "MEAS",
+          "sectionNumber": "1",
+          "subjectId": "COMP_SCI",
+          "termId": "111111",
+          "topic": "Section topic...",
         }
       }
     />

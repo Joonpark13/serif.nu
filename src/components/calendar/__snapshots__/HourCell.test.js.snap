@@ -8,7 +8,39 @@ exports[`HourCell renders correctly 1`] = `
     isPreview={false}
     section={
       Object {
+        "courseId": "101-1",
+        "descriptions": Array [
+          Object {
+            "name": "",
+            "value": "",
+          },
+        ],
         "id": "12345",
+        "instructors": Array [
+          "",
+        ],
+        "name": "Seminar",
+        "schedules": Array [
+          Object {
+            "dow": Array [
+              "Mo",
+            ],
+            "end": Object {
+              "hour": 12,
+              "minute": 0,
+            },
+            "location": "",
+            "start": Object {
+              "hour": 10,
+              "minute": 30,
+            },
+          },
+        ],
+        "schoolId": "MEAS",
+        "sectionNumber": "1",
+        "subjectId": "COMP_SCI",
+        "termId": "111111",
+        "topic": "",
       }
     }
   />
@@ -16,13 +48,60 @@ exports[`HourCell renders correctly 1`] = `
     associatedClass={
       Object {
         "event": Object {},
+        "schedule": Object {
+          "dow": Array [
+            "Tu",
+          ],
+          "end": Object {
+            "hour": 12,
+            "minute": 0,
+          },
+          "location": "",
+          "start": Object {
+            "hour": 10,
+            "minute": 30,
+          },
+        },
         "sectionId": "12345",
+        "type": "DIS",
       }
     }
     isPreview={false}
     section={
       Object {
+        "courseId": "101-1",
+        "descriptions": Array [
+          Object {
+            "name": "",
+            "value": "",
+          },
+        ],
         "id": "12345",
+        "instructors": Array [
+          "",
+        ],
+        "name": "Seminar",
+        "schedules": Array [
+          Object {
+            "dow": Array [
+              "Mo",
+            ],
+            "end": Object {
+              "hour": 12,
+              "minute": 0,
+            },
+            "location": "",
+            "start": Object {
+              "hour": 10,
+              "minute": 30,
+            },
+          },
+        ],
+        "schoolId": "MEAS",
+        "sectionNumber": "1",
+        "subjectId": "COMP_SCI",
+        "termId": "111111",
+        "topic": "",
       }
     }
   />

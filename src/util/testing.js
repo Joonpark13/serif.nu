@@ -31,3 +31,37 @@ export function mockUseDispatch() {
   reactRedux.useDispatch.mockReturnValue(dispatchSpy);
   return dispatchSpy;
 }
+
+// Default test objects
+
+const testDow = ['Mo'];
+
+export const testSchedule = {
+  dow: testDow,
+  start: {
+    hour: 10,
+    minute: 30,
+  },
+  end: {
+    hour: 12,
+    minute: 0,
+  },
+  location: 'Somewhere',
+};
+
+const testName = 'Introduction to Something';
+const testDescription = { name: '', value: '' };
+
+export const testSection = {
+  id: '12345',
+  termId: '111111',
+  schoolId: 'MEAS',
+  subjectId: 'COMP_SCI',
+  courseId: '101-1',
+  name: testName,
+  sectionNumber: '1',
+  topic: 'Section topic...',
+  descriptions: [testDescription],
+  instructors: [''],
+  schedules: [testSchedule],
+};

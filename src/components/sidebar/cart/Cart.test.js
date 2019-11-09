@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { mockUseSelector } from 'util/testing';
+import { mockUseSelector, testSection } from 'util/testing';
 import { Button } from '@material-ui/core';
 import Cart from './Cart';
 import CartDialog from './CartDialog';
@@ -17,7 +17,7 @@ describe('Cart', () => {
   });
 
   it('renders correctly with one section', () => {
-    mockUseSelector([{ id: '12345' }]);
+    mockUseSelector([testSection]);
 
     const wrapper = shallow(<Cart />);
 
@@ -25,7 +25,7 @@ describe('Cart', () => {
   });
 
   it('renders correctly with multiple sections with the same id', () => {
-    mockUseSelector([{ id: '123' }, { id: '123' }]);
+    mockUseSelector([testSection, testSection]);
 
     const wrapper = shallow(<Cart />);
 
@@ -33,7 +33,7 @@ describe('Cart', () => {
   });
 
   it('opens the modal when clicked', () => {
-    mockUseSelector([{ id: '123' }, { id: '123' }]);
+    mockUseSelector([testSection, testSection]);
 
     const wrapper = shallow(<Cart />);
     wrapper.find(Button).first().simulate('click');

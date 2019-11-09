@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
+import { sectionPropType } from 'util/prop-types';
 import { getFormattedEventTime, getDurationInHours } from 'util/time';
 import Section from 'components/common/Section';
 import ClassModal from './ClassModal';
@@ -79,7 +80,7 @@ export default function CalendarSection({ section, isPreview }) {
 }
 
 CalendarSection.propTypes = {
-  section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
+  section: PropTypes.shape(sectionPropType).isRequired,
   isPreview: PropTypes.bool,
 };
 

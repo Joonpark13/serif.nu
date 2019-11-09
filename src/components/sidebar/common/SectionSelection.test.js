@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import * as timeUtils from 'util/time';
+import { testSchedule, testSection } from 'util/testing';
 import SectionSelection from './SectionSelection';
 import SectionResult from './SectionResult';
 
@@ -8,31 +9,22 @@ describe('SectionSelection', () => {
   const defaultProps = {
     currentCourseName: 'EECS 101-0',
     sections: [{
+      ...testSection,
       id: '1',
-      sectionNumber: 20,
-      schedules: [{
-        location: 'Some building',
-      }],
-      instructors: ['Jason Hartline'],
+      schedules: [{ ...testSchedule, dow: ['Mo'] }],
     }, {
+      ...testSection,
       id: '2',
-      sectionNumber: 21,
-      schedules: [{
-        location: 'Some other building',
-      }],
-      instructors: ['Ian Horswill', 'Vincent St-Amour'],
+      schedules: [{ ...testSchedule, dow: ['Tu'] }],
     }],
     scheduledSections: [],
     addSection: () => {},
     back: () => {},
   };
   const scheduledSectionsTestData = [{
+    ...testSection,
     id: '1',
-    sectionNumber: 20,
-    schedules: [{
-      location: 'Some building',
-    }],
-    instructors: ['Jason Hartline'],
+    schedules: [{ ...testSchedule, dow: ['Mo'] }],
   }];
 
   beforeEach(() => {

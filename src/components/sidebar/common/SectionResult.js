@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/styles';
 import { ListItem, ListItemText, Typography } from '@material-ui/core';
 import { sectionHover, sectionHoverOff } from 'actions';
 import { getFormattedClassSchedule, isUnscheduled } from 'util/time';
+import { sectionPropType } from 'util/prop-types';
 import { useSnackbar } from 'notistack';
 
 const useStyles = makeStyles({
@@ -66,7 +67,7 @@ export default function SectionResult({ addSection, section, disabled }) {
 
 SectionResult.propTypes = {
   addSection: PropTypes.func.isRequired,
-  section: PropTypes.objectOf(PropTypes.any).isRequired, // TODO
+  section: PropTypes.shape(sectionPropType).isRequired,
   disabled: PropTypes.bool,
 };
 
