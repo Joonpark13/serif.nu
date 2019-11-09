@@ -43,7 +43,39 @@ exports[`Cart renders correctly with multiple sections with the same id 1`] = `
   <CartSection
     section={
       Object {
-        "id": "123",
+        "courseId": "101-1",
+        "descriptions": Array [
+          Object {
+            "name": "",
+            "value": "",
+          },
+        ],
+        "id": "12345",
+        "instructors": Array [
+          "",
+        ],
+        "name": "Introduction to Something",
+        "schedules": Array [
+          Object {
+            "dow": Array [
+              "Mo",
+            ],
+            "end": Object {
+              "hour": 12,
+              "minute": 0,
+            },
+            "location": "Somewhere",
+            "start": Object {
+              "hour": 10,
+              "minute": 30,
+            },
+          },
+        ],
+        "schoolId": "MEAS",
+        "sectionNumber": "1",
+        "subjectId": "COMP_SCI",
+        "termId": "111111",
+        "topic": "Section topic...",
       }
     }
   />
@@ -74,7 +106,39 @@ exports[`Cart renders correctly with one section 1`] = `
   <CartSection
     section={
       Object {
+        "courseId": "101-1",
+        "descriptions": Array [
+          Object {
+            "name": "",
+            "value": "",
+          },
+        ],
         "id": "12345",
+        "instructors": Array [
+          "",
+        ],
+        "name": "Introduction to Something",
+        "schedules": Array [
+          Object {
+            "dow": Array [
+              "Mo",
+            ],
+            "end": Object {
+              "hour": 12,
+              "minute": 0,
+            },
+            "location": "Somewhere",
+            "start": Object {
+              "hour": 10,
+              "minute": 30,
+            },
+          },
+        ],
+        "schoolId": "MEAS",
+        "sectionNumber": "1",
+        "subjectId": "COMP_SCI",
+        "termId": "111111",
+        "topic": "Section topic...",
       }
     }
   />

@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useSnackbar } from 'notistack';
 import { makeStyles } from '@material-ui/styles';
 import { Dialog, DialogActions, DialogTitle, DialogContent, DialogContentText, Button } from '@material-ui/core';
+import { sectionPropType, associatedClassPropType } from 'util/prop-types';
 import { getFormattedClassSchedule } from 'util/time';
 import { removeSection } from 'actions';
 
@@ -93,8 +94,8 @@ export default function ClassModal({ showDialog, toggleDialog, section, associat
 }
 
 ClassModal.propTypes = {
-  section: PropTypes.objectOf(PropTypes.any).isRequired,
-  associatedClass: PropTypes.objectOf(PropTypes.any),
+  associatedClass: PropTypes.shape(associatedClassPropType),
+  section: PropTypes.shape(sectionPropType).isRequired,
   showDialog: PropTypes.bool.isRequired,
   toggleDialog: PropTypes.func.isRequired,
 };

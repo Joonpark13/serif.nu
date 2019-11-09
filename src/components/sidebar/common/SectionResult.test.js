@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import * as notistack from 'notistack';
 import { ListItem, Typography } from '@material-ui/core';
 import * as timeUtils from 'util/time';
-import { mockUseDispatch } from 'util/testing';
+import { mockUseDispatch, testSchedule, testSection } from 'util/testing';
 import { sectionHover, sectionHoverOff } from 'actions';
 import SectionResult from './SectionResult';
 
@@ -16,16 +16,9 @@ describe('SectionResult', () => {
   const enqueueSnackbarMock = jest.fn();
   notistack.useSnackbar.mockReturnValue({ enqueueSnackbar: enqueueSnackbarMock });
 
-  const section = {
-    id: '198732',
-    sectionNumber: 20,
-    topic: 'Section topic...',
-    schedules: [{ location: 'somewhere' }],
-    instructors: ['A prof'],
-  };
   const defaultProps = {
     addSection: () => {},
-    section,
+    section: testSection,
   };
   const message = 'Class successfully added';
 
@@ -39,7 +32,7 @@ describe('SectionResult', () => {
 
   it('renders instructors correctly for multiple instructors', () => {
     const wrapper = shallow(
-      <SectionResult {...defaultProps} section={{ ...section, instructors: ['Prof 1', 'Prof 2'] }} />,
+      <SectionResult {...defaultProps} section={{ ...testSection, instructors: ['Prof 1', 'Prof 2'] }} />,
     );
 
     expect(wrapper.find(Typography).at(4).prop('children')).toEqual(['Prof 1, ', 'Prof 2']);
@@ -52,7 +45,7 @@ describe('SectionResult', () => {
     );
     wrapper.find(ListItem).simulate('click');
 
-    expect(addSectionMock).toHaveBeenCalledWith(section);
+    expect(addSectionMock).toHaveBeenCalledWith(testSection);
   });
 
   it('turns scheduled text to red if section is unscheduled', () => {
@@ -60,13 +53,15 @@ describe('SectionResult', () => {
     timeUtils.isUnscheduled.mockReturnValue(true);
     const unscheduledSection = {
       id: '3',
-      sectionNumber: 21,
-      schedules: [{
-        location: 'Some other building',
-        dow: 'TBA',
-        start: 'TBA',
-        end: 'TBA',
-      }],
+      termId: '111111',
+      schoolId: 'MEAS',
+      subjectId: 'COMP_SCI',
+      courseId: '101-1',
+      name: '',
+      sectionNumber: '21',
+      topic: 'Section topic...',
+      descriptions: [{ name: '', value: '' }],
+      schedules: [testSchedule],
       instructors: ['Ian Horswill', 'Vincent St-Amour'],
     };
     const wrapper = shallow(
@@ -85,7 +80,7 @@ describe('SectionResult', () => {
     const wrapper = shallow(<SectionResult {...defaultProps} />);
     wrapper.find(ListItem).simulate('mouseEnter');
 
-    expect(dispatchMock).toHaveBeenCalledWith(sectionHover(section));
+    expect(dispatchMock).toHaveBeenCalledWith(sectionHover(testSection));
   });
 
   it('dispatches sectionHoverOff on mouse leave', () => {

@@ -13,27 +13,57 @@ exports[`CalendarSection renders correctly 1`] = `
     }
     leftHeaderContent="10:30 - 12:00"
     onClick={[Function]}
-    rightHeaderContent="undefined undefined"
-    sectionName="Seminar"
+    rightHeaderContent="COMP_SCI 101-1"
+    sectionName="Introduction to Something"
   />
   <ClassModal
     associatedClass={null}
     section={
       Object {
-        "course": "101-1",
+        "courseId": "101-1",
+        "descriptions": Array [
+          Object {
+            "name": "",
+            "value": "",
+          },
+        ],
         "event": Object {
           "dow": "Mo",
           "end": Object {
             "hour": 12,
             "minute": 0,
           },
+          "location": "Somewhere",
           "start": Object {
             "hour": 10,
             "minute": 30,
           },
         },
         "id": "12345",
-        "name": "Seminar",
+        "instructors": Array [
+          "",
+        ],
+        "name": "Introduction to Something",
+        "schedules": Array [
+          Object {
+            "dow": Array [
+              "Mo",
+            ],
+            "end": Object {
+              "hour": 12,
+              "minute": 0,
+            },
+            "location": "Somewhere",
+            "start": Object {
+              "hour": 10,
+              "minute": 30,
+            },
+          },
+        ],
+        "schoolId": "MEAS",
+        "sectionNumber": "1",
+        "subjectId": "COMP_SCI",
+        "termId": "111111",
         "topic": "",
       }
     }

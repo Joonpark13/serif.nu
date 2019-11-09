@@ -1,11 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import * as timeUtils from 'util/time';
+import { testSchedule, testSection } from 'util/testing';
 import Section from 'components/common/Section';
 import ClassModal from 'components/calendar/ClassModal';
 import CartSection, { styles } from './CartSection';
 
 describe('CartSection', () => {
+  const testSectionWithMultipleSchedules = {
+    ...testSection,
+    schedules: [testSchedule, testSchedule],
+  };
+
   beforeEach(() => {
     timeUtils.getFormattedClassSchedule = jest.fn();
     timeUtils.getFormattedClassSchedule.mockReturnValue('schedules');
@@ -20,7 +26,6 @@ describe('CartSection', () => {
   });
 
   it('renders correctly', () => {
-    const testSection = { schedules: [{}], subjectId: 'EECS', courseId: '111-0' };
     const wrapper = shallow(
       <CartSection section={testSection} />,
     );
@@ -29,16 +34,14 @@ describe('CartSection', () => {
   });
 
   it('formats left header content correctly when multiple schedules present', () => {
-    const testSection = { schedules: [{}, {}], subjectId: 'EECS', courseId: '111-0' };
     const wrapper = shallow(
-      <CartSection section={testSection} />,
+      <CartSection section={testSectionWithMultipleSchedules} />,
     );
 
     expect(wrapper.find(Section).prop('leftHeaderContent')).toBe('schedules, schedules');
   });
 
   it('opens modal on click', () => {
-    const testSection = { schedules: [{}], subjectId: 'EECS', courseId: '111-0' };
     const wrapper = shallow(
       <CartSection section={testSection} />,
     );

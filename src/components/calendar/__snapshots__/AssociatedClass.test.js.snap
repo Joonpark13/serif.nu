@@ -13,8 +13,8 @@ exports[`AssociatedClass renders correctly 1`] = `
     }
     leftHeaderContent="left hand header content"
     onClick={[Function]}
-    rightHeaderContent="EECS 111-0"
-    sectionName="undefined - undefined"
+    rightHeaderContent="COMP_SCI 101-1"
+    sectionName="LAB - Introduction to Something"
   />
   <ClassModal
     associatedClass={
@@ -28,17 +28,64 @@ exports[`AssociatedClass renders correctly 1`] = `
             "hour": 12,
             "minute": 0,
           },
+          "location": "Somewhere",
           "start": Object {
             "hour": 10,
             "minute": 30,
           },
         },
+        "schedule": Object {
+          "dow": Array [
+            "Mo",
+          ],
+          "end": Object {
+            "hour": 12,
+            "minute": 0,
+          },
+          "location": "Somewhere",
+          "start": Object {
+            "hour": 10,
+            "minute": 30,
+          },
+        },
+        "type": "LAB",
       }
     }
     section={
       Object {
-        "courseId": "111-0",
-        "subjectId": "EECS",
+        "courseId": "101-1",
+        "descriptions": Array [
+          Object {
+            "name": "",
+            "value": "",
+          },
+        ],
+        "id": "12345",
+        "instructors": Array [
+          "",
+        ],
+        "name": "Introduction to Something",
+        "schedules": Array [
+          Object {
+            "dow": Array [
+              "Mo",
+            ],
+            "end": Object {
+              "hour": 12,
+              "minute": 0,
+            },
+            "location": "Somewhere",
+            "start": Object {
+              "hour": 10,
+              "minute": 30,
+            },
+          },
+        ],
+        "schoolId": "MEAS",
+        "sectionNumber": "1",
+        "subjectId": "COMP_SCI",
+        "termId": "111111",
+        "topic": "Section topic...",
       }
     }
     showDialog={false}

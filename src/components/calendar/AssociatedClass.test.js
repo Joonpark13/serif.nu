@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import * as timeUtils from 'util/time';
 import Section from 'components/common/Section';
+import { testSchedule, testSection } from 'util/testing';
 import ClassModal from './ClassModal';
 import AssociatedClass, { styles, MAX_WIDTH_PERCENT } from './AssociatedClass';
 
@@ -9,17 +10,8 @@ jest.mock('util/time');
 
 describe('dynamic styles', () => {
   const dow = 'Mo';
-  const event = {
-    dow,
-    start: {
-      hour: 10,
-      minute: 30,
-    },
-    end: {
-      hour: 12,
-      minute: 0,
-    },
-  };
+  const event = { ...testSchedule, dow };
+
   const hour = 10;
   const color = 'some color';
   const associatedClass = { event, color, column: 0, columnWidth: 1 };
@@ -56,23 +48,24 @@ describe('dynamic styles', () => {
 
 describe('AssociatedClass', () => {
   const dow = 'Mo';
-  const event = {
-    dow,
-    start: {
-      hour: 10,
-      minute: 30,
-    },
-    end: {
-      hour: 12,
-      minute: 0,
+  const event = { ...testSchedule, dow };
+  const color = 'some color';
+  const associatedClass = {
+    event,
+    color,
+    column: 0,
+    columnWidth: 1,
+    type: 'LAB',
+    schedule: {
+      ...event,
+      dow: ['Mo'],
+      location: 'Somewhere',
     },
   };
-  const color = 'some color';
-  const associatedClass = { event, color, column: 0, columnWidth: 1 };
 
   const defaultProps = {
     associatedClass,
-    section: { subjectId: 'EECS', courseId: '111-0' },
+    section: testSection,
     isPreview: false,
   };
 

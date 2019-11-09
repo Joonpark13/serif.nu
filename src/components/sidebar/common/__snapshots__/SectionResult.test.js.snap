@@ -13,7 +13,7 @@ exports[`SectionResult renders correctly 1`] = `
       className="makeStyles-sectionTitle-1"
       variant="h6"
     >
-      Section 20
+      Section 1
     </ForwardRef(WithStyles)>
     <ForwardRef(WithStyles)>
       Section topic...
@@ -22,10 +22,10 @@ exports[`SectionResult renders correctly 1`] = `
       MWF 10 - 12ish
     </ForwardRef(WithStyles)>
     <ForwardRef(WithStyles)>
-      somewhere
+      Somewhere
     </ForwardRef(WithStyles)>
     <ForwardRef(WithStyles)>
-      A prof
+      
     </ForwardRef(WithStyles)>
   </ForwardRef(WithStyles)>
 </ForwardRef(WithStyles)>

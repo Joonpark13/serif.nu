@@ -9,10 +9,49 @@ import AssociatedClass from './AssociatedClass';
 jest.mock('selectors');
 
 describe('HourCell', () => {
-  const testSections = [{ id: '12345' }];
-  const allSections = [{ id: '12345' }];
+  const dow = ['Mo'];
+  const schedule = {
+    dow,
+    start: {
+      hour: 10,
+      minute: 30,
+    },
+    end: {
+      hour: 12,
+      minute: 0,
+    },
+    location: '',
+  };
+  const name = 'Seminar';
+  const description = { name: '', value: '' };
+  const testAssociatedClass = {
+    sectionId: '12345',
+    schedule: {
+      ...schedule,
+      dow: ['Tu'],
+    },
+    type: 'DIS',
+  };
+  const testSection = {
+    id: '12345',
+    termId: '111111',
+    schoolId: 'MEAS',
+    subjectId: 'COMP_SCI',
+    courseId: '101-1',
+    name,
+    sectionNumber: '1',
+    topic: '',
+    descriptions: [description],
+    instructors: [''],
+    schedules: [schedule],
+  };
+  const testSections = [testSection];
+  const allSections = [testSection];
   const allSectionPreviews = [];
-  const associatedClasses = [{ sectionId: '12345', event: {} }];
+  const associatedClasses = [{
+    ...testAssociatedClass,
+    event: {},
+  }];
 
   let useSelectorMock;
 
@@ -86,7 +125,7 @@ describe('HourCell', () => {
   });
 
   it('renders section previews', () => {
-    const sectionPreview = { id: '12345' };
+    const sectionPreview = testSection;
 
     mockUseSelector(
       testSections, associatedClasses, sectionPreview, undefined, allSections, [sectionPreview],
@@ -103,10 +142,15 @@ describe('HourCell', () => {
   });
 
   it('renders associated class previews', () => {
-    const associatedClassPreview = { type: 'LAB' };
+    const associatedClassPreview = testAssociatedClass;
 
     mockUseSelector(
-      testSections, associatedClasses, undefined, associatedClassPreview, allSections, [{ id: '12345' }],
+      testSections,
+      associatedClasses,
+      undefined,
+      associatedClassPreview,
+      allSections,
+      [testSection],
     );
 
     const wrapper = shallow(

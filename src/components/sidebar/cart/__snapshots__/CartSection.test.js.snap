@@ -13,18 +13,46 @@ exports[`CartSection renders correctly 1`] = `
     }
     leftHeaderContent="schedules"
     onClick={[Function]}
-    rightHeaderContent="EECS 111-0"
-    sectionName=""
+    rightHeaderContent="COMP_SCI 101-1"
+    sectionName="Introduction to Something"
   />
   <ClassModal
     associatedClass={null}
     section={
       Object {
-        "courseId": "111-0",
-        "schedules": Array [
-          Object {},
+        "courseId": "101-1",
+        "descriptions": Array [
+          Object {
+            "name": "",
+            "value": "",
+          },
         ],
-        "subjectId": "EECS",
+        "id": "12345",
+        "instructors": Array [
+          "",
+        ],
+        "name": "Introduction to Something",
+        "schedules": Array [
+          Object {
+            "dow": Array [
+              "Mo",
+            ],
+            "end": Object {
+              "hour": 12,
+              "minute": 0,
+            },
+            "location": "Somewhere",
+            "start": Object {
+              "hour": 10,
+              "minute": 30,
+            },
+          },
+        ],
+        "schoolId": "MEAS",
+        "sectionNumber": "1",
+        "subjectId": "COMP_SCI",
+        "termId": "111111",
+        "topic": "Section topic...",
       }
     }
     showDialog={false}
