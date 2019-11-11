@@ -23,6 +23,11 @@ exports[`SidebarView changes tabs correctly 1`] = `
     />
     <ForwardRef(WithStyles)
       className="makeStyles-tabWidth-2"
+      label="Custom"
+      value="custom"
+    />
+    <ForwardRef(WithStyles)
+      className="makeStyles-tabWidth-2"
       label="Cart"
       value="cart"
     />
@@ -54,11 +59,52 @@ exports[`SidebarView changes to cart correctly 1`] = `
     />
     <ForwardRef(WithStyles)
       className="makeStyles-tabWidth-2"
+      label="Custom"
+      value="custom"
+    />
+    <ForwardRef(WithStyles)
+      className="makeStyles-tabWidth-2"
       label="Cart"
       value="cart"
     />
   </ForwardRef(WithStyles)>
   <Cart />
+</div>
+`;
+
+exports[`SidebarView changes to custom correctly 1`] = `
+<div
+  className="makeStyles-wrapper-1"
+>
+  <ForwardRef(WithStyles)
+    indicatorColor="primary"
+    onChange={[Function]}
+    textColor="primary"
+    value="custom"
+    variant="fullWidth"
+  >
+    <ForwardRef(WithStyles)
+      className="makeStyles-tabWidth-2"
+      label="Search"
+      value="search"
+    />
+    <ForwardRef(WithStyles)
+      className="makeStyles-tabWidth-2"
+      label="Browse"
+      value="browse"
+    />
+    <ForwardRef(WithStyles)
+      className="makeStyles-tabWidth-2"
+      label="Custom"
+      value="custom"
+    />
+    <ForwardRef(WithStyles)
+      className="makeStyles-tabWidth-2"
+      label="Cart"
+      value="cart"
+    />
+  </ForwardRef(WithStyles)>
+  <Custom />
 </div>
 `;
 
@@ -82,6 +128,11 @@ exports[`SidebarView renders correctly 1`] = `
       className="makeStyles-tabWidth-2"
       label="Browse"
       value="browse"
+    />
+    <ForwardRef(WithStyles)
+      className="makeStyles-tabWidth-2"
+      label="Custom"
+      value="custom"
     />
     <ForwardRef(WithStyles)
       className="makeStyles-tabWidth-2"

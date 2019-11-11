@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/styles';
 import Search from './search/Search';
 import Cart from './cart/Cart';
 import Browse from './browse/Browse';
+import Custom from './custom/Custom';
 
 const useStyles = makeStyles({
   wrapper: {
@@ -30,10 +31,12 @@ export default function SidebarView() {
       >
         <Tab value="search" label="Search" className={classes.tabWidth} />
         <Tab value="browse" label="Browse" className={classes.tabWidth} />
+        <Tab value="custom" label="Custom" className={classes.tabWidth} />
         <Tab value="cart" label="Cart" className={classes.tabWidth} />
       </Tabs>
       {value === 'search' && <Search />}
       {value === 'browse' && <Browse />}
+      {value === 'custom' && <Custom />}
       {value === 'cart' && <Cart />}
     </div>
   );

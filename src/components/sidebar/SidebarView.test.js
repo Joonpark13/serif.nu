@@ -18,6 +18,14 @@ describe('SidebarView', () => {
     expect(wrapper.get(0)).toMatchSnapshot();
   });
 
+  it('changes to custom correctly', () => {
+    const wrapper = shallow(<SidebarView />);
+
+    wrapper.find(Tabs).props().onChange('onChange', 'custom');
+
+    expect(wrapper.get(0)).toMatchSnapshot();
+  });
+
   it('changes to cart correctly', () => {
     const wrapper = shallow(<SidebarView />);
 

@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Custom renders correctly 1`] = `
+<React.Fragment>
+  <div
+    className="makeStyles-container-1"
+  >
+    <ForwardRef(WithStyles)
+      component="fieldset"
+      error={true}
+      fullWidth={true}
+      margin="normal"
+      required={true}
+    >
+      <ForwardRef(WithStyles)
+        id="standard-required"
+        label="Class Title"
+        margin="normal"
+        required={true}
+      />
+      <ForwardRef(WithStyles)
+        id="standard-required"
+        label="Description"
+        margin="normal"
+        required={true}
+      />
+      <ForwardRef(WithStyles)>
+        <ForwardRef(WithStyles)
+          component="legend"
+        >
+          Occurences
+        </ForwardRef(WithStyles)>
+        <ForwardRef(WithStyles)
+          control={
+            <ForwardRef(WithStyles)
+              checked={false}
+              onChange={[Function]}
+              value="monday"
+            />
+          }
+          label="Monday"
+        />
+        <ForwardRef(WithStyles)
+          control={
+            <ForwardRef(WithStyles)
+              checked={false}
+              onChange={[Function]}
+              value="tuesday"
+            />
+          }
+          label="Tuesday"
+        />
+        <ForwardRef(WithStyles)
+          control={
+            <ForwardRef(WithStyles)
+              checked={false}
+              onChange={[Function]}
+              value="wednesday"
+            />
+          }
+          label="Wednesday"
+        />
+        <ForwardRef(WithStyles)
+          control={
+            <ForwardRef(WithStyles)
+              checked={false}
+              onChange={[Function]}
+              value="thursday"
+            />
+          }
+          label="Thursday"
+        />
+        <ForwardRef(WithStyles)
+          control={
+            <ForwardRef(WithStyles)
+              checked={false}
+              onChange={[Function]}
+              value="friday"
+            />
+          }
+          label="Friday"
+        />
+      </ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)>
+        At least one
+      </ForwardRef(WithStyles)>
+      <div>
+        <ForwardRef(WithStyles)
+          InputLabelProps={
+            Object {
+              "shrink": true,
+            }
+          }
+          className="makeStyles-time-2"
+          defaultValue="09:00"
+          id="time"
+          inputProps={
+            Object {
+              "step": 300,
+            }
+          }
+          label="Start Time"
+          margin="normal"
+          type="time"
+        />
+        <ForwardRef(WithStyles)
+          InputLabelProps={
+            Object {
+              "shrink": true,
+            }
+          }
+          className="makeStyles-time-2"
+          defaultValue="09:00"
+          id="time"
+          inputProps={
+            Object {
+              "step": 300,
+            }
+          }
+          label="End Time"
+          margin="normal"
+          type="time"
+        />
+      </div>
+      <ForwardRef(WithStyles)>
+        Create
+      </ForwardRef(WithStyles)>
+    </ForwardRef(WithStyles)>
+  </div>
+</React.Fragment>
+`;
