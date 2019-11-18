@@ -7,10 +7,10 @@ exports[`GoogleCalendarButton renders correctly 1`] = `
   >
     <ForwardRef(WithStyles)
       aria-label="GoogleCalendar"
+      onClick={[Function]}
     >
       <pure(Event)
         className="makeStyles-icon-1"
-        onClick={[Function]}
       />
     </ForwardRef(WithStyles)>
   </ForwardRef(WithStyles)>

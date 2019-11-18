@@ -19,6 +19,6 @@ module.exports = {
     document: true,
     window: true,
     fetch: true,
-    FIREBASE_CONFIG: 'readonly',
+    GCAL_CONFIG: 'readonly',
   },
 };
