@@ -43,6 +43,14 @@ exports[`NavDrawer should render correctly 1`] = `
       </ListItemLink>
       <ListItemLink
         onClick={[Function]}
+        to="/request"
+      >
+        <ForwardRef(WithStyles)
+          primary="Request a Feature"
+        />
+      </ListItemLink>
+      <ListItemLink
+        onClick={[Function]}
         to="/contact"
       >
         <ForwardRef(WithStyles)

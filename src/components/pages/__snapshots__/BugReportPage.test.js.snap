@@ -16,7 +16,7 @@ exports[`BugReportPage should render correctly after user acknowledgement 1`] = 
       marginHeight="0"
       marginWidth="0"
       src="https://docs.google.com/forms/d/e/1FAIpQLScaXXO7ySVcBk1g0FGdMQqLii0eFaNkh6sOzrTB9KmDe5XmTA/viewform?embedded=true"
-      title="Bug report google form"
+      title="Bug Report Google Form"
       width="100%"
     >
       Loading...
