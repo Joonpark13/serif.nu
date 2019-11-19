@@ -123,7 +123,7 @@ We use End to End (E2E) testing to replicate user interaction. While it is never
 
 We use JSS for styling our components. This allows for no unintended style collisions and allows us to use values from component props to generate dynamic styles (Ex. using a class's length to generate the height of the class card on the calendar).
 
-See [the Material-UI docs](https://material-ui.com/css-in-js/basics/) for details. Note that we use the higher order component API, but may later switch to the Hooks API.
+See [the Material-UI docs](https://material-ui.com/css-in-js/basics/) for details. Note that we use the Hooks API.
 
 ### Component Design
 
@@ -145,7 +145,7 @@ Code that "configures" or "sets up" the app (what you'd consider to be 'settings
 
 ## Sans-Serif
 
-Sans-Serif is the backend service that provides the course data for Serif.nu. See [the Sans-Serif documentation](https://github.com/Joonpark13/sans-serif) for more information.
+Sans-Serif is a set of Python scripts that provide the course data for Serif.nu. See [the Sans-Serif documentation](https://github.com/Joonpark13/sans-serif) for more information.
 
 ## Misc
 

@@ -1,6 +1,6 @@
 # Onboarding
 
-This is a document designed to get you up to speed in Serif.nu's development stack & tooling. I will start with the very basics and work my way down the list of main concepts that a developer working on Serif.nu would need to know. Give the *Basics* and *Modern Web Development* sections a read (probably don't need to worry about *Advanced* yet unless you are interested), then jump into the *Tutorials*. After completing the tutorials and gaining a basic understanding of the technologies, follow the *Practice Ticket* section to gain a sense of our workflow. Take a look at the [CONTRIBUTING](CONTRIBUTING.md) document as you do the practice ticket, and give that whole document a good read after you're done.
+This is a document designed to get you up to speed in Serif.nu's development stack & tooling. It'll start with the very basics and work my way down the list of main concepts that a developer working on Serif.nu would need to know. Give the *Basics* and *Modern Web Development* sections a read (probably don't need to worry about *Advanced* yet unless you are interested), then jump into the *Tutorials*. After completing the tutorials and gaining a basic understanding of the technologies, follow [PRACTICE_TICKET.md](PRACTICE_TICKET.md) to gain a sense of our workflow. Take a look at the [CONTRIBUTING](CONTRIBUTING.md) document as you do the practice ticket, and give that whole document a good read after you're done.
 
 Don't be overwhelmed! I know there's a lot on this document but you'll pick them up as you go. You don't need to be an expert in any of these to start working on Serif.nu.
 
@@ -71,131 +71,10 @@ You probably don't need to master these concepts before starting to contribute t
 
 2. If you have worked with JavaScript before but haven't used React, start with [the official React guide](https://reactjs.org/docs/hello-world.html). Read through those "Main Concepts", then follow through the [official tutorial](https://reactjs.org/tutorial/tutorial.html). You should actually write the code as you follow, using the provided starter code. No need to do the final section ("Adding time travel").
 
-3. At this point, if you feel a bit shaky or still confused, you should touch base with Joon and go through a simple example React app together. If you're ready to move on...
+3. At this point, if you feel a bit shaky or still confused, you should touch base with the student lead/an experienced member and go through a simple example React app together. If you're ready to move on...
 
 4. You should make sure you are familiar with git in some way. If you use a github GUI, that's fine - or maybe you've done basic git on the command line before. If you're unfamiliar with git, I *highly* recommend that you go through this [git tutorial](https://www.codecademy.com/learn/learn-git).
 
-5. If you feel good about all that, you can move on to the practice ticket below.
+5. If you feel good about all that, you can move on [PRACTICE_TICKET.md](PRACTICE_TICKET.md).
 
 6. At some point later down the line, you should come back and do the [Redux tutorial](https://redux.js.org/basics/basic-tutorial). Redux is our state management solution and it's a core part of how our app functions. It's a bit difficult of a concept to grasp at first, but you should try to understand it after you've gotten a bit of a look into the codebase.
-
-## Practice Ticket
-
-*I highly recommend that you read over [CONTRIBUTING.md](CONTRIBUTING.md) as you follow along. I'll also assume that you're using a bash terminal (native to mac, if you're on windows you'll either have to use git bash, the windows subsystem for linux, or a VM).*
-
-During our sprint meeting, we'll have groomed a practice ticket for you on the Trello board. Drag that ticket from the "Current Sprint" column to the "In Progress" column.
-
-Let's pull down the repository. In the command line, navigate to the folder in which you want to put the serif.nu code, and do
-```
-git clone https://github.com/Joonpark13/serif.nu.git
-```
-This will make a `serif.nu` directory and place the serif.nu repository inside it. (Alternatively you can use the Github GUI desktop application)
-
-Let's install all of our dependencies by doing
-```
-npm install
-```
-
-We should also specify our environment variables that will allow us to connect with Firebase. Stick the environment variables (given to you by Joon) in a `.env` file at the root of the repository and save it. Then, from that directory do
-```
-source .env
-```
-to load the environment variables. Webpack, our compiler, will know to grab these environment variables when spinning up our code.
-
-The first thing we want to do before we start working is to make a branch.
-```
-git checkout -b your-name-practice-ticket
-```
-will create a new branch named `your-name-practice-ticket`.
-
-Now, open up your favorite IDE and open up the code that we just cloned. Let's go ahead and make some changes. Obviously these changes aren't something we'd really want to make on the app, but it'll help us pratice the workflow and some key concepts like unit testing.
-
-Delete all of the contents of the `index.js` file and replace it with
-```
-import React from 'react';
-import ReactDOM from 'react-dom';
-import MyApp from './MyApp';
-
-function Index() {
-  return <MyApp />;
-}
-
-ReactDOM.render(
-  <Index />,
-  document.getElementById('root'),
-);
-```
-and save the file. Then, create a `MyApp.js` file in the same directory and write
-```
-import React from 'react';
-
-function MyApp() {
-  return <div>My first Serif.nu ticket</div>;
-}
-
-export default MyApp;
-```
-
-Since you've either done the React tutorial by now or are familiar with React already, you'll notice that we've just replaced our entire application with a simple component that just renders a single `<div>` with some trivial content. It's good enough for learning purposes. Go to your command line and do
-```
-npm start
-```
-You should now see a tab open on your browser with the application running - and you should see the change that you just made.
-
-I actually changed my mind. Let's change the content from `My first Serif.nu ticket` to `I love web development`. Go ahead and make that change to `MyApp.js` and save the file - you'll notice the page reloaded itself with the new content. This will be your normal development flow: write some code, see/try it in the browser, make some changes, repeat.
-
-Any good piece of software should have automated test coverage, so let's write a unit test for the component that we've just written. Create a file named `MyApp.test.js` in the same directory. In it, write:
-```
-import React from 'react';
-import { shallow } from 'enzyme';
-import MyApp from './MyApp';
-
-describe('MyApp', () => {
-  it('renders correctly', () => {
-    const wrapper = shallow(<MyApp />);
-
-    expect(wrapper.get(0)).toMatchSnapshot();
-  });
-});
-```
-
-There's a lot about unit testing that you'll learn as you contribute more to the codebase, but this is your very basic unit test file. For this tutorial we'll fly by at an extremely high level and leave out much of the details, but you'll pick up the rest as you go. You import your component that you want to test, and then you *describe* its expected behavior through a set of specifications or "specs" (in our case, we have one: 'it renders correctly').
-
-Inside this spec, we are [shallow rendering](https://airbnb.io/enzyme/docs/api/shallow.html) our component, then taking a "snapshot" of it. When we run it the first time around, jest, our test runner, will know to create a new snapshot for us. In the future, when you or someone else runs this test again, jest will compare the component's render to the snapshot, and warn you if something changed. This allows us to catch unintended changes to the component.
-
-So let's run the test! From your command line do
-```
-npm test
-```
-and you should see all of the unit tests in the repo run. You should be able to find towards the end of the test output that the test for the component (MyComponent) passed. You'll also notice that a new `__snapshots__` directory showed up in the directory where your test is. Inside this snapshots directory you'll find your brand new component snapshot. These snapshots should be considered part of our tests and should be committed to version control alongside our test files.
-
-Speaking of which... let's commit our changes. You can use a Github desktop GUI, or from the command line do
-```
-git status
-```
-This will show you all of the files you have changed, added, or deleted. You should be able to do
-```
-git add src/index.js src/MyApp.js src/MyApp.test.js src/__snapshots__
-```
-to stage all of your changes & newly created files. You then do another `git status` to confirm that those files were staged.
-
-We can then do
-```
-git commit -m "My first practice ticket"
-```
-to commit our changes. The message we write after the `-m` flag should be a succinct description of the changes we've made.
-
-If you now do a `git log`, you'll see that we've made our first commit to our branch!
-
-Let's now push our local branch to the remote repository (Github).
-```
-git push -u origin your-name-practice-ticket
-```
-
-Now, navigate to the [Serif.nu Github repo](https://github.com/Joonpark13/serif.nu) and click the "Pull Requests" tab. You should see a yellow bar containing your branch name, with a green button on the right. This allows you to create a Pull Request.
-
-A Pull Request is just a way of asking others to review the changes that you've made. When you and the reviewers agree that the changes you've made are good to go, you can then merge the changes into the `master` branch, which completes your ticket.
-
-Fill out the Pull Request form with a succinct title and description of your changes. Create the Pull Request, and request review from Joon (right sidebar).
-
-For a normal ticket, at this point your reviewer would review your code, make some comments, and you'll go back and likely make more changes to your code. You'll stage, commit, and push up those new changes to your branch until you and your reviewer are satisfied and all reviewers approve the Pull Request. But since this is a practice ticket, this is as far as you'll go. Drag the trello ticket into "Completed" - you're now ready to dive right into the Serif.nu codebase!
