@@ -29,7 +29,7 @@ export default function BugReportPage() {
           </div>
         ) : (
           <iframe
-            title="Bug report google form"
+            title="Bug Report Google Form"
             src="https://docs.google.com/forms/d/e/1FAIpQLScaXXO7ySVcBk1g0FGdMQqLii0eFaNkh6sOzrTB9KmDe5XmTA/viewform?embedded=true"
             width="100%"
             height="1100"

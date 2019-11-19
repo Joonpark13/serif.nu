@@ -29,6 +29,10 @@ exports[`App should render correctly 1`] = `
     />
     <Route
       component={[Function]}
+      path="/request"
+    />
+    <Route
+      component={[Function]}
       path="/contact"
     />
     <Route

@@ -13,6 +13,7 @@ import BugReportPage from './pages/BugReportPage';
 import ContactPage from './pages/ContactPage';
 import LegalPage from './pages/LegalPage';
 import NotFoundPage from './pages/NotFoundPage';
+import FeatureRequestPage from './pages/FeatureRequestPage';
 
 class App extends Component {
   constructor(props) {
@@ -52,6 +53,7 @@ class App extends Component {
           <Route path="/about" component={AboutPage} />
           <Route path="/faq" component={FAQPage} />
           <Route path="/bugs" component={BugReportPage} />
+          <Route path="/request" component={FeatureRequestPage} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/legal" component={LegalPage} />
           <Route component={NotFoundPage} />

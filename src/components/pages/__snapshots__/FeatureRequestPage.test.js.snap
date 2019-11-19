@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatureRequestPage should render correctly 1`] = `
+<div
+  className="makeStyles-pageContainer-1"
+>
+  <PageTitle
+    title="Request a Feature"
+  />
+  <div
+    className="makeStyles-pageBody-2"
+  >
+    <iframe
+      frameBorder="0"
+      height="1100"
+      marginHeight="0"
+      marginWidth="0"
+      src="https://docs.google.com/forms/d/e/1FAIpQLScPNzvaEyny6E0RZpXiNJ1MTe-xN_XHas8siBnOEeQOmvmA-A/viewform?embedded=true"
+      title="Request Feature Google Form"
+      width="100%"
+    >
+      Loading...
+    </iframe>
+  </div>
+</div>
+`;
