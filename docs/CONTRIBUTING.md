@@ -63,7 +63,7 @@ Set the necessary environment variables, then `npm start` will run the developme
 1. Move the ticket from "Current Sprint" to "In Progress" on the Trello board.
 2. Check out the `master` branch, `git pull` to make sure you are up to date, then checkout a new branch. Your branch name should follow the format of `{ticket type}/{ticket-title}` where ticket type is `f` for feature, `b` for bugfix, `t` for tech debt, `o` for toolchain, and `d` for documentation. For example, `git checkout -b b/fix-overlapping-schedule-bug`
 3. Make your changes, stage, and commit. Most tickets will require multiple commits. Make sure the first line of your first commit message is the ticket title.
-4. Run `npm test` to lint and test your changes. Fix/add tests as necessary to ensure no linting errors, 100% code coverage, and that all tests pass. See the [reference document](REFERENCE.md) for scripts that may help. Running `npm test` generates a code coverage report, viewable by opening `/coverage/index.html`. To run specific test files, do `jest {path-to-file}` and to update a snapshot do `jest {path-to-file} -u` (you'll need jest installed globally). Make sure you read [the philosophy](#unit-testing) on snapshot testing.
+4. Run `npm test` to lint and test your changes. Fix/add tests as necessary to ensure no linting errors and that all tests pass. See the [reference document](REFERENCE.md) for scripts that may help. Running `npm test` generates a code coverage report, viewable by opening `/coverage/index.html`. To run specific test files, do `jest {path-to-file}` and to update a snapshot do `jest {path-to-file} -u` (you'll need jest installed globally). Make sure you read [the philosophy](#unit-testing) on snapshot testing.
 5. If applicable, make sure you update the documentation to match your changes.
 6. Push your branch: `git push -u origin b/fix-overlapping-schedule-bug`
 7. Open a pull request. Using the Github power-up in the trello card, link the pull request on the ticket. If the ticket contains a visual change, include a screenshot of the change on the PR.
@@ -88,13 +88,11 @@ Set the necessary environment variables, then `npm start` will run the developme
 
 ### Unit Testing
 
-We enforce 100% unit test coverage. We believe that unit testing should test every piece of code at its lowest atomic level (meaning every React component, every helper function, every selector, etc), and each piece of functionality being tested should be tested in isoluation (meaning each dependency should be mocked).
+We believe that unit testing should test code at its lowest atomic level (meaning React component, helper function, selector, etc), and each piece of functionality being tested should be tested in isolation (meaning each dependency should be mocked).
 
-There are some notable exceptions in the codebase to 100% coverage. Most of the Container components contain `mapStateToProps` and `mapDispatchToProps` functions that do nothing more than assign the returned value of selectors to props (in the case of `mapStateToProps`) or assign an action to props (in the case of `mapDispatchToProps`). These do not need to be tested as they are react-redux's functionality (selectors should still be tested). In rare cases, `mapStateToProps` will contain custom logic, in which case it should be tested.
+We do not test some utils (since they are trivial or hard to test) and action creators (all they do are return objects). We also do not test effects since most of them are simply calling third party functions.
 
-We also do not test some utils (since they are trivial or hard to test) and action creators (all they do are return objects). We also do not test effects since most of them are simply calling third party functions.
-
-When writing new test files, we recommend writing tests for leaf components first, then working upwards. This makes certain that seeing 100% test coverage actually means 100% of the atomic units of code are tested.
+When writing new test files, we recommend writing tests for leaf components first, then working upwards.
 
 We use snapshot testing. This can be dangerous if a developer blindly updates the snapshots after any and every change. The design and functionality of the component should always be manually tested and confirmed before handling any of the snapshots. The existing snapshots should always be manually compared with the changes made to confirm that the differences are as expected before updating the snapshot. This way, we gain the speed benefits of snapshot testing as well as the bug-catching benefits.
 

@@ -17,10 +17,10 @@ module.exports = {
   coverageReporters: process.env.COVERAGE_REPORT === 'on' ? ['html', 'text'] : ['html'],
   coverageThreshold: {
     global: {
-      branches: 100,
+      branches: 75,
       functions: 100,
-      lines: 100,
-      statements: 100,
+      lines: 75,
+      statements: 50,
     },
   },
   setupFilesAfterEnv: [
