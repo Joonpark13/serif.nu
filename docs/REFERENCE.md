@@ -6,6 +6,8 @@
 * `npm test` Runs eslint (with autofix on), then runs all unit tests. Includes code coverage output in terminal. After running this, coverage file can be found under `/coverage/index.html`.
 * `npm run lint` Runs eslint with autofix on.
 * `npm run unit-test` Runs tests without linting.
+* `npx jest {PATH_TO_YOUR_TEST_FILE}` Runs a specific test file.
+* `npx jest {PATH_TO_YOUR_TEST_FILE} -u` Runs a specific test file and updates all of the snapshots within it.
 * `npm run coverage` Runs code coverage analysis, then auto-opens coverage html file in browser.
 * `npm run build` Builds a production version of the app. Output can be found in `/dist`.
 

@@ -1,6 +1,6 @@
 reporting:
     watermarks:
-        statements: [95, 100]
-        lines: [95, 100]
+        statements: [50, 100]
+        lines: [75, 100]
         functions: [95, 100]
-        branches: [95, 100]
+        branches: [75, 100]
