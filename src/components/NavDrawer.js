@@ -39,6 +39,9 @@ export default function NavDrawer({ isOpen, closeFunc }) {
           <ListItemLink to="/bugs" onClick={closeFunc}>
             <ListItemText primary="Report a Bug" />
           </ListItemLink>
+          <ListItemLink to="/request" onClick={closeFunc}>
+            <ListItemText primary="Request a Feature" />
+          </ListItemLink>
           <ListItemLink to="/contact" onClick={closeFunc}>
             <ListItemText primary="Contact" />
           </ListItemLink>
