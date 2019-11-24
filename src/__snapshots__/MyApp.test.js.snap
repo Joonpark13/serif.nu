@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`MyApp renders correctly 1`] = `
-<div>
-  I love web development.
-</div>
-`;
