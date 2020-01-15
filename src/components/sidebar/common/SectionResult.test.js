@@ -97,8 +97,9 @@ describe('SectionResult', () => {
     );
     wrapper.find(ListItem).simulate('click');
 
-    expect(enqueueSnackbarMock).toHaveBeenCalledWith(message, {
-      variant: 'success',
-    });
+    expect(enqueueSnackbarMock).toHaveBeenCalledWith(message,
+      expect.objectContaining({
+        variant: 'success',
+      }));
   });
 });
