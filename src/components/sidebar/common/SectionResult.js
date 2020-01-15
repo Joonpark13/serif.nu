@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
-import { ListItem, ListItemText, Typography } from '@material-ui/core';
-import { sectionHover, sectionHoverOff } from 'actions';
+import { ListItem, ListItemText, Typography, Button } from '@material-ui/core';
+import { sectionHover, sectionHoverOff, removeSection } from 'actions';
 import { getFormattedClassSchedule, isUnscheduled } from 'util/time';
 import { sectionPropType } from 'util/prop-types';
 import { useSnackbar } from 'notistack';
@@ -22,10 +22,19 @@ export default function SectionResult({ addSection, section, disabled }) {
   const classes = useStyles();
 
   const message = 'Class successfully added';
+  const handleUndoClick = () => {
+    dispatch(removeSection(section.id, section.color));
+    enqueueSnackbar('Class successfully removed', {
+      variant: 'success',
+    });
+  };
+  const undoButton = () => <Button onClick={handleUndoClick}>Undo</Button>;
+
   const handleClick = () => {
     addSection(section);
     enqueueSnackbar(message, {
       variant: 'success',
+      action: undoButton,
     });
   };
 
