@@ -80,9 +80,9 @@ export default function ClassModal({ showDialog, toggleDialog, section, associat
           {section.descriptions.map(description => (
             <div key={JSON.stringify(description)}>
               <DialogContentText className={classes.noBorder} variant="h6">{description.name}</DialogContentText>
-              {description.value.split('<br/>').map(description2 => (
-                <DialogContentText key={description2}>
-                  {description2}
+              {description.value.split('<br/>').map(paragraph => (
+                <DialogContentText key={paragraph}>
+                  {paragraph}
                 </DialogContentText>
               ))}
             </div>
