@@ -5,6 +5,7 @@ exports[`HourCell renders correctly 1`] = `
   className="makeStyles-calendarCell-1"
 >
   <CalendarSection
+    associatedClass={null}
     isPreview={false}
     section={
       Object {

@@ -23,6 +23,10 @@ export function sectionsSelector(state) {
   return state.getIn(['schedule', 'sections']);
 }
 
+export function associatedClassSelector(state) {
+  return state.getIn(['schedule', 'associatedClasses']);
+}
+
 export function sectionsForHourSelector(state, hour, dow) {
   const allSections = state.getIn(['schedule', 'sections']);
   return getMatchingClasses(allSections, hour, dow);

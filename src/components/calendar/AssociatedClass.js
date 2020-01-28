@@ -69,6 +69,7 @@ export default function AssociatedClass({ associatedClass, section, isPreview })
         associatedClass={associatedClass}
         showDialog={showDialog}
         toggleDialog={toggleDialog}
+        isAssociatedClass
       />
     </Fragment>
   );

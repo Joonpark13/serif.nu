@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/styles';
 import { Dialog, DialogActions, DialogTitle, DialogContent, DialogContentText, Button } from '@material-ui/core';
 import { sectionPropType, associatedClassPropType } from 'util/prop-types';
 import { getFormattedClassSchedule } from 'util/time';
-import { removeSection } from 'actions';
+import { removeSection, addSectionFromSearch, addSectionWithAssociatedClassFromSearch } from 'actions';
 
 export const useStyles = makeStyles({
   dialog: {
@@ -20,13 +20,18 @@ export const useStyles = makeStyles({
   },
 });
 
-export default function ClassModal({ showDialog, toggleDialog, section, associatedClass }) {
+export default function ClassModal({ showDialog,
+  toggleDialog,
+  section,
+  associatedClass,
+  isAssociatedClass,
+}) {
   const classes = useStyles();
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
 
   const subtitle = `${section.subjectId} ${section.courseId} Section ${section.sectionNumber}`;
-  const associatedClassSchedule = associatedClass && (
+  const associatedClassSchedule = isAssociatedClass && associatedClass && (
     <div>
       <DialogContentText className={classes.noBorder}>
         {getFormattedClassSchedule(associatedClass.schedule)}
@@ -43,10 +48,22 @@ export default function ClassModal({ showDialog, toggleDialog, section, associat
     </div>
   ));
 
+  const handleUndoClick = () => {
+    dispatch(addSectionFromSearch(section));
+    if (associatedClass) {
+      dispatch(addSectionWithAssociatedClassFromSearch(associatedClass));
+    }
+    enqueueSnackbar('Class successfully added', {
+      variant: 'success',
+    });
+  };
+  const undoButton = () => <Button onClick={handleUndoClick}>Undo</Button>;
+
   const handleClick = () => {
     dispatch(removeSection(section.id, section.color));
     enqueueSnackbar('Class successfully removed', {
       variant: 'success',
+      action: undoButton,
     });
   };
 
@@ -59,7 +76,7 @@ export default function ClassModal({ showDialog, toggleDialog, section, associat
     >
       <div className={classes.dialog}>
         <DialogTitle variant="h5">
-          {associatedClass ? `${associatedClass.type} - ` : ''}
+          {isAssociatedClass ? `${associatedClass.type} - ` : ''}
           {section.name}
         </DialogTitle>
 
@@ -67,7 +84,7 @@ export default function ClassModal({ showDialog, toggleDialog, section, associat
           <DialogContentText variant="subtitle1">
             {subtitle}
           </DialogContentText>
-          {associatedClass ? associatedClassSchedule : sectionSchedules}
+          {isAssociatedClass ? associatedClassSchedule : sectionSchedules}
 
 
           {section.instructors.map(instructor => (
@@ -102,8 +119,10 @@ ClassModal.propTypes = {
   section: PropTypes.shape(sectionPropType).isRequired,
   showDialog: PropTypes.bool.isRequired,
   toggleDialog: PropTypes.func.isRequired,
+  isAssociatedClass: PropTypes.bool,
 };
 
 ClassModal.defaultProps = {
   associatedClass: null,
+  isAssociatedClass: false,
 };

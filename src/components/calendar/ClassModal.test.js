@@ -14,8 +14,8 @@ describe('ClassModal', () => {
   const defaultProps = {
     section,
     showDialog: true,
-    toggleDialog: () => {},
-    removeSection: () => {},
+    toggleDialog: () => { },
+    removeSection: () => { },
   };
   const enqueueSnackbarMock = jest.fn();
   notistack.useSnackbar.mockReturnValue({ enqueueSnackbar: enqueueSnackbarMock });
@@ -46,7 +46,7 @@ describe('ClassModal', () => {
       },
     };
     const wrapper = shallow(
-      <ClassModal {...defaultProps} associatedClass={associatedClass} />,
+      <ClassModal {...defaultProps} associatedClass={associatedClass} isAssociatedClass />,
     );
 
     expect(wrapper.find(DialogTitle).at(0).prop('children'))
@@ -69,8 +69,9 @@ describe('ClassModal', () => {
     );
     wrapper.find(Button).first().simulate('click');
 
-    expect(enqueueSnackbarMock).toHaveBeenCalledWith(message, {
-      variant: 'success',
-    });
+    expect(enqueueSnackbarMock).toHaveBeenCalledWith(message,
+      expect.objectContaining({
+        variant: 'success',
+      }));
   });
 });
