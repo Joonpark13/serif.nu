@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { sectionPropType } from 'util/prop-types';
+import { sectionPropType, associatedClassPropType } from 'util/prop-types';
 import { getFormattedEventTime, getDurationInHours } from 'util/time';
 import Section from 'components/common/Section';
 import ClassModal from './ClassModal';
@@ -43,7 +43,7 @@ export const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function CalendarSection({ section, isPreview }) {
+export default function CalendarSection({ section, isPreview, associatedClass }) {
   const [showDialog, setShowDialog] = useState(false);
 
   const classes = useStyles({ section, isPreview });
@@ -74,6 +74,7 @@ export default function CalendarSection({ section, isPreview }) {
         section={section}
         showDialog={showDialog}
         toggleDialog={toggleDialog}
+        associatedClass={associatedClass}
       />
     </div>
   );
@@ -82,8 +83,10 @@ export default function CalendarSection({ section, isPreview }) {
 CalendarSection.propTypes = {
   section: PropTypes.shape(sectionPropType).isRequired,
   isPreview: PropTypes.bool,
+  associatedClass: PropTypes.shape(associatedClassPropType),
 };
 
 CalendarSection.defaultProps = {
   isPreview: false,
+  associatedClass: null,
 };

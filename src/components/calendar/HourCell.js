@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import {
   sectionsSelector,
+  associatedClassSelector,
   sectionsForHourSelector,
   associatedClassesForHourSelector,
   sectionPreviewSelector,
@@ -36,12 +37,24 @@ export default function HourCell({ hour, dow }) {
   );
   const allSections = useSelector(sectionsSelector);
   const allSectionPreviews = useSelector(allSectionPreviewsSelector);
+  const allAssociatedClasses = useSelector(associatedClassSelector);
 
   return (
     <div className={classes.calendarCell}>
-      {sections.map(section => (
-        <CalendarSection key={section.id} section={section} />
-      ))}
+      {sections.map((section) => {
+        const sectionAssociatedClass = allAssociatedClasses.find(
+          associatedClass => associatedClass.sectionId === section.id,
+        );
+        return sectionAssociatedClass
+          ? (
+            <CalendarSection
+              key={section.id}
+              section={section}
+              associatedClass={sectionAssociatedClass}
+            />
+          )
+          : <CalendarSection key={section.id} section={section} />;
+      })}
       {associatedClasses.map(associatedClass => (
         <AssociatedClass
           key={JSON.stringify(associatedClass.event)}

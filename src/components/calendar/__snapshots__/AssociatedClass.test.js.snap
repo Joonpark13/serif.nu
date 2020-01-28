@@ -51,6 +51,7 @@ exports[`AssociatedClass renders correctly 1`] = `
         "type": "LAB",
       }
     }
+    isAssociatedClass={true}
     section={
       Object {
         "courseId": "101-1",

@@ -18,6 +18,7 @@ exports[`CartSection renders correctly 1`] = `
   />
   <ClassModal
     associatedClass={null}
+    isAssociatedClass={false}
     section={
       Object {
         "courseId": "101-1",
