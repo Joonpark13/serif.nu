@@ -5,19 +5,16 @@ exports[`BrowseHeader renders correctly 1`] = `
   className="makeStyles-browseHeader-1"
 >
   <div
-    className="makeStyles-selectionName-2"
+    className="makeStyles-breadcrumbs-2"
   >
     <ForwardRef(WithStyles)
-      variant="h5"
-    />
-  </div>
-  <div
-    className="makeStyles-backButton-3"
-  >
-    <ForwardRef(WithStyles)
-      onClick={[Function]}
+      aria-label="breadcrumb"
     >
-      Back
+      
+      
+      <ForwardRef(WithStyles)
+        variant="h6"
+      />
     </ForwardRef(WithStyles)>
   </div>
 </div>

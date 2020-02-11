@@ -1,7 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Link, Breadcrumbs } from '@material-ui/core';
 import useSelector from 'util/use-selector';
 import {
   currentBrowseLevelSelector,
@@ -16,11 +17,11 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  selectionName: {
-    padding: '10px 16px',
+  breadcrumbs: {
+    padding: '5px 10px',
   },
-  backButton: {
-    padding: '10px 16px',
+  previousSelections: {
+    cursor: 'pointer',
   },
 });
 
@@ -43,23 +44,28 @@ export default function BrowseHeader() {
       break;
   }
 
-  function goBackLevel() {
-    let backTo = 'school';
-    if (currentBrowseLevel === 'course') backTo = 'subject';
-
-    dispatch(changeBrowseLevel(backTo));
-  }
+  const goToLevel = level => dispatch(changeBrowseLevel(level));
 
   return (
     <div className={classes.browseHeader}>
-      <div className={classes.selectionName}>
-        <Typography variant="h5">
-          {previousSelectionName}
-        </Typography>
-      </div>
-
-      <div className={classes.backButton}>
-        <Button onClick={goBackLevel}>Back</Button>
+      <div className={classes.breadcrumbs}>
+        <Breadcrumbs aria-label="breadcrumb">
+          {selectedSchoolId
+            && (
+            <Link className={classes.previousSelections} variant="h6" color="inherit" onClick={() => goToLevel('school')}>
+              SCHOOLS
+            </Link>
+            )}
+          {selectedSubjectId
+            && (
+            <Link className={classes.previousSelections} variant="h6" color="inherit" onClick={() => goToLevel('subject')}>
+              {selectedSchoolId}
+            </Link>
+            )}
+          <Typography variant="h6">
+            {previousSelectionName}
+          </Typography>
+        </Breadcrumbs>
       </div>
     </div>
   );

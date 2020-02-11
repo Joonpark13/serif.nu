@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Link } from '@material-ui/core';
 import { mockUseSelector, mockUseDispatch } from 'util/testing';
 import { changeBrowseLevel } from 'actions';
 import BrowseHeader from './BrowseHeader';
@@ -39,19 +39,31 @@ describe('BrowseHeader', () => {
 
     const wrapper = shallow(<BrowseHeader />);
 
-    wrapper.find(Button).simulate('click');
+    wrapper.find(Link).first().simulate('click');
 
     expect(dispatchMock).toHaveBeenCalledWith(changeBrowseLevel('school'));
   });
 
-  it('goes back a level to subjects from courses', () => {
-    mockUseSelector('course', 'EECS', '');
-    const dispatchMock = mockUseDispatch();
+  // it('goes back a level to subjects from courses', () => {
+  //   mockUseSelector('subject', 'MEAS', '');
+  //   mockUseSelector('course', 'EECS', '');
+  //   const dispatchMock = mockUseDispatch();
 
-    const wrapper = shallow(<BrowseHeader />);
+  //   const wrapper = shallow(<BrowseHeader />);
 
-    wrapper.find(Button).simulate('click');
+  //   wrapper.find(Link).at(1).simulate('click');
 
-    expect(dispatchMock).toHaveBeenCalledWith(changeBrowseLevel('subject'));
-  });
+  //   expect(dispatchMock).toHaveBeenCalledWith(changeBrowseLevel('subject'));
+  // });
+
+  // it('goes back to schools from courses using breadcrumbs', () => {
+  //   mockUseSelector('course', 'MEAS', '');
+  //   const dispatchMock = mockUseDispatch();
+
+  //   const wrapper = shallow(<BrowseHeader />);
+
+  //   wrapper.find(Link).simulate('click');
+
+  //   expect(dispatchMock).toHaveBeenCalledWith(changeBrowseLevel('school'));
+  // });
 });
