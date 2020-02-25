@@ -1,7 +1,7 @@
 [build.environment]
-  GCAL_CLIENT_ID="4436581685-mcdkhnh50a6di21k15do7d4a2orq7faf.apps.googleusercontent.com"
-  GCAL_API_KEY="AIzaSyCssknAiVBtWhHE3O1wjVte829dxoxQ-pM"
+  GCAL_CLIENT_ID="82930465455-k6kn9ll0frlduqj6jegvn92h8opupu02.apps.googleusercontent.com"
+  GCAL_API_KEY="AIzaSyDsrNBeibXiHk6iXXQpn_qDs3zRqQNWRmw"
 
 [context.production.environment]
-  GCAL_CLIENT_ID="4436581685-mcdkhnh50a6di21k15do7d4a2orq7faf.apps.googleusercontent.com"
-  GCAL_API_KEY="AIzaSyCssknAiVBtWhHE3O1wjVte829dxoxQ-pM"
+  GCAL_CLIENT_ID="82930465455-k6kn9ll0frlduqj6jegvn92h8opupu02.apps.googleusercontent.com"
+  GCAL_API_KEY="AIzaSyDsrNBeibXiHk6iXXQpn_qDs3zRqQNWRmw"
