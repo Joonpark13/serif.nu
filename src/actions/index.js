@@ -244,3 +244,10 @@ export function associatedClassHoverOff() {
     type: actionTypes.ASSOCIATED_CLASS_HOVER_OFF,
   };
 }
+
+export function addSectionFromCustom(section) {
+  return {
+    type: actionTypes.ADD_SECTION_FROM_CUSTOM,
+    section,
+  };
+}

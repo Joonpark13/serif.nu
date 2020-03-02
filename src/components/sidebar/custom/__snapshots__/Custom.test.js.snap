@@ -16,12 +16,14 @@ exports[`Custom renders correctly 1`] = `
         id="standard-required"
         label="Class Title"
         margin="normal"
+        onChange={[Function]}
         required={true}
       />
       <ForwardRef(WithStyles)
         id="standard-required"
         label="Description"
         margin="normal"
+        onChange={[Function]}
         required={true}
       />
       <ForwardRef(WithStyles)>
@@ -101,6 +103,7 @@ exports[`Custom renders correctly 1`] = `
           }
           label="Start Time"
           margin="normal"
+          onChange={[Function]}
           type="time"
         />
         <ForwardRef(WithStyles)
@@ -119,10 +122,13 @@ exports[`Custom renders correctly 1`] = `
           }
           label="End Time"
           margin="normal"
+          onChange={[Function]}
           type="time"
         />
       </div>
-      <ForwardRef(WithStyles)>
+      <ForwardRef(WithStyles)
+        onClick={[Function]}
+      >
         Create
       </ForwardRef(WithStyles)>
     </ForwardRef(WithStyles)>
