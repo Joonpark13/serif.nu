@@ -162,6 +162,7 @@ function schedule(state = initialScheduleState, action) {
   switch (action.type) {
     case actionTypes.ADD_SECTION_FROM_SEARCH:
     case actionTypes.ADD_SECTION_FROM_BROWSE:
+    case actionTypes.ADD_SECTION_FROM_CUSTOM:
       return handleAddSection(state, action);
 
     case actionTypes.REMOVE_SECTION:
