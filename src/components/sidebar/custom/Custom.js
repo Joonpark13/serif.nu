@@ -27,8 +27,8 @@ export default function Custom() {
   const [title, changeTitle] = useState('');
   const [description, changeDescription] = useState('');
   const [startTime, changeStartTime] = useState('9:00');
-  const [endTime, changeEndTime] = useState('9:00');
-  const [state, setState] = useState({
+  const [endTime, changeEndTime] = useState('9:30');
+  const [eventDow, setEventDow] = useState({
     monday: false,
     tuesday: false,
     wednesday: false,
@@ -36,18 +36,24 @@ export default function Custom() {
     friday: false,
   });
 
+  const canSubmit = !!title
+    && !!description
+    && !!startTime
+    && !!endTime
+    && Object.values(eventDow).some(dow => dow);
+
   const handleTextFieldChange = changeFunc => (event) => { changeFunc(event.target.value); };
   const handleChange = name => (event) => {
-    setState({ ...state, [name]: event.target.checked });
+    setEventDow({ ...eventDow, [name]: event.target.checked });
   };
 
-  const { monday, tuesday, wednesday, thursday, friday } = state;
+  const { monday, tuesday, wednesday, thursday, friday } = eventDow;
   const error = [monday, tuesday, wednesday, thursday, friday].filter(v => v).length < 1;
 
   const dowMap = ['Mo', 'Tue', 'Wed', 'Thurs', 'Fri'];
   const dispatch = useDispatch();
   const handleSubmit = () => {
-    const dow = Object.values(state).map((v, i) => v ? dowMap[i] : null).filter(v => v);
+    const dow = Object.values(eventDow).map((v, i) => v ? dowMap[i] : null).filter(v => v);
     const [startHour, startMinute] = startTime.split(':').map(x => parseInt(x, 10));
     const [endHour, endMinute] = endTime.split(':').map(x => parseInt(x, 10));
     const schedule = {
@@ -97,7 +103,7 @@ export default function Custom() {
             onChange={handleTextFieldChange(changeDescription)}
           />
           <FormGroup>
-            <FormHelperText component="legend">Occurences</FormHelperText>
+            <FormHelperText component="legend">Occurrences</FormHelperText>
             <FormControlLabel
               control={<Checkbox checked={monday} onChange={handleChange('monday')} value="monday" />}
               label="Monday"
@@ -142,7 +148,7 @@ export default function Custom() {
               label="End Time"
               type="time"
               margin="normal"
-              defaultValue="09:00"
+              defaultValue="09:30"
               InputLabelProps={{
                 shrink: true,
               }}
@@ -152,7 +158,7 @@ export default function Custom() {
               onChange={handleTextFieldChange(changeEndTime)}
             />
           </div>
-          <Button onClick={handleSubmit}>Create</Button>
+          <Button onClick={handleSubmit} disabled={!canSubmit}>Create</Button>
         </FormControl>
       </div>
     </Fragment>
