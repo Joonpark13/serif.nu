@@ -33,7 +33,6 @@ exports[`TopBar renders correctly 1`] = `
     <div
       className="makeStyles-topBarSideSections-5"
     >
-      <GoogleCalendarButton />
       <ForwardRef(WithStyles)
         className="makeStyles-title-1"
       >

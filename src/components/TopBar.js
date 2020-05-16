@@ -8,7 +8,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
 import { Link } from 'react-router-dom';
 import { currentTerm } from 'util/data';
-import GoogleCalendarButton from './GoogleCalendarButton';
 
 const topBarTextColor = 'white';
 
@@ -50,7 +49,6 @@ export default function TopBar({ menuAction }) {
         </div>
 
         <div className={classes.topBarSideSections}>
-          <GoogleCalendarButton />
           <Typography className={classes.title}>
             Term:
             {' '}

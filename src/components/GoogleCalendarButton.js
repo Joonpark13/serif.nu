@@ -20,11 +20,11 @@ export default function GoogleCalendarButton() {
   const classes = useStyles();
   // TODO make this dynamic based on the term
   const dateOfFirstClass = {
-    Tu: '2020-03-31T',
-    We: '2020-04-01T',
-    Th: '2020-04-02T',
-    Fr: '2020-04-03T',
-    Mo: '2020-04-06T',
+    Tu: '2020-09-22T',
+    We: '2020-09-23T',
+    Th: '2020-09-24T',
+    Fr: '2020-09-25T',
+    Mo: '2020-09-26T',
   };
   const { clientId, apiKey } = GCAL_CONFIG;
   const { enqueueSnackbar } = useSnackbar();
