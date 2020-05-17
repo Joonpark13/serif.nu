@@ -38,7 +38,7 @@ exports[`TopBar renders correctly 1`] = `
       >
         Term:
          
-        Fall 2019
+        Spring 2020
       </ForwardRef(WithStyles)>
     </div>
   </ForwardRef(WithStyles)>
