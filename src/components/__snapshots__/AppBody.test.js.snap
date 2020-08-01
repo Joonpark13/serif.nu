@@ -1,25 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AppBody should render correctly 1`] = `
-<ForwardRef(WithStyles)
-  container={true}
+<div
+  className="makeStyles-wrapper-1"
 >
-  <ForwardRef(WithStyles)
-    className="makeStyles-calendar-1"
-    item={true}
-    md={9}
-    sm={12}
-    xs={12}
+  <div
+    className="makeStyles-spacer-2"
   >
-    <CalendarView />
-  </ForwardRef(WithStyles)>
-  <ForwardRef(WithStyles)
-    item={true}
-    md={3}
-    sm={12}
-    xs={12}
+    <ForwardRef(WithStyles)
+      variant="h5"
+    >
+      Hey Northwestern,
+    </ForwardRef(WithStyles)>
+  </div>
+  <div
+    className="makeStyles-spacer-2"
   >
-    <SidebarView />
-  </ForwardRef(WithStyles)>
-</ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
+      variant="body1"
+    >
+      Thanks for using Serif.nu all these years. Your support and continued usage of Serif.nu has meant so much to me. Who knew one app could make such an impact?
+    </ForwardRef(WithStyles)>
+  </div>
+  <div
+    className="makeStyles-spacer-2 makeStyles-signOff-3"
+  >
+    <ForwardRef(WithStyles)
+      variant="body1"
+    >
+      <a
+        href="https://www.youtube.com/watch?v=EPOJhVjKfUo"
+      >
+        Go U!
+      </a>
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
+      variant="h6"
+    >
+      <a
+        href="https://twitter.com/JoonParkMusic"
+      >
+        Joon
+      </a>
+    </ForwardRef(WithStyles)>
+  </div>
+</div>
 `;

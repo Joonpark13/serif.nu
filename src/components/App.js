@@ -7,7 +7,6 @@ import toJS from 'util/to-js';
 import TopBar from './TopBar';
 import NavDrawer from './NavDrawer';
 import AppBody from './AppBody';
-import AnnouncementDialog from './AnnouncementDialog';
 import AboutPage from './pages/AboutPage';
 import FAQPage from './pages/FAQPage';
 import BugReportPage from './pages/BugReportPage';
@@ -59,7 +58,6 @@ class App extends Component {
           <Route path="/legal" component={LegalPage} />
           <Route component={NotFoundPage} />
         </Switch>
-        <AnnouncementDialog />
       </Fragment>
     );
   }

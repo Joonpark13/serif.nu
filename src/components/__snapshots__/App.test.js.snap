@@ -43,6 +43,5 @@ exports[`App should render correctly 1`] = `
       component={[Function]}
     />
   </Switch>
-  <AnnouncementDialog />
 </React.Fragment>
 `;
