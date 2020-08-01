@@ -30,17 +30,6 @@ exports[`TopBar renders correctly 1`] = `
         </ForwardRef(WithStyles)>
       </Link>
     </div>
-    <div
-      className="makeStyles-topBarSideSections-5"
-    >
-      <ForwardRef(WithStyles)
-        className="makeStyles-title-1"
-      >
-        Term:
-         
-        Spring 2020
-      </ForwardRef(WithStyles)>
-    </div>
   </ForwardRef(WithStyles)>
 </ForwardRef(WithStyles)>
 `;

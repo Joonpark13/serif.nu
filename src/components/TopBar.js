@@ -7,7 +7,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
 import { Link } from 'react-router-dom';
-import { currentTerm } from 'util/data';
+// Code left for educational reference
+// import { currentTerm } from 'util/data';
 
 const topBarTextColor = 'white';
 
@@ -32,7 +33,8 @@ const useStyles = makeStyles({
   },
 });
 
-const termName = currentTerm.name;
+// Code left for educational reference
+// const termName = currentTerm.name;
 
 export default function TopBar({ menuAction }) {
   const classes = useStyles();
@@ -48,13 +50,14 @@ export default function TopBar({ menuAction }) {
           </Link>
         </div>
 
-        <div className={classes.topBarSideSections}>
+        {/* Code left for educational reference */}
+        {/* <div className={classes.topBarSideSections}>
           <Typography className={classes.title}>
             Term:
             {' '}
             {termName}
           </Typography>
-        </div>
+        </div> */}
       </Toolbar>
     </AppBar>
   );
